@@ -71,6 +71,18 @@ O `Governance Pack` existe para reduzir isso.
 
 ---
 
+## Enforcement boundary
+
+O `Governance Pack` descreve regras e expectativas.
+
+Mas nem toda regra descrita aqui já é tecnicamente inevitável.
+
+Para deixar isso explícito, ler em conjunto:
+
+- `docs/enforcement-boundaries.md`
+
+---
+
 ## Vocabulário normalizado do AletheIA
 
 Para deixar o framework mais agnóstico, este pack usa termos mais gerais:

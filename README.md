@@ -151,9 +151,10 @@ If this is your first time here, start with:
 3. `docs/governance.md`
 4. `docs/token-policy.md`
 5. `docs/durable-decisions.md`
-6. `docs/quality.md`
-7. `examples/`
-8. `starter-pack/`
+6. `docs/enforcement-boundaries.md`
+7. `docs/quality.md`
+8. `examples/`
+9. `starter-pack/`
 
 ---
 
