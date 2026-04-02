@@ -1,0 +1,35 @@
+{
+  "id": "execution-hello-world-readme-title",
+  "decision_id": "decision-hello-world-readme-title",
+  "adapter": {
+    "name": "local-docs-adapter",
+    "mode": "mock"
+  },
+  "target": {
+    "kind": "file",
+    "ref": "README.md"
+  },
+  "environment": {
+    "branch": "codex/hello-world-doc-title",
+    "worktree": "docs-only",
+    "sandbox": true
+  },
+  "status": "completed",
+  "result_summary": "README title wording updated and diff inspected successfully.",
+  "validations": [
+    {
+      "name": "manual_clarity_review",
+      "status": "pass",
+      "evidence_ref": "reviewer confirmed the title is clearer"
+    },
+    {
+      "name": "diff_inspection",
+      "status": "pass",
+      "evidence_ref": "single-file docs-only diff"
+    }
+  ],
+  "timestamps": {
+    "started_at": "2026-04-01T19:31:00Z",
+    "finished_at": "2026-04-01T19:33:00Z"
+  }
+}

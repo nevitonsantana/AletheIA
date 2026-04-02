@@ -1,0 +1,11 @@
+{
+  "name": "aletheia-public-repo-draft",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:contracts": "tsx tests/contracts/test-contracts.ts",
+    "test:goldens": "tsx tests/goldens/test-goldens.ts",
+    "test:e2e": "tsx tests/e2e/test-e2e.ts",
+    "test:learnings": "tsx tests/learnings/test-learnings.ts"
+  }
+}

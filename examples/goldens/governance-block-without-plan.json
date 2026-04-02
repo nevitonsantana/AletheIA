@@ -1,0 +1,7 @@
+{
+  "name": "governance-block-without-plan",
+  "final_action": "block",
+  "matched_rule_ids": [
+    "pipeline.no_execution_without_plan"
+  ]
+}

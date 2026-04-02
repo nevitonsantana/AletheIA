@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.local/schemas/execution-record.schema.json",
+  "title": "AletheIA Execution Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "decision_id", "adapter", "target", "environment", "status", "validations", "timestamps"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "decision_id": { "type": "string", "minLength": 1 },
+    "adapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "mode"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "mode": { "type": "string", "enum": ["mock", "local", "remote"] }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "ref"],
+      "properties": {
+        "kind": { "type": "string", "minLength": 1 },
+        "ref": { "type": "string", "minLength": 1 }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["branch", "sandbox"],
+      "properties": {
+        "branch": { "type": "string", "minLength": 1 },
+        "worktree": { "type": "string" },
+        "sandbox": { "type": "boolean" }
+      }
+    },
+    "status": { "type": "string", "enum": ["planned", "running", "completed", "failed", "blocked", "skipped"] },
+    "result_summary": { "type": "string" },
+    "validations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "status"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "status": { "type": "string", "enum": ["pass", "fail", "warn", "not_run"] },
+          "evidence_ref": { "type": "string" }
+        }
+      }
+    },
+    "timestamps": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["started_at"],
+      "properties": {
+        "started_at": { "type": "string", "format": "date-time" },
+        "finished_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

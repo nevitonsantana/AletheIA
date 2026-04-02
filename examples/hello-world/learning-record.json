@@ -1,0 +1,27 @@
+{
+  "id": "learning-hello-world-readme-title",
+  "source": {
+    "type": "session",
+    "ref": "base-tecnica-aletheia-hello-world"
+  },
+  "learning_type": "heuristic",
+  "title": "Small documentation tasks still benefit from explicit framing",
+  "summary": "Even a low-risk README title change becomes easier to explain, validate, and reuse when it passes through the six AletheIA contracts.",
+  "evidence": [
+    "The task stayed understandable from brief to handoff",
+    "The context pack remained small without losing clarity",
+    "The decision could be explained before execution"
+  ],
+  "actionability": {
+    "apply_to": [
+      "playbook",
+      "doc",
+      "test"
+    ],
+    "recommended_change": "Keep a lightweight six-contract flow available even for simple tasks, with proportional detail."
+  },
+  "review": {
+    "status": "accepted",
+    "approved_by": "framework-designer"
+  }
+}

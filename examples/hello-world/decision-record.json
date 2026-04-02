@@ -1,0 +1,65 @@
+{
+  "id": "decision-hello-world-readme-title",
+  "task_brief_id": "task-hello-world-readme-title",
+  "input": {
+    "signal": "Update the README title to make it clearer",
+    "raw": {
+      "requester": "user",
+      "channel": "chat"
+    }
+  },
+  "context_snapshot": {
+    "summary": "Low-risk docs-only change with tightly scoped context.",
+    "sources_considered": [
+      "README.md",
+      "docs/ARCHITECTURE.md",
+      "clarity-first writing rule"
+    ],
+    "omitted_context": [
+      "product runtime code",
+      "database files"
+    ]
+  },
+  "interpretation": {
+    "summary": "This is a local documentation refinement with no behavioral impact.",
+    "key_signals": [
+      "documentation-only request",
+      "clear target file",
+      "no runtime mutation required"
+    ],
+    "assumptions": [
+      "The requester wants clarity, not rebranding"
+    ]
+  },
+  "decision": {
+    "action": "allow",
+    "target": "README.md title line",
+    "next_step": "Apply the wording change and verify the diff"
+  },
+  "justification": {
+    "reason": "The task is low-risk, local, reversible, and sufficiently grounded by a small context pack.",
+    "policy_refs": [
+      "quality over speed",
+      "context minimum sufficient"
+    ]
+  },
+  "provenance": {
+    "facts": [
+      "The request targets README wording",
+      "No code or data mutation is required"
+    ],
+    "inferences": [
+      "A simple allow decision is safer than escalating to a heavier workflow"
+    ],
+    "rules_applied": [
+      "small low-risk task can follow lightweight flow",
+      "documentation-only change does not require human gate"
+    ]
+  },
+  "metadata": {
+    "confidence": 0.95,
+    "risk": "low",
+    "trace_id": "trace-hello-world-001",
+    "created_at": "2026-04-01T19:30:00Z"
+  }
+}

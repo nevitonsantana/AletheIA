@@ -1,0 +1,37 @@
+{
+  "id": "task-hello-world-readme-title",
+  "title": "Clarify README title",
+  "problem": "The current README title is too generic and may slow first-time understanding.",
+  "objective": "Propose and apply a clearer README title without changing project behavior.",
+  "classification": {
+    "task_type": "A",
+    "severity": "S1",
+    "risk": "low"
+  },
+  "scope": {
+    "in": [
+      "README title update",
+      "small wording refinement"
+    ],
+    "out": [
+      "content redesign",
+      "architecture changes",
+      "new feature work"
+    ]
+  },
+  "constraints": [
+    "Keep the change local and reversible",
+    "Do not alter product behavior",
+    "Prefer clarity over stylistic flourish"
+  ],
+  "success_criteria": [
+    "A clearer title is proposed",
+    "The change remains documentation-only",
+    "No additional files are required"
+  ],
+  "validation_plan": [
+    "Manual clarity review",
+    "Diff inspection"
+  ],
+  "human_gate_required": false
+}

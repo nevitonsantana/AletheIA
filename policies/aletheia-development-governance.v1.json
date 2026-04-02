@@ -1,0 +1,313 @@
+{
+  "meta": {
+    "name": "AletheIA Development Governance Pack",
+    "version": "1.0.0-alpha",
+    "domain": "software-development",
+    "status": "draft",
+    "default_mode": "strict"
+  },
+  "vocabulary": {
+    "source_of_truth_artifact": "Artifact that defines the expected behavior or contract for the current work item.",
+    "work_item": "Smallest independently governable unit of work.",
+    "authoritative_layer": "Layer responsible for critical validation and final authoritative decisions.",
+    "execution_scope": "Explicit boundary for allowed and forbidden changes."
+  },
+  "hooks": [
+    {
+      "id": "before_execute",
+      "description": "Evaluate whether the task is allowed to start implementation."
+    },
+    {
+      "id": "after_execute",
+      "description": "Evaluate whether execution stayed within declared scope and contracts."
+    },
+    {
+      "id": "before_finalize",
+      "description": "Evaluate whether validation and source-of-truth alignment are complete before closure."
+    }
+  ],
+  "facts_model": {
+    "work_item.behavior_count": "number",
+    "work_item.output_defined": "boolean",
+    "analysis.performed": "boolean",
+    "plan.exists": "boolean",
+    "source_of_truth.exists": "boolean",
+    "source_of_truth.updated": "boolean",
+    "scope.allowed_files_defined": "boolean",
+    "scope.forbidden_files_defined": "boolean",
+    "scope.operation_type_defined": "boolean",
+    "contracts.io_defined": "boolean",
+    "contracts.change_declared": "boolean",
+    "execution.requested": "boolean",
+    "execution.modifies_undeclared_files": "boolean",
+    "execution.expands_scope": "boolean",
+    "execution.changes_contract": "boolean",
+    "execution.deviates_from_plan": "boolean",
+    "execution.exposes_secrets": "boolean",
+    "execution.missing_authoritative_validation": "boolean",
+    "execution.critical_action_without_confirmation": "boolean",
+    "execution.introduces_tight_coupling": "boolean",
+    "validation.performed": "boolean",
+    "validation.spec_alignment_ok": "boolean",
+    "validation.regression_checked": "boolean"
+  },
+  "rules": [
+    {
+      "id": "pipeline.no_execution_without_plan",
+      "stage": "before_execute",
+      "description": "Execution is not allowed without an explicit plan.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "execution.requested", "op": "eq", "value": true },
+        { "fact": "plan.exists", "op": "eq", "value": false }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "block",
+        "relaxed": "review"
+      }
+    },
+    {
+      "id": "anti.no_source_of_truth_artifact",
+      "stage": "before_execute",
+      "description": "Implementation is not allowed without a source-of-truth artifact.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "execution.requested", "op": "eq", "value": true },
+        { "fact": "source_of_truth.exists", "op": "eq", "value": false }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "block",
+        "relaxed": "review"
+      }
+    },
+    {
+      "id": "scope.single_behavior",
+      "stage": "before_execute",
+      "description": "A work item should implement only one behavior.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "work_item.behavior_count", "op": "gt", "value": 1 }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "review",
+        "relaxed": "review"
+      }
+    },
+    {
+      "id": "scope.explicit_boundaries",
+      "stage": "before_execute",
+      "description": "Execution scope must define allowed files, forbidden files, and operation type.",
+      "enabled": true,
+      "when_any": [
+        { "fact": "scope.allowed_files_defined", "op": "eq", "value": false },
+        { "fact": "scope.forbidden_files_defined", "op": "eq", "value": false },
+        { "fact": "scope.operation_type_defined", "op": "eq", "value": false }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "block",
+        "relaxed": "review"
+      }
+    },
+    {
+      "id": "context.read_before_write",
+      "stage": "before_execute",
+      "description": "Relevant analysis must happen before code generation or mutation.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "analysis.performed", "op": "eq", "value": false }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "review",
+        "relaxed": "review"
+      }
+    },
+    {
+      "id": "contracts.must_define_io",
+      "stage": "before_execute",
+      "description": "Inputs and outputs must be explicitly defined before implementation.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "contracts.io_defined", "op": "eq", "value": false }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "review",
+        "relaxed": "review"
+      }
+    },
+    {
+      "id": "security.no_exposed_secrets",
+      "stage": "after_execute",
+      "description": "Secrets must never be exposed in generated or modified artifacts.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "execution.exposes_secrets", "op": "eq", "value": true }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "block",
+        "relaxed": "block"
+      }
+    },
+    {
+      "id": "security.authoritative_validation_required",
+      "stage": "after_execute",
+      "description": "Critical validation must happen in an authoritative layer.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "execution.missing_authoritative_validation", "op": "eq", "value": true }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "block",
+        "relaxed": "review"
+      }
+    },
+    {
+      "id": "security.controlled_critical_actions",
+      "stage": "after_execute",
+      "description": "Critical actions require explicit confirmation or human gate.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "execution.critical_action_without_confirmation", "op": "eq", "value": true }
+      ],
+      "action_by_mode": {
+        "strict": "ask_human",
+        "balanced": "ask_human",
+        "relaxed": "review"
+      }
+    },
+    {
+      "id": "execution.no_implicit_changes",
+      "stage": "after_execute",
+      "description": "Execution must not modify files outside the declared scope.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "execution.modifies_undeclared_files", "op": "eq", "value": true }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "block",
+        "relaxed": "review"
+      }
+    },
+    {
+      "id": "execution.no_scope_expansion",
+      "stage": "after_execute",
+      "description": "Execution must not expand beyond the declared work item.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "execution.expands_scope", "op": "eq", "value": true }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "review",
+        "relaxed": "review"
+      }
+    },
+    {
+      "id": "contracts.no_implicit_changes",
+      "stage": "after_execute",
+      "description": "Contract changes must be explicitly declared.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "execution.changes_contract", "op": "eq", "value": true },
+        { "fact": "contracts.change_declared", "op": "eq", "value": false }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "review",
+        "relaxed": "review"
+      }
+    },
+    {
+      "id": "execution.follow_plan",
+      "stage": "after_execute",
+      "description": "Execution should remain aligned with the declared plan.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "execution.deviates_from_plan", "op": "eq", "value": true }
+      ],
+      "action_by_mode": {
+        "strict": "review",
+        "balanced": "review",
+        "relaxed": "allow"
+      }
+    },
+    {
+      "id": "architecture.low_coupling",
+      "stage": "after_execute",
+      "description": "Execution should avoid introducing tight coupling or hidden dependencies.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "execution.introduces_tight_coupling", "op": "eq", "value": true }
+      ],
+      "action_by_mode": {
+        "strict": "review",
+        "balanced": "review",
+        "relaxed": "allow"
+      }
+    },
+    {
+      "id": "validation.required",
+      "stage": "before_finalize",
+      "description": "Post-execution validation is mandatory before closure.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "validation.performed", "op": "eq", "value": false }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "block",
+        "relaxed": "review"
+      }
+    },
+    {
+      "id": "validation.source_of_truth_alignment",
+      "stage": "before_finalize",
+      "description": "Implementation must align with the source-of-truth artifact.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "validation.spec_alignment_ok", "op": "eq", "value": false }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "review",
+        "relaxed": "review"
+      }
+    },
+    {
+      "id": "validation.regression_check",
+      "stage": "before_finalize",
+      "description": "Core regression verification should happen before finalization.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "validation.regression_checked", "op": "eq", "value": false }
+      ],
+      "action_by_mode": {
+        "strict": "review",
+        "balanced": "review",
+        "relaxed": "allow"
+      }
+    },
+    {
+      "id": "source_of_truth.update_required",
+      "stage": "before_finalize",
+      "description": "If behavior changed, the source-of-truth artifact must be updated.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "source_of_truth.updated", "op": "eq", "value": false }
+      ],
+      "action_by_mode": {
+        "strict": "block",
+        "balanced": "review",
+        "relaxed": "review"
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "hello-world",
+  "decision_action": "allow",
+  "execution_status": "completed",
+  "handoff_status": "done",
+  "learning_review_status": "accepted"
+}

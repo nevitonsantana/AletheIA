@@ -1,0 +1,7 @@
+{
+  "name": "low-confidence-review",
+  "decision_action": "review",
+  "execution_status": "blocked",
+  "handoff_status": "ready_for_validation",
+  "learning_review_status": "accepted"
+}

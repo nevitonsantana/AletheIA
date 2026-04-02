@@ -1,0 +1,17 @@
+{
+  "id": "execution-scope-governance-demo",
+  "work_item_id": "governance-demo",
+  "operation": "update",
+  "allowed_files": [
+    "lib/aletheia/governance.ts",
+    "docs/architecture/aletheia-rule-interpreter.md"
+  ],
+  "forbidden_files": [
+    "src/components/landing/",
+    "src/app/dashboard/"
+  ],
+  "notes": [
+    "Keep the change inside governance artifacts and interpreter logic."
+  ],
+  "contract_change_declared": false
+}

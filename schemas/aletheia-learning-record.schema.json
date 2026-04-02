@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.local/schemas/learning-record.schema.json",
+  "title": "AletheIA Learning Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "source", "learning_type", "title", "summary", "evidence", "actionability", "review"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "ref"],
+      "properties": {
+        "type": { "type": "string", "enum": ["session", "handoff", "test", "eval", "incident", "review", "runtime"] },
+        "ref": { "type": "string", "minLength": 1 }
+      }
+    },
+    "learning_type": {
+      "type": "string",
+      "enum": ["heuristic", "pattern", "decision", "test_gap", "security", "quality", "process", "bugfix"]
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "actionability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["apply_to", "recommended_change"],
+      "properties": {
+        "apply_to": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["playbook", "checklist", "policy", "test", "skill", "doc", "adapter"] }
+        },
+        "recommended_change": { "type": "string", "minLength": 1 }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "type": "string", "enum": ["candidate", "accepted", "rejected", "deferred"] },
+        "approved_by": { "type": "string" }
+      }
+    }
+  }
+}

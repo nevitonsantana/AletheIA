@@ -1,0 +1,35 @@
+{
+  "id": "context-low-confidence-review",
+  "task_brief_id": "task-low-confidence-review",
+  "summary": "Partial context from a tentative draft and an ambiguous request that still needs clarification.",
+  "sources": [
+    {
+      "kind": "file",
+      "ref": "drafts/changelog-note.md",
+      "why_included": "Primary artifact that the requester referenced.",
+      "priority": "required",
+      "sensitivity": "internal",
+      "mutable": true
+    },
+    {
+      "kind": "conversation",
+      "ref": "user-request",
+      "why_included": "The phrasing of the request is itself the source of ambiguity.",
+      "priority": "recommended",
+      "sensitivity": "internal",
+      "mutable": false
+    }
+  ],
+  "excluded_context": [
+    "Full repository scan",
+    "Publication workflows"
+  ],
+  "rules_loaded": [
+    "quality-over-speed",
+    "clarify-before-publish"
+  ],
+  "budget": {
+    "strategy": "minimal",
+    "max_tokens": 1800
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.dev/schemas/execution-scope.schema.json",
+  "title": "AletheIA Execution Scope",
+  "type": "object",
+  "required": [
+    "id",
+    "work_item_id",
+    "operation",
+    "allowed_files",
+    "forbidden_files",
+    "contract_change_declared"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "work_item_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operation": {
+      "type": "string",
+      "enum": ["create", "update", "refactor", "delete", "analyze"]
+    },
+    "allowed_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contract_change_declared": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

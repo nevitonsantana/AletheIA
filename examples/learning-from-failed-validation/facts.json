@@ -1,0 +1,41 @@
+{
+  "work_item": {
+    "behavior_count": 1,
+    "output_defined": true
+  },
+  "analysis": {
+    "performed": true
+  },
+  "plan": {
+    "exists": true
+  },
+  "source_of_truth": {
+    "exists": true,
+    "updated": true
+  },
+  "scope": {
+    "allowed_files_defined": true,
+    "forbidden_files_defined": true,
+    "operation_type_defined": true
+  },
+  "contracts": {
+    "io_defined": true,
+    "change_declared": false
+  },
+  "execution": {
+    "requested": true,
+    "modifies_undeclared_files": false,
+    "expands_scope": false,
+    "changes_contract": false,
+    "deviates_from_plan": false,
+    "exposes_secrets": false,
+    "missing_authoritative_validation": false,
+    "critical_action_without_confirmation": false,
+    "introduces_tight_coupling": false
+  },
+  "validation": {
+    "performed": false,
+    "spec_alignment_ok": true,
+    "regression_checked": false
+  }
+}

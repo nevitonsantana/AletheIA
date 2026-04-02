@@ -1,0 +1,33 @@
+{
+  "id": "task-low-confidence-review",
+  "title": "Review tentative changelog request",
+  "problem": "The requester shared a partial and ambiguous draft, so the intended public output is still unclear.",
+  "objective": "Clarify whether the draft should be reviewed, rewritten, or published before any execution happens.",
+  "classification": {
+    "task_type": "A",
+    "severity": "S1",
+    "risk": "low"
+  },
+  "scope": {
+    "in": [
+      "draft note review",
+      "lightweight documentation guidance"
+    ],
+    "out": [
+      "automatic publication",
+      "product behavior changes"
+    ]
+  },
+  "constraints": [
+    "Current material is incomplete and tentative.",
+    "Do not publish directly from ambiguous input."
+  ],
+  "success_criteria": [
+    "The decision explicitly routes the ambiguous request to review.",
+    "No execution happens while confidence remains low."
+  ],
+  "validation_plan": [
+    "Check that the decision action is review.",
+    "Check that execution remains blocked."
+  ]
+}

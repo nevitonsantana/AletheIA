@@ -1,0 +1,7 @@
+{
+  "name": "high-risk-human-gate",
+  "decision_action": "ask_human",
+  "execution_status": "blocked",
+  "handoff_status": "ready_for_validation",
+  "learning_review_status": "accepted"
+}

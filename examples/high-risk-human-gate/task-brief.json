@@ -1,0 +1,35 @@
+{
+  "id": "task-high-risk-human-gate",
+  "title": "Escalate global execution policy change",
+  "problem": "A proposed policy change would affect how agent workflows execute across the organization.",
+  "objective": "Require explicit human approval before any policy mutation or rollout begins.",
+  "classification": {
+    "task_type": "C",
+    "severity": "S4",
+    "risk": "critical"
+  },
+  "scope": {
+    "in": [
+      "execution policy",
+      "governance rules",
+      "workflow safety controls"
+    ],
+    "out": [
+      "automatic rollout",
+      "silent policy mutation"
+    ]
+  },
+  "constraints": [
+    "Changes to global execution policy require human validation.",
+    "Do not mutate system-wide rules without explicit approval."
+  ],
+  "success_criteria": [
+    "The decision explicitly requires a human gate.",
+    "Execution is blocked before any mutation."
+  ],
+  "validation_plan": [
+    "Check that the decision action is ask_human.",
+    "Check that execution remains blocked."
+  ],
+  "human_gate_required": true
+}

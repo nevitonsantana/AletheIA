@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.local/schemas/context-pack.schema.json",
+  "title": "AletheIA Context Pack",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "task_brief_id", "summary", "sources", "budget"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "task_brief_id": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "ref", "why_included", "priority"],
+        "properties": {
+          "kind": { "type": "string", "enum": ["doc", "file", "memory", "rule", "conversation", "external", "repo"] },
+          "ref": { "type": "string", "minLength": 1 },
+          "why_included": { "type": "string", "minLength": 1 },
+          "priority": { "type": "string", "enum": ["required", "recommended", "optional"] },
+          "sensitivity": { "type": "string", "enum": ["public", "internal", "restricted", "secret"] },
+          "mutable": { "type": "boolean" }
+        }
+      }
+    },
+    "excluded_context": { "type": "array", "items": { "type": "string" } },
+    "rules_loaded": { "type": "array", "items": { "type": "string" } },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strategy", "max_tokens"],
+      "properties": {
+        "strategy": { "type": "string", "enum": ["minimal", "balanced", "deep"] },
+        "max_tokens": { "type": "integer", "minimum": 1 },
+        "compaction_required": { "type": "boolean" }
+      }
+    }
+  }
+}

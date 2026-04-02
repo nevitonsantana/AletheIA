@@ -1,246 +1,162 @@
-# AletheIA  
-**Decision Layer for AI Systems**  
-_From output to decision_
+# AletheIA
+
+**AletheIA** is an operating framework for AI-assisted work.
+
+It helps teams coordinate tasks, context, memory, skills, governance, validation, and learnings **without letting raw model output act directly on the system**.
+
+In simple terms:
+
+`model or agent output -> AletheIA -> execution`
 
 ---
 
-## Tese
+## Why AletheIA exists
 
-Modelos de IA geram respostas.  
-Não estruturam decisão.
+Many AI workflows still follow a fragile pattern:
 
-AletheIA define uma camada entre **output e execução**, organizando contexto, interpretação, validação e decisão de forma explicável, rastreável e controlada.
+`prompt -> output -> execution`
 
----
+That is fast, but often weak in:
 
-## O que é
+- traceability
+- scope control
+- policy enforcement
+- quality gates
+- reusable learnings
 
-Uma decision layer para sistemas baseados em IA.
+AletheIA introduces an explicit operating layer between output and action.
 
-AletheIA estrutura o desenvolvimento de aplicações com IA — especialmente em fluxos de **vibe coding** e **agentic systems** — reduzindo improviso, retrabalho e risco operacional.
+Its goal is not to slow teams down.
 
-O framework organiza como decisões são formadas antes da execução, incluindo:
+Its goal is to make AI-assisted work:
 
-- seleção e uso de contexto  
-- definição de spec e execution contracts  
-- orquestração de runtimes  
-- validação multicamada  
-- policy enforcement  
-- loops de aprendizado  
-- portabilidade entre modelos e agentes  
-
----
-
-## Problema
-
-Fluxos de desenvolvimento com IA hoje falham não por falta de geração, mas por falta de estrutura de decisão.
-
-Sistemas típicos:
-
-- executam diretamente outputs de modelos  
-- não explicitam por que algo foi executado  
-- não controlam contexto de forma consistente  
-- não possuem validação antes da ação  
-- não mantêm memória confiável  
-- não permitem auditoria real  
-
-Resultado:
-
-- comportamento imprevisível  
-- retrabalho constante  
-- dificuldade de escalar  
-- risco operacional elevado  
+- clearer
+- safer
+- more predictable
+- more reusable across projects
 
 ---
 
-## Abordagem
+## What this is
 
-AletheIA organiza o fluxo:
+AletheIA is:
 
-Signal → Context → Interpretation → Decision → Execution
+- a framework
+- provider-agnostic by design
+- focused on safe and explainable AI-assisted work
+- built to be reusable across projects
+- designed for structured decision-making before execution
 
-E define uma camada explícita entre:
+## What this is not
 
-Model Output → Execution
+AletheIA is not:
 
-Essa camada transforma resposta em **ação governada**.
-
----
-
-## Princípios
-
-- IA sugere. O sistema decide como executar.  
-- Toda decisão deve ser explicável.  
-- Toda ação deve ser rastreável.  
-- Contexto mínimo suficiente.  
-- Segurança antes de automação.  
-- Portabilidade antes de dependência de runtime.  
+- a chatbot
+- an app
+- a wrapper around a single LLM
+- a product-specific toolkit
+- a system that assumes automation is always the right answer
 
 ---
 
-## Arquitetura (alto nível)
+## Core operating loop
 
-/engine  
-  compiler/      → estrutura inputs em artefatos de decisão  
-  policy/        → regras, limites e governança  
-  simulator/     → cenários e validação  
-  runtime/       → execução controlada  
-  debugger/      → inspeção e rastreabilidade  
+AletheIA works through a controlled loop:
 
-/adapters  
-  codex/  
-  claude/  
-  goose/  
+`intent -> context -> decision -> execution -> validation -> learning`
 
-/schemas  
-  decision.schema.json  
+This means the framework helps answer questions such as:
 
-/starter-pack  
-  docs/  
-  features/  
-  evals/  
-  playbooks/  
+- What exactly is the task?
+- What context is truly needed?
+- What decision is being made?
+- Why is this allowed, blocked, or escalated?
+- What validation happened before closure?
+- What should be learned from success or failure?
 
 ---
 
-## Componentes
+## What the first public alpha should prove
 
-**Compiler**  
-Transforma inputs, contexto e intenções em estruturas formais de decisão.
+The first public alpha should prove that:
 
-**Policy Layer**  
-Define regras de execução, limites e guardrails.
-
-**Runtime**  
-Executa decisões com controle e observabilidade.
-
-**Simulator**  
-Permite testar cenários antes da execução real.
-
-**Debugger**  
-Permite entender decisões após execução.
-
-**Adapters**  
-Integra com diferentes runtimes (Codex, Claude, agentes locais, etc.).
+- an input can become a structured decision
+- governance can block unsafe or poorly framed closure
+- failed validation can generate reusable learnings
+- the framework remains small, inspectable, and deterministic
+- the core can be reused outside its original pilot project
 
 ---
 
-## O que este repositório entrega
+## Repository structure
 
-- Estrutura base da decision layer  
-- Schema de decisão (alpha)  
-- DSL inicial para modelagem  
-- Simulações de cenários  
-- Pseudo-engine para implementação  
-- Estratégias de memória e runtime  
-- Starter pack para projetos  
-
----
-
-## O que não está aqui
-
-- UI final  
-- integrações completas com APIs externas  
-- datasets proprietários  
-- modelos treinados específicos  
-
-Este projeto define **como decisões são estruturadas**, não apenas executadas.
+- `engine/` — minimal deterministic kernel, governance, and learnings helpers
+- `schemas/` — JSON schemas for framework contracts
+- `policies/` — governance packs and policy definitions
+- `examples/` — canonical examples and golden fixtures
+- `tests/` — contract, golden, e2e, and learning-oriented checks
+- `starter-pack/` — reusable operating guides, checklists, and templates
+- `docs/` — architecture, roadmap, pilot narrative, and migration notes
 
 ---
 
-## Casos de uso
+## Initial examples
 
-- desenvolvimento de aplicações com IA  
-- sistemas multi-agente  
-- copilotos e assistentes avançados  
-- workflows críticos com IA  
-- automações com necessidade de governança  
-- ambientes com exigência de auditabilidade  
+The alpha starts with a few small examples that make the framework tangible:
 
----
-
-## Como usar
-
-1. Explore `/starter-pack`  
-2. Entenda `/schemas`  
-3. Implemente `/engine`  
-4. Rode `/simulator`  
-5. Integre via `/adapters`  
+- `hello-world` — the smallest end-to-end path
+- `low-confidence-review` — when ambiguity should stop direct execution
+- `high-risk-human-gate` — when risk requires explicit human approval
+- `learning-from-failed-validation` — when failed closure should also produce reusable learning
+- `governance` — process-oriented rule evaluation using facts + policy pack
 
 ---
 
-## Estrutura conceitual
+## Design principles
 
-AletheIA atua como uma camada entre:
-
-Model → Decision → Execution
-
-Separando:
-
-- geração  
-- interpretação  
-- decisão  
-- execução  
-
-Essa separação reduz acoplamento e aumenta controle.
+1. Clarity over speed
+2. Control over automation
+3. Consistency over convenience
+4. Reuse before duplication
+5. Learnings must be reviewable
+6. The framework should stay inspectable and debuggable
 
 ---
 
-## Status
+## Current status
 
-Alpha — foco em:
+This repository is being prepared as the first public alpha of AletheIA.
 
-- coerência do modelo  
-- estrutura da decision layer  
-- base para implementação  
+It was born from real operational work inside the `Crisis Monitor` project and is now being extracted into a standalone reusable framework.
 
-Ainda não otimizado para produção.
+Right now, the public draft already contains:
 
----
-
-## Roadmap
-
-Curto prazo:
-
-- consolidar schema de decisão  
-- estruturar runtime mínimo  
-- melhorar simulador  
-- definir contratos de execução  
-
-Médio prazo:
-
-- suporte robusto a multi-agentes  
-- taxonomia de decisões  
-- validação automática mais forte  
-- integração com mais runtimes  
-
-Longo prazo:
-
-- especialização por domínio  
-- aprendizado baseado em execução  
-- evolução para camada padrão em sistemas de IA  
+- the first core contracts
+- a minimal kernel
+- a governance pack
+- a quality baseline
+- a first learnings path
+- a portable draft structure outside the original project
 
 ---
 
-## Direção
+## Reading order
 
-Este projeto não compete por melhores respostas.
+If this is your first time here, start with:
 
-Ele compete por:
-
-- melhores decisões  
-- decisões explicáveis  
-- decisões confiáveis  
-
----
-
-## Licença
-
-Apache 2.0
+1. `docs/00-overview.md`
+2. `docs/architecture.md`
+3. `docs/governance.md`
+4. `docs/quality.md`
+5. `examples/`
 
 ---
 
-## Nota final
+## Public alpha direction
 
-IA responde.  
-AletheIA estrutura como sistemas decidem.
+The next milestones are:
+
+- refine the public narrative
+- complete the core extraction
+- decide how the starter-pack will enter the public repo
+- publish the first standalone alpha

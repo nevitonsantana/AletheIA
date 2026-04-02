@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.dev/schemas/policy-evaluation.schema.json",
+  "title": "AletheIA Policy Evaluation",
+  "type": "object",
+  "required": [
+    "id",
+    "work_item_id",
+    "policy_pack",
+    "hook",
+    "mode",
+    "final_action",
+    "matched_rules",
+    "evaluated_rule_ids",
+    "facts_summary",
+    "created_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "work_item_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy_pack": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "hook": {
+      "type": "string",
+      "enum": ["before_execute", "after_execute", "before_finalize"]
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["strict", "balanced", "relaxed"]
+    },
+    "final_action": {
+      "type": "string",
+      "enum": ["allow", "review", "ask_human", "block"]
+    },
+    "matched_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "description", "action", "facts_used"],
+        "properties": {
+          "id": { "type": "string" },
+          "description": { "type": "string" },
+          "action": {
+            "type": "string",
+            "enum": ["allow", "review", "ask_human", "block"]
+          },
+          "facts_used": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evaluated_rule_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "facts_summary": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}

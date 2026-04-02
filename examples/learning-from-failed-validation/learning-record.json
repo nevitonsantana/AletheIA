@@ -1,0 +1,24 @@
+{
+  "id": "learning-aletheia-learning-failed-validation-before_finalize",
+  "source": {
+    "type": "review",
+    "ref": "policy-evaluation-aletheia-learning-failed-validation-before_finalize"
+  },
+  "learning_type": "test_gap",
+  "title": "Failed validation should become reusable learning",
+  "summary": "The task was blocked before finalization because mandatory validation did not happen, so the framework should add or reinforce a validation step before closure.",
+  "evidence": [
+    "hook:before_finalize",
+    "final_action:block",
+    "rule:validation.required",
+    "validation.performed=false"
+  ],
+  "actionability": {
+    "apply_to": ["test", "checklist", "playbook"],
+    "recommended_change": "Create or enforce a mandatory validation step before allowing task finalization."
+  },
+  "review": {
+    "status": "accepted",
+    "approved_by": "framework-designer"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.local/schemas/task-brief.schema.json",
+  "title": "AletheIA Task Brief",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "problem", "objective", "classification", "scope", "success_criteria"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "problem": { "type": "string", "minLength": 1 },
+    "objective": { "type": "string", "minLength": 1 },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["task_type", "severity", "risk"],
+      "properties": {
+        "task_type": { "type": "string", "enum": ["A", "B", "C"] },
+        "severity": { "type": "string", "enum": ["S1", "S2", "S3", "S4"] },
+        "risk": { "type": "string", "enum": ["low", "medium", "high", "critical"] }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["in", "out"],
+      "properties": {
+        "in": { "type": "array", "items": { "type": "string" } },
+        "out": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "constraints": { "type": "array", "items": { "type": "string" } },
+    "success_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "validation_plan": { "type": "array", "items": { "type": "string" } },
+    "human_gate_required": { "type": "boolean" }
+  }
+}

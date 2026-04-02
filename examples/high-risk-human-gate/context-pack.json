@@ -1,0 +1,35 @@
+{
+  "id": "context-high-risk-human-gate",
+  "task_brief_id": "task-high-risk-human-gate",
+  "summary": "Core governance context for a critical workflow-policy change that cannot proceed without human approval.",
+  "sources": [
+    {
+      "kind": "doc",
+      "ref": "docs/THREAD_OPERATING_SYSTEM.md",
+      "why_included": "Captures the current operational rules that would be affected.",
+      "priority": "required",
+      "sensitivity": "internal",
+      "mutable": false
+    },
+    {
+      "kind": "rule",
+      "ref": "global-execution-policy",
+      "why_included": "Represents the policy surface under discussion.",
+      "priority": "required",
+      "sensitivity": "restricted",
+      "mutable": false
+    }
+  ],
+  "excluded_context": [
+    "UI polish details",
+    "Non-governance backlog items"
+  ],
+  "rules_loaded": [
+    "human-gate-required",
+    "security-by-default"
+  ],
+  "budget": {
+    "strategy": "balanced",
+    "max_tokens": 2400
+  }
+}

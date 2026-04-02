@@ -1,0 +1,46 @@
+{
+  "id": "context-hello-world-readme-title",
+  "task_brief_id": "task-hello-world-readme-title",
+  "summary": "Minimal context for a low-risk documentation-only title adjustment.",
+  "sources": [
+    {
+      "kind": "file",
+      "ref": "README.md",
+      "why_included": "Primary target of the change",
+      "priority": "required",
+      "sensitivity": "public",
+      "mutable": true
+    },
+    {
+      "kind": "doc",
+      "ref": "docs/ARCHITECTURE.md",
+      "why_included": "Confirms that no structural change is intended",
+      "priority": "recommended",
+      "sensitivity": "internal",
+      "mutable": false
+    },
+    {
+      "kind": "rule",
+      "ref": "Keep wording concise and descriptive",
+      "why_included": "Applies the framework's clarity-first writing rule",
+      "priority": "required",
+      "sensitivity": "internal",
+      "mutable": false
+    }
+  ],
+  "excluded_context": [
+    "Full repository tree",
+    "Backend implementation files",
+    "Long session history"
+  ],
+  "rules_loaded": [
+    "context minimum sufficient",
+    "reuse first",
+    "quality over speed"
+  ],
+  "budget": {
+    "strategy": "minimal",
+    "max_tokens": 2500,
+    "compaction_required": false
+  }
+}
