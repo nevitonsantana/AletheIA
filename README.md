@@ -135,6 +135,7 @@ Today, this public draft already contains:
 - a minimal kernel
 - a governance pack
 - an explicit token policy
+- a small executable governance baseline
 - a quality baseline
 - a first learnings path
 - a reusable starter-pack slice
@@ -164,3 +165,16 @@ The next steps are:
 - convert pilot learnings into framework improvements
 - start using AletheIA to improve AletheIA itself
 - strengthen adoption only after the core and pilots are solid
+
+---
+
+## Minimal governance baseline
+
+Alpha 1 now includes a small executable governance check:
+
+- `bash scripts/check-governance.sh`
+
+This is intentionally modest.
+
+It does not try to be a heavy enforcement layer yet.
+It only proves that AletheIA can move from governance prose into a small technical baseline.

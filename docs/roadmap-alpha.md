@@ -41,6 +41,11 @@ This phase is not the moment for:
 
 The goal is to make the framework inspectable, teachable, and minimally enforceable.
 
+Current Alpha 1 baseline artifacts now include:
+
+- `docs/token-policy.md`
+- `scripts/check-governance.sh`
+
 ---
 
 ## Alpha 2 — Real Pilots + Self-Application
