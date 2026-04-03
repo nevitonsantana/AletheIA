@@ -103,6 +103,7 @@ Includes:
 - better onboarding
 - stronger contributor guidance
 - stronger starter-pack
+- clearer guidance for applying AletheIA in an existing project
 - cleaner release structure
 - reusable domain governance packs
 - tighter release hygiene
@@ -131,6 +132,50 @@ AletheIA should become easier to:
 
 ---
 
+## Alpha 4 — Orchestrated Handoffs & Multi-Agent Continuity
+
+Focus:
+- make handoffs between agents explicit, reusable, model-agnostic, and increasingly automatable
+
+Includes:
+- structured inter-agent handoff contracts
+- handoff generation patterns from real work items
+- clearer separation between human-facing summaries and agent-facing restart packages
+- model-agnostic continuity patterns that do not depend on one LLM or coding tool
+- starter-pack guidance for cross-agent execution flows
+- reusable patterns for passing scope, validation, risks, and next action across agents
+
+### What Alpha 4 must prove
+
+By the end of Alpha 4, AletheIA should already show that:
+
+- handoffs can be produced as compact restart packages instead of ad-hoc prompts
+- one agent can stop at its boundary and prepare the next agent's work clearly
+- cross-agent continuity can happen without relying on hidden thread memory
+- handoff artifacts can be generated in a repeatable way from real project work
+- the handoff structure can work across different LLMs and agent shells without changing its core meaning
+
+### Notes
+
+Alpha 4 is not about adding more agents for their own sake.
+It is about making agent boundaries safer and more productive.
+
+The key move in Alpha 4 is turning:
+
+`work in one agent -> explicit handoff artifact -> reliable continuation in another agent`
+
+into a reusable operating pattern.
+
+Potential first artifacts for this phase may include:
+
+- handoff generation guidance
+- agent-facing handoff templates
+- project-level handoff conventions
+- automated or semi-automated handoff creation from completed work items
+- execution-scope fields such as allowed files, forbidden files, allowed data, semantic guardrails, acceptance criteria, and expected response format
+
+---
+
 ## Cross-Alpha principles
 
 Across all three alphas, AletheIA should preserve a few boundaries:
@@ -146,11 +191,10 @@ Across all three alphas, AletheIA should preserve a few boundaries:
 
 ## Near-term priority order
 
-1. consolidate the Alpha 2 bridge
-   - self-application
-   - Crisis Monitor pilot
-   - pilot conversion
-   - project extension pattern
-2. continue validating the Crisis Monitor pilot and nearby real slices
-3. convert pilot learnings into framework updates
-4. strengthen adoption and ecosystem only after the core and pilots are solid
+1. open the first Alpha 3 adoption artifacts
+   - applying AletheIA to an existing project
+   - stronger onboarding path
+2. keep the Alpha 2 bridge coherent while adoption grows
+3. continue validating the Crisis Monitor pilot and nearby real slices
+4. convert pilot learnings into framework updates
+5. shape Alpha 4 around orchestrated handoffs and cross-agent continuity

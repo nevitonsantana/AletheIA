@@ -14,3 +14,10 @@ The goal is to provide a practical baseline for:
 - durable decisions
 
 Start here if you want the operating method around the framework, not only the technical core.
+
+
+## Adoption note
+
+If you are starting from an existing repository rather than a blank setup, read:
+
+- `docs/apply-to-existing-project.md`
