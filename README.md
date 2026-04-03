@@ -141,6 +141,7 @@ Today, this public draft already contains:
 - a quality baseline
 - a first learnings path
 - a reusable starter-pack slice
+- an explicit Alpha 2 bridge for self-application, pilot conversion, and project extension
 
 ---
 
@@ -155,8 +156,12 @@ If this is your first time here, start with:
 5. `docs/durable-decisions.md`
 6. `docs/enforcement-boundaries.md`
 7. `docs/quality.md`
-8. `examples/`
-9. `starter-pack/`
+8. `docs/self-application.md`
+9. `docs/pilot-crisis-monitor.md`
+10. `docs/pilot-conversion.md`
+11. `docs/project-extension-pattern.md`
+12. `examples/`
+13. `starter-pack/`
 
 ---
 
@@ -164,10 +169,10 @@ If this is your first time here, start with:
 
 The next steps are:
 
-- consolidate the Alpha 1 governance baseline
-- keep validating the Crisis Monitor pilot
-- convert pilot learnings into framework improvements
-- start using AletheIA to improve AletheIA itself
+- consolidate the Alpha 2 bridge now that its four pillars are explicit
+- keep validating the Crisis Monitor pilot and adjacent real slices
+- keep converting pilot learnings into framework improvements
+- keep using AletheIA to improve AletheIA itself
 - strengthen adoption only after the core and pilots are solid
 
 ---

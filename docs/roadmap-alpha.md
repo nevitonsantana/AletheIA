@@ -90,6 +90,8 @@ Current Alpha 2 bridge artifacts now include:
 - `docs/pilot-conversion.md`
 - `docs/project-extension-pattern.md`
 
+Together, these four artifacts define how AletheIA learns from pilots, improves itself, and preserves the boundary between reusable core and local project context.
+
 ---
 
 ## Alpha 3 — Adoption + Ecosystem
@@ -144,12 +146,11 @@ Across all three alphas, AletheIA should preserve a few boundaries:
 
 ## Near-term priority order
 
-1. finish strengthening Alpha 1 baseline
-   - token policy
-   - technical governance baseline
-   - durable decision discipline
-   - enforcement boundary clarity
-2. continue validating the Crisis Monitor pilot
+1. consolidate the Alpha 2 bridge
+   - self-application
+   - Crisis Monitor pilot
+   - pilot conversion
+   - project extension pattern
+2. continue validating the Crisis Monitor pilot and nearby real slices
 3. convert pilot learnings into framework updates
-4. start the self-application loop
-5. improve adoption and ecosystem only after the core and pilots are solid
+4. strengthen adoption and ecosystem only after the core and pilots are solid

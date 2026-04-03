@@ -25,6 +25,7 @@ The public repository is organized around three blocks:
    - how it was extracted from Crisis Monitor
    - what was learned in the real test field
    - how pilot learnings return into framework evolution
+   - how self-application, pilot conversion, and project extension stay connected
 
 The Crisis Monitor pilot is the first concrete example of this bridge.
 
@@ -33,3 +34,11 @@ The key idea is simple:
 AletheIA should be reusable outside the original pilot while still preserving the lessons learned from that pilot.
 
 That reuse depends on an explicit boundary between the framework core and each project's local extension layer.
+
+
+At this point, Alpha 2 is organized around four explicit bridge artifacts:
+
+- `docs/self-application.md`
+- `docs/pilot-crisis-monitor.md`
+- `docs/pilot-conversion.md`
+- `docs/project-extension-pattern.md`
