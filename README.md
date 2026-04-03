@@ -172,6 +172,16 @@ The next steps are:
 
 ---
 
+## First Alpha 2 bridge
+
+The first explicit bridge into Alpha 2 is:
+
+- `docs/self-application.md`
+
+This document explains how AletheIA should increasingly use its own operating logic to guide changes in the AletheIA repository itself.
+
+---
+
 ## Minimal governance baseline
 
 Alpha 1 now includes a small executable governance check:

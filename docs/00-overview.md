@@ -24,6 +24,7 @@ The public repository is organized around three blocks:
    - why the framework emerged
    - how it was extracted from Crisis Monitor
    - what was learned in the real test field
+   - how pilot learnings return into framework evolution
 
 The key idea is simple:
 

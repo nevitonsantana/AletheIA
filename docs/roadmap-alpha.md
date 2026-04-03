@@ -61,6 +61,7 @@ Includes:
 - second small pilot or adjacent real flow
 - stronger pilot learnings loop
 - project extension pattern
+- self-application loop
 - self-application of AletheIA contracts to framework evolution
 - clearer conversion of pilot learnings into framework improvements
 
@@ -81,6 +82,10 @@ The most important move in Alpha 2 is not adding more framework surface.
 It is closing the loop between:
 
 `pilot -> learning -> framework improvement`
+
+Current Alpha 2 bridge artifacts now include:
+
+- `docs/self-application.md`
 
 ---
 
