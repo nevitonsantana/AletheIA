@@ -88,6 +88,7 @@ Current Alpha 2 bridge artifacts now include:
 - `docs/self-application.md`
 - `docs/pilot-crisis-monitor.md`
 - `docs/pilot-conversion.md`
+- `docs/project-extension-pattern.md`
 
 ---
 

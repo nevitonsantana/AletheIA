@@ -179,8 +179,9 @@ The first explicit bridge into Alpha 2 is:
 - `docs/self-application.md`
 - `docs/pilot-crisis-monitor.md`
 - `docs/pilot-conversion.md`
+- `docs/project-extension-pattern.md`
 
-This document explains how AletheIA should increasingly use its own operating logic to guide changes in the AletheIA repository itself.
+Together, these documents explain how AletheIA should evolve itself, learn from pilots, and preserve a clear boundary between framework core and local project extensions.
 
 ---
 

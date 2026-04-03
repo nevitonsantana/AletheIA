@@ -170,6 +170,7 @@ Later versions may connect self-application more directly to:
 See also:
 
 - `docs/pilot-conversion.md`
+- `docs/project-extension-pattern.md`
 
 Alpha 2 does not need all of that on day one.
 
