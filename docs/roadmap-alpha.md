@@ -140,6 +140,7 @@ Across all three alphas, AletheIA should preserve a few boundaries:
    - token policy
    - technical governance baseline
    - durable decision discipline
+   - enforcement boundary clarity
 2. continue validating the Crisis Monitor pilot
 3. convert pilot learnings into framework updates
 4. start the self-application loop

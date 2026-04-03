@@ -136,6 +136,8 @@ Today, this public draft already contains:
 - a governance pack
 - an explicit token policy
 - a small executable governance baseline
+- a lightweight durable decision discipline
+- an explicit boundary between behavioral and technical enforcement
 - a quality baseline
 - a first learnings path
 - a reusable starter-pack slice
@@ -162,7 +164,7 @@ If this is your first time here, start with:
 
 The next steps are:
 
-- harden the Alpha 1 governance baseline
+- consolidate the Alpha 1 governance baseline
 - keep validating the Crisis Monitor pilot
 - convert pilot learnings into framework improvements
 - start using AletheIA to improve AletheIA itself

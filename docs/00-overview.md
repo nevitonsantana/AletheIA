@@ -9,6 +9,8 @@ The public repository is organized around three blocks:
    - engine
    - policies
    - token discipline
+   - durable reasoning
+   - enforcement clarity
    - examples
    - tests
 
@@ -16,7 +18,7 @@ The public repository is organized around three blocks:
    - reusable operating guides
    - checklists
    - templates
-   - branch, context, and quality discipline
+   - branch, context, quality, and decision discipline
 
 3. **pilot materials**
    - why the framework emerged
