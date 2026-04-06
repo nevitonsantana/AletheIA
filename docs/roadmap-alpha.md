@@ -168,11 +168,14 @@ The key move in Alpha 4 is turning:
 
 into a reusable operating pattern.
 
-Potential first artifacts for this phase may include:
+Current Alpha 4 baseline artifacts now include:
 
 - `docs/agent-handoffs.md`
+- `starter-pack/templates/agent-handoff-template.md`
+
+Next artifacts for this phase may include:
+
 - handoff generation guidance
-- agent-facing handoff templates
 - project-level handoff conventions
 - automated or semi-automated handoff creation from completed work items
 - execution-scope fields such as allowed files, forbidden files, allowed data, semantic guardrails, acceptance criteria, and expected response format
@@ -236,13 +239,16 @@ Across all three alphas, AletheIA should preserve a few boundaries:
 
 ## Near-term priority order
 
-1. consolidate the current Alpha 3 adoption baseline
+1. consolidate the current Alpha 4 handoff baseline
+   - agent handoff concept doc
+   - agent handoff template
+   - alignment with Alpha 3 adoption assets
+2. keep the current Alpha 3 adoption baseline coherent
    - getting started
    - existing-project application
    - contributor guidance
    - project extension template
-2. keep the Alpha 2 bridge coherent while adoption grows
-3. continue validating the Crisis Monitor pilot and nearby real slices
-4. convert pilot learnings into framework updates
-5. shape Alpha 4 around orchestrated handoffs and cross-agent continuity
+3. keep the Alpha 2 bridge coherent while adoption grows
+4. continue validating the Crisis Monitor pilot and nearby real slices
+5. convert pilot learnings into framework updates
 6. keep Alpha 5 framed as experimental structured risk inference rather than strong formal verification
