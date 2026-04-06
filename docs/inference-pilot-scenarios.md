@@ -141,3 +141,4 @@ The goal is to find the first task shapes where the capability clearly earns its
 - `docs/structured-risk-inference.md`
 - `starter-pack/templates/inference-artifact-template.md`
 - `starter-pack/guides/inference-trigger-guidance.md`
+- `examples/structured-risk-inference/README.md`

@@ -1,0 +1,48 @@
+{
+  "hypothesis": "Passing the remaining notification-review UI work to another agent with this inference artifact preserved will allow the new escalation states to be rendered without changing backend contract semantics.",
+  "premises": [
+    "The authoritative contract already exposes escalation_state and audit_reason for the notification-review screen.",
+    "The remaining work is explicitly scoped to the UI layer and should not modify the API contract or server-side state model.",
+    "The source-of-truth artifact already defines the meaning of each escalation state and marks the backend contract as stable for this slice."
+  ],
+  "assumptions": [
+    "The receiving agent will not reinterpret escalation_state into a different semantic category for presentation.",
+    "No hidden view-model formatter currently depends on legacy status strings that are not described in the source-of-truth artifact."
+  ],
+  "impacted_paths": [
+    "notification review route -> UI state mapping -> escalation badge rendering",
+    "notification review route -> audit metadata -> audit reason display"
+  ],
+  "invariants": [
+    "The backend contract remains unchanged.",
+    "Escalation state meaning remains one-to-one with the documented contract.",
+    "Audit reason remains visible where the source-of-truth artifact requires it."
+  ],
+  "risks": [
+    {
+      "description": "The receiving agent may remap escalation states into a visually convenient but semantically incorrect UI representation.",
+      "likelihood": "medium",
+      "impact": "high"
+    },
+    {
+      "description": "A copy or presentation change may hide or downgrade audit_reason even though the contract still provides it.",
+      "likelihood": "medium",
+      "impact": "medium"
+    }
+  ],
+  "unknowns": [
+    "There is no existing visual regression artifact covering the new escalation states.",
+    "It is not yet verified whether any downstream component assumes the old status vocabulary."
+  ],
+  "test_gaps": [
+    "No test currently asserts one-to-one UI mapping for every escalation_state value.",
+    "No test currently verifies audit_reason visibility for the new review states after the handoff completes."
+  ],
+  "suggested_tests": [
+    "Add a focused UI mapping test for every documented escalation_state value.",
+    "Add a regression check for audit_reason visibility on the notification-review screen.",
+    "Require the receiving agent to report whether any legacy status formatter had to be preserved or replaced."
+  ],
+  "confidence_level": "medium",
+  "confidence_basis": "The backend contract and state meanings are already explicit, but the handoff still carries semantic risk because the receiving agent must preserve rationale, not only instructions, across a UI-only continuation boundary."
+}

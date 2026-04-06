@@ -221,6 +221,10 @@ For recommended first pilots, see:
 
 - `docs/inference-pilot-scenarios.md`
 
+For concrete example artifacts, see:
+
+- `examples/structured-risk-inference/README.md`
+
 
 ### 1. Patch review
 

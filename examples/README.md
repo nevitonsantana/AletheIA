@@ -21,6 +21,8 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - mostra como facts + governance rules produzem `allow`, `review`, `ask_human` e `block`
 - `learning-from-failed-validation/`
   - mostra como uma falha de validação vira bloqueio + aprendizado reaproveitável
+- `structured-risk-inference/`
+  - mostra exemplos concretos de inference artifacts para risco de refactor e handoff de alto impacto
 
 ---
 
