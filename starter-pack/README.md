@@ -30,3 +30,10 @@ If you are starting from an existing repository rather than a blank setup, read:
 If you are adopting AletheIA inside a real project and need to make the local layer explicit, use:
 
 - `starter-pack/templates/project-extension-template.md`
+
+
+## Alpha 4 preview
+
+If you are thinking about cross-agent continuity and operational restart packages, read:
+
+- `docs/agent-handoffs.md`

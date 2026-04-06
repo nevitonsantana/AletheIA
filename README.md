@@ -211,6 +211,7 @@ That future direction should stay evidence-oriented and conditional, rather than
 
 See also:
 
+- `docs/agent-handoffs.md`
 - `docs/structured-risk-inference.md`
 
 ---

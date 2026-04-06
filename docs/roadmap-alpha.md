@@ -170,6 +170,7 @@ into a reusable operating pattern.
 
 Potential first artifacts for this phase may include:
 
+- `docs/agent-handoffs.md`
 - handoff generation guidance
 - agent-facing handoff templates
 - project-level handoff conventions
