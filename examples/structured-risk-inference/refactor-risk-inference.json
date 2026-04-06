@@ -1,0 +1,48 @@
+{
+  "hypothesis": "Extracting checkout eligibility logic into a shared helper preserves current behavior while reducing duplicated branching.",
+  "premises": [
+    "The current checkout flow and the admin override flow both evaluate eligibility against the same product rules, but do so in duplicated code paths.",
+    "The source-of-truth artifact states that blocked accounts must never reach checkout and premium accounts may bypass the waitlist.",
+    "Existing unit coverage already asserts the blocked-account path and the premium-account bypass in the current implementation."
+  ],
+  "assumptions": [
+    "No caller depends on the current order of conditional checks beyond the documented rules.",
+    "The admin override path does not rely on an undocumented side effect in the existing inline implementation."
+  ],
+  "impacted_paths": [
+    "checkout request -> eligibility evaluation -> payment availability",
+    "admin override flow -> shared eligibility helper -> final allow/block decision"
+  ],
+  "invariants": [
+    "Blocked accounts must still be denied before checkout begins.",
+    "Premium accounts must still bypass the waitlist when the documented rule applies.",
+    "The final allow or block decision must remain traceable to the same documented eligibility rules."
+  ],
+  "risks": [
+    {
+      "description": "The shared helper changes the evaluation order and unintentionally allows a blocked account to pass through a later premium branch.",
+      "likelihood": "medium",
+      "impact": "high"
+    },
+    {
+      "description": "The admin override path loses an existing semantic distinction because both paths are normalized too aggressively.",
+      "likelihood": "medium",
+      "impact": "medium"
+    }
+  ],
+  "unknowns": [
+    "There is no current integration test covering blocked-account behavior through the admin override path.",
+    "It is not yet demonstrated whether downstream audit labels depend on the old inline branch structure."
+  ],
+  "test_gaps": [
+    "No integration scenario currently covers blocked-account handling after the helper extraction.",
+    "No regression test currently asserts that premium bypass and admin override semantics remain distinct where required."
+  ],
+  "suggested_tests": [
+    "Add an integration test for blocked-account denial after helper extraction.",
+    "Add a regression test covering premium bypass and admin override behavior through the shared helper.",
+    "Add a validation step for audit labels if those labels are expected downstream."
+  ],
+  "confidence_level": "medium",
+  "confidence_basis": "The main rules are documented and partly covered, but the helper extraction crosses more than one path and still leaves an important integration gap around the admin override branch."
+}
