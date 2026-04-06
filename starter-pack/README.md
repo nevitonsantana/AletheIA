@@ -32,27 +32,14 @@ If you are adopting AletheIA inside a real project and need to make the local la
 - `starter-pack/templates/project-extension-template.md`
 
 
-## Alpha 4 preview
-
-If you are thinking about cross-agent continuity and operational restart packages, read:
-
-- `docs/agent-handoffs.md`
-
-
 ## Alpha 4 baseline
 
-The first practical Alpha 4 handoff baseline now includes:
+The current practical Alpha 4 handoff baseline now includes:
 
 - `docs/agent-handoffs.md`
 - `starter-pack/guides/agent-handoff-generation.md`
 - `starter-pack/templates/agent-handoff-template.md`
-
-Use these when you need model-agnostic continuity between agents without relying on hidden thread memory.
-
-For local repo conventions that sit on top of the shared handoff structure, also read:
-
 - `docs/project-handoff-conventions.md`
-
-For the next step toward semi-automated handoff creation from completed work, also read:
-
 - `docs/handoff-capture-pattern.md`
+
+Use this set when you need model-agnostic continuity between agents without relying on hidden thread memory.

@@ -174,11 +174,13 @@ Current Alpha 4 baseline artifacts now include:
 - `starter-pack/guides/agent-handoff-generation.md`
 - `starter-pack/templates/agent-handoff-template.md`
 - `docs/project-handoff-conventions.md`
+- `docs/handoff-capture-pattern.md`
 
 Next artifacts for this phase may include:
 
-- `docs/handoff-capture-pattern.md`
 - execution-scope fields such as allowed files, forbidden files, allowed data, semantic guardrails, acceptance criteria, and expected response format
+- project-level handoff examples drawn from real pilot work
+- more explicit draft/review flows for semi-automated handoff assembly
 
 ---
 
@@ -240,8 +242,11 @@ Across all three alphas, AletheIA should preserve a few boundaries:
 ## Near-term priority order
 
 1. consolidate the current Alpha 4 handoff baseline
-   - agent handoff concept doc
-   - agent handoff template
+   - concept doc
+   - generation guide
+   - handoff template
+   - project-level conventions
+   - handoff capture pattern
    - alignment with Alpha 3 adoption assets
 2. keep the current Alpha 3 adoption baseline coherent
    - getting started

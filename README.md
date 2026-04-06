@@ -134,7 +134,7 @@ Today, this public draft already contains:
 - an Alpha 1 baseline for governance, token discipline, durable decisions, enforcement clarity, quality, and learnings
 - an explicit Alpha 2 bridge for self-application, pilot conversion, and project extension
 - an Alpha 3 adoption baseline for getting started, existing-project application, contribution guidance, and starter-pack reuse
-- the first concrete Alpha 4 handoff assets for model-agnostic restart packages between agents
+- an Alpha 4 handoff baseline for model-agnostic restart packages, project conventions, and semi-automated handoff capture
 
 In practical terms, that currently includes:
 
@@ -184,11 +184,11 @@ If this is your first time here, start with:
 
 The next steps are:
 
-- consolidate the first Alpha 4 handoff baseline without losing the Alpha 3 adoption gains
+- consolidate the current Alpha 4 handoff baseline without losing the Alpha 3 adoption gains
 - keep validating the Crisis Monitor pilot and adjacent real slices
 - keep converting pilot learnings into framework improvements
 - keep using AletheIA to improve AletheIA itself
-- extend Alpha 4 from concept + template into more repeatable handoff operating patterns
+- extend Alpha 4 from documented patterns into more repeatable handoff operating flows
 - keep Alpha 5 framed as evidence-oriented inference for higher-risk tasks
 
 ---
@@ -198,7 +198,7 @@ The next steps are:
 - Alpha 1 established the governance and validation baseline.
 - Alpha 2 established the pilot, self-application, and conversion bridge.
 - Alpha 3 is making the framework easier to adopt and contribute to.
-- Alpha 4 is starting to make inter-agent continuity explicit and reusable.
+- Alpha 4 is making inter-agent continuity explicit, reusable, and more operational.
 
 ---
 
