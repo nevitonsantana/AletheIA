@@ -235,10 +235,11 @@ Across all three alphas, AletheIA should preserve a few boundaries:
 
 ## Near-term priority order
 
-1. keep expanding Alpha 3 adoption artifacts
-   - applying AletheIA to an existing project
-   - explicit getting-started guide
-   - stronger onboarding and contributor guidance
+1. consolidate the current Alpha 3 adoption baseline
+   - getting started
+   - existing-project application
+   - contributor guidance
+   - project extension template
 2. keep the Alpha 2 bridge coherent while adoption grows
 3. continue validating the Crisis Monitor pilot and nearby real slices
 4. convert pilot learnings into framework updates

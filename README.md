@@ -142,7 +142,7 @@ Today, this public draft already contains:
 - a first learnings path
 - a reusable starter-pack slice
 - an explicit Alpha 2 bridge for self-application, pilot conversion, and project extension
-- initial Alpha 3 adoption artifacts for getting started and existing-project application
+- initial Alpha 3 adoption artifacts for getting started, existing-project application, contribution guidance, and starter-pack reuse
 
 ---
 
@@ -163,8 +163,10 @@ If this is your first time here, start with:
 11. `docs/pilot-conversion.md`
 12. `docs/project-extension-pattern.md`
 13. `docs/apply-to-existing-project.md`
-14. `examples/`
+14. `CONTRIBUTING.md`
 15. `starter-pack/`
+16. `starter-pack/templates/project-extension-template.md`
+17. `examples/`
 
 ---
 
@@ -192,10 +194,12 @@ The first explicit bridge into Alpha 2 is:
 
 Together, these documents explain how AletheIA should evolve itself, learn from pilots, and preserve a clear boundary between framework core and local project extensions.
 
-The first adoption-facing guides after this bridge are:
+The first adoption-facing assets after this bridge are:
 
 - `docs/getting-started.md`
 - `docs/apply-to-existing-project.md`
+- `CONTRIBUTING.md`
+- `starter-pack/templates/project-extension-template.md`
 
 ---
 
