@@ -226,9 +226,80 @@ Potential first artifacts for this phase may include:
 
 ---
 
+## Alpha 6 — Distribution, Presets & Adapters
+
+Focus:
+- make AletheIA easier to package, deliver, and reuse across project shapes and agent environments without changing the framework core
+
+Includes:
+- preset or bundle models for common project shapes
+- editor and agent-shell adapters that preserve the same framework meaning across environments
+- lighter vs fuller adoption modes
+- clearer distinction between framework core and delivery-layer packaging
+- future-facing distribution guidance that stays provider-agnostic
+
+### What Alpha 6 must prove
+
+By the end of Alpha 6, AletheIA should already show that:
+
+- the framework can be packaged in more than one reusable form without distorting its conceptual core
+- presets can adapt the framework to different project shapes without turning into incompatible forks
+- adapters can deliver the same meaning across editor or agent environments
+- teams can choose lighter vs fuller adoption footprints without changing the framework's governing logic
+
+### Notes
+
+Alpha 6 is not a CLI-first phase.
+It is a distribution-architecture phase.
+
+This phase should not:
+- change the decision or governance core
+- make one editor the canonical interface
+- introduce mandatory external integrations
+- promise one-command installation before the model is stable
+
+Current Alpha 6 direction is documented in:
+
+- `docs/distribution-presets-adapters.md`
+
+Likely first artifacts for this phase may include:
+
+- a preset taxonomy
+- an adapter taxonomy
+- lite vs fuller adoption-mode guidance
+- delivery mapping examples across environments
+
+---
+
+## Alpha 7 — Bootstrap & Delivery Tooling
+
+Focus:
+- operationalize the distribution model from Alpha 6 through optional bootstrap and delivery tooling
+
+### What Alpha 7 should remain
+
+Alpha 7 should stay intentionally smaller and later than Alpha 6.
+
+It may eventually include:
+
+- optional bootstrap CLI flows
+- delivery automation for presets or adapters
+- packaging helpers for distributing AletheIA into real repositories
+
+### Notes
+
+Alpha 7 should only become active after presets, adapters, and adoption modes are already well-defined.
+
+It should remain:
+- provider-agnostic
+- optional
+- clearly outside the framework core itself
+
+---
+
 ## Cross-Alpha principles
 
-Across all three alphas, AletheIA should preserve a few boundaries:
+Across all phases, AletheIA should preserve a few boundaries:
 
 1. It should remain provider-agnostic.
 2. It should not collapse into a single governance template.
@@ -236,6 +307,7 @@ Across all three alphas, AletheIA should preserve a few boundaries:
 4. It should prefer explicit contracts over hidden conventions.
 5. It should treat learnings as reviewable artifacts, not informal memory.
 6. It should evolve through real pilots, not only through internal theory.
+7. It should treat distribution and tooling as delivery-layer concerns, not as replacements for the core operating model.
 
 ---
 
@@ -257,3 +329,5 @@ Across all three alphas, AletheIA should preserve a few boundaries:
 4. continue validating the Crisis Monitor pilot and nearby real slices
 5. convert pilot learnings into framework updates
 6. keep Alpha 5 framed as experimental structured risk inference rather than strong formal verification
+7. shape Alpha 6 as a future distribution layer without distorting the framework core
+8. keep Alpha 7 as a later tooling/bootstrap follow-up, not a near-term promise

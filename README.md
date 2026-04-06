@@ -199,6 +199,9 @@ The next steps are:
 - Alpha 2 established the pilot, self-application, and conversion bridge.
 - Alpha 3 is making the framework easier to adopt and contribute to.
 - Alpha 4 is making inter-agent continuity explicit, reusable, and more operational.
+- Alpha 5 remains the next conceptual future phase for decision-quality in higher-risk work.
+- Alpha 6 is the future distribution phase for presets, bundles, and adapters.
+- Alpha 7 is a later tooling follow-up for optional bootstrap and delivery automation.
 
 ---
 
@@ -232,15 +235,19 @@ The first Alpha 4 handoff baseline now adds:
 
 ## Future direction after Alpha 4
 
-AletheIA may eventually need a further phase focused on structured risk inference before execution in higher-risk tasks.
+The next future-facing phases should stay clearly separated by role:
 
-That future direction should stay evidence-oriented and conditional, rather than claiming strong formal verification that the framework does not yet provide.
+- **Alpha 5** — decision-quality through structured, evidence-oriented inference for higher-risk work
+- **Alpha 6** — distribution, presets, and adapters for packaging the same framework meaning across environments
+- **Alpha 7** — optional bootstrap and delivery tooling after the distribution model is already stable
+
+These future phases are about extending AletheIA's reach and delivery discipline.
+They are not about redefining the framework core.
 
 See also:
 
-- `docs/agent-handoffs.md`
-- `starter-pack/templates/agent-handoff-template.md`
 - `docs/structured-risk-inference.md`
+- `docs/distribution-presets-adapters.md`
 
 ---
 
