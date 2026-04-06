@@ -211,6 +211,16 @@ See also:
 
 ---
 
+## Contribution entrypoint
+
+If you want to contribute to AletheIA, start with:
+
+- `CONTRIBUTING.md`
+
+This is the fastest way to understand what kinds of changes belong in the framework core, what should stay local, and how to contribute without inflating the project.
+
+---
+
 ## Minimal governance baseline
 
 Alpha 1 now includes a small executable governance check:
