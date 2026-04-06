@@ -103,6 +103,7 @@ Includes:
 - better onboarding
 - a clearer getting-started path
 - stronger contributor guidance
+- clearer contribution boundaries for framework core vs project extension
 - stronger starter-pack
 - clearer guidance for applying AletheIA in an existing project
 - cleaner release structure
