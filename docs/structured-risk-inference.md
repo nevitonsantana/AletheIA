@@ -138,10 +138,16 @@ Typical triggers include:
 For a more operational trigger guide, see:
 
 - `starter-pack/guides/inference-trigger-guidance.md`
+- `starter-pack/guides/inference-artifact-generation.md`
 
 ---
 
 ## Artifact contract (v1)
+
+For a practical method for assembling this artifact from real work, see:
+
+- `starter-pack/guides/inference-artifact-generation.md`
+
 
 ```json
 {
