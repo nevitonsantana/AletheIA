@@ -221,7 +221,7 @@ Potential first artifacts for this phase may include:
 
 - `docs/structured-risk-inference.md`
 - `starter-pack/templates/inference-artifact-template.md`
-- trigger guidance for when the capability should run
+- `starter-pack/guides/inference-trigger-guidance.md`
 - pilot scenarios focused on refactors, patch review, or semantic regression risk
 
 ---

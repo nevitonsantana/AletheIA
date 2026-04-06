@@ -135,6 +135,10 @@ Typical triggers include:
 - low confidence from the executing agent
 - high-stakes inter-agent handoff
 
+For a more operational trigger guide, see:
+
+- `starter-pack/guides/inference-trigger-guidance.md`
+
 ---
 
 ## Artifact contract (v1)

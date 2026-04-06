@@ -51,3 +51,4 @@ If you are exploring structured risk inference for higher-risk work, read:
 
 - `docs/structured-risk-inference.md`
 - `starter-pack/templates/inference-artifact-template.md`
+- `starter-pack/guides/inference-trigger-guidance.md`
