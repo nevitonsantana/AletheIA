@@ -37,3 +37,10 @@ If you are adopting AletheIA inside a real project and need to make the local la
 If you are thinking about cross-agent continuity and operational restart packages, read:
 
 - `docs/agent-handoffs.md`
+
+
+## Alpha 4 template
+
+For operational handoffs between agents, use:
+
+- `starter-pack/templates/agent-handoff-template.md`
