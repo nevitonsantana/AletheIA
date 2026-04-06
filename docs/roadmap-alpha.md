@@ -220,7 +220,7 @@ This phase should begin as an experimental capability, not a mandatory step for 
 Potential first artifacts for this phase may include:
 
 - `docs/structured-risk-inference.md`
-- a starter-pack template for inference artifacts
+- `starter-pack/templates/inference-artifact-template.md`
 - trigger guidance for when the capability should run
 - pilot scenarios focused on refactors, patch review, or semantic regression risk
 

@@ -282,3 +282,10 @@ If this enters the roadmap, it should start as:
 - scoped primarily to code and semantic-risk tasks
 
 It should not start as a mandatory core phase for every workflow.
+
+---
+
+## Suggested next reading
+
+- `starter-pack/templates/inference-artifact-template.md`
+- `docs/agent-handoffs.md`

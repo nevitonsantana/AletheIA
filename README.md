@@ -10,6 +10,22 @@ In simple terms:
 
 ---
 
+## Why the name AletheIA
+
+The name combines **Aletheia** — the idea of truth as something brought into the open rather than left hidden — with **IA**, signaling the framework's focus on AI-assisted work.
+
+Conceptually, the name points to the framework's main intention:
+
+- make reasoning more explicit
+- make decisions more reviewable
+- make validation and learnings less hidden
+- keep AI work from moving straight from output to action without an operating layer
+
+In that sense, AletheIA is not about treating AI output as truth.
+It is about creating the conditions for AI-assisted work to become more inspectable, governable, and revealable before execution.
+
+---
+
 ## Why AletheIA exists
 
 Many AI workflows still follow a fragile pattern:
@@ -247,6 +263,7 @@ They are not about redefining the framework core.
 See also:
 
 - `docs/structured-risk-inference.md`
+- `starter-pack/templates/inference-artifact-template.md`
 - `docs/distribution-presets-adapters.md`
 
 ---

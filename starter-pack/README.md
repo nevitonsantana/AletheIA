@@ -43,3 +43,11 @@ The current practical Alpha 4 handoff baseline now includes:
 - `docs/handoff-capture-pattern.md`
 
 Use this set when you need model-agnostic continuity between agents without relying on hidden thread memory.
+
+
+## Alpha 5 preview
+
+If you are exploring structured risk inference for higher-risk work, read:
+
+- `docs/structured-risk-inference.md`
+- `starter-pack/templates/inference-artifact-template.md`
