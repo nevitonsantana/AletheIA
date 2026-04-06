@@ -175,7 +175,8 @@ If this is your first time here, start with:
 18. `starter-pack/guides/agent-handoff-generation.md`
 19. `starter-pack/templates/agent-handoff-template.md`
 20. `docs/project-handoff-conventions.md`
-21. `examples/`
+21. `docs/handoff-capture-pattern.md`
+22. `examples/`
 
 ---
 
@@ -225,6 +226,7 @@ The first Alpha 4 handoff baseline now adds:
 - `starter-pack/guides/agent-handoff-generation.md`
 - `starter-pack/templates/agent-handoff-template.md`
 - `docs/project-handoff-conventions.md`
+- `docs/handoff-capture-pattern.md`
 
 ---
 

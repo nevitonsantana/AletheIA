@@ -173,11 +173,11 @@ Current Alpha 4 baseline artifacts now include:
 - `docs/agent-handoffs.md`
 - `starter-pack/guides/agent-handoff-generation.md`
 - `starter-pack/templates/agent-handoff-template.md`
+- `docs/project-handoff-conventions.md`
 
 Next artifacts for this phase may include:
 
-- `docs/project-handoff-conventions.md`
-- automated or semi-automated handoff creation from completed work items
+- `docs/handoff-capture-pattern.md`
 - execution-scope fields such as allowed files, forbidden files, allowed data, semantic guardrails, acceptance criteria, and expected response format
 
 ---

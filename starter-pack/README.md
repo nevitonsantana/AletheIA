@@ -52,3 +52,7 @@ Use these when you need model-agnostic continuity between agents without relying
 For local repo conventions that sit on top of the shared handoff structure, also read:
 
 - `docs/project-handoff-conventions.md`
+
+For the next step toward semi-automated handoff creation from completed work, also read:
+
+- `docs/handoff-capture-pattern.md`

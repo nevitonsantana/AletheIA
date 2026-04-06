@@ -180,4 +180,5 @@ AletheIA should preserve the handoff as a reusable operating pattern.
 - `starter-pack/templates/handoff-template.md`
 - `starter-pack/templates/agent-handoff-template.md`
 - `docs/project-handoff-conventions.md`
+- `docs/handoff-capture-pattern.md`
 - `docs/project-extension-pattern.md`
