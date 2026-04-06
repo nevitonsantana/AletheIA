@@ -142,6 +142,7 @@ Today, this public draft already contains:
 - a first learnings path
 - a reusable starter-pack slice
 - an explicit Alpha 2 bridge for self-application, pilot conversion, and project extension
+- initial Alpha 3 adoption artifacts for getting started and existing-project application
 
 ---
 
@@ -171,13 +172,12 @@ If this is your first time here, start with:
 
 The next steps are:
 
-- consolidate the Alpha 2 bridge now that its four pillars are explicit
+- keep expanding Alpha 3 adoption artifacts without losing the core/pilot discipline
 - keep validating the Crisis Monitor pilot and adjacent real slices
 - keep converting pilot learnings into framework improvements
 - keep using AletheIA to improve AletheIA itself
-- keep opening Alpha 3 adoption artifacts without losing the core/pilot discipline
-- define the future Alpha 4 direction for orchestrated, model-agnostic handoffs between agents
-- keep future Alpha 5 work framed as evidence-oriented inference for higher-risk tasks
+- shape Alpha 4 around orchestrated, model-agnostic handoffs between agents
+- keep Alpha 5 framed as evidence-oriented inference for higher-risk tasks
 
 ---
 
@@ -192,8 +192,9 @@ The first explicit bridge into Alpha 2 is:
 
 Together, these documents explain how AletheIA should evolve itself, learn from pilots, and preserve a clear boundary between framework core and local project extensions.
 
-The first adoption-facing guide after this bridge is:
+The first adoption-facing guides after this bridge are:
 
+- `docs/getting-started.md`
 - `docs/apply-to-existing-project.md`
 
 ---

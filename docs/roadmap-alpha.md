@@ -234,12 +234,12 @@ Across all three alphas, AletheIA should preserve a few boundaries:
 
 ## Near-term priority order
 
-1. open the first Alpha 3 adoption artifacts
+1. keep expanding Alpha 3 adoption artifacts
    - applying AletheIA to an existing project
-   - stronger onboarding path
    - explicit getting-started guide
+   - stronger onboarding and contributor guidance
 2. keep the Alpha 2 bridge coherent while adoption grows
 3. continue validating the Crisis Monitor pilot and nearby real slices
 4. convert pilot learnings into framework updates
 5. shape Alpha 4 around orchestrated handoffs and cross-agent continuity
-6. frame Alpha 5 as experimental structured risk inference rather than strong formal verification
+6. keep Alpha 5 framed as experimental structured risk inference rather than strong formal verification
