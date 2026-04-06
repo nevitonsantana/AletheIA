@@ -171,11 +171,11 @@ into a reusable operating pattern.
 Current Alpha 4 baseline artifacts now include:
 
 - `docs/agent-handoffs.md`
+- `starter-pack/guides/agent-handoff-generation.md`
 - `starter-pack/templates/agent-handoff-template.md`
 
 Next artifacts for this phase may include:
 
-- handoff generation guidance
 - project-level handoff conventions
 - automated or semi-automated handoff creation from completed work items
 - execution-scope fields such as allowed files, forbidden files, allowed data, semantic guardrails, acceptance criteria, and expected response format

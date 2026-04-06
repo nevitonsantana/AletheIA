@@ -44,6 +44,7 @@ If you are thinking about cross-agent continuity and operational restart package
 The first practical Alpha 4 handoff baseline now includes:
 
 - `docs/agent-handoffs.md`
+- `starter-pack/guides/agent-handoff-generation.md`
 - `starter-pack/templates/agent-handoff-template.md`
 
 Use these when you need model-agnostic continuity between agents without relying on hidden thread memory.
