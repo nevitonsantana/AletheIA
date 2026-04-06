@@ -131,6 +131,13 @@ It was born from real operational work inside the `Crisis Monitor` project and t
 
 Today, this public draft already contains:
 
+- an Alpha 1 baseline for governance, token discipline, durable decisions, enforcement clarity, quality, and learnings
+- an explicit Alpha 2 bridge for self-application, pilot conversion, and project extension
+- an Alpha 3 adoption baseline for getting started, existing-project application, contribution guidance, and starter-pack reuse
+- the first concrete Alpha 4 handoff assets for model-agnostic restart packages between agents
+
+In practical terms, that currently includes:
+
 - core contracts
 - a minimal kernel
 - a governance pack
@@ -141,9 +148,6 @@ Today, this public draft already contains:
 - a quality baseline
 - a first learnings path
 - a reusable starter-pack slice
-- an explicit Alpha 2 bridge for self-application, pilot conversion, and project extension
-- initial Alpha 3 adoption artifacts for getting started, existing-project application, contribution guidance, and starter-pack reuse
-- the first concrete Alpha 4 handoff assets for model-agnostic restart packages between agents
 
 ---
 
@@ -183,6 +187,15 @@ The next steps are:
 - keep using AletheIA to improve AletheIA itself
 - extend Alpha 4 from concept + template into more repeatable handoff operating patterns
 - keep Alpha 5 framed as evidence-oriented inference for higher-risk tasks
+
+---
+
+## Current phase map
+
+- Alpha 1 established the governance and validation baseline.
+- Alpha 2 established the pilot, self-application, and conversion bridge.
+- Alpha 3 is making the framework easier to adopt and contribute to.
+- Alpha 4 is starting to make inter-agent continuity explicit and reusable.
 
 ---
 
