@@ -266,9 +266,12 @@ Current Alpha 6 direction is documented in:
 
 - `docs/distribution-presets-adapters.md`
 
-Likely first artifacts for this phase may include:
+Current first Alpha 6 artifact now includes:
 
-- a preset taxonomy
+- `docs/preset-taxonomy.md`
+
+Likely next artifacts for this phase may include:
+
 - an adapter taxonomy
 - lite vs fuller adoption-mode guidance
 - delivery mapping examples across environments

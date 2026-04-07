@@ -142,6 +142,10 @@ Good first Alpha 6 artifacts would include:
 - lite vs fuller adoption mode guidance
 - delivery mapping examples across environments
 
+The current first Alpha 6 artifact is:
+
+- `docs/preset-taxonomy.md`
+
 These should make the distribution model explicit before any heavier tooling is introduced.
 
 ---
