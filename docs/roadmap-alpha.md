@@ -266,8 +266,9 @@ Current Alpha 6 direction is documented in:
 
 - `docs/distribution-presets-adapters.md`
 
-Current Alpha 6 artifacts now include:
+Current Alpha 6 baseline artifacts now include:
 
+- `docs/distribution-presets-adapters.md`
 - `docs/preset-taxonomy.md`
 - `docs/adapter-taxonomy.md`
 - `docs/adoption-mode-guidance.md`

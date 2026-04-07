@@ -133,23 +133,24 @@ This phase should stay clearly in the delivery layer.
 
 ---
 
-## Likely first artifacts
+## Current baseline artifacts
 
-Good first Alpha 6 artifacts would include:
+The first concrete Alpha 6 baseline now includes:
 
-- a preset taxonomy
-- an adapter taxonomy
-- lite vs fuller adoption mode guidance
-- delivery mapping examples across environments
-
-Current Alpha 6 artifacts now include:
-
+- `docs/distribution-presets-adapters.md`
 - `docs/preset-taxonomy.md`
 - `docs/adapter-taxonomy.md`
 - `docs/adoption-mode-guidance.md`
 - `docs/delivery-mapping-examples.md`
 
-These artifacts now begin to define Alpha 6 as a model for shape, delivery surface, operating depth, and cross-surface meaning preservation before any heavier tooling is introduced.
+Together, these artifacts now define Alpha 6 as a model for:
+
+- packaging shape
+- delivery surface
+- adoption depth
+- cross-surface meaning preservation
+
+before any heavier tooling is introduced.
 
 
 ---

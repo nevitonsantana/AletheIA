@@ -152,6 +152,7 @@ Today, this public draft already contains:
 - an Alpha 3 adoption baseline for getting started, existing-project application, contribution guidance, and starter-pack reuse
 - an Alpha 4 handoff baseline for model-agnostic restart packages, project conventions, and semi-automated handoff capture
 - an Alpha 5 experimental baseline for structured risk inference in higher-risk work, including concrete example artifacts
+- an Alpha 6 distribution baseline for presets, adapters, adoption modes, and cross-surface delivery mappings
 
 In practical terms, that currently includes:
 
@@ -167,6 +168,7 @@ In practical terms, that currently includes:
 - a reusable starter-pack slice
 - a first structured risk inference slice
 - concrete example artifacts for bounded semantic-risk scenarios
+- a first concrete distribution baseline for packaging shape, delivery surface, adoption depth, and meaning preservation across surfaces
 
 ---
 
@@ -209,12 +211,13 @@ If this is your first time here, start with:
 
 The next steps are:
 
-- keep the current Alpha 5 baseline coherent and example-driven without losing the Alpha 4 handoff baseline or the Alpha 3 adoption gains
+- keep the current Alpha 6 baseline coherent without losing the Alpha 5 inference baseline, the Alpha 4 handoff baseline, or the Alpha 3 adoption gains
 - keep validating the Crisis Monitor pilot and adjacent real slices
 - keep converting pilot learnings into framework improvements
 - keep using AletheIA to improve AletheIA itself
 - keep Alpha 5 proportional, selective, and grounded in bounded semantic-risk scenarios
-- let Alpha 6, Alpha 7, and future domain packs remain future-facing layers rather than near-term core work
+- keep Alpha 6 focused on distribution clarity rather than tooling promises
+- let Alpha 7 and future domain packs remain future-facing layers rather than near-term core work
 
 ---
 
@@ -225,8 +228,8 @@ The next steps are:
 - Alpha 3 is making the framework easier to adopt and contribute to.
 - Alpha 4 is making inter-agent continuity explicit, reusable, and more operational.
 - Alpha 5 now provides an experimental baseline for decision-quality in higher-risk work.
-- Alpha 6 is the future distribution phase for presets, bundles, and adapters.
-- Alpha 7 is a later tooling follow-up for optional bootstrap and delivery automation.
+- Alpha 6 now provides a first concrete distribution baseline for presets, adapters, adoption modes, and delivery mappings.
+- Alpha 7 remains a later tooling follow-up for optional bootstrap and delivery automation.
 
 ---
 
@@ -267,13 +270,21 @@ The current Alpha 5 experimental baseline now adds:
 
 ---
 
-## Current Alpha 5 baseline and future direction
+## Current Alpha 5 and Alpha 6 baselines, plus future direction
 
 The current and next layers should stay clearly separated by role:
 
 - **Alpha 5** — an experimental baseline for decision-quality through structured, evidence-oriented inference in higher-risk work
-- **Alpha 6** — distribution, presets, and adapters for packaging the same framework meaning across environments
+- **Alpha 6** — a first concrete distribution baseline for packaging the same framework meaning across environments
 - **Alpha 7** — optional bootstrap and delivery tooling after the distribution model is already stable
+
+The current Alpha 6 baseline now adds:
+
+- `docs/distribution-presets-adapters.md`
+- `docs/preset-taxonomy.md`
+- `docs/adapter-taxonomy.md`
+- `docs/adoption-mode-guidance.md`
+- `docs/delivery-mapping-examples.md`
 
 A separate future track will also shape reusable domain governance packs.
 The first planned packs in that track are:
