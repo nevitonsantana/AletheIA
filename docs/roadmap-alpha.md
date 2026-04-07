@@ -270,10 +270,10 @@ Current Alpha 6 artifacts now include:
 
 - `docs/preset-taxonomy.md`
 - `docs/adapter-taxonomy.md`
+- `docs/adoption-mode-guidance.md`
 
 Likely next artifacts for this phase may include:
 
-- lite vs fuller adoption-mode guidance
 - delivery mapping examples across environments
 
 ---
