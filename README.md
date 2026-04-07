@@ -293,6 +293,7 @@ See also:
 - `docs/structured-risk-inference.md`
 - `starter-pack/templates/inference-artifact-template.md`
 - `docs/distribution-presets-adapters.md`
+- `docs/preset-taxonomy.md`
 - `docs/domain-governance-packs.md`
 - `docs/web-app-security-trust-boundaries.md`
 - `docs/ai-agent-security-prompt-injection.md`
