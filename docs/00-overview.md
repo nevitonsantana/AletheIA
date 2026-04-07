@@ -75,3 +75,18 @@ This means Alpha 5 can now be read across:
 - generation method
 - pilot posture
 - concrete example artifacts
+
+The current Alpha 6 distribution baseline is now anchored by:
+
+- `docs/distribution-presets-adapters.md`
+- `docs/preset-taxonomy.md`
+- `docs/adapter-taxonomy.md`
+- `docs/adoption-mode-guidance.md`
+- `docs/delivery-mapping-examples.md`
+
+This means Alpha 6 can now be read across:
+
+- packaging shape
+- delivery surface
+- adoption depth
+- cross-surface meaning preservation
