@@ -308,6 +308,7 @@ Current Alpha 7 artifacts now include:
 - `docs/delivery-tooling-boundaries.md`
 - `docs/bootstrap-output-examples.md`
 - `docs/bootstrap-generator-contract.md`
+- `docs/delivery-output-contract.md`
 
 ---
 

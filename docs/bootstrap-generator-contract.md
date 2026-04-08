@@ -224,6 +224,7 @@ A first Alpha 7 generator contract is healthy when:
 - `docs/bootstrap-principles.md`
 - `docs/delivery-tooling-boundaries.md`
 - `docs/bootstrap-output-examples.md`
+- `docs/delivery-output-contract.md`
 - `docs/distribution-presets-adapters.md`
 - `docs/preset-taxonomy.md`
 - `docs/adapter-taxonomy.md`

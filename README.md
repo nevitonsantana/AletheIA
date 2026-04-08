@@ -239,7 +239,7 @@ The next steps are:
 - Alpha 4 is making inter-agent continuity explicit, reusable, and more operational.
 - Alpha 5 now provides an experimental baseline for decision-quality in higher-risk work.
 - Alpha 6 now provides a first concrete distribution baseline for presets, adapters, adoption modes, and delivery mappings.
-- Alpha 7 now includes bootstrap principles, delivery-tooling boundaries, output examples, and a first future-facing generator contract for optional automation.
+- Alpha 7 now includes bootstrap principles, delivery-tooling boundaries, output examples, a first future-facing generator contract, and a first future-facing delivery output contract for optional automation.
 - A current operational-composition baseline now makes bounded work, restartable handoffs, and risk-sensitive validation more tangible without expanding the core contracts.
 
 ---

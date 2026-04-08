@@ -196,6 +196,7 @@ Alpha 7 output examples are healthy when:
 - `docs/bootstrap-principles.md`
 - `docs/delivery-tooling-boundaries.md`
 - `docs/bootstrap-generator-contract.md`
+- `docs/delivery-output-contract.md`
 - `docs/roadmap-alpha.md`
 - `docs/distribution-presets-adapters.md`
 - `docs/preset-taxonomy.md`

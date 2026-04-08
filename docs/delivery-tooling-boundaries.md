@@ -172,6 +172,7 @@ Alpha 7 tooling boundaries are healthy when:
 
 - `docs/bootstrap-principles.md`
 - `docs/bootstrap-generator-contract.md`
+- `docs/delivery-output-contract.md`
 - `docs/roadmap-alpha.md`
 - `docs/distribution-presets-adapters.md`
 - `docs/preset-taxonomy.md`
