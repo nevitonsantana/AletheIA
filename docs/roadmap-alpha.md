@@ -302,13 +302,15 @@ It should remain:
 - optional
 - clearly outside the framework core itself
 
-Current Alpha 7 artifacts now include:
+Current Alpha 7 baseline artifacts now include:
 
 - `docs/bootstrap-principles.md`
 - `docs/delivery-tooling-boundaries.md`
 - `docs/bootstrap-output-examples.md`
 - `docs/bootstrap-generator-contract.md`
 - `docs/delivery-output-contract.md`
+
+Together, these artifacts now define Alpha 7 as a first future-facing tooling baseline covering posture, boundaries, output shape, generator IO, and output obligations before any implementation is attempted.
 
 ---
 

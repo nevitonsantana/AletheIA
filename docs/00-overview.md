@@ -110,3 +110,22 @@ This means the current operational-composition baseline can now be read across:
 
 This layer sits around the Alpha 4 and Alpha 5 baselines without becoming a new core contract family of its own.
 These materials remain intentionally smaller than the core contracts.
+
+The current Alpha 7 bootstrap-and-delivery baseline is now anchored by:
+
+- `docs/bootstrap-principles.md`
+- `docs/delivery-tooling-boundaries.md`
+- `docs/bootstrap-output-examples.md`
+- `docs/bootstrap-generator-contract.md`
+- `docs/delivery-output-contract.md`
+
+This means Alpha 7 can now be read across:
+
+- tooling posture
+- tooling stop lines
+- healthy output shapes
+- future generator IO
+- future output obligations
+
+This is still a future-facing delivery layer, not a core capability baseline.
+

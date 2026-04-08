@@ -154,6 +154,7 @@ Today, this public draft already contains:
 - an Alpha 5 experimental baseline for structured risk inference in higher-risk work, including concrete example artifacts
 - an Alpha 6 distribution baseline for presets, adapters, adoption modes, and cross-surface delivery mappings
 - a current operational-composition baseline for work slices, risk-to-gate mapping, stronger restart-package examples, and optional filesystem context-routing experiments
+- an early Alpha 7 bootstrap-and-delivery baseline for future tooling contracts that still remains outside the core
 
 In practical terms, that currently includes:
 
@@ -171,6 +172,7 @@ In practical terms, that currently includes:
 - concrete example artifacts for bounded semantic-risk scenarios
 - a first concrete distribution baseline for packaging shape, delivery surface, adoption depth, and meaning preservation across surfaces
 - a lightweight operational-composition baseline for work slices, risk-to-gate mapping, compact handoff continuity, and optional filesystem context-routing experiments
+- a first Alpha 7 tooling baseline across principles, boundaries, output shapes, generator contract, and output contract
 
 ---
 
@@ -227,7 +229,8 @@ The next steps are:
 - keep the operational-composition baseline lightweight, teachable, and clearly outside the core contracts
 - keep experimental workspace context routing optional, inspectable, and clearly non-canonical
 - keep Alpha 6 focused on distribution clarity rather than tooling promises
-- let Alpha 7 and future domain packs remain future-facing layers rather than near-term core work
+- keep Alpha 7 small, bounded, and tooling-light even as its baseline becomes clearer
+- let future domain packs remain future-facing layers rather than near-term core work
 
 ---
 

@@ -159,7 +159,7 @@ before any heavier tooling is introduced.
 
 Alpha 6 defines the model.
 
-Alpha 7 may later operationalize it.
+Alpha 7 now begins to operationalize it through future-facing tooling contracts, but still without implementation.
 
 That means Alpha 6 should answer questions such as:
 
@@ -175,7 +175,15 @@ Only after those answers are stable should AletheIA seriously consider:
 - installation automation
 - delivery CLI flows
 
-That later work belongs to Alpha 7, not to Alpha 6.
+The current Alpha 7 baseline now starts that work through:
+
+- `docs/bootstrap-principles.md`
+- `docs/delivery-tooling-boundaries.md`
+- `docs/bootstrap-output-examples.md`
+- `docs/bootstrap-generator-contract.md`
+- `docs/delivery-output-contract.md`
+
+That later work still belongs to Alpha 7, not to Alpha 6.
 
 ---
 
