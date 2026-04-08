@@ -306,6 +306,7 @@ Current Alpha 7 artifacts now include:
 
 - `docs/bootstrap-principles.md`
 - `docs/delivery-tooling-boundaries.md`
+- `docs/bootstrap-output-examples.md`
 
 ---
 

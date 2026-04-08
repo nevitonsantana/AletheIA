@@ -310,6 +310,7 @@ See also:
 - `docs/delivery-mapping-examples.md`
 - `docs/bootstrap-principles.md`
 - `docs/delivery-tooling-boundaries.md`
+- `docs/bootstrap-output-examples.md`
 - `docs/domain-governance-packs.md`
 - `docs/web-app-security-trust-boundaries.md`
 - `docs/ai-agent-security-prompt-injection.md`
