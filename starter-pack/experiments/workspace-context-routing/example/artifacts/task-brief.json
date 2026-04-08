@@ -1,0 +1,26 @@
+{
+  "id": "task-workspace-context-routing-demo",
+  "title": "Prepare a reviewable operational slice",
+  "problem": "The next reviewer needs a compact but explicit set of artifacts to continue with low ambiguity.",
+  "objective": "Use a small filesystem layout to keep only the needed context in view for the current stage.",
+  "classification": {
+    "task_type": "B",
+    "severity": "S2",
+    "risk": "medium"
+  },
+  "scope": {
+    "in": [
+      "work-slice guidance",
+      "validation prep",
+      "handoff clarity"
+    ],
+    "out": [
+      "schema changes",
+      "runtime automation"
+    ]
+  },
+  "success_criteria": [
+    "The current stage can be understood without loading the entire repo.",
+    "The next boundary can resume from artifacts instead of thread memory."
+  ]
+}

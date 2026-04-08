@@ -1,0 +1,28 @@
+{
+  "scenario": "High-risk global trust-boundary mutation",
+  "task_brief_excerpt": {
+    "classification": {
+      "task_type": "C",
+      "severity": "S4",
+      "risk": "critical"
+    },
+    "validation_plan": [
+      "Structured risk review",
+      "Targeted validation evidence",
+      "Explicit human approval before rollout"
+    ],
+    "human_gate_required": true
+  },
+  "operational_posture": {
+    "expected_decision_action": "ask_human",
+    "validation_depth": "high_stakes",
+    "human_gate_required": true,
+    "structured_inference_posture": "recommended",
+    "closure_default": "block_or_escalate_until_gate_is_satisfied"
+  },
+  "why": [
+    "The change affects a trust boundary and is hard to reverse safely.",
+    "The downside of silent execution is materially high.",
+    "Confidence cannot replace explicit approval in this scenario."
+  ]
+}

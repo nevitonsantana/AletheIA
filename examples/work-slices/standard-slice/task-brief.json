@@ -1,0 +1,39 @@
+{
+  "id": "task-work-slice-standard-001",
+  "title": "Clarify how starter-pack guidance composes a bounded work slice",
+  "problem": "The starter-pack explains individual guides and templates, but new adopters may still miss how framing, decision, execution, handoff, and learning fit together as one bounded unit of work.",
+  "objective": "Add clearer operational guidance so a reusable work slice can be understood as a composed pattern without introducing a new core contract.",
+  "classification": {
+    "task_type": "B",
+    "severity": "S2",
+    "risk": "medium"
+  },
+  "scope": {
+    "in": [
+      "starter-pack guidance updates",
+      "example indexing",
+      "work-slice documentation"
+    ],
+    "out": [
+      "schema expansion",
+      "engine changes",
+      "policy core changes"
+    ]
+  },
+  "constraints": [
+    "Keep the change documentation-first and reversible.",
+    "Reuse existing contracts instead of introducing a new work-slice schema.",
+    "Keep the operational pattern small enough to teach quickly."
+  ],
+  "success_criteria": [
+    "The work-slice concept is understandable as a composed operational pattern.",
+    "The slice remains explicitly outside the core contracts.",
+    "The resulting materials point to validation and handoff expectations."
+  ],
+  "validation_plan": [
+    "Diff inspection",
+    "Manual consistency review across docs and starter-pack materials",
+    "bash scripts/check-governance.sh"
+  ],
+  "human_gate_required": false
+}

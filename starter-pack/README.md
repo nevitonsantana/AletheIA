@@ -54,3 +54,21 @@ If you are exploring the current Alpha 5 structured-risk-inference baseline for 
 - `starter-pack/guides/inference-trigger-guidance.md`
 - `starter-pack/guides/inference-artifact-generation.md`
 - `docs/inference-pilot-scenarios.md`
+
+
+## Operational composition layer
+
+If you want to make bounded work more tangible without changing the core contracts, read:
+
+- `docs/work-slice-pattern.md`
+- `starter-pack/templates/work-slice-template.md`
+- `starter-pack/guides/risk-to-gate-mapping.md`
+- `examples/work-slices/standard-slice/README.md`
+- `examples/handoffs/compact-reviewable-handoff.md`
+- `examples/handoffs/high-stakes-handoff.md`
+
+## Experimental workspace context routing
+
+If you want to test a filesystem-based context-routing pattern as a local experiment, read:
+
+- `starter-pack/experiments/workspace-context-routing/README.md`

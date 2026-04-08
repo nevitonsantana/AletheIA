@@ -1,49 +1,50 @@
 # AletheIA — Governance Examples
 
-## Objetivo
+## Goal
 
-Esta pasta mostra exemplos mínimos do `Governance Pack` funcionando sobre fatos explícitos.
+This folder keeps small examples that make governance posture easier to inspect.
 
-Ao contrário dos exemplos do kernel, aqui o foco não é:
+It currently serves two roles:
 
-- risco
-- severidade
-- contexto
-
-Aqui o foco é:
-
-- plano
-- escopo
-- contrato
-- validação
-- governança de processo
+1. show how process facts can produce `allow`, `review`, `ask_human`, and `block`
+2. show how risk posture changes the expected gate and validation depth
 
 ---
 
-## Cenários iniciais
+## Process-governance scenarios
 
 - `allow-before-execute.json`
-  - tarefa bem formada, com plano e escopo claros
+  - well-framed work with clear plan and scope
 - `block-without-plan.json`
-  - execução pedida sem plano
+  - execution requested without a plan
 - `review-after-scope-expansion.json`
-  - execução desviou do combinado
+  - execution drifted beyond the agreed scope
 - `ask-human-critical-action.json`
-  - ação crítica sem confirmação explícita
+  - critical action requested without explicit approval
 - `block-validation-required.json`
-  - finalização bloqueada porque a validação obrigatória não aconteceu
+  - closure blocked because required validation did not happen
 - `block-source-of-truth-mismatch.json`
-  - finalização bloqueada porque o artefato-fonte de verdade não foi atualizado
+  - closure blocked because the source of truth was not updated
 
 ---
 
-## O que estes exemplos querem provar
+## Risk-to-gate posture scenarios
 
-Que o `AletheIA` já consegue usar facts + rules para produzir:
+- `risk-low-light-validation.json`
+  - low risk -> lightweight proof is enough
+- `risk-medium-expanded-validation.json`
+  - medium risk -> stronger review and broader proof
+- `risk-high-human-gate.json`
+  - high or critical risk -> explicit human gate and stronger evidence posture
 
-- `allow`
-- `review`
-- `ask_human`
-- `block`
+---
 
-com trilha explicável.
+## What these examples are trying to prove
+
+That AletheIA can keep governance visible at two useful levels:
+
+- **rule evaluation** over explicit facts
+- **operational posture** connecting risk, validation depth, and gate intensity
+
+The folder is intentionally small.
+It is not trying to become a heavy policy simulator.

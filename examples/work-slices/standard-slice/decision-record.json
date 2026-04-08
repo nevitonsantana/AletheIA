@@ -1,0 +1,72 @@
+{
+  "id": "decision-work-slice-standard-001",
+  "task_brief_id": "task-work-slice-standard-001",
+  "input": {
+    "signal": "Make the work-slice operating pattern explicit for new adopters",
+    "raw": {
+      "requester": "framework-maintainer",
+      "channel": "roadmap-follow-through"
+    }
+  },
+  "context_snapshot": {
+    "summary": "This is a bounded operational-guidance change that should stay in docs, starter-pack materials, and examples.",
+    "sources_considered": [
+      "starter-pack/README.md",
+      "docs/agent-handoffs.md",
+      "starter-pack/guides/quality-gates.md",
+      "existing example artifacts"
+    ],
+    "omitted_context": [
+      "engine runtime internals",
+      "policy pack implementation details",
+      "schema mutation paths"
+    ]
+  },
+  "interpretation": {
+    "summary": "The safest move is to compose the existing contracts into a visible pattern before introducing any new central abstraction.",
+    "key_signals": [
+      "the problem is operational tangibility rather than missing theory",
+      "existing task, decision, execution, handoff, and learning records already cover the needed chain",
+      "the change is medium risk because it influences reusable operating guidance"
+    ],
+    "assumptions": [
+      "A concrete example will teach the pattern better than a new schema would.",
+      "A validation handoff is enough; no human gate is required for this slice."
+    ]
+  },
+  "decision": {
+    "action": "continue",
+    "target": "work-slice docs, starter-pack materials, and examples",
+    "next_step": "Create the composed slice materials and prepare a compact validation handoff."
+  },
+  "justification": {
+    "reason": "The change is bounded, documentation-first, and well served by a composed operational pattern rather than a new contract.",
+    "policy_refs": [
+      "clarity over speed",
+      "reuse before new abstraction",
+      "validation should stay proportional to risk"
+    ]
+  },
+  "provenance": {
+    "facts": [
+      "The repo already has task brief, decision, execution, handoff, and learning schemas.",
+      "The current gap is in how those artifacts are composed in real work.",
+      "The plan explicitly avoids core, policy, and schema inflation."
+    ],
+    "inferences": [
+      "A composed slice pattern is the lowest-regret way to make the workflow more tangible.",
+      "A review boundary should remain explicit rather than implied."
+    ],
+    "rules_applied": [
+      "prefer composed patterns before new core contracts",
+      "medium-risk operational guidance deserves explicit validation",
+      "handoffs should behave as restart packages, not recap dumps"
+    ]
+  },
+  "metadata": {
+    "confidence": 0.89,
+    "risk": "medium",
+    "trace_id": "trace-work-slice-standard-001",
+    "created_at": "2026-04-08T13:20:00Z"
+  }
+}

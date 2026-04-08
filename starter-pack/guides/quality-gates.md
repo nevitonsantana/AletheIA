@@ -19,3 +19,9 @@ But every relevant task needs some proof.
 ## Closure rule
 
 If validation is missing, closure should slow down, stop, or produce a learning for future prevention.
+
+## Further reading
+
+For a more explicit operational mapping between task risk, proof depth, human gates, and selective structured inference, read:
+
+- `starter-pack/guides/risk-to-gate-mapping.md`

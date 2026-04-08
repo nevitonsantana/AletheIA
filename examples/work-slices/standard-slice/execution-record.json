@@ -1,0 +1,39 @@
+{
+  "id": "execution-work-slice-standard-001",
+  "decision_id": "decision-work-slice-standard-001",
+  "adapter": {
+    "name": "repo-native-docs-update",
+    "mode": "local"
+  },
+  "target": {
+    "kind": "documentation_slice",
+    "ref": "work-slice-guidance-bundle"
+  },
+  "environment": {
+    "branch": "codex/operational-work-slices",
+    "sandbox": true
+  },
+  "status": "completed",
+  "result_summary": "The work-slice guide, starter-pack template, and example chain were assembled so the pattern can be reviewed as one bounded unit.",
+  "validations": [
+    {
+      "name": "diff inspection",
+      "status": "pass",
+      "evidence_ref": "reviewer-notes/work-slice-diff"
+    },
+    {
+      "name": "governance script",
+      "status": "pass",
+      "evidence_ref": "scripts/check-governance.sh"
+    },
+    {
+      "name": "cross-doc consistency review",
+      "status": "warn",
+      "evidence_ref": "handoff-record.json"
+    }
+  ],
+  "timestamps": {
+    "started_at": "2026-04-08T13:35:00Z",
+    "finished_at": "2026-04-08T14:10:00Z"
+  }
+}

@@ -7,9 +7,15 @@ Use this template when one agent is stopping at its boundary and another agent i
 This is not a transcript.
 It is a compact restart package.
 
+The fields below are intentionally richer than the minimum JSON handoff schema.
+Use the optional sections when they reduce ambiguity for the next boundary.
+
 ---
 
 ## Handoff type
+
+Narrative or operational.
+Prefer operational when the next boundary is another agent expected to continue execution.
 
 ### Receiving agent role
 
@@ -23,6 +29,8 @@ Explain why this work is moving to another agent instead of continuing in the cu
 
 ## Current status
 
+These fields map closely to the minimum structured continuity record.
+
 ### Status
 
 Examples:
@@ -35,9 +43,15 @@ Examples:
 
 ### What remains pending
 
+### Next action
+
+State the first action the receiving agent should take.
+
 ---
 
 ## Execution boundary
+
+Use this section when the next boundary needs stronger scope control.
 
 ### Allowed files
 
@@ -63,17 +77,23 @@ List the data, APIs, contracts, or assumptions the next agent may safely rely on
 
 List the files that matter most for resuming work.
 
+### Reopen summary
+
+Summarize the minimum context the next boundary should reload before continuing.
+
 ---
 
 ## Semantic guardrails
 
 Describe what meaning, behavior, or product intent must be preserved.
+Only fill this when it materially reduces drift.
 
 ---
 
 ## Acceptance criteria
 
 Describe what must be true for the handoff target to count as complete.
+Only fill this when the next boundary needs a clearer closure target.
 
 ---
 
@@ -108,8 +128,4 @@ Examples:
 - what remains blocked
 - recommended next action
 
----
-
-## Next action
-
-State the next action the receiving agent should take first.
+Use this only when the handoff would benefit from a clearer return shape.

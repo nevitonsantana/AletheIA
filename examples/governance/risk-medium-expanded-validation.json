@@ -1,0 +1,28 @@
+{
+  "scenario": "Medium-risk multi-file operating-guidance update",
+  "task_brief_excerpt": {
+    "classification": {
+      "task_type": "B",
+      "severity": "S2",
+      "risk": "medium"
+    },
+    "validation_plan": [
+      "Diff inspection",
+      "Cross-doc consistency review",
+      "Targeted governance check"
+    ],
+    "human_gate_required": false
+  },
+  "operational_posture": {
+    "expected_decision_action": "review",
+    "validation_depth": "expanded",
+    "human_gate_required": false,
+    "structured_inference_posture": "selective_if_semantic_risk_is_meaningful",
+    "closure_default": "close_or_pause_for_review_after_expanded_proof"
+  },
+  "why": [
+    "The change influences reusable operating guidance across multiple files.",
+    "The work is still bounded but should not close on confidence alone.",
+    "A review boundary is useful even without an explicit human gate requirement."
+  ]
+}

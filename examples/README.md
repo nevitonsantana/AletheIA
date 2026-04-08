@@ -21,6 +21,10 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - mostra como facts + governance rules produzem `allow`, `review`, `ask_human` e `block`
 - `learning-from-failed-validation/`
   - mostra como uma falha de validação vira bloqueio + aprendizado reaproveitável
+- `handoffs/`
+  - mostra restart packages compactos para continuidade operacional entre agentes
+- `work-slices/`
+  - mostra como task brief, decision, execution, handoff e learning podem compor uma unidade operacional
 - `structured-risk-inference/`
   - mostra exemplos concretos de inference artifacts para risco de refactor e handoff de alto impacto
 
@@ -46,4 +50,7 @@ O alpha agora já cobre:
 - `ask_human`
 - `block`
 - `block + learning`
+- work-slice composition across existing contracts
+- compact operational handoff examples
+- risk-to-gate posture examples
 - examples of structured risk inference for bounded semantic-risk scenarios

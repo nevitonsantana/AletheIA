@@ -153,6 +153,7 @@ Today, this public draft already contains:
 - an Alpha 4 handoff baseline for model-agnostic restart packages, project conventions, and semi-automated handoff capture
 - an Alpha 5 experimental baseline for structured risk inference in higher-risk work, including concrete example artifacts
 - an Alpha 6 distribution baseline for presets, adapters, adoption modes, and cross-surface delivery mappings
+- a low-regret operational composition layer for work slices, risk-to-gate mapping, and stronger restart-package examples
 
 In practical terms, that currently includes:
 
@@ -169,6 +170,7 @@ In practical terms, that currently includes:
 - a first structured risk inference slice
 - concrete example artifacts for bounded semantic-risk scenarios
 - a first concrete distribution baseline for packaging shape, delivery surface, adoption depth, and meaning preservation across surfaces
+- a lightweight operational-composition layer for work slices, risk-to-gate mapping, and compact handoff continuity
 
 ---
 
@@ -197,13 +199,19 @@ If this is your first time here, start with:
 19. `starter-pack/templates/agent-handoff-template.md`
 20. `docs/project-handoff-conventions.md`
 21. `docs/handoff-capture-pattern.md`
-22. `docs/structured-risk-inference.md`
-23. `starter-pack/templates/inference-artifact-template.md`
-24. `starter-pack/guides/inference-trigger-guidance.md`
-25. `starter-pack/guides/inference-artifact-generation.md`
-26. `docs/inference-pilot-scenarios.md`
-27. `examples/structured-risk-inference/README.md`
-28. `examples/`
+22. `docs/work-slice-pattern.md`
+23. `starter-pack/templates/work-slice-template.md`
+24. `starter-pack/guides/risk-to-gate-mapping.md`
+25. `docs/structured-risk-inference.md`
+26. `starter-pack/templates/inference-artifact-template.md`
+27. `starter-pack/guides/inference-trigger-guidance.md`
+28. `starter-pack/guides/inference-artifact-generation.md`
+29. `docs/inference-pilot-scenarios.md`
+30. `examples/work-slices/standard-slice/README.md`
+31. `examples/handoffs/compact-reviewable-handoff.md`
+32. `examples/handoffs/high-stakes-handoff.md`
+33. `examples/structured-risk-inference/README.md`
+34. `examples/`
 
 ---
 
@@ -216,6 +224,8 @@ The next steps are:
 - keep converting pilot learnings into framework improvements
 - keep using AletheIA to improve AletheIA itself
 - keep Alpha 5 proportional, selective, and grounded in bounded semantic-risk scenarios
+- keep the work-slice, risk-to-gate, and handoff-composition layer lightweight and outside the core contracts
+- keep experimental workspace context routing optional and clearly non-canonical
 - keep Alpha 6 focused on distribution clarity rather than tooling promises
 - let Alpha 7 and future domain packs remain future-facing layers rather than near-term core work
 
@@ -230,6 +240,7 @@ The next steps are:
 - Alpha 5 now provides an experimental baseline for decision-quality in higher-risk work.
 - Alpha 6 now provides a first concrete distribution baseline for presets, adapters, adoption modes, and delivery mappings.
 - Alpha 7 now begins with bootstrap principles and delivery-tooling boundaries for optional automation.
+- A low-regret operational composition layer is now emerging through work slices, risk-to-gate mapping, stronger handoff examples, and optional workspace-context-routing experiments.
 
 ---
 

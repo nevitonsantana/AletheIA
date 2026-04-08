@@ -1,0 +1,27 @@
+{
+  "scenario": "Low-risk local documentation refinement",
+  "task_brief_excerpt": {
+    "classification": {
+      "task_type": "A",
+      "severity": "S1",
+      "risk": "low"
+    },
+    "validation_plan": [
+      "Diff inspection",
+      "Manual clarity review"
+    ],
+    "human_gate_required": false
+  },
+  "operational_posture": {
+    "expected_decision_action": "allow",
+    "validation_depth": "light",
+    "human_gate_required": false,
+    "structured_inference_posture": "not_recommended",
+    "closure_default": "close_after_lightweight_proof"
+  },
+  "why": [
+    "The change is local and reversible.",
+    "No trust boundary is being changed.",
+    "Semantic ambiguity is low."
+  ]
+}

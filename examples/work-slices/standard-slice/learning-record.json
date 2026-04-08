@@ -1,0 +1,27 @@
+{
+  "id": "learning-work-slice-standard-001",
+  "source": {
+    "type": "review",
+    "ref": "handoff-work-slice-standard-001"
+  },
+  "learning_type": "pattern",
+  "title": "Composed slices teach the workflow better than a premature new schema",
+  "summary": "When the repo already has strong contracts, making one bounded work slice explicit is often a better teaching and adoption move than adding another central schema immediately.",
+  "evidence": [
+    "task-work-slice-standard-001",
+    "decision-work-slice-standard-001",
+    "execution-work-slice-standard-001",
+    "handoff-work-slice-standard-001"
+  ],
+  "actionability": {
+    "apply_to": [
+      "doc",
+      "checklist"
+    ],
+    "recommended_change": "Prefer small composed examples and starter-pack guidance before proposing new central operational contracts."
+  },
+  "review": {
+    "status": "accepted",
+    "approved_by": "framework-designer"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "handoff-work-slice-standard-001",
+  "task_brief_id": "task-work-slice-standard-001",
+  "origin": {
+    "actor": "framework-agent",
+    "thread": "operational-work-slices",
+    "date": "2026-04-08T14:15:00Z"
+  },
+  "status": "ready_for_validation",
+  "completed": [
+    "Work-slice pattern documented as a composed operational layer.",
+    "A starter-pack template now points to the existing contracts without replacing them.",
+    "A standard-slice example links task brief, decision, execution, handoff, and learning artifacts."
+  ],
+  "pending": [
+    "Validate that the docs keep the pattern clearly outside the core contracts.",
+    "Confirm that the new example remains small, legible, and provider-agnostic."
+  ],
+  "risks": [
+    "The pattern could be mistaken for a new mandatory schema if the wording becomes too strong.",
+    "The example could become more ceremonial than intended if the review boundary is not explained clearly."
+  ],
+  "reopen_context": {
+    "summary": "The slice has been assembled and locally validated, but it intentionally pauses before full closure so the next reviewer can check whether the new operational layer stays lightweight and coherent.",
+    "required_files": [
+      "docs/work-slice-pattern.md",
+      "starter-pack/templates/work-slice-template.md",
+      "examples/work-slices/standard-slice/README.md"
+    ],
+    "next_action": "Review the new work-slice materials for clarity, proportionality, and boundary discipline."
+  },
+  "validation_next": [
+    "Diff inspection of the new operational-composition docs",
+    "Consistency check against existing task, handoff, and learning contracts",
+    "Final wording review to ensure the core is not inflated"
+  ]
+}

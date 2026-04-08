@@ -90,3 +90,22 @@ This means Alpha 6 can now be read across:
 - delivery surface
 - adoption depth
 - cross-surface meaning preservation
+
+The current low-regret operational composition layer is now anchored by:
+
+- `docs/work-slice-pattern.md`
+- `starter-pack/templates/work-slice-template.md`
+- `starter-pack/guides/risk-to-gate-mapping.md`
+- `examples/work-slices/standard-slice/README.md`
+- `examples/handoffs/compact-reviewable-handoff.md`
+- `examples/handoffs/high-stakes-handoff.md`
+- `starter-pack/experiments/workspace-context-routing/README.md`
+
+This means the current operational layer can now be read across:
+
+- composed work units
+- risk-sensitive gate selection
+- stronger restart-package continuity
+- optional filesystem-based context routing experiments
+
+These materials remain intentionally smaller than the core contracts.

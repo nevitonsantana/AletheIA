@@ -310,6 +310,33 @@ Current Alpha 7 artifacts now include:
 
 ---
 
+## Current Incremental Operational Evolution
+
+Focus:
+- make the current baselines more tangible through composed work slices, clearer risk-to-gate mapping, stronger handoff examples, and optional filesystem-based context routing experiments
+
+This is not a new Alpha.
+It is a low-regret operational layer that composes the current baseline artifacts without changing the framework core.
+
+Current artifacts in this layer now include:
+
+- `docs/work-slice-pattern.md`
+- `starter-pack/templates/work-slice-template.md`
+- `starter-pack/guides/risk-to-gate-mapping.md`
+- `examples/work-slices/standard-slice/README.md`
+- `examples/handoffs/compact-reviewable-handoff.md`
+- `examples/handoffs/high-stakes-handoff.md`
+- `starter-pack/experiments/workspace-context-routing/README.md`
+
+Together, these artifacts now strengthen four practical moves without inflating the core:
+
+- make bounded work more legible through composed slices
+- connect risk posture to proof depth and gate choice
+- make handoffs more restartable without making them more bureaucratic
+- test filesystem-based context routing as an optional starter-pack experiment
+
+---
+
 ## Future Track — Reusable Domain Governance Packs
 
 Focus:
@@ -371,29 +398,35 @@ Across all phases, AletheIA should preserve a few boundaries:
 
 ## Near-term priority order
 
-1. consolidate the current Alpha 5 inference baseline
+1. make the current operational layer more tangible
+   - work-slice pattern
+   - risk-to-gate mapping
+   - stronger handoff examples
+   - optional workspace-context-routing experiment
+2. keep the current Alpha 5 inference baseline coherent
    - concept doc
    - inference template
    - trigger guidance
    - generation guide
    - pilot scenarios
    - example artifacts
-   - alignment with Alpha 4 handoffs and Alpha 3 adoption assets
-2. keep the current Alpha 4 handoff baseline coherent
+   - alignment with Alpha 4 handoffs and the new work-slice layer
+3. keep the current Alpha 4 handoff baseline coherent
    - concept doc
    - generation guide
    - handoff template
    - project-level conventions
    - handoff capture pattern
-3. keep the current Alpha 3 adoption baseline coherent
+   - compact restart-package examples
+4. keep the current Alpha 3 adoption baseline coherent
    - getting started
    - existing-project application
    - contributor guidance
    - project extension template
-4. keep the Alpha 2 bridge coherent while adoption grows
-5. continue validating the Crisis Monitor pilot and nearby real slices
-6. convert pilot learnings into framework updates
-7. keep Alpha 5 framed as experimental structured risk inference rather than strong formal verification
-8. shape Alpha 6 as a future distribution layer without distorting the framework core
-9. keep Alpha 7 as a later tooling/bootstrap follow-up, not a near-term promise
-10. shape future domain governance packs as reusable layers without moving them into the framework core
+5. keep the Alpha 2 bridge coherent while adoption grows
+6. continue validating the Crisis Monitor pilot and nearby real slices
+7. convert pilot learnings into framework updates
+8. keep Alpha 5 framed as experimental structured risk inference rather than strong formal verification
+9. keep Alpha 6 as a concrete distribution layer without distorting the framework core
+10. keep Alpha 7 optional, bounded, and clearly outside the core model
+11. shape future domain governance packs as reusable layers without moving them into the framework core

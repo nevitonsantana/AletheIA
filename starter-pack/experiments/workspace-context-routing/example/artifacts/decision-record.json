@@ -1,0 +1,49 @@
+{
+  "id": "decision-workspace-context-routing-demo",
+  "task_brief_id": "task-workspace-context-routing-demo",
+  "input": {
+    "signal": "Prepare a small validation handoff using the experimental routing layout"
+  },
+  "context_snapshot": {
+    "summary": "Only global rules, workspace scope, stage intent, and two stable references were loaded.",
+    "sources_considered": [
+      "GLOBAL_CONTEXT.md",
+      "WORKSPACE_CONTEXT.md",
+      "STAGE_CONTEXT.md",
+      "references/stable-rules.md",
+      "references/validation-rules.md"
+    ]
+  },
+  "interpretation": {
+    "summary": "A narrow loading pattern is enough for the current stage.",
+    "key_signals": [
+      "stage goal is validation preparation only",
+      "schema and runtime changes are explicitly out of scope"
+    ]
+  },
+  "decision": {
+    "action": "continue",
+    "next_step": "Prepare a compact handoff from the stage artifacts."
+  },
+  "justification": {
+    "reason": "The stage can proceed with a lightweight context window because the experiment cleanly separates stable references from transient artifacts."
+  },
+  "provenance": {
+    "facts": [
+      "The current stage is explicitly documented.",
+      "Stable references are separate from transient artifacts."
+    ],
+    "inferences": [
+      "Selective loading is plausible for this stage."
+    ],
+    "rules_applied": [
+      "load only the context needed for the current boundary"
+    ]
+  },
+  "metadata": {
+    "confidence": 0.86,
+    "risk": "medium",
+    "trace_id": "trace-workspace-context-routing-demo",
+    "created_at": "2026-04-08T15:00:00Z"
+  }
+}
