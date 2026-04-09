@@ -1,176 +1,126 @@
-# AletheIA Alpha Roadmap
+# AletheIA Roadmap — Alpha Completion First
 
-## Alpha 1 — Core + Governance Baseline
+AletheIA still uses **Alpha 1–7** as its primary maturity map.
 
-Focus:
-- prove the framework core
-- harden the minimum governance baseline
+The current roadmap rule is now explicit:
 
-Includes:
-- core contracts
-- minimal deterministic kernel
-- governance pack
-- governance hooks
-- quality baseline
-- learning-from-failed-validation
-- token policy
-- technical governance baseline
-- stronger durable-decision / ADR discipline
-- clearer distinction between behavioral enforcement and technical enforcement
+1. **close the Alphas that are still open**
+2. **declare a formal 1.0 gate**
+3. **only then pull the post-1.0 tracks into priority**
 
-### What Alpha 1 must prove
+This means previously discussed next steps are **not lost**.
+They are preserved below either as:
 
-By the end of Alpha 1, AletheIA should already show that:
-
-- an input can become a structured decision
-- governance can evaluate whether work should proceed
-- unsafe or poorly framed closure can be blocked
-- failed validation can generate reusable learnings
-- token discipline can be explicit instead of implicit
-- the repository has a small executable governance baseline, not only governance prose
-
-### Notes
-
-Alpha 1 should stay intentionally small.
-
-This phase is not the moment for:
-- heavy policy engines
-- installer promises
-- large integration matrices
-- strong claims about enterprise enforcement
-
-The goal is to make the framework inspectable, teachable, and minimally enforceable.
-
-Current Alpha 1 baseline artifacts now include:
-
-- `docs/token-policy.md`
-- `scripts/check-governance.sh`
-- `docs/durable-decisions.md`
-- `docs/enforcement-boundaries.md`
+- a **completion-first queue** that still blocks 1.0, or
+- **deferred until post-1.0** tracks that stay valid but must not compete with Alpha completion.
 
 ---
 
-## Alpha 2 — Real Pilots + Self-Application
+## How to read this roadmap
 
-Focus:
-- prove AletheIA in real product flows
-- start using AletheIA to improve AletheIA
+This roadmap is organized in three layers:
 
-Includes:
-- first real Crisis Monitor pilot write-up
-- second small pilot or adjacent real flow
-- stronger pilot learnings loop
-- project extension pattern
-- self-application loop
-- self-application of AletheIA contracts to framework evolution
-- clearer conversion of pilot learnings into framework improvements
+1. **Established baseline**
+   - Alphas that are complete enough for the current cycle
+2. **Alpha completion pass**
+   - Alphas whose baseline exists but still needs hardening or clearer boundaries before 1.0
+3. **Deferred until post-1.0**
+   - valid tracks that remain intentionally out of the current priority lane
 
-### What Alpha 2 must prove
+See also:
 
-By the end of Alpha 2, AletheIA should already show that:
+- `docs/release-1.0-readiness.md`
+- `docs/00-overview.md`
 
-- the framework works in real product slices, not only examples
-- pilots produce durable learnings, not just anecdotes
-- AletheIA can be applied to its own roadmap and repo evolution
-- project-specific extensions can exist without collapsing the framework into a single product
+---
 
-### Notes
+## Established baseline
 
-This is the phase where real pilots matter more than abstract completeness.
+### Alpha 1 — Core + Governance Baseline
+**Status:** complete enough for the current cycle
 
-The most important move in Alpha 2 is not adding more framework surface.
-It is closing the loop between:
+What Alpha 1 already established:
 
-`pilot -> learning -> framework improvement`
+- framework core contracts
+- minimal deterministic kernel
+- governance baseline
+- token discipline
+- explicit token policy
+- durable decisions
+- enforcement-boundary clarity
+- quality baseline
+- learning-from-failed-validation path
 
-Current Alpha 2 bridge artifacts now include:
+Current anchor artifacts include:
+
+- `docs/token-policy.md`
+- `docs/durable-decisions.md`
+- `docs/enforcement-boundaries.md`
+- `docs/quality.md`
+- `scripts/check-governance.sh`
+
+### Alpha 2 — Real Pilots + Self-Application
+**Status:** complete enough for the current cycle
+
+What Alpha 2 already established:
+
+- real pilot grounding through Crisis Monitor
+- self-application of framework discipline to framework evolution
+- pilot-to-learning-to-framework conversion
+- project extension as a clean local layer
+
+Current anchor artifacts include:
 
 - `docs/self-application.md`
 - `docs/pilot-crisis-monitor.md`
 - `docs/pilot-conversion.md`
 - `docs/project-extension-pattern.md`
+- `examples/pilot-conversion/crisis-monitor-real-world-validation.md`
 
-Together, these four artifacts define how AletheIA learns from pilots, improves itself, and preserves the boundary between reusable core and local project context.
+### Alpha 3 — Adoption + Ecosystem
+**Status:** complete enough for the current cycle
 
-Recent Crisis Monitor validation now gives Alpha 2 a stronger bridge than early explicability alone. The bridge is now supported by a real sequence of product proof, contract hardening, operational health reading, investigation, and compact lane summary before the learnings return to the framework.
+What Alpha 3 already established:
 
----
+- clearer onboarding
+- starter-pack reuse
+- contribution guidance
+- existing-project application path
+- stronger separation between framework core and local extension
 
-## Alpha 3 — Adoption + Ecosystem
+Current anchor artifacts include:
 
-Focus:
-- make the repository easier to adopt, extend, and contribute to
-
-Includes:
-- better onboarding
-- a clearer getting-started path
-- stronger contributor guidance
-- clearer contribution boundaries for framework core vs project extension
-- stronger starter-pack
-- clearer guidance for applying AletheIA in an existing project
-- cleaner release structure
-- reusable domain governance packs
-- tighter release hygiene
-- less pilot-specific residue in public docs
-
-### What Alpha 3 must prove
-
-By the end of Alpha 3, AletheIA should already show that:
-
-- a new team can understand how to start
-- contributors can extend the framework without breaking its core logic
-- the starter-pack is more reusable and less tied to its original extraction context
-- governance patterns can be reused across domains without redefining the whole framework
-
-### Notes
-
-Alpha 3 is not about making the framework heavier.
-It is about making it easier to adopt.
-
-AletheIA should become easier to:
-- read
-- install mentally
-- adapt
-- contribute to
-- test in real projects
+- `docs/getting-started.md`
+- `docs/apply-to-existing-project.md`
+- `CONTRIBUTING.md`
+- `starter-pack/README.md`
+- `starter-pack/templates/project-extension-template.md`
 
 ---
 
-## Alpha 4 — Orchestrated Handoffs & Multi-Agent Continuity
+## Alpha completion pass
 
-Focus:
-- make handoffs between agents explicit, reusable, model-agnostic, and increasingly automatable
+These Alphas are real baselines already, but they are **still open for the 1.0 gate**.
 
-Includes:
-- structured inter-agent handoff contracts
-- handoff generation patterns from real work items
-- clearer separation between human-facing summaries and agent-facing restart packages
-- model-agnostic continuity patterns that do not depend on one LLM or coding tool
-- starter-pack guidance for cross-agent execution flows
-- reusable patterns for passing scope, validation, risks, and next action across agents
+### Alpha 4 — Orchestrated Handoffs & Multi-Agent Continuity
+**Status:** baseline established, still open
 
-### What Alpha 4 must prove
+Alpha 4 already has:
 
-By the end of Alpha 4, AletheIA should already show that:
+- handoff concept docs
+- generation guidance
+- starter-pack template
+- project-level conventions
+- handoff capture pattern
+- restart-package examples
 
-- handoffs can be produced as compact restart packages instead of ad-hoc prompts
-- one agent can stop at its boundary and prepare the next agent's work clearly
-- cross-agent continuity can happen without relying on hidden thread memory
-- handoff artifacts can be generated in a repeatable way from real project work
-- the handoff structure can work across different LLMs and agent shells without changing its core meaning
+What still needs to feel done enough:
 
-### Notes
+- tighter coherence between doc, template, and examples
+- a clearer boundary between schema coverage and richer operational handoff practice
+- at least one stronger multi-boundary continuity example if the current examples still feel too light
 
-Alpha 4 is not about adding more agents for their own sake.
-It is about making agent boundaries safer and more productive.
-
-The key move in Alpha 4 is turning:
-
-`work in one agent -> explicit handoff artifact -> reliable continuation in another agent`
-
-into a reusable operating pattern.
-
-Current Alpha 4 baseline artifacts now include:
+Current anchor artifacts include:
 
 - `docs/agent-handoffs.md`
 - `starter-pack/guides/agent-handoff-generation.md`
@@ -178,48 +128,26 @@ Current Alpha 4 baseline artifacts now include:
 - `docs/project-handoff-conventions.md`
 - `docs/handoff-capture-pattern.md`
 
-Next artifacts for this phase may include:
+### Alpha 5 — Structured Risk Inference & Evidence-Oriented Validation
+**Status:** baseline established, still open
 
-- execution-scope fields such as allowed files, forbidden files, allowed data, semantic guardrails, acceptance criteria, and expected response format
-- project-level handoff examples drawn from real pilot work
-- more explicit draft/review flows for semi-automated handoff assembly
+Alpha 5 already has:
 
----
+- concept framing
+- template
+- trigger guidance
+- generation guidance
+- pilot scenarios
+- example artifacts
 
-## Alpha 5 — Structured Risk Inference & Evidence-Oriented Validation
+What still needs to feel done enough:
 
-Focus:
-- make higher-risk decisions more reviewable before execution through structured, evidence-oriented inference
+- more tangible real or near-real evidence
+- a tighter connection to risk-to-gate and iterative maintenance
+- clearer guidance on when inference helps and when it becomes unnecessary overhead
+- continued selective positioning rather than universal ceremony
 
-Includes:
-- a conditional inference step for higher-risk work
-- compact inference artifacts with premises, assumptions, invariants, risks, unknowns, and test gaps
-- better connection between semantic risk and validation design
-- stronger rationale preservation across high-stakes handoffs
-- experimental use in code and semantic-risk scenarios before broader expansion
-
-### What Alpha 5 must prove
-
-By the end of Alpha 5, AletheIA should already show that:
-
-- higher-risk changes can be reasoned about more explicitly before execution
-- semantic risks can be surfaced without pretending to prove formal correctness
-- evidence, assumptions, and unknowns can be captured in a reusable artifact
-- risk-oriented suggested tests can improve validation quality
-- the capability can remain selective instead of becoming universal ceremony
-
-### Notes
-
-Alpha 5 should not be framed as formal verification.
-It should be framed as structured, reviewable inference for cases where raw confidence is not enough.
-
-The key move in Alpha 5 is inserting a conditional step such as:
-
-`intent -> context -> decision -> [if triggered: inference] -> execution -> validation -> learning`
-
-This phase should begin as an experimental capability, not a mandatory step for every workflow.
-
-Current Alpha 5 baseline artifacts now include:
+Current anchor artifacts include:
 
 - `docs/structured-risk-inference.md`
 - `starter-pack/templates/inference-artifact-template.md`
@@ -228,47 +156,24 @@ Current Alpha 5 baseline artifacts now include:
 - `docs/inference-pilot-scenarios.md`
 - `examples/structured-risk-inference/README.md`
 
-Together, these artifacts now define Alpha 5 as a concept-plus-examples baseline rather than only a template-and-guidance layer.
+### Alpha 6 — Distribution, Presets & Adapters
+**Status:** baseline established, still open
 
----
+Alpha 6 already has:
 
-## Alpha 6 — Distribution, Presets & Adapters
+- distribution architecture framing
+- preset taxonomy
+- adapter taxonomy
+- adoption modes
+- delivery mappings
 
-Focus:
-- make AletheIA easier to package, deliver, and reuse across project shapes and agent environments without changing the framework core
+What still needs to feel done enough:
 
-Includes:
-- preset or bundle models for common project shapes
-- editor and agent-shell adapters that preserve the same framework meaning across environments
-- lighter vs fuller adoption modes
-- clearer distinction between framework core and delivery-layer packaging
-- future-facing distribution guidance that stays provider-agnostic
+- more tangible presets, adapters, and adoption examples
+- at least one stronger local distribution or extension example in a demanding context
+- clearer communication of architectural plugability without claiming enterprise-readiness
 
-### What Alpha 6 must prove
-
-By the end of Alpha 6, AletheIA should already show that:
-
-- the framework can be packaged in more than one reusable form without distorting its conceptual core
-- presets can adapt the framework to different project shapes without turning into incompatible forks
-- adapters can deliver the same meaning across editor or agent environments
-- teams can choose lighter vs fuller adoption footprints without changing the framework's governing logic
-
-### Notes
-
-Alpha 6 is not a CLI-first phase.
-It is a distribution-architecture phase.
-
-This phase should not:
-- change the decision or governance core
-- make one editor the canonical interface
-- introduce mandatory external integrations
-- promise one-command installation before the model is stable
-
-Current Alpha 6 direction is documented in:
-
-- `docs/distribution-presets-adapters.md`
-
-Current Alpha 6 baseline artifacts now include:
+Current anchor artifacts include:
 
 - `docs/distribution-presets-adapters.md`
 - `docs/preset-taxonomy.md`
@@ -276,35 +181,24 @@ Current Alpha 6 baseline artifacts now include:
 - `docs/adoption-mode-guidance.md`
 - `docs/delivery-mapping-examples.md`
 
-Together, these artifacts now define Alpha 6 as a first concrete distribution baseline covering packaging shape, delivery surface, adoption depth, and cross-surface meaning preservation.
+### Alpha 7 — Bootstrap & Delivery Tooling
+**Status:** baseline defined, still not 1.0-ready
 
----
+Alpha 7 already has:
 
-## Alpha 7 — Bootstrap & Delivery Tooling
+- principles
+- tooling boundaries
+- bootstrap output examples
+- generator contract
+- delivery output contract
 
-Focus:
-- operationalize the distribution model from Alpha 6 through optional bootstrap and delivery tooling
+What still needs to feel done enough for 1.0:
 
-### What Alpha 7 should remain
+- clearer boundary language so the tooling layer stays obviously optional and future-facing
+- coherence between generator, output, and boundary docs
+- no implication that 1.0 depends on real delivery tooling
 
-Alpha 7 should stay intentionally smaller and later than Alpha 6.
-
-It may eventually include:
-
-- optional bootstrap CLI flows
-- delivery automation for presets or adapters
-- packaging helpers for distributing AletheIA into real repositories
-
-### Notes
-
-Alpha 7 should only become active after presets, adapters, adoption modes, and delivery mappings are already well-defined.
-
-It should remain:
-- provider-agnostic
-- optional
-- clearly outside the framework core itself
-
-Current Alpha 7 baseline artifacts now include:
+Current anchor artifacts include:
 
 - `docs/bootstrap-principles.md`
 - `docs/delivery-tooling-boundaries.md`
@@ -312,19 +206,14 @@ Current Alpha 7 baseline artifacts now include:
 - `docs/bootstrap-generator-contract.md`
 - `docs/delivery-output-contract.md`
 
-Together, these artifacts now define Alpha 7 as a first future-facing tooling baseline covering posture, boundaries, output shape, generator IO, and output obligations before any implementation is attempted.
-
 ---
 
-## Current Operational Composition Baseline
+## Current operational-composition baseline
 
-Focus:
-- make the current baselines more tangible through composed work slices, clearer risk-to-gate mapping, stronger handoff examples, and optional filesystem-based context routing experiments
+This is **not a new Alpha**.
+It is a proportional operating layer that makes the existing baselines easier to apply.
 
-This is not a new Alpha.
-It is a low-regret operational-composition baseline that composes the current artifacts around Alpha 4 and Alpha 5 without changing the framework core.
-
-Current artifacts in this layer now include:
+Current artifacts in this layer include:
 
 - `docs/work-slice-pattern.md`
 - `starter-pack/templates/work-slice-template.md`
@@ -336,63 +225,92 @@ Current artifacts in this layer now include:
 - `docs/iterative-maintenance-governance.md`
 - `starter-pack/guides/round-based-maintenance.md`
 - `examples/iterative-maintenance/three-round-loop/README.md`
+- `starter-pack/guides/model-strategy-by-task.md`
+- `starter-pack/templates/project-model-strategy-template.md`
 
-Together, these artifacts now define a first operational-composition baseline and strengthen five practical moves without inflating the core:
+This layer currently strengthens:
 
-- make bounded work more legible through composed slices
-- connect risk posture to proof depth and gate choice
-- make handoffs more restartable without making them more bureaucratic
-- test filesystem-based context routing as an optional starter-pack experiment
-- make iterative maintenance rounds more legible through composed slices, regression-aware gates, and reusable learning
+- work-slice legibility
+- risk-to-gate mapping
+- stronger restart-package continuity
+- optional filesystem-based context routing experiments
+- round-based maintenance guidance over existing contracts
+- regression-aware continuation and reusable learning across rounds
+- advisory-only model strategy by task shape, capability profile, reasoning depth, and trust / hosting posture
 
-Alongside that operational layer, the starter-pack now also carries an advisory-only model-strategy guidance slice for matching task shape, capability profile, reasoning depth, and trust / hosting posture without turning model choice into a framework-level rule.
-
-The iterative-maintenance slice now has stronger operational grounding as well: it should be read as a proportional pattern for important loops where proof, contract, health metric, alert, investigation, and lane summary make continuation safer without becoming a universal requirement.
+It should remain smaller than the core and must not replace the Alpha completion pass.
 
 ---
 
-## Future Track — Reusable Domain Governance Packs
+## Completion-first queue
 
-Focus:
-- make recurring domain-specific governance reusable without inflating the AletheIA core
+These previously discussed moves remain **active** and are now the formal queue before 1.0:
 
-This future track exists for governance patterns that are:
+1. **Alpha 4 completion pass**
+2. **Alpha 5 hardening pass**
+3. **Alpha 6 tangibility pass**
+4. **Alpha 7 boundary clarification pass**
 
-- too domain-specific to live in the framework core
-- too reusable to remain only as project-local rules
-- worth documenting as reusable operating discipline before any heavier automation appears
+This queue exists so that new strategic tracks do not compete with what still blocks a clean 1.0 baseline.
 
-This is not a new Alpha right now.
-It is a future track for reusable domain governance layers that sit between the framework core and each project's local extension.
+---
 
-The intended layer is:
+## Deferred until post-1.0
 
-`AletheIA core -> domain governance pack -> project extension`
+These tracks remain valid, but they are now explicitly **deferred until after the 1.0 gate**.
 
-The first planned packs in this track are:
+### 1.1 — Enterprise-readiness / regulated adoption
+Includes the previously discussed backlog items such as:
 
-- `Web App Security & Trust Boundaries Pack`
-- `AI Agent Security & Prompt Injection Pack`
+- enterprise-readiness / regulated adoption roadmap
+- enterprise adoption guidance
+- restricted enterprise extension example
+- stronger articulation of local trust-boundary posture in constrained environments
 
-This future track connects to the existing phases in specific ways:
+### 1.2 — Pilot expansion / stronger real-world validation
+Includes:
 
-- Alpha 1 provides the generic governance baseline and core security-adjacent rules
-- Alpha 3 opens the path for reusable domain governance packs beyond the core
-- Alpha 4 contributes execution boundaries, handoffs, and semantic guardrails
-- Alpha 5 may later strengthen higher-risk decisions inside these packs through selective structured inference
+- expansion beyond the strongest current pilot lane
+- more real-world comparisons between project extensions
+- stronger pilot-to-framework conversion evidence
 
-Current direction for this track is documented in:
+### 1.3 — Distribution & delivery hardening
+Includes:
 
-- `docs/domain-governance-packs.md`
-- `docs/web-app-security-trust-boundaries.md`
-- `docs/ai-agent-security-prompt-injection.md`
+- broader delivery and distribution hardening beyond “done enough”
+- stronger preset and adapter tangibility after the Alpha 6 pass
+- additional delivery-layer material once the baseline is already stable
 
-This future track should not:
+### 1.4+ — Domain governance packs hardening
+Includes:
 
-- redefine the kernel or policy core
-- collapse vendor-specific guidance into framework truth
-- turn project-local rules into universal enforcement by accident
-- pretend these packs are already active policies in the framework
+- stronger domain governance packs
+- future trust-boundary and prompt-injection packs as harder reusable layers
+- heavier Alpha 7 tooling only after the baseline and post-1.0 priorities justify it
+
+These deferred tracks are preserved as backlog on purpose.
+They are not cancelled.
+They are simply not the current priority lane.
+
+---
+
+## Sequence to 1.0
+
+The current order is now explicit:
+
+1. finish the **Alpha completion-first queue**
+2. run the **1.0 readiness check** in `docs/release-1.0-readiness.md`
+3. flip the public surfaces from late-alpha to **AletheIA 1.0**
+4. begin the **1.x roadmap**
+
+Until then, the repository should keep treating:
+
+- enterprise-readiness
+- stronger domain governance packs
+- heavier delivery tooling
+- broader post-baseline distribution work
+
+as **deferred tracks**, not current priorities.
 
 ---
 
@@ -400,49 +318,10 @@ This future track should not:
 
 Across all phases, AletheIA should preserve a few boundaries:
 
-1. It should remain provider-agnostic.
-2. It should not collapse into a single governance template.
-3. It should not confuse product pilot residue with reusable framework core.
-4. It should prefer explicit contracts over hidden conventions.
-5. It should treat learnings as reviewable artifacts, not informal memory.
-6. It should evolve through real pilots, not only through internal theory.
-7. It should treat distribution and tooling as delivery-layer concerns, not as replacements for the core operating model.
-
----
-
-## Near-term priority order
-
-1. keep the current operational-composition baseline coherent
-   - work-slice pattern
-   - risk-to-gate mapping
-   - stronger handoff examples
-   - optional workspace-context-routing experiment
-2. keep the current Alpha 5 inference baseline coherent
-   - concept doc
-   - inference template
-   - trigger guidance
-   - generation guide
-   - pilot scenarios
-   - example artifacts
-   - alignment with Alpha 4 handoffs and the new work-slice layer
-3. keep the current Alpha 4 handoff baseline coherent
-   - concept doc
-   - generation guide
-   - handoff template
-   - project-level conventions
-   - handoff capture pattern
-   - compact restart-package examples
-4. keep the current Alpha 3 adoption baseline coherent
-   - getting started
-   - existing-project application
-   - contributor guidance
-   - project extension template
-5. keep the Alpha 2 bridge coherent while adoption grows
-   - preserve the Crisis Monitor pilot as the strongest current real-world validation lane
-   - keep the conversion path from pilot evidence to small framework improvements explicit
-6. continue validating the Crisis Monitor pilot and nearby real slices
-7. convert pilot learnings into framework updates
-8. keep Alpha 5 framed as experimental structured risk inference rather than strong formal verification
-9. keep Alpha 6 as a concrete distribution layer without distorting the framework core
-10. keep Alpha 7 optional, bounded, and clearly outside the core model
-11. shape future domain governance packs as reusable layers without moving them into the framework core
+1. remain provider-agnostic
+2. avoid collapsing into one product's operating residue
+3. prefer explicit contracts over hidden conventions
+4. keep learnings reviewable instead of informal
+5. improve through real pilots instead of theory alone
+6. keep delivery and tooling as delivery-layer concerns, not replacements for the core operating model
+7. treat project extension as the main place where local complexity should land

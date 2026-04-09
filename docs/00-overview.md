@@ -2,7 +2,7 @@
 
 AletheIA is an operating framework for AI-assisted work with a decision kernel at its center.
 
-The public repository is organized around three blocks:
+The public repository is organized around four blocks:
 
 1. **framework core**
    - contracts
@@ -28,6 +28,43 @@ The public repository is organized around three blocks:
    - how pilot learnings return into framework evolution
    - how self-application, pilot conversion, and project extension stay connected
 
+4. **release-readiness framing**
+   - what is already baseline enough
+   - what still blocks 1.0
+   - what has been intentionally deferred until after 1.0
+
+---
+
+## Current phase
+
+AletheIA is currently in a **late Alpha completion cycle before 1.0**.
+
+That means the repository now distinguishes between:
+
+- **established baseline**
+  - Alpha 1
+  - Alpha 2
+  - Alpha 3
+- **Alpha completion pass**
+  - Alpha 4
+  - Alpha 5
+  - Alpha 6
+  - Alpha 7
+- **deferred until post-1.0**
+  - enterprise-readiness / regulated adoption
+  - stronger pilot expansion
+  - broader delivery hardening
+  - domain governance packs hardening
+
+The roadmap and 1.0 gate are now read together through:
+
+- `docs/roadmap-alpha.md`
+- `docs/release-1.0-readiness.md`
+
+---
+
+## Alpha 2 bridge and pilot grounding
+
 The Crisis Monitor pilot is the first concrete example of this bridge, and it now includes real-world validation beyond the first explicability slice.
 
 The key idea is simple:
@@ -36,7 +73,6 @@ AletheIA should be reusable outside the original pilot while still preserving th
 
 That reuse depends on an explicit boundary between the framework core and each project's local extension layer.
 
-
 At this point, Alpha 2 is organized around four explicit bridge artifacts and is now supported by stronger real-world validation from the Crisis Monitor pilot:
 
 - `docs/self-application.md`
@@ -44,14 +80,22 @@ At this point, Alpha 2 is organized around four explicit bridge artifacts and is
 - `docs/pilot-conversion.md`
 - `docs/project-extension-pattern.md`
 
-The current Alpha 3 adoption baseline is now anchored by:
+---
+
+## Established baseline already in place
+
+### Alpha 3 adoption baseline
+
+Anchored by:
 
 - `docs/getting-started.md`
 - `docs/apply-to-existing-project.md`
 - `CONTRIBUTING.md`
 - `starter-pack/templates/project-extension-template.md`
 
-The current Alpha 4 handoff baseline is now anchored by:
+### Alpha 4 handoff baseline
+
+Anchored by:
 
 - `docs/agent-handoffs.md`
 - `starter-pack/guides/agent-handoff-generation.md`
@@ -59,7 +103,9 @@ The current Alpha 4 handoff baseline is now anchored by:
 - `docs/project-handoff-conventions.md`
 - `docs/handoff-capture-pattern.md`
 
-The current Alpha 5 experimental baseline is now anchored by:
+### Alpha 5 experimental baseline
+
+Anchored by:
 
 - `docs/structured-risk-inference.md`
 - `starter-pack/templates/inference-artifact-template.md`
@@ -77,7 +123,9 @@ This means Alpha 5 can now be read across:
 - pilot posture
 - concrete example artifacts
 
-The current Alpha 6 distribution baseline is now anchored by:
+### Alpha 6 distribution baseline
+
+Anchored by:
 
 - `docs/distribution-presets-adapters.md`
 - `docs/preset-taxonomy.md`
@@ -92,7 +140,25 @@ This means Alpha 6 can now be read across:
 - adoption depth
 - cross-surface meaning preservation
 
-The current low-regret operational-composition baseline is now anchored by:
+### Alpha 7 future-facing tooling baseline
+
+Anchored by:
+
+- `docs/bootstrap-principles.md`
+- `docs/delivery-tooling-boundaries.md`
+- `docs/bootstrap-output-examples.md`
+- `docs/bootstrap-generator-contract.md`
+- `docs/delivery-output-contract.md`
+
+This is still a future-facing delivery layer, not an implemented tooling requirement for the 1.0 baseline.
+
+---
+
+## Current low-regret operational-composition layer
+
+This operational layer sits around the current baselines without becoming a new Alpha.
+
+Anchored by:
 
 - `docs/work-slice-pattern.md`
 - `starter-pack/templates/work-slice-template.md`
@@ -104,8 +170,10 @@ The current low-regret operational-composition baseline is now anchored by:
 - `docs/iterative-maintenance-governance.md`
 - `starter-pack/guides/round-based-maintenance.md`
 - `examples/iterative-maintenance/three-round-loop/README.md`
+- `starter-pack/guides/model-strategy-by-task.md`
+- `starter-pack/templates/project-model-strategy-template.md`
 
-This means the current operational-composition baseline can now be read across:
+This layer makes the current baseline more tangible through:
 
 - composed work units
 - risk-sensitive gate selection
@@ -113,28 +181,6 @@ This means the current operational-composition baseline can now be read across:
 - optional filesystem-based context routing experiments
 - round-based maintenance guidance over existing work-slice contracts
 - regression-aware continuation and reusable learning across rounds
-- a more tangible operational reading of important loops through proof, contract, health, alert, investigation, and lane summary
+- advisory-only model strategy by task shape, capability profile, reasoning depth, and trust / hosting posture
 
-Alongside that operational layer, the starter-pack now also carries an advisory-only model-strategy guidance slice that helps projects map task shape, capability profile, reasoning depth, and trust / hosting posture into their local model fleets without making vendor choice part of the framework core.
-
-This layer sits around the Alpha 4 and Alpha 5 baselines without becoming a new core contract family of its own.
-These materials remain intentionally smaller than the core contracts.
-
-The current Alpha 7 bootstrap-and-delivery baseline is now anchored by:
-
-- `docs/bootstrap-principles.md`
-- `docs/delivery-tooling-boundaries.md`
-- `docs/bootstrap-output-examples.md`
-- `docs/bootstrap-generator-contract.md`
-- `docs/delivery-output-contract.md`
-
-This means Alpha 7 can now be read across:
-
-- tooling posture
-- tooling stop lines
-- healthy output shapes
-- future generator IO
-- future output obligations
-
-This is still a future-facing delivery layer, not a core capability baseline.
-
+This layer is useful, but it does **not** replace the need to close the open Alpha work before 1.0.

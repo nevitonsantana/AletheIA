@@ -2,7 +2,7 @@
 
 Thank you for contributing to AletheIA.
 
-AletheIA is still in public alpha, so the most valuable contributions are the ones that improve clarity, reviewability, reuse, and practical adoption without making the framework heavier than it needs to be.
+AletheIA is in a **late Alpha completion cycle before 1.0**, so the most valuable contributions right now are the ones that improve clarity, reviewability, reuse, and practical adoption **without opening new strategic tracks before the open Alpha work is sufficiently closed**.
 
 ---
 
@@ -18,6 +18,7 @@ Please prioritize contributions that improve:
 - quality baseline
 - starter-pack reuse
 - adoption without premature complexity
+- coherence of the open Alpha completion work
 
 ---
 
@@ -33,6 +34,10 @@ Strong contribution areas right now include:
 - roadmap alignment
 - adoption guidance
 - pilot-to-framework learnings that clearly generalize
+- Alpha 4 handoff coherence
+- Alpha 5 inference hardening without over-expansion
+- Alpha 6 tangibility without premature enterprise claims
+- Alpha 7 boundary clarity without tooling inflation
 
 ---
 
@@ -46,6 +51,7 @@ Please make sure that:
 - tests still pass when relevant
 - public docs stay understandable for non-specialists
 - the change does not silently turn project-specific residue into framework core
+- the change does not pull deferred post-1.0 tracks into the current priority lane unless it directly helps Alpha completion
 
 ---
 
@@ -58,9 +64,12 @@ Before opening a change, ask:
 - is this improving the reusable framework core?
 - is this a starter-pack improvement?
 - is this a pilot learning that really generalizes?
+- is this helping close an Alpha that is still open before 1.0?
 - is this still specific to one project and therefore better left out of the public core?
 
 If the answer is mostly project-specific, prefer keeping it local or documenting it as a project extension pattern instead of promoting it directly into the framework core.
+
+If the change mostly belongs to a deferred post-1.0 track, it is probably premature unless it also makes the current Alpha completion pass clearer or safer.
 
 ---
 
@@ -72,13 +81,15 @@ Framework-core contributions are a good fit when they are:
 - understandable without one product's vocabulary
 - about operating discipline, contracts, governance, validation, or learnings
 - helpful as a teaching artifact for adopters
+- aligned with the current completion-first roadmap
 
 Examples:
 
 - governance clarifications
 - starter-pack patterns that generalize well
 - roadmap-aligned adoption docs
-- validation/test improvements for the framework itself
+- validation and test improvements for the framework itself
+- Alpha-completion hardening that improves coherence without inflating the core
 
 ---
 
@@ -92,12 +103,14 @@ Avoid promoting these directly into the public core unless they clearly generali
 - one-repo ownership maps
 - one-project naming conventions
 - hidden abstractions that reduce inspectability
+- enterprise-specific rules that belong in a future local extension or post-1.0 adoption layer
 
 These may still be valuable as:
 
 - project extensions
 - pilot write-ups
 - future examples
+- deferred post-1.0 tracks
 
 ---
 
@@ -131,7 +144,8 @@ A good contribution should make it easy for a reviewer to answer:
 - why does it belong in the framework?
 - what stays out of scope?
 - how was it validated?
-- what future contributor should learn from this change?
+- what should a future contributor learn from this change?
+- does this help the current Alpha completion path, or is it better deferred?
 
 ---
 
@@ -163,6 +177,7 @@ Avoid:
 - hidden coupling
 - provider lock-in in the core
 - making the framework sound stronger than it currently is
+- opening post-1.0 roadmap scope before the current Alpha work is sufficiently closed
 
 ---
 
@@ -172,6 +187,7 @@ Before contributing, it may help to read:
 
 - `docs/getting-started.md`
 - `docs/roadmap-alpha.md`
+- `docs/release-1.0-readiness.md`
 - `docs/project-extension-pattern.md`
 - `docs/pilot-conversion.md`
 - `starter-pack/README.md`

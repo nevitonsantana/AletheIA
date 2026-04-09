@@ -12,7 +12,7 @@ This document exists to help present AletheIA clearly in public.
 
 ## 3. One-paragraph project description
 
-AletheIA is an operating framework for AI-assisted work. It helps teams structure context, decisions, governance, validation, and learnings before execution, so model output does not act directly on systems without control. The framework is provider-agnostic, deterministic at its core, and designed to be reusable across projects.
+AletheIA is an operating framework for AI-assisted work. It helps teams structure context, decisions, governance, validation, and learnings before execution, so model output does not act directly on systems without control. The framework is provider-agnostic, deterministic at its core, and designed to be reusable across projects. The public repository is currently in a late Alpha completion cycle before 1.0.
 
 ## 4. Suggested GitHub topics
 
@@ -27,25 +27,25 @@ AletheIA is an operating framework for AI-assisted work. It helps teams structur
 - typescript
 - workflows
 
-## 5. Announcement copy — short
+## 5. Announcement copy — current phase
 
 ### English
 
-We just published the first public alpha draft of **AletheIA**: an operating framework for AI-assisted work.
+AletheIA is in its final Alpha-completion phase before **1.0**.
 
-AletheIA introduces an explicit layer between model output and execution, with structured decisions, governance, validation, and learnings.
+It is an operating framework for AI-assisted work that introduces an explicit layer between model output and execution, with structured decisions, governance, validation, and learnings.
 
-It was shaped in real operational work and is now being extracted into a reusable public framework.
+The current focus is to finish the open Alpha work cleanly before moving into the post-1.0 tracks.
 
 Repo: https://github.com/nevitonsantana/aletheia
 
 ### Português
 
-Acabamos de publicar o primeiro alpha público do **AletheIA**: um framework operacional para trabalho assistido por IA.
+O AletheIA está em sua fase final de fechamento dos Alphas antes da **1.0**.
 
-O AletheIA introduz uma camada explícita entre output de modelo e execução, com decisão estruturada, governança, validação e learnings.
+Ele é um framework operacional para trabalho assistido por IA que introduz uma camada explícita entre output de modelo e execução, com decisão estruturada, governança, validação e learnings.
 
-Ele nasceu em trabalho operacional real e agora está sendo extraído como framework público reutilizável.
+O foco atual é fechar bem os Alphas ainda abertos antes de avançar para as trilhas pós-1.0.
 
 Repo: https://github.com/nevitonsantana/aletheia
 
@@ -63,7 +63,7 @@ Instead of letting raw model output act directly on the system, AletheIA introdu
 - proportional validation
 - reusable learnings
 
-The repository is now public as an early alpha draft. The goal of this first version is clarity over completeness and structure over cleverness.
+The public repository is still pre-1.0, but it now has an explicit completion path: finish the remaining Alpha work first, then move into versioned 1.x evolution.
 
 ### Português
 
@@ -77,4 +77,4 @@ Em vez de permitir que o output bruto do modelo aja diretamente no sistema, o Al
 - validação proporcional
 - learnings reutilizáveis
 
-O repositório agora está público como um alpha inicial. O objetivo desta primeira versão é priorizar clareza sobre completude e estrutura sobre esperteza.
+O repositório público ainda está em fase pré-1.0, mas agora tem um caminho explícito de fechamento: concluir primeiro os Alphas ainda abertos e só depois entrar na evolução versionada em 1.x.
