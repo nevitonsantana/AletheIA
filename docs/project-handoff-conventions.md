@@ -42,6 +42,7 @@ A project may customize:
 - naming patterns
 - validation expectations
 - handoff cadence
+- multi-boundary chain rules
 
 A project should not silently replace:
 
@@ -121,6 +122,21 @@ Examples:
 - execution summary + blockers + suggested follow-up
 - implementation status + out-of-scope notes
 
+### 7. Multi-boundary chain convention
+
+A project may define when one task should generate:
+
+- one operational handoff
+- or a sequence of smaller handoffs
+
+Examples:
+
+- implementation -> observability -> review
+- backend boundary -> UX writing boundary -> visual polish boundary
+- feature hardening -> security review -> release check
+
+The project may define naming or storage patterns for these chains, but the framework meaning should remain the same: each step is still a restart package with explicit scope and validation continuity.
+
 ---
 
 ## What should remain framework-stable
@@ -150,6 +166,7 @@ If a project wants handoffs to be consistent, it should make explicit:
 5. what proof is expected by default for each major frontier
 6. what response format the receiving agent should use
 7. when a handoff should be narrative vs operational
+8. when a multi-boundary chain is preferred over one larger artifact
 
 ---
 
@@ -173,6 +190,7 @@ Project-level handoff conventions are healthy when:
 - handoffs are easier to generate and easier to review
 - multiple agents can work in the same project without relying on hidden memory
 - the project can evolve local rules without forking the framework logic
+- multi-boundary chains remain smaller and more explicit than one oversized recap
 
 ---
 
@@ -184,6 +202,7 @@ Do not let project conventions turn into:
 - hidden assumptions not written anywhere
 - one team's habits masquerading as universal structure
 - prompts that only make sense in one agent shell
+- giant handoff bundles that hide the actual boundary transitions
 
 ---
 
@@ -192,4 +211,5 @@ Do not let project conventions turn into:
 - `docs/agent-handoffs.md`
 - `starter-pack/guides/agent-handoff-generation.md`
 - `starter-pack/templates/agent-handoff-template.md`
+- `examples/handoffs/multi-boundary-continuity.md`
 - `docs/project-extension-pattern.md`

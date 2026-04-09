@@ -148,6 +148,62 @@ The important boundary is:
 
 ---
 
+## When the minimum structured record is enough
+
+A smaller handoff is usually enough when:
+
+- the next action is obvious
+- the receiving boundary is narrow
+- the files in scope are already stable
+- the main risk is execution, not reinterpretation
+- validation continuity can be stated in one compact line
+
+In those cases, AletheIA should prefer the minimum restart package over a heavier artifact.
+
+---
+
+## When to step up to the richer operational template
+
+Use the richer optional fields when one or more of these are true:
+
+- the work crosses a meaningful ownership boundary
+- the next agent could easily reinterpret the task as a different frontier
+- file scope must be frozen explicitly
+- there are semantic guardrails that matter more than raw file paths
+- acceptance criteria need to be preserved to avoid drift
+- the receiving agent should report back in a specific shape
+
+This is the practical boundary between **schema-enough continuity** and **richer operational continuity**.
+
+---
+
+## Multi-boundary continuity rule
+
+If work will cross more than one meaningful boundary, AletheIA should usually prefer:
+
+**a chain of compact handoffs**
+
+instead of:
+
+**one oversized handoff trying to predict every later step**
+
+Why:
+
+- each boundary can keep a narrower scope
+- validation can remain local to the current step
+- later agents receive fresher context
+- the artifact stays reviewable instead of turning into a transcript-shaped bundle
+
+A strong multi-boundary flow normally looks like:
+
+`boundary A -> restart package -> boundary B -> restart package -> boundary C`
+
+See:
+
+- `examples/handoffs/multi-boundary-continuity.md`
+
+---
+
 ## Low-bureaucracy rule
 
 A stronger handoff should reduce ambiguity, not increase ritual.
@@ -202,6 +258,7 @@ Alpha 4 is going well when:
 - scope drift is reduced
 - validation continuity is preserved across the handoff
 - the artifact still works even if the receiving agent changes provider
+- multi-boundary work can be continued through small restart packages instead of giant recaps
 - the handoff is rich enough to restart work, but still shorter than a transcript
 
 ---
@@ -214,6 +271,7 @@ Do not treat an agent handoff as:
 - a generic paragraph with no execution boundary
 - a provider-specific prompt recipe disguised as framework logic
 - a bureaucratic checklist that duplicates the entire task history
+- a single artifact trying to solve three later boundaries at once
 
 AletheIA should preserve the handoff as a reusable operating pattern.
 
@@ -227,6 +285,7 @@ AletheIA should preserve the handoff as a reusable operating pattern.
 - `starter-pack/templates/agent-handoff-template.md`
 - `examples/handoffs/compact-reviewable-handoff.md`
 - `examples/handoffs/high-stakes-handoff.md`
+- `examples/handoffs/multi-boundary-continuity.md`
 - `docs/work-slice-pattern.md`
 - `docs/project-handoff-conventions.md`
 - `docs/handoff-capture-pattern.md`

@@ -42,6 +42,42 @@ Not from:
 
 ---
 
+## Decide whether this is one boundary or a chain
+
+Before filling the artifact, ask:
+
+- is there one receiving boundary?
+- or will the work cross two or more meaningful frontiers in sequence?
+
+If the work crosses more than one strong boundary, prefer:
+
+- **one compact handoff per boundary**
+
+instead of:
+
+- **one oversized artifact trying to anticipate every later continuation**
+
+This keeps each restart package smaller, fresher, and easier to validate.
+
+---
+
+## Generate the minimum first
+
+Start by drafting the minimum restart package:
+
+- status
+- completed work
+- remaining work
+- next action
+- main risks
+- validation expectation
+
+Then decide whether you need the richer optional fields.
+
+Use the richer fields only when they materially reduce drift for the next boundary.
+
+---
+
 ## Recommended generation order
 
 ### 1. Start from the receiving agent
@@ -100,11 +136,13 @@ Examples:
 - preserve existing UI layout while refining copy
 - do not expand the task into a redesign
 
-### 6. Make acceptance explicit
+### 6. Make acceptance explicit when needed
 
 Define what must be true for the receiving agent to count the task as complete.
 
 Good acceptance criteria reduce semantic drift and scope inflation.
+
+Skip this section when the minimum restart package is already sufficient.
 
 ### 7. End with the next action
 
@@ -121,10 +159,11 @@ A strong agent handoff usually has:
 - a clear dominant frontier
 - a narrow execution boundary
 - stable context instead of full transcript history
-- semantic guardrails
-- explicit acceptance criteria
+- semantic guardrails when they matter
+- acceptance criteria when they materially reduce drift
 - explicit validation expectation
 - a concrete next action
+- a compact chain shape when work crosses more than one boundary
 
 ---
 
@@ -136,9 +175,10 @@ A weak agent handoff usually looks like:
 - broad instructions like "continue the work"
 - no allowed/forbidden file distinction
 - hidden assumptions about contracts or data
-- no acceptance criteria
+- no acceptance criteria when the next step clearly needs them
 - no validation expectation
 - provider-specific prompt tricks replacing real scope definition
+- one giant artifact standing in for several later boundaries
 
 ---
 
@@ -174,3 +214,4 @@ This guide tells you how to derive those fields from real work.
 - `docs/agent-handoffs.md`
 - `starter-pack/guides/handoff-guide.md`
 - `starter-pack/templates/agent-handoff-template.md`
+- `examples/handoffs/multi-boundary-continuity.md`

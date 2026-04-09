@@ -12,6 +12,38 @@ Use the optional sections when they reduce ambiguity for the next boundary.
 
 ---
 
+## Minimum-first rule
+
+Start with the smallest useful continuity record.
+
+The minimum restart package is usually:
+
+- `Status`
+- `What was completed`
+- `What remains pending`
+- `Next action`
+- `Relevant files`
+- `Validation expectation`
+- `Main risks`
+
+Then add richer operational fields only when they materially reduce drift.
+
+Examples of richer fields include:
+
+- `Receiving agent role`
+- `Dominant frontier`
+- `Cross-boundary reason`
+- `Allowed files`
+- `Forbidden files`
+- `Explicitly out of scope`
+- `Semantic guardrails`
+- `Acceptance criteria`
+- `Expected response format`
+
+If the work will cross more than one strong boundary, prefer a chain of compact handoffs over one oversized artifact.
+
+---
+
 ## Handoff type
 
 Narrative or operational.
@@ -29,7 +61,7 @@ Explain why this work is moving to another agent instead of continuing in the cu
 
 ## Current status
 
-These fields map closely to the minimum structured continuity record.
+These fields map most closely to the minimum structured continuity record.
 
 ### Status
 
