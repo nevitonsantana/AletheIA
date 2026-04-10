@@ -11,6 +11,14 @@ this document defines what that emitted package should make visible before a tea
 
 ---
 
+## Current status
+
+This is a **doc-level output contract**, not an active implementation schema.
+
+Its role today is to make Alpha 7 bounded enough for 1.0 by clarifying what a healthy emitted package would need to reveal.
+
+---
+
 ## Why this matters
 
 The bootstrap generator contract explains what a future generator may receive and emit.
@@ -156,6 +164,10 @@ A healthy delivery output should carry a visible review posture such as:
 
 This keeps adoption explicit instead of implied.
 
+See:
+
+- `examples/delivery/reviewable-generated-bundle.md`
+
 ---
 
 ## What this contract should not include yet
@@ -200,6 +212,7 @@ A first Alpha 7 delivery output contract is healthy when:
 - authority boundaries remain visible
 - review posture is explicit
 - the contract still makes sense without any implementation yet
+- the docs no longer imply that a real output generator must exist before 1.0
 
 ---
 
@@ -209,8 +222,5 @@ A first Alpha 7 delivery output contract is healthy when:
 - `docs/delivery-tooling-boundaries.md`
 - `docs/bootstrap-output-examples.md`
 - `docs/bootstrap-generator-contract.md`
+- `examples/delivery/reviewable-generated-bundle.md`
 - `docs/distribution-presets-adapters.md`
-- `docs/preset-taxonomy.md`
-- `docs/adapter-taxonomy.md`
-- `docs/adoption-mode-guidance.md`
-- `docs/delivery-mapping-examples.md`

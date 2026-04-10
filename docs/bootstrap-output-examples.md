@@ -2,12 +2,25 @@
 
 ## Goal
 
-This document provides first future-facing examples of what safe Alpha 7 bootstrap outputs could look like.
+This document provides first examples of what safe Alpha 7 bootstrap outputs could look like.
 
 In simple terms:
 
 if AletheIA eventually generates setup outputs,
 it helps to show a few examples of the output shape before any heavier tooling exists.
+
+---
+
+## Current status
+
+These examples are:
+
+- illustrative
+- future-facing
+- non-binding
+- not required for 1.0
+
+Their role is to clarify healthy output posture, not to announce active generator behavior.
 
 ---
 
@@ -167,6 +180,23 @@ A bootstrap helper might emit:
 
 ---
 
+## A reviewable sample package
+
+See:
+
+- `examples/delivery/reviewable-generated-bundle.md`
+
+That example is useful because it shows the intended **output posture** directly:
+
+- visible source choices
+- visible canonical references
+- visible boundary notes
+- explicit review status
+
+This helps clarify Alpha 7 without requiring any actual generator implementation.
+
+---
+
 ## What these outputs should not become
 
 These examples should not become:
@@ -197,9 +227,5 @@ Alpha 7 output examples are healthy when:
 - `docs/delivery-tooling-boundaries.md`
 - `docs/bootstrap-generator-contract.md`
 - `docs/delivery-output-contract.md`
+- `examples/delivery/reviewable-generated-bundle.md`
 - `docs/roadmap-alpha.md`
-- `docs/distribution-presets-adapters.md`
-- `docs/preset-taxonomy.md`
-- `docs/adapter-taxonomy.md`
-- `docs/adoption-mode-guidance.md`
-- `docs/delivery-mapping-examples.md`

@@ -11,6 +11,21 @@ it helps to define the contract of that generation before promising any implemen
 
 ---
 
+## Current status
+
+This is a **doc-level future contract**.
+
+It is:
+
+- illustrative
+- bounded
+- non-schema
+- not an active implementation requirement for 1.0
+
+The value of this contract today is boundary clarity.
+
+---
+
 ## Why this matters
 
 Bootstrap principles define posture.
@@ -216,6 +231,7 @@ A first Alpha 7 generator contract is healthy when:
 - it remains subordinate to Alpha 6 meaning
 - it does not assume one canonical environment
 - it still works as a contract without any implementation yet
+- it does not imply that implementation is required before 1.0
 
 ---
 
@@ -225,8 +241,5 @@ A first Alpha 7 generator contract is healthy when:
 - `docs/delivery-tooling-boundaries.md`
 - `docs/bootstrap-output-examples.md`
 - `docs/delivery-output-contract.md`
+- `examples/delivery/reviewable-generated-bundle.md`
 - `docs/distribution-presets-adapters.md`
-- `docs/preset-taxonomy.md`
-- `docs/adapter-taxonomy.md`
-- `docs/adoption-mode-guidance.md`
-- `docs/delivery-mapping-examples.md`

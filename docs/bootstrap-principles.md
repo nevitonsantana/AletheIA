@@ -2,12 +2,28 @@
 
 ## Goal
 
-This document defines a first future-facing set of principles for Alpha 7 bootstrap and delivery tooling.
+This document defines the Alpha 7 bootstrap posture.
 
 In simple terms:
 
-if Alpha 7 is going to introduce tooling,
+if Alpha 7 is going to introduce tooling later,
 it should first make explicit what that tooling must preserve and what it must never distort.
+
+---
+
+## Current status
+
+Alpha 7 is currently:
+
+- **defined**
+- **optional**
+- **future-facing**
+- **not required for 1.0**
+
+That means these docs exist to remove ambiguity, not to announce active tooling work.
+
+AletheIA does **not** need a real bootstrap tool before 1.0.
+It needs a clear enough tooling boundary that later implementation cannot quietly distort the framework.
 
 ---
 
@@ -137,6 +153,7 @@ Bootstrap tooling should not:
 - collapse docs, presets, adapters, and packs into one opaque artifact
 - produce outputs that are hard to inspect or revise
 - promise complete automation before the model is stable enough to justify it
+- be treated as a blocker for the 1.0 release
 
 ---
 
@@ -158,22 +175,22 @@ If tooling starts inventing meaning beyond those artifacts, it is no longer acti
 
 ## Good signs
 
-Alpha 7 is starting well when:
+Alpha 7 is clarified enough for 1.0 when:
 
 - tooling principles are clearer than tooling ambition
 - inspectability stays more important than cleverness
 - optionality stays explicit
 - generated outputs remain legible and reviewable
 - the framework still makes sense even without the tooling
+- the docs no longer imply that active tooling implementation is required before 1.0
 
 ---
 
 ## Suggested next reading
 
+- `docs/delivery-tooling-boundaries.md`
+- `docs/bootstrap-output-examples.md`
 - `docs/bootstrap-generator-contract.md`
+- `docs/delivery-output-contract.md`
+- `examples/delivery/reviewable-generated-bundle.md`
 - `docs/roadmap-alpha.md`
-- `docs/distribution-presets-adapters.md`
-- `docs/preset-taxonomy.md`
-- `docs/adapter-taxonomy.md`
-- `docs/adoption-mode-guidance.md`
-- `docs/delivery-mapping-examples.md`

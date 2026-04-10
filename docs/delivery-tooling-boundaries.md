@@ -2,12 +2,26 @@
 
 ## Goal
 
-This document defines a first future-facing boundary model for Alpha 7 delivery tooling.
+This document defines the Alpha 7 delivery tooling boundary model.
 
 In simple terms:
 
 if AletheIA eventually gains bootstrap or delivery tooling,
 it needs a clearer idea of what that tooling may do, what it must not do, and where it should stop.
+
+---
+
+## Current status
+
+Alpha 7 is currently a **boundary-definition layer**, not an implementation lane.
+
+That means this document exists to clarify:
+
+- what tooling may do later
+- what tooling must not do later
+- why 1.0 does not depend on tooling implementation now
+
+This keeps Alpha 7 bounded enough for the baseline.
 
 ---
 
@@ -124,6 +138,10 @@ Tooling must not automate concepts that Alpha 6 has not clarified yet.
 
 If the only way to trust the output is to trust the tool blindly, the boundary has already been crossed.
 
+### 7. Become a hidden 1.0 dependency
+
+If the roadmap starts implying that tooling must exist before 1.0, the boundary has drifted.
+
 ---
 
 ## What should remain outside delivery tooling
@@ -165,17 +183,15 @@ Alpha 7 tooling boundaries are healthy when:
 - the canonical docs remain authoritative
 - teams can understand what was emitted and why
 - stopping points are explicit instead of implied
+- the framework remains fully teachable without active tooling
 
 ---
 
 ## Suggested next reading
 
 - `docs/bootstrap-principles.md`
+- `docs/bootstrap-output-examples.md`
 - `docs/bootstrap-generator-contract.md`
 - `docs/delivery-output-contract.md`
+- `examples/delivery/reviewable-generated-bundle.md`
 - `docs/roadmap-alpha.md`
-- `docs/distribution-presets-adapters.md`
-- `docs/preset-taxonomy.md`
-- `docs/adapter-taxonomy.md`
-- `docs/adoption-mode-guidance.md`
-- `docs/delivery-mapping-examples.md`
