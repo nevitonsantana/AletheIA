@@ -53,6 +53,16 @@ The agent can continue, but key assumptions still feel under-demonstrated.
 
 A downstream agent needs not only instructions, but also a portable rationale.
 
+### 8. Regression or health signal suggests hidden semantic risk
+
+A maintenance round appears shakier than the patch alone suggests.
+Examples:
+
+- a previously stable behavior regressed
+- a lane health signal degraded
+- an alert suggests explainability or continuity is eroding
+- the next round would otherwise continue on weak assumptions
+
 ---
 
 ## Weak trigger signals
@@ -64,6 +74,7 @@ Inference is usually not needed when:
 - existing tests already cover the meaningful risk surface
 - the work is mostly mechanical or formatting-oriented
 - the task does not introduce meaningful ambiguity or cross-boundary consequences
+- the artifact would not change the gate, the tests, or the rationale quality in practice
 
 ---
 
@@ -78,6 +89,10 @@ trigger inference when the cost of being semantically wrong is meaningfully high
 Another useful rule is:
 
 if the team would want a human reviewer to ask “what assumptions is this change relying on?”, the task is often a good inference candidate.
+
+And another practical rule is:
+
+if the artifact would not change proof depth, gate choice, or handoff quality, skip it.
 
 ---
 
@@ -97,6 +112,26 @@ Use the conditional loop:
 
 ---
 
+## Recommended pairings
+
+When inference is triggered, use it together with:
+
+- `starter-pack/templates/inference-artifact-template.md`
+- `docs/structured-risk-inference.md`
+- `starter-pack/guides/risk-to-gate-mapping.md`
+
+When a handoff is also involved, consider pairing it with:
+
+- `docs/agent-handoffs.md`
+- `starter-pack/templates/agent-handoff-template.md`
+
+When the trigger comes from an iterative round becoming less trustworthy, consider pairing it with:
+
+- `docs/iterative-maintenance-governance.md`
+- `starter-pack/guides/round-based-maintenance.md`
+
+---
+
 ## What to avoid
 
 Do not trigger inference just because:
@@ -110,20 +145,6 @@ This capability loses value quickly if it becomes universal ceremony.
 
 ---
 
-## Recommended pairings
-
-When inference is triggered, use it together with:
-
-- `starter-pack/templates/inference-artifact-template.md`
-- `docs/structured-risk-inference.md`
-
-When a handoff is also involved, consider pairing it with:
-
-- `docs/agent-handoffs.md`
-- `starter-pack/templates/agent-handoff-template.md`
-
----
-
 ## Good signs
 
 Trigger discipline is healthy when:
@@ -132,6 +153,7 @@ Trigger discipline is healthy when:
 - triggered artifacts actually change validation quality
 - unnecessary inference is rare
 - teams can explain why the artifact was needed
+- the artifact has a visible effect on proof depth, gate choice, or reasoning portability
 
 ---
 
@@ -139,4 +161,6 @@ Trigger discipline is healthy when:
 
 - `docs/structured-risk-inference.md`
 - `starter-pack/templates/inference-artifact-template.md`
+- `starter-pack/guides/inference-artifact-generation.md`
+- `starter-pack/guides/risk-to-gate-mapping.md`
 - `docs/agent-handoffs.md`

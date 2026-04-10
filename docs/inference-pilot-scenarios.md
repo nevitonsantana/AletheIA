@@ -93,6 +93,23 @@ What to observe:
 - whether validation continuity improves
 - whether reasoning survives the handoff better than instruction alone
 
+### 5. Regression-aware maintenance round
+
+Use when a maintenance loop no longer looks trustworthy enough to continue on patch confidence alone.
+
+Good fit when:
+
+- a previously stable behavior regressed
+- a lane health read or alert suggests hidden degradation
+- the next round would otherwise continue on weak assumptions
+- the team needs to decide whether to widen the gate, stay blocked, or proceed with stronger proof
+
+What to observe:
+
+- whether the artifact clarifies why the current gate is too light or sufficient
+- whether the suggested tests target the real degradation surface
+- whether the round becomes easier to review and continue safely
+
 ---
 
 ## Scenarios to avoid first
@@ -117,7 +134,8 @@ For each pilot scenario, ask:
 2. Did it improve the validation plan?
 3. Did it reduce semantic ambiguity?
 4. Did it improve handoff clarity, if a handoff was involved?
-5. Was the extra overhead justified by the risk level?
+5. Did it improve gate selection or explain why the current gate was insufficient?
+6. Was the extra overhead justified by the risk level?
 
 ---
 
@@ -141,4 +159,5 @@ The goal is to find the first task shapes where the capability clearly earns its
 - `docs/structured-risk-inference.md`
 - `starter-pack/templates/inference-artifact-template.md`
 - `starter-pack/guides/inference-trigger-guidance.md`
+- `starter-pack/guides/risk-to-gate-mapping.md`
 - `examples/structured-risk-inference/README.md`
