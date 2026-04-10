@@ -1,0 +1,45 @@
+{
+  "hypothesis": "The maintenance round should not continue on the current gate yet because the degraded explainability signal suggests a semantic regression risk that the existing proof does not adequately cover.",
+  "premises": [
+    "The lane summary shows explainability coverage has dropped below the team's healthy threshold.",
+    "A follow-up explainability gap event was emitted for a previously stable follow-up path.",
+    "Current proof only shows that the route still responds and the flow still completes, not that the explainability layer remains semantically coherent."
+  ],
+  "assumptions": [
+    "The degraded explainability signal reflects a real product-level loss of rationale rather than noise in the summary metric.",
+    "No other hidden contract changed between the last healthy round and the current degraded round."
+  ],
+  "impacted_paths": [
+    "decision output -> follow-up recommendation -> explainability summary -> lane health read"
+  ],
+  "invariants": [
+    "A previously stable follow-up path should continue to emit explainability data when the lane is healthy.",
+    "The route may remain functionally alive without being semantically healthy enough for a clean round closure."
+  ],
+  "risks": [
+    {
+      "description": "The round is treated as clean progress even though the explainability layer degraded in a way the current smoke does not catch.",
+      "likelihood": "medium",
+      "impact": "high"
+    },
+    {
+      "description": "The next maintenance round continues on weak assumptions and compounds the silent degradation.",
+      "likelihood": "medium",
+      "impact": "medium"
+    }
+  ],
+  "unknowns": [
+    "Whether the degraded coverage is caused by one path or a broader decision-layer mismatch.",
+    "Whether the current implementation still preserves the intended rationale for all emitted follow-ups."
+  ],
+  "test_gaps": [
+    "There is no targeted proof that the explainability payload remains present and coherent for the degraded path.",
+    "The current validation does not compare healthy-vs-degraded lane meaning before closing the round."
+  ],
+  "suggested_tests": [
+    "Add a targeted check that asserts explainability fields are still emitted for the affected follow-up path.",
+    "Review the degraded event together with the lane summary to confirm whether the gate should stay blocked or widen to review."
+  ],
+  "confidence_level": "medium",
+  "confidence_basis": "There is meaningful evidence of degradation from the lane summary and gap event, but the exact semantic cause is still under-demonstrated and targeted validation is missing."
+}

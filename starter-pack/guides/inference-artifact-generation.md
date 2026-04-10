@@ -44,6 +44,7 @@ The artifact should optimize for:
 - explicit assumptions
 - explicit unknowns
 - risk-focused validation guidance
+- clearer gate reasoning
 
 It should not try to replay every branch of analysis.
 
@@ -60,6 +61,7 @@ Typical cases include:
 - refactors with invisible regression risk
 - high-stakes patch review
 - high-stakes inter-agent handoff
+- regression-aware maintenance rounds where current proof looks too weak for the observed degradation
 
 If the task is still too small to justify the capability, do not force an artifact.
 
@@ -76,6 +78,7 @@ Examples:
 - what behavior is expected after this refactor?
 - what semantic regression is most likely here?
 - which business rule is at risk of being misapplied?
+- why is the current round no longer trustworthy enough to continue on confidence alone?
 
 The artifact should stay anchored to one dominant question, not many loose ones.
 
@@ -90,6 +93,7 @@ Good premises usually come from:
 - tests already present
 - contracts already defined
 - explicit product or governance rules
+- recent regression, health, or alert signals when the task is part of a maintenance loop
 
 Prefer fewer strong premises over many weak observations.
 
@@ -118,6 +122,7 @@ Good invariants are usually:
 - safety properties that must not regress
 - contract expectations that must remain stable
 - trust-boundary constraints that must continue to be enforced
+- lane meanings that should not degrade silently during iterative maintenance
 
 ### 6. Surface the main risks and unknowns
 
@@ -145,7 +150,19 @@ This is one of the main reasons the capability exists.
 The artifact should improve the validation plan,
 not only describe abstract risk.
 
-### 8. Assign confidence with a basis
+### 8. Connect the artifact to the gate
+
+Before finishing, make the gate implication visible.
+
+Examples:
+
+- current validation is sufficient after these suggested tests
+- the slice should stay in review until the main unknown is addressed
+- the round should remain blocked because the test gap is still too large
+
+If the artifact does not clarify the next gate or validation move, it is probably not strong enough yet.
+
+### 9. Assign confidence with a basis
 
 Use a qualitative confidence band such as:
 
@@ -173,6 +190,7 @@ The artifact is probably healthy when:
 - assumptions and unknowns are easy to spot
 - suggested tests are directly tied to the identified risk
 - a reviewer can challenge the reasoning without rereading the full work history
+- the gate implication is easier to explain after reading it
 
 ---
 
@@ -186,6 +204,7 @@ The artifact is probably weak when:
 - risks are generic and not tied to the change
 - suggested tests are not connected to the risk surface
 - confidence sounds stronger than the evidence justifies
+- it does not change the validation plan, handoff quality, or gate decision at all
 
 ---
 
@@ -210,4 +229,5 @@ without turning the restart package into a transcript dump.
 - `docs/structured-risk-inference.md`
 - `starter-pack/templates/inference-artifact-template.md`
 - `starter-pack/guides/inference-trigger-guidance.md`
+- `starter-pack/guides/risk-to-gate-mapping.md`
 - `docs/inference-pilot-scenarios.md`
