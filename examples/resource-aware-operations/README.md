@@ -10,3 +10,6 @@ The first examples stay docs-first and intentionally small.
 - `minimal-runtime-adapter-example.md`
 - `agent-runtime-decision-example.md`
 - `workflow-readiness-example.md`
+- `comparative-review-example.md`
+- `constrained-local-review-example.md`
+- `bounded-pilot-conversion-loop.md`

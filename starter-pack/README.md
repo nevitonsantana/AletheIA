@@ -140,5 +140,8 @@ Read:
 - `docs/planning-depth-profiles.md`
 - `docs/readiness-gates-spec.md`
 - `examples/resource-aware-operations/README.md`
+- `examples/resource-aware-operations/comparative-review-example.md`
+- `examples/resource-aware-operations/constrained-local-review-example.md`
+- `examples/resource-aware-operations/bounded-pilot-conversion-loop.md`
 
 This future track should build on the current starter-pack surfaces rather than replace them.

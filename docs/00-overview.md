@@ -243,3 +243,11 @@ The next docs-first 1.2 layer after advisory runtime fit is a lightweight workfl
 - `examples/resource-aware-operations/workflow-readiness-example.md`
 
 This keeps AletheIA proportional by clarifying how much planning a slice needs and whether it is ready to continue without importing a full delivery methodology.
+
+The next docs-first 1.2 layer after workflow/readiness is a bounded examples-first closure through:
+
+- `examples/resource-aware-operations/comparative-review-example.md`
+- `examples/resource-aware-operations/constrained-local-review-example.md`
+- `examples/resource-aware-operations/bounded-pilot-conversion-loop.md`
+
+This keeps the track evidential and proportional before any benchmark or learning ambition.

@@ -212,6 +212,12 @@ Before any benchmark or learning ambition, the framework should close the loop t
 
 The purpose is to prove that the operational surfaces help in real use before they become a bigger system.
 
+This phase now begins with:
+
+- `examples/resource-aware-operations/comparative-review-example.md`
+- `examples/resource-aware-operations/constrained-local-review-example.md`
+- `examples/resource-aware-operations/bounded-pilot-conversion-loop.md`
+
 ---
 
 ## What this track explicitly defers

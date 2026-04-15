@@ -255,9 +255,15 @@ The next docs-first layer now also begins with:
 - `docs/readiness-gates-spec.md`
 - `examples/resource-aware-operations/workflow-readiness-example.md`
 
+The next docs-first layer now also begins with:
+
+- `examples/resource-aware-operations/comparative-review-example.md`
+- `examples/resource-aware-operations/constrained-local-review-example.md`
+- `examples/resource-aware-operations/bounded-pilot-conversion-loop.md`
+
 Remaining backlog includes:
 
-- comparative examples and bounded pilot conversion after observability, signals, the minimal adapter contract, the advisory fit layer, and workflow/readiness surfaces are legible
+- stronger bounded real-world conversions before any benchmark or learning ambition
 
 ### 1.3+ — Benchmark and comparative evaluation
 

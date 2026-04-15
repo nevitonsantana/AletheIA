@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add bounded Phase F resource-aware examples for comparative review, constrained/local posture, and pilot conversion
+
 - add planning-depth profiles and a lightweight readiness-gates spec for the 1.2 resource-aware operations track
 
 - start the next 1.2 layer with advisory runtime/agent decision guidance and a lightweight example

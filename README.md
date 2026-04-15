@@ -174,6 +174,7 @@ It now also includes a first docs-first policy-signals layer that turns telemetr
 The next 1.2 step now begins to define a minimal provider-agnostic runtime adapter contract on top of those surfaces.
 It now also adds an advisory runtime/agent decision layer that helps teams reason about over-allocation and under-allocation without introducing auto-routing.
 The next 1.2 step now introduces lightweight planning-depth profiles and readiness gates so teams can judge how much structure a slice needs and whether it is healthy to continue.
+It now also adds the first bounded Phase F examples so the 1.2 track can compare postures, show constrained/local use, and demonstrate pilot conversion before any benchmark or learning layer.
 
 See also:
 
@@ -205,6 +206,9 @@ If this is your first time here, start with:
 1. `examples/resource-aware-operations/workflow-readiness-example.md`
 1. `examples/resource-aware-operations/agent-runtime-decision-example.md`
 1. `examples/resource-aware-operations/minimal-runtime-adapter-example.md`
+1. `examples/resource-aware-operations/comparative-review-example.md`
+1. `examples/resource-aware-operations/constrained-local-review-example.md`
+1. `examples/resource-aware-operations/bounded-pilot-conversion-loop.md`
 1. `docs/architecture.md`
 1. `docs/governance.md`
 1. `docs/token-policy.md`
