@@ -148,5 +148,6 @@ Read:
 - `starter-pack/templates/resource-aware-pilot-review-template.md`
 - `docs/resource-aware-crisis-monitor-reference.md`
 - `examples/resource-aware-operations/resource-aware-pilot-review-reference.md`
+- `docs/resource-aware-next-signals.md`
 
 This future track should build on the current starter-pack surfaces rather than replace them.

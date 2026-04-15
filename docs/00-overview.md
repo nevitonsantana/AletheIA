@@ -266,3 +266,9 @@ The next bounded 1.2 reference layer now also includes:
 - `examples/resource-aware-operations/resource-aware-pilot-review-reference.md`
 
 This keeps the track anchored in one believable real-world read without collapsing local product logic into the framework.
+
+The next bounded 1.2 closure layer now also includes:
+
+- `docs/resource-aware-next-signals.md`
+
+This makes the stop line explicit so the track only reopens when evidence becomes stronger than one reference.
