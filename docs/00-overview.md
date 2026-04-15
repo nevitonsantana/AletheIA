@@ -259,3 +259,10 @@ The next bounded 1.2 step after these examples is a real-world pilot layer throu
 - `starter-pack/templates/resource-aware-pilot-review-template.md`
 
 This keeps the next move operational and reviewable without reopening benchmark or learning work early.
+
+The next bounded 1.2 reference layer now also includes:
+
+- `docs/resource-aware-crisis-monitor-reference.md`
+- `examples/resource-aware-operations/resource-aware-pilot-review-reference.md`
+
+This keeps the track anchored in one believable real-world read without collapsing local product logic into the framework.

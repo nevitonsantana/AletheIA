@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add a bounded Crisis Monitor reference for the 1.2 resource-aware operations pilot layer
+
 - add bounded real-world pilot guidance, checklist, and template for the 1.2 resource-aware operations track
 
 - add bounded Phase F resource-aware examples for comparative review, constrained/local posture, and pilot conversion

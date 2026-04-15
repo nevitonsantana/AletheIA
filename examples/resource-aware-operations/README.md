@@ -19,3 +19,5 @@ The first examples stay docs-first and intentionally small.
 - `../../docs/resource-aware-bounded-pilot.md`
 - `../../docs/resource-aware-pilot-review-checklist.md`
 - `../../starter-pack/templates/resource-aware-pilot-review-template.md`
+- `resource-aware-pilot-review-reference.md`
+- `../../docs/resource-aware-crisis-monitor-reference.md`

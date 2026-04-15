@@ -176,6 +176,7 @@ It now also adds an advisory runtime/agent decision layer that helps teams reaso
 The next 1.2 step now introduces lightweight planning-depth profiles and readiness gates so teams can judge how much structure a slice needs and whether it is healthy to continue.
 It now also adds the first bounded Phase F examples so the 1.2 track can compare postures, show constrained/local use, and demonstrate pilot conversion before any benchmark or learning layer.
 It now also adds a bounded pilot guide/checklist/template so real-world 1.2 validation can happen before any benchmark or learning-layer escalation.
+It now also includes a bounded Crisis Monitor reference so the 1.2 track has one real-world pilot-shaped reading before any benchmark or learning move.
 
 See also:
 
@@ -213,6 +214,8 @@ If this is your first time here, start with:
 1. `docs/resource-aware-bounded-pilot.md`
 1. `docs/resource-aware-pilot-review-checklist.md`
 1. `starter-pack/templates/resource-aware-pilot-review-template.md`
+1. `docs/resource-aware-crisis-monitor-reference.md`
+1. `examples/resource-aware-operations/resource-aware-pilot-review-reference.md`
 1. `docs/architecture.md`
 1. `docs/governance.md`
 1. `docs/token-policy.md`

@@ -266,10 +266,12 @@ The next bounded 1.2 layer now also begins with:
 - `docs/resource-aware-bounded-pilot.md`
 - `docs/resource-aware-pilot-review-checklist.md`
 - `starter-pack/templates/resource-aware-pilot-review-template.md`
+- `docs/resource-aware-crisis-monitor-reference.md`
+- `examples/resource-aware-operations/resource-aware-pilot-review-reference.md`
 
 Remaining backlog includes:
 
-- stronger real-world pilot evidence before any benchmark or learning ambition
+- stronger repeated real-world pilot evidence before any benchmark or learning ambition
 
 ### 1.3+ — Benchmark and comparative evaluation
 
