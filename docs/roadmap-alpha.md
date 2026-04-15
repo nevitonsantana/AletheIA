@@ -234,12 +234,16 @@ The first docs-first 1.2 pass now begins with:
 - `docs/slice-telemetry-model.md`
 - `docs/waste-heuristics.md`
 
+The next docs-first layer now also begins with:
+
+- `docs/progressive-policy-signals.md`
+- `examples/resource-aware-operations/policy-signals-review-example.md`
+
 Remaining backlog includes:
 
-- progressive policy signals built on those surfaces
 - minimal runtime adapter contract examples
 - advisory runtime / agent decision guidance
-- planning depth profiles and readiness gates only after observability is legible
+- planning depth profiles and readiness gates only after observability and signals are legible
 
 ### 1.3+ — Benchmark and comparative evaluation
 

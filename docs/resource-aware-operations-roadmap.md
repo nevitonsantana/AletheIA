@@ -114,6 +114,11 @@ Expected outputs:
 - **Progressive Policy Signals guide**
 - lightweight review examples of healthy versus unhealthy signals
 
+This phase now begins with:
+
+- `docs/progressive-policy-signals.md`
+- `examples/resource-aware-operations/policy-signals-review-example.md`
+
 ### Phase C — runtime adapter contract
 
 Only after the signals are legible should the framework define a runtime-facing contract.
@@ -271,5 +276,7 @@ This track now begins with:
 - `docs/context-resource-telemetry-spec.md`
 - `docs/slice-telemetry-model.md`
 - `docs/waste-heuristics.md`
+- `docs/progressive-policy-signals.md`
+- `examples/resource-aware-operations/policy-signals-review-example.md`
 
-These are meant to establish the first observability spine before any adapter, benchmark, or learning-layer work is attempted.
+These are meant to establish the first observability spine and the first advisory signal layer before any adapter, benchmark, or learning-layer work is attempted.

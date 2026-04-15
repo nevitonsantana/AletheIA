@@ -134,5 +134,7 @@ Read:
 - `docs/context-resource-telemetry-spec.md`
 - `docs/slice-telemetry-model.md`
 - `docs/waste-heuristics.md`
+- `docs/progressive-policy-signals.md`
+- `examples/resource-aware-operations/README.md`
 
 This future track should build on the current starter-pack surfaces rather than replace them.

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- start the next 1.2 layer with progressive policy signals and a lightweight review example
 - define the first 1.2 telemetry surfaces for resource-aware operations
 - start the 1.2 track with context/resource telemetry, slice telemetry, and waste heuristics docs
 - add a Resource-Aware Operations roadmap as the queued 1.2+ track

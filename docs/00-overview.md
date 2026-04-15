@@ -214,3 +214,10 @@ The queued 1.2 track now begins with early observability surfaces through:
 - `docs/waste-heuristics.md`
 
 These are meant to operationalize the next questions around context growth, retry waste, handoff inflation, and runtime fit before adapters or learning-layer work.
+
+The next docs-first 1.2 layer after telemetry is progressive policy signals through:
+
+- `docs/progressive-policy-signals.md`
+- `examples/resource-aware-operations/policy-signals-review-example.md`
+
+This keeps the framework in an advisory-first posture while making operational drift more reviewable.
