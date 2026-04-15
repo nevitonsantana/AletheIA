@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add a 1.2 resource-aware operations review to make the current proof level and stop line explicit
+
 - add a resource-aware next-signals guide so the 1.2 track only reopens on stronger evidence
 
 - add a bounded Crisis Monitor reference for the 1.2 resource-aware operations pilot layer

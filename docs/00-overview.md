@@ -272,3 +272,9 @@ The next bounded 1.2 closure layer now also includes:
 - `docs/resource-aware-next-signals.md`
 
 This makes the stop line explicit so the track only reopens when evidence becomes stronger than one reference.
+
+The final docs-first 1.2 closure layer now also includes:
+
+- `docs/resource-aware-operations-review.md`
+
+This gives the track a compact review artifact before any future 1.3 reopening.
