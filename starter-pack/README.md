@@ -156,5 +156,6 @@ Read:
 - `starter-pack/guides/clean-restart-command-adapters.md`
 - `starter-pack/templates/restart-bootstrap-prompt-template.md`
 - `examples/resource-aware-operations/clean-restart-command-adapter-example.md`
+- `docs/project-local-constitution-context.md`
 
 This future track should build on the current starter-pack surfaces rather than replace them.

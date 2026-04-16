@@ -276,6 +276,7 @@ The next bounded 1.2 layer now also begins with:
 - `starter-pack/guides/clean-restart-command-adapters.md`
 - `starter-pack/templates/restart-bootstrap-prompt-template.md`
 - `examples/resource-aware-operations/clean-restart-command-adapter-example.md`
+- `docs/project-local-constitution-context.md`
 
 Remaining backlog includes:
 

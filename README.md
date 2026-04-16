@@ -181,6 +181,7 @@ It now also defines the next signals that would justify reopening the track for 
 It now also includes a short 1.2 review so the current scope, proof level, and stop line are explicit.
 It now also adds slice finalization and restart guidance so teams can reduce AI Fatigue through compact restart packages instead of transcript replay.
 It now also adds a docs-first clean-restart command adapter layer so finalization, clean restart, and resume flows can be exposed through slash-command style adapters without turning AletheIA into a runtime platform.
+It now also clarifies how project-local Constitution layers can strengthen governing-context continuity without becoming framework core truth.
 
 See also:
 
@@ -228,6 +229,7 @@ If this is your first time here, start with:
 1. `starter-pack/guides/clean-restart-command-adapters.md`
 1. `starter-pack/templates/restart-bootstrap-prompt-template.md`
 1. `examples/resource-aware-operations/clean-restart-command-adapter-example.md`
+1. `docs/project-local-constitution-context.md`
 1. `docs/architecture.md`
 1. `docs/governance.md`
 1. `docs/token-policy.md`

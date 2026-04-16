@@ -26,6 +26,7 @@ The 1.2 track now has:
 - an explicit next-signals stop line
 - slice finalization and restart guidance for reducing AI Fatigue without runtime-coupled reset logic
 - a docs-first adapter layer for exposing finalization and clean restart through local slash-command style delivery
+- a boundary note showing how project-local Constitution context can strengthen restart continuity without redefining the framework core
 
 ---
 

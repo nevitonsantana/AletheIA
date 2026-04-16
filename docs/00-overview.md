@@ -294,3 +294,9 @@ The next bounded operator-facing adapter layer now also includes:
 - `examples/resource-aware-operations/clean-restart-command-adapter-example.md`
 
 This keeps slash-command style delivery in the starter-pack layer while preserving the core as manual-first and runtime-agnostic.
+
+The next boundary clarification layer now also includes:
+
+- `docs/project-local-constitution-context.md`
+
+This makes it explicit that a project-local Constitution may strengthen governing-context reads and clean restarts without becoming a framework-level requirement.
