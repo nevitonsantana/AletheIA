@@ -3,36 +3,25 @@
 This guide adds a small operator-facing command vocabulary on top of the existing slice-finalization flow.
 
 It does **not** change the core framework contract.
-It only shows how a team may expose clean-restart behavior through lightweight slash-command style adapters.
+It only shows how a team may expose clean-restart behavior through lightweight, runtime-local adapters.
 
 Use this guide together with:
 
 - `docs/slice-finalization-and-restart.md`
+- `docs/deprecated-thread-centric-language.md`
 - `starter-pack/templates/slice-finalization-review-template.md`
 - `starter-pack/templates/restart-bootstrap-prompt-template.md`
 
 ---
 
-## Why this exists
+## Core rule
 
-Many teams want a short operator command for:
+The adapter may name local runtime actions however it wants.
+The core meaning must stay:
 
-- closing a slice
-- deciding whether to restart cleanly
-- resuming from a compact restart package
-
-That is useful, but AletheIA should stay smaller than a CLI or runtime platform.
-
-So this guide defines a **logical command vocabulary**:
-
-- `/finalize-slice`
-- `/clean-restart`
-- `/resume-from-package`
-
-These commands are **adapter vocabulary only**.
-
-- if a runtime supports slash commands, an adapter may expose them that way
-- if it does not, the operator can run the same flow as a checklist with no semantic loss
+- finalize a work slice
+- decide whether a clean execution surface is healthier
+- resume from the restart package only
 
 ---
 
@@ -49,46 +38,17 @@ Purpose:
 
 Required result:
 
-- one of:
-  - `continue-in-session`
-  - `recommend-clean-restart`
-  - `review-required`
-  - `not-ready`
-
-Minimum operator inputs:
-
-- slice id
-- validation status
-- next action
-- resume entrypoint
-- AI Fatigue read
+- `continue-on-current-surface`
+- `recommend-clean-restart`
+- `review-required`
+- `not-ready`
 
 ### `/clean-restart`
 
 Purpose:
 
-- start a fresh session only after the slice is already closed cleanly
-- explicitly signal that the **next issue must not start in the current stale thread**
-
-Allowed only when:
-
-- finalization outcome is `recommend-clean-restart`
-
-Meaning:
-
-- the operator should begin a fresh session using:
-  - the restart package
-  - the resume entrypoint
-  - the minimal governing-context refs
-- if the next task is a new issue, the operator should treat thread clearing / fresh-session start as a **precondition** before claiming that next issue inside the runtime
-
-This command must **never** imply that AletheIA controls:
-
-- chat cache internals
-- runtime memory internals
-- hidden session state
-
-It only signals that a clean restart is now the healthier operating choice.
+- start a clean execution surface only after the slice is already closed cleanly
+- make it explicit that the next work item or slice should not begin on the stale runtime surface
 
 ### `/resume-from-package`
 
@@ -96,59 +56,29 @@ Purpose:
 
 - resume work from the restart package only
 
-Meaning:
-
-- bootstrap the next slice from:
-  - the restart package
-  - the restart bootstrap prompt
-  - the explicit governing refs when present
-
-Default rule:
-
-- do **not** replay transcript history unless the restart package proves insufficient
-
 ---
 
 ## Runtime mappings
 
-These are illustrative mappings, not core framework requirements.
+These are illustrative mappings, not core requirements.
 
-### Codex-style clean start
+### Codex-style mapping
 
-Possible mapping:
+An adapter may say things like:
 
-- `/finalize-slice` -> fill `starter-pack/templates/slice-finalization-review-template.md`
-- `/clean-restart` -> operator opens a fresh session or uses the runtime's clean-start action if available
-- `/resume-from-package` -> operator pastes the restart package and a bootstrap prompt based on `starter-pack/templates/restart-bootstrap-prompt-template.md`
+- open a new thread
+- use `/clear`
 
-Notes:
+That is acceptable only when the adapter also makes explicit that these are **runtime-local phrases** for the core action: **resume on a clean execution surface**.
 
-- a Codex adapter may mention actions like “open a new thread” or `/clear`
-- the adapter must still describe these as **runtime-local**, not as AletheIA truth
+### Claude Code-style mapping
 
-### Claude Code-style clean start
-
-Possible mapping:
-
-- `/finalize-slice` -> fill the finalization review artifact in repo-native form
-- `/clean-restart` -> operator starts a fresh session or uses the runtime's preferred clean-start action
-- `/resume-from-package` -> operator starts the next session from the restart package and explicit entrypoint
-
-Notes:
-
-- a Claude Code adapter may describe a fresh chat/session boundary
-- the adapter must not depend on runtime hooks or automation to preserve the meaning of the command
+An adapter may describe a fresh chat or session boundary.
+Again, the core meaning must remain the same.
 
 ### No slash-command support
 
-If the runtime has no slash-command surface, use the same sequence as an operator checklist:
-
-1. finalize the slice with the review template
-2. inspect the outcome
-3. if the outcome is `recommend-clean-restart`, start a fresh session manually
-4. resume from the restart package and bootstrap prompt only
-
-This fallback is equivalent in meaning to the slash-command variant.
+If the runtime has no slash-command surface, use the same flow as an operator checklist with no semantic loss.
 
 ---
 
@@ -156,15 +86,9 @@ This fallback is equivalent in meaning to the slash-command variant.
 
 1. `/finalize-slice`
 2. inspect the outcome
-3. if `recommend-clean-restart`, run `/clean-restart`
-4. **before starting a new issue, clear the current thread or open a fresh one**
-5. begin the next slice with `/resume-from-package`
-
-If the outcome is:
-
-- `continue-in-session` -> stay in the current session
-- `review-required` -> resolve ambiguity before restart
-- `not-ready` -> finish validation or closure first
+3. if `recommend-clean-restart`, start a clean execution surface
+4. before starting the next work item or slice, confirm the stale surface has been abandoned
+5. resume from the restart package and bootstrap prompt only
 
 ---
 
@@ -177,5 +101,3 @@ This guide does not:
 - define auto-reset behavior
 - guarantee native slash-command support
 - redefine slice finalization as a tooling problem
-
-It only provides a stable vocabulary for local delivery adapters.

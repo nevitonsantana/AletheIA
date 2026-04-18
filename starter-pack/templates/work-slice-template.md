@@ -1,30 +1,27 @@
 # Work Slice Template
 
-Use this template when a bounded unit of work should be made easier to frame, resume, validate, or learn from.
+Use this template when a bounded unit of work should be easier to frame, resume, validate, hand off, or restart cleanly.
 
 This template does **not** replace the existing AletheIA contracts.
-It is a composition layer that points to them.
+It is the coordination layer for one explicit slice.
 
 ---
 
 ## Slice identity
 
-### Slice ID
-
-### Slice title
-
-### Current derived state
-
-Examples:
-- framed
-- context-scoped
-- decision-recorded
-- execution-in-progress
-- validation-pending
-- validated
-- blocked
-- escalated
-- learning-stored
+- Slice ID:
+- Slice title:
+- Related Work Item ref: (`not_needed` if no external coordination anchor exists)
+- Current derived state:
+  - framed
+  - context-scoped
+  - decision-recorded
+  - execution-in-progress
+  - validation-pending
+  - validated
+  - blocked
+  - escalated
+  - learning-stored
 
 ---
 
@@ -38,27 +35,15 @@ Examples:
 
 ---
 
-## Minimum context
+## Governing context
 
-### Relevant context
+### Governing context refs
 
-List only the context that should travel with this slice.
+List only the durable refs that should still govern the slice.
 
 ### Constraints
 
 ### Dependencies
-
----
-
-## Risk read
-
-### Task type / severity / risk
-
-### Why this risk posture applies
-
-### Human gate required?
-
-State `yes` or `no`, and explain briefly if useful.
 
 ---
 
@@ -80,15 +65,19 @@ State what must be true before the slice can be closed.
 
 ---
 
-## Handoff expectation
+## Boundary expectations
 
 ### Handoff needed?
 
 State `yes`, `no`, or `maybe later`.
 
+### Restart package expected?
+
+State `yes`, `no`, or `only if boundary changes`.
+
 ### Why
 
-If a handoff is expected, explain why the next boundary exists.
+Explain why the next boundary exists or why clean restart may be needed.
 
 ---
 
@@ -96,24 +85,16 @@ If a handoff is expected, explain why the next boundary exists.
 
 Fill these with file paths, IDs, or references.
 
-### Task brief
-
-### Decision record
-
-### Execution record
-
-### Handoff record
-
-Use only if a handoff exists.
-
-### Learning record
-
-Use only if the slice produced a reusable learning.
+- Task brief:
+- Decision record:
+- Execution record:
+- Handoff record:
+- Restart package:
+- Learning record:
 
 ---
 
 ## Notes
 
-Use this template to make one slice legible.
-Do not turn it into a second transcript.
 Keep the slice tight, bounded, and reviewable.
+Do not turn this artifact into a second transcript.

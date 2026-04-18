@@ -81,6 +81,38 @@ AletheIA is not:
 
 ---
 
+## Canonical operating vocabulary
+
+AletheIA now treats the following concepts as the stable public vocabulary of the framework core:
+
+- **Work Slice** — the primary operational unit of bounded AI-assisted work
+- **Work Item** — the external coordination unit that a slice may point to
+- **Restart Package** — the compact continuity artifact used to resume after a boundary
+- **Handoff** — the transition artifact that carries a slice across an agent or review boundary
+- **Governing Context** — the minimum durable context that must still govern the next boundary
+- **Durable Memory** — reviewable artifacts that survive past one execution surface
+- **Execution Surface** — the local runtime surface where work happens, such as a chat, IDE pane, agent shell, or coding assistant window
+- **External Coordination System** — a tool such as GitHub, Jira, Trello, or Linear that tracks external work state
+
+The core model is therefore:
+
+- **Work Slice** = unit of operation
+- **Work Item** = unit of external coordination
+- **Execution Surface** = runtime detail, not framework truth
+
+This means AletheIA should be explainable without depending on thread control, chat transcripts, GitHub Issues, or GitHub Projects as core concepts.
+
+GitHub Projects may still be used to coordinate the AletheIA repository itself, but that remains a **repository-local operating choice** and a first real adapter example, not a definition of the framework core.
+
+See also:
+
+- `docs/canonical-definitions.md`
+- `docs/work-item-pattern.md`
+- `docs/github-project-operations.md`
+- `docs/deprecated-thread-centric-language.md`
+
+---
+
 ## Core operating loop
 
 AletheIA works through a controlled loop:
@@ -186,7 +218,7 @@ It now also includes a bounded Crisis Monitor reference so the 1.2 track has one
 It now also defines the next signals that would justify reopening the track for stronger comparative work instead of growing by inertia.
 It now also includes a short 1.2 review so the current scope, proof level, and stop line are explicit.
 It now also adds slice finalization and restart guidance so teams can reduce AI Fatigue through compact restart packages instead of transcript replay.
-It now also adds a docs-first clean-restart command adapter layer so finalization, clean restart, and resume flows can be exposed through slash-command style adapters without turning AletheIA into a runtime platform.
+It now also adds a docs-first clean-execution-surface adapter layer so finalization, clean restart, and resume flows can be exposed through runtime-local commands without turning AletheIA into a runtime platform.
 It now also clarifies how project-local Constitution layers can strengthen governing-context continuity without becoming framework core truth.
 
 See also:
@@ -230,10 +262,14 @@ If this is your first time here, start with:
 1. `examples/resource-aware-operations/resource-aware-pilot-review-reference.md`
 1. `docs/resource-aware-next-signals.md`
 1. `docs/resource-aware-operations-review.md`
+1. `docs/canonical-definitions.md`
+1. `docs/work-item-pattern.md`
+1. `docs/deprecated-thread-centric-language.md`
 1. `docs/slice-finalization-and-restart.md`
 1. `starter-pack/templates/slice-finalization-review-template.md`
 1. `examples/resource-aware-operations/slice-finalization-reference.md`
 1. `starter-pack/guides/clean-restart-command-adapters.md`
+1. `docs/github-project-operations.md`
 1. `starter-pack/templates/restart-bootstrap-prompt-template.md`
 1. `examples/resource-aware-operations/clean-restart-command-adapter-example.md`
 1. `docs/project-local-constitution-context.md`

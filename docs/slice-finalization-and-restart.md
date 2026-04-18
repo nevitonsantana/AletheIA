@@ -2,9 +2,9 @@
 
 ## Goal
 
-Define a manual-first way to close a work slice cleanly, preserve continuity through a compact restart package, and recommend a clean new session only when transcript replay is no longer needed.
+Define a manual-first way to close a work slice cleanly, preserve continuity through a compact restart package, and recommend a **clean execution surface** only when transcript replay is no longer needed.
 
-This is not a "clear chat" feature.
+This is not a thread-control feature.
 It is a slice-finalization capability.
 
 In canonical AletheIA vocabulary:
@@ -18,50 +18,41 @@ For canonical terminology, see:
 
 ---
 
-## Why this exists
+## Core rule
 
-Long AI-assisted threads tend to accumulate stale context.
-That creates two related forms of avoidable fatigue.
+AletheIA should optimize for:
 
-### 1. Human fatigue
-
-Examples:
-
-- heavy recap before the next step begins
-- repeated questions about decisions that were already settled
-- ambiguous reopen state after the useful part of the slice is already done
-
-### 2. Operational fatigue
-
-Examples:
-
-- context inflation from legacy material
-- retries that keep happening inside a slice that should already have closed
-- drift caused by continuing in the same session after the real boundary was already crossed
-
-AletheIA already has the right principle:
-
-**restart package, not transcript**
-
-This guide turns that principle into an explicit closure practice.
+- `restart package, not transcript`
+- `work slice, not conversation history`
+- `execution surface as runtime detail, not framework truth`
 
 ---
 
-## Relationship to existing AletheIA surfaces
+## Why this exists
 
-This guide reuses existing surfaces.
-It does **not** replace them.
+Long AI-assisted execution surfaces accumulate stale context.
+That creates avoidable fatigue for both humans and agents.
 
-It builds on:
+Examples:
 
+- recap drag before the next bounded step begins
+- repeated questions about already-settled decisions
+- drift caused by staying on the same stale surface after the real slice boundary was crossed
+
+---
+
+## Relationship to other AletheIA surfaces
+
+This guide builds on:
+
+- `docs/canonical-definitions.md`
 - `docs/agent-handoffs.md`
 - `docs/work-slice-pattern.md`
-- `docs/slice-telemetry-model.md`
-- `docs/progressive-policy-signals.md`
 - `docs/readiness-gates-spec.md`
+- `docs/slice-telemetry-model.md`
 
-Use the existing handoff record as the structured continuity artifact.
-Use this guide as the operational review layer for deciding whether the slice is ready for healthy restart.
+Use the existing handoff surfaces as the structured continuity artifact.
+Use this guide as the operational review layer for deciding whether the slice is healthy to continue on the current execution surface or should resume on a clean one.
 
 ---
 
@@ -70,21 +61,19 @@ Use this guide as the operational review layer for deciding whether the slice is
 A healthy slice finalization should follow this order:
 
 1. validation check
-2. handoff / restart check
+2. continuity check
 3. AI fatigue read
 4. finalization outcome
 5. optional clean-restart recommendation
 
 The goal is not to restart by habit.
-The goal is to restart when continuing in the same session would now carry more drag than value.
+The goal is to restart when continuing on the same execution surface now carries more drag than value.
 
 A Restart Package is justified when continuity can no longer remain implicit, not merely because the work touched more than one concern.
 
 ---
 
 ## Minimum finalization questions
-
-Before a slice closes, ask:
 
 ### 1. Was the slice validated?
 
@@ -97,14 +86,14 @@ The slice needs review first.
 
 ### 3. Is a structured continuity artifact available?
 
-A compact handoff or restart package should exist whenever the next boundary matters.
+A compact restart package should exist whenever the next boundary matters.
 
 ### 4. Does the next step still belong to the same slice?
 
-If yes, continuing in the same session may still be healthier.
+If yes, continuing on the current execution surface may still be healthier.
 If not, a bounded restart may be healthier.
 
-### 5. Would the next session still depend on replaying transcript history?
+### 5. Would the next execution surface still depend on transcript replay?
 
 If yes, the slice has not closed cleanly enough.
 
@@ -120,20 +109,18 @@ A finalization review should explicitly read these fields:
 - `handoff_size_class`: `compact | inflated | heavy`
 - `redundant_question_risk`: `low | medium | high`
 - `governing_context_changed`: `yes | no`
-- `governing_context_ref`: list of refs
+- `governing_context_refs`: list of refs
 - `governing_context_summary`: short summary when changed
 
 ### Hard rule
 
 If `transcript_replay_needed = yes`, the slice is **not** ready for healthy clean restart.
 
-That means the next boundary would still depend on hidden history instead of compact durable context.
-
 ---
 
 ## Finalization outcomes
 
-### `continue-in-session`
+### `continue-on-current-surface`
 
 Use when:
 
@@ -158,7 +145,7 @@ Use when:
 - the next action is ambiguous
 - regression or fork is still open
 - the handoff is inflated
-- restarting now would carry confusion into the next session
+- restarting now would carry confusion into the next boundary
 
 ### `not-ready`
 
@@ -174,56 +161,39 @@ Use when:
 
 Do not treat the restart package as only a loose summary inside the handoff.
 
-For this v1, the operator-facing artifact should include a **copyable markdown block**:
+For this version, the operator-facing artifact should include a copyable markdown block:
 
 ```md
 <!-- RESTART_PACKAGE_BEGIN -->
 ## Context for Clean Restart
 - **Slice ID:** ...
+- **Related Work Item:** ...
 - **Validation Status:** ...
 - **Mission Focus:** ...
-- **Active Spec / Entrypoint:** ...
-- **Last Handoff Summary:** ...
+- **Resume Entrypoint:** ...
+- **Last Boundary Summary:** ...
 - **Next Immediate Action:** ...
 - **Known Constraints:** ...
-- **Governing Context Version:** ...
+- **Governing Context Refs:** ...
 - **Governing Context Delta:** ...
 <!-- RESTART_PACKAGE_END -->
 ```
 
-This block is meant to let the operator begin a new session with minimal noise.
-
 ---
 
-## Project-local governing context
+## Compatibility note
 
-Projects may define their own governing-context sources.
+Older materials may still say things like:
 
-Examples might include:
+- fresh thread
+- clean session
+- clear the chat
 
-- active feature or plan docs
-- project decision logs
-- project state summaries
-- local changelog entries
+Those phrases should now be read as runtime-local examples of the same core meaning:
 
-This remains project-local.
-AletheIA should require the **meaning** of governing-context continuity, not one universal project file.
+**resume on a clean execution surface from the restart package only**
 
----
-
-## Start-next-issue clean-thread signal
-
-When the finalization outcome is `recommend-clean-restart` and the next step is a **new issue** or new bounded slice, the framework should make one extra thing explicit:
-
-- the operator should signal that the next issue must start in a **fresh thread / clean session**
-- if the runtime offers a local clear-thread action, it should be used before the next issue begins
-- if the runtime offers no such action, the operator should still abandon the current thread and start a new one manually
-
-This signal matters because a team may agree that restart is healthier and still begin the next issue inside the same stale thread by habit.
-
-A simple operator note is enough:
-
-> Before starting the next issue, clear the current thread or open a fresh one. Resume only from the restart package.
+See `docs/deprecated-thread-centric-language.md`.
 
 ---
 
@@ -231,18 +201,13 @@ A simple operator note is enough:
 
 AletheIA does **not** depend on a runtime command such as `/clear` or `/new`.
 
-In this version:
-
-- runtime actions remain illustrative only
-- restart is still a local operator action
-- no runtime hooks or auto-reset behavior are part of the core
-
-The core capability is:
+Runtime-local actions remain examples only.
+The core capability is still:
 
 - finish the slice
 - preserve continuity
 - detect fatigue risk
-- recommend restart when healthy
+- recommend clean restart when healthy
 
 ---
 
@@ -254,33 +219,6 @@ A healthy restart recommendation should usually imply:
 - `redundant_question_risk = low`
 - `restart_burden = low`
 
-A practical success proxy is:
+A practical success proxy remains:
 
 - **TRC (Time to Recover Context)** `< 2 interactions`
-
-If a restarted session needs more than two back-and-forth turns before it becomes productive, the restart package was not self-contained enough.
-
----
-
-## What this is not
-
-This guide is not:
-
-- a new canonical reset schema
-- a runtime-hook system
-- a benchmark layer
-- a learning-layer capability
-- a promise of zero cognitive effort
-
-It is a bounded operational practice for reducing avoidable AI fatigue.
-
----
-
-## Suggested next reading
-
-- `docs/agent-handoffs.md`
-- `docs/work-slice-pattern.md`
-- `docs/readiness-gates-spec.md`
-- `docs/slice-telemetry-model.md`
-- `starter-pack/templates/slice-finalization-review-template.md`
-- `examples/resource-aware-operations/slice-finalization-reference.md`

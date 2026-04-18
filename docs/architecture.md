@@ -1,25 +1,48 @@
 # AletheIA — Core Contracts
 
-## Objetivo
+## Goal
 
-Este documento traduz a visão do `AletheIA` em contratos concretos.
-
-Em linguagem simples: se o documento principal explica **o que o framework é**, este arquivo explica **quais peças mínimas ele precisa ter para funcionar**.
-
-Os contratos existem para evitar ambiguidade.
-
-Sem eles, cada tarefa, decisão, execução ou handoff pode nascer em um formato diferente — e o framework perde:
-
-- clareza
-- rastreabilidade
-- comparabilidade
-- reuso
+Translate the AletheIA vision into the minimum contracts and conceptual surfaces the framework needs in order to stay reviewable, portable, and bounded.
 
 ---
 
-## Leitura rápida
+## Two layers to keep distinct
 
-O alpha do `AletheIA` deve começar com **6 contratos centrais**:
+AletheIA now makes an explicit distinction between:
+
+1. **core contracts**
+2. **canonical operating concepts**
+
+The core contracts are the structured artifacts already backed by schemas and engine helpers.
+The canonical operating concepts are the stable meanings that connect those artifacts across tools and runtime surfaces.
+
+See also:
+
+- `docs/canonical-definitions.md`
+- `docs/work-item-pattern.md`
+
+---
+
+## Canonical operating concepts
+
+The stable public concepts are:
+
+1. `Work Slice`
+2. `Work Item`
+3. `Restart Package`
+4. `Handoff`
+5. `Governing Context`
+6. `Durable Memory`
+7. `Execution Surface`
+8. `External Coordination System`
+
+These concepts are broader than any one schema, runtime, or board.
+
+---
+
+## Core contracts
+
+The current baseline still starts from **6 core contracts**:
 
 1. `Task Brief`
 2. `Context Pack`
@@ -28,191 +51,100 @@ O alpha do `AletheIA` deve começar com **6 contratos centrais**:
 5. `Handoff Record`
 6. `Learning Record`
 
-Eles representam a jornada completa do trabalho assistido por IA:
+They represent the reviewable chain:
 
 `tarefa -> contexto -> decisão -> execução -> handoff -> learning`
 
 ---
 
-## Por que começar pelos contratos
+## Why start from contracts and concepts together
 
-Porque o `AletheIA` não deve nascer como um monte de automação sem espinha dorsal.
+Without contracts, the framework becomes vague.
+Without concepts, the contracts can become tool-shaped and drift into one local workflow.
 
-Ele precisa primeiro deixar claro:
+AletheIA should make both explicit.
 
-- qual problema está sendo resolvido
-- qual contexto foi usado
-- qual decisão foi tomada
-- o que foi executado
-- como outra thread retoma
-- o que foi aprendido
+That is how the framework stays:
 
-Isso é o que torna o framework:
-
-- confiável
-- auditável
-- explicável
+- clear
+- auditable
+- reusable
+- less dependent on hidden runtime state
 
 ---
 
-## 1. Task Brief
+## Contract purpose summary
 
-Define a tarefa antes da execução.
+### 1. Task Brief
 
-Responde:
+Defines the task before execution.
 
-- qual é o problema?
-- qual é o objetivo?
-- qual é o nível de risco?
-- qual é o tipo da tarefa?
-- como vamos saber se deu certo?
+### 2. Context Pack
 
----
+Defines the minimum sufficient context for that task.
 
-## 2. Context Pack
+### 3. Decision Record
 
-Define o contexto mínimo suficiente para aquela tarefa.
+Explains what was interpreted, decided, and why.
 
-Responde:
+### 4. Execution Record
 
-- quais arquivos/docs entram?
-- por que eles entram?
-- o que ficou de fora?
-- qual é o budget de contexto?
+Shows what actually ran, through which adapter, and with what result.
 
----
+### 5. Handoff Record
 
-## 3. Decision Record
+Preserves explicit continuity across a boundary.
 
-É o coração do `AletheIA`.
+### 6. Learning Record
 
-Registra:
-
-- o que entrou
-- como foi interpretado
-- o que foi decidido
-- por que foi decidido
-- com qual risco
-- com qual confiança
+Turns the result into reusable learning when warranted.
 
 ---
 
-## 4. Execution Record
+## How the concepts and contracts fit together
 
-Registra a execução real ou mockada.
+- a **Work Slice** is the bounded operational unit built from one or more of the core contracts
+- a **Work Item** is the external coordination anchor a slice may point to
+- a **Restart Package** is the compact continuity block used when the slice crosses a new boundary
+- a **Handoff Record** is the structured carrier of that continuity
+- an **Execution Surface** is where the slice is currently being worked, but not where durable truth should live
 
-Responde:
-
-- o que foi executado?
-- por qual adapter?
-- em qual branch/worktree?
-- com qual resultado?
-- com quais validações?
+This avoids treating threads, chats, sessions, issues, or boards as if they were the framework itself.
 
 ---
 
-## 5. Handoff Record
+## Governance-supporting artifacts
 
-É o contrato de retomada.
-
-Responde:
-
-- o que foi feito?
-- o que falta?
-- quais são os riscos?
-- como retomar sem reler toda a conversa?
-
----
-
-## 6. Learning Record
-
-Transforma execução em aprendizado reaproveitável.
-
-Responde:
-
-- o que foi aprendido?
-- de onde veio esse aprendizado?
-- isso vira regra, teste, doc ou heurística?
-- isso foi revisado ou ainda é hipótese?
-
----
-
-## Artefatos de apoio à governança
-
-Os 6 contratos centrais continuam sendo o coração do alpha.
-
-Mas a camada de governança do `AletheIA` já indica dois artefatos de apoio que devem entrar em seguida:
+The 6 core contracts remain central.
+AletheIA also keeps two governance-supporting artifacts explicit:
 
 ### 1. Execution Scope
 
-Ajuda a explicitar:
-
-- arquivos permitidos
-- arquivos proibidos
-- tipo de operação
-- fronteira da mudança
-
-Status atual:
-
-- contrato humano formalizado
-- schema inicial criado
-- tipo TypeScript criado
-- helper mínimo de geração implementado
+Makes the execution boundary explicit.
 
 ### 2. Policy Evaluation
 
-Ajuda a registrar:
+Makes rule evaluation and action selection more auditable.
 
-- quais regras foram avaliadas
-- quais regras dispararam
-- qual ação final foi produzida
-- quais fatos sustentaram a decisão
-
-Status atual:
-
-- contrato humano formalizado
-- schema inicial criado
-- tipo TypeScript criado
-- helper mínimo de geração implementado a partir do `Policy Trace`
-
-Esses artefatos não substituem os 6 contratos centrais.
-
-Eles existem para fortalecer a camada de governança e tornar o futuro `Rule Interpreter` mais auditável.
+These artifacts strengthen the governance layer, but they do not replace the core contracts or the canonical concepts.
 
 ---
 
-## Fluxo mínimo
+## Quality rule
 
-```text
-Task Brief
-  ↓
-Context Pack
-  ↓
-Decision Record
-  ↓
-Execution Record
-  ↓
-Handoff Record
-  ↓
-Learning Record
-```
+Contracts and concepts should remain:
+
+- legible for humans
+- versionable
+- smaller than full transcript replay
+- provider-agnostic
+- tool-agnostic at the core
 
 ---
 
-## Regras de qualidade
+## Next reading
 
-- contratos precisam ser legíveis para humano
-- contratos precisam ser pequenos no alpha
-- contratos precisam ser agnósticos a produto e provider
-- contratos precisam ser versionáveis
-- contratos precisam conversar com testes e evals
-
----
-
-## Próximo passo recomendado
-
-Depois desta fase:
-
-1. criar exemplos mínimos dos contratos
-2. montar `hello-world`
-3. implementar o `Decision Kernel` mínimo em TypeScript
+- `docs/canonical-definitions.md`
+- `docs/work-item-pattern.md`
+- `docs/work-slice-pattern.md`
+- `docs/slice-finalization-and-restart.md`

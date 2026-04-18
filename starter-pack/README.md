@@ -43,7 +43,7 @@ The current practical Alpha 4 handoff baseline now includes:
 - `docs/project-handoff-conventions.md`
 - `docs/handoff-capture-pattern.md`
 
-Use this set when you need model-agnostic continuity between agents without relying on hidden thread memory.
+Use this set when you need model-agnostic continuity between agents without relying on hidden runtime memory.
 
 
 ## Alpha 5 baseline
@@ -72,6 +72,9 @@ AletheIA may suggest a fit, but the user may still choose a different model.
 
 If you want to make bounded work more tangible without changing the core contracts, read:
 
+- `docs/canonical-definitions.md`
+- `docs/work-item-pattern.md`
+- `starter-pack/templates/work-item-template.md`
 - `docs/work-slice-pattern.md`
 - `starter-pack/templates/work-slice-template.md`
 - `starter-pack/guides/risk-to-gate-mapping.md`
@@ -154,6 +157,7 @@ Read:
 - `starter-pack/templates/slice-finalization-review-template.md`
 - `examples/resource-aware-operations/slice-finalization-reference.md`
 - `starter-pack/guides/clean-restart-command-adapters.md`
+- `docs/github-project-operations.md`
 - `starter-pack/templates/restart-bootstrap-prompt-template.md`
 - `examples/resource-aware-operations/clean-restart-command-adapter-example.md`
 - `docs/project-local-constitution-context.md`

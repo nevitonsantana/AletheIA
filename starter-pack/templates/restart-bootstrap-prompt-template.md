@@ -2,7 +2,7 @@
 
 Use this template after a slice closes with `recommend-clean-restart`.
 
-Use only after the previous thread has already been abandoned for the new issue or slice.
+Use it only after the previous execution surface has already been abandoned for the next slice or work item.
 
 The prompt should rely on:
 
@@ -18,7 +18,7 @@ It should **not** rely on transcript replay by default.
 ## Template
 
 ```text
-Continue the project from a clean session.
+Continue the work from a clean execution surface.
 
 Read only:
 - the restart package below
