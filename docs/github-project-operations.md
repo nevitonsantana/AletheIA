@@ -38,6 +38,8 @@ This keeps conceptual and execution work connected without fragmenting the repo 
 
 ## Recommended statuses
 
+Use `Workflow Status` as the operational source of truth for the repo workflow:
+
 - `Backlog`
 - `Ready`
 - `In Progress`
@@ -46,15 +48,24 @@ This keeps conceptual and execution work connected without fragmenting the repo 
 - `Blocked`
 - `Done`
 
+The native GitHub `Status` field may still exist for lightweight board visibility, but it is not rich enough to express the full repo workflow by itself.
+
 ---
 
 ## Recommended fields
 
-- `Status`
+- `Workflow Status`
+- `Status` (optional compatibility / visual summary)
 - `Executor`
 - `Priority`
 - `Target Release`
 - `Link / Context`
+- `Lane`
+
+This matches the current repository project setup more closely:
+
+- `Workflow Status` = operational truth
+- native `Status` = lightweight GitHub-native visual state when useful
 
 Optional local fields may exist, but these should be enough to keep the repo readable.
 

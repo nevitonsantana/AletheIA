@@ -58,6 +58,27 @@ Keep three layers distinct:
 The schema may stay smaller than the template.
 That is a feature, not a bug.
 
+### When the minimum package is enough
+
+Prefer the minimum restart package when:
+
+- the next action is obvious
+- the receiving boundary is narrow
+- the main risk is execution, not reinterpretation
+- validation continuity fits in one compact line
+
+### When to step up to the richer template
+
+Use the richer operational template when one or more of these are true:
+
+- the work crosses a meaningful ownership boundary
+- file scope must be frozen explicitly
+- semantic guardrails matter more than raw file paths
+- acceptance criteria need to be preserved to avoid reinterpretation
+- the receiving boundary should report back in a specific format
+
+Compact and restartable still beats exhaustive and noisy, but the richer template is justified when it materially reduces drift.
+
 ---
 
 ## Multi-boundary continuity
