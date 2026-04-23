@@ -197,6 +197,18 @@ Anchored by:
 - `examples/iterative-maintenance/three-round-loop/README.md`
 - `starter-pack/guides/model-strategy-by-task.md`
 - `starter-pack/templates/project-model-strategy-template.md`
+- `docs/runtime-adapter-codex.md`
+- `docs/runtime-adapter-claude-code.md`
+- `docs/runtime-adapter-qwen.md`
+- `docs/agent-role-catalog.md`
+- `docs/agent-role-adoption-guide.md`
+- `docs/agent-role-orchestrator.md`
+- `docs/agent-role-implementer.md`
+- `docs/agent-role-reviewer.md`
+- `docs/agent-role-validator.md`
+- `docs/agent-role-explorer.md`
+- `starter-pack/templates/agent-role-card-template.md`
+- `examples/resource-aware-operations/cross-runtime-role-handoff-example.md`
 
 This layer makes the current baseline more tangible through:
 

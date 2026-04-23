@@ -34,6 +34,9 @@ See:
 
 - `docs/canonical-vocabulary.md`
 - `docs/adapter-taxonomy.md`
+- `docs/runtime-adapter-codex.md`
+- `docs/runtime-adapter-claude-code.md`
+- `docs/runtime-adapter-qwen.md`
 
 This contract builds directly on:
 

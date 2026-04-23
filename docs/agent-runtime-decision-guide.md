@@ -213,5 +213,8 @@ It is an operating guide for better proportionality.
 - `starter-pack/guides/model-strategy-by-task.md`
 - `docs/progressive-policy-signals.md`
 - `docs/runtime-adapter-contract.md`
+- `docs/runtime-adapter-codex.md`
+- `docs/runtime-adapter-claude-code.md`
+- `docs/runtime-adapter-qwen.md`
 - `examples/model-strategy/provider-agnostic-routing.md`
 - `examples/resource-aware-operations/agent-runtime-decision-example.md`
