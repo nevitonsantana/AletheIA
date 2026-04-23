@@ -36,9 +36,19 @@ AletheIA is not:
 
 ---
 
-## Core operating loop
+## How AletheIA works
 
-AletheIA helps teams move from:
+```mermaid
+flowchart LR
+    A["Model or agent output"] --> B["Intent and context framing"]
+    B --> C["Decision and governance"]
+    C --> D["Bounded execution"]
+    D --> E["Validation and review"]
+    E --> F["Learnings and durable continuity"]
+    F --> G["Governed action or restartable handoff"]
+```
+
+The framework helps teams move from:
 
 `prompt -> output -> execution`
 
@@ -46,7 +56,21 @@ into:
 
 `intent -> context -> decision -> execution -> validation -> learning`
 
-That shift is the core value of the framework.
+That shift is the core value of AletheIA.
+
+---
+
+## What makes AletheIA different
+
+AletheIA is not only a workflow-control layer.
+It also provides:
+
+- **Governed decisions** — the framework can help decide when work should continue, slow down, escalate, or require review
+- **Context and token discipline** — context expansion is treated as something to justify, not something to do by reflex
+- **Runtime and trust-boundary awareness** — hosted vs local posture, runtime fit, and operational boundaries are part of the model
+- **Restartable continuity** — handoffs, restart packages, and finalization are designed to survive runtime changes without transcript replay
+- **Validation before closure** — proof is part of the work, not an optional afterthought
+- **Learning from real work** — pilot evidence, failed validation, and repeated friction can become durable learnings instead of disappearing into chat history
 
 ---
 
