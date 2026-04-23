@@ -14,6 +14,10 @@ The goal is to provide a practical baseline for:
 - durable decisions
 - advisory model-strategy guidance
 
+A short daily-use entrypoint is now also available at:
+
+- `starter-pack/guides/daily-operations.md`
+
 Start here if you want the operating method around the framework, not only the technical core.
 
 

@@ -2,172 +2,172 @@
 
 **AletheIA** is an operating framework for AI-assisted work.
 
-It helps teams coordinate tasks, context, memory, skills, governance, validation, and learnings **without letting raw model output act directly on the system**.
+It adds an explicit layer between model output and execution so teams can work with:
 
-In simple terms:
-
-`model or agent output -> AletheIA -> execution`
-
----
-
-## Why the name AletheIA
-
-The name combines **Aletheia** — the idea of truth as something brought into the open rather than left hidden — with **IA**, signaling the framework's focus on AI-assisted work.
-
-Conceptually, the name points to the framework's main intention:
-
-- make reasoning more explicit
-- make decisions more reviewable
-- make validation and learnings less hidden
-- keep AI work from moving straight from output to action without an operating layer
-
-In that sense, AletheIA is not about treating AI output as truth.
-It is about creating the conditions for AI-assisted work to become more inspectable, governable, and revealable before execution.
-
----
-
-## Why AletheIA exists
-
-Many AI workflows still follow a fragile pattern:
-
-`prompt -> output -> execution`
-
-That can be fast, but it is often weak in:
-
-- traceability
-- scope control
-- policy enforcement
-- quality gates
+- clearer framing
+- bounded execution
+- reviewable decisions
+- proportional validation
 - reusable learnings
 
-AletheIA introduces an explicit operating layer between output and action.
+In short:
 
-Its goal is not to slow teams down for the sake of ceremony.
-
-Its goal is to make AI-assisted work:
-
-- clearer
-- safer
-- more predictable
-- more reusable across projects
+`model or agent output -> AletheIA -> governed action`
 
 ---
 
-## What this is
+## What AletheIA is
 
 AletheIA is:
 
-- a framework
-- provider-agnostic by design
-- focused on safe and explainable AI-assisted work
-- built to be reusable across projects
-- designed for structured decision-making before execution
+- provider-agnostic
+- reusable across projects
+- focused on bounded, reviewable work
+- designed to preserve continuity across agents, runtimes, and handoffs
 
-AletheIA also keeps a stable canonical vocabulary across trackers, agent surfaces, handoff formats, and runtime-facing records.
-
-See:
-
-- `docs/canonical-vocabulary.md`
-
-## What this is not
+## What AletheIA is not
 
 AletheIA is not:
 
 - a chatbot
-- an app
-- a wrapper around a single LLM
-- a product-specific toolkit
-- a system that assumes automation is always the right answer
-
----
-
-## Canonical operating vocabulary
-
-AletheIA now treats the following concepts as the stable public vocabulary of the framework core:
-
-- **Work Slice** — the primary operational unit of bounded AI-assisted work
-- **Work Item** — the external coordination unit that a slice may point to
-- **Restart Package** — the compact continuity artifact used to resume after a boundary
-- **Handoff** — the transition artifact that carries a slice across an agent or review boundary
-- **Governing Context** — the minimum durable context that must still govern the next boundary
-- **Durable Memory** — reviewable artifacts that survive past one execution surface
-- **Execution Surface** — the local runtime surface where work happens, such as a chat, IDE pane, agent shell, or coding assistant window
-- **External Coordination System** — a tool such as GitHub, Jira, Trello, or Linear that tracks external work state
-
-The core model is therefore:
-
-- **Work Slice** = unit of operation
-- **Work Item** = unit of external coordination
-- **Execution Surface** = runtime detail, not framework truth
-
-This means AletheIA should be explainable without depending on thread control, chat transcripts, GitHub Issues, or GitHub Projects as core concepts.
-
-GitHub Projects may still be used to coordinate the AletheIA repository itself, but that remains a **repository-local operating choice** and a first real adapter example, not a definition of the framework core.
-
-See also:
-
-- `docs/canonical-definitions.md`
-- `docs/work-item-pattern.md`
-- `docs/github-project-operations.md`
-- `docs/deprecated-thread-centric-language.md`
+- a single-runtime wrapper
+- a hidden auto-router
+- a substitute for project-local operating rules
 
 ---
 
 ## Core operating loop
 
-AletheIA works through a controlled loop:
+AletheIA helps teams move from:
+
+`prompt -> output -> execution`
+
+into:
 
 `intent -> context -> decision -> execution -> validation -> learning`
 
-This means the framework helps answer questions such as:
-
-- What exactly is the task?
-- What context is truly needed?
-- What decision is being made?
-- Why is this allowed, blocked, or escalated?
-- What validation happened before closure?
-- What should be learned from success or failure?
+That shift is the core value of the framework.
 
 ---
 
-## What AletheIA 1.0 proves
+## Core concepts
 
-AletheIA 1.0 proves that:
+AletheIA keeps a stable core vocabulary so the framework does not get redefined by one tracker, one chat surface, or one runtime.
 
-- an input can become a structured decision
-- governance can block unsafe or poorly framed closure
-- failed validation can generate reusable learnings
-- the framework can stay small, inspectable, and deterministic
-- the core can be reused outside its original pilot project
-- pilots can turn into reviewable framework improvements
-- handoffs can preserve restartable continuity across boundaries
-- structured risk inference can exist as a selective experimental layer rather than universal ceremony
-- distribution and delivery can be framed without distorting the core
-- the roadmap can distinguish baseline work from post-baseline evolution
+The most important concepts are:
 
----
+- **Work Slice** — the bounded unit of operational work
+- **Work Item** — the external coordination unit a slice may point to
+- **Restart Package** — the compact continuity artifact used after a boundary
+- **Handoff** — the transition artifact that carries work across a meaningful boundary
+- **Execution Surface** — the local runtime where work happens
+- **Agent Role** — the portable semantic responsibility of an agent boundary
+- **Runtime Adapter** — the runtime-local mapping that preserves framework meaning
 
-## Repository structure
+For the canonical definitions, start with:
 
-- `engine/` — minimal deterministic kernel, governance, and learnings helpers
-- `schemas/` — JSON schemas for framework contracts
-- `policies/` — governance packs and policy definitions
-- `examples/` — canonical examples and golden fixtures
-- `tests/` — contract, golden, e2e, and learning-oriented checks
-- `starter-pack/` — reusable operating guides, checklists, and templates
-- `docs/` — architecture, roadmap, pilot narrative, release-readiness notes, and future-facing delivery boundaries
+- `docs/canonical-vocabulary.md`
 
 ---
 
-## Initial examples
+## What is in this repository
 
-The repository starts with a few small examples that make the framework tangible:
+The repository is organized around four practical blocks:
 
-- `hello-world` — the smallest end-to-end path
-- `low-confidence-review` — when ambiguity should stop direct execution
-- `high-risk-human-gate` — when risk requires explicit human approval
-- `learning-from-failed-validation` — when failed closure should also produce reusable learning
-- `governance` — process-oriented rule evaluation using facts and a policy pack
+1. **framework core**
+   - contracts, governance, token discipline, quality, learnings, examples, tests
+2. **starter-pack**
+   - reusable guides, templates, and practical operating materials
+3. **pilot materials**
+   - self-application, Crisis Monitor grounding, pilot conversion, project extension
+4. **post-1.0 tracks**
+   - constrained adoption, resource-aware operations, and later evolution paths
+
+---
+
+## Where to start
+
+### If you want the fastest understanding path
+
+Read in this order:
+
+1. `docs/getting-started.md`
+2. `docs/00-overview.md`
+3. `docs/governance.md`
+4. `docs/canonical-vocabulary.md`
+
+### If you want practical operating guidance
+
+Start with:
+
+1. `starter-pack/README.md`
+2. `starter-pack/guides/daily-operations.md`
+3. `docs/apply-to-existing-project.md`
+
+### If you want examples first
+
+Start with:
+
+1. `examples/hello-world/`
+2. `examples/handoffs/compact-reviewable-handoff.md`
+3. `examples/work-slices/standard-slice/README.md`
+
+---
+
+## Current status
+
+AletheIA is now at **1.0.0**.
+
+What 1.0 means:
+
+- the Alpha 1–7 baseline is complete enough for public reuse
+- the framework has a stable adoption path
+- new work now belongs to **1.x evolution tracks**, not to unfinished baseline buildup
+
+The two most relevant post-1.0 tracks today are:
+
+- **1.1 constrained adoption / trust-boundary hardening**
+- **1.2 resource-aware operations**
+
+For the roadmap and release framing, see:
+
+- `docs/roadmap-alpha.md`
+- `docs/release-1.0-readiness.md`
+- `docs/enterprise-readiness-roadmap.md`
+- `docs/resource-aware-operations-roadmap.md`
+
+---
+
+## Practical reading paths
+
+### Understand the framework
+
+- `docs/getting-started.md`
+- `docs/00-overview.md`
+- `docs/governance.md`
+- `docs/token-policy.md`
+- `docs/durable-decisions.md`
+
+### Adopt AletheIA in a real project
+
+- `docs/apply-to-existing-project.md`
+- `docs/project-extension-pattern.md`
+- `docs/pilot-conversion.md`
+- `starter-pack/README.md`
+
+### Work with handoffs and continuity
+
+- `docs/agent-handoffs.md`
+- `starter-pack/guides/agent-handoff-generation.md`
+- `starter-pack/templates/agent-handoff-template.md`
+- `docs/slice-finalization-and-restart.md`
+
+### Work with agent roles and runtime fit
+
+- `docs/agent-roles-skills-runtime-adapters.md`
+- `docs/agent-role-catalog.md`
+- `docs/runtime-adapter-contract.md`
+- `docs/agent-runtime-decision-guide.md`
 
 ---
 
@@ -177,164 +177,23 @@ The repository starts with a few small examples that make the framework tangible
 2. Control over automation
 3. Consistency over convenience
 4. Reuse before duplication
-5. Learnings must be reviewable
-6. The framework should stay inspectable and debuggable
+5. Validation before closure
+6. Learnings must stay reviewable
 
 ---
 
-## Current status
+## Quick check
 
-This repository is now **AletheIA 1.0.0**.
+If you want one lightweight sanity pass after cloning:
 
-AletheIA 1.0 includes:
+```bash
+bash scripts/check-governance.sh
+```
 
-- an Alpha 1 baseline for governance, token discipline, durable decisions, enforcement clarity, quality, and learnings
-- an Alpha 2 bridge for self-application, pilot conversion, and project extension, reinforced by real-world Crisis Monitor validation
-- an Alpha 3 adoption baseline for getting started, existing-project application, contribution guidance, and starter-pack reuse
-- an Alpha 4 handoff baseline for model-agnostic restart packages, project conventions, capture patterns, and stronger multi-boundary continuity
-- an Alpha 5 experimental baseline for structured risk inference in higher-risk work, including stronger links to risk-to-gate mapping and iterative maintenance
-- an Alpha 6 distribution baseline for presets, adapters, adoption modes, cross-surface delivery mappings, and a constrained adoption example
-- an Alpha 7 tooling-boundary baseline for future bootstrap and delivery tooling that remains clearly optional and future-facing
-- a current operational-composition baseline for work slices, risk-to-gate mapping, stronger restart-package examples, round-based maintenance guidance, and optional filesystem context-routing experiments
+---
 
-AletheIA 1.0 does **not** claim:
+## See also
 
-- enterprise-ready rollout by default
-- fully tooled bootstrap or delivery automation
-- completed domain governance packs
-
-Those remain part of the post-1.0 roadmap.
-
-The first post-1.0 track now starts with enterprise-oriented hardening for constrained and regulated adoption, but still without claiming enterprise-ready packaging by default.
-The next queued post-1.0 track is resource-aware operations: a docs-first operationalization lane for observability, proportional context/capability allocation, and advisory runtime/agent fit.
-That 1.2 track now begins with telemetry and waste-reading surfaces rather than adapter or learning-layer work.
-It now also includes a first docs-first policy-signals layer that turns telemetry and waste patterns into reviewable advisory signals.
-The next 1.2 step now begins to define a minimal provider-agnostic runtime adapter contract on top of those surfaces.
-It now also adds an advisory runtime/agent decision layer that helps teams reason about over-allocation and under-allocation without introducing auto-routing.
-The next 1.2 step now introduces lightweight planning-depth profiles and readiness gates so teams can judge how much structure a slice needs and whether it is healthy to continue.
-It now also adds the first bounded Phase F examples so the 1.2 track can compare postures, show constrained/local use, and demonstrate pilot conversion before any benchmark or learning layer.
-It now also adds a bounded pilot guide/checklist/template so real-world 1.2 validation can happen before any benchmark or learning-layer escalation.
-It now also includes a bounded Crisis Monitor reference so the 1.2 track has one real-world pilot-shaped reading before any benchmark or learning move.
-It now also defines the next signals that would justify reopening the track for stronger comparative work instead of growing by inertia.
-It now also includes a short 1.2 review so the current scope, proof level, and stop line are explicit.
-It now also adds slice finalization and restart guidance so teams can reduce AI Fatigue through compact restart packages instead of transcript replay.
-It now also adds a docs-first clean-execution-surface adapter layer so finalization, clean restart, and resume flows can be exposed through runtime-local commands without turning AletheIA into a runtime platform.
-It now also clarifies how project-local Constitution layers can strengthen governing-context continuity without becoming framework core truth.
-
-See also:
-
-- `docs/roadmap-alpha.md`
-- `docs/release-1.0-readiness.md`
+- `docs/launch-kit.md`
 - `CHANGELOG.md`
-
----
-
-## Reading order
-
-If this is your first time here, start with:
-
-1. `docs/getting-started.md`
-1. `docs/canonical-vocabulary.md`
-1. `docs/00-overview.md`
-1. `docs/roadmap-alpha.md`
-1. `docs/release-1.0-readiness.md`
-1. `docs/enterprise-readiness-roadmap.md`
-1. `docs/resource-aware-operations-roadmap.md`
-1. `docs/context-resource-telemetry-spec.md`
-1. `docs/slice-telemetry-model.md`
-1. `docs/waste-heuristics.md`
-1. `docs/progressive-policy-signals.md`
-1. `docs/runtime-adapter-contract.md`
-1. `docs/runtime-adapter-codex.md`
-1. `docs/runtime-adapter-claude-code.md`
-1. `docs/runtime-adapter-qwen.md`
-1. `docs/agent-role-catalog.md`
-1. `docs/agent-role-adoption-guide.md`
-1. `docs/agent-role-orchestrator.md`
-1. `docs/agent-role-implementer.md`
-1. `docs/agent-role-reviewer.md`
-1. `docs/agent-role-validator.md`
-1. `docs/agent-role-explorer.md`
-1. `docs/agent-runtime-decision-guide.md`
-1. `examples/resource-aware-operations/cross-runtime-role-handoff-example.md`
-1. `docs/planning-depth-profiles.md`
-1. `docs/readiness-gates-spec.md`
-1. `examples/resource-aware-operations/README.md`
-1. `examples/resource-aware-operations/workflow-readiness-example.md`
-1. `examples/resource-aware-operations/agent-runtime-decision-example.md`
-1. `examples/resource-aware-operations/minimal-runtime-adapter-example.md`
-1. `examples/resource-aware-operations/comparative-review-example.md`
-1. `examples/resource-aware-operations/constrained-local-review-example.md`
-1. `examples/resource-aware-operations/bounded-pilot-conversion-loop.md`
-1. `docs/resource-aware-bounded-pilot.md`
-1. `docs/resource-aware-pilot-review-checklist.md`
-1. `starter-pack/templates/resource-aware-pilot-review-template.md`
-1. `docs/resource-aware-crisis-monitor-reference.md`
-1. `examples/resource-aware-operations/resource-aware-pilot-review-reference.md`
-1. `docs/resource-aware-next-signals.md`
-1. `docs/resource-aware-operations-review.md`
-1. `docs/canonical-definitions.md`
-1. `docs/work-item-pattern.md`
-1. `docs/deprecated-thread-centric-language.md`
-1. `docs/slice-finalization-and-restart.md`
-1. `starter-pack/templates/slice-finalization-review-template.md`
-1. `examples/resource-aware-operations/slice-finalization-reference.md`
-1. `starter-pack/templates/restart-bootstrap-prompt-template.md`
-1. note: finalization and restart now require a compact `Finalization Context Prompt` that identifies the project, names the official work item when available, states what must not be reopened, and explicitly says whether the next step should open a new execution surface
-1. `docs/durable-decision-finalization-context-prompt.md`
-1. `starter-pack/guides/clean-restart-command-adapters.md`
-1. `docs/github-project-operations.md`
-1. `examples/resource-aware-operations/clean-restart-command-adapter-example.md`
-1. `docs/project-local-constitution-context.md`
-1. `docs/architecture.md`
-1. `docs/governance.md`
-1. `docs/token-policy.md`
-1. `starter-pack/guides/model-strategy-by-task.md`
-1. `docs/durable-decisions.md`
-1. `docs/enforcement-boundaries.md`
-1. `docs/quality.md`
-1. `docs/self-application.md`
-1. `docs/pilot-crisis-monitor.md`
-1. `docs/pilot-conversion.md`
-1. `examples/pilot-conversion/crisis-monitor-real-world-validation.md`
-1. `docs/project-extension-pattern.md`
-1. `docs/apply-to-existing-project.md`
-1. `CONTRIBUTING.md`
-1. `starter-pack/README.md`
-1. `starter-pack/templates/project-extension-template.md`
-1. `starter-pack/templates/project-model-strategy-template.md`
-1. `docs/agent-handoffs.md`
-1. `starter-pack/guides/agent-handoff-generation.md`
-1. `starter-pack/templates/agent-handoff-template.md`
-1. `docs/project-handoff-conventions.md`
-1. `docs/handoff-capture-pattern.md`
-1. `docs/work-slice-pattern.md`
-1. `starter-pack/templates/work-slice-template.md`
-1. `starter-pack/guides/risk-to-gate-mapping.md`
-1. `docs/structured-risk-inference.md`
-1. `starter-pack/templates/inference-artifact-template.md`
-1. `starter-pack/guides/inference-trigger-guidance.md`
-1. `starter-pack/guides/inference-artifact-generation.md`
-1. `docs/inference-pilot-scenarios.md`
-1. `examples/work-slices/standard-slice/README.md`
-1. `examples/handoffs/compact-reviewable-handoff.md`
-1. `examples/handoffs/high-stakes-handoff.md`
-1. `examples/handoffs/multi-boundary-continuity.md`
-1. `examples/structured-risk-inference/README.md`
-1. `examples/distribution/constrained-adoption-mapping.md`
-1. `examples/delivery/reviewable-generated-bundle.md`
-
----
-
-## What happens after 1.0
-
-After the 1.0 baseline, the roadmap shifts into **1.x evolution**.
-
-The next planned lanes are:
-
-- **1.1** — enterprise-readiness / constrained adoption hardening
-- **1.2** — resource-aware operations
-- **1.3+** — benchmark and comparative evaluation
-- **1.4+** — learning layer, adaptive orchestration, and later domain governance hardening
-
-Those tracks remain valid, but they are intentionally post-baseline work.
+- `CONTRIBUTING.md`

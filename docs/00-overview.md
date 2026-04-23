@@ -209,6 +209,7 @@ Anchored by:
 - `docs/agent-role-explorer.md`
 - `starter-pack/templates/agent-role-card-template.md`
 - `examples/resource-aware-operations/cross-runtime-role-handoff-example.md`
+- `starter-pack/guides/daily-operations.md`
 
 This layer makes the current baseline more tangible through:
 
