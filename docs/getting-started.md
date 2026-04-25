@@ -144,6 +144,6 @@ After `getting-started.md`, choose one of these paths:
 - **understand the core** -> `docs/00-overview.md`
 - **pilot in an existing project** -> `docs/apply-to-existing-project.md`
 - **inspect the operating method** -> `starter-pack/README.md`
-- **inspect Hermes pre-pilot guardrails** -> `docs/hermes/phase-minus-1-operational-matrix.md`
+- **inspect Hermes pre-pilot guardrails** -> `docs/hermes/README.md`
 - **understand the maturity path** -> `docs/roadmap-alpha.md`
 - **understand how 1.0 was framed** -> `docs/release-1.0-readiness.md`

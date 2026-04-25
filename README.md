@@ -195,6 +195,7 @@ For the roadmap and release framing, see:
 
 ### Inspect the Hermes pre-pilot guardrails
 
+- `docs/hermes/README.md`
 - `docs/adr/ADR-001-hermes-role.md`
 - `docs/adr/ADR-002-memory-and-skill-promotion-policy.md`
 - `docs/hermes/phase-minus-1-operational-matrix.md`
