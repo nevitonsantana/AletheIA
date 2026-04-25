@@ -114,12 +114,15 @@ These tracks remain real and already planned, but they were **not** required for
 
 ### 1.1 — enterprise-readiness / regulated adoption
 
-Planned backlog includes:
+Current track includes:
 
 - enterprise-readiness / regulated adoption roadmap
-- enterprise adoption guidance
-- restricted enterprise extension example
-- stronger local trust-boundary posture for constrained environments
+- enterprise adoption guidance, now started through the starter-pack guide
+- restricted enterprise extension example, now started through the project-extension example
+- stronger local trust-boundary posture for constrained environments, started through docs/template/example material
+
+Remaining work is evidence-oriented: stronger constrained-adoption proof before
+claiming broader enterprise-readiness.
 
 ### 1.2 — pilot expansion / stronger real-world validation
 
