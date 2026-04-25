@@ -188,7 +188,7 @@ For the roadmap and release framing, see:
 
 ### Work with agent roles and runtime fit
 
-- `docs/agent-roles-skills-runtime-adapters.md`
+- `docs/agent-role-adoption-guide.md`
 - `docs/agent-role-catalog.md`
 - `docs/runtime-adapter-contract.md`
 - `docs/agent-runtime-decision-guide.md`

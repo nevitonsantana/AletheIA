@@ -93,7 +93,7 @@ Keep in this closeout only; do not promote to semantic memory.
 
 ### Discarded memory
 
-No semantic-memory candidate was promoted. This remains task-level evidence. A whole-document README link scan also surfaced one pre-existing unrelated missing reference (`docs/agent-roles-skills-runtime-adapters.md`); it was not changed in this Hermes baseline scope.
+No semantic-memory candidate was promoted. This remains task-level evidence. A whole-document README link scan also surfaced one pre-existing unrelated missing README reference; it was left out of the Hermes baseline scope and later tracked separately in AletheIA #98.
 
 ## 7. Durable decision — Layer 2
 
