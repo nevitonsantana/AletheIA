@@ -122,25 +122,40 @@ That matters because many enterprise environments need stronger reviewability lo
 
 ---
 
-## What is still missing
+## What is still maturing
 
-The 1.1 track exists because the current baseline still has real gaps.
+The 1.1 track exists because the current baseline still has real gaps, even
+though the first documentation artifacts now exist.
 
-### 1. No explicit enterprise adoption guide yet
+### 1. Enterprise adoption guidance has started
 
-The framework baseline already explains many useful parts, but it still needs a direct guide that answers:
+The framework baseline now includes a direct guide for constrained adoption:
+
+- `starter-pack/guides/enterprise-adoption-considerations.md`
+
+That guide starts answering:
 
 - how to start in a constrained environment
 - how to keep the rollout bounded
 - how to treat local approvals, tool restrictions, and trust boundaries
 
-### 2. No restricted-environment extension example yet
+What remains is not the existence of the guide, but stronger evidence from
+real constrained adoption loops.
 
-AletheIA teaches the extension pattern, but constrained environments benefit from a more explicit example showing:
+### 2. Restricted-environment extension examples have started
+
+AletheIA now includes a restricted enterprise project-extension example:
+
+- `examples/project-extension/restricted-enterprise-context.md`
+
+That example starts showing:
 
 - what stays in the core
 - what becomes local rule
 - how local model/tool restrictions should be expressed
+
+What remains is not the existence of an example, but stronger repetition across
+real or realistic constrained contexts.
 
 ### 3. No stronger mapping from framework artifacts to heavier local governance
 
@@ -167,7 +182,11 @@ The lowest-regret path for 1.1 is still documentation-first.
 
 ### Step 1 — enterprise adoption guidance
 
-Create a practical guide for introducing AletheIA in environments with:
+Started through:
+
+- `starter-pack/guides/enterprise-adoption-considerations.md`
+
+This guide introduces AletheIA in environments with:
 
 - heavier approvals
 - stronger review layers
@@ -176,7 +195,12 @@ Create a practical guide for introducing AletheIA in environments with:
 
 ### Step 2 — restricted enterprise extension example
 
-Show how a project can define a local enterprise integration layer without contaminating the framework core.
+Started through:
+
+- `examples/project-extension/restricted-enterprise-context.md`
+
+This example shows how a project can define a local enterprise integration
+layer without contaminating the framework core.
 
 ### Step 3 — stronger trust-boundary posture in local mapping
 
