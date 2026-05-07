@@ -42,7 +42,15 @@ Read in this order:
 6. `docs/durable-decisions.md`
 7. `docs/enforcement-boundaries.md`
 
-### 2. I want to try the framework quickly
+### 2. I want to operate one Work Slice
+
+Read next:
+
+1. `docs/core-operating-path.md`
+
+Use this when you want the shortest path from intent to a bounded, validated, restartable slice without reading the whole repository first.
+
+### 3. I want to try the framework quickly
 
 Read and run in this order:
 
@@ -51,7 +59,7 @@ Read and run in this order:
 3. `tests/`
 4. `bash scripts/check-governance.sh`
 
-### 3. I want to apply it to an existing project
+### 4. I want to apply it to an existing project
 
 Read in this order:
 
@@ -85,6 +93,7 @@ If you are unsure what counts as a Work Item, Work Slice, Restart Package, or Ex
 If you only have a few minutes, look at:
 
 - `README.md`
+- `docs/core-operating-path.md`
 - `docs/00-overview.md`
 - `docs/roadmap-alpha.md`
 - `docs/governance.md`
@@ -114,6 +123,7 @@ If you want to test AletheIA in practice, start with one of these:
 ### Option B — pilot one real slice in your own project
 
 - choose one bounded slice
+- use `docs/core-operating-path.md` to shape the minimum operating path
 - define the local extension boundary
 - apply the minimum operating layer
 - validate what helped and what remained local
@@ -141,6 +151,7 @@ AletheIA works best when adoption starts small and becomes more explicit through
 
 After `getting-started.md`, choose one of these paths:
 
+- **operate one Work Slice** -> `docs/core-operating-path.md`
 - **understand the core** -> `docs/00-overview.md`
 - **pilot in an existing project** -> `docs/apply-to-existing-project.md`
 - **inspect the operating method** -> `starter-pack/README.md`
