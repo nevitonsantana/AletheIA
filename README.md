@@ -186,10 +186,11 @@ AletheIA decides the flow. Skills shape capability. Runtimes execute. Tools info
 ### Fastest understanding path
 
 1. `docs/getting-started.md`
-2. `docs/00-overview.md`
-3. `docs/governance.md`
-4. `docs/token-policy.md`
-5. `docs/canonical-vocabulary.md`
+2. `docs/core-operating-path.md`
+3. `docs/00-overview.md`
+4. `docs/governance.md`
+5. `docs/token-policy.md`
+6. `docs/canonical-vocabulary.md`
 
 ### Apply AletheIA to a project
 
