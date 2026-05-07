@@ -26,6 +26,8 @@ This guide is anchored in a real completed slice:
 
 The slice is a good anchor because it had a clear intent, explicit stop lines, real validation evidence, and a non-trivial decision: it advanced readiness without pretending that Codex simulation was Hermes telemetry.
 
+For exact reconstruction of Issue `#100`, the linked closeout is the only expected additional repository document beyond this guide.
+
 ---
 
 ## 1. Start from a signal or intent
@@ -194,8 +196,9 @@ After writing or changing this guide, test it against the anchor slice:
 
 1. Start from `docs/getting-started.md`.
 2. Use only this file to reconstruct the path of Issue `#100`.
-3. Count every additional repository document you must open.
-4. If you need more than one extra document, the operating path still has a gap.
+3. Open the linked closeout only if exact evidence or restart detail is needed.
+4. Count every additional repository document you must open.
+5. If you need more than one extra document, the operating path still has a gap.
 
 Expected first-use result:
 
@@ -218,7 +221,9 @@ Do not use this guide to add:
 
 Those may be useful in later slices, but this P0 path exists to compress the core operating route first.
 
-## Suggested next reading
+## Optional deeper reading
+
+These documents are not required to run the first Work Slice. Use them only when the slice needs deeper gates, restart mechanics, or template detail.
 
 - `docs/getting-started.md`
 - `docs/readiness-gates-spec.md`
