@@ -148,6 +148,39 @@ Crisis Monitor remains an important pilot source, but its product-specific runti
 
 ---
 
+## Full-system ecosystem and optional dependencies
+
+The AletheIA core can be read, adopted and validated without installing a separate agent runtime. The broader system shown in the ecosystem diagram is intentionally modular: AletheIA governs the work, while companion components may provide execution surfaces, specialist capability, infrastructure or advisory context.
+
+These components are **not bundled runtime dependencies** of the framework core. Treat them as optional integrations with their own trust boundaries, setup steps and review gates.
+
+| Component | Role in the complete system | Current posture | Links |
+|---|---|---|---|
+| **AletheIA core** | Macro governance: Work Slice, context, decision, risk, validation, handoff, closeout and learning. | Stable 1.0 baseline; evolves through bounded 1.x tracks. | `docs/00-overview.md`, `docs/governance.md`, `docs/canonical-vocabulary.md`, `docs/runtime-adapter-contract.md` |
+| **Adaptative Skills** | Micro capability layer for specialist execution patterns such as product, UX, technical review, QA, observability or domain analysis. | Complementary skill library concept; AletheIA should make its macro posture explicit around skills, not absorb every skill into core. | `docs/resource-aware-operations-roadmap.md`, `starter-pack/templates/agent-role-card-template.md` |
+| **Runtime adapters / execution surfaces** | Local mapping from AletheIA semantics to a concrete executor. | Runtime-specific; should preserve AletheIA meaning without becoming process authority. | `docs/runtime-adapter-contract.md`, `docs/runtime-adapter-codex.md`, `docs/runtime-adapter-claude-code.md`, `docs/runtime-adapter-qwen.md` |
+| **Hermes Agent** | Candidate controlled runtime executor. It may execute bounded work only under AletheIA policy and human gates. | Pre-pilot / guarded. Hermes must not govern process, promote memory/skills automatically or expand autonomy by habit. | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent), `docs/hermes/README.md`, `docs/adr/ADR-001-hermes-role.md`, `docs/adr/ADR-002-memory-and-skill-promotion-policy.md` |
+| **Agentic Stack** | Optional infrastructure/harness for portable agent folders, memory, skills, protocols and tools. | Optional complement; not part of AletheIA core and not required for the baseline. | [codejunkie99/agentic-stack](https://github.com/codejunkie99/agentic-stack), `docs/aletheia/closeouts/2026-04-25-hermes-agentic-stack-sandbox-readiness.md` |
+| **Context graph tooling** | Advisory context access for code structure, impact exploration and review support. | Experimental/consultative. The graph informs; it does not govern, gate, orchestrate or replace validation. | `docs/context-graph-integration.md`, `docs/context-graph-decision.md`, `starter-pack/guides/context-graph-usage-guide.md` |
+
+### Integration rule of thumb
+
+Use the complete system in this order:
+
+1. Start with an AletheIA **Work Slice** and explicit decision gate.
+2. Choose any **Adaptative Skills** needed for the specialist work.
+3. Select the **runtime adapter / execution surface** that fits the risk and environment.
+4. Add optional infrastructure such as **Hermes Agent** or **Agentic Stack** only when the sandbox, approval and telemetry boundaries are explicit.
+5. Use graph tooling only as **advisory context**, then validate with normal AletheIA proof.
+
+The governing rule stays the same:
+
+```text
+AletheIA decides the flow. Skills shape capability. Runtimes execute. Tools inform.
+```
+
+---
+
 ## Where to start
 
 ### Fastest understanding path
