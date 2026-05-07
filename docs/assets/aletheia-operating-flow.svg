@@ -1,0 +1,97 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AletheIA operating flow</title>
+  <desc id="desc">A diagram showing how a signal becomes a governed action through framing, context, governance, bounded execution, validation, learning and restartable continuity.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1020"/>
+      <stop offset="0.55" stop-color="#101827"/>
+      <stop offset="1" stop-color="#162033"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="142" y1="0" x2="1138" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DD3FC"/>
+      <stop offset="0.5" stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="160%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2 2L10 6L2 10" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .eyebrow{font:600 18px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;letter-spacing:.12em;text-transform:uppercase;fill:#93C5FD}
+      .title{font:750 48px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;fill:#F8FAFC}
+      .subtitle{font:450 22px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;fill:#CBD5E1}
+      .label{font:700 20px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;fill:#F8FAFC}
+      .small{font:450 15px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;fill:#CBD5E1}
+      .pill{font:650 14px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;fill:#0B1020}
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" rx="34" fill="url(#bg)"/>
+  <path d="M88 118C198 45 330 42 438 114C522 170 603 180 702 139C843 81 993 107 1106 215C1193 298 1226 427 1180 540C1127 670 974 700 842 654C725 613 640 616 526 660C381 716 210 665 128 536C44 404-24 194 88 118Z" fill="#1E293B" opacity="0.38"/>
+  <path d="M0 0H1280V720H0V0Z" fill="url(#accent)" opacity="0.05"/>
+
+  <text x="80" y="82" class="eyebrow">AletheIA operating framework</text>
+  <text x="80" y="138" class="title">From model output to governed action</text>
+  <text x="80" y="178" class="subtitle">A portable loop for bounded AI-assisted work: explicit scope, reviewable decisions, proportional proof and durable continuity.</text>
+
+  <g transform="translate(80 248)" filter="url(#shadow)">
+    <rect width="160" height="118" rx="24" fill="#111827" stroke="#334155"/>
+    <text x="28" y="42" class="label">Signal</text>
+    <text x="28" y="70" class="small">Request, model</text>
+    <text x="28" y="92" class="small">or agent output</text>
+  </g>
+  <path d="M252 307H310" stroke="#94A3B8" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g transform="translate(322 248)" filter="url(#shadow)">
+    <rect width="170" height="118" rx="24" fill="#111827" stroke="#334155"/>
+    <text x="26" y="42" class="label">Framing</text>
+    <text x="26" y="70" class="small">Work Slice, risk</text>
+    <text x="26" y="92" class="small">and assumptions</text>
+  </g>
+  <path d="M504 307H562" stroke="#94A3B8" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g transform="translate(574 248)" filter="url(#shadow)">
+    <rect width="170" height="118" rx="24" fill="#111827" stroke="#334155"/>
+    <text x="26" y="42" class="label">Context</text>
+    <text x="26" y="70" class="small">Enough input,</text>
+    <text x="26" y="92" class="small">not transcript flood</text>
+  </g>
+  <path d="M756 307H814" stroke="#94A3B8" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g transform="translate(826 248)" filter="url(#shadow)">
+    <rect width="180" height="118" rx="24" fill="#111827" stroke="#334155"/>
+    <text x="26" y="42" class="label">Governance</text>
+    <text x="26" y="70" class="small">Allow, slow down,</text>
+    <text x="26" y="92" class="small">escalate or block</text>
+  </g>
+  <path d="M1018 307H1076" stroke="#94A3B8" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g transform="translate(1088 248)" filter="url(#shadow)">
+    <rect width="152" height="118" rx="24" fill="#111827" stroke="#334155"/>
+    <text x="24" y="42" class="label">Action</text>
+    <text x="24" y="70" class="small">Bounded</text>
+    <text x="24" y="92" class="small">execution</text>
+  </g>
+
+  <path d="M1164 380C1164 464 1065 512 958 512H322C228 512 160 470 160 393" stroke="#475569" stroke-width="3" stroke-dasharray="8 10" marker-end="url(#arrow)"/>
+
+  <g transform="translate(338 470)">
+    <rect width="220" height="64" rx="32" fill="#DBEAFE"/>
+    <text x="36" y="39" class="pill">Validation before closure</text>
+  </g>
+  <g transform="translate(588 470)">
+    <rect width="230" height="64" rx="32" fill="#EDE9FE"/>
+    <text x="38" y="39" class="pill">Learning stays reviewable</text>
+  </g>
+  <g transform="translate(848 470)">
+    <rect width="240" height="64" rx="32" fill="#D1FAE5"/>
+    <text x="36" y="39" class="pill">Restartable handoff</text>
+  </g>
+
+  <g transform="translate(80 598)">
+    <rect width="1120" height="54" rx="18" fill="#0F172A" stroke="#334155"/>
+    <text x="28" y="35" class="small">Core posture: provider-agnostic • advisory-first where signals are immature • human review for meaningful boundaries • local rules remain project-local</text>
+  </g>
+</svg>
