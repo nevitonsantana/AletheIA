@@ -40,6 +40,10 @@ AletheIA is not:
 
 ## How the operating loop works
 
+The first image above shows AletheIA inside the broader AI-assisted work ecosystem. The diagram below zooms in on the AletheIA core itself: how a signal becomes a bounded slice, a decision, validated execution, closeout, restartable continuity and learning.
+
+![AletheIA framework core](docs/assets/aletheia-core-framework.png)
+
 AletheIA moves work from a loose prompt-output pattern into an explicit operating loop:
 
 ```text
