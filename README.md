@@ -1,18 +1,16 @@
 # AletheIA
 
-**AletheIA** is an operating framework for AI-assisted work.
+**AletheIA** is an operating framework for AI-assisted work: a portable layer that turns model or agent output into bounded, reviewable, validated action.
 
-It adds an explicit layer between model output and execution so teams can work with:
+![AletheIA operating flow](docs/assets/aletheia-operating-flow.svg)
 
-- clearer framing
-- bounded execution
-- reviewable decisions
-- proportional validation
-- reusable learnings
+AletheIA exists because capable agents still need an operating system around the work: scope, context, governance, validation, handoff and learning. The framework is not trying to replace human judgment or project-local rules. It makes the decision path visible enough that people can trust, review and restart the work.
 
 In short:
 
-`model or agent output -> AletheIA -> governed action`
+```text
+model or agent output -> AletheIA -> governed action
+```
 
 ---
 
@@ -20,10 +18,12 @@ In short:
 
 AletheIA is:
 
-- provider-agnostic
-- reusable across projects
-- focused on bounded, reviewable work
-- designed to preserve continuity across agents, runtimes, and handoffs
+- **provider-agnostic** — it can be applied across models, agents and local runtimes
+- **work-slice oriented** — every meaningful task has a bounded goal, scope, risk and validation path
+- **governance-first** — risky or unclear work can slow down, escalate, require review or stop
+- **restartable** — continuity is carried through handoffs and restart packages, not fragile transcript memory
+- **evidence-seeking** — proof is part of closure, not a decorative afterthought
+- **learning-oriented** — repeated friction and validation failures can become durable, reviewable improvements
 
 ## What AletheIA is not
 
@@ -31,66 +31,99 @@ AletheIA is not:
 
 - a chatbot
 - a single-runtime wrapper
-- a hidden auto-router
+- a hidden autonomous router
+- a replacement for human accountability
 - a substitute for project-local operating rules
+- a claim that every future tooling or enterprise track is already complete
 
 ---
 
-## How AletheIA works
+## How the operating loop works
 
-```mermaid
-flowchart LR
-    A["Model or agent output"] --> B["Intent and context framing"]
-    B --> C["Decision and governance"]
-    C --> D["Bounded execution"]
-    D --> E["Validation and review"]
-    E --> F["Learnings and durable continuity"]
-    F --> G["Governed action or restartable handoff"]
+AletheIA moves work from a loose prompt-output pattern into an explicit operating loop:
+
+```text
+signal -> framing -> context -> governance -> bounded execution -> validation -> learning / restartable handoff
 ```
 
-The framework helps teams move from:
+That means the framework asks practical questions before treating output as executable:
 
-`prompt -> output -> execution`
-
-into:
-
-`intent -> context -> decision -> execution -> validation -> learning`
-
-That shift is the core value of AletheIA.
+1. **What is the work slice?**  
+   Define the goal, scope, risk, assumptions and stop line.
+2. **What context is enough?**  
+   Load the context needed for the slice without turning every transcript into mandatory state.
+3. **What decision is being made?**  
+   Allow, slow down, escalate, block, hand off or restart.
+4. **What execution surface is appropriate?**  
+   Keep runtime choice explicit instead of pretending every agent has the same trust boundary.
+5. **What proof closes the slice?**  
+   Use proportional validation: tests, review, smoke checks, artifacts or documented evidence.
+6. **What survives the boundary?**  
+   Preserve durable decisions, restart packages, handoffs and learnings.
 
 ---
 
-## What makes AletheIA different
+## Current status
 
-AletheIA is not only a workflow-control layer.
-It also provides:
+AletheIA is at **1.0.0**.
 
-- **Governed decisions** — the framework can help decide when work should continue, slow down, escalate, or require review
-- **Context and token discipline** — context expansion is treated as something to justify, not something to do by reflex
-- **Runtime and trust-boundary awareness** — hosted vs local posture, runtime fit, and operational boundaries are part of the model
-- **Restartable continuity** — handoffs, restart packages, and finalization are designed to survive runtime changes without transcript replay
-- **Validation before closure** — proof is part of the work, not an optional afterthought
-- **Learning from real work** — pilot evidence, failed validation, and repeated friction can become durable learnings instead of disappearing into chat history
+What 1.0 means:
+
+- the Alpha 1–7 baseline is complete enough for public reuse
+- the core vocabulary and adoption path are stable enough to teach and apply
+- new work now belongs to **1.x evolution tracks**, not unfinished baseline buildup
+
+What 1.0 does **not** mean:
+
+- enterprise-ready by default
+- fully automated orchestration
+- completed domain governance packs
+- active delivery tooling implementation
+- universal runtime enforcement
+
+### Recent evolution
+
+The active post-1.0 work has moved in three important directions:
+
+- **1.1 constrained adoption / trust-boundary hardening**  
+  Guidance for safer adoption in local, regulated or high-context environments.
+- **1.2 resource-aware operations**  
+  Advisory observability for context size, restart cost, handoff weight, retry waste, runtime fit and human review effort.
+- **clean restart and project-local constitution patterns**  
+  Stronger restart packages, local governing-context prompts and explicit fresh-thread signaling without making any one runtime command part of the portable core.
+
+For release framing, see:
+
+- `CHANGELOG.md`
+- `docs/release-1.0-readiness.md`
+- `docs/roadmap-alpha.md`
+- `docs/enterprise-readiness-roadmap.md`
+- `docs/resource-aware-operations-roadmap.md`
 
 ---
 
 ## Core concepts
 
-AletheIA keeps a stable core vocabulary so the framework does not get redefined by one tracker, one chat surface, or one runtime.
+AletheIA keeps a stable vocabulary so the framework is not redefined by one tracker, one chat surface or one runtime.
 
 The most important concepts are:
 
 - **Work Slice** — the bounded unit of operational work
 - **Work Item** — the external coordination unit a slice may point to
-- **Restart Package** — the compact continuity artifact used after a boundary
-- **Handoff** — the transition artifact that carries work across a meaningful boundary
+- **Context Pack** — the explicit context selected for a slice
+- **Decision Record** — the reviewable reason for continuing, slowing down, escalating or stopping
 - **Execution Surface** — the local runtime where work happens
-- **Agent Role** — the portable semantic responsibility of an agent boundary
 - **Runtime Adapter** — the runtime-local mapping that preserves framework meaning
+- **Handoff** — the transition artifact for a meaningful boundary
+- **Restart Package** — the compact continuity artifact used after a boundary
+- **Learning Record** — a reviewable improvement extracted from real work
 
-For the canonical definitions, start with:
+Canonical definitions start here:
 
 - `docs/canonical-vocabulary.md`
+- `docs/canonical-definitions.md`
+- `docs/work-slice-pattern.md`
+- `docs/runtime-adapter-contract.md`
 
 ---
 
@@ -98,109 +131,57 @@ For the canonical definitions, start with:
 
 The repository is organized around four practical blocks:
 
-1. **framework core**
-   - contracts, governance, token discipline, quality, learnings, examples, tests
-2. **starter-pack**
-   - reusable guides, templates, and practical operating materials
-3. **pilot materials**
-   - self-application, Crisis Monitor grounding, pilot conversion, project extension
-4. **post-1.0 tracks**
-   - constrained adoption, resource-aware operations, and later evolution paths
+1. **Framework core**
+   - `engine/`, schemas, governance, token discipline, quality, learnings, examples and tests
+2. **Starter pack**
+   - reusable guides, templates, checklists and playbooks for applying AletheIA in a project
+3. **Pilot and adoption materials**
+   - self-application, Crisis Monitor grounding, constrained adoption, project extension and pilot conversion
+4. **1.x evolution tracks**
+   - trust-boundary hardening, resource-aware operations, runtime-adapter guidance and future domain governance work
+
+Crisis Monitor remains an important pilot source, but its product-specific runtime, UI, assistant behavior and project-management rules are not the portable AletheIA core.
 
 ---
 
 ## Where to start
 
-### If you want the fastest understanding path
-
-Read in this order:
+### Fastest understanding path
 
 1. `docs/getting-started.md`
 2. `docs/00-overview.md`
 3. `docs/governance.md`
-4. `docs/canonical-vocabulary.md`
+4. `docs/token-policy.md`
+5. `docs/canonical-vocabulary.md`
 
-### If you want practical operating guidance
-
-Start with:
+### Apply AletheIA to a project
 
 1. `starter-pack/README.md`
 2. `starter-pack/guides/daily-operations.md`
 3. `docs/apply-to-existing-project.md`
+4. `docs/project-extension-pattern.md`
 
-### If you want examples first
+### Work with handoffs and restart
 
-Start with:
+1. `docs/agent-handoffs.md`
+2. `docs/slice-finalization-and-restart.md`
+3. `starter-pack/guides/clean-restart-command-adapters.md`
+4. `starter-pack/templates/restart-bootstrap-prompt-template.md`
+
+### Work with runtime fit and resource-aware operations
+
+1. `docs/runtime-adapter-contract.md`
+2. `docs/agent-runtime-decision-guide.md`
+3. `docs/context-resource-telemetry-spec.md`
+4. `docs/slice-telemetry-model.md`
+5. `docs/waste-heuristics.md`
+
+### Inspect examples first
 
 1. `examples/hello-world/`
 2. `examples/handoffs/compact-reviewable-handoff.md`
 3. `examples/work-slices/standard-slice/README.md`
-
----
-
-## Current status
-
-AletheIA is now at **1.0.0**.
-
-What 1.0 means:
-
-- the Alpha 1–7 baseline is complete enough for public reuse
-- the framework has a stable adoption path
-- new work now belongs to **1.x evolution tracks**, not to unfinished baseline buildup
-
-The two most relevant post-1.0 tracks today are:
-
-- **1.1 constrained adoption / trust-boundary hardening**
-- **1.2 resource-aware operations**
-
-For the roadmap and release framing, see:
-
-- `docs/roadmap-alpha.md`
-- `docs/release-1.0-readiness.md`
-- `docs/enterprise-readiness-roadmap.md`
-- `docs/resource-aware-operations-roadmap.md`
-
----
-
-## Practical reading paths
-
-### Understand the framework
-
-- `docs/getting-started.md`
-- `docs/00-overview.md`
-- `docs/governance.md`
-- `docs/token-policy.md`
-- `docs/durable-decisions.md`
-
-### Adopt AletheIA in a real project
-
-- `docs/apply-to-existing-project.md`
-- `docs/project-extension-pattern.md`
-- `docs/pilot-conversion.md`
-- `starter-pack/README.md`
-
-### Work with handoffs and continuity
-
-- `docs/agent-handoffs.md`
-- `starter-pack/guides/agent-handoff-generation.md`
-- `starter-pack/templates/agent-handoff-template.md`
-- `docs/slice-finalization-and-restart.md`
-
-### Work with agent roles and runtime fit
-
-- `docs/agent-role-adoption-guide.md`
-- `docs/agent-role-catalog.md`
-- `docs/runtime-adapter-contract.md`
-- `docs/agent-runtime-decision-guide.md`
-
-### Inspect the Hermes pre-pilot guardrails
-
-- `docs/hermes/README.md`
-- `docs/adr/ADR-001-hermes-role.md`
-- `docs/adr/ADR-002-memory-and-skill-promotion-policy.md`
-- `docs/hermes/phase-minus-1-operational-matrix.md`
-- `starter-pack/templates/hermes-closeout-template.md`
-- `docs/hermes/manual-simulation-closeout.md`
+4. `examples/resource-aware-operations/`
 
 ---
 
@@ -212,16 +193,30 @@ For the roadmap and release framing, see:
 4. Reuse before duplication
 5. Validation before closure
 6. Learnings must stay reviewable
+7. Project-local rules stay project-local
 
 ---
 
 ## Quick check
 
-If you want one lightweight sanity pass after cloning:
+After cloning, run the lightweight governance check:
 
 ```bash
 bash scripts/check-governance.sh
 ```
+
+If you are changing the TypeScript engine or examples, run the package tests as well:
+
+```bash
+pnpm install
+pnpm test
+```
+
+---
+
+## License
+
+AletheIA is released under the Apache License 2.0. See `LICENSE`.
 
 ---
 
@@ -230,3 +225,4 @@ bash scripts/check-governance.sh
 - `docs/launch-kit.md`
 - `CHANGELOG.md`
 - `CONTRIBUTING.md`
+- `SECURITY.md`
