@@ -88,7 +88,7 @@ function resolveFinalAction(actions: GovernanceAction[]): GovernanceAction {
     return "allow";
   }
 
-  return actions.reduce<GovernanceAction>((winner, current) =>
+  return actions.reduce((winner, current) =>
     ACTION_PRIORITY[current] > ACTION_PRIORITY[winner] ? current : winner,
   );
 }
