@@ -279,12 +279,12 @@ Do not absorb now:
 
 ---
 
-## Relationship to Adaptative Skills
+## Relationship to Adaptive Skills
 
 AletheIA 1.2 should stay complementary to the broader ecosystem.
 
 - **AletheIA** remains the macro layer for readiness, gates, continuity, and resource-aware operations
-- **Adaptative Skills** remains the micro layer for specialist execution
+- **Adaptive Skills** remains the micro layer for specialist execution
 - **Evolution Layer** remains the governed improvement path for the skill library
 - **Efficiency Layer** remains the transversal micro discipline for chunking, checkpointing, handoffs, and related operational fluency
 
