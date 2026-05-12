@@ -1,0 +1,137 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  install-and-typecheck:
+    name: Install & TypeScript Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Install dependencies (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+      - name: TypeScript noEmit check
+        run: pnpm exec tsc --noEmit --project tsconfig.json
+
+  governance:
+    name: Governance Check (scripts/check-governance.sh)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run governance check
+        run: bash scripts/check-governance.sh
+
+  test-contracts:
+    name: Test Contracts
+    runs-on: ubuntu-latest
+    needs: install-and-typecheck
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run test:contracts
+
+  test-goldens:
+    name: Test Goldens
+    runs-on: ubuntu-latest
+    needs: install-and-typecheck
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run test:goldens
+
+  test-e2e:
+    name: Test E2E
+    runs-on: ubuntu-latest
+    needs: install-and-typecheck
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run test:e2e
+
+  test-learnings:
+    name: Test Learnings
+    runs-on: ubuntu-latest
+    needs: install-and-typecheck
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run test:learnings
+
+  lockfile-sync:
+    name: Lockfile sync (package.json ↔ pnpm-lock.yaml)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Detect divergence
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          pkg_changed=$(git diff --name-only "$BASE" "$HEAD" | grep -c '^package.json$' || true)
+          lock_changed=$(git diff --name-only "$BASE" "$HEAD" | grep -c '^pnpm-lock.yaml$' || true)
+          echo "package.json changed: $pkg_changed"
+          echo "pnpm-lock.yaml changed: $lock_changed"
+          if [ "$pkg_changed" -gt 0 ] && [ "$lock_changed" -eq 0 ]; then
+            echo "::error::package.json changed but pnpm-lock.yaml did not. Run 'pnpm install' and commit the lockfile."
+            exit 1
+          fi
+          if [ "$lock_changed" -gt 0 ] && [ "$pkg_changed" -eq 0 ]; then
+            echo "::warning::pnpm-lock.yaml changed but package.json did not. This is usually fine (pnpm internal updates) but worth a sanity check."
+          fi
+
+  quality-gate:
+    name: Quality Gate (aggregator)
+    runs-on: ubuntu-latest
+    needs:
+      - install-and-typecheck
+      - governance
+      - test-contracts
+      - test-goldens
+      - test-e2e
+      - test-learnings
+    steps:
+      - name: All required checks passed
+        run: echo "Quality Gate passed."

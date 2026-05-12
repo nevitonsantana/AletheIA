@@ -246,7 +246,7 @@ bash scripts/check-governance.sh
 If you are changing the TypeScript engine or examples, run the package tests as well:
 
 ```bash
-pnpm install
+pnpm install --frozen-lockfile
 pnpm test
 ```
 
