@@ -16,7 +16,7 @@
 | Issue | #… |
 | PR | #… |
 | Branch | … |
-| Repository | AletheIA / Adaptative Skills / Crisis Monitor / other |
+| Repository | AletheIA / Adaptive Skills / Crisis Monitor / other |
 | Start date | YYYY-MM-DD |
 | Closeout date | YYYY-MM-DD |
 | Executor | Hermes / Codex / Claude Code / Human |

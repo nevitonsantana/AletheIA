@@ -29,7 +29,7 @@ It is not a copilot, not a semi-autonomous operating brain, and not the source o
 
 - AletheIA Protocol;
 - AletheIA Runtime Policy;
-- Adaptative Skills catalog;
+- Adaptive Skills catalog;
 - human approval gates where required.
 
 This role can only be re-evaluated after the 60-day pilot, using recorded metrics. It must not expand through implicit operational habit.

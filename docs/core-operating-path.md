@@ -217,7 +217,7 @@ Do not use this guide to add:
 - telemetry scoring;
 - runtime-specific automation;
 - Hermes or Agentic Stack setup steps;
-- Adaptative Skills adoption rules.
+- Adaptive Skills adoption rules.
 
 Those may be useful in later slices, but this P0 path exists to compress the core operating route first.
 

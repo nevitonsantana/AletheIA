@@ -41,7 +41,7 @@ The next question is narrower:
 - Do not create auto-routing claims.
 - Do not promote Hermes beyond controlled-runtime executor without real pilot evidence.
 - Do not convert context graph usage into standard practice for Next.js projects.
-- Do not absorb Adaptative Skills into the AletheIA core.
+- Do not absorb Adaptive Skills into the AletheIA core.
 
 ## Current strengths
 
