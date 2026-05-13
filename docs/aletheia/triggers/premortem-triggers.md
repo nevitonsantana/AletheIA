@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Definir quando o AletheIA deve acionar a skill de premortem do Adaptative Skills.
+Definir quando o AletheIA deve acionar a skill de premortem do Adaptive Skills.
 
 O AletheIA não executa o método completo. Ele avalia contexto, risco, reversibilidade e custo de erro para decidir se a skill deve ser chamada e com qual profundidade.
 
