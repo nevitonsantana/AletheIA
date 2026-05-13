@@ -37,7 +37,7 @@ Antes de finalizar, verificar:
 - A skill possui Lite, Standard e High-Assurance.
 - Os gatilhos não disparam premortem para qualquer feedback simples.
 - O AletheIA decide quando acionar, mas não contém o método inteiro.
-- O Adaptative Skills executa o método, mas não decide sozinho a criticidade.
+- O Adaptive Skills executa o método, mas não decide sozinho a criticidade.
 - Os gates estão conectados a achados do premortem.
 - O template de saída é utilizável em Markdown.
 
