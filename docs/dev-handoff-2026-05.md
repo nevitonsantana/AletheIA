@@ -1,9 +1,9 @@
-# Dev Handoff — May 2026
+# Cycle Record — May 2026
 
-**Date:** 2026-05-12  
-**From:** Neviton Santana (founder / design-engineer)  
-**To:** Development team  
-**Context:** Founder shifts focus to strategy and CBSOFT paper. Team picks up technical backlog.
+**Date:** 2026-05-12
+**Author:** Neviton Santana
+
+Registro do ciclo de maio/2026. Trabalho executado com Claude Code diretamente nos repositórios.
 
 ---
 
@@ -29,27 +29,28 @@ Branch protection on `main`: `Quality Gate (aggregator)` is a required check.
 
 ---
 
-## Open backlog for the team
+## Open backlog
 
-Issues were created in each repo (links below). Priority order:
+Issues registrados em cada repo como referência para os próximos ciclos.
 
-### AletheIA — next three slices
+### AletheIA
 
-1. **[Migrate tests to Vitest](https://github.com/nevitonsantana/AletheIA/issues)** — current test suites are ad-hoc `tsx` scripts. Migration to Vitest gives watch mode, coverage thresholds, and standard reporting. Estimated: 5–7 days. Unblocked.
+| Issue | Título | Esforço |
+|---|---|---|
+| [#124](https://github.com/nevitonsantana/AletheIA/issues/124) | Migrate tests to Vitest | 5–7 days |
+| [#125](https://github.com/nevitonsantana/AletheIA/issues/125) | Introduce Ajv for runtime JSON Schema validation | 3–5 days |
+| [#126](https://github.com/nevitonsantana/AletheIA/issues/126) | Configure Dependabot | 1h |
 
-2. **[Introduce Ajv for runtime JSON Schema validation](https://github.com/nevitonsantana/AletheIA/issues)** — `engine/` currently trusts schema shape at the TypeScript level only. Adding Ajv validates governance packs at runtime before execution. Estimated: 3–5 days. Depends on Vitest migration being merged first (or can run in parallel if tests stay in place).
+### Adaptive Skills
 
-3. **[Configure Dependabot](https://github.com/nevitonsantana/AletheIA/issues)** — automatic PRs for `npm` and `github-actions` dependency updates. One config file. Estimated: 1 hour. Unblocked.
-
-### Adaptive Skills — next two slices
-
-4. **[Rename `projections/registry.yaml` → `registry.json`](https://github.com/nevitonsantana/adaptive-skills/issues)** — consistency with JSON-first posture; enables future Ajv validation of the registry. Requires updating `project_to_codex.py`, `report_projection_status.py`, and `validate_evolution.py`. Estimated: 1–2 days. Unblocked.
-
-5. **[Add Dependabot config](https://github.com/nevitonsantana/adaptive-skills/issues)** — automatic PRs for `github-actions` updates. Estimated: 1 hour. Unblocked.
+| Issue | Título | Esforço |
+|---|---|---|
+| [#25](https://github.com/nevitonsantana/adaptive-skills/issues/25) | Rename `projections/registry.yaml` → `registry.json` | 1–2 days |
+| [#26](https://github.com/nevitonsantana/adaptive-skills/issues/26) | Configure Dependabot | 1h |
 
 ---
 
-## How to work in these repos
+## How to run locally
 
 ### AletheIA
 
@@ -58,12 +59,8 @@ git clone https://github.com/nevitonsantana/AletheIA.git
 cd AletheIA
 pnpm install --frozen-lockfile
 pnpm test:all          # governance check + 4 test suites
-pnpm exec tsc --noEmit # type check
+pnpm exec tsc --noEmit
 ```
-
-Every PR runs the CI automatically. The `Quality Gate (aggregator)` job must be green before merge.
-
-Decision Record is required for any change to `engine/`, `schemas/`, `policies/`, or `governance`. See `CONTRIBUTING.md`.
 
 ### Adaptive Skills
 
@@ -75,27 +72,12 @@ python3 scripts/validate_evolution.py
 python3 scripts/project_to_codex.py --all --dry-run
 ```
 
-Every PR runs the CI automatically. New skills require all 11 sections in the SKILL.md template. See `CONTRIBUTING.md`.
-
 ---
 
-## What the founder is working on (not the team's concern)
+## Parallel workstream (not tracked in these repos)
 
-- **CBSOFT 2026 SBES Industry Track paper** — abstract registration deadline: 22 May 2026; paper submission: 29 May 2026.
-  - Paper covers the AletheIA + Adaptive Skills pilot in Crisis Monitor.
-  - Evidence instrumentation (retroactive) is in progress.
-  - Template: `crisis-monitor-instrumentation/round-evidence-template.md` (private materials).
-- **Strategy and ecosystem positioning** — macro decisions about AletheIA's direction and external partnerships.
-
-The team should not block on the paper. The technical backlog above is fully independent of it.
-
----
-
-## Contacts and ownership
-
-| Area | Owner |
-|---|---|
-| AletheIA engine, governance, schemas | @nevitonsantana (strategic) + team (execution) |
-| Adaptive Skills skill library | @nevitonsantana (review gate) + team (new skills) |
-| CI, branch protection, Dependabot | Team |
-| CBSOFT paper and Crisis Monitor evidence | @nevitonsantana only |
+**CBSOFT 2026 SBES Industry Track paper**
+- Abstract registration: 22 May 2026
+- Paper submission: 29 May 2026
+- Evidence instrumentation in progress (`crisis-monitor-instrumentation/`)
+- Templates: `round-evidence-template.md`, `metrics-aggregation.md`
