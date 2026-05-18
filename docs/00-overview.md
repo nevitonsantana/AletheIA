@@ -93,12 +93,13 @@ AletheIA should be reusable outside the original pilot while still preserving th
 
 That reuse depends on an explicit boundary between the framework core and each project's local extension layer.
 
-At this point, Alpha 2 is organized around four explicit bridge artifacts and is supported by stronger real-world validation from the Crisis Monitor pilot:
+At this point, Alpha 2 is organized around five explicit bridge artifacts and is supported by stronger real-world validation from the Crisis Monitor pilot:
 
 - `docs/self-application.md`
 - `docs/pilot-crisis-monitor.md`
 - `docs/pilot-conversion.md`
 - `docs/project-extension-pattern.md`
+- `docs/migration-from-crisis-monitor.md`
 
 ---
 

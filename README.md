@@ -146,6 +146,8 @@ The repository is organized around four practical blocks:
 
 Crisis Monitor remains an important pilot source, but its product-specific runtime, UI, assistant behavior and project-management rules are not the portable AletheIA core.
 
+For the current ownership and re-entry boundary, see `docs/migration-from-crisis-monitor.md`.
+
 ---
 
 ## Full-system ecosystem and optional dependencies
