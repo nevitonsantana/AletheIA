@@ -219,3 +219,4 @@ For narrow slices, copy only the sections that are useful.
 - `docs/readiness-gates-spec.md`
 - `starter-pack/templates/work-slice-template.md`
 - `starter-pack/guides/risk-to-gate-mapping.md`
+- `examples/work-slices/standard-spec-bundle/README.md`

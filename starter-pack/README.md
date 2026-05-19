@@ -88,6 +88,7 @@ If you want to make bounded work more tangible without changing the core contrac
 - `starter-pack/templates/work-slice-readiness-review-template.md`
 - `starter-pack/guides/risk-to-gate-mapping.md`
 - `examples/work-slices/standard-slice/README.md`
+- `examples/work-slices/standard-spec-bundle/README.md`
 - `examples/handoffs/compact-reviewable-handoff.md`
 - `examples/handoffs/high-stakes-handoff.md`
 - `docs/iterative-maintenance-governance.md`
