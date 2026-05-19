@@ -76,3 +76,7 @@ The slice pauses at a validation boundary through the handoff record instead of 
 - `execution-record.json`
 - `handoff-record.json`
 - `learning-record.json`
+
+## Related examples
+
+- `../standard-spec-bundle/README.md` — shows a `Standard` slice using the optional Work Slice Spec Bundle with Adaptive Skills facilitation.

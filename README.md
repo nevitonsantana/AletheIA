@@ -222,7 +222,8 @@ AletheIA decides the flow. Skills shape capability. Runtimes execute. Tools info
 1. `examples/hello-world/`
 2. `examples/handoffs/compact-reviewable-handoff.md`
 3. `examples/work-slices/standard-slice/README.md`
-4. `examples/resource-aware-operations/`
+4. `examples/work-slices/standard-spec-bundle/README.md`
+5. `examples/resource-aware-operations/`
 
 ---
 
