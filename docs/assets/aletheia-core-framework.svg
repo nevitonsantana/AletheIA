@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1200" role="img" aria-labelledby="title desc">
+  <title id="title">AletheIA core operating loop</title>
+  <desc id="desc">Diagram showing the AletheIA core loop from signal, framing, context and governance through execution, validation, handoff and learning, with resource-aware signals in the 1.2 layer.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#32445A"/></marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#73808E"/></marker>
+    <style>
+      .bg{fill:#F7F8FA}.ink{fill:#18202A}.muted{fill:#596575}.accent{fill:#32445A}.arrow{stroke:#32445A;stroke-width:4;fill:none;marker-end:url(#arrow)}.arrow-muted{stroke:#73808E;stroke-width:3;fill:none;marker-end:url(#arrow-muted)}.title{font:700 42px Arial, sans-serif}.subtitle{font:400 23px Arial, sans-serif}.box-title{font:700 24px Arial, sans-serif}.body{font:400 19px Arial, sans-serif}.small{font:400 16px Arial, sans-serif}.small-bold{font:700 16px Arial, sans-serif}.tiny{font:400 13px Arial, sans-serif}
+    </style>
+  </defs>
+  <rect class="bg" width="1800" height="1200"/>
+  <text x="80" y="82" class="title ink">AletheIA core operating loop</text>
+  <text x="82" y="134" class="subtitle muted">A bounded slice moves from signal to evidence, handoff and learning through explicit gates.</text>
+
+  <g id="loop-boxes">
+    <rect x="80" y="240" width="280" height="160" rx="22" fill="#EAF2FF" stroke="#AAB4C0" stroke-width="2"/>
+    <text x="102" y="278" class="box-title ink">1. Signal</text>
+    <text x="102" y="318" class="body muted"><tspan x="102" dy="0">Request, issue, risk,</tspan><tspan x="102" dy="25">pilot evidence or</tspan><tspan x="102" dy="25">model output.</tspan></text>
+
+    <rect x="430" y="240" width="280" height="160" rx="22" fill="#EAF2FF" stroke="#AAB4C0" stroke-width="2"/>
+    <text x="452" y="278" class="box-title ink">2. Framing</text>
+    <text x="452" y="318" class="body muted"><tspan x="452" dy="0">Define Work Slice,</tspan><tspan x="452" dy="25">scope, assumptions</tspan><tspan x="452" dy="25">and stop line.</tspan></text>
+
+    <rect x="780" y="240" width="280" height="160" rx="22" fill="#EAF2FF" stroke="#AAB4C0" stroke-width="2"/>
+    <text x="802" y="278" class="box-title ink">3. Context</text>
+    <text x="802" y="318" class="body muted"><tspan x="802" dy="0">Load enough context</tspan><tspan x="802" dy="25">without treating every</tspan><tspan x="802" dy="25">transcript as state.</tspan></text>
+
+    <rect x="1130" y="240" width="280" height="160" rx="22" fill="#FFF7DF" stroke="#AAB4C0" stroke-width="2"/>
+    <text x="1152" y="278" class="box-title ink">4. Governance</text>
+    <text x="1152" y="318" class="body muted"><tspan x="1152" dy="0">Allow, tighten, review,</tspan><tspan x="1152" dy="25">escalate, block,</tspan><tspan x="1152" dy="25">handoff or restart.</tspan></text>
+
+    <rect x="1450" y="510" width="280" height="160" rx="22" fill="#EAF7F0" stroke="#AAB4C0" stroke-width="2"/>
+    <text x="1472" y="548" class="box-title ink">5. Execution</text>
+    <text x="1472" y="588" class="body muted"><tspan x="1472" dy="0">Use the selected</tspan><tspan x="1472" dy="25">surface inside the</tspan><tspan x="1472" dy="25">approved boundary.</tspan></text>
+
+    <rect x="1130" y="780" width="280" height="160" rx="22" fill="#EAF7F0" stroke="#AAB4C0" stroke-width="2"/>
+    <text x="1152" y="818" class="box-title ink">6. Validation</text>
+    <text x="1152" y="858" class="body muted"><tspan x="1152" dy="0">Close with tests,</tspan><tspan x="1152" dy="25">review, artifacts or</tspan><tspan x="1152" dy="25">documented proof.</tspan></text>
+
+    <rect x="780" y="780" width="280" height="160" rx="22" fill="#F1EDFF" stroke="#AAB4C0" stroke-width="2"/>
+    <text x="802" y="818" class="box-title ink">7. Handoff</text>
+    <text x="802" y="858" class="body muted"><tspan x="802" dy="0">Preserve restart</tspan><tspan x="802" dy="25">package and continuity</tspan><tspan x="802" dy="25">at boundaries.</tspan></text>
+
+    <rect x="430" y="780" width="280" height="160" rx="22" fill="#F1EDFF" stroke="#AAB4C0" stroke-width="2"/>
+    <text x="452" y="818" class="box-title ink">8. Learning</text>
+    <text x="452" y="858" class="body muted"><tspan x="452" dy="0">Promote reusable,</tspan><tspan x="452" dy="25">reviewable improvements</tspan><tspan x="452" dy="25">from real friction.</tspan></text>
+  </g>
+
+  <path class="arrow" d="M360 320 H430"/>
+  <path class="arrow" d="M710 320 H780"/>
+  <path class="arrow" d="M1060 320 H1130"/>
+  <path class="arrow" d="M1410 360 L1510 510"/>
+  <path class="arrow" d="M1450 640 L1410 820"/>
+  <path class="arrow" d="M1130 860 H1060"/>
+  <path class="arrow" d="M780 860 H710"/>
+  <path class="arrow-muted" d="M430 860 C300 760 230 520 260 400"/>
+
+  <rect x="630" y="470" width="540" height="240" rx="34" fill="#E9EEF5" stroke="#1F2937" stroke-width="4"/>
+  <text x="900" y="542" text-anchor="middle" class="title ink">Decision Kernel</text>
+  <text x="900" y="595" text-anchor="middle" class="body muted"><tspan x="900" dy="0">The kernel decides the operating posture,</tspan><tspan x="900" dy="28">not the content by itself.</tspan></text>
+  <text x="900" y="666" text-anchor="middle" class="small-bold accent">continue · tighten · review · escalate · handoff · restart · stop</text>
+
+  <path class="arrow-muted" d="M1270 400 L1040 470"/>
+  <path class="arrow-muted" d="M1170 620 L1450 590"/>
+  <path class="arrow-muted" d="M630 600 L360 380"/>
+  <path class="arrow-muted" d="M900 710 V780"/>
+
+  <rect x="80" y="1010" width="1640" height="125" rx="24" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="2"/>
+  <text x="110" y="1062" class="box-title ink">1.2 Resource-aware signals</text>
+
+  <g id="signals" class="tiny muted">
+    <rect x="440" y="1030" width="190" height="85" rx="18" fill="#EEF1F4" stroke="#D8DEE6"/>
+    <text x="535" y="1064" text-anchor="middle" class="small-bold ink">Context drag</text>
+    <text x="535" y="1087" text-anchor="middle" class="tiny muted">context growth cost</text>
+
+    <rect x="645" y="1030" width="190" height="85" rx="18" fill="#EEF1F4" stroke="#D8DEE6"/>
+    <text x="740" y="1064" text-anchor="middle" class="small-bold ink">Retry waste</text>
+    <text x="740" y="1087" text-anchor="middle" class="tiny muted">failed loops</text>
+
+    <rect x="850" y="1030" width="190" height="85" rx="18" fill="#EEF1F4" stroke="#D8DEE6"/>
+    <text x="945" y="1064" text-anchor="middle" class="small-bold ink">Handoff inflation</text>
+    <text x="945" y="1087" text-anchor="middle" class="tiny muted">continuity burden</text>
+
+    <rect x="1055" y="1030" width="190" height="85" rx="18" fill="#EEF1F4" stroke="#D8DEE6"/>
+    <text x="1150" y="1064" text-anchor="middle" class="small-bold ink">Runtime fit</text>
+    <text x="1150" y="1087" text-anchor="middle" class="tiny muted">surface / task match</text>
+
+    <rect x="1260" y="1030" width="190" height="85" rx="18" fill="#EEF1F4" stroke="#D8DEE6"/>
+    <text x="1355" y="1064" text-anchor="middle" class="small-bold ink">Readiness</text>
+    <text x="1355" y="1087" text-anchor="middle" class="tiny muted">continue or stop</text>
+
+    <rect x="1465" y="1030" width="190" height="85" rx="18" fill="#EEF1F4" stroke="#D8DEE6"/>
+    <text x="1560" y="1064" text-anchor="middle" class="small-bold ink">Clean restart</text>
+    <text x="1560" y="1087" text-anchor="middle" class="tiny muted">fresh thread signal</text>
+  </g>
+</svg>
