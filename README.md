@@ -200,6 +200,7 @@ AletheIA decides the flow. Skills shape capability. Runtimes execute. Tools info
 2. `starter-pack/guides/daily-operations.md`
 3. `docs/apply-to-existing-project.md`
 4. `docs/project-extension-pattern.md`
+5. `docs/work-slice-spec-bundle.md` when a `Standard` or `High-Assurance` slice needs clearer pre-execution specification
 
 ### Work with handoffs and restart
 

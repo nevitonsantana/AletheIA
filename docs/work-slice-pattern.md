@@ -47,6 +47,13 @@ In practice, a work slice usually composes these artifacts:
 5. **restart package** when a clean execution surface is healthier
 6. **learning record** when the slice produces reusable learning
 
+For `Standard` or `High-Assurance` slices that need stronger pre-execution clarity,
+the slice may also include an optional **Work Slice Spec Bundle**.
+That bundle clarifies requirements, planning, executable tasks, and readiness evidence
+without replacing the Work Slice as the operating unit.
+
+See: `docs/work-slice-spec-bundle.md`.
+
 ---
 
 ## Why this matters
@@ -121,6 +128,7 @@ One healthy way to keep a slice legible is to group together:
 - `handoff-record.json` when needed
 - `restart-package.md` when the next boundary will resume on a clean surface
 - `learning-record.json` when generated
+- optional spec bundle artifacts when planning depth justifies them
 - `README.md` to explain the slice in plain language
 
 This is still a convenience pattern, not a required filesystem contract.

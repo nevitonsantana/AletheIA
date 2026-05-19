@@ -81,6 +81,11 @@ If you want to make bounded work more tangible without changing the core contrac
 - `starter-pack/templates/work-item-template.md`
 - `docs/work-slice-pattern.md`
 - `starter-pack/templates/work-slice-template.md`
+- `docs/work-slice-spec-bundle.md`
+- `starter-pack/templates/work-slice-spec-template.md`
+- `starter-pack/templates/work-slice-plan-template.md`
+- `starter-pack/templates/work-slice-tasks-template.md`
+- `starter-pack/templates/work-slice-readiness-review-template.md`
 - `starter-pack/guides/risk-to-gate-mapping.md`
 - `examples/work-slices/standard-slice/README.md`
 - `examples/handoffs/compact-reviewable-handoff.md`
@@ -95,6 +100,7 @@ It now also makes iterative maintenance rounds and regression-aware continuation
 Taken together, the current starter-pack now covers both:
 
 - advisory model strategy for choosing fit-for-task model profiles
+- optional pre-execution specification for ambiguous `Standard` and `High-Assurance` slices
 - operational maintenance guidance for carrying bounded work safely across repeated rounds
 - a clearer bridge between real pilot evidence and lightweight reusable framework guidance
 

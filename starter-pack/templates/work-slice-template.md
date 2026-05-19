@@ -86,6 +86,7 @@ Explain why the next boundary exists or why clean restart may be needed.
 Fill these with file paths, IDs, or references.
 
 - Task brief:
+- Spec bundle:
 - Decision record:
 - Execution record:
 - Handoff record:

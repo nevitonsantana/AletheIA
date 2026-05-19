@@ -95,6 +95,13 @@ What `Standard` should usually make explicit:
 - expected proof shape
 - whether a handoff or review boundary is likely
 
+If requirements, technical decisions, or executable checkpoints are still ambiguous,
+`Standard` may use a small Work Slice Spec Bundle:
+
+- `spec.md`
+- `plan.md`
+- `tasks.md`
+
 What `Standard` should usually avoid:
 
 - turning into a full project plan
@@ -124,6 +131,10 @@ What `High-Assurance` should usually make explicit:
 - review and approval expectations
 - validation boundary
 - handoff expectations if execution crosses lanes or runtimes
+
+If the slice needs stronger pre-execution evidence, `High-Assurance` may use the full
+Work Slice Spec Bundle, including a `readiness-review.md` that instantiates the existing
+readiness gates for the slice.
 
 What `High-Assurance` should still avoid:
 
@@ -225,6 +236,7 @@ They are a proportional planning aid.
 ## Suggested next reading
 
 - `docs/readiness-gates-spec.md`
+- `docs/work-slice-spec-bundle.md`
 - `docs/work-slice-pattern.md`
 - `docs/progressive-policy-signals.md`
 - `docs/agent-runtime-decision-guide.md`

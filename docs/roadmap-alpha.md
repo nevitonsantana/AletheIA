@@ -182,6 +182,7 @@ Current artifacts in this layer include:
 
 - `docs/work-slice-pattern.md`
 - `starter-pack/templates/work-slice-template.md`
+- `docs/work-slice-spec-bundle.md`
 - `starter-pack/guides/risk-to-gate-mapping.md`
 - `examples/work-slices/standard-slice/README.md`
 - `examples/handoffs/compact-reviewable-handoff.md`
@@ -196,6 +197,7 @@ Current artifacts in this layer include:
 This layer currently strengthens:
 
 - work-slice legibility
+- optional spec bundles for ambiguous `Standard` and `High-Assurance` slices
 - risk-to-gate mapping
 - stronger restart-package continuity
 - optional filesystem-based context routing experiments
