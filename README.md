@@ -2,7 +2,7 @@
 
 **AletheIA** is an operating framework for AI-assisted work: a portable layer that turns model or agent output into bounded, reviewable, validated action.
 
-![AletheIA architecture and operating flow](docs/assets/aletheia-architecture-flow.png)
+![AletheIA ecosystem and operating boundary](docs/assets/aletheia-architecture-flow.svg)
 
 AletheIA exists because capable agents still need an operating system around the work: scope, context, governance, validation, handoff and learning. The framework is not trying to replace human judgment or project-local rules. It makes the decision path visible enough that people can trust, review and restart the work.
 
@@ -42,7 +42,7 @@ AletheIA is not:
 
 The first image above shows AletheIA inside the broader AI-assisted work ecosystem. The diagram below zooms in on the AletheIA core itself: how a signal becomes a bounded slice, a decision, validated execution, closeout, restartable continuity and learning.
 
-![AletheIA framework core](docs/assets/aletheia-core-framework.png)
+![AletheIA core operating loop](docs/assets/aletheia-core-framework.svg)
 
 AletheIA moves work from a loose prompt-output pattern into an explicit operating loop:
 

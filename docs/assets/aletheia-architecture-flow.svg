@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1120" role="img" aria-labelledby="title desc">
+  <title id="title">AletheIA ecosystem and operating boundary</title>
+  <desc id="desc">Diagram showing AletheIA as the governance core between signals and governed action, with Adaptive Skills, runtime adapters, Hermes Agent and advisory tooling as bounded ecosystem components.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#32445A"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#73808E"/>
+    </marker>
+    <style>
+      .bg{fill:#F7F8FA}.ink{fill:#18202A}.muted{fill:#596575}.accent{fill:#32445A}.line{stroke:#AAB4C0;stroke-width:2;fill:none}.core-line{stroke:#1F2937;stroke-width:4;fill:none}.arrow{stroke:#32445A;stroke-width:4;fill:none;marker-end:url(#arrow)}.arrow-muted{stroke:#73808E;stroke-width:3;fill:none;marker-end:url(#arrow-muted)}.title{font:700 42px Arial, sans-serif}.subtitle{font:400 23px Arial, sans-serif}.box-title{font:700 24px Arial, sans-serif}.body{font:400 19px Arial, sans-serif}.small{font:400 16px Arial, sans-serif}.small-bold{font:700 16px Arial, sans-serif}
+    </style>
+  </defs>
+  <rect class="bg" width="1800" height="1120"/>
+  <text x="80" y="82" class="title ink">AletheIA ecosystem and operating boundary</text>
+  <text x="82" y="134" class="subtitle muted">AletheIA governs the flow. Skills shape capability. Runtimes execute. Tools inform.</text>
+
+  <rect x="80" y="250" width="330" height="200" rx="22" fill="#EAF2FF" stroke="#AAB4C0" stroke-width="2"/>
+  <text x="102" y="288" class="box-title ink">Signals</text>
+  <text x="102" y="326" class="body muted"><tspan x="102" dy="0">Human request</tspan><tspan x="102" dy="25">Project work item</tspan><tspan x="102" dy="25">Model / agent output</tspan><tspan x="102" dy="25">Pilot evidence</tspan></text>
+
+  <rect x="550" y="190" width="700" height="330" rx="34" fill="#E9EEF5" stroke="#1F2937" stroke-width="4"/>
+  <text x="900" y="262" text-anchor="middle" class="title ink">AletheIA Core</text>
+  <text x="900" y="305" text-anchor="middle" class="small-bold accent">Stable 1.0 baseline</text>
+  <text x="900" y="355" text-anchor="middle" class="body ink"><tspan x="900" dy="0">Work Slice · context · decision kernel · governance</tspan><tspan x="900" dy="28">validation · handoff · restart package · learning record</tspan></text>
+  <text x="900" y="430" text-anchor="middle" class="small muted"><tspan x="900" dy="0">Not a chatbot, auto-router, runtime wrapper,</tspan><tspan x="900" dy="22">or replacement for human accountability.</tspan></text>
+
+  <rect x="1390" y="250" width="330" height="200" rx="22" fill="#EAF7F0" stroke="#AAB4C0" stroke-width="2"/>
+  <text x="1412" y="288" class="box-title ink">Governed action</text>
+  <text x="1412" y="326" class="body muted"><tspan x="1412" dy="0">Bounded execution</tspan><tspan x="1412" dy="25">Validated change</tspan><tspan x="1412" dy="25">Reviewable evidence</tspan><tspan x="1412" dy="25">Restartable continuity</tspan></text>
+
+  <path class="arrow" d="M410 350 H550"/>
+  <path class="arrow" d="M1250 350 H1390"/>
+
+  <rect x="80" y="670" width="360" height="240" rx="22" fill="#F1EDFF" stroke="#AAB4C0" stroke-width="2"/>
+  <text x="102" y="708" class="box-title ink">Adaptive Skills</text>
+  <text x="102" y="748" class="body muted"><tspan x="102" dy="0">External micro-capability layer</tspan><tspan x="102" dy="25">for specialist patterns: UX,</tspan><tspan x="102" dy="25">product, QA, technical review,</tspan><tspan x="102" dy="25">observability and domain</tspan><tspan x="102" dy="25">analysis.</tspan></text>
+
+  <rect x="500" y="670" width="360" height="240" rx="22" fill="#FFF7DF" stroke="#AAB4C0" stroke-width="2"/>
+  <text x="522" y="708" class="box-title ink">Runtime adapters</text>
+  <text x="522" y="748" class="body muted"><tspan x="522" dy="0">Local mappings that preserve</tspan><tspan x="522" dy="25">AletheIA meaning across Codex,</tspan><tspan x="522" dy="25">Claude Code, Qwen or other</tspan><tspan x="522" dy="25">execution surfaces.</tspan></text>
+
+  <rect x="940" y="670" width="360" height="240" rx="22" fill="#FFF0F0" stroke="#AAB4C0" stroke-width="2"/>
+  <text x="962" y="708" class="box-title ink">Hermes Agent</text>
+  <text x="962" y="748" class="body muted"><tspan x="962" dy="0">Candidate controlled executor.</tspan><tspan x="962" dy="25">Current posture: pre-pilot /</tspan><tspan x="962" dy="25">guarded. Must not govern</tspan><tspan x="962" dy="25">process, memory or skills.</tspan></text>
+
+  <rect x="1360" y="670" width="360" height="240" rx="22" fill="#EEF1F4" stroke="#AAB4C0" stroke-width="2"/>
+  <text x="1382" y="708" class="box-title ink">Advisory tooling</text>
+  <text x="1382" y="748" class="body muted"><tspan x="1382" dy="0">Context graph, Agentic Stack or</tspan><tspan x="1382" dy="25">local infrastructure may inform</tspan><tspan x="1382" dy="25">work, but do not replace</tspan><tspan x="1382" dy="25">validation or governance.</tspan></text>
+
+  <path class="arrow-muted" d="M700 520 L260 670"/>
+  <path class="arrow-muted" d="M820 520 L680 670"/>
+  <path class="arrow-muted" d="M980 520 L1120 670"/>
+  <path class="arrow-muted" d="M1100 520 L1540 670"/>
+
+  <rect x="80" y="980" width="1640" height="70" rx="18" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+  <text x="110" y="1012" class="small-bold accent"><tspan x="110" dy="0">Current posture: 1.0 core is stable. 1.1 hardens constrained adoption and trust boundaries. 1.2 adds resource-aware operations without becoming benchmark,</tspan><tspan x="110" dy="22">auto-routing or orchestration automation.</tspan></text>
+</svg>
