@@ -179,6 +179,11 @@ A healthy rule is:
 - `Standard` -> more gates should be legible
 - `High-Assurance` -> the gates should be explicitly reviewable
 
+For slices that use a Work Slice Spec Bundle, `readiness-review.md` should instantiate
+these gates for that concrete slice. It should not redefine the gate model.
+
+See: `docs/work-slice-spec-bundle.md`.
+
 ---
 
 ## What this is not
