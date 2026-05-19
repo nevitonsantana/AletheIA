@@ -220,3 +220,4 @@ For narrow slices, copy only the sections that are useful.
 - `starter-pack/templates/work-slice-template.md`
 - `starter-pack/guides/risk-to-gate-mapping.md`
 - `examples/work-slices/standard-spec-bundle/README.md`
+- `docs/aletheia/closeouts/2026-05-19-spec-planning-cross-repo-closeout.md`
