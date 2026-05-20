@@ -1,0 +1,83 @@
+# AletheIA Documentation Index
+
+Reading map organized by intent. Each entry links to the most useful starting point for that goal.
+
+---
+
+## I want to understand what AletheIA is
+
+1. [Overview](concepts/overview.md) — what AletheIA is and how the repo is organized
+2. [Architecture](concepts/architecture.md) — core contracts and canonical surfaces
+3. [ADR-004 — AletheIA as operating overlay](adr/ADR-004-aletheia-as-operating-overlay.md) — the boundary decision between product, overlay, and harness
+4. [Governance](concepts/governance.md) — what is mandatory, forbidden, and requires approval
+
+---
+
+## I want to start using AletheIA on a project
+
+1. [Getting started](guides/getting-started.md) — shortest path from zero to first work slice
+2. [Core operating path](guides/core-operating-path.md) — minimum operational loop
+3. [Apply to an existing project](guides/apply-to-existing-project.md) — how to adopt without rebuilding
+4. [Canonical vocabulary](concepts/canonical-vocabulary.md) — shared language: Work Slice, Restart Package, Operational Boundary
+
+---
+
+## I want to understand the operating model in depth
+
+1. [Work slice pattern](concepts/work-slice-pattern.md) — the primary operational unit
+2. [Work item pattern](concepts/work-item-pattern.md) — external coordination abstraction
+3. [Slice finalization and restart](guides/slice-finalization-and-restart.md) — how to close cleanly and resume
+4. [Agent handoffs](concepts/agent-handoffs.md) — cross-agent transitions
+5. [Durable decisions](concepts/durable-decisions.md) — how decisions survive sessions
+6. [Enforcement boundaries](concepts/enforcement-boundaries.md) — behavioral vs technical enforcement
+
+---
+
+## I want to configure an agent harness (Claude Code, Codex, Qwen)
+
+1. [Runtime adapter — Claude Code](reference/runtime-adapter-claude-code.md)
+2. [Runtime adapter — Codex](reference/runtime-adapter-codex.md)
+3. [Runtime adapter — Qwen](reference/runtime-adapter-qwen.md)
+4. [Runtime adapter contract](contracts/runtime-adapter-contract.md) — what any adapter must honor
+5. [Agent role catalog](reference/agent-role-catalog.md) — portable roles across runtimes
+6. [Agent runtime decision guide](guides/agent-runtime-decision-guide.md) — choosing between runtimes
+
+---
+
+## I want to read a normative contract
+
+1. [Delivery output contract](contracts/delivery-output-contract.md)
+2. [Bootstrap generator contract](contracts/bootstrap-generator-contract.md)
+3. [Readiness gates spec](contracts/readiness-gates-spec.md)
+4. [Work slice spec bundle](contracts/work-slice-spec-bundle.md)
+5. [Slice telemetry model](contracts/slice-telemetry-model.md)
+6. [All contracts →](contracts/README.md)
+
+---
+
+## I want to see real adoption evidence
+
+1. [Crisis Monitor pilot](pilots/pilot-crisis-monitor.md) — first real project adoption
+2. [Migration from Crisis Monitor](pilots/migration-from-crisis-monitor.md) — how AletheIA became standalone
+3. [Context graph decision](pilots/context-graph-decision.md) — decision record with real test data
+4. [Hermes closeouts →](pilots/closeouts/) — operation records from Hermes pre-pilot
+5. [All pilots →](pilots/README.md)
+
+---
+
+## I want to understand the roadmap
+
+1. [Roadmap alpha](roadmaps/roadmap-alpha.md) — 1.0 baseline and 1.x evolution
+2. [Enterprise readiness roadmap](roadmaps/enterprise-readiness-roadmap.md) — 1.1 constrained adoption track
+3. [Resource-aware operations roadmap](roadmaps/resource-aware-operations-roadmap.md) — 1.2 track
+4. [Evolution plan](roadmaps/evolution-plan.md) — post-1.0 direction
+
+---
+
+## I want to look up policies and reference material
+
+1. [Token policy](reference/token-policy.md)
+2. [Waste heuristics](reference/waste-heuristics.md)
+3. [Planning depth profiles](reference/planning-depth-profiles.md)
+4. [Launch kit](reference/launch-kit.md) — public-facing descriptions and taglines
+5. [All reference →](reference/README.md)

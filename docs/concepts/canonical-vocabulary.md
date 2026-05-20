@@ -348,6 +348,52 @@ This file exists to keep the vocabulary itself stable across them.
 
 ---
 
+## 9. Handoff
+
+### Definition
+
+A **Handoff** is the transition artifact that moves a slice across an agent, review, or ownership boundary.
+
+Every operational handoff should behave like a restart package, not a transcript dump.
+
+---
+
+## 10. Governing Context
+
+**Governing Context** is the minimum durable context that still constrains the next boundary.
+
+Typical refs may include:
+
+- active spec or plan
+- policy pack
+- decision log
+- quality gate or release rule
+- project-local constitution or operating rules
+
+---
+
+## 11. Durable Memory
+
+**Durable Memory** is the set of reviewable artifacts that must survive past one execution surface.
+
+Examples include docs, decisions, handoffs, restart packages, and learnings.
+
+---
+
+## 12. External Coordination System
+
+An **External Coordination System** is any tool used to track status, priority, ownership, or progress outside the core.
+
+Examples:
+
+- GitHub Projects
+- Jira boards
+- Linear views
+
+AletheIA integrates with these systems through adapter logic or operator practice, not through core dependence.
+
+---
+
 ## Final rule
 
 AletheIA should stay:
