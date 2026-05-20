@@ -149,13 +149,13 @@
 
 | arquivo atual | tipo | destino proposto | status | ação |
 |---|---|---|---|---|
-| docs/skills/premortem/premortem-core.md | orphan | — | orphan | ver lista de órfãos |
-| docs/skills/premortem/runtime-adapters/README.md | orphan | — | orphan | ver lista de órfãos |
-| docs/skills/premortem/runtime-adapters/claude-code.md | orphan | — | orphan | ver lista de órfãos |
-| docs/skills/premortem/runtime-adapters/codex.md | orphan | — | orphan | ver lista de órfãos |
-| docs/skills/premortem/templates/premortem-report.md | orphan | — | orphan | ver lista de órfãos |
-| docs/skills/premortem/workflows/depth-profiles.md | orphan | — | orphan | ver lista de órfãos |
-| docs/skills/premortem/workflows/gate-mapping.md | orphan | — | orphan | ver lista de órfãos |
+| docs/skills/premortem/premortem-core.md | orphan | docs/_meta/legacy/skills/premortem/ | legacy | aposentar (versão canônica em adaptive-skills) |
+| docs/skills/premortem/runtime-adapters/README.md | orphan | docs/_meta/legacy/skills/premortem/ | legacy | aposentar |
+| docs/skills/premortem/runtime-adapters/claude-code.md | orphan | docs/_meta/legacy/skills/premortem/ | legacy | aposentar |
+| docs/skills/premortem/runtime-adapters/codex.md | orphan | docs/_meta/legacy/skills/premortem/ | legacy | aposentar |
+| docs/skills/premortem/templates/premortem-report.md | orphan | docs/_meta/legacy/skills/premortem/ | legacy | aposentar |
+| docs/skills/premortem/workflows/depth-profiles.md | orphan | docs/_meta/legacy/skills/premortem/ | legacy | aposentar |
+| docs/skills/premortem/workflows/gate-mapping.md | orphan | docs/_meta/legacy/skills/premortem/ | legacy | aposentar |
 
 ---
 
@@ -193,9 +193,9 @@ Documentos que **não couberam limpos em nenhum bucket** da taxonomia:
 
 **Por que órfãos:** `premortem-core.md` é a especificação de uma skill inteira (objetivo, workflow, regras, fronteiras). Os demais são componentes da skill (runtime adapters, templates, workflows). Esta estrutura inteira responde "como executar uma capacidade específica" — está entre `guide` e `contract`, mas não é exatamente nenhum dos dois.
 
-**Hipótese de resolução:** tratar `docs/skills/` como um diretório de tipo próprio (`skill`) que a taxonomia atual não prevê. É o caso mais legítimo de gap estrutural. Alternativa: mover para `starter-pack/skills/` ou para o repo `adaptive-skills` onde a skill provavelmente já existe de forma canônica.
+**Resolução verificada:** `adaptative-skills/skills/planning/premortem/` tem a versão canônica e mais recente da mesma skill — em inglês, com frontmatter `SKILL.md`, `examples/` adicionais, e conteúdo mais completo. O `docs/skills/premortem/` do AletheIA é uma versão anterior em português, agora divergente.
 
-**Questão aberta:** verificar se `docs/skills/premortem/` é uma cópia/antecedente de algo em `adaptive-skills`. Se sim, é candidato a aposentadoria direta.
+**Ação:** **aposentar** todos os 7 arquivos de `docs/skills/premortem/` em `_meta/legacy/`. Fonte canônica é `adaptive-skills`. Registrar em `MIGRATION.md` com link para destino.
 
 ---
 
@@ -215,13 +215,13 @@ Ambos definem os termos canônicos do core (Work Slice, Work Item, Operational B
 
 ### Par 2 — bootstrap-generator-contract.md + delivery-output-contract.md
 
-**Overlap estimado:** ~45–50%
+**Overlap real (após leitura completa):** ~35–40% em vocabulário compartilhado (preset, adoption_mode, delivery_surface, review posture). Substância é distinta.
 
-Ambos são "contratos doc-level future-facing para Alpha 7". Estrutura similar, mesma motivação ("before Alpha 7 promises any implementation"). O primeiro define o que o *gerador recebe e emite*; o segundo, o que o *output emitido deve revelar*. A distinção é válida mas os documentos se referenciam mutualmente e podem ser consumidos como um único contrato em duas seções.
+A distinção é válida e precisa:
+- `bootstrap-generator-contract.md` — spec do *processo gerador*: o que o gerador recebe (inputs) e o que emite (outputs). Análogo a um API contract.
+- `delivery-output-contract.md` — spec do *artefato produzido*: o que o pacote emitido deve revelar para ser adotável com segurança. Análogo a um response schema.
 
-**Proposta:** verificar em Épico 2 se a distinção cobre casos reais. Se não, fundir em `contracts/bootstrap-contracts.md`. Por ora, classificar como par a confirmar antes de mover.
-
-**Fonte canônica (se fundir):** novo `contracts/bootstrap-contracts.md`
+**Resolução:** **não fundir**. Mover como dois contratos complementares para `docs/contracts/`. Adicionar cross-reference explícita no cabeçalho de cada um.
 
 ---
 
@@ -253,4 +253,4 @@ Os 2 órfãos restantes (checks/ e triggers/) são menores e provavelmente se re
 
 O plano propõe uma taxonomia *por tipo* (flat por intenção). Os diretórios `docs/aletheia/` e `docs/hermes/` são organizados *por componente/domínio*. Os closeouts neles são claramente tipo `pilot`, mas estão agrupados por runtime.
 
-**Proposta para Épico 2:** mover todos os closeouts para `docs/pilots/closeouts/` (subpasta de closeouts dentro de pilots, para preservar a legibilidade cronológica). Isso dissolve `docs/aletheia/` e `docs/hermes/` como diretórios autônomos dentro de docs/. Se o autor preferir manter a organização por componente, é uma decisão de Épico 2 — registrado aqui como ponto de decisão.
+**Decisão aplicada:** mover todos os closeouts para `docs/pilots/closeouts/` (organização por tipo, legibilidade cronológica preservada). Os diretórios `docs/aletheia/` e `docs/hermes/` ficam vazios após os moves e são removidos. Alinhado com a organização por intenção da taxonomia proposta.
