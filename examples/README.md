@@ -33,6 +33,8 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - mostra um loop de manutenção em três rodadas com regressão escalando o gate e gerando learning reutilizável
 - `pilot-conversion/`
   - mostra como uma validação real no Crisis Monitor vira endurecimento pequeno e reutilizável no framework
+- `consumer-overlay-minimal/`
+  - instância mínima viável do [consumer-project-overlay contract](../docs/contracts/consumer-project-overlay.md) — layout `ops/ai/` + shims Claude prontos para copiar
 
 ---
 
