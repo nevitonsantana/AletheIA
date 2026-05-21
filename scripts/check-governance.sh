@@ -53,11 +53,11 @@ done
 
 for file in \
   README.md \
-  docs/00-overview.md \
-  docs/governance.md \
-  docs/quality.md \
-  docs/roadmap-alpha.md \
-  docs/token-policy.md \
+  docs/concepts/overview.md \
+  docs/concepts/governance.md \
+  docs/concepts/quality.md \
+  docs/roadmaps/roadmap-alpha.md \
+  docs/reference/token-policy.md \
   policies/aletheia-development-governance.v1.json \
   scripts/check-governance.sh \
   package.json
@@ -65,9 +65,9 @@ do
   check_file "$file"
 done
 
-check_text "README.md" "docs/token-policy.md" "README links token policy in reading order"
-check_text "docs/governance.md" "docs/token-policy.md" "governance doc references token policy"
-check_text "docs/roadmap-alpha.md" "token policy" "roadmap includes token policy"
+check_text "README.md" "token-policy.md" "README links token policy in reading order"
+check_text "docs/concepts/governance.md" "token-policy.md" "governance doc references token policy"
+check_text "docs/roadmaps/roadmap-alpha.md" "token policy" "roadmap includes token policy"
 check_text "package.json" "test:contracts" "package exposes contract tests"
 check_text "package.json" "test:goldens" "package exposes golden tests"
 check_text "package.json" "test:e2e" "package exposes e2e tests"

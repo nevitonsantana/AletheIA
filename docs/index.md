@@ -8,8 +8,9 @@ Reading map organized by intent. Each entry links to the most useful starting po
 
 1. [Overview](concepts/overview.md) — what AletheIA is and how the repo is organized
 2. [Architecture](concepts/architecture.md) — core contracts and canonical surfaces
-3. [ADR-004 — AletheIA as operating overlay](adr/ADR-004-aletheia-as-operating-overlay.md) — the boundary decision between product, overlay, and harness
-4. [Governance](concepts/governance.md) — what is mandatory, forbidden, and requires approval
+3. [Operating overlay](concepts/operating-overlay.md) — what the overlay layer is and how to tell what belongs in it
+4. [ADR-004 — AletheIA as operating overlay](adr/ADR-004-aletheia-as-operating-overlay.md) — the boundary decision between product, overlay, and harness
+5. [Governance](concepts/governance.md) — what is mandatory, forbidden, and requires approval
 
 ---
 

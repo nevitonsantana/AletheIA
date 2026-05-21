@@ -9,6 +9,7 @@ If you need a step-by-step guide, see [`guides/`](../guides/README.md). If you n
 | Document | What it explains |
 |---|---|
 | [overview.md](overview.md) | What AletheIA is and how the repo is structured |
+| [operating-overlay.md](operating-overlay.md) | The overlay layer: what it is, what belongs in it, what doesn't |
 | [architecture.md](architecture.md) | Core contracts and canonical surfaces |
 | [canonical-vocabulary.md](canonical-vocabulary.md) | Stable shared language: Work Slice, Restart Package, Operational Boundary, Handoff, etc. |
 | [governance.md](governance.md) | What is mandatory, forbidden, and requires approval |
