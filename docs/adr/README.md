@@ -66,3 +66,5 @@ Do *not* write one for:
 | [ADR-002](ADR-002-memory-and-skill-promotion-policy.md) | Memory and skill promotion policy | Accepted |
 | [ADR-003](ADR-003-slice-record-closeout-relationship.md) | Slice record / closeout relationship | Accepted |
 | [ADR-004](ADR-004-aletheia-as-operating-overlay.md) | AletheIA as operating overlay | Accepted |
+| [ADR-005](ADR-005-positioning-in-agentic-ecosystem.md) | Positioning in the agentic ecosystem | Accepted |
+| [ADR-006](ADR-006-domain-agnosticism.md) | Domain agnosticism | Accepted |
