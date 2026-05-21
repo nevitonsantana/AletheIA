@@ -19,6 +19,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [slice-telemetry-model.md](slice-telemetry-model.md) | Minimal model for recording slice-level telemetry |
 | [work-slice-spec-bundle.md](work-slice-spec-bundle.md) | Optional spec bundle for slices that need pre-execution clarity |
 | [durable-decision-finalization-context-prompt.md](durable-decision-finalization-context-prompt.md) | Accepted durable decision: require finalization context prompt at slice close |
+| [consumer-project-overlay.md](consumer-project-overlay.md) | How a consumer project instantiates the operating overlay (`ops/ai/` + harness shims). Reference example: [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/) |
 
 ### Bootstrap contracts — note on relationship
 
