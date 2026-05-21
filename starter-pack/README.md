@@ -45,6 +45,13 @@ If you are wiring a consumer project to a harness (currently: Claude Code), use:
 - `docs/guides/setting-up-harnesses.md` — five-step adoption walkthrough
 
 
+## Presets
+
+For a single-bundle adoption that combines the overlay skeleton with the harness shim, use:
+
+- `starter-pack/presets/minimal-overlay/` — day-one overlay + Claude shims + `manifest.yaml` provenance record
+
+
 ## Alpha 4 baseline
 
 The current practical Alpha 4 handoff baseline now includes:
