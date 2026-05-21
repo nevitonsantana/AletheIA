@@ -1,0 +1,163 @@
+---
+# Preset manifest — minimal-overlay
+# Bundles the consumer-project-overlay contract (Epic 4) and the Claude
+# harness shim pack (Epic 5) into a single copy-and-fill bundle.
+#
+# This manifest is the authoritative provenance record: every file the
+# preset emits maps back to a canonical source in AletheIA. An agent that
+# reads this file can reconstruct the lineage of any preset file without
+# inspecting the AletheIA repo directly.
+
+preset: minimal-overlay
+version: 1.0.0
+schema: https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/presets/minimal-overlay/manifest.yaml
+description: >
+  Day-one operating overlay for a consumer project using Claude Code.
+  Provides the required ops/ai/ skeleton, harness shims, and three
+  path-scoped rules. Constitution and other content surfaces ship as
+  placeholders to be filled at adoption.
+
+aletheia_min_version: 1.0.0
+last_updated: 2026-05-21
+
+# --- Provenance ---------------------------------------------------------
+# Each entry: preset file → canonical source. "Canonical" means the
+# normative document or pattern in AletheIA from which this file derives.
+# If a preset file diverges from its canonical source, that divergence is
+# either (a) variable substitution, or (b) a bug.
+
+provenance:
+  - file: AGENTS.md
+    source: starter-pack/harness-shims/claude/AGENTS.md.template
+    contract: docs/contracts/consumer-project-overlay.md#41-agentsmd-—-must
+    notes: Renamed from .template; identical content modulo variable substitution.
+
+  - file: CLAUDE.md
+    source: starter-pack/harness-shims/claude/CLAUDE.md.template
+    contract: docs/contracts/consumer-project-overlay.md#42-claudemd-—-must-if-claude-code-is-used
+    notes: Renamed from .template; no substitution needed.
+
+  - file: .claude/settings.json
+    source: starter-pack/harness-shims/claude/.claude/settings.json.template
+    contract: docs/contracts/consumer-project-overlay.md#43-claude-—-should-if-claude-code-is-used
+
+  - file: .claude/rules/src.md
+    source: starter-pack/harness-shims/claude/.claude/rules/src.md
+    contract: docs/contracts/consumer-project-overlay.md#43-claude-—-should-if-claude-code-is-used
+
+  - file: .claude/rules/tests.md
+    source: starter-pack/harness-shims/claude/.claude/rules/tests.md
+    contract: docs/contracts/consumer-project-overlay.md#43-claude-—-should-if-claude-code-is-used
+
+  - file: .claude/rules/ops-ai.md
+    source: starter-pack/harness-shims/claude/.claude/rules/ops-ai.md
+    contract: docs/contracts/consumer-project-overlay.md#43-claude-—-should-if-claude-code-is-used
+
+  - file: ops/ai/constitution/README.md
+    source: docs/contracts/consumer-project-overlay.md#31-opsai-constitution-—-must
+    contract: docs/contracts/consumer-project-overlay.md#31-opsai-constitution-—-must
+    notes: Placeholder with fill-in instructions. MUST be replaced with mission/scope/stack/principles before first session.
+
+  - file: ops/ai/handoffs/README.md
+    source: docs/contracts/consumer-project-overlay.md#32-opsai-handoffs-—-must
+    contract: docs/contracts/consumer-project-overlay.md#32-opsai-handoffs-—-must
+    notes: Empty-state placeholder. First real handoff lands as YYYY-MM-DD-<slug>.md.
+
+  - file: ops/ai/reports/README.md
+    source: docs/contracts/consumer-project-overlay.md#33-opsai-reports-—-must
+    contract: docs/contracts/consumer-project-overlay.md#33-opsai-reports-—-must
+
+  - file: ops/ai/policies/README.md
+    source: docs/contracts/consumer-project-overlay.md#34-opsai-policies-—-should
+    contract: docs/contracts/consumer-project-overlay.md#34-opsai-policies-—-should
+
+  - file: ops/ai/schemas/README.md
+    source: docs/contracts/consumer-project-overlay.md#35-opsai-schemas-—-may
+    contract: docs/contracts/consumer-project-overlay.md#35-opsai-schemas-—-may
+
+  - file: ops/ai/skills/README.md
+    source: docs/contracts/consumer-project-overlay.md#36-opsai-skills-—-may
+    contract: docs/contracts/consumer-project-overlay.md#36-opsai-skills-—-may
+
+  - file: ops/ai/learnings/README.md
+    source: docs/contracts/consumer-project-overlay.md#37-opsai-learnings-—-should
+    contract: docs/contracts/consumer-project-overlay.md#37-opsai-learnings-—-should
+
+# --- Variables ----------------------------------------------------------
+# Substitute these before opening the first session. Adoption is not
+# complete until grep -r '{{' returns no matches.
+
+variables:
+  - name: PROJECT_NAME
+    description: Display name of the project (e.g., "Crisis Monitor")
+    appears_in:
+      - AGENTS.md
+    required: true
+
+  - name: PROJECT_ONE_LINER
+    description: One sentence — what the project does, for whom
+    appears_in:
+      - AGENTS.md
+    required: true
+
+  - name: PRIMARY_STACK
+    description: Comma-separated primary languages/frameworks
+    appears_in:
+      - AGENTS.md
+    required: true
+
+  - name: INSTALL_CMD
+    description: Dependency-install command (e.g., "pnpm install")
+    appears_in:
+      - AGENTS.md
+      - .claude/settings.json
+    required: true
+
+  - name: TEST_CMD
+    description: Test command (e.g., "pnpm test")
+    appears_in:
+      - AGENTS.md
+      - .claude/settings.json
+    required: true
+
+  - name: LINT_CMD
+    description: Lint command (e.g., "pnpm lint")
+    appears_in:
+      - AGENTS.md
+      - .claude/settings.json
+    required: true
+
+  - name: BUILD_CMD
+    description: Build command (e.g., "pnpm build")
+    appears_in:
+      - AGENTS.md
+      - .claude/settings.json
+    required: true
+
+  - name: DEV_CMD
+    description: Local dev command, or "n/a" if not applicable
+    appears_in:
+      - AGENTS.md
+    required: false
+
+# --- Adoption checklist -------------------------------------------------
+# An agent or human can use this list as the conformance gate for adoption.
+
+adoption_checklist:
+  - Copy the preset directory's contents into the consumer project root
+  - Remove this manifest file from the consumer project (it is a source artifact, not a runtime one)
+  - Rename .template files (none in this preset — already renamed)
+  - Substitute all variables; confirm with `grep -r '{{' .` returns nothing
+  - Replace ops/ai/constitution/README.md with mission.md, scope.md, stack.md, principles.md
+  - Delete the placeholder READMEs in handoffs/, reports/, policies/, learnings/ once real content lands
+  - Run the contract §8 conformance test in a fresh Claude Code session
+
+# --- Out of scope -------------------------------------------------------
+# What this preset deliberately does NOT include. Adding any of these
+# without a corresponding change to the canonical contract is a smell.
+
+out_of_scope:
+  - Codex, Cursor, or other harness shims (ADR-004 §4 "no premature shims")
+  - Product source layout opinions (operating-overlay.md "antifragile patterns")
+  - Generated CLI or bootstrap tooling (Epic 7 out of scope per plan §3.2)
+  - Pre-populated handoffs, closeouts, or learnings (contract §6 "anti-pattern: don't backfill")
