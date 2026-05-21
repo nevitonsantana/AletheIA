@@ -34,10 +34,11 @@ Most readers should start in one of these modes:
 
 Read in this order:
 
-1. `docs/canonical-vocabulary.md`
-2. `docs/00-overview.md`
-3. `docs/governance.md`
-4. `starter-pack/guides/daily-operations.md`
+1. `docs/concepts/canonical-vocabulary.md`
+2. `docs/concepts/overview.md`
+3. `docs/concepts/operating-overlay.md`
+4. `docs/concepts/governance.md`
+5. `starter-pack/guides/daily-operations.md`
 5. `docs/token-policy.md`
 6. `docs/durable-decisions.md`
 7. `docs/enforcement-boundaries.md`
