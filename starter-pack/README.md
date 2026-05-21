@@ -37,6 +37,14 @@ If you are adopting AletheIA inside a real project and need to make the local la
 - `starter-pack/templates/project-extension-template.md`
 
 
+## Harness shims
+
+If you are wiring a consumer project to a harness (currently: Claude Code), use:
+
+- `starter-pack/harness-shims/claude/` — copy-and-substitute pack for `AGENTS.md`, `CLAUDE.md`, and `.claude/`
+- `docs/guides/setting-up-harnesses.md` — five-step adoption walkthrough
+
+
 ## Alpha 4 baseline
 
 The current practical Alpha 4 handoff baseline now includes:

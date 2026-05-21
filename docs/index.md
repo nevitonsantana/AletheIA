@@ -39,9 +39,10 @@ Reading map organized by intent. Each entry links to the most useful starting po
 1. [Runtime adapter — Claude Code](reference/runtime-adapter-claude-code.md)
 2. [Runtime adapter — Codex](reference/runtime-adapter-codex.md)
 3. [Runtime adapter — Qwen](reference/runtime-adapter-qwen.md)
-4. [Runtime adapter contract](contracts/runtime-adapter-contract.md) — what any adapter must honor
-5. [Agent role catalog](reference/agent-role-catalog.md) — portable roles across runtimes
-6. [Agent runtime decision guide](guides/agent-runtime-decision-guide.md) — choosing between runtimes
+4. [Setting up harnesses](guides/setting-up-harnesses.md) — wire a consumer project to Claude Code via the shim pack
+5. [Runtime adapter contract](contracts/runtime-adapter-contract.md) — what any adapter must honor
+6. [Agent role catalog](reference/agent-role-catalog.md) — portable roles across runtimes
+7. [Agent runtime decision guide](guides/agent-runtime-decision-guide.md) — choosing between runtimes
 
 ---
 
