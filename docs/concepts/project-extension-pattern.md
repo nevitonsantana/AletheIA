@@ -186,29 +186,19 @@ That distinction should remain reviewable.
 
 ---
 
-## Crisis Monitor example
+## Worked example pattern
 
-The Crisis Monitor work is a good example of a project extension.
+A consumer project will typically contain local patterns such as:
 
-It contains local patterns such as:
-
-- Cris-specific operating behavior
-- thread labels tied to crisis management work
-- ownership boundaries between Codex and Claude Code
+- product-specific operating behavior (assistant personas, internal labels)
+- ownership boundaries between different runtimes or agent roles
 - domain-specific routing, audit, and approval semantics
 
-Those details are useful and real.
-
-But AletheIA should not pretend they are universally required.
-
-Instead, the framework should extract only the reusable logic from them.
-
-For example:
-
-- decision explicability as a principle may generalize
-- one product's exact routing fields probably do not
+Those details are useful and real, but AletheIA does not pretend they are universally required. The framework extracts only the reusable logic from them. For example, decision explicability as a principle may generalize across projects; one product's exact routing fields probably do not.
 
 This is the discipline the extension pattern is meant to support.
+
+> **First validation case.** The Crisis Monitor pilot is the concrete first instance of this pattern. See [`pilots/pilot-crisis-monitor.md`](../pilots/pilot-crisis-monitor.md) — labeled example, not canonical content.
 
 ---
 
@@ -216,9 +206,9 @@ This is the discipline the extension pattern is meant to support.
 
 The project extension pattern connects directly to the other Alpha 2 artifacts.
 
-- `docs/pilot-crisis-monitor.md` shows a real project context
-- `docs/self-application.md` shows how the framework evolves itself
-- `docs/pilot-conversion.md` shows how pilot evidence becomes framework change
+- [`pilots/pilot-crisis-monitor.md`](../pilots/pilot-crisis-monitor.md) shows a real project context *(first validation case)*
+- [`concepts/self-application.md`](self-application.md) shows how the framework evolves itself
+- [`guides/pilot-conversion.md`](../guides/pilot-conversion.md) shows how pilot evidence becomes framework change
 
 The extension pattern adds the missing boundary:
 

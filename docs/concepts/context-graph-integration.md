@@ -91,10 +91,11 @@ Record graph use as exploration events. Record the delta between files suggested
 ## Known limitation: Next.js and design systems
 
 The `code-review-graph` evaluation benchmark reports **F1 = 0.041** for Next.js projects —
-nearly zero impact accuracy. Controlled tests on the Crisis Monitor confirmed: for UI
-components and CSS tokens, the 2-hop graph reaches virtually the entire project (73–97%
-false positives) because connection density in a shared design system makes any node
-reach the whole project within 2 hops.
+nearly zero impact accuracy. Controlled tests in the first validation case (Crisis Monitor
+pilot — see [`pilots/context-graph-decision.md`](../pilots/context-graph-decision.md))
+confirmed this empirically: for UI components and CSS tokens, the 2-hop graph reaches
+virtually the entire project (73–97% false positives) because connection density in a
+shared design system makes any node reach the whole project within 2 hops.
 
 For Next.js projects, the only operations with demonstrated value are:
 - `detect-changes` to identify test gaps in large PR reviews

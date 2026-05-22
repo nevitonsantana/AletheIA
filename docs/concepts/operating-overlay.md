@@ -50,8 +50,8 @@ The hard part is not the obvious cases — it's the ambiguous ones. These are th
 
 | Example | Layer | Why |
 |---|---|---|
-| `src/services/orders.ts` in Crisis Monitor | **product** | Code that implements the domain. AletheIA has no opinion on it. |
-| `ops/ai/constitution/mission.md` in Crisis Monitor | **overlay (local)** | Local instance of an overlay pattern, inside the consumer project. |
+| `src/services/orders.ts` in a consumer project | **product** | Code that implements the domain. AletheIA has no opinion on it. |
+| `ops/ai/constitution/mission.md` in a consumer project | **overlay (local)** | Local instance of an overlay pattern, inside the consumer project. |
 | `docs/contracts/delivery-output-contract.md` in AletheIA repo | **overlay (canonical)** | A normative spec for how AI-assisted deliveries must be shaped. |
 | Hermes session DB schema | **harness** | Runtime state — where the agent stored its session, not how the work was decided. |
 | Hermes logging plugin | **harness** | A vendor capability for the runtime, not a portable governance pattern. |
@@ -70,7 +70,7 @@ These are the calls that recur in PR review. Get them right and most ambiguity d
 
 2. **A `closeout-template.md` saved inside `~/.claude/`** — *looks like harness* (it's in the harness home directory). **Is overlay.** The location is incidental — the artifact governs how work is delivered, regardless of which agent ran. Move it to the canonical overlay (or the project's local overlay) and reference it from the harness.
 
-3. **A `crisis-monitor-runbook.md` describing how to deploy the Crisis Monitor app** — *looks like overlay* (it's a runbook). **Is product.** Operating the product ≠ operating the AI-assisted work. The deploy runbook is part of the consumer project's own docs, not its `ops/ai/` overlay.
+3. **A `deployment-runbook.md` describing how to deploy the consumer product** — *looks like overlay* (it's a runbook). **Is product.** Operating the product ≠ operating the AI-assisted work. The deploy runbook is part of the consumer project's own docs, not its `ops/ai/` overlay.
 
 4. **A `risk-inference-skill.md` invoked by Claude during planning** — *looks like harness* (skills feel like a Claude Code feature). **Is overlay.** The skill encodes how a decision is made; the harness merely executes it. Belongs in the canonical overlay; the harness shim points at it.
 

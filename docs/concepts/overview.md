@@ -23,7 +23,7 @@ The public repository is organized around four blocks:
 
 3. **pilot materials**
    - why the framework emerged
-   - how it was extracted from Crisis Monitor
+   - how it was extracted from a first validation case (Crisis Monitor — see `pilots/`)
    - what was learned in the real test field
    - how pilot learnings return into framework evolution
    - how self-application, pilot conversion, and project extension stay connected
@@ -85,21 +85,19 @@ The roadmap and release gate are now read together through:
 
 ## Alpha 2 bridge and pilot grounding
 
-The Crisis Monitor pilot is the first concrete example of this bridge, and it now includes real-world validation beyond the first explicability slice.
+AletheIA's first validation case is the Crisis Monitor pilot — labeled field evidence preserved in `docs/pilots/`, not a canonical reference. See [ADR-006](../adr/ADR-006-domain-agnosticism.md) for the domain-agnosticism boundary.
 
 The key idea is simple:
 
-AletheIA should be reusable outside the original pilot while still preserving the lessons learned from that pilot.
+AletheIA should be reusable across consumer projects while still preserving the lessons surfaced by the first validation. That reuse depends on an explicit boundary between the framework core and each project's local extension layer.
 
-That reuse depends on an explicit boundary between the framework core and each project's local extension layer.
+At this point, Alpha 2 is organized around five explicit bridge artifacts:
 
-At this point, Alpha 2 is organized around five explicit bridge artifacts and is supported by stronger real-world validation from the Crisis Monitor pilot:
-
-- `docs/self-application.md`
-- `docs/pilot-crisis-monitor.md`
-- `docs/pilot-conversion.md`
-- `docs/project-extension-pattern.md`
-- `docs/migration-from-crisis-monitor.md`
+- `docs/concepts/self-application.md`
+- `docs/concepts/project-extension-pattern.md`
+- `docs/guides/pilot-conversion.md`
+- `docs/pilots/pilot-crisis-monitor.md` *(first concrete instance — labeled example, not canonical content)*
+- `docs/pilots/migration-from-crisis-monitor.md` *(first concrete instance of the migration boundary)*
 
 ---
 

@@ -2,6 +2,8 @@
 
 Real adoption evidence, operation records, and case reports. These answer "what actually happened when X was tried?"
 
+> **Pilots are labeled field evidence — not canonical content.** AletheIA is domain-agnostic (see [ADR-006](../adr/ADR-006-domain-agnosticism.md)). The pilots below were the first concrete instances of the patterns the framework codifies; they document *what happened*, not *what must happen*. Crisis Monitor is the first validation case, not the canonical reference — other consumer projects across other domains are expected.
+
 Operation closeouts (session/task records from Hermes and other runtimes) live in [`closeouts/`](closeouts/).
 
 **What NOT to put here:** prescriptive guides on how to run a pilot (those go in `guides/`). A pilot document reports what happened; it does not instruct.

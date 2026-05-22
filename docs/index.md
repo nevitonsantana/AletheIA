@@ -59,8 +59,10 @@ Reading map organized by intent. Each entry links to the most useful starting po
 
 ## I want to see real adoption evidence
 
-1. [Crisis Monitor pilot](pilots/pilot-crisis-monitor.md) — first real project adoption
-2. [Migration from Crisis Monitor](pilots/migration-from-crisis-monitor.md) — how AletheIA became standalone
+> AletheIA is domain-agnostic (see [ADR-006](adr/ADR-006-domain-agnosticism.md)). The pilots below are labeled field evidence — first validation case, not canonical content.
+
+1. [Crisis Monitor pilot](pilots/pilot-crisis-monitor.md) — first validation case
+2. [Migration from Crisis Monitor](pilots/migration-from-crisis-monitor.md) — how AletheIA became standalone after the first case
 3. [Context graph decision](pilots/context-graph-decision.md) — decision record with real test data
 4. [Hermes closeouts →](pilots/closeouts/) — operation records from Hermes pre-pilot
 5. [All pilots →](pilots/README.md)

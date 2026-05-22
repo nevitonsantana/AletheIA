@@ -56,8 +56,8 @@ Each subsection states: **purpose**, **minimum content**, **examples**, **what N
 - `stack.md` — primary languages, frameworks, infra; one line each.
 - `principles.md` — 5–10 non-negotiable principles; no platitudes.
 
-**Examples of good entries.**
-- mission: *"Crisis Monitor surfaces emerging operational incidents across our regions in under 5 minutes, for the incident-response team."*
+**Examples of good entries** *(drawn from the first validation case — see [`pilots/pilot-crisis-monitor.md`](../pilots/pilot-crisis-monitor.md))*:
+- mission: *"`<consumer-product>` surfaces emerging operational incidents across our regions in under 5 minutes, for the incident-response team."*
 - principle: *"Never silently drop an alert. If a sink fails, surface the failure as a higher-priority alert."*
 
 **What NOT to put.**
@@ -144,7 +144,7 @@ Each subsection states: **purpose**, **minimum content**, **examples**, **what N
 **Minimum content.** One folder per skill, each with a `SKILL.md` describing trigger, inputs, outputs, and steps.
 
 **Examples.**
-- `incident-triage/SKILL.md` — how to triage a Crisis Monitor incident.
+- `incident-triage/SKILL.md` — how to triage an operational incident in the consumer product.
 - `migration-checklist/SKILL.md` — pre-deploy checklist for schema migrations.
 
 **What NOT to put.**

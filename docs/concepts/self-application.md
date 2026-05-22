@@ -111,7 +111,7 @@ This is the practical bridge between:
 
 ## What recent real-world validation added
 
-The Crisis Monitor pilot made the self-application loop more concrete because it did not stop at an initial product proof.
+The first validation case — the Crisis Monitor pilot (see [`pilots/pilot-crisis-monitor.md`](../pilots/pilot-crisis-monitor.md)) — made the self-application loop more concrete because it did not stop at an initial product proof.
 
 The recent sequence moved through:
 
@@ -191,6 +191,6 @@ Together, they make the Alpha 2 loop concrete:
 
 See also:
 
-- `docs/pilot-crisis-monitor.md`
-- `docs/pilot-conversion.md`
-- `docs/project-extension-pattern.md`
+- [`pilots/pilot-crisis-monitor.md`](../pilots/pilot-crisis-monitor.md) *(first validation case — labeled example, not canonical content)*
+- [`guides/pilot-conversion.md`](../guides/pilot-conversion.md)
+- [`concepts/project-extension-pattern.md`](project-extension-pattern.md)

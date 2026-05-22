@@ -140,13 +140,15 @@ The repository is organized around four practical blocks:
 2. **Starter pack**
    - reusable guides, templates, checklists and playbooks for applying AletheIA in a project
 3. **Pilot and adoption materials**
-   - self-application, Crisis Monitor grounding, constrained adoption, project extension and pilot conversion
+   - self-application, first-validation grounding (Crisis Monitor — see `docs/pilots/`), constrained adoption, project extension and pilot conversion
 4. **1.x evolution tracks**
    - trust-boundary hardening, resource-aware operations, runtime-adapter guidance and future domain governance work
 
-Crisis Monitor remains an important pilot source, but its product-specific runtime, UI, assistant behavior and project-management rules are not the portable AletheIA core.
+### First validation case
 
-For the current ownership and re-entry boundary, see `docs/migration-from-crisis-monitor.md`.
+AletheIA is **domain-agnostic** (see [`docs/adr/ADR-006-domain-agnosticism.md`](docs/adr/ADR-006-domain-agnosticism.md)). The framework was first validated against the **Crisis Monitor** project — that case is preserved as labeled field evidence under `docs/pilots/` and `examples/`, but it is not the canonical reference. Additional consumer projects across other domains are expected and prioritized.
+
+For the current ownership and re-entry boundary on the first case specifically, see [`docs/pilots/migration-from-crisis-monitor.md`](docs/pilots/migration-from-crisis-monitor.md).
 
 ---
 

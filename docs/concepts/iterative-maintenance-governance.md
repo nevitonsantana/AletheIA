@@ -148,7 +148,7 @@ That sequence preserves clarity and keeps the experiment reversible.
 
 ## What recent real-world evidence changed
 
-The Crisis Monitor pilot did not turn AletheIA into an observability framework.
+The first validation case (Crisis Monitor — see [`pilots/pilot-crisis-monitor.md`](../pilots/pilot-crisis-monitor.md)) did not turn AletheIA into an observability framework.
 
 What it did was make one important point more concrete:
 
