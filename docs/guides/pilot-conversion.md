@@ -178,26 +178,26 @@ Alpha 2 is going well when:
 
 ---
 
-## Crisis Monitor example
+## Worked example: first validation case
 
-The Crisis Monitor pilot now provides a stronger conversion example than an early explicability slice alone.
+The first validation case (Crisis Monitor — see [`pilots/pilot-crisis-monitor.md`](../pilots/pilot-crisis-monitor.md) for the full record) provides a stronger conversion example than an early explicability slice alone.
 
-The recent chain was:
+The chain a pilot conversion typically follows, instantiated against the first case:
 
-1. real authenticated smoke proved the lane under real conditions
-2. explainability contract hardening made the lane more coherent
-3. a health metric and alert exposed explainability degradation risk
-4. an investigable decision feed made the gap reviewable by occurrence
-5. a lane scorecard summarized the operational picture
-6. the framework absorbed the reusable part as stronger Alpha 2 and iterative-maintenance guidance
+1. real authenticated smoke proves the lane under real conditions
+2. explainability contract hardening makes the lane more coherent
+3. a health metric and alert exposes degradation risk
+4. an investigable decision feed makes the gap reviewable by occurrence
+5. a lane scorecard summarizes the operational picture
+6. the framework absorbs the reusable part as stronger Alpha 2 and iterative-maintenance guidance
 
-What remained product-specific:
+What remained product-specific (and stayed in the consumer project):
 
-- Cris naming
+- product-specific naming
 - exact event names
 - the local observability route shape
 
-What became reusable:
+What became reusable (and was promoted into AletheIA):
 
 - prove the lane before broadening claims
 - harden the contract before widening the surface

@@ -114,8 +114,8 @@ A small vocabulary is enough for the first version.
 ## Minimal example
 
 ```txt
-slice_id: cris-routing-approval-round-2
-project_id: crisis-monitor
+slice_id: routing-approval-round-2
+project_id: example-consumer
 round_id: 2
 task_shape: bounded-execution
 cold_boot_budget: minimal

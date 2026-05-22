@@ -74,8 +74,8 @@ Substitute with `sed` (one pass per variable). On macOS use `sed -i ''`; on GNU/
 ```bash
 # macOS
 sed -i '' \
-  -e 's|{{PROJECT_NAME}}|Crisis Monitor|g' \
-  -e 's|{{PROJECT_ONE_LINER}}|Crisis Monitor surfaces emerging operational incidents in under 5 minutes|g' \
+  -e 's|{{PROJECT_NAME}}|Acme Operations|g' \
+  -e 's|{{PROJECT_ONE_LINER}}|Acme Operations surfaces emerging operational incidents in under 5 minutes|g' \
   -e 's|{{PRIMARY_STACK}}|TypeScript, Node 20, Postgres|g' \
   -e 's|{{INSTALL_CMD}}|pnpm install|g' \
   -e 's|{{TEST_CMD}}|pnpm test|g' \

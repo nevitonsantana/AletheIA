@@ -151,7 +151,7 @@ What matters is preserving the meaning of the fields, not forcing one storage fo
 
 ```txt
 slice_id: example-slice-001
-project_id: crisis-monitor
+project_id: example-consumer
 round_id: 2
 task_shape: bounded-execution
 cold_boot_budget: minimal

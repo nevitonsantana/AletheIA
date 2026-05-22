@@ -92,7 +92,7 @@ The goal is explicit defensive posture.
 
 ### D. Monitoring Content as Untrusted Input
 
-For agentic products such as Crisis Monitor, this future pack should make explicit that:
+For agentic products that ingest external monitored content (news feeds, web mentions, document streams, monitoring pipelines), this future pack should make explicit that:
 
 - monitored content is untrusted by default
 - mentions, documents, news, snippets, and captured text enter as evidence or context
@@ -183,19 +183,19 @@ not replace them.
 
 ---
 
-## Crisis Monitor motivation without lock-in
+## First-validation motivation without lock-in
 
-Crisis Monitor and the Cris Assistente are strong motivating examples for this pack.
+The first validation case (Crisis Monitor and its assistant — see [`pilots/pilot-crisis-monitor.md`](../pilots/pilot-crisis-monitor.md)) is a strong motivating example for this pack.
 
-They make concrete problems visible, such as:
+It makes concrete problems visible, such as:
 
 - monitored content that should not become instruction
 - sensitive assistant-mediated workflows
 - tool and context boundaries that matter operationally
 
-Those examples are useful.
+That labeled example is useful.
 
-But this future pack should still remain reusable beyond one assistant or one product.
+But this future pack should still remain reusable beyond one assistant or one product. The principles below are written to apply to any agentic product with similar trust-boundary shape.
 
 ---
 
