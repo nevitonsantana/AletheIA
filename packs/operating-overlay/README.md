@@ -1,23 +1,23 @@
-# Preset — minimal-overlay
+# Pack — operating-overlay
 
 Day-one operating overlay for a consumer project using Claude Code. A single bundle that combines:
 
-- The required `ops/ai/` directory skeleton (per [consumer-project-overlay contract](../../../docs/contracts/consumer-project-overlay.md))
-- The Claude harness shim (per [Epic 5 shim pack](../../harness-shims/claude/))
+- The required `ops/ai/` directory skeleton (per [consumer-project-overlay contract](../../docs/contracts/consumer-project-overlay.md))
+- The Claude harness shim (per [Epic 5 shim pack](../../starter-pack/harness-shims/claude/))
 - A [`manifest.yaml`](manifest.yaml) recording the canonical source of every file
 
-Use this preset when starting a new consumer project, or when retrofitting overlay structure onto an existing one. The preset is static and reviewable on purpose — no CLI, no generator, no magic.
+This pack is the payload of the AletheIA APM package (`apm install nevitonsantana/AletheIA`), and also remains usable as a static preset for manual adoption. See [docs/guides/install-via-apm.md](../../docs/guides/install-via-apm.md) for the APM-driven flow and [ADR-007](../../docs/adr/ADR-007-apm-packaging-strategy.md) for the packaging strategy.
 
 For background, see:
-- [operating-overlay concept](../../../docs/concepts/operating-overlay.md) — the three-layer model
-- [consumer-project-overlay contract](../../../docs/contracts/consumer-project-overlay.md) — what the preset satisfies
-- [setting-up-harnesses guide](../../../docs/guides/setting-up-harnesses.md) — step-by-step adoption walkthrough
-- [`examples/consumer-overlay-minimal/`](../../../examples/consumer-overlay-minimal/) — a populated reference for what this preset becomes after adoption
+- [operating-overlay concept](../../docs/concepts/operating-overlay.md) — the three-layer model
+- [consumer-project-overlay contract](../../docs/contracts/consumer-project-overlay.md) — what the pack satisfies
+- [setting-up-harnesses guide](../../docs/guides/setting-up-harnesses.md) — step-by-step adoption walkthrough
+- [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/) — a populated reference for what this pack becomes after adoption
 
 ## What's in the bundle
 
 ```
-minimal-overlay/
+operating-overlay/
 ├── README.md                       # this file (delete after adoption)
 ├── manifest.yaml                   # provenance + variables + checklist
 ├── AGENTS.md                       # harness dispatcher (≤150 lines)
@@ -42,12 +42,17 @@ The bundle has **no template suffixes** — files are already in their adopted n
 
 ## Adoption (new project)
 
-1. **Copy** the preset into the new project root:
+Two flows are supported:
+
+- **APM-driven** (recommended): `apm install nevitonsantana/AletheIA && apm run scaffold-overlay`. See [install-via-apm.md](../../docs/guides/install-via-apm.md).
+- **Manual** (no APM): the five steps below.
+
+1. **Copy** the pack into the new project root:
    ```bash
-   cp -R starter-pack/presets/minimal-overlay/. /path/to/new-project/
+   cp -R packs/operating-overlay/. /path/to/new-project/
    cd /path/to/new-project
    ```
-   The `.` after `minimal-overlay/` copies contents (including dotdirs) rather than the directory itself.
+   The `.` after `operating-overlay/` copies contents (including dotdirs) rather than the directory itself.
 
 2. **Remove the source artifacts** that don't belong in a runtime project:
    ```bash
@@ -72,7 +77,7 @@ The bundle has **no template suffixes** — files are already in their adopted n
 
 4. **Fill the constitution.** Replace `ops/ai/constitution/README.md` with the four required files (mission, scope, stack, principles). The other placeholder READMEs can stay until real content lands.
 
-5. **Verify** with a fresh Claude Code session — see the [§8 conformance test](../../../docs/contracts/consumer-project-overlay.md#8-conformance-test-minimum) in the contract.
+5. **Verify** with a fresh Claude Code session — see the [§8 conformance test](../../docs/contracts/consumer-project-overlay.md#8-conformance-test-minimum) in the contract.
 
 Time budget: ~30 minutes of focused work for a new project, longer for legacy retrofits that need scope and principle decisions surfaced.
 

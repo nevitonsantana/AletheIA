@@ -47,9 +47,9 @@ If you are wiring a consumer project to a harness (currently: Claude Code), use:
 
 ## Presets
 
-For a single-bundle adoption that combines the overlay skeleton with the harness shim, use:
+For a single-bundle adoption that combines the overlay skeleton with the harness shim, use the `operating-overlay` pack at the repo root:
 
-- `starter-pack/presets/minimal-overlay/` — day-one overlay + Claude shims + `manifest.yaml` provenance record
+- [`packs/operating-overlay/`](../packs/operating-overlay/) — day-one overlay + Claude shims + `manifest.yaml` provenance record. Also the payload of the AletheIA APM package (see [`docs/guides/install-via-apm.md`](../docs/guides/install-via-apm.md)).
 
 
 ## Alpha 4 baseline
