@@ -1,0 +1,42 @@
+# AletheIA — APM package manifest
+#
+# AletheIA is an operating overlay that lands as a project scaffold (root-level
+# AGENTS.md/CLAUDE.md, .claude/, ops/ai/), not as agent runtime primitives.
+# Because APM has no native install-time hook for scaffold-at-root delivery,
+# adoption is two-step:
+#
+#   1. apm install nevitonsantana/AletheIA       # download + lockfile
+#   2. apm run scaffold-overlay                  # materialize at <consumer-root>/
+#
+# See docs/adr/ADR-007-apm-packaging-strategy.md for rationale and the gap
+# this design works around.
+
+name: aletheia
+version: 0.1.0-alpha
+description: >
+  AletheIA operating overlay — a portable layer that governs how AI-assisted
+  work happens on any project. Ships the day-one scaffold (AGENTS.md,
+  CLAUDE.md, .claude/ shims, ops/ai/ skeleton) via the operating-overlay pack.
+author: Neviton Santana
+license: MIT
+target: claude
+type: hybrid
+
+# scripts: explicit lifecycle the adopter runs after `apm install`.
+# `scaffold-overlay` copies packs/operating-overlay/. into the current
+# working directory (the consumer project root).
+scripts:
+  scaffold-overlay: "bash packs/operating-overlay/scripts/scaffold-overlay.sh"
+  start: "echo 'See docs/guides/install-via-apm.md for the two-step adoption flow.'"
+
+# includes: ship only what the consumer executes/scaffolds. The full docs/
+# tree, engine/, policies/, schemas/, scripts/, and tests/ are repo-internal
+# and not part of the APM payload.
+includes:
+  - apm.yml
+  - packs/operating-overlay/**
+  - docs/guides/install-via-apm.md
+  - docs/contracts/consumer-project-overlay.md
+  - docs/adr/ADR-007-apm-packaging-strategy.md
+  - LICENSE
+  - README.md

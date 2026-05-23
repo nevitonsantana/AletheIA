@@ -68,3 +68,4 @@ Do *not* write one for:
 | [ADR-004](ADR-004-aletheia-as-operating-overlay.md) | AletheIA as operating overlay | Accepted |
 | [ADR-005](ADR-005-positioning-in-agentic-ecosystem.md) | Positioning in the agentic ecosystem | Accepted |
 | [ADR-006](ADR-006-domain-agnosticism.md) | Domain agnosticism | Accepted |
+| [ADR-007](ADR-007-apm-packaging-strategy.md) | APM packaging strategy | Accepted |

@@ -9,8 +9,9 @@
 # inspecting the AletheIA repo directly.
 
 preset: minimal-overlay
+pack: operating-overlay
 version: 1.0.0
-schema: https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/presets/minimal-overlay/manifest.yaml
+schema: https://github.com/nevitonsantana/AletheIA/blob/main/packs/operating-overlay/manifest.yaml
 description: >
   Day-one operating overlay for a consumer project using Claude Code.
   Provides the required ops/ai/ skeleton, harness shims, and three
