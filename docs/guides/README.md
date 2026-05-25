@@ -28,3 +28,4 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [pilot-conversion.md](pilot-conversion.md) | How pilot learnings become framework improvements |
 | [github-project-operations.md](github-project-operations.md) | Using GitHub Projects for repo coordination |
 | [setting-up-harnesses.md](setting-up-harnesses.md) | Wiring a consumer project to Claude Code via the shim pack |
+| [pilot-crisis-monitor-overlay-handoff.md](pilot-crisis-monitor-overlay-handoff.md) | Brief for the Crisis Monitor team — Epic 7 overlay-adoption pilot |
