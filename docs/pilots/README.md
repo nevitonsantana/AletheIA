@@ -20,6 +20,14 @@ Operation closeouts (session/task records from Hermes and other runtimes) live i
 | [report-core-operating-path-friction-test.md](report-core-operating-path-friction-test.md) | Friction test: is `core-operating-path.md` sufficient for first use? |
 | [dev-handoff-2026-05.md](dev-handoff-2026-05.md) | Cycle record — May 2026 |
 
+## In flight
+
+| Pilot | Status | Brief |
+|---|---|---|
+| Crisis Monitor overlay adoption (Epic 7) | Handed off to Crisis Monitor team; friction log pending | [`guides/pilot-crisis-monitor-overlay-handoff.md`](../guides/pilot-crisis-monitor-overlay-handoff.md) |
+
+The friction log will land here as `pilot-crisis-monitor-overlay-adoption.md` once the pilot reports back. Until then, see the brief in `guides/` for the test plan and log template.
+
 ## Closeouts
 
 [`closeouts/`](closeouts/) contains individual operation records from the Hermes pre-pilot and other bounded execution sessions. Each file follows the closeout template.
