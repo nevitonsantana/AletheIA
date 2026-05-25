@@ -18,7 +18,14 @@ Operation closeouts (session/task records from Hermes and other runtimes) live i
 | [resource-aware-crisis-monitor-reference.md](resource-aware-crisis-monitor-reference.md) | Bounded 1.2-track reference using Crisis Monitor evidence |
 | [resource-aware-operations-review.md](resource-aware-operations-review.md) | Consolidation of what the 1.2 track proves |
 | [report-core-operating-path-friction-test.md](report-core-operating-path-friction-test.md) | Friction test: is `core-operating-path.md` sufficient for first use? |
-| [dev-handoff-2026-05.md](dev-handoff-2026-05.md) | Cycle record — May 2026 |
+
+## Cycle records
+
+Periodic development logs — what shipped in a given cycle, open backlog references in upstream repos, parallel workstreams. Distinct from pilot reports (which test a hypothesis) and closeouts (which conclude a bounded operation).
+
+| Document | What it records |
+|---|---|
+| [dev-handoff-2026-05.md](dev-handoff-2026-05.md) | Cycle record — May 2026 (delivered: AletheIA PRs #120, #123 / Adaptive Skills PRs #21, #23; backlog tracked in upstream issues) |
 
 ## In flight
 
