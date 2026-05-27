@@ -41,8 +41,8 @@ jobs:
       - name: Run governance check
         run: bash scripts/check-governance.sh
 
-  test-contracts:
-    name: Test Contracts
+  test:
+    name: Tests (Vitest)
     runs-on: ubuntu-latest
     needs: install-and-typecheck
     steps:
@@ -53,49 +53,7 @@ jobs:
           node-version: '20'
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run test:contracts
-
-  test-goldens:
-    name: Test Goldens
-    runs-on: ubuntu-latest
-    needs: install-and-typecheck
-    steps:
-      - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '20'
-          cache: 'pnpm'
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run test:goldens
-
-  test-e2e:
-    name: Test E2E
-    runs-on: ubuntu-latest
-    needs: install-and-typecheck
-    steps:
-      - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '20'
-          cache: 'pnpm'
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run test:e2e
-
-  test-learnings:
-    name: Test Learnings
-    runs-on: ubuntu-latest
-    needs: install-and-typecheck
-    steps:
-      - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '20'
-          cache: 'pnpm'
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run test:learnings
+      - run: pnpm test
 
   lockfile-sync:
     name: Lockfile sync (package.json ↔ pnpm-lock.yaml)
@@ -128,10 +86,7 @@ jobs:
     needs:
       - install-and-typecheck
       - governance
-      - test-contracts
-      - test-goldens
-      - test-e2e
-      - test-learnings
+      - test
     steps:
       - name: All required checks passed
         run: echo "Quality Gate passed."
