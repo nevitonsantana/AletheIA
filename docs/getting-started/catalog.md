@@ -58,7 +58,7 @@ Stop line: if migration plan requires touching more than 3 files, surface and pa
 ```
 
 The agent records the slice framing in a decision record (see below). You can also use the Work Slice spec bundle for high-risk tasks:
-- [`docs/work-slice-spec-bundle.md`](../work-slice-spec-bundle.md)
+- [`docs/contracts/work-slice-spec-bundle.md`](../contracts/work-slice-spec-bundle.md)
 
 ### Handoffs
 
@@ -125,7 +125,7 @@ You do not need to stop work to adopt AletheIA. The minimum viable path:
 4. Add policies for the constraints you already enforce informally.
 5. Start using Work Slices for new work; retrofit existing tasks gradually.
 
-For the full guidance: [`docs/apply-to-existing-project.md`](../apply-to-existing-project.md).
+For the full guidance: [`docs/guides/apply-to-existing-project.md`](../guides/apply-to-existing-project.md).
 
 ### Squad with BMAD or SDD
 
@@ -177,7 +177,7 @@ If any box is unchecked, the overlay is not fully active. See [`installation-gui
 | Full contract for all overlay elements | [`docs/contracts/consumer-project-overlay.md`](../contracts/consumer-project-overlay.md) |
 | Work Slice pattern in depth | [`docs/concepts/work-slice-pattern.md`](../concepts/work-slice-pattern.md) |
 | Handoff pattern in depth | [`docs/concepts/handoff-capture-pattern.md`](../concepts/handoff-capture-pattern.md) |
-| Governance gates and decision records | [`docs/governance.md`](../governance.md) |
+| Governance gates and decision records | [`docs/concepts/governance.md`](../concepts/governance.md) |
 | Daily operations workflow | [`starter-pack/guides/daily-operations.md`](../../starter-pack/guides/daily-operations.md) |
 | Harness-specific setup (Claude Code, Codex, etc.) | [`docs/guides/setting-up-harnesses.md`](../guides/setting-up-harnesses.md) |
 | Manual adoption (no APM) | [`packs/operating-overlay/README.md`](../../packs/operating-overlay/README.md) |

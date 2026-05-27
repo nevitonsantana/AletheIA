@@ -96,4 +96,4 @@ For the full ecosystem map, see [`docs/concepts/ecosystem-map.md`](../concepts/e
 - Install AletheIA: [`installation-guide.md`](installation-guide.md)
 - Browse what the overlay provides: [`catalog.md`](catalog.md)
 - Questions? [`faq.md`](faq.md)
-- Deep dive: [`docs/00-overview.md`](../00-overview.md), [`docs/governance.md`](../governance.md)
+- Deep dive: [`docs/concepts/overview.md`](../concepts/overview.md), [`docs/concepts/governance.md`](../concepts/governance.md)
