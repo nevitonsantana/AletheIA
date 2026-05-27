@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { describe, it, expect } from "vitest";
-import { validateAgainstSchema, SchemaValidationError } from "../../engine";
+import { validateAgainstSchema, SchemaValidationError, loadGovernancePack } from "../../engine";
 
 function readJsonFile<T>(filePath: string): T {
   return JSON.parse(fs.readFileSync(filePath, "utf-8")) as T;
@@ -30,6 +30,11 @@ const fixtures = [
     fixture: "examples/learning-from-failed-validation/learning-record.json",
     schema: "aletheia-learning-record.schema.json",
   },
+  {
+    name: "Governance Pack",
+    fixture: "policies/aletheia-development-governance.v1.json",
+    schema: "aletheia-governance-pack.schema.json",
+  },
 ];
 
 describe("Contract validation", () => {
@@ -39,6 +44,20 @@ describe("Contract validation", () => {
       expect(() => validateAgainstSchema(data, path.join(schemasDir, schema))).not.toThrow();
     });
   }
+
+  it("loadGovernancePack validates and returns a valid pack", () => {
+    const pack = loadGovernancePack(
+      path.resolve(process.cwd(), "policies/aletheia-development-governance.v1.json"),
+    );
+    expect(pack.meta.name).toBeTruthy();
+    expect(Array.isArray(pack.rules)).toBe(true);
+  });
+
+  it("loadGovernancePack throws SchemaValidationError for a malformed pack", () => {
+    expect(() =>
+      loadGovernancePack(path.resolve(process.cwd(), "examples/hello-world/task-brief.json")),
+    ).toThrow(SchemaValidationError);
+  });
 
   it("throws SchemaValidationError for an invalid Task Brief (missing id)", () => {
     const taskBrief = readJsonFile<Record<string, unknown>>(

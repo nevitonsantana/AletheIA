@@ -4,11 +4,12 @@ import { describe, it, expect } from "vitest";
 
 import {
   createExecutionScope,
+  loadGovernancePack,
   runBeforeExecuteHook,
   runAfterExecuteHook,
   runBeforeFinalizeHook,
 } from "../../engine";
-import type { GovernanceFacts, GovernancePack } from "../../engine";
+import type { GovernanceFacts } from "../../engine";
 import { runExampleScenario } from "../run-example";
 
 function readJsonFile<T>(filePath: string): T {
@@ -16,7 +17,7 @@ function readJsonFile<T>(filePath: string): T {
 }
 
 describe("E2E — governance hooks + kernel path", () => {
-  const pack = readJsonFile<GovernancePack>(
+  const pack = loadGovernancePack(
     path.resolve(process.cwd(), "policies/aletheia-development-governance.v1.json"),
   );
   const beforeFacts = readJsonFile<{ facts: GovernanceFacts }>(

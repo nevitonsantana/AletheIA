@@ -3,16 +3,17 @@ import path from "node:path";
 
 import {
   createLearningFromPolicyEvaluation,
+  loadGovernancePack,
   runBeforeFinalizeHook,
 } from "../../engine";
-import type { GovernanceFacts, GovernancePack, LearningRecord } from "../../engine";
+import type { GovernanceFacts, LearningRecord } from "../../engine";
 
 function readJsonFile<T>(filePath: string): T {
   return JSON.parse(fs.readFileSync(filePath, "utf-8")) as T;
 }
 
 const baseDir = path.resolve(process.cwd(), "examples/learning-from-failed-validation");
-const pack = readJsonFile<GovernancePack>(
+const pack = loadGovernancePack(
   path.resolve(process.cwd(), "policies/aletheia-development-governance.v1.json"),
 );
 const facts = readJsonFile<GovernanceFacts>(path.join(baseDir, "facts.json"));
