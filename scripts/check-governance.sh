@@ -68,10 +68,8 @@ done
 check_text "README.md" "token-policy.md" "README links token policy in reading order"
 check_text "docs/concepts/governance.md" "token-policy.md" "governance doc references token policy"
 check_text "docs/roadmaps/roadmap-alpha.md" "token policy" "roadmap includes token policy"
-check_text "package.json" "test:contracts" "package exposes contract tests"
-check_text "package.json" "test:goldens" "package exposes golden tests"
-check_text "package.json" "test:e2e" "package exposes e2e tests"
-check_text "package.json" "test:learnings" "package exposes learning tests"
+check_text "package.json" "vitest" "package uses vitest as test runner"
+check_text "package.json" "test:coverage" "package exposes coverage script"
 
 if grep -R -n -E "__PLACEHOLDER__|YOUR_PROJECT|TODO_RELEASE" \
   README.md docs policies starter-pack 2>/dev/null >/tmp/aletheia-governance-placeholders.txt; then
