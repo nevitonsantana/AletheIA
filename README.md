@@ -187,9 +187,18 @@ AletheIA decides the flow. Skills shape capability. Runtimes execute. Tools info
 
 ## Where to start
 
-### Fastest understanding path
+### New to AletheIA? Start here
 
-1. `docs/getting-started.md`
+Four documents for adopters with no prior context:
+
+1. [`docs/getting-started/overview.md`](docs/getting-started/overview.md) — what AletheIA is, who it's for, when to use it
+2. [`docs/getting-started/installation-guide.md`](docs/getting-started/installation-guide.md) — step-by-step install via APM
+3. [`docs/getting-started/catalog.md`](docs/getting-started/catalog.md) — what the overlay provides and how to activate each element
+4. [`docs/getting-started/faq.md`](docs/getting-started/faq.md) — common questions about setup, security, and teamwork
+
+### Fastest understanding path (deep dive)
+
+1. `docs/getting-started/overview.md`
 2. `docs/core-operating-path.md`
 3. `docs/00-overview.md`
 4. `docs/governance.md`
