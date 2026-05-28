@@ -20,6 +20,12 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [work-slice-spec-bundle.md](work-slice-spec-bundle.md) | Optional spec bundle for slices that need pre-execution clarity |
 | [durable-decision-finalization-context-prompt.md](durable-decision-finalization-context-prompt.md) | Accepted durable decision: require finalization context prompt at slice close |
 | [consumer-project-overlay.md](consumer-project-overlay.md) | How a consumer project instantiates the operating overlay (`ops/ai/` + harness shims). Reference example: [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/) |
+| [knowledge-source-contract.md](knowledge-source-contract.md) | What every knowledge source must satisfy to be governed by the Knowledge Governance Layer |
+| [knowledge-pack-manifest.md](knowledge-pack-manifest.md) | YAML manifest schema for a knowledge pack on disk |
+| [skill-knowledge-dependency-contract.md](skill-knowledge-dependency-contract.md) | How a skill declares knowledge it needs without binding to a specific source |
+| [source-precedence-policy.md](source-precedence-policy.md) | How conflicts between knowledge sources are resolved |
+| [restricted-knowledge-usage-policy.md](restricted-knowledge-usage-policy.md) | Usage rules for confidential, restricted, and regulated sources |
+| [knowledge-audit-log-spec.md](knowledge-audit-log-spec.md) | Minimum audit fields when a knowledge source influences output |
 
 ### Bootstrap contracts — note on relationship
 

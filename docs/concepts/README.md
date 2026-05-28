@@ -36,3 +36,7 @@ If you need a step-by-step guide, see [`guides/`](../guides/README.md). If you n
 | [domain-governance-packs.md](domain-governance-packs.md) | Future domain-specific governance packs |
 | [ai-agent-security-prompt-injection.md](ai-agent-security-prompt-injection.md) | Future domain pack for AI agent security |
 | [web-app-security-trust-boundaries.md](web-app-security-trust-boundaries.md) | Future domain pack for web security |
+| [knowledge-governance-layer.md](knowledge-governance-layer.md) | Layer that governs user-provided knowledge bases used by agents and skills |
+| [user-provided-knowledge.md](user-provided-knowledge.md) | How users register knowledge bases without dumping documents into prompts |
+| [framework-capsules.md](framework-capsules.md) | Operational summary of a framework or large source; the default unit a skill consumes |
+| [knowledge-resolver.md](knowledge-resolver.md) | Logical role that selects which knowledge sources enter task context |
