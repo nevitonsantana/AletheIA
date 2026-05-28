@@ -21,7 +21,7 @@
           "ref": { "type": "string", "minLength": 1 },
           "why_included": { "type": "string", "minLength": 1 },
           "priority": { "type": "string", "enum": ["required", "recommended", "optional"] },
-          "sensitivity": { "type": "string", "enum": ["public", "internal", "restricted", "secret"] },
+          "sensitivity": { "type": "string", "enum": ["public", "internal", "confidential", "restricted", "regulated"] },
           "mutable": { "type": "boolean" }
         }
       }

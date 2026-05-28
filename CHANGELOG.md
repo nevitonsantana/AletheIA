@@ -3,6 +3,7 @@
 ## Unreleased
 
 - lock the canonical sensitivity vocabulary (`public | internal | confidential | restricted | regulated`) and document how project extensions map local labels (e.g. `private`, regulatory tags) to it; add a project-extension mapping example
+- align `aletheia-context-pack.schema.json` `sources[].sensitivity` enum with the canonical taxonomy (replaces the non-canonical `secret` and adds `confidential` + `regulated`); existing context-pack examples continue to validate
 
 - introduce the Knowledge Governance Layer (docs-only): concepts, contracts, JSON Schemas, and generic project-extension examples for governing user-provided knowledge bases used by agents and skills (ADR-008)
 
