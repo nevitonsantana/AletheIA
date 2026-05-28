@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.local/schemas/skill-knowledge-dependency.schema.json",
+  "title": "AletheIA Skill Knowledge Dependency",
+  "description": "Conceptual JSON Schema for how a skill declares knowledge dependencies. See docs/contracts/skill-knowledge-dependency-contract.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["skill", "version", "knowledge_dependencies", "fallback_behavior"],
+  "properties": {
+    "skill": { "type": "string", "minLength": 1 },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$"
+    },
+    "knowledge_dependencies": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/dependency" }
+    },
+    "fallback_behavior": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "missing_required_source",
+        "missing_optional_source",
+        "restricted_source",
+        "conflicting_sources"
+      ],
+      "properties": {
+        "missing_required_source": {
+          "type": "string",
+          "enum": ["stop_and_request_source", "continue_in_generic_mode", "abort"]
+        },
+        "missing_optional_source": {
+          "type": "string",
+          "enum": ["continue_with_assumption_marker", "omit_silently"]
+        },
+        "restricted_source": {
+          "type": "string",
+          "enum": ["request_authorized_context_pack", "downgrade_to_capsule", "refuse"]
+        },
+        "conflicting_sources": {
+          "type": "string",
+          "enum": ["apply_source_precedence_policy", "escalate_to_human_review"]
+        }
+      }
+    },
+    "output_requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cite_satisfying_packs": { "type": "boolean" },
+        "cite_unsatisfied_slots": { "type": "boolean" },
+        "list_active_restrictions": { "type": "boolean" },
+        "list_conflicts_and_resolutions": { "type": "boolean" }
+      }
+    }
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["accepted_types"],
+      "properties": {
+        "required": { "type": "boolean" },
+        "required_when": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "accepted_types": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "compliance_policy",
+              "security_policy",
+              "privacy_policy",
+              "accessibility_guideline",
+              "operating_model",
+              "product_strategy",
+              "proprietary_framework",
+              "business_design_framework",
+              "design_system",
+              "persona",
+              "research_finding",
+              "benchmark",
+              "stakeholder_input"
+            ]
+          }
+        },
+        "min_authority": {
+          "type": "string",
+          "enum": [
+            "mandatory",
+            "normative",
+            "procedural",
+            "strategic",
+            "interpretive",
+            "evidence_proxy",
+            "evidential",
+            "comparative",
+            "contextual"
+          ]
+        },
+        "preferred_retrieval_mode": {
+          "type": "string",
+          "enum": [
+            "capsule_first",
+            "excerpt_only",
+            "metadata_only",
+            "full_source_allowed",
+            "human_review_required",
+            "blocked"
+          ]
+        },
+        "notes": { "type": "string" }
+      },
+      "anyOf": [
+        { "required": ["required"] },
+        { "required": ["required_when"] }
+      ]
+    }
+  }
+}
