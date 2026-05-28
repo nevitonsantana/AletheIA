@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- introduce the Knowledge Governance Layer (docs-only): concepts, contracts, JSON Schemas, and generic project-extension examples for governing user-provided knowledge bases used by agents and skills (ADR-008)
+
 - clarify that `recommend-clean-restart` should explicitly signal a fresh thread / local clear-thread action before starting a new issue
 - add a project-local Constitution context guide clarifying how stronger governing-context bootstraps can support clean restart without becoming framework core
 
