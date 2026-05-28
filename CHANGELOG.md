@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- materialize the `example-4-layers` knowledge pack on disk under `examples/project-extension/knowledge-packs/` (schema-valid `manifest.yaml`, operational capsule, usage policy, version history, source map/link, and a `feature-value-governance` consumption walkthrough); generic and fictional, illustrating a proprietary framework registered as a `capsule_first` pack with `full_text_exposure: forbidden`
+
 - lock the canonical sensitivity vocabulary (`public | internal | confidential | restricted | regulated`) and document how project extensions map local labels (e.g. `private`, regulatory tags) to it; add a project-extension mapping example
 - align `aletheia-context-pack.schema.json` `sources[].sensitivity` enum with the canonical taxonomy (replaces the non-canonical `secret` and adds `confidential` + `regulated`); existing context-pack examples continue to validate
 

@@ -1,0 +1,55 @@
+knowledge_pack:
+  # Identity
+  id: example-4-layers
+  name: Example Strategic Framework (4 Layers)
+  type: proprietary_framework
+  owner: example-owner
+  version: 1.0.0
+
+  # Classification
+  sensitivity: internal            # local label "private" maps to internal (see sensitivity-vocabulary-mapping)
+  authority_level: interpretive
+
+  # Use
+  scope:
+    - business_design
+    - product_strategy
+    - feature_governance
+
+  allowed_skills:
+    - strategic-value-analysis
+    - feature-value-governance
+    - opportunity-tree-alignment
+  allowed_agents:
+    - product-agent
+    - business-design-agent
+    - design-agent
+
+  # Retrieval
+  retrieval_mode: capsule_first
+  citation_required: true
+  full_text_exposure: forbidden
+  export_allowed: false
+
+  # Review
+  human_review_required_for:
+    - external_publication
+    - client_delivery
+    - policy_conflict
+  expiry:
+    review_cycle: quarterly
+    expires_on: null
+
+  # Provenance
+  source_location: examples/project-extension/knowledge-packs/example-4-layers/source-link.md
+  source_integrity_notes: |
+    Fictional framework authored and maintained by example-owner for demonstration only.
+    The full source is held outside the workspace and referenced by link (source-link.md).
+    The capsule is reviewed alongside every minor version bump; changes are tracked in
+    version-history.md. This pack carries no verbatim framework body.
+
+  # Optional
+  tags:
+    - example
+    - generic
+    - non-confidential

@@ -6,6 +6,11 @@ Show a generic, non-confidential example of a proprietary framework registered a
 
 The framework below is fictional. Do not treat it as a real method, and do not reuse the name in real engagements.
 
+> **Now materialized on disk.** This example is no longer illustrative-only: the same pack exists as
+> schema-valid files under [knowledge-packs/example-4-layers/](knowledge-packs/example-4-layers/)
+> (manifest, capsule, usage policy, version history, source map/link, and a consumption walkthrough).
+> The inline snippets below mirror those files.
+
 ---
 
 ## Pack layout
