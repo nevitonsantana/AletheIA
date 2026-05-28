@@ -14,6 +14,7 @@ These examples are **not** real policies, frameworks, or personas. They are mini
 | [internal-policy-pack-example.md](internal-policy-pack-example.md) | An internal policy registered as a knowledge pack with `excerpt_only` retrieval |
 | [persona-pack-example.md](persona-pack-example.md) | A persona registered as an `evidence_proxy` source |
 | [knowledge-aware-context-pack.json](knowledge-aware-context-pack.json) | Resolver output: which slots got filled, conflicts, restrictions, audit hints |
+| [sensitivity-mapping-example.md](sensitivity-mapping-example.md) | A project's mapping from local sensitivity labels to the canonical taxonomy |
 
 ## Related
 
