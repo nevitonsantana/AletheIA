@@ -87,7 +87,7 @@ knowledge_pack:
   owner: example-owner
   version: 1.0.0
 
-  sensitivity: private              # treat as "internal" in this taxonomy
+  sensitivity: internal             # local label "private" maps to internal per sensitivity-vocabulary-mapping
   authority_level: interpretive
 
   scope:
@@ -124,7 +124,7 @@ knowledge_pack:
     Capsule reviewed alongside every minor version bump.
 ```
 
-> Note: the sensitivity vocabulary in this manifest uses the framework taxonomy (`public | internal | confidential | restricted | regulated`). If a project uses local labels (e.g. `private`), it should map them explicitly in its project extension.
+> Note: the sensitivity vocabulary in this manifest uses the framework taxonomy (`public | internal | confidential | restricted | regulated`). If a project uses local labels (e.g. `private`), it maps them explicitly in its project extension — see [sensitivity-vocabulary-mapping](sensitivity-vocabulary-mapping.md) and [the mapping example](../../examples/project-extension/sensitivity-mapping-example.md).
 
 ---
 

@@ -71,6 +71,8 @@ The taxonomy is intentionally small. Project extensions may *bind* their own con
 
 Higher sensitivity does **not** mean higher authority. A `regulated` persona is still a persona, not a policy.
 
+These five values are canonical. Projects with local labels (e.g. `private`, `secret`, `gdpr-personal-data`) map them to the canonical taxonomy per [sensitivity-vocabulary-mapping](sensitivity-vocabulary-mapping.md). The manifest stores only canonical values.
+
 ---
 
 ## Authority semantics

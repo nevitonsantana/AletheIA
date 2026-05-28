@@ -26,6 +26,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [source-precedence-policy.md](source-precedence-policy.md) | How conflicts between knowledge sources are resolved |
 | [restricted-knowledge-usage-policy.md](restricted-knowledge-usage-policy.md) | Usage rules for confidential, restricted, and regulated sources |
 | [knowledge-audit-log-spec.md](knowledge-audit-log-spec.md) | Minimum audit fields when a knowledge source influences output |
+| [sensitivity-vocabulary-mapping.md](sensitivity-vocabulary-mapping.md) | Canonical sensitivity taxonomy and how project extensions map local labels to it |
 
 ### Bootstrap contracts — note on relationship
 

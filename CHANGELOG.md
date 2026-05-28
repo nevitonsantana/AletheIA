@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- lock the canonical sensitivity vocabulary (`public | internal | confidential | restricted | regulated`) and document how project extensions map local labels (e.g. `private`, regulatory tags) to it; add a project-extension mapping example
+
 - introduce the Knowledge Governance Layer (docs-only): concepts, contracts, JSON Schemas, and generic project-extension examples for governing user-provided knowledge bases used by agents and skills (ADR-008)
 
 - clarify that `recommend-clean-restart` should explicitly signal a fresh thread / local clear-thread action before starting a new issue
