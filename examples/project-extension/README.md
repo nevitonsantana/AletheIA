@@ -10,7 +10,8 @@ These examples are **not** real policies, frameworks, or personas. They are mini
 |---|---|
 | [restricted-enterprise-context.md](restricted-enterprise-context.md) | How a constrained enterprise project layers local rules on top of the framework |
 | [local-trust-boundary-mapping.md](local-trust-boundary-mapping.md) | A small posture mapping for data class, model, and tool permission |
-| [proprietary-framework-pack-example.md](proprietary-framework-pack-example.md) | A proprietary framework registered as a knowledge pack (manifest + capsule) |
+| [proprietary-framework-pack-example.md](proprietary-framework-pack-example.md) | A proprietary framework registered as a knowledge pack (manifest + capsule), illustrated inline |
+| [knowledge-packs/example-4-layers/](knowledge-packs/example-4-layers/) | The same example **materialized as an on-disk pack**: schema-valid `manifest.yaml`, capsule, usage policy, version history, source map/link, and a consumption walkthrough |
 | [internal-policy-pack-example.md](internal-policy-pack-example.md) | An internal policy registered as a knowledge pack with `excerpt_only` retrieval |
 | [persona-pack-example.md](persona-pack-example.md) | A persona registered as an `evidence_proxy` source |
 | [knowledge-aware-context-pack.json](knowledge-aware-context-pack.json) | Resolver output: which slots got filled, conflicts, restrictions, audit hints |
