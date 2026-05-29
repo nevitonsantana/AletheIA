@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.local/schemas/knowledge-aware-context-pack.schema.json",
+  "title": "AletheIA Knowledge-Aware Context Pack",
+  "description": "Output of the knowledge resolver. See docs/concepts/knowledge-resolver.md and examples/project-extension/knowledge-aware-context-pack.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "context_pack_version",
+    "task",
+    "skill",
+    "knowledge_dependencies_resolution",
+    "restrictions_active",
+    "conflicts_detected",
+    "gaps",
+    "human_review",
+    "audit_log_entries_to_write"
+  ],
+  "properties": {
+    "$comment": { "type": "string" },
+    "context_pack_version": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "enum": ["resolved", "refused"] },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "purpose": { "type": "string" },
+        "audience": { "type": "string" },
+        "risk_class": { "type": "string" },
+        "scope_tags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "agent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "trust_boundary": { "type": "string" }
+      }
+    },
+    "skill": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "mode"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "mode": { "type": "string", "enum": ["knowledge_aware", "generic"] }
+      }
+    },
+    "knowledge_dependencies_resolution": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["satisfied_by"],
+        "properties": {
+          "required": { "type": "boolean" },
+          "required_when_matched": { "type": "boolean" },
+          "candidates_considered": { "type": "integer", "minimum": 0 },
+          "fallback_applied": { "type": "string" },
+          "satisfied_by": {
+            "oneOf": [
+              { "type": "null" },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["source_id", "source_version", "retrieved_scope", "retrieval_mode_applied"],
+                "properties": {
+                  "source_id": { "type": "string", "minLength": 1 },
+                  "source_version": { "type": "string", "minLength": 1 },
+                  "retrieved_scope": {
+                    "type": "string",
+                    "enum": ["capsule", "excerpt", "metadata", "full", "pending_review"]
+                  },
+                  "retrieval_mode_applied": {
+                    "type": "string",
+                    "enum": [
+                      "capsule_first",
+                      "excerpt_only",
+                      "metadata_only",
+                      "full_source_allowed",
+                      "human_review_required",
+                      "blocked"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "restrictions_active": { "type": "array", "items": { "type": "string" } },
+    "conflicts_detected": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["between", "topic", "resolved_by", "prevailing_source", "suppressed_sources", "human_review_required"],
+        "properties": {
+          "conflict_id": { "type": "string" },
+          "between": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "topic": { "type": "string", "minLength": 1 },
+          "resolved_by": { "type": "string", "enum": ["source_precedence_policy", "escalation"] },
+          "prevailing_source": { "type": ["string", "null"] },
+          "suppressed_sources": { "type": "array", "items": { "type": "string" } },
+          "human_review_required": { "type": "boolean" },
+          "human_review_reason": { "type": "string" }
+        }
+      }
+    },
+    "gaps": { "type": "array", "items": { "type": "string" } },
+    "human_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "reasons"],
+      "properties": {
+        "required": { "type": "boolean" },
+        "reasons": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "refusals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slot", "reason", "fallback"],
+        "properties": {
+          "slot": { "type": "string" },
+          "reason": { "type": "string", "enum": ["required_source_missing", "restricted_not_authorized"] },
+          "fallback": { "type": "string" }
+        }
+      }
+    },
+    "audit_log_entries_to_write": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "source_version", "retrieved_scope", "sensitivity", "authority_level"],
+        "properties": {
+          "source_id": { "type": "string", "minLength": 1 },
+          "source_version": { "type": "string", "minLength": 1 },
+          "retrieved_scope": {
+            "type": "string",
+            "enum": ["capsule", "excerpt", "metadata", "full", "pending_review"]
+          },
+          "sensitivity": {
+            "type": "string",
+            "enum": ["public", "internal", "confidential", "restricted", "regulated"]
+          },
+          "authority_level": {
+            "type": "string",
+            "enum": [
+              "mandatory",
+              "normative",
+              "procedural",
+              "strategic",
+              "interpretive",
+              "evidence_proxy",
+              "evidential",
+              "comparative",
+              "contextual"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
