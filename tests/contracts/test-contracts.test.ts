@@ -51,6 +51,11 @@ const fixtures = [
     fixture: "examples/project-extension/skill-knowledge-dependency.example.json",
     schema: "aletheia-skill-knowledge-dependency.schema.json",
   },
+  {
+    name: "Knowledge-Aware Context Pack",
+    fixture: "examples/project-extension/knowledge-aware-context-pack.json",
+    schema: "aletheia-knowledge-aware-context-pack.schema.json",
+  },
 ];
 
 describe("Contract validation", () => {
