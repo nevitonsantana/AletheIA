@@ -1,7 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import { describe, it, expect } from "vitest";
-import { validateAgainstSchema, SchemaValidationError, loadGovernancePack } from "../../engine";
+import {
+  validateAgainstSchema,
+  SchemaValidationError,
+  loadGovernancePack,
+  loadKnowledgePack,
+  loadSkillKnowledgeDependency,
+} from "../../engine";
 
 function readJsonFile<T>(filePath: string): T {
   return JSON.parse(fs.readFileSync(filePath, "utf-8")) as T;
@@ -35,6 +41,16 @@ const fixtures = [
     fixture: "policies/aletheia-development-governance.v1.json",
     schema: "aletheia-governance-pack.schema.json",
   },
+  {
+    name: "Knowledge Pack",
+    fixture: "examples/project-extension/knowledge-pack.example.json",
+    schema: "aletheia-knowledge-pack.schema.json",
+  },
+  {
+    name: "Skill Knowledge Dependency",
+    fixture: "examples/project-extension/skill-knowledge-dependency.example.json",
+    schema: "aletheia-skill-knowledge-dependency.schema.json",
+  },
 ];
 
 describe("Contract validation", () => {
@@ -56,6 +72,39 @@ describe("Contract validation", () => {
   it("loadGovernancePack throws SchemaValidationError for a malformed pack", () => {
     expect(() =>
       loadGovernancePack(path.resolve(process.cwd(), "examples/hello-world/task-brief.json")),
+    ).toThrow(SchemaValidationError);
+  });
+
+  it("loadKnowledgePack validates and returns a valid manifest", () => {
+    const pack = loadKnowledgePack(
+      path.resolve(process.cwd(), "examples/project-extension/knowledge-pack.example.json"),
+    );
+    expect(pack.knowledge_pack.id).toBeTruthy();
+    expect(Array.isArray(pack.knowledge_pack.scope)).toBe(true);
+  });
+
+  it("loadKnowledgePack throws SchemaValidationError for a malformed manifest", () => {
+    expect(() =>
+      loadKnowledgePack(path.resolve(process.cwd(), "examples/hello-world/task-brief.json")),
+    ).toThrow(SchemaValidationError);
+  });
+
+  it("loadSkillKnowledgeDependency validates and returns a valid manifest", () => {
+    const dep = loadSkillKnowledgeDependency(
+      path.resolve(
+        process.cwd(),
+        "examples/project-extension/skill-knowledge-dependency.example.json",
+      ),
+    );
+    expect(dep.skill).toBeTruthy();
+    expect(Object.keys(dep.knowledge_dependencies).length).toBeGreaterThan(0);
+  });
+
+  it("loadSkillKnowledgeDependency throws SchemaValidationError for a malformed manifest", () => {
+    expect(() =>
+      loadSkillKnowledgeDependency(
+        path.resolve(process.cwd(), "examples/hello-world/task-brief.json"),
+      ),
     ).toThrow(SchemaValidationError);
   });
 

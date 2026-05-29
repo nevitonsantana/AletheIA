@@ -346,3 +346,111 @@ export interface GovernanceHookRunResult {
   policy_trace: PolicyTrace;
   policy_evaluation: PolicyEvaluation;
 }
+
+export type KnowledgeSourceType =
+  | "compliance_policy"
+  | "security_policy"
+  | "privacy_policy"
+  | "accessibility_guideline"
+  | "operating_model"
+  | "product_strategy"
+  | "proprietary_framework"
+  | "design_system"
+  | "persona"
+  | "research_finding"
+  | "benchmark"
+  | "stakeholder_input";
+
+export type KnowledgeSensitivity =
+  | "public"
+  | "internal"
+  | "confidential"
+  | "restricted"
+  | "regulated";
+
+export type KnowledgeAuthorityLevel =
+  | "mandatory"
+  | "normative"
+  | "procedural"
+  | "strategic"
+  | "interpretive"
+  | "evidence_proxy"
+  | "evidential"
+  | "comparative"
+  | "contextual";
+
+export type KnowledgeRetrievalMode =
+  | "capsule_first"
+  | "excerpt_only"
+  | "metadata_only"
+  | "full_source_allowed"
+  | "human_review_required"
+  | "blocked";
+
+export interface KnowledgePackManifest {
+  knowledge_pack: {
+    id: string;
+    name: string;
+    type: KnowledgeSourceType;
+    owner: string;
+    version: string;
+    sensitivity: KnowledgeSensitivity;
+    authority_level: KnowledgeAuthorityLevel;
+    scope: string[];
+    allowed_skills?: string[];
+    allowed_agents?: string[];
+    retrieval_mode: KnowledgeRetrievalMode;
+    citation_required: boolean;
+    full_text_exposure: "allowed" | "forbidden" | "conditional";
+    export_allowed: boolean;
+    human_review_required_for: string[];
+    expiry: {
+      review_cycle: "weekly" | "monthly" | "quarterly" | "yearly";
+      expires_on: string | null;
+    };
+    source_location: string;
+    source_integrity_notes: string;
+    prerequisite_sources?: string[];
+    supersedes?: string[];
+    tags?: string[];
+  };
+}
+
+export type SkillDependencyAcceptedType =
+  | KnowledgeSourceType
+  | "business_design_framework";
+
+export interface SkillKnowledgeDependencySlot {
+  required?: boolean;
+  required_when?: string[];
+  accepted_types: SkillDependencyAcceptedType[];
+  min_authority?: KnowledgeAuthorityLevel;
+  preferred_retrieval_mode?: KnowledgeRetrievalMode;
+  notes?: string;
+}
+
+export interface SkillKnowledgeDependency {
+  skill: string;
+  version: string;
+  knowledge_dependencies: Record<string, SkillKnowledgeDependencySlot>;
+  fallback_behavior: {
+    missing_required_source:
+      | "stop_and_request_source"
+      | "continue_in_generic_mode"
+      | "abort";
+    missing_optional_source: "continue_with_assumption_marker" | "omit_silently";
+    restricted_source:
+      | "request_authorized_context_pack"
+      | "downgrade_to_capsule"
+      | "refuse";
+    conflicting_sources:
+      | "apply_source_precedence_policy"
+      | "escalate_to_human_review";
+  };
+  output_requirements?: {
+    cite_satisfying_packs?: boolean;
+    cite_unsatisfied_slots?: boolean;
+    list_active_restrictions?: boolean;
+    list_conflicts_and_resolutions?: boolean;
+  };
+}
