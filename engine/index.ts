@@ -10,3 +10,4 @@ export * from "./runtime";
 export * from "./types";
 export * from "./validation";
 export * from "./loader";
+export * from "./registry";
