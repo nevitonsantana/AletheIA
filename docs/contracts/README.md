@@ -28,6 +28,13 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [knowledge-audit-log-spec.md](knowledge-audit-log-spec.md) | Minimum audit fields when a knowledge source influences output |
 | [sensitivity-vocabulary-mapping.md](sensitivity-vocabulary-mapping.md) | Canonical sensitivity taxonomy and how project extensions map local labels to it |
 
+### Operationalized by security checklists
+
+The restricted-use and audit contracts above are *specifications*. The per-task
+checklists and policies that apply them at runtime live in [`docs/security/`](../security/README.md)
+(data-leakage, prompt-injection-in-sources, data-poisoning, logs-and-handoffs,
+human-review-criteria).
+
 ### Bootstrap contracts — note on relationship
 
 `bootstrap-generator-contract.md` and `delivery-output-contract.md` are complementary, not duplicates:

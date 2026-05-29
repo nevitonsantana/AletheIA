@@ -12,6 +12,7 @@ Read a normative specification | [`contracts/`](contracts/README.md)
 See real adoption evidence or closeouts | [`pilots/`](pilots/README.md)
 Track roadmap and track evolution | [`roadmaps/`](roadmaps/README.md)
 Look up a reference (catalog, checklist, policy) | [`reference/`](reference/README.md)
+Apply a security checklist or policy | [`security/`](security/README.md)
 Read an architecture decision record | [`adr/`](adr/README.md)
 See the full reading map by intent | [`index.md`](index.md)
 
