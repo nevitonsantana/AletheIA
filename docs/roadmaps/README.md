@@ -14,3 +14,4 @@ Temporal planning documents and track-evolution records. These answer "where is 
 | [resource-aware-operations-roadmap.md](resource-aware-operations-roadmap.md) | 1.2 track — resource-aware operations |
 | [resource-aware-next-signals.md](resource-aware-next-signals.md) | Signals that would reopen the 1.2 track |
 | [release-1.0-readiness.md](release-1.0-readiness.md) | 1.0 readiness gate (satisfied — preserved for reference) |
+| [knowledge-governance-implementation-prep.md](knowledge-governance-implementation-prep.md) | Phase 5 — bounded implementer brief for building the Knowledge Governance Layer engine (docs-only) |
