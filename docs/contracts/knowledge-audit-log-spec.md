@@ -136,3 +136,8 @@ This spec does not mandate a storage technology. Any store is acceptable that:
 - [knowledge-source-contract](knowledge-source-contract.md)
 - [restricted-knowledge-usage-policy](restricted-knowledge-usage-policy.md)
 - [source-precedence-policy](source-precedence-policy.md)
+- Security checklists that produce these entries: [`docs/security/`](../security/README.md)
+  ([data-leakage](../security/data-leakage-checklist.md),
+  [prompt-injection](../security/prompt-injection-in-sources-checklist.md),
+  [data-poisoning](../security/data-poisoning-checklist.md),
+  [human-review-criteria](../security/human-review-criteria.md))

@@ -78,6 +78,17 @@ Reading map organized by intent. Each entry links to the most useful starting po
 
 ---
 
+## I want to harden a knowledge source against leakage, injection, or poisoning
+
+1. [Security overview](security/README.md) — how the hardening checklists and policies fit together
+2. [Data-leakage checklist](security/data-leakage-checklist.md) — what must never leave the boundary
+3. [Prompt-injection-in-sources checklist](security/prompt-injection-in-sources-checklist.md) — source content as data, not instruction
+4. [Data-poisoning checklist](security/data-poisoning-checklist.md) — provenance, versioning, rollback
+5. [Logs-and-handoffs policy](security/logs-and-handoffs-policy.md) — carry restrictions across boundaries
+6. [Human-review criteria](security/human-review-criteria.md) — when review is mandatory
+
+---
+
 ## I want to look up policies and reference material
 
 1. [Token policy](reference/token-policy.md)

@@ -81,6 +81,14 @@ Integrations with IAM, DLP, secrets management, and review workflows are explici
 
 ---
 
+## Operationalized by
+
+The per-task checklists that enforce this policy live in [`docs/security/`](../security/README.md):
+
+- [data-leakage-checklist](../security/data-leakage-checklist.md)
+- [logs-and-handoffs-policy](../security/logs-and-handoffs-policy.md)
+- [human-review-criteria](../security/human-review-criteria.md)
+
 ## See also
 
 - [knowledge-source-contract](knowledge-source-contract.md)
