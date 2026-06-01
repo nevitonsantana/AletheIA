@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "name": "Feature Value Governance Pack",
+    "version": "1.0.0-alpha",
+    "domain": "product",
+    "status": "draft",
+    "default_mode": "strict"
+  },
+  "vocabulary": {
+    "feature": "A value bet that consumes permanent complexity until it proves it deserves to exist.",
+    "revenue_lever": "The single primary mechanism of value a feature moves (acquisition, activation, retention, expansion, efficiency, margin, strategic_defense).",
+    "permanent_cost": "The ongoing cognitive, technical, operational, and governance carry a feature adds once shipped.",
+    "born_measurable": "Obligation that an approved feature ships with a primary metric, a guardrail, an owner, and 30/90 review dates."
+  },
+  "hooks": [
+    {
+      "id": "before_execute",
+      "description": "Evaluate whether a feature is allowed to advance to build or test against the seven readiness gates."
+    },
+    {
+      "id": "before_finalize",
+      "description": "Evaluate the born-measurable obligations before a feature ships or tests broadly."
+    }
+  ],
+  "facts_model": {
+    "feature.verdict": "string",
+    "feature.problem_defined": "boolean",
+    "feature.icp_defined": "boolean",
+    "feature.lever_defined": "boolean",
+    "feature.evidence_strength": "string",
+    "feature.evidence_uncertainty_stated": "boolean",
+    "feature.complexity_level": "string",
+    "feature.exception_approved": "boolean",
+    "feature.reversibility_level": "string",
+    "feature.opportunity_node_present": "boolean",
+    "feature.has_primary_metric": "boolean",
+    "feature.guardrail_count": "number",
+    "feature.has_review_dates": "boolean"
+  },
+  "rules": [
+    {
+      "id": "gate.problem_required",
+      "stage": "before_execute",
+      "description": "A build or test verdict requires a real, defined problem.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "feature.verdict", "op": "in", "value": ["build_now", "test_first"] },
+        { "fact": "feature.problem_defined", "op": "eq", "value": false }
+      ],
+      "action_by_mode": { "strict": "block", "balanced": "block", "relaxed": "review" }
+    },
+    {
+      "id": "gate.icp_required",
+      "stage": "before_execute",
+      "description": "If the gain does not land on a defined ICP, the feature should be parked or sent to discovery, not built.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "feature.verdict", "op": "in", "value": ["build_now", "test_first"] },
+        { "fact": "feature.icp_defined", "op": "eq", "value": false }
+      ],
+      "action_by_mode": { "strict": "review", "balanced": "review", "relaxed": "review" }
+    },
+    {
+      "id": "gate.lever_required",
+      "stage": "before_execute",
+      "description": "Without a named revenue/value lever, a feature does not enter the roadmap.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "feature.verdict", "op": "in", "value": ["build_now", "test_first", "park"] },
+        { "fact": "feature.lever_defined", "op": "eq", "value": false }
+      ],
+      "action_by_mode": { "strict": "block", "balanced": "block", "relaxed": "review" }
+    },
+    {
+      "id": "gate.evidence_sufficient_for_build",
+      "stage": "before_execute",
+      "description": "Weak or assumption-level evidence cannot support a build_now; it requires Test or Discovery first.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "feature.verdict", "op": "eq", "value": "build_now" },
+        { "fact": "feature.evidence_strength", "op": "in", "value": ["weak", "assumption"] }
+      ],
+      "action_by_mode": { "strict": "block", "balanced": "review", "relaxed": "review" }
+    },
+    {
+      "id": "gate.evidence_uncertainty_required",
+      "stage": "before_execute",
+      "description": "Every recommendation must state its uncertainty so the score is never mistaken for truth.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "feature.verdict", "op": "in", "value": ["build_now", "test_first"] },
+        { "fact": "feature.evidence_uncertainty_stated", "op": "eq", "value": false }
+      ],
+      "action_by_mode": { "strict": "block", "balanced": "block", "relaxed": "review" }
+    },
+    {
+      "id": "gate.high_cost_needs_exception",
+      "stage": "before_execute",
+      "description": "A high permanent-cost feature approved to build must carry an explicit scope reduction or exception approval.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "feature.verdict", "op": "eq", "value": "build_now" },
+        { "fact": "feature.complexity_level", "op": "eq", "value": "high" },
+        { "fact": "feature.exception_approved", "op": "eq", "value": false }
+      ],
+      "action_by_mode": { "strict": "block", "balanced": "block", "relaxed": "review" }
+    },
+    {
+      "id": "gate.irreversible_needs_human",
+      "stage": "before_execute",
+      "description": "A one-way-door build requires a human technical gate before commitment.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "feature.verdict", "op": "eq", "value": "build_now" },
+        { "fact": "feature.reversibility_level", "op": "eq", "value": "one_way_door" }
+      ],
+      "action_by_mode": { "strict": "ask_human", "balanced": "review", "relaxed": "review" }
+    },
+    {
+      "id": "gate.orphan_feature",
+      "stage": "before_execute",
+      "description": "A feature that serves no live opportunity-tree node is flagged for reconsideration.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "feature.verdict", "op": "in", "value": ["build_now", "test_first"] },
+        { "fact": "feature.opportunity_node_present", "op": "eq", "value": false }
+      ],
+      "action_by_mode": { "strict": "review", "balanced": "review", "relaxed": "allow" }
+    },
+    {
+      "id": "measurable.primary_metric_required",
+      "stage": "before_finalize",
+      "description": "Born measurable: no primary metric, no broad rollout.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "feature.verdict", "op": "in", "value": ["build_now", "test_first"] },
+        { "fact": "feature.has_primary_metric", "op": "eq", "value": false }
+      ],
+      "action_by_mode": { "strict": "block", "balanced": "block", "relaxed": "review" }
+    },
+    {
+      "id": "measurable.guardrails_required",
+      "stage": "before_finalize",
+      "description": "Born measurable: an approved feature must declare at least one guardrail metric that cannot regress.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "feature.verdict", "op": "in", "value": ["build_now", "test_first"] },
+        { "fact": "feature.guardrail_count", "op": "lt", "value": 1 }
+      ],
+      "action_by_mode": { "strict": "block", "balanced": "review", "relaxed": "review" }
+    },
+    {
+      "id": "measurable.review_dates_required",
+      "stage": "before_finalize",
+      "description": "Born measurable: an approved feature must carry 30/90 review dates.",
+      "enabled": true,
+      "when_all": [
+        { "fact": "feature.verdict", "op": "in", "value": ["build_now", "test_first"] },
+        { "fact": "feature.has_review_dates", "op": "eq", "value": false }
+      ],
+      "action_by_mode": { "strict": "block", "balanced": "review", "relaxed": "review" }
+    }
+  ]
+}

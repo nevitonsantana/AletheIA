@@ -1,0 +1,64 @@
+# Example — Build Now
+
+A feature with high value, sufficient evidence, acceptable permanent cost, and a clear
+metric. Passes all seven gates. Born with metric, guardrail, owner, and review dates.
+
+This is an illustrative record against the
+[Feature Value Governance Contract](../../schemas/feature-value-governance-contract.schema.json).
+The strategic lens is referenced by `strategic_framework_ref`, not reproduced here.
+
+```yaml
+feature_value_governance_contract:
+  id: FVG-2026-014
+  feature_name: One-click CSV export for saved reports
+  problem_statement: >
+    Power users rebuild reports manually in spreadsheets every week because there is no
+    export. 22 support tickets and 3 lost renewals in Q1 cited this gap.
+  target_icp: Operations analysts on the Team and Business plans
+  user_job: Get this week's report into my own spreadsheet without rebuilding it
+  value_proposition: Reinforces "your data, your way" — strengthens, does not dilute
+  opportunity_tree_node: OUTCOME-retention/reduce-manual-rework
+  strategic_framework_ref: example-4-layers@1.2.0
+  revenue_lever:
+    primary: retention
+    secondary: [efficiency]
+    rationale: Removes a recurring friction tied to renewal risk in the named ICP
+  expected_outcome: Weekly manual rework drops; renewal risk citations fall
+  evidence_level:
+    strength: strong
+    sources: ["22 Q1 support tickets", "3 lost-renewal call notes", "8 user interviews"]
+    uncertainty: >
+      Unknown whether export alone closes the renewal risk or is one of several factors.
+  complexity_cost:
+    level: low
+    permanent_carry: [support, maintenance]
+    drivers: Reuses existing report query layer; no new data model
+  reversibility:
+    level: reversible
+    mechanisms: [flag, cohort, rollback]
+  risk_of_not_doing: Continued renewal risk in a high-value segment
+  primary_metric:
+    name: Weekly active exporters in target ICP
+    target: ">= 25% of active analysts within 60 days"
+    baseline: "0 (feature does not exist)"
+  guardrail_metrics:
+    - name: Report page p95 latency
+      must_not_exceed: "+10% vs baseline"
+    - name: Export-related support tickets
+      must_not_exceed: baseline ticket rate
+  rollout_plan: 10% cohort behind a flag, then staged to 100% if guardrails hold
+  sunset_criteria: >
+    If exporters stay below 5% of the ICP at the 90-day review, downgrade to on-demand
+    and reassess.
+  owner: a.silva (Product, Reporting)
+  decision:
+    verdict: build_now
+    rationale: All gates pass; low permanent cost; reversible; clear metric and guardrails
+  review_dates:
+    day_30: 2026-07-01
+    day_90: 2026-08-30
+```
+
+**Why Build Now:** problem is real and evidenced, lands on the right ICP, pulls a named
+retention lever, evidence is strong (with stated uncertainty), permanent cost is low and
+reversible, and it ships measurable. No exception needed — cost is low.

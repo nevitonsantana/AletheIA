@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.local/schemas/feature-value-governance-contract.schema.json",
+  "title": "Feature Value Governance Contract",
+  "description": "Minimum fields a feature, opportunity, or relevant increment must declare to advance through the product flow. The contract does not decide; it forces the decision to be explicit, traceable, and proportional to risk. Strategic lens (e.g. a 4-layers framework) is supplied via a knowledge pack on the strategic_framework slot, never hard-coded here.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "feature_name",
+    "problem_statement",
+    "target_icp",
+    "revenue_lever",
+    "evidence_level",
+    "complexity_cost",
+    "reversibility",
+    "primary_metric",
+    "decision",
+    "owner",
+    "review_dates"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "feature_name": { "type": "string", "minLength": 1 },
+    "problem_statement": { "type": "string", "minLength": 1 },
+    "target_icp": { "type": "string", "minLength": 1, "description": "Who gains value primarily." },
+    "user_job": { "type": "string", "description": "The job-to-be-done the feature serves." },
+    "value_proposition": { "type": "string", "description": "How this strengthens (not dilutes) the value proposition." },
+    "opportunity_tree_node": { "type": "string", "description": "Reference to the opportunity / outcome this bet serves; 'none' flags an orphan feature." },
+    "strategic_framework_ref": {
+      "type": "string",
+      "description": "pack_id@version of the strategic_framework knowledge pack used as the value lens, or 'generic' when none was resolved. The framework content lives in the pack, not in this contract."
+    },
+    "revenue_lever": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary"],
+      "properties": {
+        "primary": {
+          "type": "string",
+          "enum": ["acquisition", "activation", "retention", "expansion", "efficiency", "margin", "strategic_defense"]
+        },
+        "secondary": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["acquisition", "activation", "retention", "expansion", "efficiency", "margin", "strategic_defense"]
+          }
+        },
+        "rationale": { "type": "string" }
+      }
+    },
+    "expected_outcome": { "type": "string", "description": "Behavioral or business change expected." },
+    "evidence_level": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strength", "uncertainty"],
+      "properties": {
+        "strength": { "type": "string", "enum": ["strong", "moderate", "weak", "assumption"] },
+        "sources": { "type": "array", "items": { "type": "string" }, "description": "Data, research, tickets, lost deals, interviews, benchmark." },
+        "uncertainty": { "type": "string", "minLength": 1, "description": "What is NOT known yet. Required reflection so the score is never mistaken for truth." }
+      }
+    },
+    "complexity_cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level"],
+      "properties": {
+        "level": { "type": "string", "enum": ["low", "medium", "high"] },
+        "permanent_carry": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["ux", "support", "qa", "documentation", "operations", "security", "maintenance"] },
+          "description": "Where the permanent cost lands."
+        },
+        "drivers": { "type": "string" }
+      }
+    },
+    "reversibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level"],
+      "properties": {
+        "level": { "type": "string", "enum": ["reversible", "partially_reversible", "one_way_door"] },
+        "mechanisms": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["flag", "cohort", "rollback", "sunset", "migration_plan"] }
+        }
+      }
+    },
+    "risk_of_not_doing": { "type": "string", "description": "Cost or risk of inaction." },
+    "primary_metric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "target": { "type": "string" },
+        "baseline": { "type": "string" }
+      }
+    },
+    "guardrail_metrics": {
+      "type": "array",
+      "description": "Metrics that must not get worse.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "must_not_exceed": { "type": "string" }
+        }
+      }
+    },
+    "rollout_plan": { "type": "string" },
+    "sunset_criteria": { "type": "string", "description": "Condition under which the feature is limited, refactored, deprecated, or removed." },
+    "owner": { "type": "string", "minLength": 1 },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verdict"],
+      "properties": {
+        "verdict": { "type": "string", "enum": ["build_now", "test_first", "discovery_first", "park", "kill", "sunset"] },
+        "rationale": { "type": "string" },
+        "exception_approval": {
+          "type": "string",
+          "description": "Required when complexity_cost.level is 'high' and the verdict is build_now: who explicitly approved the permanent cost, or the scope reduction that was applied instead."
+        }
+      }
+    },
+    "review_dates": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "day_30": { "type": "string", "format": "date" },
+        "day_90": { "type": "string", "format": "date" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$comment": "High permanent cost approved to build must carry an explicit exception or a scope reduction. Score is never sufficient on its own.",
+      "if": {
+        "properties": {
+          "complexity_cost": { "properties": { "level": { "const": "high" } } },
+          "decision": { "properties": { "verdict": { "const": "build_now" } } }
+        }
+      },
+      "then": {
+        "properties": {
+          "decision": { "required": ["exception_approval"] }
+        }
+      }
+    },
+    {
+      "$comment": "Born measurable: a build_now or test_first verdict must carry at least one guardrail metric and both 30/90 review dates. A primary metric alone is not enough to ship or test broadly.",
+      "if": {
+        "required": ["decision"],
+        "properties": {
+          "decision": { "properties": { "verdict": { "enum": ["build_now", "test_first"] } }, "required": ["verdict"] }
+        }
+      },
+      "then": {
+        "required": ["guardrail_metrics", "review_dates"],
+        "properties": {
+          "guardrail_metrics": { "minItems": 1 },
+          "review_dates": { "required": ["day_30", "day_90"] }
+        }
+      }
+    }
+  ]
+}
