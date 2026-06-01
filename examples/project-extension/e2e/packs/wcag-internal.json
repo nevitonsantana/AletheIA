@@ -1,0 +1,23 @@
+{
+  "knowledge_pack": {
+    "id": "wcag-internal",
+    "name": "Internal Accessibility Guideline (WCAG-aligned)",
+    "type": "accessibility_guideline",
+    "owner": "Accessibility WG",
+    "version": "1.2.0",
+    "sensitivity": "internal",
+    "authority_level": "normative",
+    "scope": ["interface_change", "content_decision", "navigation_decision"],
+    "allowed_skills": ["feature-value-governance"],
+    "allowed_agents": ["product-agent", "design-agent"],
+    "retrieval_mode": "excerpt_only",
+    "citation_required": true,
+    "full_text_exposure": "conditional",
+    "export_allowed": false,
+    "human_review_required_for": ["external_publication"],
+    "expiry": { "review_cycle": "quarterly", "expires_on": null },
+    "source_location": "examples/project-extension/knowledge-packs/wcag-internal/source-link.md",
+    "source_integrity_notes": "Generic, vendor-agnostic accessibility example; no proprietary content.",
+    "tags": ["accessibility", "normative", "example"]
+  }
+}

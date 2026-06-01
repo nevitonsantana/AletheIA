@@ -1,6 +1,7 @@
 {
   "$comment": "Example output of the knowledge-resolver for a knowledge-aware skill. Generic and safe. Not a runtime artifact.",
   "context_pack_version": "0.1.0",
+  "status": "resolved",
   "task": {
     "id": "task_2026-05-28_feat-001",
     "purpose": "Decide whether the proposed checkout simplification should ship as-is.",

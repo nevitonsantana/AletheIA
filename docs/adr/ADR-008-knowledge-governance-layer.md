@@ -69,9 +69,20 @@ The layer ships as concepts, contracts, schemas, and generic examples in this re
 
 ## 6. Review
 
+> **Update (2026-05-29).** A reference engine for the layer now exists in `engine/`
+> (`loader`, `registry`, `resolver`, `context-pack`, `audit-log`) with an end-to-end golden
+> in `tests/e2e/`, built per [knowledge-governance-implementation-prep](../roadmaps/knowledge-governance-implementation-prep.md).
+> The resolver is therefore no longer only a "logical role": it is a concrete, contract-
+> conformant implementation. The decision and its non-negotiables are unchanged — the engine
+> stayed docs-first and inside the IN/OUT boundary (no vector DB, IAM, DLP, UI, or embeddings).
+> Decision §2 point 8 ("first phase is docs-only") remains the historical record of phase one;
+> the engine is the bounded phase-two reference build, not a change to the architecture.
+
 This ADR should be revisited when any of the following becomes true:
 
-- A runtime resolver implementation is proposed (would change "logical role" → contract).
+- ~~A runtime resolver implementation is proposed~~ — **done**; a reference resolver exists
+  (see the update above). Revisit if the resolver's selection or precedence semantics need to
+  change a contract rather than merely implement it.
 - A vector store or retrieval-stack integration is on the table.
 - Multiple consumers (beyond Feature Value Governance) exist and reveal gaps in the taxonomy or precedence policy.
 - IAM, DLP, or formal IP governance are integrated and reshape the restricted-use policy.

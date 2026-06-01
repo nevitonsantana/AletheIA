@@ -1,0 +1,23 @@
+{
+  "knowledge_pack": {
+    "id": "example-4-layers",
+    "name": "Example 4 Layers Framework",
+    "type": "proprietary_framework",
+    "owner": "Knowledge Governance WG",
+    "version": "1.0.0",
+    "sensitivity": "internal",
+    "authority_level": "interpretive",
+    "scope": ["feature_governance", "product_strategy"],
+    "allowed_skills": ["feature-value-governance"],
+    "allowed_agents": ["product-agent", "design-agent"],
+    "retrieval_mode": "capsule_first",
+    "citation_required": true,
+    "full_text_exposure": "forbidden",
+    "export_allowed": false,
+    "human_review_required_for": ["external_publication", "client_delivery"],
+    "expiry": { "review_cycle": "quarterly", "expires_on": null },
+    "source_location": "examples/project-extension/knowledge-packs/example-4-layers/source-link.md",
+    "source_integrity_notes": "Generic, vendor-agnostic example pack; contains no proprietary or client content.",
+    "tags": ["framework", "interpretive", "example"]
+  }
+}

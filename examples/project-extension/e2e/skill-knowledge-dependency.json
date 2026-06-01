@@ -1,0 +1,34 @@
+{
+  "skill": "feature-value-governance",
+  "version": "0.1.0",
+  "knowledge_dependencies": {
+    "strategic_framework": {
+      "required": true,
+      "accepted_types": ["proprietary_framework", "product_strategy", "business_design_framework"],
+      "min_authority": "interpretive",
+      "preferred_retrieval_mode": "capsule_first"
+    },
+    "personas": {
+      "required": false,
+      "accepted_types": ["persona", "research_finding"]
+    },
+    "accessibility_guidelines": {
+      "required_when": ["interface_change", "content_decision", "navigation_decision", "customer_facing_experience"],
+      "accepted_types": ["accessibility_guideline"],
+      "min_authority": "normative",
+      "notes": "Pulled in only for customer-facing experience changes."
+    }
+  },
+  "fallback_behavior": {
+    "missing_required_source": "stop_and_request_source",
+    "missing_optional_source": "continue_with_assumption_marker",
+    "restricted_source": "request_authorized_context_pack",
+    "conflicting_sources": "apply_source_precedence_policy"
+  },
+  "output_requirements": {
+    "cite_satisfying_packs": true,
+    "cite_unsatisfied_slots": true,
+    "list_active_restrictions": true,
+    "list_conflicts_and_resolutions": true
+  }
+}
