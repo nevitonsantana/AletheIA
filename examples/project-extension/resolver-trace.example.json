@@ -1,0 +1,242 @@
+{
+  "$comment": "Worked end-to-end trace of the Knowledge Governance Layer pipeline (registry -> resolver -> context-pack -> audit). Generated from examples/project-extension/e2e/ and verified against examples/goldens/knowledge-resolution.json by tests/e2e/test-knowledge-e2e.test.ts. Generic and safe; not a runtime artifact.",
+  "inputs": {
+    "task": {
+      "id": "task_2026-05-29_feat-001",
+      "scope": [
+        "feature_governance",
+        "customer_facing_experience",
+        "interface_change"
+      ],
+      "max_sensitivity": "internal",
+      "agent_id": "product-agent",
+      "human_review_conditions": [
+        "external_publication"
+      ]
+    },
+    "skill_dependency_manifest": "examples/project-extension/e2e/skill-knowledge-dependency.json",
+    "registry_packs": [
+      "example-4-layers@1.0.0",
+      "example-persona-casual-shopper@0.4.0",
+      "wcag-internal@1.2.0"
+    ],
+    "declared_conflicts": [
+      {
+        "between": [
+          "personas",
+          "accessibility_guidelines"
+        ],
+        "topic": "explicit form labels on checkout fields",
+        "conflictId": "conflict_2026-05-29_001"
+      }
+    ]
+  },
+  "context_pack": {
+    "context_pack_version": "0.1.0",
+    "status": "resolved",
+    "task": {
+      "id": "task_2026-05-29_feat-001",
+      "purpose": "Decide whether the proposed checkout simplification should ship as-is.",
+      "audience": "internal_review",
+      "risk_class": "medium",
+      "scope_tags": [
+        "feature_governance",
+        "customer_facing_experience",
+        "interface_change"
+      ]
+    },
+    "skill": {
+      "id": "feature-value-governance",
+      "version": "0.1.0",
+      "mode": "knowledge_aware"
+    },
+    "knowledge_dependencies_resolution": {
+      "strategic_framework": {
+        "required": true,
+        "satisfied_by": {
+          "source_id": "example-4-layers",
+          "source_version": "1.0.0",
+          "retrieved_scope": "capsule",
+          "retrieval_mode_applied": "capsule_first"
+        },
+        "candidates_considered": 1
+      },
+      "personas": {
+        "required": false,
+        "satisfied_by": {
+          "source_id": "example-persona-casual-shopper",
+          "source_version": "0.4.0",
+          "retrieved_scope": "capsule",
+          "retrieval_mode_applied": "capsule_first"
+        },
+        "candidates_considered": 1
+      },
+      "accessibility_guidelines": {
+        "required": true,
+        "required_when_matched": true,
+        "satisfied_by": {
+          "source_id": "wcag-internal",
+          "source_version": "1.2.0",
+          "retrieved_scope": "excerpt",
+          "retrieval_mode_applied": "excerpt_only"
+        },
+        "candidates_considered": 1
+      }
+    },
+    "restrictions_active": [
+      "citation_required_for:example-4-layers",
+      "citation_required_for:example-persona-casual-shopper",
+      "citation_required_for:wcag-internal",
+      "no_export_for:example-4-layers",
+      "no_export_for:example-persona-casual-shopper",
+      "no_export_for:wcag-internal",
+      "no_verbatim_for:example-4-layers",
+      "no_verbatim_for:example-persona-casual-shopper"
+    ],
+    "conflicts_detected": [
+      {
+        "conflict_id": "conflict_2026-05-29_001",
+        "between": [
+          "example-persona-casual-shopper@0.4.0",
+          "wcag-internal@1.2.0"
+        ],
+        "topic": "explicit form labels on checkout fields",
+        "resolved_by": "source_precedence_policy",
+        "prevailing_source": "wcag-internal@1.2.0",
+        "suppressed_sources": [
+          "example-persona-casual-shopper@0.4.0"
+        ],
+        "human_review_required": false
+      }
+    ],
+    "gaps": [],
+    "human_review": {
+      "required": true,
+      "reasons": [
+        "source_condition:example-4-layers:external_publication",
+        "source_condition:wcag-internal:external_publication"
+      ]
+    },
+    "refusals": [],
+    "audit_log_entries_to_write": [
+      {
+        "source_id": "example-4-layers",
+        "source_version": "1.0.0",
+        "retrieved_scope": "capsule",
+        "sensitivity": "internal",
+        "authority_level": "interpretive"
+      },
+      {
+        "source_id": "example-persona-casual-shopper",
+        "source_version": "0.4.0",
+        "retrieved_scope": "capsule",
+        "sensitivity": "internal",
+        "authority_level": "evidence_proxy"
+      },
+      {
+        "source_id": "wcag-internal",
+        "source_version": "1.2.0",
+        "retrieved_scope": "excerpt",
+        "sensitivity": "internal",
+        "authority_level": "normative"
+      }
+    ],
+    "agent": {
+      "id": "product-agent",
+      "trust_boundary": "project-acme-internal"
+    }
+  },
+  "audit_entries": [
+    {
+      "task_id": "task_2026-05-29_feat-001",
+      "skill_id": "feature-value-governance",
+      "skill_version": "0.1.0",
+      "agent_id": "product-agent",
+      "project_id": "project-acme",
+      "trust_boundary": "project-acme-internal",
+      "resolver_version": "0.1.0",
+      "timestamp": "2026-05-29T12:00:00.000Z",
+      "entry_type": "select",
+      "source_id": "example-4-layers",
+      "source_version": "1.0.0",
+      "sensitivity": "internal",
+      "authority_level": "interpretive",
+      "retrieved_scope": "capsule",
+      "retrieval_mode_applied": "capsule_first",
+      "restrictions_applied": [
+        "citation_required",
+        "no_export",
+        "no_verbatim"
+      ],
+      "human_review_required": true,
+      "human_review_reason": "source_condition:example-4-layers:external_publication",
+      "decision_output": "Selected example-4-layers@1.0.0 for slot \"strategic_framework\" (capsule)."
+    },
+    {
+      "task_id": "task_2026-05-29_feat-001",
+      "skill_id": "feature-value-governance",
+      "skill_version": "0.1.0",
+      "agent_id": "product-agent",
+      "project_id": "project-acme",
+      "trust_boundary": "project-acme-internal",
+      "resolver_version": "0.1.0",
+      "timestamp": "2026-05-29T12:00:00.000Z",
+      "entry_type": "select",
+      "source_id": "example-persona-casual-shopper",
+      "source_version": "0.4.0",
+      "sensitivity": "internal",
+      "authority_level": "evidence_proxy",
+      "retrieved_scope": "capsule",
+      "retrieval_mode_applied": "capsule_first",
+      "restrictions_applied": [
+        "citation_required",
+        "no_export",
+        "no_verbatim"
+      ],
+      "human_review_required": false,
+      "decision_output": "Selected example-persona-casual-shopper@0.4.0 for slot \"personas\" (capsule)."
+    },
+    {
+      "task_id": "task_2026-05-29_feat-001",
+      "skill_id": "feature-value-governance",
+      "skill_version": "0.1.0",
+      "agent_id": "product-agent",
+      "project_id": "project-acme",
+      "trust_boundary": "project-acme-internal",
+      "resolver_version": "0.1.0",
+      "timestamp": "2026-05-29T12:00:00.000Z",
+      "entry_type": "select",
+      "source_id": "wcag-internal",
+      "source_version": "1.2.0",
+      "sensitivity": "internal",
+      "authority_level": "normative",
+      "retrieved_scope": "excerpt",
+      "retrieval_mode_applied": "excerpt_only",
+      "restrictions_applied": [
+        "citation_required",
+        "no_export"
+      ],
+      "human_review_required": true,
+      "human_review_reason": "source_condition:wcag-internal:external_publication",
+      "decision_output": "Selected wcag-internal@1.2.0 for slot \"accessibility_guidelines\" (excerpt)."
+    },
+    {
+      "task_id": "task_2026-05-29_feat-001",
+      "skill_id": "feature-value-governance",
+      "skill_version": "0.1.0",
+      "agent_id": "product-agent",
+      "project_id": "project-acme",
+      "trust_boundary": "project-acme-internal",
+      "resolver_version": "0.1.0",
+      "timestamp": "2026-05-29T12:00:00.000Z",
+      "entry_type": "conflict",
+      "conflict_id": "conflict_2026-05-29_001",
+      "prevailing_source": "wcag-internal@1.2.0",
+      "suppressed_sources": [
+        "example-persona-casual-shopper@0.4.0"
+      ],
+      "human_review_required": false,
+      "decision_output": "Conflict on \"explicit form labels on checkout fields\" resolved_by source_precedence_policy; prevailing wcag-internal@1.2.0."
+    }
+  ]
+}
