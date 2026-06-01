@@ -15,6 +15,12 @@ phase prepares — but does not perform — the technical build.
 The single most important rule for the implementer: **build the logical roles already
 specified; do not invent scope.** When a contract is silent, ask; do not improvise.
 
+> **Implementation status (2026-05-29): all six build steps below are delivered.**
+> The reference engine lives in `engine/` (`loader`, `registry`, `resolver`, `context-pack`,
+> `audit-log`) with an end-to-end golden in `tests/e2e/`. It stayed inside the IN/OUT
+> boundary — no vector DB, IAM, DLP, UI, embeddings, or crypto entered the core. The brief
+> is retained as the build's contract of record; the per-step PRs are noted in "Build order".
+
 ---
 
 ## What already exists — do not duplicate
@@ -113,34 +119,34 @@ per the resolver's own refusal posture.
 ## Build order
 
 Each step is a thin, independently testable slice. Do not start a step before the prior
-step's tests are green.
+step's tests are green. **All six are delivered** (PR per step noted below).
 
-1. **Knowledge-pack loader + validation.** Extend `engine/loader.ts` with
+1. ✅ (#167) **Knowledge-pack loader + validation.** Extend `engine/loader.ts` with
    `loadKnowledgePack(path)` and `loadSkillKnowledgeDependency(path)`, validating against
    the existing schemas. Add types to `engine/types.ts`. *Test:* valid example loads;
    malformed manifest throws `SchemaValidationError`; non-canonical `sensitivity` rejected.
 
-2. **Registry.** `KnowledgeRegistry` over a set of loaded packs. Methods: `list()`,
+2. ✅ (#168) **Registry.** `KnowledgeRegistry` over a set of loaded packs. Methods: `list()`,
    `byType(type)`, `eligible(task, agent, user)`. Pure data in, pure data out. *Test:*
    allowlist filtering, scope filtering, sensitivity-ceiling filtering.
 
-3. **Resolver.** Implement the 8-step selection logic and the 4 refusal conditions from
+3. ✅ (#169) **Resolver.** Implement the 8-step selection logic and the 4 refusal conditions from
    [knowledge-resolver.md](../concepts/knowledge-resolver.md). Precedence ranking calls
    into the [source-precedence-policy](../contracts/source-precedence-policy.md) tiers.
    *Test:* required-dependency-satisfied, required-missing → refusal, capsule_first
    applied, conflict detected and resolved by precedence.
 
-4. **Context-pack assembly.** Serialize the resolver output to a knowledge-aware context
+4. ✅ (#170) **Context-pack assembly.** Serialize the resolver output to a knowledge-aware context
    pack in the shape of [`knowledge-aware-context-pack.json`](../../examples/project-extension/knowledge-aware-context-pack.json)
    (`restrictions_active`, `conflicts_detected`, `gaps`, `human_review`,
    `audit_log_entries_to_write`). *Test:* output matches the example shape; restricted
    sources never carry verbatim text.
 
-5. **Audit-log writer.** Interface + file sink emitting the required fields. *Test:* an
+5. ✅ (#171) **Audit-log writer.** Interface + file sink emitting the required fields. *Test:* an
    entry is written for select / consult / conflict / fallback / refusal; no restricted
    excerpt appears in any entry.
 
-6. **End-to-end golden.** One task + one skill-dependency manifest + a small registry →
+6. ✅ (#172) **End-to-end golden.** One task + one skill-dependency manifest + a small registry →
    a golden context pack + a golden audit trail. *Test:* deterministic output matches
    golden.
 
