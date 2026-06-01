@@ -64,7 +64,9 @@ active permissions.
 
 Consequence: the four-layer value lens (existence / growth / sustainment / organization)
 is referenced by *role*, never reproduced verbatim in this public pack. Proprietary
-framework content stays in its own pack outside the public repos.
+framework content stays in its own pack outside the public repos. The
+[four-layer value lens relation map](./four-layers-value-lens.md) shows exactly how each
+layer surfaces in the pack's gates and contract fields, without reproducing the framework.
 
 ## Guardrails this pack enforces
 
@@ -82,6 +84,8 @@ framework content stays in its own pack outside the public repos.
 ## Related
 
 - [Feature readiness gates](../../policies/feature-readiness-gates.md)
+- [Four-layer value lens relation map](./four-layers-value-lens.md)
+- [ADR-009 — Feature Value Governance Pack](../adr/ADR-009-feature-value-governance-pack.md)
 - [Knowledge Governance Layer](../concepts/knowledge-governance-layer.md)
 - Adaptive Skills: `feature-value-governance`, `revenue-lever-mapping`,
   `opportunity-tree-alignment`, `feature-complexity-audit`, `sunset-decision`.
