@@ -54,11 +54,11 @@
     "evidence_level": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["strength"],
+      "required": ["strength", "uncertainty"],
       "properties": {
         "strength": { "type": "string", "enum": ["strong", "moderate", "weak", "assumption"] },
         "sources": { "type": "array", "items": { "type": "string" }, "description": "Data, research, tickets, lost deals, interviews, benchmark." },
-        "uncertainty": { "type": "string", "description": "What is NOT known yet. Required reflection so the score is never mistaken for truth." }
+        "uncertainty": { "type": "string", "minLength": 1, "description": "What is NOT known yet. Required reflection so the score is never mistaken for truth." }
       }
     },
     "complexity_cost": {
