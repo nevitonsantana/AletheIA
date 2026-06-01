@@ -9,6 +9,12 @@ These gates **do not decide**. They force the decision to be explicit, traceable
 proportional to risk. A passing score is never a substitute for the decision and its
 recorded rationale.
 
+The gates below are also encoded for **runtime enforcement** as a governance pack —
+[`feature-value-governance.v1.json`](./feature-value-governance.v1.json) — which the
+AletheIA engine evaluates at the `before_execute` and `before_finalize` hooks. Actions
+vary by mode (`strict` / `balanced` / `relaxed`): e.g. a high-cost build without an
+exception `block`s in strict mode and drops to `review` in relaxed.
+
 ## The seven gates
 
 | Gate | Question | Rule |

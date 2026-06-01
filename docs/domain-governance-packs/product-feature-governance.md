@@ -39,6 +39,11 @@ here — see [How the strategic lens plugs in](#how-the-strategic-lens-plugs-in)
   the seven gates and the default Build / Test / Discovery / Park / Kill / Sunset decisions.
 - **Worked examples** — [`examples/feature-governance/`](../../examples/feature-governance/):
   `build`, `test`, `kill`, and `sunset` decision records against the contract.
+- **Runtime governance pack** — [`policies/feature-value-governance.v1.json`](../../policies/feature-value-governance.v1.json):
+  the seven gates and born-measurable obligations encoded as engine-evaluable rules
+  (`before_execute` and `before_finalize` hooks), so the policy is *enforced* by the
+  AletheIA engine, not only documented. Loaded via `loadGovernancePack` and evaluated
+  with `evaluateGovernance`.
 
 ## When to use the contract
 
