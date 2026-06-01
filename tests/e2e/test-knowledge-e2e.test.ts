@@ -94,6 +94,17 @@ describe("Knowledge Governance Layer — end-to-end golden", () => {
     expect(sink.entries).toEqual(golden.audit_entries);
   });
 
+  it("every e2e pack's source_location resolves to a real provenance file", () => {
+    const registry = loadKnowledgeRegistry(path.resolve(process.cwd(), E2E_DIR, "packs"));
+    for (const pack of registry.list()) {
+      const loc = pack.knowledge_pack.source_location;
+      expect(
+        fs.existsSync(path.resolve(process.cwd(), loc)),
+        `source_location for ${pack.knowledge_pack.id} does not resolve: ${loc}`,
+      ).toBe(true);
+    }
+  });
+
   it("no audit entry leaks restricted source content", () => {
     const { audit_entries } = runPipeline();
     const blob = JSON.stringify(audit_entries);
