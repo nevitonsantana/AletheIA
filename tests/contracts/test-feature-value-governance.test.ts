@@ -52,4 +52,30 @@ describe("Feature Value Governance Contract", () => {
     (data.revenue_lever as Record<string, unknown>).primary = "conversion";
     expect(() => validateAgainstSchema(data, schemaPath)).toThrow(SchemaValidationError);
   });
+
+  it("rejects a build_now record with no guardrail metric (born measurable)", () => {
+    const data = loadFixture();
+    delete data.guardrail_metrics;
+    expect(() => validateAgainstSchema(data, schemaPath)).toThrow(SchemaValidationError);
+  });
+
+  it("rejects a build_now record with an empty guardrail list", () => {
+    const data = loadFixture();
+    data.guardrail_metrics = [];
+    expect(() => validateAgainstSchema(data, schemaPath)).toThrow(SchemaValidationError);
+  });
+
+  it("rejects a build_now record missing a 30/90 review date", () => {
+    const data = loadFixture();
+    delete (data.review_dates as Record<string, unknown>).day_90;
+    expect(() => validateAgainstSchema(data, schemaPath)).toThrow(SchemaValidationError);
+  });
+
+  it("allows a kill verdict without guardrails or review dates", () => {
+    const data = loadFixture();
+    (data.decision as Record<string, unknown>).verdict = "kill";
+    delete data.guardrail_metrics;
+    data.review_dates = {};
+    expect(() => validateAgainstSchema(data, schemaPath)).not.toThrow();
+  });
 });

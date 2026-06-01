@@ -150,6 +150,22 @@
           "decision": { "required": ["exception_approval"] }
         }
       }
+    },
+    {
+      "$comment": "Born measurable: a build_now or test_first verdict must carry at least one guardrail metric and both 30/90 review dates. A primary metric alone is not enough to ship or test broadly.",
+      "if": {
+        "required": ["decision"],
+        "properties": {
+          "decision": { "properties": { "verdict": { "enum": ["build_now", "test_first"] } }, "required": ["verdict"] }
+        }
+      },
+      "then": {
+        "required": ["guardrail_metrics", "review_dates"],
+        "properties": {
+          "guardrail_metrics": { "minItems": 1 },
+          "review_dates": { "required": ["day_30", "day_90"] }
+        }
+      }
     }
   ]
 }
