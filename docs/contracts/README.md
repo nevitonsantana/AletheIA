@@ -27,6 +27,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [restricted-knowledge-usage-policy.md](restricted-knowledge-usage-policy.md) | Usage rules for confidential, restricted, and regulated sources |
 | [knowledge-audit-log-spec.md](knowledge-audit-log-spec.md) | Minimum audit fields when a knowledge source influences output |
 | [sensitivity-vocabulary-mapping.md](sensitivity-vocabulary-mapping.md) | Canonical sensitivity taxonomy and how project extensions map local labels to it |
+| [skill-evolution-validation-contract.md](skill-evolution-validation-contract.md) | What a skill evolution experiment and its validation evidence must satisfy to be governed |
 
 ### Operationalized by security checklists
 
