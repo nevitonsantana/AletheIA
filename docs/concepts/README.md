@@ -40,3 +40,4 @@ If you need a step-by-step guide, see [`guides/`](../guides/README.md). If you n
 | [user-provided-knowledge.md](user-provided-knowledge.md) | How users register knowledge bases without dumping documents into prompts |
 | [framework-capsules.md](framework-capsules.md) | Operational summary of a framework or large source; the default unit a skill consumes |
 | [knowledge-resolver.md](knowledge-resolver.md) | Logical role that selects which knowledge sources enter task context |
+| [governed-skill-optimization.md](governed-skill-optimization.md) | Why skill optimization is governed: evidence vs. authority, and where the boundary sits |
