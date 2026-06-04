@@ -53,7 +53,8 @@ Reading map organized by intent. Each entry links to the most useful starting po
 3. [Readiness gates spec](contracts/readiness-gates-spec.md)
 4. [Work slice spec bundle](contracts/work-slice-spec-bundle.md)
 5. [Slice telemetry model](contracts/slice-telemetry-model.md)
-6. [All contracts →](contracts/README.md)
+6. [Runtime effort governance contract](contracts/runtime-effort-governance-contract.md) — how an agent decides effort: start, escalate, de-escalate, stop, checkpoint
+7. [All contracts →](contracts/README.md)
 
 ---
 
@@ -93,6 +94,7 @@ Reading map organized by intent. Each entry links to the most useful starting po
 
 1. [Token policy](reference/token-policy.md)
 2. [Waste heuristics](reference/waste-heuristics.md)
-3. [Planning depth profiles](reference/planning-depth-profiles.md)
+3. [Effort escalation signals](reference/effort-escalation-signals.md)
+4. [Planning depth profiles](reference/planning-depth-profiles.md)
 4. [Launch kit](reference/launch-kit.md) — public-facing descriptions and taglines
 5. [All reference →](reference/README.md)

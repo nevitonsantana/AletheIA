@@ -15,6 +15,7 @@ The first examples stay docs-first and intentionally small.
 - `bounded-pilot-conversion-loop.md`
 - `slice-finalization-reference.md`
 - `clean-restart-command-adapter-example.md`
+- `runtime-effort-contract-example.md`
 
 ## Related pilot support
 

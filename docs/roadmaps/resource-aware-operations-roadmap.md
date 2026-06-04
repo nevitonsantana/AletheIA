@@ -321,3 +321,12 @@ This track now begins with:
 - `examples/resource-aware-operations/agent-runtime-decision-example.md`
 
 These are meant to establish the first observability spine, the first advisory signal layer, a minimal runtime contract, and an advisory fit layer before any benchmark or learning-layer work is attempted.
+
+Building on Phase E (planning-depth profiles and readiness gates), the track now adds an explicit effort-governance layer that decides when to start, escalate, de-escalate, and stop across those profiles:
+
+- `docs/contracts/runtime-effort-governance-contract.md`
+- `docs/reference/effort-escalation-signals.md`
+- `starter-pack/templates/runtime-effort-policy-template.md`
+- `examples/resource-aware-operations/runtime-effort-contract-example.md`
+
+This layer stays docs-first, advisory-first, and provider-agnostic. It does not select models, does not claim auto-routing, and keeps token saving subordinate to the quality floor.

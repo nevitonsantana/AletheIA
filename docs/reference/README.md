@@ -11,6 +11,7 @@ Consultable material: catalogs, checklists, policies, examples, adapter guides, 
 | [canonical-vocabulary.md](../concepts/canonical-vocabulary.md) | → see concepts/ (canonical vocabulary is a concept doc) |
 | [token-policy.md](token-policy.md) | Token discipline rules |
 | [waste-heuristics.md](waste-heuristics.md) | Heuristics for identifying operational waste |
+| [effort-escalation-signals.md](effort-escalation-signals.md) | Signals to escalate, de-escalate, or stop effort, and their priority order |
 | [planning-depth-profiles.md](planning-depth-profiles.md) | Lite / Standard / High-Assurance planning depth |
 | [launch-kit.md](launch-kit.md) | Public-facing descriptions, taglines, one-pager |
 | [learnings.md](learnings.md) | Durable lessons from AI-assisted work |
