@@ -54,7 +54,8 @@ Reading map organized by intent. Each entry links to the most useful starting po
 4. [Work slice spec bundle](contracts/work-slice-spec-bundle.md)
 5. [Slice telemetry model](contracts/slice-telemetry-model.md)
 6. [Runtime effort governance contract](contracts/runtime-effort-governance-contract.md) — how an agent decides effort: start, escalate, de-escalate, stop, checkpoint
-7. [All contracts →](contracts/README.md)
+7. [Agent harness governance extension](contracts/agent-harness-governance-extension.md) — how the harness authorizes, budgets, and bounds execution of model-proposed actions
+8. [All contracts →](contracts/README.md)
 
 ---
 
@@ -96,5 +97,8 @@ Reading map organized by intent. Each entry links to the most useful starting po
 2. [Waste heuristics](reference/waste-heuristics.md)
 3. [Effort escalation signals](reference/effort-escalation-signals.md)
 4. [Planning depth profiles](reference/planning-depth-profiles.md)
-4. [Launch kit](reference/launch-kit.md) — public-facing descriptions and taglines
-5. [All reference →](reference/README.md)
+5. [Tool permission matrix](reference/tool-permission-matrix.md) — risk taxonomy and permission decisions for model-requested tools
+6. [Runtime budget policy](reference/runtime-budget-policy.md) — hard runtime limits and budget profiles
+7. [Prompt caching and context cost strategy](reference/prompt-caching-context-cost-strategy.md) — cache-aware context architecture
+8. [Launch kit](reference/launch-kit.md) — public-facing descriptions and taglines
+9. [All reference →](reference/README.md)

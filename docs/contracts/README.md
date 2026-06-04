@@ -29,6 +29,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [sensitivity-vocabulary-mapping.md](sensitivity-vocabulary-mapping.md) | Canonical sensitivity taxonomy and how project extensions map local labels to it |
 | [skill-evolution-validation-contract.md](skill-evolution-validation-contract.md) | What a skill evolution experiment and its validation evidence must satisfy to be governed |
 | [runtime-effort-governance-contract.md](runtime-effort-governance-contract.md) | How an agent decides runtime effort for a work slice: start, escalate, de-escalate, stop, and human checkpoint |
+| [agent-harness-governance-extension.md](agent-harness-governance-extension.md) | How the harness validates, authorizes, executes, budgets, and returns structured observations for model-proposed actions |
 
 ### Operationalized by security checklists
 
