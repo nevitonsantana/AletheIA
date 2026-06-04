@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.local/schemas/runtime-effort-governance-contract.schema.json",
+  "title": "Runtime Effort Governance Record",
+  "description": "Minimum structured record an AletheIA-governed runtime emits for a work slice under the Runtime Effort Governance Contract (docs/contracts/runtime-effort-governance-contract.md). It captures how the slice was classified, the user's operational intent, the effort decision, the escalation/de-escalation reasons, the stop reason, and the minimum telemetry. The schema does not decide effort; it forces the decision to be explicit, traceable, and reconcilable with the signal catalog. Signal names are constrained to the contract's defined triggers so a record can never cite an undefined signal.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slice_id",
+    "task_type",
+    "classification",
+    "user_intent",
+    "initial_effort",
+    "final_effort",
+    "escalation_count",
+    "escalation_reasons",
+    "deescalation_count",
+    "deescalation_reasons",
+    "stop_reason",
+    "human_checkpoint_triggered",
+    "quality_floor_maintained",
+    "context_expansion_level",
+    "tool_iterations",
+    "timestamp"
+  ],
+  "$defs": {
+    "effort_level": { "type": "string", "enum": ["lite", "standard", "high_assurance"] },
+    "escalation_signal": {
+      "type": "string",
+      "enum": [
+        "missing_required_context",
+        "conflicting_requirements",
+        "multi_file_dependency_detected",
+        "test_or_validation_failure",
+        "low_confidence",
+        "security_privacy_or_compliance_risk",
+        "irreversible_or_external_action",
+        "risk_exceeds_authority",
+        "quality_floor_at_risk"
+      ]
+    },
+    "deescalation_signal": {
+      "type": "string",
+      "enum": [
+        "scope_became_local",
+        "required_context_found",
+        "risk_confirmed_low",
+        "answer_sufficient_without_more_tools"
+      ]
+    },
+    "intent": {
+      "type": "string",
+      "enum": ["speed", "precision", "safety", "autonomy", "cost_saving"]
+    }
+  },
+  "properties": {
+    "slice_id": { "type": "string", "minLength": 1 },
+    "task_type": {
+      "type": "string",
+      "enum": ["answer", "edit", "plan", "code_change", "review", "research", "automation"]
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reversibility", "blast_radius", "uncertainty", "risk_of_error", "context_need", "tool_need"],
+      "properties": {
+        "reversibility": { "type": "string", "enum": ["high", "medium", "low"] },
+        "blast_radius": { "type": "string", "enum": ["local", "multi_file", "systemic", "external_system"] },
+        "uncertainty": { "type": "string", "enum": ["low", "medium", "high"] },
+        "risk_of_error": { "type": "string", "enum": ["low", "medium", "high"] },
+        "context_need": { "type": "string", "enum": ["none", "local", "project", "external"] },
+        "tool_need": { "type": "string", "enum": ["none", "read_only", "write", "execute"] }
+      }
+    },
+    "user_intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["priority"],
+      "properties": {
+        "priority": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/intent" },
+          "description": "User-expressed operational intent, ordered. Resolved against the contract's intent_resolution priority; cost_saving never overrides the quality floor."
+        },
+        "confirmation_style": {
+          "type": "string",
+          "enum": ["ask_before_write", "ask_on_risk", "autonomous_with_summary"]
+        }
+      }
+    },
+    "initial_effort": { "$ref": "#/$defs/effort_level" },
+    "final_effort": { "$ref": "#/$defs/effort_level" },
+    "escalation_count": { "type": "integer", "minimum": 0 },
+    "escalation_reasons": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/escalation_signal" },
+      "description": "Observable triggers that justified raising effort. Must be defined escalation signals; a record cannot cite an undefined signal."
+    },
+    "deescalation_count": { "type": "integer", "minimum": 0 },
+    "deescalation_reasons": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/deescalation_signal" }
+    },
+    "stop_reason": {
+      "type": "string",
+      "enum": [
+        "sufficient_quality_reached",
+        "budget_exhausted",
+        "human_decision_required",
+        "risk_exceeds_authority",
+        "next_action_is_not_reversible"
+      ]
+    },
+    "human_checkpoint_triggered": { "type": "boolean" },
+    "quality_floor_maintained": { "type": "boolean" },
+    "context_expansion_level": { "type": "string", "enum": ["none", "targeted", "broad"] },
+    "tool_iterations": { "type": "integer", "minimum": 0 },
+    "timestamp": { "type": "string", "format": "date-time" }
+  },
+  "allOf": [
+    {
+      "$comment": "Escalation honesty: a zero escalation_count must carry no escalation reasons, and any escalation must record at least one reason. Effort never moves silently.",
+      "if": {
+        "properties": { "escalation_count": { "const": 0 } },
+        "required": ["escalation_count"]
+      },
+      "then": {
+        "properties": { "escalation_reasons": { "maxItems": 0 } }
+      },
+      "else": {
+        "properties": { "escalation_reasons": { "minItems": 1 } }
+      }
+    },
+    {
+      "$comment": "De-escalation honesty: same accounting rule for de-escalation.",
+      "if": {
+        "properties": { "deescalation_count": { "const": 0 } },
+        "required": ["deescalation_count"]
+      },
+      "then": {
+        "properties": { "deescalation_reasons": { "maxItems": 0 } }
+      },
+      "else": {
+        "properties": { "deescalation_reasons": { "minItems": 1 } }
+      }
+    },
+    {
+      "$comment": "Quality floor is never silently breached: if it was not maintained, the slice must have stopped for human authority or an exhausted budget, or raised a human checkpoint. cost_saving alone can never breach it.",
+      "if": {
+        "properties": { "quality_floor_maintained": { "const": false } },
+        "required": ["quality_floor_maintained"]
+      },
+      "then": {
+        "anyOf": [
+          { "properties": { "human_checkpoint_triggered": { "const": true } }, "required": ["human_checkpoint_triggered"] },
+          { "properties": { "stop_reason": { "enum": ["human_decision_required", "risk_exceeds_authority", "budget_exhausted"] } }, "required": ["stop_reason"] }
+        ]
+      }
+    },
+    {
+      "$comment": "Checkpoint coherence: a triggered human checkpoint must stop for an authority/irreversibility reason, not for ordinary sufficiency.",
+      "if": {
+        "properties": { "human_checkpoint_triggered": { "const": true } },
+        "required": ["human_checkpoint_triggered"]
+      },
+      "then": {
+        "properties": {
+          "stop_reason": { "enum": ["human_decision_required", "risk_exceeds_authority", "next_action_is_not_reversible"] }
+        },
+        "required": ["stop_reason"]
+      }
+    }
+  ]
+}

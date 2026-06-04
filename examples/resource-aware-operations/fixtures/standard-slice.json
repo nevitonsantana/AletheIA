@@ -1,0 +1,28 @@
+{
+  "slice_id": "slice-2026-06-02-001",
+  "task_type": "code_change",
+  "classification": {
+    "reversibility": "medium",
+    "blast_radius": "multi_file",
+    "uncertainty": "medium",
+    "risk_of_error": "medium",
+    "context_need": "project",
+    "tool_need": "write"
+  },
+  "user_intent": {
+    "priority": ["precision", "cost_saving"],
+    "confirmation_style": "ask_on_risk"
+  },
+  "initial_effort": "standard",
+  "final_effort": "high_assurance",
+  "escalation_count": 1,
+  "escalation_reasons": ["multi_file_dependency_detected"],
+  "deescalation_count": 0,
+  "deescalation_reasons": [],
+  "stop_reason": "human_decision_required",
+  "human_checkpoint_triggered": true,
+  "quality_floor_maintained": true,
+  "context_expansion_level": "targeted",
+  "tool_iterations": 2,
+  "timestamp": "2026-06-02T00:00:00Z"
+}
