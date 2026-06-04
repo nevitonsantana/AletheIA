@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.local/schemas/agent-harness-governance-record.schema.json",
+  "title": "Agent Harness Governance Record",
+  "description": "Minimum structured record an AletheIA-compatible harness emits for a single model-proposed action under the Agent Harness Governance Extension (docs/contracts/agent-harness-governance-extension.md). It captures the operating mode, the requested tool's risk and side-effect class, the permission decision and who made it, whether a side effect was committed, the resulting observation status, and the budget snapshot. The schema does not authorize actions; it forces the harness decision to be explicit, traceable, and reconcilable with the permission matrix. It enforces the AHGE invariants structurally: the model never authorizes its own actions, planning mode never commits a mutation, a side effect is never committed without an authorizing decision, denied or pending decisions never commit, high-risk commitments require a human authority, and a budget stop must name the exhausted budget.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "action_id",
+    "mode",
+    "tool_name",
+    "risk_class",
+    "side_effect_class",
+    "resource_scope",
+    "permission_decision",
+    "decision_authority",
+    "side_effect_committed",
+    "observation_status",
+    "budget_profile",
+    "retries_used",
+    "result_chars",
+    "timestamp"
+  ],
+  "$defs": {
+    "mutating_side_effect": {
+      "type": "string",
+      "enum": [
+        "internal_state_change",
+        "external_commitment",
+        "financial_transfer",
+        "identity_or_access_change",
+        "destructive_change",
+        "process_or_network_execution"
+      ]
+    },
+    "authorizing_decision": {
+      "type": "string",
+      "enum": ["allow", "run_in_sandbox"]
+    }
+  },
+  "properties": {
+    "action_id": { "type": "string", "minLength": 1 },
+    "mode": { "type": "string", "enum": ["planning", "execution"] },
+    "tool_name": { "type": "string", "minLength": 1 },
+    "risk_class": {
+      "type": "string",
+      "enum": [
+        "read_only",
+        "search_only",
+        "compute_only",
+        "draft_only",
+        "write_local",
+        "write_internal",
+        "write_external",
+        "communication",
+        "financial",
+        "identity_access",
+        "security_sensitive",
+        "process_execution",
+        "network_open_world",
+        "destructive",
+        "privileged_admin"
+      ]
+    },
+    "side_effect_class": {
+      "type": "string",
+      "enum": [
+        "none",
+        "local_artifact",
+        "internal_state_change",
+        "external_commitment",
+        "financial_transfer",
+        "identity_or_access_change",
+        "destructive_change",
+        "process_or_network_execution"
+      ]
+    },
+    "resource_scope": {
+      "type": "string",
+      "enum": ["user", "session", "project", "organization", "external"]
+    },
+    "permission_decision": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "deny",
+        "ask_user",
+        "approval_required",
+        "require_stronger_auth",
+        "run_in_sandbox",
+        "run_as_draft_only"
+      ]
+    },
+    "decision_authority": {
+      "type": "string",
+      "enum": ["harness", "human"],
+      "description": "Who made the permission decision. The model never appears here: the model proposes, it does not authorize its own actions."
+    },
+    "side_effect_committed": { "type": "boolean" },
+    "observation_status": {
+      "type": "string",
+      "enum": ["success", "error", "denied", "approval_required", "timeout", "aborted"]
+    },
+    "budget_profile": { "type": "string", "enum": ["lite", "standard", "high_assurance"] },
+    "stop_reason": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "budget_exceeded",
+        "approval_pending",
+        "denied_by_policy",
+        "error",
+        "timeout"
+      ]
+    },
+    "budget_exceeded": {
+      "type": "string",
+      "enum": [
+        "max_model_turns",
+        "max_tool_calls",
+        "max_parallel_tool_calls",
+        "max_wall_time_seconds",
+        "max_input_tokens",
+        "max_output_tokens",
+        "max_total_cost",
+        "max_tool_result_chars",
+        "max_retries_per_model_call",
+        "max_retries_per_tool_call"
+      ]
+    },
+    "retries_used": { "type": "integer", "minimum": 0 },
+    "result_chars": { "type": "integer", "minimum": 0 },
+    "timestamp": { "type": "string", "format": "date-time" }
+  },
+  "allOf": [
+    {
+      "$comment": "Planning mode blocks mutation: in planning mode a mutating side-effect class must be denied and must not be committed.",
+      "if": {
+        "properties": {
+          "mode": { "const": "planning" },
+          "side_effect_class": { "$ref": "#/$defs/mutating_side_effect" }
+        },
+        "required": ["mode", "side_effect_class"]
+      },
+      "then": {
+        "properties": {
+          "permission_decision": { "const": "deny" },
+          "side_effect_committed": { "const": false }
+        },
+        "required": ["permission_decision", "side_effect_committed"]
+      }
+    },
+    {
+      "$comment": "No commit without authorization: a committed side effect must carry an authorizing decision (allow or run_in_sandbox). Denied, pending, draft-only, or stronger-auth requests never commit.",
+      "if": {
+        "properties": { "side_effect_committed": { "const": true } },
+        "required": ["side_effect_committed"]
+      },
+      "then": {
+        "properties": { "permission_decision": { "$ref": "#/$defs/authorizing_decision" } },
+        "required": ["permission_decision"]
+      }
+    },
+    {
+      "$comment": "Denied or pending decisions never commit a side effect.",
+      "if": {
+        "properties": {
+          "permission_decision": {
+            "enum": ["deny", "ask_user", "approval_required", "require_stronger_auth", "run_as_draft_only"]
+          }
+        },
+        "required": ["permission_decision"]
+      },
+      "then": {
+        "properties": { "side_effect_committed": { "const": false } },
+        "required": ["side_effect_committed"]
+      }
+    },
+    {
+      "$comment": "High-risk commitments require a human authority: a committed financial, identity/access, destructive, or privileged-admin action must be authorized by a human, never by the harness alone.",
+      "if": {
+        "properties": {
+          "risk_class": { "enum": ["financial", "identity_access", "destructive", "privileged_admin"] },
+          "side_effect_committed": { "const": true }
+        },
+        "required": ["risk_class", "side_effect_committed"]
+      },
+      "then": {
+        "properties": { "decision_authority": { "const": "human" } },
+        "required": ["decision_authority"]
+      }
+    },
+    {
+      "$comment": "Status coherence: a denied observation must carry a deny decision; an approval_required observation must carry an approval_required decision.",
+      "if": {
+        "properties": { "observation_status": { "const": "denied" } },
+        "required": ["observation_status"]
+      },
+      "then": {
+        "properties": { "permission_decision": { "const": "deny" } },
+        "required": ["permission_decision"]
+      }
+    },
+    {
+      "$comment": "Approval coherence: an approval_required observation must not have committed a side effect and must carry the approval_required decision.",
+      "if": {
+        "properties": { "observation_status": { "const": "approval_required" } },
+        "required": ["observation_status"]
+      },
+      "then": {
+        "properties": {
+          "permission_decision": { "const": "approval_required" },
+          "side_effect_committed": { "const": false }
+        },
+        "required": ["permission_decision", "side_effect_committed"]
+      }
+    },
+    {
+      "$comment": "Budget stop coherence: if a budget was exceeded the stop_reason must say so, and an aborted observation that stops for budget must name the exhausted budget.",
+      "if": {
+        "properties": { "budget_exceeded": { "type": "string" } },
+        "required": ["budget_exceeded"]
+      },
+      "then": {
+        "properties": { "stop_reason": { "const": "budget_exceeded" } },
+        "required": ["stop_reason"]
+      }
+    }
+  ]
+}

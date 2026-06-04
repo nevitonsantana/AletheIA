@@ -398,6 +398,21 @@ regc_to_harness_mapping:
     telemetry: "complete"
 ```
 
+## Schema
+
+The prose above is the contract. The per-action **record** a harness emits — its mode, the
+requested tool's risk and side-effect class, the permission decision and who made it, whether a
+side effect was committed, the observation status, and the budget snapshot — is formalized as an
+optional JSON Schema:
+[`agent-harness-governance-record.schema.json`](../../schemas/agent-harness-governance-record.schema.json).
+
+The schema validates the record, not the prose. It enforces the AHGE invariants structurally:
+the model never appears as the deciding authority, planning mode never commits a mutation, a side
+effect is never committed without an authorizing decision, denied or pending decisions never
+commit, high-risk commitments require a human authority, and a budget stop must name the
+exhausted budget. See `examples/resource-aware-operations/fixtures/harness-action.json` for a
+conforming record.
+
 ## Versioning
 
 ```yaml
