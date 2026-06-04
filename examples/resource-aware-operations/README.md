@@ -16,6 +16,7 @@ The first examples stay docs-first and intentionally small.
 - `slice-finalization-reference.md`
 - `clean-restart-command-adapter-example.md`
 - `runtime-effort-contract-example.md`
+- `harness-governance-example.md`
 
 ## Related pilot support
 

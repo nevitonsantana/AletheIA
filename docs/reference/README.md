@@ -12,6 +12,9 @@ Consultable material: catalogs, checklists, policies, examples, adapter guides, 
 | [token-policy.md](token-policy.md) | Token discipline rules |
 | [waste-heuristics.md](waste-heuristics.md) | Heuristics for identifying operational waste |
 | [effort-escalation-signals.md](effort-escalation-signals.md) | Signals to escalate, de-escalate, or stop effort, and their priority order |
+| [tool-permission-matrix.md](tool-permission-matrix.md) | Risk taxonomy, permission decisions, and draft/commit split for model-requested tools |
+| [runtime-budget-policy.md](runtime-budget-policy.md) | Hard limits for turns, tool calls, time, tokens, cost, and retries, with budget profiles |
+| [prompt-caching-context-cost-strategy.md](prompt-caching-context-cost-strategy.md) | Stable/volatile context architecture for cache reuse without losing relevance |
 | [planning-depth-profiles.md](planning-depth-profiles.md) | Lite / Standard / High-Assurance planning depth |
 | [launch-kit.md](launch-kit.md) | Public-facing descriptions, taglines, one-pager |
 | [learnings.md](learnings.md) | Durable lessons from AI-assisted work |

@@ -337,3 +337,13 @@ The semantics are now formalized by an optional schema for the per-slice record,
 - `examples/resource-aware-operations/fixtures/standard-slice.json`
 - `tests/contracts/test-runtime-effort-governance.test.ts`
 - `docs/adr/ADR-010-runtime-effort-governance-contract.md`
+
+Complementing the effort layer, an Agent Harness Governance Extension now governs how the harness authorizes and bounds execution once effort is decided — tool permissions, runtime budgets, planning mode, the draft/commit split, structured observations, and cache-aware context:
+
+- `docs/contracts/agent-harness-governance-extension.md`
+- `docs/reference/tool-permission-matrix.md`
+- `docs/reference/runtime-budget-policy.md`
+- `docs/reference/prompt-caching-context-cost-strategy.md`
+- `examples/resource-aware-operations/harness-governance-example.md`
+
+This extension stays docs-first, advisory-first, and provider-agnostic. The model proposes; the harness validates, authorizes, executes, and records. It does not implement a runtime or permission engine, and a record schema, guardrail tests, and an ADR are deferred to a later phase.
