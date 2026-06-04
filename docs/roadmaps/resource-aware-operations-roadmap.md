@@ -330,3 +330,10 @@ Building on Phase E (planning-depth profiles and readiness gates), the track now
 - `examples/resource-aware-operations/runtime-effort-contract-example.md`
 
 This layer stays docs-first, advisory-first, and provider-agnostic. It does not select models, does not claim auto-routing, and keeps token saving subordinate to the quality floor.
+
+The semantics are now formalized by an optional schema for the per-slice record, with a vitest guardrail suite and an Architecture Decision Record:
+
+- `schemas/runtime-effort-governance-contract.schema.json`
+- `examples/resource-aware-operations/fixtures/standard-slice.json`
+- `tests/contracts/test-runtime-effort-governance.test.ts`
+- `docs/adr/ADR-010-runtime-effort-governance-contract.md`

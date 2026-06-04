@@ -370,6 +370,20 @@ Examples:
 
 See [runtime-effort-contract-example.md](../../examples/resource-aware-operations/runtime-effort-contract-example.md).
 
+## Schema
+
+The prose above is the contract. The per-slice **record** an agent emits — its
+classification, intent, effort decision, escalation/de-escalation reasons, stop reason, and
+minimum telemetry — is formalized as an optional JSON Schema:
+[`runtime-effort-governance-contract.schema.json`](../../schemas/runtime-effort-governance-contract.schema.json).
+
+The schema validates the record, not the prose. It constrains signal names to the defined
+catalog and enforces the "never silent" guardrails: escalation/de-escalation counts must
+match recorded reasons, a breached quality floor must coincide with a human checkpoint or an
+authority/budget stop, and a triggered checkpoint must stop for an authority or
+irreversibility reason. See `examples/resource-aware-operations/fixtures/standard-slice.json`
+for a conforming record.
+
 ## Relationship to other contracts
 
 - [effort-escalation-signals.md](../reference/effort-escalation-signals.md) — the catalog of escalation, de-escalation, stop, waste, and risk signals this contract reacts to, plus their priority order.

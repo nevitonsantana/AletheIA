@@ -71,3 +71,4 @@ Do *not* write one for:
 | [ADR-007](ADR-007-apm-packaging-strategy.md) | APM packaging strategy | Accepted |
 | [ADR-008](ADR-008-knowledge-governance-layer.md) | Knowledge Governance Layer | Accepted |
 | [ADR-009](ADR-009-feature-value-governance-pack.md) | Feature Value Governance Pack | Accepted |
+| [ADR-010](ADR-010-runtime-effort-governance-contract.md) | Runtime Effort Governance Contract | Accepted |
