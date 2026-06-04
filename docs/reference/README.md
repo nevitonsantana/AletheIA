@@ -15,6 +15,7 @@ Consultable material: catalogs, checklists, policies, examples, adapter guides, 
 | [tool-permission-matrix.md](tool-permission-matrix.md) | Risk taxonomy, permission decisions, and draft/commit split for model-requested tools |
 | [runtime-budget-policy.md](runtime-budget-policy.md) | Hard limits for turns, tool calls, time, tokens, cost, and retries, with budget profiles |
 | [prompt-caching-context-cost-strategy.md](prompt-caching-context-cost-strategy.md) | Stable/volatile context architecture for cache reuse without losing relevance |
+| [agent-harness-governance-validation-checklist.md](agent-harness-governance-validation-checklist.md) | Deferred phase-5 routine to validate the harness contract and record schema against a real trace |
 | [planning-depth-profiles.md](planning-depth-profiles.md) | Lite / Standard / High-Assurance planning depth |
 | [launch-kit.md](launch-kit.md) | Public-facing descriptions, taglines, one-pager |
 | [learnings.md](learnings.md) | Durable lessons from AI-assisted work |
