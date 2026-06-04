@@ -346,4 +346,11 @@ Complementing the effort layer, an Agent Harness Governance Extension now govern
 - `docs/reference/prompt-caching-context-cost-strategy.md`
 - `examples/resource-aware-operations/harness-governance-example.md`
 
-This extension stays docs-first, advisory-first, and provider-agnostic. The model proposes; the harness validates, authorizes, executes, and records. It does not implement a runtime or permission engine, and a record schema, guardrail tests, and an ADR are deferred to a later phase.
+This extension stays docs-first, advisory-first, and provider-agnostic. The model proposes; the harness validates, authorizes, executes, and records. It does not implement a runtime or permission engine.
+
+The per-action harness record is now formalized by an optional schema, with a vitest guardrail suite and an Architecture Decision Record:
+
+- `schemas/agent-harness-governance-record.schema.json`
+- `examples/resource-aware-operations/fixtures/harness-action.json`
+- `tests/contracts/test-agent-harness-governance.test.ts`
+- `docs/adr/ADR-011-agent-harness-governance-extension.md`
