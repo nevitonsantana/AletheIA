@@ -142,3 +142,6 @@ The healthy posture right now is:
 - reopen only when the signals become cross-slice or cross-project rather than anecdotal
 
 That is enough discipline for this stage.
+
+The repeatable routine that operationalizes this watch-list against accumulated slice evidence is
+[resource-aware-next-signals-validation-checklist.md](../reference/resource-aware-next-signals-validation-checklist.md).

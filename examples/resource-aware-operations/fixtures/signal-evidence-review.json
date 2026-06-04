@@ -1,0 +1,19 @@
+{
+  "review_id": "rans-review-2026-06-04-001",
+  "slice_ids": [
+    "slice-2026-06-02-001",
+    "slice-2026-06-03-004",
+    "slice-2026-06-03-009"
+  ],
+  "project_count": 2,
+  "signal": "repeated_comparable_slices",
+  "signal_is_cross_project": true,
+  "outcome_distribution": {
+    "reinforced": 2,
+    "no_change": 1,
+    "other": 0
+  },
+  "decision": "record_and_wait",
+  "decision_rationale": "Three comparable code-change slices across two projects showed similar resource-aware pressure and reinforced outcomes, but the review language is not yet comparable enough to reopen the track. Recording the signal and waiting for a second cross-project occurrence.",
+  "timestamp": "2026-06-04T00:00:00Z"
+}
