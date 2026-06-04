@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.local/schemas/resource-aware-signal-evidence.schema.json",
+  "title": "Resource-Aware Signal Evidence Record",
+  "description": "Optional structured record for one evidence-review event under the Resource-Aware Next-Signals validation routine (docs/reference/resource-aware-next-signals-validation-checklist.md). It aggregates the per-slice Runtime Effort Governance records (schemas/runtime-effort-governance-contract.schema.json) gathered for a review, names which of the four healthy signals fired, and captures the human decision. The schema does not decide whether to reopen the 1.2 track; it forces that decision to be explicit, traceable, and bounded by the next-signals threshold rule. A reopen recommendation can never rest on a single slice or a single project. Signal names are constrained to the four defined in resource-aware-next-signals.md so a record can never cite an undefined signal.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "review_id",
+    "slice_ids",
+    "project_count",
+    "signal",
+    "signal_is_cross_project",
+    "outcome_distribution",
+    "decision",
+    "decision_rationale",
+    "timestamp"
+  ],
+  "$defs": {
+    "healthy_signal": {
+      "type": "string",
+      "enum": [
+        "repeated_comparable_slices",
+        "repeated_late_stage_waste",
+        "repeated_local_translations",
+        "stable_reinforced_outcomes"
+      ]
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["keep_1_2_stable", "record_and_wait", "recommend_reopen_1_3"]
+    }
+  },
+  "properties": {
+    "review_id": { "type": "string", "minLength": 1 },
+    "slice_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 2,
+      "uniqueItems": true,
+      "$comment": "minItems is 2 by design: the next-signals doc forbids reopening on a single slice. One slice is an input, not a threshold. A review that has only one slice cannot be recorded — gather more first.",
+      "description": "The per-slice runtime-effort-governance records aggregated for this review. At least two, because anecdote is never a threshold."
+    },
+    "project_count": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "How many distinct projects the gathered slices span. Cross-project repetition (project_count > 1) is the strongest believable signal; required for a reopen recommendation."
+    },
+    "signal": {
+      "$ref": "#/$defs/healthy_signal",
+      "description": "Which of the four healthy signals fired across the gathered slices. Must be one of the four defined in resource-aware-next-signals.md; a record cannot cite an undefined signal."
+    },
+    "signal_is_cross_project": {
+      "type": "boolean",
+      "description": "True only when the firing signal appears across more than one project, not confined to one."
+    },
+    "outcome_distribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reinforced", "no_change", "other"],
+      "properties": {
+        "reinforced": { "type": "integer", "minimum": 0 },
+        "no_change": { "type": "integer", "minimum": 0 },
+        "other": { "type": "integer", "minimum": 0 }
+      },
+      "description": "Counts of slice review outcomes across the gathered set. Stable reinforced / no-change outcomes are themselves useful evidence."
+    },
+    "decision": {
+      "$ref": "#/$defs/decision",
+      "description": "The human judgement recorded for this review. The schema constrains this value but never produces it; nothing here reopens the track automatically."
+    },
+    "decision_rationale": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Why the decision was made, in plain language, reconcilable with the threshold rule in resource-aware-next-signals.md."
+    },
+    "timestamp": { "type": "string", "format": "date-time" }
+  },
+  "allOf": [
+    {
+      "$comment": "Reopen restraint, encoded structurally: a recommendation to reopen 1.2 toward 1.3 can never rest on a single project. It requires cross-project signal AND project_count > 1. Combined with slice_ids minItems:2, a reopen recommendation can never be anecdotal. This is the core rule of resource-aware-next-signals.md made non-bypassable.",
+      "if": {
+        "properties": { "decision": { "const": "recommend_reopen_1_3" } },
+        "required": ["decision"]
+      },
+      "then": {
+        "properties": {
+          "signal_is_cross_project": { "const": true },
+          "project_count": { "minimum": 2 }
+        },
+        "required": ["signal_is_cross_project", "project_count"]
+      }
+    },
+    {
+      "$comment": "Coherence: a signal cannot be flagged cross-project while the slices span only one project.",
+      "if": {
+        "properties": { "signal_is_cross_project": { "const": true } },
+        "required": ["signal_is_cross_project"]
+      },
+      "then": {
+        "properties": { "project_count": { "minimum": 2 } },
+        "required": ["project_count"]
+      }
+    }
+  ]
+}
