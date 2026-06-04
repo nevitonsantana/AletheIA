@@ -29,6 +29,7 @@ A reason to spend more effort, expand context, or raise planning depth.
 | `low_confidence` | The agent's confidence in the current answer is materially low. |
 | `security_privacy_or_compliance_risk` | The slice touches security, privacy, or compliance surface. |
 | `irreversible_or_external_action` | The next step is hard to undo or causes an external side effect. |
+| `risk_exceeds_authority` | The risk is above what the agent is authorized to take; escalate toward a human checkpoint. |
 | `quality_floor_at_risk` | Continuing at current effort would breach the required quality floor. |
 
 ---

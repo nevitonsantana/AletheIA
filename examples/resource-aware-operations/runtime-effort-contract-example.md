@@ -123,7 +123,7 @@ initial_effort: "standard"
 final_effort: "high_assurance"
 escalation_count: 1
 escalation_reasons:
-  - "systemic_blast_radius_detected"
+  - "irreversible_or_external_action"
 human_checkpoint_triggered: true
 stop_reason: "human_decision_required"
 quality_floor_maintained: true

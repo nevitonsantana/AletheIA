@@ -175,6 +175,7 @@ escalation_triggers:
   - "low_confidence"
   - "security_privacy_or_compliance_risk"
   - "irreversible_or_external_action"
+  - "risk_exceeds_authority"
   - "quality_floor_at_risk"
 ```
 
