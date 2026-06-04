@@ -117,7 +117,9 @@ record as an optional schema once the semantics had stabilized.
 
 ## 6. Review
 
-Revisit this ADR when any of the following becomes true:
+Revisit this ADR when any of the following becomes true. The
+[validation checklist](../reference/agent-harness-governance-validation-checklist.md) is the
+routine that turns a real harness trace into the evidence these triggers need.
 
 - A real runtime or adapter mapping needs record fields the schema does not model.
 - The risk taxonomy, decision set, or budget fields change as the contract is validated on real

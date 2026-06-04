@@ -413,6 +413,10 @@ commit, high-risk commitments require a human authority, and a budget stop must 
 exhausted budget. See `examples/resource-aware-operations/fixtures/harness-action.json` for a
 conforming record.
 
+To validate the contract and this schema against a **real harness trace** (the deferred phase-5
+step), follow
+[agent-harness-governance-validation-checklist.md](../reference/agent-harness-governance-validation-checklist.md).
+
 ## Versioning
 
 ```yaml
