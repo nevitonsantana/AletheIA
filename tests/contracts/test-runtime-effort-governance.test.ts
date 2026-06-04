@@ -66,6 +66,27 @@ describe("Runtime Effort Governance Record", () => {
     expect(() => validateAgainstSchema(data, schemaPath)).toThrow(SchemaValidationError);
   });
 
+  it("rejects a count higher than the number of recorded reasons (exact match)", () => {
+    const data = loadFixture();
+    data.escalation_count = 2;
+    data.escalation_reasons = ["multi_file_dependency_detected"];
+    expect(() => validateAgainstSchema(data, schemaPath)).toThrow(SchemaValidationError);
+  });
+
+  it("rejects a count lower than the number of recorded reasons (exact match)", () => {
+    const data = loadFixture();
+    data.escalation_count = 1;
+    data.escalation_reasons = ["multi_file_dependency_detected", "low_confidence"];
+    expect(() => validateAgainstSchema(data, schemaPath)).toThrow(SchemaValidationError);
+  });
+
+  it("accepts a record where escalation_count equals the reason total", () => {
+    const data = loadFixture();
+    data.escalation_count = 2;
+    data.escalation_reasons = ["multi_file_dependency_detected", "low_confidence"];
+    expect(() => validateAgainstSchema(data, schemaPath)).not.toThrow();
+  });
+
   it("rejects a breached quality floor that stops for ordinary sufficiency (never silent)", () => {
     const data = loadFixture();
     data.quality_floor_maintained = false;

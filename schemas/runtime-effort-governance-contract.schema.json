@@ -95,12 +95,18 @@
     "escalation_reasons": {
       "type": "array",
       "items": { "$ref": "#/$defs/escalation_signal" },
-      "description": "Observable triggers that justified raising effort. Must be defined escalation signals; a record cannot cite an undefined signal."
+      "minItems": { "$data": "1/escalation_count" },
+      "maxItems": { "$data": "1/escalation_count" },
+      "$comment": "Reasons are the source of truth: the array length must equal escalation_count exactly, so a record can never misreport how many effort moves occurred. minItems/maxItems use the JSON Schema $data extension (enabled in this repo's validator).",
+      "description": "Observable triggers that justified raising effort. Must be defined escalation signals, and exactly escalation_count of them; a record cannot cite an undefined signal or misreport the move total."
     },
     "deescalation_count": { "type": "integer", "minimum": 0 },
     "deescalation_reasons": {
       "type": "array",
-      "items": { "$ref": "#/$defs/deescalation_signal" }
+      "items": { "$ref": "#/$defs/deescalation_signal" },
+      "minItems": { "$data": "1/deescalation_count" },
+      "maxItems": { "$data": "1/deescalation_count" },
+      "$comment": "Same accounting rule: the array length must equal deescalation_count exactly."
     },
     "stop_reason": {
       "type": "string",
@@ -119,32 +125,6 @@
     "timestamp": { "type": "string", "format": "date-time" }
   },
   "allOf": [
-    {
-      "$comment": "Escalation honesty: a zero escalation_count must carry no escalation reasons, and any escalation must record at least one reason. Effort never moves silently.",
-      "if": {
-        "properties": { "escalation_count": { "const": 0 } },
-        "required": ["escalation_count"]
-      },
-      "then": {
-        "properties": { "escalation_reasons": { "maxItems": 0 } }
-      },
-      "else": {
-        "properties": { "escalation_reasons": { "minItems": 1 } }
-      }
-    },
-    {
-      "$comment": "De-escalation honesty: same accounting rule for de-escalation.",
-      "if": {
-        "properties": { "deescalation_count": { "const": 0 } },
-        "required": ["deescalation_count"]
-      },
-      "then": {
-        "properties": { "deescalation_reasons": { "maxItems": 0 } }
-      },
-      "else": {
-        "properties": { "deescalation_reasons": { "minItems": 1 } }
-      }
-    },
     {
       "$comment": "Quality floor is never silently breached: if it was not maintained, the slice must have stopped for human authority or an exhausted budget, or raised a human checkpoint. cost_saving alone can never breach it.",
       "if": {

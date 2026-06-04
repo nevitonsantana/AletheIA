@@ -13,7 +13,7 @@ export class SchemaValidationError extends Error {
   }
 }
 
-const ajv = new Ajv2020({ allErrors: true, strict: false });
+const ajv = new Ajv2020({ allErrors: true, strict: false, $data: true });
 addFormats(ajv);
 
 const validatorCache = new Map<string, ReturnType<typeof ajv.compile>>();
