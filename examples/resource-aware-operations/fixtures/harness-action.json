@@ -1,0 +1,17 @@
+{
+  "action_id": "action-2026-06-04-001",
+  "mode": "execution",
+  "tool_name": "send_email",
+  "risk_class": "communication",
+  "side_effect_class": "external_commitment",
+  "resource_scope": "external",
+  "permission_decision": "allow",
+  "decision_authority": "human",
+  "side_effect_committed": true,
+  "observation_status": "success",
+  "budget_profile": "standard",
+  "stop_reason": "completed",
+  "retries_used": 0,
+  "result_chars": 412,
+  "timestamp": "2026-06-04T00:00:00Z"
+}
