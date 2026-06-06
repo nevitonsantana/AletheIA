@@ -1,0 +1,51 @@
+{
+  "contract_id": "ahc-001",
+  "task_id": "debug-issue-001",
+  "agent_id": "codex",
+  "date": "2026-06-05",
+  "autonomy_level": "act_with_approval",
+  "task_boundary": {
+    "objective": "reproduce, isolate and propose a fix for a bug",
+    "non_goals": ["large refactor", "dependency migration", "production config changes"],
+    "risk_level": "medium",
+    "reversibility": "reversible"
+  },
+  "allowed_skills": ["debugging", "testing"],
+  "blocked_skills": [],
+  "allowed_tools": [
+    { "name": "file_read", "permission": "read" },
+    { "name": "test_runner", "permission": "execute" },
+    { "name": "file_edit", "permission": "write", "constraints": ["only after repro path is documented"] }
+  ],
+  "blocked_actions": ["change_secrets", "modify_production_config"],
+  "context_policy": {
+    "allowed_knowledge_packs": ["example-consumer@1.0.0"],
+    "retrieval_mode": "capsule_first",
+    "max_context_scope": "repository"
+  },
+  "gates": {
+    "before_write": true,
+    "before_delete": true,
+    "before_external_call": true,
+    "before_structural_change": true,
+    "before_final_answer": false
+  },
+  "sensors": {
+    "computational": ["failing_test", "regression_test"],
+    "inferential": ["debugging_review"]
+  },
+  "observability": {
+    "trace_required": true,
+    "tool_log_required": true,
+    "decision_log_required": true,
+    "evidence_required": true
+  },
+  "rollback": {
+    "required": true,
+    "strategy": "git_diff"
+  },
+  "human_review": {
+    "required": true,
+    "reviewer_role": "engineering"
+  }
+}
