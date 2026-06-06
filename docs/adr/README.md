@@ -74,3 +74,4 @@ Do *not* write one for:
 | [ADR-010](ADR-010-runtime-effort-governance-contract.md) | Runtime Effort Governance Contract | Accepted |
 | [ADR-011](ADR-011-agent-harness-governance-extension.md) | Agent Harness Governance Extension | Accepted |
 | [ADR-012](ADR-012-resource-aware-signal-validation.md) | Resource-Aware Signal Validation Layer | Accepted |
+| [ADR-013](ADR-013-agent-harness-contract.md) | Agent Harness Contract (per-task declaration) | Accepted |

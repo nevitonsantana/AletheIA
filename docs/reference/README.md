@@ -17,6 +17,7 @@ Consultable material: catalogs, checklists, policies, examples, adapter guides, 
 | [prompt-caching-context-cost-strategy.md](prompt-caching-context-cost-strategy.md) | Stable/volatile context architecture for cache reuse without losing relevance |
 | [agent-harness-governance-validation-checklist.md](agent-harness-governance-validation-checklist.md) | Deferred phase-5 routine to validate the harness contract and record schema against a real trace |
 | [resource-aware-next-signals-validation-checklist.md](resource-aware-next-signals-validation-checklist.md) | Deferred phase-5 routine to validate the next-signals watch-list against accumulated real slice evidence |
+| [harness-expiration-review-checklist.md](harness-expiration-review-checklist.md) | Routine for deciding when a harness control should be kept, simplified, or removed |
 | [planning-depth-profiles.md](planning-depth-profiles.md) | Lite / Standard / High-Assurance planning depth |
 | [launch-kit.md](launch-kit.md) | Public-facing descriptions, taglines, one-pager |
 | [learnings.md](learnings.md) | Durable lessons from AI-assisted work |
