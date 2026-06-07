@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.local/schemas/agent-harness-contract.schema.json",
+  "title": "Agent Harness Contract (per-task declaration)",
+  "description": "Optional structured record for the per-task Agent Harness Contract (docs/contracts/agent-harness-contract.md). It declares the operating envelope for a task before it runs: autonomy, allowed tools and skills, blocked actions, required gates, expected sensors, observability, rollback, human review, and the context policy. It is the upstream declaration that the Agent Harness Governance Extension (per-action) enforces and records, under the effort set by REGC and the context authorized by Knowledge Governance. The schema does not authorize or execute; it forces the declaration to be explicit and enforces the pack's safety invariants structurally: a write/execute tool above low risk requires a write gate; a hard-to-reverse task requires rollback and human review; autonomous_within_bounds requires blocked actions and rollback.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_id",
+    "task_id",
+    "agent_id",
+    "autonomy_level",
+    "task_boundary",
+    "allowed_tools",
+    "gates",
+    "observability",
+    "rollback",
+    "human_review"
+  ],
+  "$defs": {
+    "autonomy_level": {
+      "type": "string",
+      "enum": ["observe", "advise", "act_with_approval", "autonomous_within_bounds"]
+    },
+    "risk_level": { "type": "string", "enum": ["low", "medium", "high", "critical"] },
+    "reversibility": {
+      "type": "string",
+      "enum": ["reversible", "partially_reversible", "hard_to_reverse"]
+    },
+    "permission": { "type": "string", "enum": ["read", "write", "execute"] },
+    "retrieval_mode": {
+      "type": "string",
+      "enum": ["capsule_first", "excerpt_only", "metadata_only", "none"]
+    },
+    "max_context_scope": {
+      "type": "string",
+      "enum": ["task_only", "project", "repository", "workspace"]
+    },
+    "rollback_strategy": {
+      "type": "string",
+      "enum": ["git_diff", "revert_commit", "feature_flag", "manual_restore"]
+    },
+    "reviewer_role": {
+      "type": "string",
+      "enum": ["product", "design", "engineering", "governance", "security"]
+    }
+  },
+  "properties": {
+    "contract_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "agent_id": { "type": "string", "minLength": 1 },
+    "date": { "type": "string", "format": "date" },
+    "autonomy_level": { "$ref": "#/$defs/autonomy_level" },
+    "task_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["objective", "risk_level", "reversibility"],
+      "properties": {
+        "objective": { "type": "string", "minLength": 1 },
+        "non_goals": { "type": "array", "items": { "type": "string" } },
+        "risk_level": { "$ref": "#/$defs/risk_level" },
+        "reversibility": { "$ref": "#/$defs/reversibility" }
+      }
+    },
+    "allowed_skills": { "type": "array", "items": { "type": "string" } },
+    "blocked_skills": { "type": "array", "items": { "type": "string" } },
+    "allowed_tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "permission"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "permission": { "$ref": "#/$defs/permission" },
+          "constraints": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "blocked_actions": { "type": "array", "items": { "type": "string" } },
+    "context_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allowed_knowledge_packs": { "type": "array", "items": { "type": "string" } },
+        "retrieval_mode": { "$ref": "#/$defs/retrieval_mode" },
+        "max_context_scope": { "$ref": "#/$defs/max_context_scope" }
+      }
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "before_write",
+        "before_delete",
+        "before_external_call",
+        "before_structural_change",
+        "before_final_answer"
+      ],
+      "properties": {
+        "before_write": { "type": "boolean" },
+        "before_delete": { "type": "boolean" },
+        "before_external_call": { "type": "boolean" },
+        "before_structural_change": { "type": "boolean" },
+        "before_final_answer": { "type": "boolean" }
+      }
+    },
+    "sensors": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "computational": { "type": "array", "items": { "type": "string" } },
+        "inferential": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "observability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trace_required", "tool_log_required", "decision_log_required", "evidence_required"],
+      "properties": {
+        "trace_required": { "type": "boolean" },
+        "tool_log_required": { "type": "boolean" },
+        "decision_log_required": { "type": "boolean" },
+        "evidence_required": { "type": "boolean" }
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required"],
+      "properties": {
+        "required": { "type": "boolean" },
+        "strategy": { "$ref": "#/$defs/rollback_strategy" }
+      }
+    },
+    "human_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required"],
+      "properties": {
+        "required": { "type": "boolean" },
+        "reviewer_role": { "$ref": "#/$defs/reviewer_role" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$comment": "Invariant 1 — no unguarded write above low risk: if the task is medium/high/critical risk AND any allowed tool can write or execute, a write gate must be declared. Encodes Guardrails: no write action without a gate when risk_level is medium, high, or critical.",
+      "if": {
+        "properties": {
+          "task_boundary": {
+            "properties": { "risk_level": { "enum": ["medium", "high", "critical"] } },
+            "required": ["risk_level"]
+          },
+          "allowed_tools": {
+            "contains": {
+              "properties": { "permission": { "enum": ["write", "execute"] } },
+              "required": ["permission"]
+            }
+          }
+        },
+        "required": ["task_boundary", "allowed_tools"]
+      },
+      "then": {
+        "properties": {
+          "gates": {
+            "properties": { "before_write": { "const": true } },
+            "required": ["before_write"]
+          }
+        },
+        "required": ["gates"]
+      }
+    },
+    {
+      "$comment": "Invariant 2 — no irreversible action without recovery: a hard_to_reverse task must declare rollback.required and human_review.required.",
+      "if": {
+        "properties": {
+          "task_boundary": {
+            "properties": { "reversibility": { "const": "hard_to_reverse" } },
+            "required": ["reversibility"]
+          }
+        },
+        "required": ["task_boundary"]
+      },
+      "then": {
+        "properties": {
+          "rollback": {
+            "properties": { "required": { "const": true } },
+            "required": ["required"]
+          },
+          "human_review": {
+            "properties": { "required": { "const": true } },
+            "required": ["required"]
+          }
+        },
+        "required": ["rollback", "human_review"]
+      }
+    },
+    {
+      "$comment": "Invariant 3 — bounded autonomy: autonomous_within_bounds must declare at least one blocked action and require rollback.",
+      "if": {
+        "properties": { "autonomy_level": { "const": "autonomous_within_bounds" } },
+        "required": ["autonomy_level"]
+      },
+      "then": {
+        "properties": {
+          "blocked_actions": { "type": "array", "minItems": 1 },
+          "rollback": {
+            "properties": { "required": { "const": true } },
+            "required": ["required"]
+          }
+        },
+        "required": ["blocked_actions", "rollback"]
+      }
+    }
+  ]
+}
