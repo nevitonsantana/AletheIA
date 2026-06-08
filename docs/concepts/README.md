@@ -21,6 +21,9 @@ If you need a step-by-step guide, see [`guides/`](../guides/README.md). If you n
 | [agent-handoffs.md](agent-handoffs.md) | Cross-agent and cross-session transitions |
 | [handoff-capture-pattern.md](handoff-capture-pattern.md) | How to capture handoff signals from completed work |
 | [slice-finalization-and-restart.md](../guides/slice-finalization-and-restart.md) | → see guides/ |
+| [agent-harness-contract.md](agent-harness-contract.md) | The declared per-task operating envelope (autonomy, tools, gates, sensors, rollback) |
+| [agent-computer-interface.md](agent-computer-interface.md) | How to design tools agents consume (ACI), complementing the permission matrix |
+| [context-rot-controls.md](context-rot-controls.md) | Signals of long-session degradation and the minimal controls + checkpoint |
 | [self-application.md](self-application.md) | How AletheIA governs its own evolution |
 | [structured-risk-inference.md](structured-risk-inference.md) | Experimental risk inference layer |
 | [project-extension-pattern.md](project-extension-pattern.md) | How projects extend the overlay without distorting it |
