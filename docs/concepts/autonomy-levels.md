@@ -52,6 +52,7 @@ names** in their per-skill `harness_requirements` (see Adaptative Skills
 
 ## See also
 
+- [ADR-014](../adr/ADR-014-harness-enforcement-addendum.md) — the reconciliation decision recorded.
 - [agent-harness-contract.md](../contracts/agent-harness-contract.md) — per-task envelope that carries the level.
 - [tool-risk-taxonomy.md](tool-risk-taxonomy.md) — the orthogonal "how risky is this tool" axis.
 - [enforcement-boundaries.md](enforcement-boundaries.md) — who declares vs. who enforces.
