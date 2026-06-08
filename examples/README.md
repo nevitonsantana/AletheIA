@@ -35,6 +35,10 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - mostra como uma validação real no Crisis Monitor vira endurecimento pequeno e reutilizável no framework
 - `consumer-overlay-minimal/`
   - instância mínima viável do [consumer-project-overlay contract](../docs/contracts/consumer-project-overlay.md) — layout `ops/ai/` + shims Claude prontos para copiar
+- `harness/`
+  - Agent Harness Contracts trabalhados (per-task envelope) para debugging, testing e feature-planning
+- `agent-harness/`
+  - fluxo de **policy/verdict por ação** (allow/deny/require_approval) + audit record, contrastando skill operacional (debugging) vs consultiva (feature-value-governance)
 
 ---
 
