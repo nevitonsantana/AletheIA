@@ -157,6 +157,29 @@ By adding this distinction, AletheIA should show that:
 
 ---
 
+## Agent Harness Enforcement Addendum — who declares, who enforces
+
+The behavioral/technical distinction has a direct consequence for skills. A skill's prose ("the agent
+must not delete files") is **behavioral**. Turning that into a checkable, blockable outcome is
+**technical** — and it does not belong to the skill.
+
+Three roles, never merged:
+
+- **A skill declares** the operating envelope it needs (autonomy ceiling, expected/restricted tools,
+  approval gates, required evidence). In the Adaptative Skills repo this is the per-skill
+  `harness_requirements` block (`docs/harness-requirements-for-skills.md`). Declaration is behavioral:
+  it states intent, it does not block.
+- **The harness enforces** — it validates arguments, evaluates the permission policy, and produces a
+  verdict (allow / deny / require_approval / transform / log_only). This is technical enforcement,
+  defined in [agent-harness-governance-extension.md](../contracts/agent-harness-governance-extension.md).
+- **AletheIA defines the contracts** the harness enforces against: [autonomy-levels.md](autonomy-levels.md),
+  [tool-risk-taxonomy.md](tool-risk-taxonomy.md), [policy-verdicts.md](../contracts/policy-verdicts.md),
+  [agent-action-audit-record.md](../contracts/agent-action-audit-record.md).
+
+The mistake this addendum guards against is the same Mistake 1 above, applied to skills: treating a
+skill's declared restriction as if it were already enforced. A skill that *says* a tool is denied has
+not denied it. Only the harness can.
+
 ## Future evolution
 
 Later versions may connect this distinction more directly to:

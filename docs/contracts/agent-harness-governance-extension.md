@@ -417,6 +417,30 @@ To validate the contract and this schema against a **real harness trace** (the d
 step), follow
 [agent-harness-governance-validation-checklist.md](../reference/agent-harness-governance-validation-checklist.md).
 
+## Upstream: per-skill harness requirements
+
+This extension governs execution **per action**. The per-task envelope upstream of it is the
+[Agent Harness Contract](agent-harness-contract.md). Upstream of *that*, a skill can declare what
+envelope it generally needs — a **per-skill** `harness_requirements` block defined in the Adaptative
+Skills repo (`docs/harness-requirements-for-skills.md`, `templates/skill-harness-requirements.yaml`).
+
+The chain is declaration → envelope → enforcement:
+
+```txt
+skill harness_requirements   (per-skill, declares: Adaptative Skills)
+  ↓
+agent harness contract        (per-task, declares envelope: this repo)
+  ↓
+this extension                (per-action, validates/authorizes/records: this repo)
+```
+
+A skill's declaration is **not** authorization. It is an input the per-task contract and this
+extension reconcile against policy. The declaration vocabulary projects onto this extension's richer
+vocabulary: skill `risk_class` → [tool-risk-taxonomy.md](../concepts/tool-risk-taxonomy.md) →
+the registry `risk_class` here; skill `restriction` → [policy-verdicts.md](policy-verdicts.md) →
+the `permission_decision.decision` values here; skill `audit_requirements` →
+[agent-action-audit-record.md](agent-action-audit-record.md) → the `trace_event` model here.
+
 ## Versioning
 
 ```yaml
