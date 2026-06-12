@@ -78,6 +78,7 @@ unit is allowed to do (autonomy) — those are declared on their own axes.
 
 ## Related
 
+- [ADR-015](../adr/ADR-015-execution-pattern-governance-pack.md) — the decision record for this layer
 - [Execution Pattern Library](execution-pattern-library.md) — the ten patterns and the selection rules
 - [Execution Vehicle Selection](execution-vehicle-selection.md) — vehicle vs. pattern, proportionality
 - [Comprehension Debt](comprehension-debt.md) — the cost of generating more than anyone reads

@@ -108,6 +108,8 @@ record stay with the [Agent Harness Governance Extension](agent-harness-governan
 
 ## Related
 
+- [ADR-015](../adr/ADR-015-execution-pattern-governance-pack.md) — the decision record for this layer
+- [Execution Pattern Selection schema](../../schemas/execution-pattern-selection.schema.json) — optional structured validation (loop-rule invariants)
 - [Execution Pattern Governance](../concepts/execution-pattern-governance.md) — concept and three-axis distinction
 - [Execution Pattern Library](../concepts/execution-pattern-library.md) — the ten patterns and selection rules
 - [Execution Vehicle Selection](../concepts/execution-vehicle-selection.md) — vehicle vs pattern, proportionality

@@ -1,0 +1,49 @@
+{
+  "skill_id": "feature-value-governance",
+  "version": "0.1.0",
+  "compatible_patterns": [
+    {
+      "pattern": "adversarial_verification",
+      "conditions": "Review feature rationale against evidence, constraints and value contract.",
+      "required_controls": ["source_trace_required", "human_review_required"]
+    },
+    {
+      "pattern": "generate_and_filter",
+      "conditions": "Generate alternatives, then filter by revenue lever, evidence and complexity cost.",
+      "required_controls": ["explicit_filter_criteria", "audit_record_required"]
+    },
+    {
+      "pattern": "tournament_compare",
+      "conditions": "Compare strategic options with explicit trade-offs.",
+      "required_controls": ["human_final_decision"]
+    }
+  ],
+  "incompatible_patterns": [
+    {
+      "pattern": "loop_until_done",
+      "rationale": "Feature judgment does not have objective stop condition."
+    },
+    {
+      "pattern": "scheduled_stateful_loop",
+      "rationale": "Recurring automated roadmap action would create governance risk."
+    }
+  ],
+  "required_evidence_by_pattern": {
+    "adversarial_verification": { "evidence": ["value_contract_reference", "evidence_trace"] },
+    "generate_and_filter": { "evidence": ["alternatives_generated", "filter_criteria", "survivor_rationale"] },
+    "tournament_compare": { "evidence": ["compared_options", "trade_off_record", "human_decision_ref"] }
+  },
+  "escalation_triggers": [
+    "objective_gate_missing",
+    "touches_sensitive_area",
+    "judgment_required",
+    "recurring_failure",
+    "comprehension_debt_risk"
+  ],
+  "audit_requirements": {
+    "log_skill_id": true,
+    "log_pattern": true,
+    "log_controls": true,
+    "log_evidence_refs": true
+  }
+}
