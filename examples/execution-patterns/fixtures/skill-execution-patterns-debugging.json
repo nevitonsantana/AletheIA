@@ -1,0 +1,45 @@
+{
+  "skill_id": "debugging",
+  "version": "0.1.0",
+  "compatible_patterns": [
+    {
+      "pattern": "classify_and_act",
+      "conditions": "Classify failure type before selecting fix path.",
+      "required_controls": ["evidence_required"]
+    },
+    {
+      "pattern": "loop_until_done",
+      "conditions": "Only when tests or repro commands provide objective stop condition.",
+      "required_controls": ["objective_gate_required", "max_iterations", "human_review_before_merge"]
+    },
+    {
+      "pattern": "adversarial_verification",
+      "conditions": "Separate verifier checks root cause and recurrence guard.",
+      "required_controls": ["maker_checker_required"]
+    }
+  ],
+  "incompatible_patterns": [
+    {
+      "pattern": "tournament_compare",
+      "rationale": "Usually excessive for ordinary debugging unless root cause hypotheses conflict."
+    }
+  ],
+  "required_evidence_by_pattern": {
+    "classify_and_act": { "evidence": ["failure_classification", "repro_command"] },
+    "loop_until_done": { "evidence": ["failing_test", "passing_run", "iteration_count"] },
+    "adversarial_verification": { "evidence": ["root_cause_statement", "recurrence_guard"] }
+  },
+  "escalation_triggers": [
+    "objective_gate_missing",
+    "touches_sensitive_area",
+    "judgment_required",
+    "recurring_failure",
+    "comprehension_debt_risk"
+  ],
+  "audit_requirements": {
+    "log_skill_id": true,
+    "log_pattern": true,
+    "log_controls": true,
+    "log_evidence_refs": true
+  }
+}
