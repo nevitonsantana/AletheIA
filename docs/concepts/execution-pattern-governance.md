@@ -11,6 +11,8 @@ It is a **selection discipline**, not a runtime, scheduler, orchestrator, or pol
 docs-first and provider-agnostic: external references may inspire it, but the internal language
 stays vendor-neutral.
 
+![Infographic: AletheIA at the center as the decision layer, surrounded by Knowledge Governance, Adaptative Skills, Agent Harness, Enforcement, and Audit. At the lower center, Execution Pattern Selection lists the options manual prompt, single agent, classify-and-act, fan-out-and-synthesize, adversarial verification, generate-and-filter, tournament, loop until done, scheduled stateful loop, and human-led workflow. A flow at the base shows request, pattern selection, orchestration contract, skill compatibility, harness controls, objective gate, loop state, audit, and human review.](assets/infografico_execution_pattern_governance_aletheia_adaptative_skills.png)
+
 ## Where it sits
 
 Pattern selection sits **upstream of the per-task envelope**: first AletheIA picks the topology of
