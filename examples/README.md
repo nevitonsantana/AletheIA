@@ -39,6 +39,8 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - Agent Harness Contracts trabalhados (per-task envelope) para debugging, testing e feature-planning
 - `agent-harness/`
   - fluxo de **policy/verdict por ação** (allow/deny/require_approval) + audit record, contrastando skill operacional (debugging) vs consultiva (feature-value-governance)
+- `execution-patterns/`
+  - Execution Pattern Selections trabalhadas (topologia antes da execução): CI triage (scheduled stateful loop), síntese de entrevistas (fan-out + filter), review adversarial de PRD (maker-checker) e feature value review (loops explicitamente inadmissíveis)
 
 ---
 

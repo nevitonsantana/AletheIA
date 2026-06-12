@@ -76,3 +76,4 @@ Do *not* write one for:
 | [ADR-012](ADR-012-resource-aware-signal-validation.md) | Resource-Aware Signal Validation Layer | Accepted |
 | [ADR-013](ADR-013-agent-harness-contract.md) | Agent Harness Contract (per-task declaration) | Accepted |
 | [ADR-014](ADR-014-harness-enforcement-addendum.md) | Harness Enforcement Addendum: vocabulary reconciliation | Accepted |
+| [ADR-015](ADR-015-execution-pattern-governance-pack.md) | Execution Pattern Governance Pack | Accepted |

@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.local/schemas/execution-pattern-selection.schema.json",
+  "title": "Execution Pattern Selection (per-task declaration)",
+  "description": "Optional structured record for the per-task Execution Pattern Selection (docs/contracts/execution-pattern-selection.md). Filled before execution and upstream of the Agent Harness Contract: it declares the task shape, the risk, the recommended execution vehicle and pattern with rationales, the required controls, and a selection verdict. The schema does not select or execute; it forces the declaration to be explicit and enforces the loop rule structurally: loop patterns require an objective gate and a budget; a scheduled stateful loop additionally requires state and an audit record; a loop without available objective verification cannot be approved; irreversible action requires human review.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "task",
+    "work_type",
+    "task_shape",
+    "risk",
+    "recommended_vehicle",
+    "recommended_pattern",
+    "required_controls",
+    "decision"
+  ],
+  "$defs": {
+    "work_type": {
+      "type": "string",
+      "enum": ["engineering", "product", "research", "design", "governance", "communication", "operations"]
+    },
+    "judgment_level": { "type": "string", "enum": ["low", "medium", "high"] },
+    "risk_level": { "type": "string", "enum": ["low", "medium", "high", "critical"] },
+    "vehicle": {
+      "type": "string",
+      "enum": ["manual_prompt", "single_agent", "orchestrated_workflow", "loop", "human_led_workflow"]
+    },
+    "pattern": {
+      "type": "string",
+      "enum": [
+        "manual_prompt",
+        "single_agent",
+        "classify_and_act",
+        "fan_out_and_synthesize",
+        "adversarial_verification",
+        "generate_and_filter",
+        "tournament_compare",
+        "loop_until_done",
+        "scheduled_stateful_loop",
+        "human_led_workflow"
+      ]
+    },
+    "verdict": {
+      "type": "string",
+      "enum": ["approved", "approved_with_constraints", "rejected", "human_led_required"]
+    }
+  },
+  "properties": {
+    "task_id": { "type": "string", "minLength": 1 },
+    "task": { "type": "string", "minLength": 1 },
+    "work_type": { "$ref": "#/$defs/work_type" },
+    "task_shape": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repeated",
+        "decomposable",
+        "independent_units",
+        "stages_depend_on_previous_output",
+        "requires_judgment",
+        "objective_verification_available",
+        "state_required"
+      ],
+      "properties": {
+        "repeated": { "type": "boolean" },
+        "decomposable": { "type": "boolean" },
+        "independent_units": { "type": "boolean" },
+        "stages_depend_on_previous_output": { "type": "boolean" },
+        "requires_judgment": { "$ref": "#/$defs/judgment_level" },
+        "objective_verification_available": { "type": "boolean" },
+        "state_required": { "type": "boolean" }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["risk_level", "touches_sensitive_context", "external_side_effect", "irreversible_action_possible"],
+      "properties": {
+        "risk_level": { "$ref": "#/$defs/risk_level" },
+        "touches_sensitive_context": { "type": "boolean" },
+        "external_side_effect": { "type": "boolean" },
+        "irreversible_action_possible": { "type": "boolean" }
+      }
+    },
+    "recommended_vehicle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "rationale"],
+      "properties": {
+        "type": { "$ref": "#/$defs/vehicle" },
+        "rationale": { "type": "string", "minLength": 1 }
+      }
+    },
+    "recommended_pattern": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "rationale"],
+      "properties": {
+        "type": { "$ref": "#/$defs/pattern" },
+        "rationale": { "type": "string", "minLength": 1 }
+      }
+    },
+    "required_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state_required",
+        "objective_gate_required",
+        "maker_checker_required",
+        "human_review_required",
+        "token_budget_required",
+        "audit_record_required"
+      ],
+      "properties": {
+        "state_required": { "type": "boolean" },
+        "objective_gate_required": { "type": "boolean" },
+        "maker_checker_required": { "type": "boolean" },
+        "human_review_required": { "type": "boolean" },
+        "token_budget_required": { "type": "boolean" },
+        "audit_record_required": { "type": "boolean" }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verdict"],
+      "properties": {
+        "verdict": { "$ref": "#/$defs/verdict" },
+        "notes": { "type": "string" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$comment": "Invariant 1 — loop patterns inherit the loop rule: loop_until_done or scheduled_stateful_loop requires an objective gate and a budget. Encodes the Objective Gate Policy preconditions (a) and (b).",
+      "if": {
+        "properties": {
+          "recommended_pattern": {
+            "properties": { "type": { "enum": ["loop_until_done", "scheduled_stateful_loop"] } },
+            "required": ["type"]
+          }
+        },
+        "required": ["recommended_pattern"]
+      },
+      "then": {
+        "properties": {
+          "required_controls": {
+            "properties": {
+              "objective_gate_required": { "const": true },
+              "token_budget_required": { "const": true }
+            },
+            "required": ["objective_gate_required", "token_budget_required"]
+          }
+        },
+        "required": ["required_controls"]
+      }
+    },
+    {
+      "$comment": "Invariant 2 — recurrence requires state and audit: scheduled_stateful_loop must declare state_required and audit_record_required. Encodes Objective Gate Policy precondition (c) and the audit duty of recurring loops.",
+      "if": {
+        "properties": {
+          "recommended_pattern": {
+            "properties": { "type": { "const": "scheduled_stateful_loop" } },
+            "required": ["type"]
+          }
+        },
+        "required": ["recommended_pattern"]
+      },
+      "then": {
+        "properties": {
+          "required_controls": {
+            "properties": {
+              "state_required": { "const": true },
+              "audit_record_required": { "const": true }
+            },
+            "required": ["state_required", "audit_record_required"]
+          }
+        },
+        "required": ["required_controls"]
+      }
+    },
+    {
+      "$comment": "Invariant 3 — no verification, no autonomous loop: if objective verification is not available and a loop pattern is recommended, the verdict cannot approve it — only rejected or human_led_required are admissible.",
+      "if": {
+        "properties": {
+          "task_shape": {
+            "properties": { "objective_verification_available": { "const": false } },
+            "required": ["objective_verification_available"]
+          },
+          "recommended_pattern": {
+            "properties": { "type": { "enum": ["loop_until_done", "scheduled_stateful_loop"] } },
+            "required": ["type"]
+          }
+        },
+        "required": ["task_shape", "recommended_pattern"]
+      },
+      "then": {
+        "properties": {
+          "decision": {
+            "properties": { "verdict": { "enum": ["rejected", "human_led_required"] } },
+            "required": ["verdict"]
+          }
+        },
+        "required": ["decision"]
+      }
+    },
+    {
+      "$comment": "Invariant 4 — irreversibility requires human review: if irreversible action is possible, human_review_required must be true. Encodes Objective Gate Policy precondition (e) at selection time.",
+      "if": {
+        "properties": {
+          "risk": {
+            "properties": { "irreversible_action_possible": { "const": true } },
+            "required": ["irreversible_action_possible"]
+          }
+        },
+        "required": ["risk"]
+      },
+      "then": {
+        "properties": {
+          "required_controls": {
+            "properties": { "human_review_required": { "const": true } },
+            "required": ["human_review_required"]
+          }
+        },
+        "required": ["required_controls"]
+      }
+    }
+  ]
+}
