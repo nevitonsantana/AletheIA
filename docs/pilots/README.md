@@ -19,6 +19,7 @@ Operation closeouts (session/task records from Hermes and other runtimes) live i
 | [resource-aware-operations-review.md](resource-aware-operations-review.md) | Consolidation of what the 1.2 track proves |
 | [report-core-operating-path-friction-test.md](report-core-operating-path-friction-test.md) | Friction test: is `core-operating-path.md` sufficient for first use? |
 | [visual-operations-pr-193-retrospective.md](visual-operations-pr-193-retrospective.md) | Retrospective reconstruction of PR #193 using the Visual Operations vocabulary |
+| [Visual Operations phase closeout](closeouts/2026-06-15-visual-operations-phase-closeout.md) | Closure evidence and activation gates after PRs #193–#197 |
 
 ## Cycle records
 

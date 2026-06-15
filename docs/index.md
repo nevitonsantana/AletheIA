@@ -43,6 +43,7 @@ Reading map organized by intent. Each entry links to the most useful starting po
 5. [Visual Operations Privacy Boundaries](contracts/visual-ops-privacy-boundaries.md) — metadata-first handling of sensitive sources
 6. [Synthetic Mission Control example](../examples/visual-operations/dashboard-snapshot.md) — reconstructible static snapshot
 7. [GitHub PR projector](guides/github-pr-visual-operations-projector.md) — deterministic JSON and Markdown projection from supplied evidence
+8. [Visual Operations phase closeout](pilots/closeouts/2026-06-15-visual-operations-phase-closeout.md) — delivered boundary, evidence, and future activation gates
 
 ---
 
