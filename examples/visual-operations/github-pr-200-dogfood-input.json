@@ -1,0 +1,111 @@
+{
+  "project_id": "aletheia",
+  "projected_at": "2026-06-15T22:45:00Z",
+  "repository": {
+    "full_name": "nevitonsantana/AletheIA",
+    "url": "https://github.com/nevitonsantana/AletheIA"
+  },
+  "pull_request": {
+    "number": 200,
+    "title": "docs(visual-ops): add AletheIA dogfood protocol",
+    "url": "https://github.com/nevitonsantana/AletheIA/pull/200",
+    "state": "closed",
+    "draft": false,
+    "author": "nevitonsantana",
+    "created_at": "2026-06-15T22:26:26Z",
+    "merged_at": "2026-06-15T22:34:45Z",
+    "closed_at": "2026-06-15T22:34:45Z",
+    "head_sha": "0e52eb2af56501171c29e6355dd03a99e1cdd07f",
+    "base_ref": "main"
+  },
+  "timeline": [
+    {
+      "id": "pr-200-merged",
+      "type": "merged",
+      "created_at": "2026-06-15T22:34:45Z",
+      "actor": "nevitonsantana",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/pull/200"
+    },
+    {
+      "id": "pr-200-closed",
+      "type": "closed",
+      "created_at": "2026-06-15T22:34:45Z",
+      "actor": "nevitonsantana",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/pull/200"
+    }
+  ],
+  "checks": [
+    {
+      "id": "81539363901",
+      "name": "Governance Check (scripts/check-governance.sh)",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "started_at": "2026-06-15T22:26:32Z",
+      "completed_at": "2026-06-15T22:26:37Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363901"
+    },
+    {
+      "id": "81539363943",
+      "name": "Install & TypeScript Build",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "started_at": "2026-06-15T22:26:32Z",
+      "completed_at": "2026-06-15T22:26:48Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363943"
+    },
+    {
+      "id": "81539363892",
+      "name": "Lockfile sync (package.json ↔ pnpm-lock.yaml)",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "started_at": "2026-06-15T22:26:32Z",
+      "completed_at": "2026-06-15T22:26:35Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363892"
+    },
+    {
+      "id": "81539406046",
+      "name": "Tests (Vitest)",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "started_at": "2026-06-15T22:26:50Z",
+      "completed_at": "2026-06-15T22:27:14Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539406046"
+    },
+    {
+      "id": "81539405921",
+      "name": "Visual Operations Snapshots",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "started_at": "2026-06-15T22:26:56Z",
+      "completed_at": "2026-06-15T22:27:13Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539405921"
+    },
+    {
+      "id": "81539469950",
+      "name": "Quality Gate (aggregator)",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "started_at": "2026-06-15T22:27:23Z",
+      "completed_at": "2026-06-15T22:27:25Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539469950"
+    }
+  ],
+  "reviews": [],
+  "findings": [],
+  "author_reported_validations": [
+    {
+      "id": "pr-200-local-validation",
+      "name": "Local docs validation",
+      "status": "passed",
+      "summary": "The PR description reports pnpm check:governance, pnpm test, git diff --check, local Markdown link checks across changed docs, and a scope check confirming only docs changed while plans/ stayed untracked.",
+      "reported_at": "2026-06-15T22:26:26Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/pull/200"
+    }
+  ]
+}

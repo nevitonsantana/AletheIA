@@ -1,0 +1,379 @@
+{
+  "projection": {
+    "mode": "read_only",
+    "projector": "github_pull_request",
+    "projected_at": "2026-06-15T22:45:00Z",
+    "source_refs": [
+      "https://github.com/nevitonsantana/AletheIA/pull/200"
+    ]
+  },
+  "work_slice_visual_state": {
+    "work_slice_id": "github-pr-200",
+    "title": "docs(visual-ops): add AletheIA dogfood protocol",
+    "objective": "unknown",
+    "presentation_lane": "closed",
+    "lane_confidence": "confirmed",
+    "risk_level": "unknown",
+    "planning_depth": "unknown",
+    "readiness_outcome": "unknown",
+    "evidence_status": "sufficient",
+    "human_review": {
+      "required": "unknown",
+      "status": "unavailable",
+      "reviewer_role": null,
+      "open_question": null,
+      "source_refs": []
+    },
+    "primary_skill": {
+      "skill_id": "unknown",
+      "activation_status": "unknown",
+      "source_refs": []
+    },
+    "runtime": {
+      "runtime_id": "unavailable",
+      "session_status": "unavailable",
+      "source_refs": []
+    },
+    "telemetry": {
+      "tokens": {
+        "value": null,
+        "provenance": "unavailable",
+        "source_refs": []
+      },
+      "cost": {
+        "value": null,
+        "currency": null,
+        "provenance": "unavailable",
+        "source_refs": []
+      }
+    },
+    "alerts": [],
+    "evidence": [
+      {
+        "evidence_id": "evidence-check-81539363901",
+        "type": "ci_check",
+        "status": "passed",
+        "provenance": "ci_observed",
+        "summary": "Governance Check (scripts/check-governance.sh): completed/success.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363901"
+        ]
+      },
+      {
+        "evidence_id": "evidence-check-81539363943",
+        "type": "ci_check",
+        "status": "passed",
+        "provenance": "ci_observed",
+        "summary": "Install & TypeScript Build: completed/success.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363943"
+        ]
+      },
+      {
+        "evidence_id": "evidence-check-81539363892",
+        "type": "ci_check",
+        "status": "passed",
+        "provenance": "ci_observed",
+        "summary": "Lockfile sync (package.json ↔ pnpm-lock.yaml): completed/success.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363892"
+        ]
+      },
+      {
+        "evidence_id": "evidence-check-81539406046",
+        "type": "ci_check",
+        "status": "passed",
+        "provenance": "ci_observed",
+        "summary": "Tests (Vitest): completed/success.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539406046"
+        ]
+      },
+      {
+        "evidence_id": "evidence-check-81539405921",
+        "type": "ci_check",
+        "status": "passed",
+        "provenance": "ci_observed",
+        "summary": "Visual Operations Snapshots: completed/success.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539405921"
+        ]
+      },
+      {
+        "evidence_id": "evidence-check-81539469950",
+        "type": "ci_check",
+        "status": "passed",
+        "provenance": "ci_observed",
+        "summary": "Quality Gate (aggregator): completed/success.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539469950"
+        ]
+      },
+      {
+        "evidence_id": "evidence-author-pr-200-local-validation",
+        "type": "author_reported_validation",
+        "status": "passed",
+        "provenance": "author_reported",
+        "summary": "The PR description reports pnpm check:governance, pnpm test, git diff --check, local Markdown link checks across changed docs, and a scope check confirming only docs changed while plans/ stayed untracked.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/pull/200"
+        ]
+      }
+    ],
+    "source_refs": [
+      "https://github.com/nevitonsantana/AletheIA",
+      "https://github.com/nevitonsantana/AletheIA/pull/200",
+      "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363901",
+      "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363943",
+      "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363892",
+      "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539406046",
+      "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539405921",
+      "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539469950"
+    ],
+    "projected_at": "2026-06-15T22:45:00Z"
+  },
+  "normalized_events": [
+    {
+      "event_id": "evt-github-pr-200-author-validation-pr-200-local-validation",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-200",
+      "timestamp": "2026-06-15T22:26:26Z",
+      "source_type": "external",
+      "event_type": "evidence.added",
+      "actor": "nevitonsantana",
+      "summary": "The PR description reports pnpm check:governance, pnpm test, git diff --check, local Markdown link checks across changed docs, and a scope check confirming only docs changed while plans/ stayed untracked.",
+      "payload_metadata": {
+        "validation_name": "Local docs validation",
+        "validation_status": "passed",
+        "provenance": "author_reported"
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/pull/200"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_pull_request_report",
+          "ref": "https://github.com/nevitonsantana/AletheIA/pull/200"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-200-created",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-200",
+      "timestamp": "2026-06-15T22:26:26Z",
+      "source_type": "external",
+      "event_type": "work_slice.created",
+      "actor": "nevitonsantana",
+      "summary": "GitHub pull request #200 was opened.",
+      "payload_metadata": {
+        "repository": "nevitonsantana/AletheIA",
+        "base_ref": "main",
+        "head_sha": "0e52eb2af56501171c29e6355dd03a99e1cdd07f",
+        "draft": false
+      },
+      "evidence_refs": [],
+      "source_refs": [
+        {
+          "kind": "github_pull_request",
+          "ref": "https://github.com/nevitonsantana/AletheIA/pull/200"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-200-check-81539363892",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-200",
+      "timestamp": "2026-06-15T22:26:35Z",
+      "source_type": "external",
+      "event_type": "validation.passed",
+      "actor": "github-actions",
+      "summary": "GitHub check Lockfile sync (package.json ↔ pnpm-lock.yaml) reported success.",
+      "payload_metadata": {
+        "check_name": "Lockfile sync (package.json ↔ pnpm-lock.yaml)",
+        "conclusion": "success",
+        "required": true
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363892"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_check",
+          "ref": "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363892"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-200-check-81539363901",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-200",
+      "timestamp": "2026-06-15T22:26:37Z",
+      "source_type": "external",
+      "event_type": "validation.passed",
+      "actor": "github-actions",
+      "summary": "GitHub check Governance Check (scripts/check-governance.sh) reported success.",
+      "payload_metadata": {
+        "check_name": "Governance Check (scripts/check-governance.sh)",
+        "conclusion": "success",
+        "required": true
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363901"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_check",
+          "ref": "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363901"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-200-check-81539363943",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-200",
+      "timestamp": "2026-06-15T22:26:48Z",
+      "source_type": "external",
+      "event_type": "validation.passed",
+      "actor": "github-actions",
+      "summary": "GitHub check Install & TypeScript Build reported success.",
+      "payload_metadata": {
+        "check_name": "Install & TypeScript Build",
+        "conclusion": "success",
+        "required": true
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363943"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_check",
+          "ref": "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539363943"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-200-check-81539405921",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-200",
+      "timestamp": "2026-06-15T22:27:13Z",
+      "source_type": "external",
+      "event_type": "validation.passed",
+      "actor": "github-actions",
+      "summary": "GitHub check Visual Operations Snapshots reported success.",
+      "payload_metadata": {
+        "check_name": "Visual Operations Snapshots",
+        "conclusion": "success",
+        "required": true
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539405921"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_check",
+          "ref": "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539405921"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-200-check-81539406046",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-200",
+      "timestamp": "2026-06-15T22:27:14Z",
+      "source_type": "external",
+      "event_type": "validation.passed",
+      "actor": "github-actions",
+      "summary": "GitHub check Tests (Vitest) reported success.",
+      "payload_metadata": {
+        "check_name": "Tests (Vitest)",
+        "conclusion": "success",
+        "required": true
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539406046"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_check",
+          "ref": "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539406046"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-200-check-81539469950",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-200",
+      "timestamp": "2026-06-15T22:27:25Z",
+      "source_type": "external",
+      "event_type": "validation.passed",
+      "actor": "github-actions",
+      "summary": "GitHub check Quality Gate (aggregator) reported success.",
+      "payload_metadata": {
+        "check_name": "Quality Gate (aggregator)",
+        "conclusion": "success",
+        "required": true
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539469950"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_check",
+          "ref": "https://github.com/nevitonsantana/AletheIA/actions/runs/27580494684/job/81539469950"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-200-timeline-pr-200-closed",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-200",
+      "timestamp": "2026-06-15T22:34:45Z",
+      "source_type": "external",
+      "event_type": "reconcile.created",
+      "actor": "nevitonsantana",
+      "summary": "GitHub recorded pull request event: closed.",
+      "payload_metadata": {
+        "github_event_type": "closed"
+      },
+      "evidence_refs": [],
+      "source_refs": [
+        {
+          "kind": "github_timeline_event",
+          "ref": "https://github.com/nevitonsantana/AletheIA/pull/200"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-200-timeline-pr-200-merged",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-200",
+      "timestamp": "2026-06-15T22:34:45Z",
+      "source_type": "external",
+      "event_type": "reconcile.created",
+      "actor": "nevitonsantana",
+      "summary": "GitHub recorded pull request event: merged.",
+      "payload_metadata": {
+        "github_event_type": "merged"
+      },
+      "evidence_refs": [],
+      "source_refs": [
+        {
+          "kind": "github_timeline_event",
+          "ref": "https://github.com/nevitonsantana/AletheIA/pull/200"
+        }
+      ],
+      "sensitivity": "internal"
+    }
+  ],
+  "follow_up_slices": []
+}
