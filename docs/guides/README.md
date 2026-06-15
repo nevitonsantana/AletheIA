@@ -30,3 +30,6 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [setting-up-harnesses.md](setting-up-harnesses.md) | Wiring a consumer project to Claude Code via the shim pack |
 | [pilot-crisis-monitor-overlay-handoff.md](pilot-crisis-monitor-overlay-handoff.md) | Brief for the Crisis Monitor team — Epic 7 overlay-adoption pilot |
 | [validating-knowledge-manifests.md](validating-knowledge-manifests.md) | How to load and schema-validate knowledge manifests via the engine loaders |
+| [github-pr-visual-operations-projector.md](github-pr-visual-operations-projector.md) | Projecting supplied GitHub PR evidence into Visual Operations snapshots |
+| [visual-operations-usage-evidence.md](visual-operations-usage-evidence.md) | Recording real snapshot use without backfilling or expanding scope |
+| [visual-operations-aletheia-dogfood-protocol.md](visual-operations-aletheia-dogfood-protocol.md) | Measuring Visual Operations snapshot utility in AletheIA maintenance |
