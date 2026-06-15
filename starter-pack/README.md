@@ -218,6 +218,10 @@ truth, read and adapt:
 - `starter-pack/templates/slice-trace-template.md`
 - `starter-pack/templates/visual-ops-reconcile-template.md`
 - `examples/visual-operations/dashboard-snapshot.md`
+- `docs/guides/github-pr-visual-operations-projector.md`
+- `examples/visual-operations/github-pr-projector-input.json`
+- `examples/visual-operations/github-pr-projector-output.json`
+- `examples/visual-operations/github-pr-projector-output.md`
 
 These materials are read-only projection guidance. Board lanes are presentation states, events retain
 their authoritative `source_refs`, and missing telemetry remains `unknown` or `unavailable`.

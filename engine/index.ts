@@ -14,3 +14,4 @@ export * from "./registry";
 export * from "./resolver";
 export * from "./context-pack";
 export * from "./audit-log";
+export * from "./visual-operations-projector";

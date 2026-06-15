@@ -1,0 +1,441 @@
+{
+  "projection": {
+    "mode": "read_only",
+    "projector": "github_pull_request",
+    "projected_at": "2026-06-15T04:05:00Z",
+    "source_refs": [
+      "https://github.com/nevitonsantana/AletheIA/pull/193"
+    ]
+  },
+  "work_slice_visual_state": {
+    "work_slice_id": "github-pr-193",
+    "title": "docs: add visual operations projection",
+    "objective": "unknown",
+    "presentation_lane": "closed",
+    "lane_confidence": "confirmed",
+    "risk_level": "unknown",
+    "planning_depth": "unknown",
+    "readiness_outcome": "unknown",
+    "evidence_status": "sufficient",
+    "human_review": {
+      "required": "unknown",
+      "status": "unavailable",
+      "reviewer_role": null,
+      "open_question": null,
+      "source_refs": []
+    },
+    "primary_skill": {
+      "skill_id": "unknown",
+      "activation_status": "unknown",
+      "source_refs": []
+    },
+    "runtime": {
+      "runtime_id": "unavailable",
+      "session_status": "unavailable",
+      "source_refs": []
+    },
+    "telemetry": {
+      "tokens": {
+        "value": null,
+        "provenance": "unavailable",
+        "source_refs": []
+      },
+      "cost": {
+        "value": null,
+        "currency": null,
+        "provenance": "unavailable",
+        "source_refs": []
+      }
+    },
+    "alerts": [
+      {
+        "alert_id": "alert-finding-regulated-sensitivity",
+        "type": "post_close_finding",
+        "severity": "warning",
+        "summary": "The event sensitivity vocabulary omitted the canonical regulated value.",
+        "suggested_review": "Track this finding in the linked follow-up slice; do not rewrite the closed historical lane.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/pull/193"
+        ],
+        "resolved_at": null,
+        "resolution_ref": null,
+        "follow_up_work_slice_id": "github-pr-193-follow-up-regulated-sensitivity"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "evidence-check-governance",
+        "type": "ci_check",
+        "status": "passed",
+        "provenance": "ci_observed",
+        "summary": "Governance Check: completed/success.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+        ]
+      },
+      {
+        "evidence_id": "evidence-check-lockfile",
+        "type": "ci_check",
+        "status": "passed",
+        "provenance": "ci_observed",
+        "summary": "Lockfile sync: completed/success.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+        ]
+      },
+      {
+        "evidence_id": "evidence-check-typescript",
+        "type": "ci_check",
+        "status": "passed",
+        "provenance": "ci_observed",
+        "summary": "Install & TypeScript Build: completed/success.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+        ]
+      },
+      {
+        "evidence_id": "evidence-check-vitest",
+        "type": "ci_check",
+        "status": "passed",
+        "provenance": "ci_observed",
+        "summary": "Tests (Vitest): completed/success.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+        ]
+      },
+      {
+        "evidence_id": "evidence-check-quality-gate",
+        "type": "ci_check",
+        "status": "passed",
+        "provenance": "ci_observed",
+        "summary": "Quality Gate: completed/success.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+        ]
+      },
+      {
+        "evidence_id": "evidence-author-json-jsonl-yaml",
+        "type": "author_reported_validation",
+        "status": "passed",
+        "provenance": "author_reported",
+        "summary": "The PR description reports successful parsing of JSON, every JSONL line, and YAML templates.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/pull/193"
+        ]
+      },
+      {
+        "evidence_id": "evidence-author-markdown-links",
+        "type": "author_reported_validation",
+        "status": "passed",
+        "provenance": "author_reported",
+        "summary": "The PR description reports that local Markdown links resolved.",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/pull/193"
+        ]
+      }
+    ],
+    "source_refs": [
+      "https://github.com/nevitonsantana/AletheIA",
+      "https://github.com/nevitonsantana/AletheIA/pull/193",
+      "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+    ],
+    "projected_at": "2026-06-15T04:05:00Z"
+  },
+  "normalized_events": [
+    {
+      "event_id": "evt-github-pr-193-created",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-193",
+      "timestamp": "2026-06-15T03:51:39Z",
+      "source_type": "external",
+      "event_type": "work_slice.created",
+      "actor": "nevitonsantana",
+      "summary": "GitHub pull request #193 was opened.",
+      "payload_metadata": {
+        "repository": "nevitonsantana/AletheIA",
+        "base_ref": "main",
+        "head_sha": "40c53937aae9ac587660b7974dbcb848c328a16b",
+        "draft": false
+      },
+      "evidence_refs": [],
+      "source_refs": [
+        {
+          "kind": "github_pull_request",
+          "ref": "https://github.com/nevitonsantana/AletheIA/pull/193"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-193-check-governance",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-193",
+      "timestamp": "2026-06-15T03:51:46Z",
+      "source_type": "external",
+      "event_type": "validation.passed",
+      "actor": "github-actions",
+      "summary": "GitHub check Governance Check reported success.",
+      "payload_metadata": {
+        "check_name": "Governance Check",
+        "conclusion": "success",
+        "required": true
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_check",
+          "ref": "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-193-check-lockfile",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-193",
+      "timestamp": "2026-06-15T03:51:47Z",
+      "source_type": "external",
+      "event_type": "validation.passed",
+      "actor": "github-actions",
+      "summary": "GitHub check Lockfile sync reported success.",
+      "payload_metadata": {
+        "check_name": "Lockfile sync",
+        "conclusion": "success",
+        "required": true
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_check",
+          "ref": "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-193-check-typescript",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-193",
+      "timestamp": "2026-06-15T03:52:03Z",
+      "source_type": "external",
+      "event_type": "validation.passed",
+      "actor": "github-actions",
+      "summary": "GitHub check Install & TypeScript Build reported success.",
+      "payload_metadata": {
+        "check_name": "Install & TypeScript Build",
+        "conclusion": "success",
+        "required": true
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_check",
+          "ref": "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-193-check-vitest",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-193",
+      "timestamp": "2026-06-15T03:52:26Z",
+      "source_type": "external",
+      "event_type": "validation.passed",
+      "actor": "github-actions",
+      "summary": "GitHub check Tests (Vitest) reported success.",
+      "payload_metadata": {
+        "check_name": "Tests (Vitest)",
+        "conclusion": "success",
+        "required": true
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_check",
+          "ref": "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-193-check-quality-gate",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-193",
+      "timestamp": "2026-06-15T03:52:37Z",
+      "source_type": "external",
+      "event_type": "validation.passed",
+      "actor": "github-actions",
+      "summary": "GitHub check Quality Gate reported success.",
+      "payload_metadata": {
+        "check_name": "Quality Gate",
+        "conclusion": "success",
+        "required": true
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_check",
+          "ref": "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-193-author-validation-json-jsonl-yaml",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-193",
+      "timestamp": "2026-06-15T03:54:05Z",
+      "source_type": "external",
+      "event_type": "evidence.added",
+      "actor": "nevitonsantana",
+      "summary": "The PR description reports successful parsing of JSON, every JSONL line, and YAML templates.",
+      "payload_metadata": {
+        "validation_name": "JSON, JSONL, and YAML parsing",
+        "validation_status": "passed",
+        "provenance": "author_reported"
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/pull/193"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_pull_request_report",
+          "ref": "https://github.com/nevitonsantana/AletheIA/pull/193"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-193-author-validation-markdown-links",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-193",
+      "timestamp": "2026-06-15T03:54:05Z",
+      "source_type": "external",
+      "event_type": "evidence.added",
+      "actor": "nevitonsantana",
+      "summary": "The PR description reports that local Markdown links resolved.",
+      "payload_metadata": {
+        "validation_name": "Markdown link validation",
+        "validation_status": "passed",
+        "provenance": "author_reported"
+      },
+      "evidence_refs": [
+        "https://github.com/nevitonsantana/AletheIA/pull/193"
+      ],
+      "source_refs": [
+        {
+          "kind": "github_pull_request_report",
+          "ref": "https://github.com/nevitonsantana/AletheIA/pull/193"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-193-timeline-ready-for-review",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-193",
+      "timestamp": "2026-06-15T03:54:05Z",
+      "source_type": "external",
+      "event_type": "work_slice.state_observed",
+      "actor": "nevitonsantana",
+      "summary": "GitHub recorded pull request event: ready_for_review.",
+      "payload_metadata": {
+        "github_event_type": "ready_for_review"
+      },
+      "evidence_refs": [],
+      "source_refs": [
+        {
+          "kind": "github_timeline_event",
+          "ref": "https://github.com/nevitonsantana/AletheIA/pull/193"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-193-timeline-closed",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-193",
+      "timestamp": "2026-06-15T03:57:36Z",
+      "source_type": "external",
+      "event_type": "reconcile.created",
+      "actor": "github",
+      "summary": "GitHub recorded pull request event: closed.",
+      "payload_metadata": {
+        "github_event_type": "closed"
+      },
+      "evidence_refs": [],
+      "source_refs": [
+        {
+          "kind": "github_timeline_event",
+          "ref": "https://github.com/nevitonsantana/AletheIA/pull/193"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-193-timeline-merged",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-193",
+      "timestamp": "2026-06-15T03:57:36Z",
+      "source_type": "external",
+      "event_type": "reconcile.created",
+      "actor": "nevitonsantana",
+      "summary": "GitHub recorded pull request event: merged.",
+      "payload_metadata": {
+        "github_event_type": "merged"
+      },
+      "evidence_refs": [],
+      "source_refs": [
+        {
+          "kind": "github_timeline_event",
+          "ref": "https://github.com/nevitonsantana/AletheIA/pull/193"
+        }
+      ],
+      "sensitivity": "internal"
+    },
+    {
+      "event_id": "evt-github-pr-193-finding-regulated-sensitivity",
+      "project_id": "aletheia",
+      "work_slice_id": "github-pr-193",
+      "timestamp": "2026-06-15T03:58:11Z",
+      "source_type": "external",
+      "event_type": "alert.raised",
+      "actor": "github-review",
+      "summary": "The event sensitivity vocabulary omitted the canonical regulated value.",
+      "payload_metadata": {
+        "severity": "warning",
+        "requires_human_review": true,
+        "post_close": true,
+        "follow_up_work_slice_id": "github-pr-193-follow-up-regulated-sensitivity"
+      },
+      "evidence_refs": [],
+      "source_refs": [
+        {
+          "kind": "github_finding",
+          "ref": "https://github.com/nevitonsantana/AletheIA/pull/193"
+        }
+      ],
+      "sensitivity": "internal"
+    }
+  ],
+  "follow_up_slices": [
+    {
+      "work_slice_id": "github-pr-193-follow-up-regulated-sensitivity",
+      "reason": "The event sensitivity vocabulary omitted the canonical regulated value.",
+      "source_refs": [
+        "https://github.com/nevitonsantana/AletheIA/pull/193"
+      ]
+    }
+  ]
+}
