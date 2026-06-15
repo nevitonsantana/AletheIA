@@ -42,6 +42,7 @@ Reading map organized by intent. Each entry links to the most useful starting po
 4. [Work Slice Visual State Contract](contracts/work-slice-visual-state-contract.md) — presentation lanes without a new lifecycle
 5. [Visual Operations Privacy Boundaries](contracts/visual-ops-privacy-boundaries.md) — metadata-first handling of sensitive sources
 6. [Synthetic Mission Control example](../examples/visual-operations/dashboard-snapshot.md) — reconstructible static snapshot
+7. [GitHub PR projector](guides/github-pr-visual-operations-projector.md) — deterministic JSON and Markdown projection from supplied evidence
 
 ---
 

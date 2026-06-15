@@ -1,0 +1,120 @@
+{
+  "project_id": "aletheia",
+  "projected_at": "2026-06-15T04:05:00Z",
+  "repository": {
+    "full_name": "nevitonsantana/AletheIA",
+    "url": "https://github.com/nevitonsantana/AletheIA"
+  },
+  "pull_request": {
+    "number": 193,
+    "title": "docs: add visual operations projection",
+    "url": "https://github.com/nevitonsantana/AletheIA/pull/193",
+    "state": "closed",
+    "draft": false,
+    "author": "nevitonsantana",
+    "created_at": "2026-06-15T03:51:39Z",
+    "merged_at": "2026-06-15T03:57:36Z",
+    "closed_at": "2026-06-15T03:57:36Z",
+    "head_sha": "40c53937aae9ac587660b7974dbcb848c328a16b",
+    "base_ref": "main"
+  },
+  "timeline": [
+    {
+      "id": "ready-for-review",
+      "type": "ready_for_review",
+      "created_at": "2026-06-15T03:54:05Z",
+      "actor": "nevitonsantana",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/pull/193"
+    },
+    {
+      "id": "merged",
+      "type": "merged",
+      "created_at": "2026-06-15T03:57:36Z",
+      "actor": "nevitonsantana",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/pull/193"
+    },
+    {
+      "id": "closed",
+      "type": "closed",
+      "created_at": "2026-06-15T03:57:36Z",
+      "actor": "github",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/pull/193"
+    }
+  ],
+  "checks": [
+    {
+      "id": "governance",
+      "name": "Governance Check",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "completed_at": "2026-06-15T03:51:46Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+    },
+    {
+      "id": "lockfile",
+      "name": "Lockfile sync",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "completed_at": "2026-06-15T03:51:47Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+    },
+    {
+      "id": "typescript",
+      "name": "Install & TypeScript Build",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "completed_at": "2026-06-15T03:52:03Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+    },
+    {
+      "id": "vitest",
+      "name": "Tests (Vitest)",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "completed_at": "2026-06-15T03:52:26Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+    },
+    {
+      "id": "quality-gate",
+      "name": "Quality Gate",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "completed_at": "2026-06-15T03:52:37Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27522883401"
+    }
+  ],
+  "reviews": [],
+  "findings": [
+    {
+      "id": "regulated-sensitivity",
+      "severity": "warning",
+      "summary": "The event sensitivity vocabulary omitted the canonical regulated value.",
+      "created_at": "2026-06-15T03:58:11Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/pull/193",
+      "requires_human_review": true
+    }
+  ],
+  "author_reported_validations": [
+    {
+      "id": "json-jsonl-yaml",
+      "name": "JSON, JSONL, and YAML parsing",
+      "status": "passed",
+      "summary": "The PR description reports successful parsing of JSON, every JSONL line, and YAML templates.",
+      "reported_at": "2026-06-15T03:54:05Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/pull/193"
+    },
+    {
+      "id": "markdown-links",
+      "name": "Markdown link validation",
+      "status": "passed",
+      "summary": "The PR description reports that local Markdown links resolved.",
+      "reported_at": "2026-06-15T03:54:05Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/pull/193"
+    }
+  ]
+}

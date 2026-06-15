@@ -43,6 +43,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - Execution Pattern Selections trabalhadas (topologia antes da execução): CI triage (scheduled stateful loop), síntese de entrevistas (fan-out + filter), review adversarial de PRD (maker-checker) e feature value review (loops explicitamente inadmissíveis)
 - `visual-operations/`
   - projeção sintética e somente leitura de duas Work Slices, com eventos normalizados, evidência, revisão humana, telemetria opcional e fonte restrita representada apenas por metadados
+  - entrada e saídas reproduzíveis do projetor GitHub PR → Visual Operations, incluindo distinção entre evidência observada por CI e validação reportada pelo autor
 
 ---
 
