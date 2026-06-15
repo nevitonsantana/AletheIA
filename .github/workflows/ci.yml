@@ -55,6 +55,21 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
 
+  visual-operations-snapshots:
+    name: Visual Operations Snapshots
+    runs-on: ubuntu-latest
+    needs: install-and-typecheck
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - name: Verify selected Visual Operations snapshots
+        run: ./scripts/check-visual-ops-snapshots.sh
+
   lockfile-sync:
     name: Lockfile sync (package.json ↔ pnpm-lock.yaml)
     runs-on: ubuntu-latest
@@ -87,6 +102,7 @@ jobs:
       - install-and-typecheck
       - governance
       - test
+      - visual-operations-snapshots
     steps:
       - name: All required checks passed
         run: echo "Quality Gate passed."

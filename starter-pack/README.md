@@ -224,6 +224,7 @@ truth, read and adapt:
 - `examples/visual-operations/github-pr-projector-output.md`
 - `scripts/visual-ops-project.ts`
 - `scripts/visual-ops-project.sh`
+- `scripts/check-visual-ops-snapshots.sh`
 - `examples/visual-operations/github-pr-195-cli-input.json`
 - `examples/visual-operations/github-pr-195-cli-output.json`
 - `examples/visual-operations/github-pr-195-cli-output.md`

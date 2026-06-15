@@ -57,6 +57,22 @@ Writes are staged in the destination directories and installed only after all ou
 been generated. If installation fails, previous outputs are restored. The CLI also refuses to use
 the input file as an output or to point JSON and Markdown at the same path.
 
+## CI snapshot check
+
+The CI workflow runs:
+
+```bash
+./scripts/check-visual-ops-snapshots.sh
+```
+
+The script compiles the local CLI once and runs `--check` for an explicit list of reviewed snapshot
+sets. It does not discover examples with a wildcard: adding a fixture to CI is a deliberate change
+to `snapshot_sets` in the script. This prevents temporary or sensitive local files from silently
+becoming governed CI inputs.
+
+The `Visual Operations Snapshots` job is a dependency of the aggregate Quality Gate. A stale or
+missing checked-in output therefore blocks the gate without rewriting the file in CI.
+
 ## Conservative derivation rules
 
 1. A merged or authoritatively closed PR projects to the `closed` presentation lane.
