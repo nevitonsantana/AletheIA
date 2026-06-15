@@ -44,6 +44,7 @@ Reading map organized by intent. Each entry links to the most useful starting po
 6. [Synthetic Mission Control example](../examples/visual-operations/dashboard-snapshot.md) — reconstructible static snapshot
 7. [GitHub PR projector](guides/github-pr-visual-operations-projector.md) — deterministic JSON and Markdown projection from supplied evidence
 8. [Visual Operations phase closeout](pilots/closeouts/2026-06-15-visual-operations-phase-closeout.md) — delivered boundary, evidence, and future activation gates
+9. [Usage evidence guide](guides/visual-operations-usage-evidence.md) — how to record real snapshot use without backfilling or expanding scope
 
 ---
 

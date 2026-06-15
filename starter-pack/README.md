@@ -225,6 +225,8 @@ truth, read and adapt:
 - `scripts/visual-ops-project.ts`
 - `scripts/visual-ops-project.sh`
 - `scripts/check-visual-ops-snapshots.sh`
+- `docs/guides/visual-operations-usage-evidence.md`
+- `starter-pack/templates/visual-ops-usage-evidence-template.md`
 - `examples/visual-operations/github-pr-195-cli-input.json`
 - `examples/visual-operations/github-pr-195-cli-output.json`
 - `examples/visual-operations/github-pr-195-cli-output.md`
