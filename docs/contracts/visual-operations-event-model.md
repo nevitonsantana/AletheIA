@@ -36,7 +36,7 @@ visual_ops_event:
   source_refs:
     - kind:
       ref:
-  sensitivity: public | internal | confidential | restricted | unknown
+  sensitivity: public | internal | confidential | restricted | regulated | unknown
 ```
 
 ## Required rules

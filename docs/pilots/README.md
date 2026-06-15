@@ -18,6 +18,7 @@ Operation closeouts (session/task records from Hermes and other runtimes) live i
 | [resource-aware-crisis-monitor-reference.md](resource-aware-crisis-monitor-reference.md) | Bounded 1.2-track reference using Crisis Monitor evidence |
 | [resource-aware-operations-review.md](resource-aware-operations-review.md) | Consolidation of what the 1.2 track proves |
 | [report-core-operating-path-friction-test.md](report-core-operating-path-friction-test.md) | Friction test: is `core-operating-path.md` sufficient for first use? |
+| [visual-operations-pr-193-retrospective.md](visual-operations-pr-193-retrospective.md) | Retrospective reconstruction of PR #193 using the Visual Operations vocabulary |
 
 ## Cycle records
 
