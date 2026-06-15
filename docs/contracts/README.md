@@ -17,6 +17,9 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [readiness-gates-spec.md](readiness-gates-spec.md) | When a slice is ready to continue, review, hand off, or stop |
 | [context-resource-telemetry-spec.md](context-resource-telemetry-spec.md) | Telemetry surface for resource-aware operations |
 | [slice-telemetry-model.md](slice-telemetry-model.md) | Minimal model for recording slice-level telemetry |
+| [visual-operations-event-model.md](visual-operations-event-model.md) | Normalized, source-referenced events for read-only visual projection |
+| [work-slice-visual-state-contract.md](work-slice-visual-state-contract.md) | Presentation lanes and derived Work Slice card state without a new lifecycle |
+| [visual-ops-privacy-boundaries.md](visual-ops-privacy-boundaries.md) | Metadata-first privacy rules for cockpit views, traces, telemetry, and exports |
 | [work-slice-spec-bundle.md](work-slice-spec-bundle.md) | Optional spec bundle for slices that need pre-execution clarity |
 | [durable-decision-finalization-context-prompt.md](durable-decision-finalization-context-prompt.md) | Accepted durable decision: require finalization context prompt at slice close |
 | [consumer-project-overlay.md](consumer-project-overlay.md) | How a consumer project instantiates the operating overlay (`ops/ai/` + harness shims). Reference example: [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/) |

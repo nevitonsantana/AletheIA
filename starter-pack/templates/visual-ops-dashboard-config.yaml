@@ -1,0 +1,36 @@
+# AletheIA Visual Operations dashboard configuration
+# Read-only projection. This file does not authorize actions or define source truth.
+
+visual_ops_dashboard:
+  project_id:
+  project_name:
+
+  data_sources:
+    work_slices: []
+    events: []
+    evidence: []
+    telemetry: []
+    skills: []
+
+  views_enabled:
+    overview: true
+    board: true
+    slice_detail: true
+    trace: true
+    skills_observatory: true
+    knowledge_health: true
+    token_telemetry: true
+    learning_inbox: true
+
+  projection:
+    source_refs_required: true
+    preserve_unknown_values: true
+    presentation_lanes_only: true
+    generated_at:
+
+  privacy:
+    metadata_only_by_default: true
+    show_prompt_content: false
+    show_sensitive_source_content: false
+    allowed_sensitivity: public | internal
+    export_requires_review: true

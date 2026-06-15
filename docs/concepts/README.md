@@ -33,6 +33,8 @@ If you need a step-by-step guide, see [`guides/`](../guides/README.md). If you n
 | [local-trust-boundary-posture.md](local-trust-boundary-posture.md) | Trust-boundary posture as project-extension concern |
 | [iterative-maintenance-governance.md](iterative-maintenance-governance.md) | Governance across maintenance rounds |
 | [progressive-policy-signals.md](progressive-policy-signals.md) | From telemetry to reviewable policy signals |
+| [visual-operations-layer.md](visual-operations-layer.md) | Read-only projection that makes governed Work Slices operationally visible |
+| [mission-control-cockpit.md](mission-control-cockpit.md) | Human-facing Mission Control views, empty states, alerts, and evidence posture |
 | [context-graph-integration.md](context-graph-integration.md) | How a code graph fits into the operating model |
 | [bootstrap-principles.md](bootstrap-principles.md) | Alpha 7 bootstrap posture |
 | [distribution-presets-adapters.md](distribution-presets-adapters.md) | Alpha 6 distribution direction |
