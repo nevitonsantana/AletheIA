@@ -24,8 +24,8 @@ export interface VisualOpsCliIo {
 export const VISUAL_OPS_CHECK_STALE_EXIT_CODE = 2;
 
 const helpText = `Usage:
-  pnpm visual-ops:project -- --input <evidence.json> [--json <snapshot.json>] [--markdown <dashboard.md>]
-  pnpm visual-ops:project -- --input <evidence.json> [--json <snapshot.json>] [--markdown <dashboard.md>] --check
+  ./scripts/visual-ops-project.sh --input <evidence.json> [--json <snapshot.json>] [--markdown <dashboard.md>]
+  ./scripts/visual-ops-project.sh --input <evidence.json> [--json <snapshot.json>] [--markdown <dashboard.md>] --check
 
 Options:
   --input       Authorized local GitHub PR evidence JSON.

@@ -34,7 +34,7 @@ restricted source bodies, or personal data beyond the explicitly supplied actor 
 The repository includes a local file adapter over the same projector:
 
 ```bash
-pnpm visual-ops:project -- \
+./scripts/visual-ops-project.sh \
   --input examples/visual-operations/github-pr-195-cli-input.json \
   --json examples/visual-operations/github-pr-195-cli-output.json \
   --markdown examples/visual-operations/github-pr-195-cli-output.md
@@ -43,7 +43,7 @@ pnpm visual-ops:project -- \
 To verify that checked-in outputs still match their authorized input without writing files:
 
 ```bash
-pnpm visual-ops:project -- \
+./scripts/visual-ops-project.sh \
   --input examples/visual-operations/github-pr-195-cli-input.json \
   --json examples/visual-operations/github-pr-195-cli-output.json \
   --markdown examples/visual-operations/github-pr-195-cli-output.md \
