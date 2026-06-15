@@ -44,6 +44,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
 - `visual-operations/`
   - projeção sintética e somente leitura de duas Work Slices, com eventos normalizados, evidência, revisão humana, telemetria opcional e fonte restrita representada apenas por metadados
   - entrada e saídas reproduzíveis do projetor GitHub PR → Visual Operations, incluindo distinção entre evidência observada por CI e validação reportada pelo autor
+  - segundo piloto real da PR #195, gerado e verificável pelo CLI local com `--check`
 
 ---
 

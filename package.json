@@ -23,7 +23,8 @@
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest",
-    "test:all": "pnpm run check:governance && pnpm run test"
+    "test:all": "pnpm run check:governance && pnpm run test",
+    "visual-ops:project": "tsc -p tsconfig.visual-ops-cli.json && node dist/visual-ops-cli/scripts/visual-ops-project.js"
   },
   "devDependencies": {
     "@types/node": "^25.9.1",

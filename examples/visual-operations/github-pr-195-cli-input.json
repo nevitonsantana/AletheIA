@@ -1,0 +1,101 @@
+{
+  "project_id": "aletheia",
+  "projected_at": "2026-06-15T13:30:00Z",
+  "repository": {
+    "full_name": "nevitonsantana/AletheIA",
+    "url": "https://github.com/nevitonsantana/AletheIA"
+  },
+  "pull_request": {
+    "number": 195,
+    "title": "feat(visual-ops): add GitHub PR projector",
+    "url": "https://github.com/nevitonsantana/AletheIA/pull/195",
+    "state": "closed",
+    "draft": false,
+    "author": "nevitonsantana",
+    "created_at": "2026-06-15T13:23:35Z",
+    "merged_at": "2026-06-15T13:27:53Z",
+    "closed_at": "2026-06-15T13:27:53Z",
+    "head_sha": "60e8827af5a2d51b0d8de2641dbfde64830cc1d5",
+    "base_ref": "main"
+  },
+  "timeline": [
+    {
+      "id": "26759455062",
+      "type": "merged",
+      "created_at": "2026-06-15T13:27:53Z",
+      "actor": "nevitonsantana",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/pull/195"
+    },
+    {
+      "id": "26759455150",
+      "type": "closed",
+      "created_at": "2026-06-15T13:27:53Z",
+      "actor": "nevitonsantana",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/pull/195"
+    }
+  ],
+  "checks": [
+    {
+      "id": "81431100016",
+      "name": "Governance Check (scripts/check-governance.sh)",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "started_at": "2026-06-15T13:23:48Z",
+      "completed_at": "2026-06-15T13:23:53Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27549342018/job/81431100016"
+    },
+    {
+      "id": "81431100060",
+      "name": "Install & TypeScript Build",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "started_at": "2026-06-15T13:23:48Z",
+      "completed_at": "2026-06-15T13:24:08Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27549342018/job/81431100060"
+    },
+    {
+      "id": "81431100067",
+      "name": "Lockfile sync (package.json ↔ pnpm-lock.yaml)",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "started_at": "2026-06-15T13:23:48Z",
+      "completed_at": "2026-06-15T13:23:55Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27549342018/job/81431100067"
+    },
+    {
+      "id": "81431197771",
+      "name": "Tests (Vitest)",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "started_at": "2026-06-15T13:24:10Z",
+      "completed_at": "2026-06-15T13:24:32Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27549342018/job/81431197771"
+    },
+    {
+      "id": "81431281805",
+      "name": "Quality Gate (aggregator)",
+      "status": "completed",
+      "conclusion": "success",
+      "required": true,
+      "started_at": "2026-06-15T13:24:34Z",
+      "completed_at": "2026-06-15T13:24:37Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/actions/runs/27549342018/job/81431281805"
+    }
+  ],
+  "reviews": [],
+  "findings": [],
+  "author_reported_validations": [
+    {
+      "id": "local-validation",
+      "name": "Local projector validation",
+      "status": "passed",
+      "summary": "The PR description reports governance, 185 tests, strict TypeScript, diff hygiene, fixture reconstruction, Markdown links, and source-reference checks passing locally.",
+      "reported_at": "2026-06-15T13:23:35Z",
+      "source_url": "https://github.com/nevitonsantana/AletheIA/pull/195"
+    }
+  ]
+}

@@ -29,6 +29,34 @@ The input must be assembled from already authorized evidence. The projector acce
 timestamps, summaries, and source URLs; it intentionally has no field for full prompts, secrets,
 restricted source bodies, or personal data beyond the explicitly supplied actor labels.
 
+## Local CLI
+
+The repository includes a local file adapter over the same projector:
+
+```bash
+pnpm visual-ops:project -- \
+  --input examples/visual-operations/github-pr-195-cli-input.json \
+  --json examples/visual-operations/github-pr-195-cli-output.json \
+  --markdown examples/visual-operations/github-pr-195-cli-output.md
+```
+
+To verify that checked-in outputs still match their authorized input without writing files:
+
+```bash
+pnpm visual-ops:project -- \
+  --input examples/visual-operations/github-pr-195-cli-input.json \
+  --json examples/visual-operations/github-pr-195-cli-output.json \
+  --markdown examples/visual-operations/github-pr-195-cli-output.md \
+  --check
+```
+
+`--check` exits with code `2` when an output is missing or stale. Usage, parsing, and projection
+errors exit with code `1`. Current outputs exit with code `0`.
+
+Writes are staged in the destination directories and installed only after all output bodies have
+been generated. If installation fails, previous outputs are restored. The CLI also refuses to use
+the input file as an output or to point JSON and Markdown at the same path.
+
 ## Conservative derivation rules
 
 1. A merged or authoritatively closed PR projects to the `closed` presentation lane.
@@ -62,10 +90,13 @@ URLs or infer omitted data from a PR body.
 - [Input evidence](../../examples/visual-operations/github-pr-projector-input.json)
 - [Projected JSON](../../examples/visual-operations/github-pr-projector-output.json)
 - [Projected Markdown](../../examples/visual-operations/github-pr-projector-output.md)
+- [PR #195 CLI input](../../examples/visual-operations/github-pr-195-cli-input.json)
+- [PR #195 CLI JSON output](../../examples/visual-operations/github-pr-195-cli-output.json)
+- [PR #195 CLI Markdown output](../../examples/visual-operations/github-pr-195-cli-output.md)
 - [Field-evidence retrospective](../pilots/visual-operations-pr-193-retrospective.md)
 
-The example uses the durable evidence already documented for PR #193. Tests regenerate the
-projection in memory and compare it with both checked-in outputs.
+The first example uses the durable evidence documented for PR #193. The second uses PR #195 as a
+real CLI pilot. Tests regenerate the projector fixtures, while `--check` verifies the CLI outputs.
 
 ## Non-goals
 
