@@ -1,0 +1,59 @@
+# Derived Work Slice card for a read-only Mission Control view.
+# Every state, alert, and evidence item must remain traceable to source_refs.
+
+work_slice_card:
+  work_slice_id:
+  title:
+  objective:
+  presentation_lane:
+  lane_confidence: confirmed | inferred | conflicted | unknown
+  risk_level: low | medium | high | critical | unknown
+  planning_depth: lite | standard | high_assurance | unknown
+  readiness_outcome: continue | tighten | review | handoff | escalate | stop | unknown
+  evidence_status: none | partial | sufficient | failed | inconclusive | unknown
+
+  human_review:
+    required: true | false | unknown
+    status: not_requested | pending | completed | unavailable
+    reviewer_role:
+    open_question:
+    source_refs: []
+
+  primary_skill:
+    skill_id:
+    activation_status: active | completed | unavailable | unknown
+    source_refs: []
+
+  runtime:
+    runtime_id:
+    session_status: active | completed | failed | stopped | unavailable | unknown
+    source_refs: []
+
+  telemetry:
+    tokens:
+      value:
+      provenance: reported | estimated | unavailable
+      source_refs: []
+    cost:
+      value:
+      currency:
+      provenance: reported | estimated | unavailable
+      source_refs: []
+
+  evidence:
+    - evidence_id:
+      type:
+      status: passed | failed | inconclusive | not_run
+      summary:
+      source_refs: []
+
+  alerts:
+    - alert_id:
+      type:
+      severity: info | warning | critical
+      summary:
+      suggested_review:
+      source_refs: []
+
+  source_refs: []
+  projected_at:

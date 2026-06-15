@@ -34,6 +34,17 @@ Reading map organized by intent. Each entry links to the most useful starting po
 
 ---
 
+## I want to make AI-assisted work visible
+
+1. [Visual Operations Layer](concepts/visual-operations-layer.md) — read-only projection over governed records
+2. [Mission Control Cockpit](concepts/mission-control-cockpit.md) — board, detail, trace, telemetry, alerts, and learning views
+3. [Visual Operations Event Model](contracts/visual-operations-event-model.md) — normalized source-referenced event envelope
+4. [Work Slice Visual State Contract](contracts/work-slice-visual-state-contract.md) — presentation lanes without a new lifecycle
+5. [Visual Operations Privacy Boundaries](contracts/visual-ops-privacy-boundaries.md) — metadata-first handling of sensitive sources
+6. [Synthetic Mission Control example](../examples/visual-operations/dashboard-snapshot.md) — reconstructible static snapshot
+
+---
+
 ## I want to configure an agent harness (Claude Code, Codex, Qwen)
 
 1. [Runtime adapter — Claude Code](reference/runtime-adapter-claude-code.md)
@@ -53,9 +64,12 @@ Reading map organized by intent. Each entry links to the most useful starting po
 3. [Readiness gates spec](contracts/readiness-gates-spec.md)
 4. [Work slice spec bundle](contracts/work-slice-spec-bundle.md)
 5. [Slice telemetry model](contracts/slice-telemetry-model.md)
-6. [Runtime effort governance contract](contracts/runtime-effort-governance-contract.md) — how an agent decides effort: start, escalate, de-escalate, stop, checkpoint
-7. [Agent harness governance extension](contracts/agent-harness-governance-extension.md) — how the harness authorizes, budgets, and bounds execution of model-proposed actions
-8. [All contracts →](contracts/README.md)
+6. [Visual Operations Event Model](contracts/visual-operations-event-model.md)
+7. [Work Slice Visual State Contract](contracts/work-slice-visual-state-contract.md)
+8. [Visual Operations Privacy Boundaries](contracts/visual-ops-privacy-boundaries.md)
+9. [Runtime effort governance contract](contracts/runtime-effort-governance-contract.md) — how an agent decides effort: start, escalate, de-escalate, stop, checkpoint
+10. [Agent harness governance extension](contracts/agent-harness-governance-extension.md) — how the harness authorizes, budgets, and bounds execution of model-proposed actions
+11. [All contracts →](contracts/README.md)
 
 ---
 

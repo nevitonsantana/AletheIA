@@ -1,0 +1,188 @@
+{
+  "project": {
+    "id": "visual-ops-synthetic-demo",
+    "name": "Synthetic Visual Operations Demo",
+    "projection_mode": "read_only",
+    "generated_from": [
+      "examples/visual-operations/sample-events.jsonl"
+    ],
+    "projected_at": "2026-06-15T15:30:00Z"
+  },
+  "summary": {
+    "active_slices": 1,
+    "closed_slices": 1,
+    "blocked_slices": 0,
+    "human_review_pending": 1,
+    "open_alerts": 2
+  },
+  "work_slices": [
+    {
+      "work_slice_id": "slice-docs-001",
+      "title": "Clarify the local validation guide",
+      "objective": "Make the existing validation sequence easier to review without changing runtime behavior.",
+      "presentation_lane": "closed",
+      "lane_confidence": "confirmed",
+      "risk_level": "low",
+      "planning_depth": "lite",
+      "readiness_outcome": "continue",
+      "evidence_status": "sufficient",
+      "human_review": {
+        "required": false,
+        "status": "not_requested",
+        "reviewer_role": null,
+        "open_question": null,
+        "source_refs": [
+          "synthetic://slice-docs-001/readiness-review"
+        ]
+      },
+      "primary_skill": {
+        "skill_id": "ux-writing",
+        "activation_status": "completed",
+        "source_refs": [
+          "synthetic://slice-docs-001/skill-activation"
+        ]
+      },
+      "runtime": {
+        "runtime_id": "unavailable",
+        "session_status": "unavailable",
+        "source_refs": []
+      },
+      "telemetry": {
+        "tokens": {
+          "value": null,
+          "provenance": "unavailable",
+          "source_refs": []
+        },
+        "cost": {
+          "value": null,
+          "currency": null,
+          "provenance": "unavailable",
+          "source_refs": []
+        }
+      },
+      "evidence": [
+        {
+          "evidence_id": "evidence-doc-links-001",
+          "type": "manual_check",
+          "status": "passed",
+          "summary": "All links in the validation guide resolve to existing local documents.",
+          "source_refs": [
+            "synthetic://slice-docs-001/link-check"
+          ]
+        }
+      ],
+      "alerts": [],
+      "source_refs": [
+        "synthetic://slice-docs-001/task-brief",
+        "synthetic://slice-docs-001/execution-record",
+        "synthetic://slice-docs-001/reconcile"
+      ],
+      "projected_at": "2026-06-15T15:30:00Z"
+    },
+    {
+      "work_slice_id": "slice-auth-002",
+      "title": "Investigate an intermittent authorization test failure",
+      "objective": "Identify the failure cause and propose a bounded fix without exposing restricted fixture content.",
+      "presentation_lane": "human_review",
+      "lane_confidence": "confirmed",
+      "risk_level": "medium",
+      "planning_depth": "standard",
+      "readiness_outcome": "review",
+      "evidence_status": "failed",
+      "human_review": {
+        "required": true,
+        "status": "pending",
+        "reviewer_role": "repository-maintainer",
+        "open_question": "Does the proposed fixture change preserve the intended authorization boundary?",
+        "source_refs": [
+          "synthetic://slice-auth-002/human-review-request"
+        ]
+      },
+      "primary_skill": {
+        "skill_id": "debugging",
+        "activation_status": "active",
+        "source_refs": [
+          "synthetic://slice-auth-002/skill-activation"
+        ]
+      },
+      "runtime": {
+        "runtime_id": "local-agent-harness",
+        "session_status": "completed",
+        "source_refs": [
+          "synthetic://slice-auth-002/runtime-session-01"
+        ]
+      },
+      "telemetry": {
+        "tokens": {
+          "value": 18420,
+          "provenance": "reported",
+          "source_refs": [
+            "synthetic://slice-auth-002/runtime-session-01"
+          ]
+        },
+        "cost": {
+          "value": null,
+          "currency": null,
+          "provenance": "unavailable",
+          "source_refs": []
+        }
+      },
+      "knowledge_sources": [
+        {
+          "source_id": "restricted-auth-fixture",
+          "classification": "restricted",
+          "reference": "local-governed-source://auth-fixture",
+          "content_hash": "sha256:synthetic-example-only",
+          "authorized_summary": "Authorization fixture used to reproduce the boundary failure; content withheld.",
+          "restrictions_applied": [
+            "no_content_export",
+            "metadata_only_in_logs"
+          ],
+          "source_refs": [
+            "synthetic://slice-auth-002/knowledge-audit-entry"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "evidence-auth-test-002",
+          "type": "test",
+          "status": "failed",
+          "summary": "The focused authorization test still fails after the first bounded fix attempt.",
+          "source_refs": [
+            "synthetic://slice-auth-002/test-run-02"
+          ]
+        }
+      ],
+      "alerts": [
+        {
+          "alert_id": "alert-validation-002",
+          "type": "missing_passing_validation",
+          "severity": "critical",
+          "summary": "The proposed change has no passing focused validation.",
+          "suggested_review": "Do not close or merge the slice until the authorization test passes or the scope is reframed.",
+          "source_refs": [
+            "synthetic://slice-auth-002/test-run-02",
+            "synthetic://slice-auth-002/readiness-review"
+          ]
+        },
+        {
+          "alert_id": "alert-review-002",
+          "type": "human_review_pending",
+          "severity": "warning",
+          "summary": "A repository maintainer must review the authorization-boundary assumption.",
+          "suggested_review": "Resolve the open question in the authoritative review record.",
+          "source_refs": [
+            "synthetic://slice-auth-002/human-review-request"
+          ]
+        }
+      ],
+      "source_refs": [
+        "synthetic://slice-auth-002/task-brief",
+        "synthetic://slice-auth-002/readiness-review",
+        "synthetic://slice-auth-002/execution-record"
+      ],
+      "projected_at": "2026-06-15T15:30:00Z"
+    }
+  ]
+}

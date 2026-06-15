@@ -201,3 +201,23 @@ Read:
 - `docs/project-local-constitution-context.md`
 
 This future track should build on the current starter-pack surfaces rather than replace them.
+
+## Visual Operations docs-first projection
+
+If you want to make governed Work Slices visible without adding a runtime, backend, or new source of
+truth, read and adapt:
+
+- `docs/concepts/visual-operations-layer.md`
+- `docs/concepts/mission-control-cockpit.md`
+- `docs/contracts/visual-operations-event-model.md`
+- `docs/contracts/work-slice-visual-state-contract.md`
+- `docs/contracts/visual-ops-privacy-boundaries.md`
+- `starter-pack/templates/visual-ops-dashboard-config.yaml`
+- `starter-pack/templates/work-slice-card-template.yaml`
+- `starter-pack/templates/visual-ops-event-template.yaml`
+- `starter-pack/templates/slice-trace-template.md`
+- `starter-pack/templates/visual-ops-reconcile-template.md`
+- `examples/visual-operations/dashboard-snapshot.md`
+
+These materials are read-only projection guidance. Board lanes are presentation states, events retain
+their authoritative `source_refs`, and missing telemetry remains `unknown` or `unavailable`.

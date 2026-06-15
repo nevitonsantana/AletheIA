@@ -1,0 +1,18 @@
+# Normalized event for visual projection only.
+# The authoritative event or record remains at source_refs.
+
+visual_ops_event:
+  event_id:
+  project_id:
+  work_slice_id:
+  timestamp:
+  source_type: aletheia | project_record | adaptive_skill | runtime | harness | manual | external
+  event_type:
+  actor:
+  summary:
+  payload_metadata: {}
+  evidence_refs: []
+  source_refs:
+    - kind:
+      ref:
+  sensitivity: public | internal | confidential | restricted | unknown
