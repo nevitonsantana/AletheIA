@@ -12,6 +12,6 @@
     "noEmit": true,
     "types": ["node"]
   },
-  "include": ["engine/**/*", "tests/**/*"],
+  "include": ["engine/**/*", "scripts/**/*.ts", "tests/**/*"],
   "exclude": ["node_modules"]
 }

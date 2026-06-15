@@ -222,6 +222,11 @@ truth, read and adapt:
 - `examples/visual-operations/github-pr-projector-input.json`
 - `examples/visual-operations/github-pr-projector-output.json`
 - `examples/visual-operations/github-pr-projector-output.md`
+- `scripts/visual-ops-project.ts`
+- `scripts/visual-ops-project.sh`
+- `examples/visual-operations/github-pr-195-cli-input.json`
+- `examples/visual-operations/github-pr-195-cli-output.json`
+- `examples/visual-operations/github-pr-195-cli-output.md`
 
 These materials are read-only projection guidance. Board lanes are presentation states, events retain
 their authoritative `source_refs`, and missing telemetry remains `unknown` or `unavailable`.
