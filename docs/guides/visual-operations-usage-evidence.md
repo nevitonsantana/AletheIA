@@ -36,6 +36,9 @@ docs/pilots/visual-operations-usage-<short-slug>.md
 A usage record may also stay outside the repository if the review context includes private or
 restricted information. In that case, store only an allowed summary or reference in AletheIA.
 
+For AletheIA's own development loop, use the [Visual Operations AletheIA Dogfood Protocol](visual-operations-aletheia-dogfood-protocol.md)
+to decide when a usage record counts as real field evidence.
+
 ## What to record
 
 A useful record answers:

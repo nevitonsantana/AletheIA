@@ -34,6 +34,7 @@ Periodic development logs — what shipped in a given cycle, open backlog refere
 | Pilot | Status | Brief |
 |---|---|---|
 | Crisis Monitor overlay adoption (Epic 7) | Handed off to Crisis Monitor team; friction log pending | [`guides/pilot-crisis-monitor-overlay-handoff.md`](../guides/pilot-crisis-monitor-overlay-handoff.md) |
+| Visual Operations AletheIA dogfood | Open for real-use evidence; usage records pending | [`guides/visual-operations-aletheia-dogfood-protocol.md`](../guides/visual-operations-aletheia-dogfood-protocol.md) |
 
 The friction log will land here as `pilot-crisis-monitor-overlay-adoption.md` once the pilot reports back. Until then, see the brief in `guides/` for the test plan and log template.
 

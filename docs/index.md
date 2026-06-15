@@ -45,6 +45,7 @@ Reading map organized by intent. Each entry links to the most useful starting po
 7. [GitHub PR projector](guides/github-pr-visual-operations-projector.md) — deterministic JSON and Markdown projection from supplied evidence
 8. [Visual Operations phase closeout](pilots/closeouts/2026-06-15-visual-operations-phase-closeout.md) — delivered boundary, evidence, and future activation gates
 9. [Usage evidence guide](guides/visual-operations-usage-evidence.md) — how to record real snapshot use without backfilling or expanding scope
+10. [AletheIA dogfood protocol](guides/visual-operations-aletheia-dogfood-protocol.md) — measuring real snapshot use in AletheIA development
 
 ---
 
