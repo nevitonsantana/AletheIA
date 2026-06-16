@@ -28,6 +28,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [pilot-conversion.md](pilot-conversion.md) | How pilot learnings become framework improvements |
 | [github-project-operations.md](github-project-operations.md) | Using GitHub Projects for repo coordination |
 | [setting-up-harnesses.md](setting-up-harnesses.md) | Wiring a consumer project to Claude Code via the shim pack |
+| [install-via-apm.md](install-via-apm.md) | Installing AletheIA through APM and materializing the overlay scaffold |
 | [pilot-crisis-monitor-overlay-handoff.md](pilot-crisis-monitor-overlay-handoff.md) | Brief for the Crisis Monitor team — Epic 7 overlay-adoption pilot |
 | [validating-knowledge-manifests.md](validating-knowledge-manifests.md) | How to load and schema-validate knowledge manifests via the engine loaders |
 | [github-pr-visual-operations-projector.md](github-pr-visual-operations-projector.md) | Projecting supplied GitHub PR evidence into Visual Operations snapshots |

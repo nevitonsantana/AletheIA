@@ -27,6 +27,7 @@ Consultable material: catalogs, checklists, policies, examples, adapter guides, 
 | [bootstrap-output-examples.md](bootstrap-output-examples.md) | Examples of healthy Alpha 7 bootstrap outputs |
 | [constrained-pilot-review-checklist.md](constrained-pilot-review-checklist.md) | Review checklist for constrained-adoption pilots |
 | [resource-aware-pilot-review-checklist.md](resource-aware-pilot-review-checklist.md) | Review checklist for resource-aware pilots |
+| [external-references-execution-patterns.md](external-references-execution-patterns.md) | External sources evaluated for Execution Pattern Governance and their vocabulary boundary |
 | **Agent roles** | |
 | [agent-role-catalog.md](agent-role-catalog.md) | Index of all portable agent roles |
 | [agent-role-explorer.md](agent-role-explorer.md) | Explorer role spec |

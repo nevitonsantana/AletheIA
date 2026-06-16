@@ -35,12 +35,24 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - mostra como uma validação real no Crisis Monitor vira endurecimento pequeno e reutilizável no framework
 - `consumer-overlay-minimal/`
   - instância mínima viável do [consumer-project-overlay contract](../docs/contracts/consumer-project-overlay.md) — layout `ops/ai/` + shims Claude prontos para copiar
+- `delivery/`
+  - exemplo de bundle gerado revisável e seus limites de entrega
+- `distribution/`
+  - exemplo de mapeamento para adoção constrained/distribution
+- `feature-governance/`
+  - exemplos de build/kill/sunset/test para governança de valor de feature
+- `goldens/`
+  - fixtures canônicos para cenários de validação e governança
+- `project-extension/`
+  - exemplos de extensões locais, knowledge packs, trust boundaries, personas e sensitivity mapping
 - `harness/`
   - Agent Harness Contracts trabalhados (per-task envelope) para debugging, testing e feature-planning
 - `agent-harness/`
   - fluxo de **policy/verdict por ação** (allow/deny/require_approval) + audit record, contrastando skill operacional (debugging) vs consultiva (feature-value-governance)
 - `execution-patterns/`
   - Execution Pattern Selections trabalhadas (topologia antes da execução): CI triage (scheduled stateful loop), síntese de entrevistas (fan-out + filter), review adversarial de PRD (maker-checker) e feature value review (loops explicitamente inadmissíveis)
+- `resource-aware-operations/`
+  - exemplos da trilha 1.2 para runtime fit, policy signals, pilotos bounded, restart/finalization e adapters
 - `visual-operations/`
   - projeção sintética e somente leitura de duas Work Slices, com eventos normalizados, evidência, revisão humana, telemetria opcional e fonte restrita representada apenas por metadados
   - entrada e saídas reproduzíveis do projetor GitHub PR → Visual Operations, incluindo distinção entre evidência observada por CI e validação reportada pelo autor
