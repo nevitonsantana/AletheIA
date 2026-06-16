@@ -24,8 +24,8 @@ decision, and loops without stop conditions burn budget. The external pack that 
 layer began as a "Loop Engineering Addendum" and was deliberately broadened: loop is one execution
 shape among many, and the governing decision is *which shape is proportional*.
 
-A vocabulary risk comes with the references: the primary external source describes vendor-specific
-"dynamic workflows". AletheIA and Adaptative Skills must learn from it without adopting its
+A vocabulary risk comes with the references: the primary external source uses vendor-specific
+workflow terminology. AletheIA and Adaptative Skills must learn from it without adopting that
 nomenclature as a conceptual dependency.
 
 ## 2. Decision
@@ -59,8 +59,8 @@ nomenclature as a conceptual dependency.
    AHGE per-action record — no parallel record. Maker-checker outcomes map onto AHGE verdicts.
    The objective gate policy references AHC `gates`. Selection consumes REGC's classification.
    Knowledge Governance restricts what loop state may persist.
-6. **Vendor workflow terms are not canonical.** "Dynamic workflow" (and similar vendor terms)
-   appear only in [`external-references-execution-patterns.md`](../reference/external-references-execution-patterns.md).
+6. **Vendor workflow terms are not canonical.** Vendor-specific workflow phrases appear only in
+   [`external-references-execution-patterns.md`](../reference/external-references-execution-patterns.md).
 7. **Formalize the declarations as optional schemas.** Ship
    [`execution-pattern-selection.schema.json`](../../schemas/execution-pattern-selection.schema.json)
    and [`skill-execution-patterns.schema.json`](../../schemas/skill-execution-patterns.schema.json),
@@ -94,7 +94,7 @@ nomenclature as a conceptual dependency.
 - **Keep the original "Loop Engineering Addendum" scope.** Rejected: it would canonize loop as the
   center of the system; loop engineering survives as a subset (`loop_until_done`,
   `scheduled_stateful_loop`).
-- **Adopt the external "dynamic workflows" vocabulary.** Rejected: vendor coupling in canonical
+- **Adopt the external vendor workflow vocabulary.** Rejected: vendor coupling in canonical
   language; the abstraction (execution patterns) survives vendor churn.
 - **Fold pattern selection into the AHC.** Rejected: the AHC declares the envelope of a task whose
   shape is already chosen; conflating topology selection with envelope declaration would blur the
