@@ -59,6 +59,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - snapshot dogfood do PR #200 usado para registrar a primeira evidência real de uso da Visual Operations no próprio AletheIA
   - snapshot dogfood do PR #201 usado como segunda evidência real e confirmação de que não há threshold para nova infraestrutura
   - segundo piloto real da PR #195, gerado e verificável pelo CLI local com `--check`
+  - exemplos estáticos de cards do cockpit para revisar estados visuais antes de qualquer UI
 
 ---
 
