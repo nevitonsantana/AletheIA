@@ -27,6 +27,18 @@ No build step, server, backend, runtime, collector, schema, or package dependenc
 - no Adaptive Skills integration;
 - source refs are illustrative and metadata-first.
 
+## Visual status
+
+This prototype is an architectural and interaction scaffold for the Mission Control surface.
+The current refinement pass improves art direction, hierarchy, contrast, and motion, but the artifact remains a static prototype rather than the final product UI.
+
+Design intent:
+
+- darker evidence-room atmosphere instead of a generic light dashboard;
+- trace rail and source rails as the signature visual system;
+- restrained amber, moss, vermilion, and telemetry blue only for evidence state;
+- motion limited to surface entrance, card affordance, and drawer inspection.
+
 ## What to review
 
 - Does the trace rail explain why the board says what it says?
