@@ -126,6 +126,7 @@ Stop or reframe this pilot if a proposed record or follow-up:
 
 ## Related
 
+- [Visual Operations Cockpit Visual Model](visual-operations-cockpit-visual-model.md)
 - [Visual Operations Usage Evidence](visual-operations-usage-evidence.md)
 - [Visual Operations phase closeout](../pilots/closeouts/2026-06-15-visual-operations-phase-closeout.md)
 - [GitHub PR Visual Operations Projector](github-pr-visual-operations-projector.md)

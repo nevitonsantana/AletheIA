@@ -118,6 +118,7 @@ runtime mismatch, weak handoff, recurring documentation gap, and scope expansion
 
 ## Related
 
+- [Visual Operations Cockpit Visual Model](../guides/visual-operations-cockpit-visual-model.md)
 - [Visual Operations Layer](visual-operations-layer.md)
 - [Visual Operations Event Model](../contracts/visual-operations-event-model.md)
 - [Work Slice Visual State Contract](../contracts/work-slice-visual-state-contract.md)

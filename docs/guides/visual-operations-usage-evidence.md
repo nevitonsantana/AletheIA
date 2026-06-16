@@ -78,6 +78,7 @@ Examples:
 
 ## Related
 
+- [Visual Operations Cockpit Visual Model](visual-operations-cockpit-visual-model.md)
 - [GitHub PR Visual Operations Projector](github-pr-visual-operations-projector.md)
 - [Visual Operations phase closeout](../pilots/closeouts/2026-06-15-visual-operations-phase-closeout.md)
 - [Visual Operations Privacy Boundaries](../contracts/visual-ops-privacy-boundaries.md)
