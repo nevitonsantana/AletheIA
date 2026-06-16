@@ -191,6 +191,7 @@ cadence.
 
 ## Related
 
+- [Cockpit card state examples](../../examples/visual-operations/cockpit-card-state-examples.md)
 - [Mission Control Cockpit](../concepts/mission-control-cockpit.md)
 - [Visual Operations Layer](../concepts/visual-operations-layer.md)
 - [Work Slice Visual State Contract](../contracts/work-slice-visual-state-contract.md)
