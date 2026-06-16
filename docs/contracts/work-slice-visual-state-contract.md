@@ -142,3 +142,4 @@ Alerts request attention. They do not authorize, deny, close, or reopen work.
 - [Readiness Gates Spec](readiness-gates-spec.md)
 - [Slice Telemetry Model](slice-telemetry-model.md)
 - [Visual Operations Event Model](visual-operations-event-model.md)
+- [Visual Operations Human Review Source Mapping](../reference/visual-operations-human-review-source-mapping.md)

@@ -127,3 +127,4 @@ real CLI pilot. Tests regenerate the projector fixtures, while `--check` verifie
 - [Visual Operations Event Model](../contracts/visual-operations-event-model.md)
 - [Work Slice Visual State Contract](../contracts/work-slice-visual-state-contract.md)
 - [Visual Operations Privacy Boundaries](../contracts/visual-ops-privacy-boundaries.md)
+- [Visual Operations Human Review Source Mapping](../reference/visual-operations-human-review-source-mapping.md)
