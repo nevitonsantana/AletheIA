@@ -229,4 +229,5 @@ all source refs.
 ## Next visual step
 
 If these state examples are accepted, the next safe step is a lightweight static board composition:
-place these cards into lanes and define overview counts/exception summaries without building a UI.
+place these cards into lanes and define overview counts/exception summaries without building a UI. See
+[Cockpit static board composition](cockpit-static-board-composition.md).
