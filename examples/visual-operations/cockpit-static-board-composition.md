@@ -170,4 +170,4 @@ Use this composition to review the next artifact:
 
 If this static board composition is accepted, the next safe step is a lightweight wireframe or design
 sketch derived from this composition. That wireframe should still avoid backend, runtime, collector,
-schema, or policy-engine changes.
+schema, or policy-engine changes. See [Cockpit light wireframe spec](cockpit-light-wireframe-spec.md).
