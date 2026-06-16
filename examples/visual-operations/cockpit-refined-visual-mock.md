@@ -98,4 +98,5 @@ Do not use this mock to justify:
 ## Next step
 
 If accepted, the next bounded slice can be a static frontend prototype with mock data only, using this
-refined mock as the visual target and preserving read-only semantics.
+refined mock as the visual target and preserving read-only semantics. See the
+[Mission Control static prototype](prototype/README.md).

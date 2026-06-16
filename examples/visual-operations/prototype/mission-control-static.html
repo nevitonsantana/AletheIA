@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AletheIA Mission Control — Static Prototype</title>
+  <style>
+    :root {
+      --ledger-ink: #18201f;
+      --muted-ink: #5d625d;
+      --evidence-paper: #f6f3ec;
+      --panel: #fbfaf6;
+      --source-line: #c7bfaf;
+      --source-line-soft: #e2dccf;
+      --verified-moss: #3e6b55;
+      --review-amber: #b8762b;
+      --stop-vermilion: #b84233;
+      --telemetry-blue: #49677c;
+      --shadow: 0 14px 40px rgba(24, 32, 31, 0.08);
+      --radius: 14px;
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(90deg, rgba(199, 191, 175, 0.13) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(199, 191, 175, 0.12) 1px, transparent 1px),
+        var(--evidence-paper);
+      background-size: 44px 44px;
+      color: var(--ledger-ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: -0.01em;
+    }
+
+    button, input { font: inherit; }
+
+    .app-shell {
+      display: grid;
+      grid-template-columns: minmax(270px, 320px) minmax(0, 1fr);
+      gap: 18px;
+      min-height: 100vh;
+      padding: 22px;
+    }
+
+    .topbar {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 18px;
+      align-items: center;
+      padding: 4px 2px 8px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.3rem, 4.4vw, 4.9rem);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      white-space: nowrap;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid color-mix(in srgb, var(--verified-moss), black 8%);
+      border-radius: 999px;
+      color: #153f2f;
+      background: rgba(255, 255, 255, 0.36);
+      padding: 10px 18px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .timestamp, .authority, .utility {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.78rem;
+      color: var(--muted-ink);
+    }
+
+    .authority {
+      color: var(--verified-moss);
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .trace-room, .workspace > section, .lane, .detail-drawer {
+      border: 1px solid var(--source-line);
+      background: rgba(251, 250, 246, 0.78);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .trace-room {
+      position: sticky;
+      top: 20px;
+      align-self: start;
+      max-height: calc(100vh - 122px);
+      overflow: auto;
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+
+    .section-kicker {
+      margin: 0;
+      color: var(--muted-ink);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .trace-header {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--source-line-soft);
+    }
+
+    .trace-header h2, .lane h2, .drawer-title {
+      margin: 4px 0 0;
+      font-size: 1.05rem;
+      letter-spacing: -0.03em;
+    }
+
+    .trace-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .icon-button, .filter-button, .card-button {
+      border: 1px solid var(--source-line);
+      background: rgba(255, 255, 255, 0.38);
+      color: var(--ledger-ink);
+      cursor: pointer;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .icon-button {
+      min-width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      padding: 0 10px;
+    }
+
+    .icon-button:hover, .filter-button:hover, .card-button:hover,
+    .icon-button:focus-visible, .filter-button:focus-visible, .card-button:focus-visible {
+      transform: translateY(-1px);
+      border-color: var(--ledger-ink);
+      outline: none;
+    }
+
+    .trace-group {
+      margin-top: 18px;
+    }
+
+    .trace-date {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 12px;
+      color: #1f4b39;
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .trace-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 10px;
+      padding: 0 0 22px;
+    }
+
+    .trace-item::before {
+      content: "";
+      position: absolute;
+      left: 54px;
+      top: 26px;
+      bottom: 0;
+      width: 1px;
+      background: var(--source-line-soft);
+    }
+
+    .trace-item:last-child::before { display: none; }
+
+    .trace-time {
+      padding-top: 6px;
+      color: var(--muted-ink);
+      font-size: 0.72rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      text-align: right;
+    }
+
+    .trace-card {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .trace-dot {
+      position: absolute;
+      left: -10px;
+      top: 4px;
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      border: 3px solid var(--panel);
+      background: var(--verified-moss);
+      box-shadow: 0 0 0 1px var(--source-line);
+    }
+
+    .trace-dot.critical { background: var(--stop-vermilion); }
+    .trace-dot.warning { background: var(--review-amber); }
+    .trace-dot.info { background: var(--telemetry-blue); }
+
+    .trace-title {
+      margin: 0 0 4px;
+      font-size: 0.93rem;
+      font-weight: 850;
+      letter-spacing: -0.025em;
+    }
+
+    .trace-copy {
+      margin: 0 0 8px;
+      color: var(--muted-ink);
+      font-size: 0.8rem;
+      line-height: 1.35;
+    }
+
+    .tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--source-line);
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.44);
+      padding: 3px 7px;
+      color: #46504b;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.66rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .workspace {
+      display: grid;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .overview {
+      border-radius: var(--radius);
+      display: grid;
+      grid-template-columns: 1.4fr repeat(5, minmax(112px, 1fr));
+      overflow: hidden;
+    }
+
+    .overview-cell {
+      padding: 20px 22px;
+      border-right: 1px solid var(--source-line-soft);
+      min-height: 108px;
+    }
+    .overview-cell:last-child { border-right: 0; }
+
+    .overview-label {
+      margin: 0 0 6px;
+      font-size: 0.88rem;
+      color: #1f2927;
+    }
+
+    .overview-number {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 3.1rem;
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .overview-unit {
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--muted-ink);
+      font-size: 0.82rem;
+      letter-spacing: -0.01em;
+    }
+
+    .tone-critical { color: var(--stop-vermilion); }
+    .tone-warning { color: var(--review-amber); }
+    .tone-stable { color: var(--verified-moss); }
+    .tone-info { color: var(--telemetry-blue); }
+
+    .exceptions {
+      border-radius: var(--radius);
+      display: grid;
+      grid-template-columns: 1.05fr repeat(3, 1fr);
+      overflow: hidden;
+    }
+
+    .exception-intro, .exception-item {
+      padding: 20px 22px;
+      border-right: 1px solid var(--source-line-soft);
+    }
+    .exception-item:last-child { border-right: 0; }
+
+    .exception-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 5px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .exception-rail {
+      width: 5px;
+      align-self: stretch;
+      border-radius: 999px;
+      background: var(--review-amber);
+    }
+    .exception-rail.critical { background: var(--stop-vermilion); }
+    .exception-rail.info { background: var(--telemetry-blue); }
+
+    .exception-label {
+      margin: 0 0 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 900;
+    }
+
+    .exception-title {
+      margin: 0;
+      font-weight: 850;
+      letter-spacing: -0.025em;
+    }
+
+    .exception-copy {
+      margin: 4px 0 0;
+      color: var(--muted-ink);
+      font-size: 0.84rem;
+    }
+
+    .filters {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 0 2px;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-button {
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: 0.82rem;
+      font-weight: 750;
+    }
+
+    .filter-button[aria-pressed="true"] {
+      background: var(--ledger-ink);
+      border-color: var(--ledger-ink);
+      color: var(--evidence-paper);
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(220px, 1fr));
+      gap: 14px;
+      align-items: start;
+    }
+
+    .lane {
+      border-radius: var(--radius);
+      padding: 14px;
+      min-height: 440px;
+    }
+
+    .lane-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .lane-title {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .lane-glyph {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--source-line);
+      border-radius: 8px;
+      font-size: 0.68rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-weight: 900;
+      color: var(--muted-ink);
+    }
+
+    .count {
+      color: var(--muted-ink);
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .work-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 7px 1fr;
+      margin: 12px 0;
+      border: 1px solid var(--source-line-soft);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.43);
+      overflow: hidden;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .work-card:hover, .work-card:focus-within {
+      transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--ledger-ink), var(--source-line) 55%);
+      background: rgba(255, 255, 255, 0.62);
+    }
+
+    .source-rail {
+      background: var(--source-line);
+    }
+    .source-rail.critical { background: var(--stop-vermilion); }
+    .source-rail.warning { background: var(--review-amber); }
+    .source-rail.stable { background: var(--verified-moss); }
+    .source-rail.info { background: var(--telemetry-blue); }
+
+    .card-body {
+      padding: 14px;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 12px;
+      align-items: start;
+    }
+
+    .slice-id {
+      color: var(--muted-ink);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .status-chip {
+      border-radius: 999px;
+      padding: 4px 8px;
+      background: rgba(199, 191, 175, 0.25);
+      color: #43504a;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.055em;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .status-chip.critical { background: rgba(184, 66, 51, 0.12); color: var(--stop-vermilion); }
+    .status-chip.warning { background: rgba(184, 118, 43, 0.12); color: #8f5717; }
+    .status-chip.stable { background: rgba(62, 107, 85, 0.13); color: var(--verified-moss); }
+    .status-chip.info { background: rgba(73, 103, 124, 0.12); color: var(--telemetry-blue); }
+
+    .card-title {
+      margin: 0 0 7px;
+      font-size: 1rem;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .card-copy {
+      margin: 0 0 12px;
+      color: #3f4743;
+      font-size: 0.86rem;
+      line-height: 1.42;
+    }
+
+    .confidence-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: center;
+      margin: 12px 0;
+      color: var(--muted-ink);
+      font-size: 0.78rem;
+    }
+
+    .dots {
+      display: inline-flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      border: 1px solid var(--source-line);
+      background: transparent;
+    }
+    .dot.on.critical { background: var(--stop-vermilion); border-color: var(--stop-vermilion); }
+    .dot.on.warning { background: var(--review-amber); border-color: var(--review-amber); }
+    .dot.on.stable { background: var(--verified-moss); border-color: var(--verified-moss); }
+    .dot.on.info { background: var(--telemetry-blue); border-color: var(--telemetry-blue); }
+
+    .source-strip {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      padding-top: 10px;
+      border-top: 1px solid var(--source-line-soft);
+    }
+
+    .card-button {
+      margin-top: 12px;
+      width: 100%;
+      border-radius: 9px;
+      padding: 8px 10px;
+      text-align: left;
+      color: #274238;
+      font-weight: 800;
+      background: rgba(246, 243, 236, 0.64);
+    }
+
+    .empty-slot {
+      display: grid;
+      place-items: center;
+      min-height: 86px;
+      border: 1px dashed var(--source-line);
+      border-radius: 12px;
+      color: var(--muted-ink);
+      font-size: 0.78rem;
+      text-align: center;
+      padding: 16px;
+      margin-top: 12px;
+    }
+
+    .footer-note {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 4px 0;
+      color: var(--muted-ink);
+      font-size: 0.78rem;
+      border-top: 1px solid var(--source-line-soft);
+    }
+
+    .legend {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .detail-drawer {
+      position: fixed;
+      right: 18px;
+      top: 18px;
+      bottom: 18px;
+      width: min(430px, calc(100vw - 36px));
+      border-radius: 18px;
+      padding: 20px;
+      transform: translateX(calc(100% + 32px));
+      transition: transform 220ms ease;
+      z-index: 10;
+      overflow: auto;
+    }
+
+    .detail-drawer.open { transform: translateX(0); }
+
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(24, 32, 31, 0.08);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease;
+      z-index: 9;
+    }
+    .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+
+    .drawer-header {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--source-line-soft);
+    }
+
+    .drawer-section {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--source-line-soft);
+    }
+
+    .drawer-section h3 {
+      margin: 0 0 10px;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .drawer-section p {
+      margin: 0 0 10px;
+      color: #3f4743;
+      line-height: 1.45;
+      font-size: 0.92rem;
+    }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 1180px) {
+      .app-shell { grid-template-columns: 1fr; }
+      .trace-room { position: static; max-height: none; }
+      .overview, .exceptions { grid-template-columns: repeat(2, 1fr); }
+      .board { grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+      .topbar { grid-template-columns: 1fr; }
+      .authority { text-align: left; }
+      h1 { white-space: normal; }
+    }
+
+    @media (max-width: 720px) {
+      .app-shell { padding: 14px; }
+      .overview, .exceptions, .board { grid-template-columns: 1fr; }
+      .overview-cell, .exception-intro, .exception-item { border-right: 0; border-bottom: 1px solid var(--source-line-soft); }
+      .overview-cell:last-child, .exception-item:last-child { border-bottom: 0; }
+      .footer-note { flex-direction: column; }
+      .brand { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app-shell" aria-label="AletheIA Mission Control static prototype">
+    <header class="topbar">
+      <div class="brand">
+        <h1>AletheIA Mission Control</h1>
+        <span class="pill">Read-only projection</span>
+      </div>
+      <div class="timestamp">Projected at 2026-06-16T16:30:00Z</div>
+      <div class="authority">Source records remain authoritative</div>
+    </header>
+
+    <aside class="trace-room" aria-label="Evidence timeline">
+      <div class="trace-header">
+        <div>
+          <p class="section-kicker">Trace Room</p>
+          <h2>Evidence timeline</h2>
+        </div>
+        <div class="trace-actions" aria-label="Trace controls">
+          <button class="icon-button" type="button" aria-label="Filter trace">Filter</button>
+          <button class="icon-button" type="button" aria-label="Trace menu">Menu</button>
+        </div>
+      </div>
+
+      <div class="trace-group">
+        <div class="trace-date">Today · 2026-06-16</div>
+        <article class="trace-item" data-severity="critical">
+          <div class="trace-time">15:42</div>
+          <div class="trace-card">
+            <span class="trace-dot critical" aria-hidden="true"></span>
+            <h3 class="trace-title">Critical flagged</h3>
+            <p class="trace-copy">Slice WS-2026-0616-001 · threshold breach detected.</p>
+            <div class="tags"><span class="tag">SRC-2147</span><span class="tag">Risk Policy PR-2.1</span></div>
+          </div>
+        </article>
+        <article class="trace-item" data-severity="warning">
+          <div class="trace-time">14:28</div>
+          <div class="trace-card">
+            <span class="trace-dot warning" aria-hidden="true"></span>
+            <h3 class="trace-title">Conflicting results</h3>
+            <p class="trace-copy">Slice WS-2026-0616-002 · validation mismatch.</p>
+            <div class="tags"><span class="tag">Eval Report v3.2</span><span class="tag">Policy M-1.4</span></div>
+          </div>
+        </article>
+        <article class="trace-item" data-severity="info">
+          <div class="trace-time">11:07</div>
+          <div class="trace-card">
+            <span class="trace-dot info" aria-hidden="true"></span>
+            <h3 class="trace-title">Telemetry unavailable</h3>
+            <p class="trace-copy">Slice WS-2026-0616-003 · metrics collection unavailable.</p>
+            <div class="tags"><span class="tag">Telemetry Spec</span></div>
+          </div>
+        </article>
+        <article class="trace-item" data-severity="stable">
+          <div class="trace-time">09:31</div>
+          <div class="trace-card">
+            <span class="trace-dot" aria-hidden="true"></span>
+            <h3 class="trace-title">Review closed</h3>
+            <p class="trace-copy">Slice WS-2026-0616-000 · approved by human reviewer.</p>
+            <div class="tags"><span class="tag">Human Review H-7781</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="trace-group">
+        <div class="trace-date">Yesterday · 2026-06-15</div>
+        <article class="trace-item" data-severity="warning">
+          <div class="trace-time">17:15</div>
+          <div class="trace-card">
+            <span class="trace-dot warning" aria-hidden="true"></span>
+            <h3 class="trace-title">Policy exception</h3>
+            <p class="trace-copy">Manual override applied to monitoring threshold.</p>
+            <div class="tags"><span class="tag">Policy M-1.4</span></div>
+          </div>
+        </article>
+        <article class="trace-item" data-severity="stable">
+          <div class="trace-time">16:02</div>
+          <div class="trace-card">
+            <span class="trace-dot" aria-hidden="true"></span>
+            <h3 class="trace-title">Review closed</h3>
+            <p class="trace-copy">Reconciled and accepted after source review.</p>
+            <div class="tags"><span class="tag">Reconcile R-556</span><span class="tag">SRC-2129</span></div>
+          </div>
+        </article>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <section class="overview" aria-label="Overview metrics">
+        <div class="overview-cell">
+          <p class="section-kicker">Overview</p>
+          <p class="overview-label">Current posture across work slices</p>
+        </div>
+        <div class="overview-cell"><p class="overview-label">Needs attention</p><div class="overview-number tone-warning">2 <span class="overview-unit">Slices</span></div></div>
+        <div class="overview-cell"><p class="overview-label">Critical alerts</p><div class="overview-number tone-critical">1 <span class="overview-unit">Slice</span></div></div>
+        <div class="overview-cell"><p class="overview-label">Conflicted</p><div class="overview-number tone-warning">1 <span class="overview-unit">Slice</span></div></div>
+        <div class="overview-cell"><p class="overview-label">Closed stable</p><div class="overview-number tone-stable">2 <span class="overview-unit">Slices</span></div></div>
+        <div class="overview-cell"><p class="overview-label">Unavailable signals</p><div class="overview-number tone-info">3 <span class="overview-unit">Fields</span></div></div>
+      </section>
+
+      <section class="exceptions" aria-label="Exception strip">
+        <div class="exception-intro">
+          <p class="section-kicker">Exceptions</p>
+          <p class="overview-label">Active exceptions requiring awareness</p>
+        </div>
+        <button class="exception-item" type="button" data-detail="human-review">
+          <span class="exception-rail critical" aria-hidden="true"></span>
+          <span><span class="exception-label tone-critical">Critical</span><span class="exception-title">1 slice pending human review</span><span class="exception-copy">Action required to reduce risk exposure.</span></span>
+          <span class="utility">Open</span>
+        </button>
+        <button class="exception-item" type="button" data-detail="conflict">
+          <span class="exception-rail" aria-hidden="true"></span>
+          <span><span class="exception-label tone-warning">Warning</span><span class="exception-title">1 slice with conflicted validation</span><span class="exception-copy">Conflicting evidence requires reconciliation.</span></span>
+          <span class="utility">Open</span>
+        </button>
+        <button class="exception-item" type="button" data-detail="telemetry">
+          <span class="exception-rail info" aria-hidden="true"></span>
+          <span><span class="exception-label tone-info">Info</span><span class="exception-title">3 slices with telemetry unavailable</span><span class="exception-copy">Observability gap affects confidence.</span></span>
+          <span class="utility">Open</span>
+        </button>
+      </section>
+
+      <nav class="filters" aria-label="Prototype filters">
+        <div>
+          <p class="section-kicker">Board lanes</p>
+          <span class="utility">Sorted by attention priority · read-only</span>
+        </div>
+        <div class="filter-group">
+          <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-filter="attention" aria-pressed="false">Needs attention</button>
+          <button class="filter-button" type="button" data-filter="stable" aria-pressed="false">Stable</button>
+          <button class="filter-button" type="button" id="toggle-empty" aria-pressed="true">Show empty lanes</button>
+        </div>
+      </nav>
+
+      <section class="board" aria-label="Work Slice board">
+        <section class="lane" data-lane="validation">
+          <div class="lane-header"><div class="lane-title"><span class="lane-glyph">VAL</span><h2>Validation</h2></div><span class="count">2 slices</span></div>
+          <article class="work-card" data-status="attention" data-detail="conflict" tabindex="0">
+            <div class="source-rail warning"></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="slice-id">WS-2026-0616-002</span><span class="status-chip warning">Conflicted</span></div>
+              <h3 class="card-title">Model output mismatch</h3>
+              <p class="card-copy">Results conflict with policy baseline and risk thresholds.</p>
+              <div class="confidence-row"><span>Confidence</span><span class="dots"><i class="dot on warning"></i><i class="dot on warning"></i><i class="dot"></i><i class="dot"></i><span>Medium</span></span></div>
+              <div class="source-strip"><span class="tag">SRC-2149</span><span class="tag">Eval Report v3.2</span><span class="tag">Policy M-1.4</span></div>
+              <button class="card-button" type="button" data-detail="conflict">Compare source refs</button>
+            </div>
+          </article>
+          <article class="work-card" data-status="stable" data-detail="validated" tabindex="0">
+            <div class="source-rail stable"></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="slice-id">WS-2026-0615-006</span><span class="status-chip stable">Validated</span></div>
+              <h3 class="card-title">Policy update impact check</h3>
+              <p class="card-copy">Outputs within expected bounds.</p>
+              <div class="confidence-row"><span>Confidence</span><span class="dots"><i class="dot on stable"></i><i class="dot on stable"></i><i class="dot"></i><i class="dot"></i><span>High</span></span></div>
+              <div class="source-strip"><span class="tag">SRC-2120</span><span class="tag">Eval v3.1</span></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="lane" data-lane="human-review">
+          <div class="lane-header"><div class="lane-title"><span class="lane-glyph">HR</span><h2>Human review</h2></div><span class="count">1 slice</span></div>
+          <article class="work-card" data-status="attention" data-detail="human-review" tabindex="0">
+            <div class="source-rail critical"></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="slice-id">WS-2026-0616-001</span><span class="status-chip critical">Pending · critical</span></div>
+              <h3 class="card-title">Critical risk signal</h3>
+              <p class="card-copy">Threshold breach detected. Human review required.</p>
+              <div class="confidence-row"><span>Confidence</span><span class="dots"><i class="dot on critical"></i><i class="dot on critical"></i><i class="dot on critical"></i><i class="dot"></i><span>Low</span></span></div>
+              <div class="source-strip"><span class="tag">SRC-2147</span><span class="tag">Risk Policy PR-2.1</span><span class="tag">Rule R-7</span></div>
+              <button class="card-button" type="button" data-detail="human-review">Open review question</button>
+            </div>
+          </article>
+          <div class="empty-slot">No other slices in this lane.</div>
+        </section>
+
+        <section class="lane" data-lane="reconcile">
+          <div class="lane-header"><div class="lane-title"><span class="lane-glyph">REC</span><h2>Reconcile</h2></div><span class="count">1 slice</span></div>
+          <article class="work-card" data-status="attention" data-detail="telemetry" tabindex="0">
+            <div class="source-rail info"></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="slice-id">WS-2026-0616-003</span><span class="status-chip info">Telemetry unavailable</span></div>
+              <h3 class="card-title">Resolve missing telemetry</h3>
+              <p class="card-copy">Runtime and cost records were not exported for this docs-only slice.</p>
+              <div class="confidence-row"><span>Confidence</span><span class="dots"><i class="dot on info"></i><i class="dot"></i><i class="dot"></i><span>Unavailable</span></span></div>
+              <div class="source-strip"><span class="tag">Telemetry Spec</span><span class="tag">Closeout R-556</span></div>
+              <button class="card-button" type="button" data-detail="telemetry">Review unavailable fields</button>
+            </div>
+          </article>
+          <div class="empty-slot">No other slices in this lane.</div>
+        </section>
+
+        <section class="lane" data-lane="closed">
+          <div class="lane-header"><div class="lane-title"><span class="lane-glyph">CLS</span><h2>Closed</h2></div><span class="count">2 slices</span></div>
+          <article class="work-card" data-status="stable" data-detail="closed-207" tabindex="0">
+            <div class="source-rail stable"></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="slice-id">PR #207</span><span class="status-chip stable">Stable</span></div>
+              <h3 class="card-title">Human-review source mapping</h3>
+              <p class="card-copy">Source supports closure; review source remains unavailable.</p>
+              <div class="confidence-row"><span>Confidence</span><span class="dots"><i class="dot on stable"></i><i class="dot on stable"></i><i class="dot on stable"></i><i class="dot"></i><span>High</span></span></div>
+              <div class="source-strip"><span class="tag">PR #207</span><span class="tag">CI 27626141953</span><span class="tag">Merge 39f76cf</span></div>
+            </div>
+          </article>
+          <article class="work-card" data-status="stable" data-detail="closed-201" tabindex="0">
+            <div class="source-rail stable"></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="slice-id">PR #201</span><span class="status-chip stable">Stable</span></div>
+              <h3 class="card-title">Dogfood evidence record</h3>
+              <p class="card-copy">Snapshot supports closeout; human review unavailable stays visible.</p>
+              <div class="confidence-row"><span>Confidence</span><span class="dots"><i class="dot on stable"></i><i class="dot on stable"></i><i class="dot"></i><i class="dot"></i><span>High</span></span></div>
+              <div class="source-strip"><span class="tag">PR #201</span><span class="tag">Dogfood snapshot</span></div>
+            </div>
+          </article>
+        </section>
+      </section>
+    </div>
+
+    <footer class="footer-note">
+      <span>This is a read-only static prototype. All data is mock data derived from Visual Operations examples.</span>
+      <span class="legend"><span class="legend-item"><i class="dot on critical"></i>Critical</span><span class="legend-item"><i class="dot on warning"></i>Review</span><span class="legend-item"><i class="dot on stable"></i>Stable</span><span class="legend-item"><i class="dot on info"></i>Unavailable</span></span>
+    </footer>
+  </main>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="detail-drawer" id="detail-drawer" aria-label="Source detail" aria-hidden="true">
+    <div class="drawer-header">
+      <div>
+        <p class="section-kicker" id="drawer-kicker">Source detail</p>
+        <h2 class="drawer-title" id="drawer-title">Select a card</h2>
+      </div>
+      <button class="icon-button" type="button" id="close-drawer" aria-label="Close detail">Close</button>
+    </div>
+    <div class="drawer-section">
+      <h3>What this means</h3>
+      <p id="drawer-meaning">Open a card or exception to inspect the read-only evidence summary.</p>
+    </div>
+    <div class="drawer-section">
+      <h3>Source refs</h3>
+      <div class="tags" id="drawer-sources"></div>
+    </div>
+    <div class="drawer-section">
+      <h3>Boundary</h3>
+      <p id="drawer-boundary">This prototype never changes source records. It only explains what the mock projection says.</p>
+    </div>
+  </aside>
+
+  <script>
+    const details = {
+      "human-review": {
+        kicker: "Human review · confirmed",
+        title: "Critical risk signal",
+        meaning: "A source says human review is required before trusting closure. This is a review prompt, not an automated decision.",
+        sources: ["SRC-2147", "Risk Policy PR-2.1", "Rule R-7"],
+        boundary: "Do not move this slice to closed without a resolving review source."
+      },
+      conflict: {
+        kicker: "Validation · conflicted",
+        title: "Model output mismatch",
+        meaning: "Validation sources disagree. The cockpit should surface conflict and preserve both source refs instead of choosing the convenient truth.",
+        sources: ["SRC-2149", "Eval Report v3.2", "Policy M-1.4"],
+        boundary: "Conflicted lane confidence is stronger than the lane label itself."
+      },
+      telemetry: {
+        kicker: "Reconcile · inferred",
+        title: "Telemetry unavailable",
+        meaning: "Optional runtime, token, or cost telemetry was not exported. This is a neutral source gap, not a failed slice.",
+        sources: ["Telemetry Spec", "Closeout R-556"],
+        boundary: "Do not invent estimates just to complete the card."
+      },
+      validated: {
+        kicker: "Validation · stable",
+        title: "Policy update impact check",
+        meaning: "Evidence supports the validation posture for this static example.",
+        sources: ["SRC-2120", "Eval v3.1"],
+        boundary: "A stable card still links to source refs for verification."
+      },
+      "closed-207": {
+        kicker: "Closed · confirmed",
+        title: "Human-review source mapping",
+        meaning: "Source records support closure, while human_review remains unavailable because no durable review source was supplied.",
+        sources: ["PR #207", "CI 27626141953", "Merge 39f76cf"],
+        boundary: "Closed is a presentation posture derived from sources, not a new authority."
+      },
+      "closed-201": {
+        kicker: "Closed · confirmed",
+        title: "Dogfood evidence record",
+        meaning: "Snapshot evidence supports closeout. Human review unavailable remains visible as honest absence of source authority.",
+        sources: ["PR #201", "Dogfood snapshot"],
+        boundary: "Unavailable is not failure; it is absence of authoritative source."
+      }
+    };
+
+    const drawer = document.getElementById('detail-drawer');
+    const backdrop = document.getElementById('drawer-backdrop');
+    const sources = document.getElementById('drawer-sources');
+
+    function openDetail(key) {
+      const data = details[key] || details.conflict;
+      document.getElementById('drawer-kicker').textContent = data.kicker;
+      document.getElementById('drawer-title').textContent = data.title;
+      document.getElementById('drawer-meaning').textContent = data.meaning;
+      document.getElementById('drawer-boundary').textContent = data.boundary;
+      sources.innerHTML = data.sources.map(source => `<span class="tag">${source}</span>`).join('');
+      drawer.classList.add('open');
+      backdrop.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      backdrop.hidden = false;
+    }
+
+    function closeDetail() {
+      drawer.classList.remove('open');
+      backdrop.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      setTimeout(() => { backdrop.hidden = true; }, 180);
+    }
+
+    document.querySelectorAll('[data-detail]').forEach(element => {
+      element.addEventListener('click', event => {
+        event.stopPropagation();
+        openDetail(element.dataset.detail);
+      });
+      element.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openDetail(element.dataset.detail);
+        }
+      });
+    });
+
+    document.getElementById('close-drawer').addEventListener('click', closeDetail);
+    backdrop.addEventListener('click', closeDetail);
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeDetail();
+    });
+
+    document.querySelectorAll('[data-filter]').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('[data-filter]').forEach(btn => btn.setAttribute('aria-pressed', 'false'));
+        button.setAttribute('aria-pressed', 'true');
+        const filter = button.dataset.filter;
+        document.querySelectorAll('.work-card').forEach(card => {
+          card.classList.toggle('hidden', filter !== 'all' && card.dataset.status !== filter);
+        });
+      });
+    });
+
+    document.getElementById('toggle-empty').addEventListener('click', event => {
+      const pressed = event.currentTarget.getAttribute('aria-pressed') === 'true';
+      event.currentTarget.setAttribute('aria-pressed', String(!pressed));
+      document.querySelectorAll('.empty-slot').forEach(slot => slot.classList.toggle('hidden', pressed));
+    });
+  </script>
+</body>
+</html>
