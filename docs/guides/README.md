@@ -34,3 +34,4 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [github-pr-visual-operations-projector.md](github-pr-visual-operations-projector.md) | Projecting supplied GitHub PR evidence into Visual Operations snapshots |
 | [visual-operations-usage-evidence.md](visual-operations-usage-evidence.md) | Recording real snapshot use without backfilling or expanding scope |
 | [visual-operations-aletheia-dogfood-protocol.md](visual-operations-aletheia-dogfood-protocol.md) | Measuring Visual Operations snapshot utility in AletheIA maintenance |
+| [visual-operations-cockpit-visual-model.md](visual-operations-cockpit-visual-model.md) | Translating Visual Operations contracts and dogfood evidence into minimum cockpit card, lane, and alert semantics |
