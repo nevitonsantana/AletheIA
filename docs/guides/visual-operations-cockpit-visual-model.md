@@ -191,6 +191,7 @@ cadence.
 
 ## Related
 
+- [Mission Control static prototype](../../examples/visual-operations/prototype/README.md)
 - [Cockpit refined visual mock](../../examples/visual-operations/cockpit-refined-visual-mock.md)
 - [Cockpit visual mock direction](../../examples/visual-operations/cockpit-visual-mock-direction.md)
 - [Cockpit light wireframe spec](../../examples/visual-operations/cockpit-light-wireframe-spec.md)
