@@ -28,6 +28,7 @@ Consultable material: catalogs, checklists, policies, examples, adapter guides, 
 | [constrained-pilot-review-checklist.md](constrained-pilot-review-checklist.md) | Review checklist for constrained-adoption pilots |
 | [resource-aware-pilot-review-checklist.md](resource-aware-pilot-review-checklist.md) | Review checklist for resource-aware pilots |
 | [external-references-execution-patterns.md](external-references-execution-patterns.md) | External sources evaluated for Execution Pattern Governance and their vocabulary boundary |
+| [visual-operations-human-review-source-mapping.md](visual-operations-human-review-source-mapping.md) | Source mapping rules for Visual Operations `human_review` fields |
 | **Agent roles** | |
 | [agent-role-catalog.md](agent-role-catalog.md) | Index of all portable agent roles |
 | [agent-role-explorer.md](agent-role-explorer.md) | Explorer role spec |
