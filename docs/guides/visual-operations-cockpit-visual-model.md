@@ -191,6 +191,7 @@ cadence.
 
 ## Related
 
+- [Cockpit visual mock direction](../../examples/visual-operations/cockpit-visual-mock-direction.md)
 - [Cockpit light wireframe spec](../../examples/visual-operations/cockpit-light-wireframe-spec.md)
 - [Cockpit static board composition](../../examples/visual-operations/cockpit-static-board-composition.md)
 - [Cockpit card state examples](../../examples/visual-operations/cockpit-card-state-examples.md)

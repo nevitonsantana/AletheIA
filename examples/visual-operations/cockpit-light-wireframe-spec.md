@@ -254,6 +254,10 @@ Before moving to a visual mock or coded prototype, confirm:
 - No interaction suggests the board can mutate source truth.
 - The design can explain itself to a designer, PM, or governance reviewer without code context.
 
+## Related visual artifacts
+
+- [Cockpit visual mock direction](cockpit-visual-mock-direction.md)
+
 ## Next step
 
 If accepted, this spec can feed one of two bounded next slices:
