@@ -34,10 +34,11 @@ The current refinement pass improves art direction, hierarchy, contrast, and mot
 
 Design intent:
 
-- darker evidence-room atmosphere instead of a generic light dashboard;
+- sober evidence-room atmosphere instead of a generic dashboard or AI-polished cockpit;
 - trace rail and source rails as the signature visual system;
+- flatter ledger surfaces with less glow, less glass, fewer pill-like controls, and tighter radius;
 - restrained amber, moss, vermilion, and telemetry blue only for evidence state;
-- motion limited to surface entrance, card affordance, and drawer inspection.
+- motion limited to a short surface entrance and narrow inspection transitions.
 
 ## What to review
 
