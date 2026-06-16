@@ -26,6 +26,10 @@ If you need a step-by-step guide, see [`guides/`](../guides/README.md). If you n
 | [tool-risk-taxonomy.md](tool-risk-taxonomy.md) | Coarse risk classes for skill declaration, mapped to the authoritative permission matrix |
 | [agent-computer-interface.md](agent-computer-interface.md) | How to design tools agents consume (ACI), complementing the permission matrix |
 | [context-rot-controls.md](context-rot-controls.md) | Signals of long-session degradation and the minimal controls + checkpoint |
+| [execution-pattern-governance.md](execution-pattern-governance.md) | How AletheIA chooses the execution topology before task execution |
+| [execution-pattern-library.md](execution-pattern-library.md) | The ten canonical execution patterns and selection rules |
+| [execution-vehicle-selection.md](execution-vehicle-selection.md) | Vehicle vs pattern and proportionality before autonomy |
+| [comprehension-debt.md](comprehension-debt.md) | When generated material outpaces human understanding, distinct from context rot |
 | [self-application.md](self-application.md) | How AletheIA governs its own evolution |
 | [structured-risk-inference.md](structured-risk-inference.md) | Experimental risk inference layer |
 | [project-extension-pattern.md](project-extension-pattern.md) | How projects extend the overlay without distorting it |

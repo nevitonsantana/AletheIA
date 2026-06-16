@@ -36,6 +36,12 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [agent-harness-contract.md](agent-harness-contract.md) | The per-task declaration: autonomy, allowed tools/skills, gates, sensors, rollback, human review, context policy |
 | [policy-verdicts.md](policy-verdicts.md) | The verdict vocabulary (allow/deny/require_approval/transform/log_only) and its mapping to harness decision values |
 | [agent-action-audit-record.md](agent-action-audit-record.md) | Minimum audit fields proving skill → tool → verdict → evidence → approval |
+| [execution-pattern-selection.md](execution-pattern-selection.md) | How a task records its selected execution topology and required controls |
+| [orchestration-contract.md](orchestration-contract.md) | What an orchestrated execution must declare before stages run |
+| [loop-state-contract.md](loop-state-contract.md) | Minimum state shape for recurring or looped work |
+| [objective-gate-policy.md](objective-gate-policy.md) | Objective stop/gate requirements before loops can run safely |
+| [maker-checker-policy.md](maker-checker-policy.md) | When separate generation and verification roles are required |
+| [execution-audit-record.md](execution-audit-record.md) | Pattern-level audit view over existing AHGE evidence |
 
 ### Operationalized by security checklists
 

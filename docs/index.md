@@ -49,15 +49,31 @@ Reading map organized by intent. Each entry links to the most useful starting po
 
 ---
 
+## I want to choose an execution pattern
+
+1. [Execution Pattern Governance](concepts/execution-pattern-governance.md) — topology selection before task execution
+2. [Execution Pattern Library](concepts/execution-pattern-library.md) — ten canonical patterns and when to use them
+3. [Execution Vehicle Selection](concepts/execution-vehicle-selection.md) — vehicle, pattern, and proportionality rules
+4. [Execution Pattern Selection contract](contracts/execution-pattern-selection.md) — declaration shape for selected topology and controls
+5. [Orchestration Contract](contracts/orchestration-contract.md) — stage-level declaration for orchestrated work
+6. [Objective Gate Policy](contracts/objective-gate-policy.md) — when loops need gates, budgets, state, and review
+7. [Maker-Checker Policy](contracts/maker-checker-policy.md) — when separate verifier roles are required
+8. [Comprehension Debt](concepts/comprehension-debt.md) — when output volume outpaces understanding
+
+---
+
 ## I want to configure an agent harness (Claude Code, Codex, Qwen)
 
 1. [Runtime adapter — Claude Code](reference/runtime-adapter-claude-code.md)
 2. [Runtime adapter — Codex](reference/runtime-adapter-codex.md)
 3. [Runtime adapter — Qwen](reference/runtime-adapter-qwen.md)
 4. [Setting up harnesses](guides/setting-up-harnesses.md) — wire a consumer project to Claude Code via the shim pack
-5. [Runtime adapter contract](contracts/runtime-adapter-contract.md) — what any adapter must honor
-6. [Agent role catalog](reference/agent-role-catalog.md) — portable roles across runtimes
-7. [Agent runtime decision guide](guides/agent-runtime-decision-guide.md) — choosing between runtimes
+5. [Agent Harness Contract](concepts/agent-harness-contract.md) — declared per-task envelope before tools run
+6. [Agent Harness Contract spec](contracts/agent-harness-contract.md) — autonomy, tools, gates, sensors, rollback, and review fields
+7. [Agent Harness Governance Extension](contracts/agent-harness-governance-extension.md) — per-action authorization, budgets, and observations
+8. [Runtime adapter contract](contracts/runtime-adapter-contract.md) — what any adapter must honor
+9. [Agent role catalog](reference/agent-role-catalog.md) — portable roles across runtimes
+10. [Agent runtime decision guide](guides/agent-runtime-decision-guide.md) — choosing between runtimes
 
 ---
 
@@ -72,8 +88,12 @@ Reading map organized by intent. Each entry links to the most useful starting po
 7. [Work Slice Visual State Contract](contracts/work-slice-visual-state-contract.md)
 8. [Visual Operations Privacy Boundaries](contracts/visual-ops-privacy-boundaries.md)
 9. [Runtime effort governance contract](contracts/runtime-effort-governance-contract.md) — how an agent decides effort: start, escalate, de-escalate, stop, checkpoint
-10. [Agent harness governance extension](contracts/agent-harness-governance-extension.md) — how the harness authorizes, budgets, and bounds execution of model-proposed actions
-11. [All contracts →](contracts/README.md)
+10. [Agent Harness Contract](contracts/agent-harness-contract.md) — per-task autonomy, tools, gates, sensors, rollback, and review declaration
+11. [Agent harness governance extension](contracts/agent-harness-governance-extension.md) — how the harness authorizes, budgets, and bounds execution of model-proposed actions
+12. [Execution Pattern Selection](contracts/execution-pattern-selection.md) — selected topology and required controls before execution
+13. [Orchestration Contract](contracts/orchestration-contract.md) — stage-level declaration for orchestrated work
+14. [Objective Gate Policy](contracts/objective-gate-policy.md) — loop gates, budgets, state, and human review requirements
+15. [All contracts →](contracts/README.md)
 
 ---
 
