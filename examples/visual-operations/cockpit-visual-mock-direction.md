@@ -101,3 +101,5 @@ If accepted, the next bounded visual slice can be either:
    or
 2. a static frontend prototype with mock data only, still read-only and disconnected from backend or
    collectors.
+
+See [Cockpit refined visual mock](cockpit-refined-visual-mock.md) for the first refined single-screen direction.

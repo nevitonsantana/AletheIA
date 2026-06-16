@@ -256,6 +256,7 @@ Before moving to a visual mock or coded prototype, confirm:
 
 ## Related visual artifacts
 
+- [Cockpit refined visual mock](cockpit-refined-visual-mock.md)
 - [Cockpit visual mock direction](cockpit-visual-mock-direction.md)
 
 ## Next step
