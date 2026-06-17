@@ -6,1097 +6,934 @@
   <title>AletheIA Mission Control — Static Prototype</title>
   <style>
     :root {
-      --ink: #e8e4da;
-      --ink-strong: #f8f3e8;
-      --ink-muted: #a7aaa6;
-      --ink-faint: #707872;
-      --void: #0a0d0c;
-      --surface: #111514;
-      --surface-2: #151a18;
-      --surface-3: #1b211f;
-      --ledger-line: rgba(232, 228, 218, 0.14);
-      --ledger-line-strong: rgba(232, 228, 218, 0.28);
-      --verified-moss: #8fb99d;
-      --review-amber: #d2a15f;
-      --stop-vermilion: #d87465;
-      --telemetry-blue: #8ab3c9;
-      --shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
-      --radius: 8px;
-      --radius-soft: 6px;
+      --bg: #090c12;
+      --shell: #0d1119;
+      --panel: #10151f;
+      --panel-2: #141a25;
+      --panel-3: #181f2b;
+      --line: rgba(174, 185, 207, 0.14);
+      --line-strong: rgba(174, 185, 207, 0.24);
+      --text: #e7ebf2;
+      --text-soft: #b3bac8;
+      --text-muted: #727b8e;
+      --critical: #e17063;
+      --review: #d6a35e;
+      --stable: #84b99a;
+      --info: #85b7d3;
+      --violet: #8b6ee8;
+      --radius: 14px;
+      --radius-sm: 9px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color-scheme: dark;
     }
 
     * { box-sizing: border-box; }
 
-    html { background: var(--void); }
+    html { background: var(--bg); }
 
     body {
       margin: 0;
       min-height: 100vh;
-      background:
-        linear-gradient(90deg, rgba(232, 228, 218, 0.035) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(232, 228, 218, 0.028) 1px, transparent 1px),
-        #0a0d0c;
-      background-size: 56px 56px;
-      color: var(--ink);
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
       letter-spacing: -0.01em;
     }
 
     button, input { font: inherit; }
 
-    .app-shell {
-      display: grid;
-      grid-template-columns: minmax(310px, 360px) minmax(0, 1fr);
-      gap: 18px;
+    button {
+      color: inherit;
+      border: 0;
+    }
+
+    .stage {
       min-height: 100vh;
-      padding: 22px;
+      display: grid;
+      place-items: center;
+      padding: clamp(18px, 3vw, 42px);
+    }
+
+    .mission-shell {
+      width: min(1540px, 100%);
+      min-height: min(900px, calc(100vh - 48px));
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr);
+      border: 1px solid var(--line-strong);
+      border-radius: 22px;
+      background: var(--shell);
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+    }
+
+    .side-rail {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 18px;
+      padding: 18px 10px;
+      border-right: 1px solid var(--line);
+      background: #0a0e15;
+    }
+
+    .mark {
+      width: 34px;
+      height: 34px;
+      margin: 0 auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(139, 110, 232, 0.42);
+      border-radius: 10px;
+      color: #c9bcff;
+      font: 800 0.75rem var(--mono);
+      background: rgba(139, 110, 232, 0.08);
+    }
+
+    .rail-stack {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+      justify-items: center;
+    }
+
+    .rail-button {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: transparent;
+      color: var(--text-muted);
+      font: 760 0.66rem var(--mono);
+      cursor: pointer;
+    }
+
+    .rail-button.active,
+    .rail-button:hover,
+    .rail-button:focus-visible {
+      background: var(--panel-2);
+      color: var(--text);
+      outline: 1px solid var(--line-strong);
+    }
+
+    .app {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-width: 0;
     }
 
     .topbar {
-      grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto auto;
-      gap: 20px;
-      align-items: end;
-      padding: 0 0 14px;
-      border-bottom: 1px solid var(--ledger-line-strong);
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 410px) auto;
+      gap: 16px;
+      align-items: center;
+      min-height: 74px;
+      padding: 16px 22px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(13, 17, 25, 0.98);
     }
 
-    .brand {
+    .product-title {
       display: flex;
-      align-items: end;
-      gap: 14px;
+      align-items: baseline;
+      gap: 12px;
       min-width: 0;
     }
 
     h1 {
       margin: 0;
-      color: var(--ink-strong);
-      font-size: clamp(2rem, 3.2vw, 3.8rem);
-      line-height: 0.92;
-      letter-spacing: -0.055em;
-      white-space: nowrap;
-      font-weight: 820;
+      font-size: 1.36rem;
+      font-weight: 720;
+      letter-spacing: -0.035em;
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      border: 1px solid rgba(143, 185, 157, 0.42);
-      border-radius: 4px;
-      color: #cfe3d5;
-      background: rgba(143, 185, 157, 0.055);
-      padding: 8px 10px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-weight: 760;
+    .mode-label, .meta, .kicker, .utility, .source-ref, .chip, .metric-label {
+      font-family: var(--mono);
+      letter-spacing: 0.02em;
+    }
+
+    .mode-label {
+      color: var(--stable);
       font-size: 0.68rem;
-      letter-spacing: 0.06em;
       text-transform: uppercase;
-      white-space: nowrap;
     }
 
-    .timestamp, .authority, .utility {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.72rem;
-      color: var(--ink-muted);
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #0b1018;
+      color: var(--text-muted);
+      padding: 0 12px;
+      font-size: 0.82rem;
     }
 
-    .timestamp { color: var(--ink-faint); }
+    .search-box span:first-child {
+      font: 780 0.72rem var(--mono);
+      color: var(--text-muted);
+    }
 
     .authority {
-      color: #cfe3d5;
-      font-weight: 720;
       text-align: right;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      line-height: 1.35;
     }
 
-    .trace-room, .workspace > section, .lane, .detail-drawer {
-      border: 1px solid var(--ledger-line);
-      background: rgba(17, 21, 20, 0.96);
-      box-shadow: var(--shadow);
-    }
-
-    .trace-room {
-      position: sticky;
-      top: 20px;
-      align-self: start;
-      max-height: calc(100vh - 124px);
-      overflow: auto;
-      border-radius: var(--radius);
-      padding: 16px;
-      border-left: 3px solid var(--review-amber);
-    }
-
-    .trace-room::-webkit-scrollbar, .detail-drawer::-webkit-scrollbar { width: 10px; }
-    .trace-room::-webkit-scrollbar-thumb, .detail-drawer::-webkit-scrollbar-thumb {
-      background: rgba(232, 228, 218, 0.18);
-      border-radius: 999px;
-      border: 3px solid transparent;
-      background-clip: content-box;
-    }
-
-    .section-kicker {
-      margin: 0;
-      color: var(--ink-faint);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.66rem;
-      text-transform: uppercase;
-      letter-spacing: 0.11em;
-      font-weight: 760;
-    }
-
-    .trace-header {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 10px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--ledger-line);
-    }
-
-    .trace-header h2, .lane h2, .drawer-title {
-      margin: 4px 0 0;
-      color: var(--ink-strong);
-      font-size: 0.98rem;
-      letter-spacing: -0.025em;
-    }
-
-    .trace-actions { display: flex; gap: 8px; }
-
-    .icon-button, .filter-button, .card-button {
-      border: 1px solid var(--ledger-line-strong);
-      background: transparent;
-      color: var(--ink);
-      cursor: pointer;
-      transition: transform 140ms ease, border-color 140ms ease, background 140ms ease, color 140ms ease;
-    }
-
-    .icon-button {
-      min-width: 34px;
-      height: 34px;
-      border-radius: 4px;
-      padding: 0 10px;
-    }
-
-    .icon-button:hover, .filter-button:hover, .card-button:hover,
-    .icon-button:focus-visible, .filter-button:focus-visible, .card-button:focus-visible {
-      transform: translateY(-1px);
-      border-color: rgba(232, 228, 218, 0.48);
-      background: rgba(232, 228, 218, 0.045);
-      outline: none;
-    }
-
-    .trace-group { margin-top: 18px; }
-
-    .trace-date {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      margin-bottom: 13px;
-      color: #d8c5a2;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-weight: 780;
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .trace-item {
-      position: relative;
-      display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: 12px;
-      padding: 0 0 22px;
-    }
-
-    .trace-item::before {
-      content: "";
-      position: absolute;
-      left: 55px;
-      top: 24px;
-      bottom: 0;
-      width: 1px;
-      background: rgba(232, 228, 218, 0.18);
-    }
-
-    .trace-item:last-child::before { display: none; }
-
-    .trace-time {
-      padding-top: 5px;
-      color: var(--ink-faint);
-      font-size: 0.68rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      text-align: right;
-    }
-
-    .trace-card {
-      position: relative;
-      padding: 0 0 0 18px;
-    }
-
-    .trace-dot {
-      position: absolute;
-      left: -10px;
-      top: 3px;
-      width: 17px;
-      height: 17px;
-      border-radius: 999px;
-      border: 3px solid var(--surface);
-      background: var(--verified-moss);
-      box-shadow: 0 0 0 1px rgba(232, 228, 218, 0.28);
-    }
-
-    .trace-dot.critical { background: var(--stop-vermilion); }
-    .trace-dot.warning { background: var(--review-amber); }
-    .trace-dot.info { background: var(--telemetry-blue); }
-
-    .trace-title {
-      margin: 0 0 4px;
-      color: var(--ink-strong);
-      font-size: 0.9rem;
-      font-weight: 760;
-      letter-spacing: -0.018em;
-    }
-
-    .trace-copy {
-      margin: 0 0 8px;
-      color: var(--ink-muted);
-      font-size: 0.78rem;
-      line-height: 1.4;
-    }
-
-    .tags {
-      display: flex;
-      gap: 5px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      border: 1px solid rgba(232, 228, 218, 0.18);
-      border-radius: 4px;
-      background: rgba(232, 228, 218, 0.028);
-      padding: 3px 6px;
-      color: #c5c1b7;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.6rem;
-      font-weight: 700;
-      white-space: nowrap;
+    .authority strong {
+      display: block;
+      color: var(--text-soft);
+      font-weight: 620;
     }
 
     .workspace {
       display: grid;
-      gap: 16px;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      min-height: 0;
+    }
+
+    .main-board {
       min-width: 0;
+      padding: 22px;
+      overflow: auto;
     }
 
-    .overview {
-      border-radius: var(--radius);
+    .inspector {
       display: grid;
-      grid-template-columns: 1.28fr repeat(5, minmax(112px, 1fr));
-      overflow: hidden;
+      grid-template-rows: auto 1fr;
+      min-height: 0;
+      border-left: 1px solid var(--line);
+      background: #0b0f16;
     }
 
-    .overview-cell {
-      position: relative;
-      padding: 18px 20px;
-      border-right: 1px solid var(--ledger-line);
-      min-height: 104px;
+    .inspector-header {
+      padding: 22px;
+      border-bottom: 1px solid var(--line);
     }
-    .overview-cell:last-child { border-right: 0; }
-    .overview-cell:first-child { background: rgba(232, 228, 218, 0.025); }
 
-    .overview-label {
+    .inspector-body {
+      padding: 22px;
+      overflow: auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow {
       margin: 0 0 7px;
-      color: #d6d0c2;
-      font-size: 0.82rem;
-      line-height: 1.32;
-    }
-
-    .overview-number {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 8px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 2.35rem;
-      font-weight: 760;
-      line-height: 1;
-      letter-spacing: -0.05em;
-    }
-
-    .overview-unit {
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink-faint);
-      font-size: 0.74rem;
-      letter-spacing: -0.01em;
-      font-weight: 500;
-    }
-
-    .tone-critical { color: var(--stop-vermilion); }
-    .tone-warning { color: var(--review-amber); }
-    .tone-stable { color: var(--verified-moss); }
-    .tone-info { color: var(--telemetry-blue); }
-
-    .exceptions {
-      border-radius: var(--radius);
-      display: grid;
-      grid-template-columns: 0.95fr repeat(3, 1fr);
-      overflow: hidden;
-    }
-
-    .exception-intro, .exception-item {
-      padding: 18px 20px;
-      border-right: 1px solid var(--ledger-line);
-    }
-    .exception-item:last-child { border-right: 0; }
-
-    .exception-item {
-      position: relative;
-      display: grid;
-      grid-template-columns: 4px 1fr auto;
-      gap: 13px;
-      align-items: center;
-      color: var(--ink);
-      cursor: pointer;
-      text-align: left;
-      border-top: 0;
-      border-bottom: 0;
-      border-left: 0;
-      background: transparent;
-      transition: background 140ms ease;
-    }
-
-    .exception-item:hover, .exception-item:focus-visible {
-      background: rgba(232, 228, 218, 0.035);
-      outline: none;
-    }
-
-    .exception-rail {
-      width: 4px;
-      align-self: stretch;
-      border-radius: 999px;
-      background: var(--review-amber);
-    }
-    .exception-rail.critical { background: var(--stop-vermilion); }
-    .exception-rail.info { background: var(--telemetry-blue); }
-
-    .exception-label {
-      display: block;
-      margin: 0 0 5px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.64rem;
+      color: var(--text-muted);
+      font: 720 0.7rem var(--mono);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 820;
+      letter-spacing: 0.09em;
     }
 
-    .exception-title {
-      display: block;
+    .section-title {
       margin: 0;
-      color: var(--ink-strong);
-      font-weight: 760;
-      letter-spacing: -0.02em;
+      font-size: 1.9rem;
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 720;
     }
 
-    .exception-copy {
-      display: block;
-      margin: 5px 0 0;
-      color: var(--ink-muted);
-      font-size: 0.78rem;
-      line-height: 1.36;
+    .section-copy {
+      margin: 8px 0 0;
+      max-width: 680px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
     }
 
     .filters {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      padding: 0;
-    }
-
-    .filter-group {
-      display: flex;
       gap: 8px;
       flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .filter-button {
-      border-radius: 4px;
-      padding: 8px 10px;
+      height: 32px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text-muted);
+      padding: 0 10px;
       font-size: 0.76rem;
-      font-weight: 720;
+      cursor: pointer;
     }
 
-    .filter-button[aria-pressed="true"] {
-      background: #d8d0c2;
-      border-color: #d8d0c2;
-      color: #101413;
+    .filter-button[aria-pressed="true"],
+    .filter-button:hover,
+    .filter-button:focus-visible {
+      border-color: var(--line-strong);
+      background: var(--panel-2);
+      color: var(--text);
+      outline: none;
     }
 
-    .board {
+    .metrics-row {
       display: grid;
-      grid-template-columns: repeat(4, minmax(220px, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .metric {
+      min-height: 76px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: rgba(20, 26, 37, 0.64);
+    }
+
+    .metric-value {
+      margin-top: 8px;
+      font-size: 1.6rem;
+      font-weight: 720;
+      letter-spacing: -0.045em;
+    }
+
+    .metric-label {
+      color: var(--text-muted);
+      font-size: 0.66rem;
+      text-transform: uppercase;
+    }
+
+    .ledger-shell {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(16, 21, 31, 0.72);
+    }
+
+    .ledger-toolbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
       gap: 12px;
-      align-items: start;
+      align-items: center;
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(13, 17, 25, 0.88);
+    }
+
+    .ledger-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      color: var(--text-soft);
+      font-size: 0.86rem;
+      font-weight: 680;
+    }
+
+    .progress-track {
+      width: 112px;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(174, 185, 207, 0.14);
+      overflow: hidden;
+    }
+
+    .progress-track span {
+      display: block;
+      width: 42%;
+      height: 100%;
+      background: var(--review);
+    }
+
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(190px, 1fr));
+      gap: 0;
+      min-width: 920px;
     }
 
     .lane {
-      position: relative;
-      border-radius: var(--radius);
-      padding: 12px;
-      min-height: 448px;
-      overflow: hidden;
-      background: rgba(15, 19, 18, 0.98);
+      min-height: 560px;
+      border-right: 1px solid var(--line);
+      background: rgba(11, 16, 24, 0.38);
     }
 
-    .lane-header {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 10px;
-      padding-bottom: 11px;
-      border-bottom: 1px solid var(--ledger-line);
-    }
+    .lane:last-child { border-right: 0; }
 
-    .lane-title {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-    }
-
-    .lane-glyph {
-      display: grid;
-      place-items: center;
-      min-width: 32px;
-      height: 26px;
-      border: 1px solid var(--ledger-line-strong);
-      border-radius: 4px;
-      padding: 0 7px;
-      font-size: 0.6rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-weight: 820;
-      color: #cfc7b9;
-      background: rgba(232, 228, 218, 0.025);
-    }
-
-    .count {
-      color: var(--ink-faint);
-      font-size: 0.76rem;
-      white-space: nowrap;
-    }
-
-    .work-card {
-      position: relative;
-      display: grid;
-      grid-template-columns: 5px 1fr;
-      margin: 10px 0;
-      border: 1px solid var(--ledger-line);
-      border-radius: var(--radius-soft);
-      background: rgba(232, 228, 218, 0.026);
-      overflow: hidden;
-      transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
-    }
-
-    .work-card:hover, .work-card:focus-within {
-      transform: translateY(-1px);
-      border-color: rgba(232, 228, 218, 0.34);
-      background: rgba(232, 228, 218, 0.04);
-    }
-
-    .source-rail { background: rgba(232, 228, 218, 0.24); }
-    .source-rail.critical { background: var(--stop-vermilion); }
-    .source-rail.warning { background: var(--review-amber); }
-    .source-rail.stable { background: var(--verified-moss); }
-    .source-rail.info { background: var(--telemetry-blue); }
-
-    .card-body { padding: 13px; }
-
-    .card-meta {
+    .lane-head {
+      position: sticky;
+      top: 0;
+      z-index: 2;
       display: flex;
       justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      background: #10151f;
+    }
+
+    .lane-name {
+      display: flex;
+      align-items: center;
       gap: 8px;
-      margin-bottom: 11px;
-      align-items: start;
-    }
-
-    .slice-id {
-      color: var(--ink-faint);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.68rem;
-      font-weight: 760;
-    }
-
-    .status-chip {
-      border: 1px solid rgba(232, 228, 218, 0.14);
-      border-radius: 4px;
-      padding: 3px 6px;
-      background: transparent;
-      color: #cec7bb;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.56rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      font-weight: 820;
-      white-space: nowrap;
-    }
-    .status-chip.critical { border-color: rgba(216, 116, 101, 0.42); color: #e2a69d; }
-    .status-chip.warning { border-color: rgba(210, 161, 95, 0.42); color: #dfbf8b; }
-    .status-chip.stable { border-color: rgba(143, 185, 157, 0.42); color: #bad3c2; }
-    .status-chip.info { border-color: rgba(138, 179, 201, 0.42); color: #b4d1df; }
-
-    .card-title {
-      margin: 0 0 7px;
-      color: var(--ink-strong);
-      font-size: 0.98rem;
-      line-height: 1.22;
-      letter-spacing: -0.025em;
-    }
-
-    .card-copy {
-      margin: 0 0 12px;
-      color: var(--ink-muted);
+      min-width: 0;
       font-size: 0.82rem;
-      line-height: 1.44;
+      color: var(--text-soft);
+      font-weight: 680;
     }
 
-    .confidence-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 8px;
-      align-items: center;
-      margin: 12px 0;
-      color: var(--ink-faint);
-      font-size: 0.74rem;
+    .lane-count {
+      color: var(--text-muted);
+      font-size: 0.75rem;
     }
 
-    .dots {
-      display: inline-flex;
-      gap: 5px;
-      align-items: center;
-    }
-
-    .dot {
+    .state-dot {
       width: 7px;
       height: 7px;
       border-radius: 999px;
-      border: 1px solid rgba(232, 228, 218, 0.28);
-      background: transparent;
-    }
-    .dot.on.critical { background: var(--stop-vermilion); border-color: var(--stop-vermilion); }
-    .dot.on.warning { background: var(--review-amber); border-color: var(--review-amber); }
-    .dot.on.stable { background: var(--verified-moss); border-color: var(--verified-moss); }
-    .dot.on.info { background: var(--telemetry-blue); border-color: var(--telemetry-blue); }
-
-    .source-strip {
-      display: flex;
-      gap: 5px;
-      flex-wrap: wrap;
-      padding-top: 10px;
-      border-top: 1px solid var(--ledger-line);
+      background: var(--text-muted);
+      flex: 0 0 auto;
     }
 
-    .card-button {
-      margin-top: 12px;
-      width: 100%;
-      border-radius: 4px;
-      padding: 8px 9px;
-      text-align: left;
-      color: #d8c5a2;
-      font-weight: 760;
-      background: rgba(210, 161, 95, 0.035);
-    }
+    .state-dot.critical { background: var(--critical); }
+    .state-dot.review { background: var(--review); }
+    .state-dot.stable { background: var(--stable); }
+    .state-dot.info { background: var(--info); }
 
-    .empty-slot {
+    .slice-list {
       display: grid;
-      place-items: center;
-      min-height: 82px;
-      border: 1px dashed rgba(232, 228, 218, 0.2);
-      border-radius: var(--radius-soft);
-      color: var(--ink-faint);
-      font-size: 0.74rem;
-      text-align: center;
-      padding: 14px;
-      margin-top: 10px;
-      background: transparent;
+      gap: 8px;
+      padding: 10px;
     }
 
-    .footer-note {
-      grid-column: 1 / -1;
+    .slice-card {
+      width: 100%;
+      display: grid;
+      gap: 10px;
+      text-align: left;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: rgba(24, 31, 43, 0.68);
+      padding: 12px;
+      cursor: pointer;
+      transition: border-color 140ms ease, background 140ms ease, transform 140ms ease;
+    }
+
+    .slice-card:hover,
+    .slice-card:focus-visible,
+    .slice-card.selected {
+      border-color: var(--line-strong);
+      background: rgba(28, 36, 50, 0.88);
+      outline: none;
+    }
+
+    .slice-card:hover { transform: translateY(-1px); }
+
+    .slice-card.selected {
+      box-shadow: inset 3px 0 0 var(--review);
+    }
+
+    .slice-card[data-tone="critical"].selected { box-shadow: inset 3px 0 0 var(--critical); }
+    .slice-card[data-tone="stable"].selected { box-shadow: inset 3px 0 0 var(--stable); }
+    .slice-card[data-tone="info"].selected { box-shadow: inset 3px 0 0 var(--info); }
+
+    .slice-meta {
       display: flex;
       justify-content: space-between;
-      gap: 16px;
-      padding: 12px 0 0;
-      color: var(--ink-faint);
-      font-size: 0.74rem;
-      border-top: 1px solid var(--ledger-line);
-    }
-
-    .legend {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+      gap: 8px;
       align-items: center;
+      color: var(--text-muted);
+      font: 680 0.66rem var(--mono);
     }
 
-    .legend-item {
-      display: inline-flex;
-      gap: 6px;
-      align-items: center;
+    .slice-title {
+      margin: 0;
+      color: var(--text);
+      font-size: 0.91rem;
+      line-height: 1.25;
+      letter-spacing: -0.018em;
+      font-weight: 700;
     }
 
-    .detail-drawer {
-      position: fixed;
-      right: 18px;
-      top: 18px;
-      bottom: 18px;
-      width: min(430px, calc(100vw - 36px));
-      border-radius: var(--radius);
-      padding: 20px;
-      transform: translateX(calc(100% + 32px));
-      transition: transform 210ms cubic-bezier(.2,.8,.2,1);
-      z-index: 10;
-      overflow: auto;
-      border-left: 3px solid var(--telemetry-blue);
-    }
-
-    .detail-drawer.open { transform: translateX(0); }
-
-    .drawer-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.44);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 160ms ease;
-      z-index: 9;
-    }
-    .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
-
-    .drawer-header {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 12px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--ledger-line);
-    }
-
-    .drawer-section {
-      padding: 18px 0;
-      border-bottom: 1px solid var(--ledger-line);
-    }
-
-    .drawer-section h3 {
-      margin: 0 0 10px;
-      color: #d8d0c2;
+    .slice-copy {
+      margin: 0;
+      color: var(--text-muted);
       font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      line-height: 1.36;
     }
 
-    .drawer-section p {
+    .slice-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      padding-top: 9px;
+      border-top: 1px solid var(--line);
+    }
+
+    .source-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .source-ref, .chip {
+      border: 1px solid rgba(174, 185, 207, 0.18);
+      border-radius: 5px;
+      padding: 3px 6px;
+      background: rgba(174, 185, 207, 0.04);
+      color: var(--text-soft);
+      font-size: 0.58rem;
+      white-space: nowrap;
+    }
+
+    .chip.critical { border-color: rgba(225, 112, 99, 0.38); color: #e8a9a0; }
+    .chip.review { border-color: rgba(214, 163, 94, 0.4); color: #dec08e; }
+    .chip.stable { border-color: rgba(132, 185, 154, 0.38); color: #b9d7c4; }
+    .chip.info { border-color: rgba(133, 183, 211, 0.38); color: #b5d3e4; }
+
+    .confidence {
+      color: var(--text-muted);
+      font: 680 0.62rem var(--mono);
+      white-space: nowrap;
+    }
+
+    .event-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .event-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: rgba(16, 21, 31, 0.72);
+      padding: 13px;
+    }
+
+    .event-card p {
+      margin: 6px 0 0;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      line-height: 1.36;
+    }
+
+    .inspector-title {
+      margin: 6px 0 0;
+      font-size: 1.22rem;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      font-weight: 720;
+    }
+
+    .inspector-copy {
+      margin: 10px 0 0;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .inspector-section {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .inspector-section:first-child { padding-top: 0; }
+
+    .inspector-section h3 {
       margin: 0 0 10px;
-      color: var(--ink-muted);
-      line-height: 1.48;
-      font-size: 0.9rem;
+      color: var(--text-soft);
+      font-size: 0.78rem;
+      font-weight: 720;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .kv {
+      display: grid;
+      gap: 9px;
+    }
+
+    .kv-row {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 12px;
+      color: var(--text-soft);
+      font-size: 0.8rem;
+    }
+
+    .kv-row span:first-child {
+      color: var(--text-muted);
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+    }
+
+    .trace-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .trace-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 10px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      line-height: 1.35;
+    }
+
+    .trace-time {
+      color: var(--text-muted);
+      font: 680 0.66rem var(--mono);
+    }
+
+    .boundary-note {
+      border: 1px solid rgba(132, 185, 154, 0.26);
+      border-radius: var(--radius-sm);
+      background: rgba(132, 185, 154, 0.045);
+      padding: 12px;
+      color: #bdd7c7;
+      font-size: 0.78rem;
+      line-height: 1.42;
     }
 
     .hidden { display: none !important; }
 
     @media (prefers-reduced-motion: no-preference) {
-      .trace-room, .workspace > section, .filters, .board, .footer-note {
-        animation: surfaceIn 360ms ease both;
-      }
-      .workspace > section:nth-child(1) { animation-delay: 40ms; }
-      .workspace > section:nth-child(2) { animation-delay: 70ms; }
-      .filters { animation-delay: 95ms; }
-      .board { animation-delay: 120ms; }
-      .footer-note { animation-delay: 140ms; }
+      .mission-shell { animation: shellIn 360ms ease both; }
+      .slice-card { animation: itemIn 260ms ease both; }
     }
 
-    @keyframes surfaceIn {
-      from { opacity: 0; transform: translateY(4px); }
+    @keyframes shellIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes itemIn {
+      from { opacity: 0; transform: translateY(3px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 1180px) {
-      .app-shell { grid-template-columns: 1fr; }
-      .trace-room { position: static; max-height: none; }
-      .overview, .exceptions { grid-template-columns: repeat(2, 1fr); }
-      .board { grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+      .mission-shell { grid-template-columns: 1fr; }
+      .side-rail { display: none; }
+      .workspace { grid-template-columns: 1fr; }
+      .inspector { border-left: 0; border-top: 1px solid var(--line); }
+      .metrics-row, .event-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      .stage { padding: 0; place-items: stretch; }
+      .mission-shell { min-height: 100vh; border: 0; border-radius: 0; }
       .topbar { grid-template-columns: 1fr; align-items: start; }
       .authority { text-align: left; }
-      h1 { white-space: normal; }
+      .section-head { grid-template-columns: 1fr; }
+      .filters { justify-content: flex-start; }
+      .metrics-row, .event-strip { grid-template-columns: 1fr; }
+      .main-board { padding: 16px; }
+      .board-grid { min-width: 760px; }
     }
-
-    @media (max-width: 720px) {
-      .app-shell { padding: 14px; }
-      .brand { align-items: start; flex-direction: column; }
-      .overview, .exceptions, .board { grid-template-columns: 1fr; }
-      .overview-cell, .exception-intro, .exception-item { border-right: 0; border-bottom: 1px solid var(--ledger-line); }
-      .overview-cell:last-child, .exception-item:last-child { border-bottom: 0; }
-      .footer-note { flex-direction: column; }
-      .detail-drawer { inset: 12px; width: auto; }
-      .confidence-row { grid-template-columns: 1fr; }
-    }
-
   </style>
 </head>
 <body>
-  <main class="app-shell" aria-label="AletheIA Mission Control static prototype">
-    <header class="topbar">
-      <div class="brand">
-        <h1>AletheIA Mission Control</h1>
-        <span class="pill">Read-only projection</span>
-      </div>
-      <div class="timestamp">Projected at 2026-06-16T16:30:00Z</div>
-      <div class="authority">Source records remain authoritative</div>
-    </header>
+  <div class="stage">
+    <main class="mission-shell" aria-label="AletheIA Mission Control static prototype">
+      <aside class="side-rail" aria-label="Mission Control navigation">
+        <div class="mark">AI</div>
+        <nav class="rail-stack" aria-label="Workspace views">
+          <button class="rail-button" type="button">OV</button>
+          <button class="rail-button active" type="button">EV</button>
+          <button class="rail-button" type="button">TR</button>
+          <button class="rail-button" type="button">SRC</button>
+        </nav>
+        <nav class="rail-stack" aria-label="Utility views">
+          <button class="rail-button" type="button">CFG</button>
+          <button class="rail-button" type="button">AUD</button>
+        </nav>
+      </aside>
 
-    <aside class="trace-room" aria-label="Evidence timeline">
-      <div class="trace-header">
-        <div>
-          <p class="section-kicker">Trace Room</p>
-          <h2>Evidence timeline</h2>
+      <section class="app">
+        <header class="topbar">
+          <div class="product-title">
+            <h1>AletheIA Mission Control</h1>
+            <span class="mode-label">Read-only projection</span>
+          </div>
+          <div class="search-box" aria-label="Static search placeholder"><span>⌕</span><span>Search work slices, source refs, traces</span></div>
+          <div class="authority"><strong>Source records remain authoritative</strong>Static prototype · mock data only</div>
+        </header>
+
+        <div class="workspace">
+          <section class="main-board" aria-label="Evidence ledger workspace">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Evidence ledger</p>
+                <h2 class="section-title">Work slices by review posture</h2>
+                <p class="section-copy">A compact operational surface for seeing which derived states need review, which sources support them, and where evidence is unavailable.</p>
+              </div>
+              <nav class="filters" aria-label="Prototype filters">
+                <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All</button>
+                <button class="filter-button" type="button" data-filter="attention" aria-pressed="false">Needs attention</button>
+                <button class="filter-button" type="button" data-filter="stable" aria-pressed="false">Stable</button>
+                <button class="filter-button" type="button" data-filter="unavailable" aria-pressed="false">Unavailable</button>
+              </nav>
+            </div>
+
+            <section class="metrics-row" aria-label="Derived posture summary">
+              <div class="metric"><div class="metric-label">Needs review</div><div class="metric-value" style="color: var(--review)">2</div></div>
+              <div class="metric"><div class="metric-label">Critical prompt</div><div class="metric-value" style="color: var(--critical)">1</div></div>
+              <div class="metric"><div class="metric-label">Source gaps</div><div class="metric-value" style="color: var(--info)">3</div></div>
+              <div class="metric"><div class="metric-label">Closed stable</div><div class="metric-value" style="color: var(--stable)">2</div></div>
+            </section>
+
+            <section class="ledger-shell" aria-label="Work Slice evidence board">
+              <div class="ledger-toolbar">
+                <div class="ledger-title"><span>Board confidence</span><span class="progress-track" aria-hidden="true"><span></span></span><span class="utility">42%</span></div>
+                <span class="utility">Lanes are derived presentation, not lifecycle</span>
+              </div>
+
+              <div class="board-grid">
+                <section class="lane" aria-label="Review lane">
+                  <header class="lane-head"><span class="lane-name"><span class="state-dot critical"></span>Review prompts</span><span class="lane-count">2</span></header>
+                  <div class="slice-list">
+                    <button class="slice-card selected" type="button" data-detail="human-review" data-status="attention" data-tone="critical">
+                      <span class="slice-meta"><span>WS-2026-0616-001</span><span class="chip critical">Human review</span></span>
+                      <strong class="slice-title">Critical risk signal</strong>
+                      <span class="slice-copy">Threshold breach detected. Human confirmation is required before trusting closure.</span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">SRC-2147</span><span class="source-ref">PR-2.1</span></span><span class="confidence">Low</span></span>
+                    </button>
+                    <button class="slice-card" type="button" data-detail="conflict" data-status="attention" data-tone="review">
+                      <span class="slice-meta"><span>WS-2026-0616-002</span><span class="chip review">Conflict</span></span>
+                      <strong class="slice-title">Model output mismatch</strong>
+                      <span class="slice-copy">Validation sources disagree with the policy baseline and risk thresholds.</span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">SRC-2149</span><span class="source-ref">Eval 3.2</span></span><span class="confidence">Medium</span></span>
+                    </button>
+                  </div>
+                </section>
+
+                <section class="lane" aria-label="Validation lane">
+                  <header class="lane-head"><span class="lane-name"><span class="state-dot review"></span>Validation</span><span class="lane-count">2</span></header>
+                  <div class="slice-list">
+                    <button class="slice-card" type="button" data-detail="validated" data-status="stable" data-tone="stable">
+                      <span class="slice-meta"><span>WS-2026-0615-006</span><span class="chip stable">Validated</span></span>
+                      <strong class="slice-title">Policy update impact check</strong>
+                      <span class="slice-copy">Evidence supports the validation posture for this static example.</span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">SRC-2120</span><span class="source-ref">Eval 3.1</span></span><span class="confidence">High</span></span>
+                    </button>
+                    <button class="slice-card" type="button" data-detail="skill" data-status="stable" data-tone="stable">
+                      <span class="slice-meta"><span>WS-2026-0615-004</span><span class="chip stable">Skill traced</span></span>
+                      <strong class="slice-title">Adaptive skill activation</strong>
+                      <span class="slice-copy">Skill activation is visible as trace context, without gate or decision authority.</span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">ACT-552</span><span class="source-ref">Trace</span></span><span class="confidence">High</span></span>
+                    </button>
+                  </div>
+                </section>
+
+                <section class="lane" aria-label="Reconcile lane">
+                  <header class="lane-head"><span class="lane-name"><span class="state-dot info"></span>Reconcile</span><span class="lane-count">1</span></header>
+                  <div class="slice-list">
+                    <button class="slice-card" type="button" data-detail="telemetry" data-status="unavailable" data-tone="info">
+                      <span class="slice-meta"><span>WS-2026-0616-003</span><span class="chip info">Unavailable</span></span>
+                      <strong class="slice-title">Resolve missing telemetry</strong>
+                      <span class="slice-copy">Runtime, token, and cost records were not exported for this docs-only slice.</span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">Telemetry</span><span class="source-ref">R-556</span></span><span class="confidence">Unknown</span></span>
+                    </button>
+                  </div>
+                </section>
+
+                <section class="lane" aria-label="Closed lane">
+                  <header class="lane-head"><span class="lane-name"><span class="state-dot stable"></span>Closed stable</span><span class="lane-count">2</span></header>
+                  <div class="slice-list">
+                    <button class="slice-card" type="button" data-detail="closed-207" data-status="stable" data-tone="stable">
+                      <span class="slice-meta"><span>PR #207</span><span class="chip stable">Closed</span></span>
+                      <strong class="slice-title">Human-review source mapping</strong>
+                      <span class="slice-copy">Source supports closure; review source remains represented as unavailable.</span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">PR #207</span><span class="source-ref">39f76cf</span></span><span class="confidence">High</span></span>
+                    </button>
+                    <button class="slice-card" type="button" data-detail="closed-201" data-status="stable" data-tone="stable">
+                      <span class="slice-meta"><span>PR #201</span><span class="chip stable">Closed</span></span>
+                      <strong class="slice-title">Dogfood evidence record</strong>
+                      <span class="slice-copy">Snapshot evidence supports closeout; human review absence remains visible.</span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">Dogfood</span><span class="source-ref">Snapshot</span></span><span class="confidence">High</span></span>
+                    </button>
+                  </div>
+                </section>
+              </div>
+            </section>
+
+            <section class="event-strip" aria-label="Recent trace events">
+              <article class="event-card"><span class="kicker">10:18 · Review</span><p>Critical risk signal moved into review prompt from existing risk source.</p></article>
+              <article class="event-card"><span class="kicker">09:42 · Reconcile</span><p>Telemetry marked unavailable. No estimates were invented for token or cost fields.</p></article>
+              <article class="event-card"><span class="kicker">Yesterday · Closure</span><p>Closed posture derived from PR and CI records, not from a new lifecycle authority.</p></article>
+            </section>
+          </section>
+
+          <aside class="inspector" aria-label="Evidence inspector" id="evidence-inspector">
+            <header class="inspector-header">
+              <p class="eyebrow" id="inspector-kicker">Human review · confirmed</p>
+              <h2 class="inspector-title" id="inspector-title">Critical risk signal</h2>
+              <p class="inspector-copy" id="inspector-summary">A source says human review is required before trusting closure. This is a review prompt, not an automated decision.</p>
+            </header>
+            <div class="inspector-body">
+              <section class="inspector-section">
+                <h3>State posture</h3>
+                <div class="kv">
+                  <div class="kv-row"><span>Lane</span><strong id="inspector-lane">Review prompts</strong></div>
+                  <div class="kv-row"><span>Status</span><strong id="inspector-status">Pending human review</strong></div>
+                  <div class="kv-row"><span>Confidence</span><strong id="inspector-confidence">Low</strong></div>
+                </div>
+              </section>
+              <section class="inspector-section">
+                <h3>Source refs</h3>
+                <div class="source-stack" id="inspector-sources"><span class="source-ref">SRC-2147</span><span class="source-ref">Risk Policy PR-2.1</span><span class="source-ref">Rule R-7</span></div>
+              </section>
+              <section class="inspector-section">
+                <h3>Trace context</h3>
+                <div class="trace-list" id="inspector-trace">
+                  <div class="trace-item"><span class="trace-time">10:18</span><span>Risk threshold breach normalized into visual event.</span></div>
+                  <div class="trace-item"><span class="trace-time">10:22</span><span>Human review source required before closure posture can be trusted.</span></div>
+                </div>
+              </section>
+              <section class="inspector-section">
+                <h3>Boundary</h3>
+                <p class="boundary-note" id="inspector-boundary">Do not move this slice to closed without a resolving review source. The cockpit explains evidence; it does not authorize decisions.</p>
+              </section>
+            </div>
+          </aside>
         </div>
-        <div class="trace-actions" aria-label="Trace controls">
-          <button class="icon-button" type="button" aria-label="Filter trace">Filter</button>
-          <button class="icon-button" type="button" aria-label="Trace menu">Menu</button>
-        </div>
-      </div>
-
-      <div class="trace-group">
-        <div class="trace-date">Today · 2026-06-16</div>
-        <article class="trace-item" data-severity="critical">
-          <div class="trace-time">15:42</div>
-          <div class="trace-card">
-            <span class="trace-dot critical" aria-hidden="true"></span>
-            <h3 class="trace-title">Critical flagged</h3>
-            <p class="trace-copy">Slice WS-2026-0616-001 · threshold breach detected.</p>
-            <div class="tags"><span class="tag">SRC-2147</span><span class="tag">Risk Policy PR-2.1</span></div>
-          </div>
-        </article>
-        <article class="trace-item" data-severity="warning">
-          <div class="trace-time">14:28</div>
-          <div class="trace-card">
-            <span class="trace-dot warning" aria-hidden="true"></span>
-            <h3 class="trace-title">Conflicting results</h3>
-            <p class="trace-copy">Slice WS-2026-0616-002 · validation mismatch.</p>
-            <div class="tags"><span class="tag">Eval Report v3.2</span><span class="tag">Policy M-1.4</span></div>
-          </div>
-        </article>
-        <article class="trace-item" data-severity="info">
-          <div class="trace-time">11:07</div>
-          <div class="trace-card">
-            <span class="trace-dot info" aria-hidden="true"></span>
-            <h3 class="trace-title">Telemetry unavailable</h3>
-            <p class="trace-copy">Slice WS-2026-0616-003 · metrics collection unavailable.</p>
-            <div class="tags"><span class="tag">Telemetry Spec</span></div>
-          </div>
-        </article>
-        <article class="trace-item" data-severity="stable">
-          <div class="trace-time">09:31</div>
-          <div class="trace-card">
-            <span class="trace-dot" aria-hidden="true"></span>
-            <h3 class="trace-title">Review closed</h3>
-            <p class="trace-copy">Slice WS-2026-0616-000 · approved by human reviewer.</p>
-            <div class="tags"><span class="tag">Human Review H-7781</span></div>
-          </div>
-        </article>
-      </div>
-
-      <div class="trace-group">
-        <div class="trace-date">Yesterday · 2026-06-15</div>
-        <article class="trace-item" data-severity="warning">
-          <div class="trace-time">17:15</div>
-          <div class="trace-card">
-            <span class="trace-dot warning" aria-hidden="true"></span>
-            <h3 class="trace-title">Policy exception</h3>
-            <p class="trace-copy">Manual override applied to monitoring threshold.</p>
-            <div class="tags"><span class="tag">Policy M-1.4</span></div>
-          </div>
-        </article>
-        <article class="trace-item" data-severity="stable">
-          <div class="trace-time">16:02</div>
-          <div class="trace-card">
-            <span class="trace-dot" aria-hidden="true"></span>
-            <h3 class="trace-title">Review closed</h3>
-            <p class="trace-copy">Reconciled and accepted after source review.</p>
-            <div class="tags"><span class="tag">Reconcile R-556</span><span class="tag">SRC-2129</span></div>
-          </div>
-        </article>
-      </div>
-    </aside>
-
-    <div class="workspace">
-      <section class="overview" aria-label="Overview metrics">
-        <div class="overview-cell">
-          <p class="section-kicker">Overview</p>
-          <p class="overview-label">Current posture across work slices</p>
-        </div>
-        <div class="overview-cell"><p class="overview-label">Needs attention</p><div class="overview-number tone-warning">2 <span class="overview-unit">Slices</span></div></div>
-        <div class="overview-cell"><p class="overview-label">Critical alerts</p><div class="overview-number tone-critical">1 <span class="overview-unit">Slice</span></div></div>
-        <div class="overview-cell"><p class="overview-label">Conflicted</p><div class="overview-number tone-warning">1 <span class="overview-unit">Slice</span></div></div>
-        <div class="overview-cell"><p class="overview-label">Closed stable</p><div class="overview-number tone-stable">2 <span class="overview-unit">Slices</span></div></div>
-        <div class="overview-cell"><p class="overview-label">Unavailable signals</p><div class="overview-number tone-info">3 <span class="overview-unit">Fields</span></div></div>
       </section>
-
-      <section class="exceptions" aria-label="Exception strip">
-        <div class="exception-intro">
-          <p class="section-kicker">Exceptions</p>
-          <p class="overview-label">Active exceptions requiring awareness</p>
-        </div>
-        <button class="exception-item" type="button" data-detail="human-review">
-          <span class="exception-rail critical" aria-hidden="true"></span>
-          <span><span class="exception-label tone-critical">Critical</span><span class="exception-title">1 slice pending human review</span><span class="exception-copy">Action required to reduce risk exposure.</span></span>
-          <span class="utility">Open</span>
-        </button>
-        <button class="exception-item" type="button" data-detail="conflict">
-          <span class="exception-rail" aria-hidden="true"></span>
-          <span><span class="exception-label tone-warning">Warning</span><span class="exception-title">1 slice with conflicted validation</span><span class="exception-copy">Conflicting evidence requires reconciliation.</span></span>
-          <span class="utility">Open</span>
-        </button>
-        <button class="exception-item" type="button" data-detail="telemetry">
-          <span class="exception-rail info" aria-hidden="true"></span>
-          <span><span class="exception-label tone-info">Info</span><span class="exception-title">3 slices with telemetry unavailable</span><span class="exception-copy">Observability gap affects confidence.</span></span>
-          <span class="utility">Open</span>
-        </button>
-      </section>
-
-      <nav class="filters" aria-label="Prototype filters">
-        <div>
-          <p class="section-kicker">Board lanes</p>
-          <span class="utility">Sorted by attention priority · read-only</span>
-        </div>
-        <div class="filter-group">
-          <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All</button>
-          <button class="filter-button" type="button" data-filter="attention" aria-pressed="false">Needs attention</button>
-          <button class="filter-button" type="button" data-filter="stable" aria-pressed="false">Stable</button>
-          <button class="filter-button" type="button" id="toggle-empty" aria-pressed="true">Show empty lanes</button>
-        </div>
-      </nav>
-
-      <section class="board" aria-label="Work Slice board">
-        <section class="lane" data-lane="validation">
-          <div class="lane-header"><div class="lane-title"><span class="lane-glyph">VAL</span><h2>Validation</h2></div><span class="count">2 slices</span></div>
-          <article class="work-card" data-status="attention" data-detail="conflict" tabindex="0">
-            <div class="source-rail warning"></div>
-            <div class="card-body">
-              <div class="card-meta"><span class="slice-id">WS-2026-0616-002</span><span class="status-chip warning">Conflicted</span></div>
-              <h3 class="card-title">Model output mismatch</h3>
-              <p class="card-copy">Results conflict with policy baseline and risk thresholds.</p>
-              <div class="confidence-row"><span>Confidence</span><span class="dots"><i class="dot on warning"></i><i class="dot on warning"></i><i class="dot"></i><i class="dot"></i><span>Medium</span></span></div>
-              <div class="source-strip"><span class="tag">SRC-2149</span><span class="tag">Eval Report v3.2</span><span class="tag">Policy M-1.4</span></div>
-              <button class="card-button" type="button" data-detail="conflict">Compare source refs</button>
-            </div>
-          </article>
-          <article class="work-card" data-status="stable" data-detail="validated" tabindex="0">
-            <div class="source-rail stable"></div>
-            <div class="card-body">
-              <div class="card-meta"><span class="slice-id">WS-2026-0615-006</span><span class="status-chip stable">Validated</span></div>
-              <h3 class="card-title">Policy update impact check</h3>
-              <p class="card-copy">Outputs within expected bounds.</p>
-              <div class="confidence-row"><span>Confidence</span><span class="dots"><i class="dot on stable"></i><i class="dot on stable"></i><i class="dot"></i><i class="dot"></i><span>High</span></span></div>
-              <div class="source-strip"><span class="tag">SRC-2120</span><span class="tag">Eval v3.1</span></div>
-            </div>
-          </article>
-        </section>
-
-        <section class="lane" data-lane="human-review">
-          <div class="lane-header"><div class="lane-title"><span class="lane-glyph">HR</span><h2>Human review</h2></div><span class="count">1 slice</span></div>
-          <article class="work-card" data-status="attention" data-detail="human-review" tabindex="0">
-            <div class="source-rail critical"></div>
-            <div class="card-body">
-              <div class="card-meta"><span class="slice-id">WS-2026-0616-001</span><span class="status-chip critical">Pending · critical</span></div>
-              <h3 class="card-title">Critical risk signal</h3>
-              <p class="card-copy">Threshold breach detected. Human review required.</p>
-              <div class="confidence-row"><span>Confidence</span><span class="dots"><i class="dot on critical"></i><i class="dot on critical"></i><i class="dot on critical"></i><i class="dot"></i><span>Low</span></span></div>
-              <div class="source-strip"><span class="tag">SRC-2147</span><span class="tag">Risk Policy PR-2.1</span><span class="tag">Rule R-7</span></div>
-              <button class="card-button" type="button" data-detail="human-review">Open review question</button>
-            </div>
-          </article>
-          <div class="empty-slot">No other slices in this lane.</div>
-        </section>
-
-        <section class="lane" data-lane="reconcile">
-          <div class="lane-header"><div class="lane-title"><span class="lane-glyph">REC</span><h2>Reconcile</h2></div><span class="count">1 slice</span></div>
-          <article class="work-card" data-status="attention" data-detail="telemetry" tabindex="0">
-            <div class="source-rail info"></div>
-            <div class="card-body">
-              <div class="card-meta"><span class="slice-id">WS-2026-0616-003</span><span class="status-chip info">Telemetry unavailable</span></div>
-              <h3 class="card-title">Resolve missing telemetry</h3>
-              <p class="card-copy">Runtime and cost records were not exported for this docs-only slice.</p>
-              <div class="confidence-row"><span>Confidence</span><span class="dots"><i class="dot on info"></i><i class="dot"></i><i class="dot"></i><span>Unavailable</span></span></div>
-              <div class="source-strip"><span class="tag">Telemetry Spec</span><span class="tag">Closeout R-556</span></div>
-              <button class="card-button" type="button" data-detail="telemetry">Review unavailable fields</button>
-            </div>
-          </article>
-          <div class="empty-slot">No other slices in this lane.</div>
-        </section>
-
-        <section class="lane" data-lane="closed">
-          <div class="lane-header"><div class="lane-title"><span class="lane-glyph">CLS</span><h2>Closed</h2></div><span class="count">2 slices</span></div>
-          <article class="work-card" data-status="stable" data-detail="closed-207" tabindex="0">
-            <div class="source-rail stable"></div>
-            <div class="card-body">
-              <div class="card-meta"><span class="slice-id">PR #207</span><span class="status-chip stable">Stable</span></div>
-              <h3 class="card-title">Human-review source mapping</h3>
-              <p class="card-copy">Source supports closure; review source remains unavailable.</p>
-              <div class="confidence-row"><span>Confidence</span><span class="dots"><i class="dot on stable"></i><i class="dot on stable"></i><i class="dot on stable"></i><i class="dot"></i><span>High</span></span></div>
-              <div class="source-strip"><span class="tag">PR #207</span><span class="tag">CI 27626141953</span><span class="tag">Merge 39f76cf</span></div>
-            </div>
-          </article>
-          <article class="work-card" data-status="stable" data-detail="closed-201" tabindex="0">
-            <div class="source-rail stable"></div>
-            <div class="card-body">
-              <div class="card-meta"><span class="slice-id">PR #201</span><span class="status-chip stable">Stable</span></div>
-              <h3 class="card-title">Dogfood evidence record</h3>
-              <p class="card-copy">Snapshot supports closeout; human review unavailable stays visible.</p>
-              <div class="confidence-row"><span>Confidence</span><span class="dots"><i class="dot on stable"></i><i class="dot on stable"></i><i class="dot"></i><i class="dot"></i><span>High</span></span></div>
-              <div class="source-strip"><span class="tag">PR #201</span><span class="tag">Dogfood snapshot</span></div>
-            </div>
-          </article>
-        </section>
-      </section>
-    </div>
-
-    <footer class="footer-note">
-      <span>This is a read-only static prototype. All data is mock data derived from Visual Operations examples.</span>
-      <span class="legend"><span class="legend-item"><i class="dot on critical"></i>Critical</span><span class="legend-item"><i class="dot on warning"></i>Review</span><span class="legend-item"><i class="dot on stable"></i>Stable</span><span class="legend-item"><i class="dot on info"></i>Unavailable</span></span>
-    </footer>
-  </main>
-
-  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
-  <aside class="detail-drawer" id="detail-drawer" aria-label="Source detail" aria-hidden="true">
-    <div class="drawer-header">
-      <div>
-        <p class="section-kicker" id="drawer-kicker">Source detail</p>
-        <h2 class="drawer-title" id="drawer-title">Select a card</h2>
-      </div>
-      <button class="icon-button" type="button" id="close-drawer" aria-label="Close detail">Close</button>
-    </div>
-    <div class="drawer-section">
-      <h3>What this means</h3>
-      <p id="drawer-meaning">Open a card or exception to inspect the read-only evidence summary.</p>
-    </div>
-    <div class="drawer-section">
-      <h3>Source refs</h3>
-      <div class="tags" id="drawer-sources"></div>
-    </div>
-    <div class="drawer-section">
-      <h3>Boundary</h3>
-      <p id="drawer-boundary">This prototype never changes source records. It only explains what the mock projection says.</p>
-    </div>
-  </aside>
+    </main>
+  </div>
 
   <script>
     const details = {
       "human-review": {
         kicker: "Human review · confirmed",
         title: "Critical risk signal",
-        meaning: "A source says human review is required before trusting closure. This is a review prompt, not an automated decision.",
+        summary: "A source says human review is required before trusting closure. This is a review prompt, not an automated decision.",
+        lane: "Review prompts",
+        status: "Pending human review",
+        confidence: "Low",
         sources: ["SRC-2147", "Risk Policy PR-2.1", "Rule R-7"],
-        boundary: "Do not move this slice to closed without a resolving review source."
+        trace: [["10:18", "Risk threshold breach normalized into visual event."], ["10:22", "Human review source required before closure posture can be trusted."]],
+        boundary: "Do not move this slice to closed without a resolving review source. The cockpit explains evidence; it does not authorize decisions."
       },
       conflict: {
         kicker: "Validation · conflicted",
         title: "Model output mismatch",
-        meaning: "Validation sources disagree. The cockpit should surface conflict and preserve both source refs instead of choosing the convenient truth.",
+        summary: "Validation sources disagree. The ledger preserves both source refs instead of choosing the convenient truth.",
+        lane: "Review prompts",
+        status: "Conflicted validation",
+        confidence: "Medium",
         sources: ["SRC-2149", "Eval Report v3.2", "Policy M-1.4"],
-        boundary: "Conflicted lane confidence is stronger than the lane label itself."
+        trace: [["10:05", "Evaluation output diverged from policy baseline."], ["10:11", "Conflict surfaced as review posture, not an automated decision."]],
+        boundary: "Conflicted confidence is stronger than the lane label itself. Reconcile before treating this as stable."
       },
       telemetry: {
-        kicker: "Reconcile · inferred",
-        title: "Telemetry unavailable",
-        meaning: "Optional runtime, token, or cost telemetry was not exported. This is a neutral source gap, not a failed slice.",
+        kicker: "Reconcile · unavailable",
+        title: "Resolve missing telemetry",
+        summary: "Optional runtime, token, or cost telemetry was not exported. This is a neutral source gap, not a failed slice.",
+        lane: "Reconcile",
+        status: "Telemetry unavailable",
+        confidence: "Unknown",
         sources: ["Telemetry Spec", "Closeout R-556"],
-        boundary: "Do not invent estimates just to complete the card."
+        trace: [["09:42", "Token and cost fields marked unavailable."], ["09:44", "No estimates generated because source origin is missing."]],
+        boundary: "Do not invent estimates just to complete the card. Use unavailable until a durable source exists."
       },
       validated: {
         kicker: "Validation · stable",
         title: "Policy update impact check",
-        meaning: "Evidence supports the validation posture for this static example.",
+        summary: "Evidence supports the validation posture for this static example.",
+        lane: "Validation",
+        status: "Validated",
+        confidence: "High",
         sources: ["SRC-2120", "Eval v3.1"],
-        boundary: "A stable card still links to source refs for verification."
+        trace: [["08:52", "Evaluation source attached."], ["08:58", "Policy impact check remained inside expected bounds."]],
+        boundary: "Stable still links to source refs for verification. Stability is derived, not authoritative."
+      },
+      skill: {
+        kicker: "Skill activation · traced",
+        title: "Adaptive skill activation",
+        summary: "Skill activation is visible as trace context, without gate or decision authority.",
+        lane: "Validation",
+        status: "Activation tracked",
+        confidence: "High",
+        sources: ["ACT-552", "Trace Event", "Skill Registry"],
+        trace: [["08:31", "Skill activation normalized into trace context."], ["08:35", "No readiness gate was changed by the activation."]],
+        boundary: "Skills appear as activations. They do not approve gates, close slices, or override source records."
       },
       "closed-207": {
         kicker: "Closed · confirmed",
         title: "Human-review source mapping",
-        meaning: "Source records support closure, while human_review remains unavailable because no durable review source was supplied.",
+        summary: "Source records support closure while human_review remains unavailable because no durable review source was supplied.",
+        lane: "Closed stable",
+        status: "Closed derived posture",
+        confidence: "High",
         sources: ["PR #207", "CI 27626141953", "Merge 39f76cf"],
+        trace: [["2026-06-16", "PR merged after governance and test checks."], ["2026-06-16", "Review source absence preserved as unavailable metadata."]],
         boundary: "Closed is a presentation posture derived from sources, not a new authority."
       },
       "closed-201": {
         kicker: "Closed · confirmed",
         title: "Dogfood evidence record",
-        meaning: "Snapshot evidence supports closeout. Human review unavailable remains visible as honest absence of source authority.",
+        summary: "Snapshot evidence supports closeout. Human review unavailable remains visible as honest absence of source authority.",
+        lane: "Closed stable",
+        status: "Closed derived posture",
+        confidence: "High",
         sources: ["PR #201", "Dogfood snapshot"],
+        trace: [["2026-06-15", "Dogfood snapshot recorded."], ["2026-06-15", "Closeout posture reconstructed from source refs."]],
         boundary: "Unavailable is not failure; it is absence of authoritative source."
       }
     };
 
-    const drawer = document.getElementById('detail-drawer');
-    const backdrop = document.getElementById('drawer-backdrop');
-    const sources = document.getElementById('drawer-sources');
+    const fields = {
+      kicker: document.getElementById('inspector-kicker'),
+      title: document.getElementById('inspector-title'),
+      summary: document.getElementById('inspector-summary'),
+      lane: document.getElementById('inspector-lane'),
+      status: document.getElementById('inspector-status'),
+      confidence: document.getElementById('inspector-confidence'),
+      sources: document.getElementById('inspector-sources'),
+      trace: document.getElementById('inspector-trace'),
+      boundary: document.getElementById('inspector-boundary')
+    };
 
-    function openDetail(key) {
-      const data = details[key] || details.conflict;
-      document.getElementById('drawer-kicker').textContent = data.kicker;
-      document.getElementById('drawer-title').textContent = data.title;
-      document.getElementById('drawer-meaning').textContent = data.meaning;
-      document.getElementById('drawer-boundary').textContent = data.boundary;
-      sources.innerHTML = data.sources.map(source => `<span class="tag">${source}</span>`).join('');
-      drawer.classList.add('open');
-      backdrop.classList.add('open');
-      drawer.setAttribute('aria-hidden', 'false');
-      backdrop.hidden = false;
+    function renderInspector(key) {
+      const data = details[key] || details['human-review'];
+      fields.kicker.textContent = data.kicker;
+      fields.title.textContent = data.title;
+      fields.summary.textContent = data.summary;
+      fields.lane.textContent = data.lane;
+      fields.status.textContent = data.status;
+      fields.confidence.textContent = data.confidence;
+      fields.sources.innerHTML = data.sources.map(source => `<span class="source-ref">${source}</span>`).join('');
+      fields.trace.innerHTML = data.trace.map(([time, copy]) => `<div class="trace-item"><span class="trace-time">${time}</span><span>${copy}</span></div>`).join('');
+      fields.boundary.textContent = data.boundary;
     }
 
-    function closeDetail() {
-      drawer.classList.remove('open');
-      backdrop.classList.remove('open');
-      drawer.setAttribute('aria-hidden', 'true');
-      setTimeout(() => { backdrop.hidden = true; }, 180);
-    }
-
-    document.querySelectorAll('[data-detail]').forEach(element => {
-      element.addEventListener('click', event => {
-        event.stopPropagation();
-        openDetail(element.dataset.detail);
+    document.querySelectorAll('.slice-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.slice-card').forEach(item => item.classList.remove('selected'));
+        card.classList.add('selected');
+        renderInspector(card.dataset.detail);
       });
-      element.addEventListener('keydown', event => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          openDetail(element.dataset.detail);
-        }
-      });
-    });
-
-    document.getElementById('close-drawer').addEventListener('click', closeDetail);
-    backdrop.addEventListener('click', closeDetail);
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') closeDetail();
     });
 
     document.querySelectorAll('[data-filter]').forEach(button => {
       button.addEventListener('click', () => {
-        document.querySelectorAll('[data-filter]').forEach(btn => btn.setAttribute('aria-pressed', 'false'));
+        document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', 'false'));
         button.setAttribute('aria-pressed', 'true');
         const filter = button.dataset.filter;
-        document.querySelectorAll('.work-card').forEach(card => {
+        document.querySelectorAll('.slice-card').forEach(card => {
           card.classList.toggle('hidden', filter !== 'all' && card.dataset.status !== filter);
         });
       });
-    });
-
-    document.getElementById('toggle-empty').addEventListener('click', event => {
-      const pressed = event.currentTarget.getAttribute('aria-pressed') === 'true';
-      event.currentTarget.setAttribute('aria-pressed', String(!pressed));
-      document.querySelectorAll('.empty-slot').forEach(slot => slot.classList.toggle('hidden', pressed));
     });
   </script>
 </body>

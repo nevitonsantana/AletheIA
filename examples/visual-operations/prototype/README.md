@@ -4,7 +4,7 @@
 
 This folder contains a static frontend prototype for the Visual Operations cockpit direction.
 
-It renders the refined **Trace Room + Evidence Desk** mock as local HTML/CSS/JS with mock data only.
+It renders the **Evidence Ledger + Inspector** direction as local HTML/CSS/JS with mock data only.
 It does not collect, store, mutate, or fetch real source records.
 
 ## Open locally
@@ -30,23 +30,24 @@ No build step, server, backend, runtime, collector, schema, or package dependenc
 ## Visual status
 
 This prototype is an architectural and interaction scaffold for the Mission Control surface.
-The current refinement pass improves art direction, hierarchy, contrast, and motion, but the artifact remains a static prototype rather than the final product UI.
+The current direction changes composition rather than polishing the earlier board: it uses an **Evidence Ledger + Inspector** structure inspired by the supplied dark operational references.
 
 Design intent:
 
-- sober evidence-room atmosphere instead of a generic dashboard or AI-polished cockpit;
-- trace rail and source rails as the signature visual system;
-- flatter ledger surfaces with less glow, less glass, fewer pill-like controls, and tighter radius;
-- restrained amber, moss, vermilion, and telemetry blue only for evidence state;
-- motion limited to a short surface entrance and narrow inspection transitions.
+- sober app shell with wide breathing room and restrained density;
+- central evidence ledger for Work Slice posture instead of a generic project-management board;
+- persistent right-side inspector for source refs, trace context, confidence, and boundary language;
+- trace/events integrated as context rather than a dominant decorative rail;
+- flatter surfaces with less glow, less glass, fewer pill-like controls, and tighter radius;
+- state color used only for evidence posture: review, critical, stable, and unavailable.
 
 ## What to review
 
-- Does the trace rail explain why the board says what it says?
-- Does the first read prioritize pending review and conflicted validation?
+- Does the surface feel like an operational evidence tool rather than a generic dashboard?
+- Does the central ledger reduce project-management-board vibes?
+- Does the inspector make source refs, confidence, trace context, and boundaries easier to read?
 - Does `unavailable` look neutral rather than failed?
-- Are source refs visible without overwhelming the card scan?
-- Do interactions stay narrow: filter, open detail, show/hide empty lanes?
+- Do interactions stay narrow: filter and inspect only?
 
 ## Source design artifacts
 
