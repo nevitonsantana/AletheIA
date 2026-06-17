@@ -34,9 +34,10 @@ The current direction changes composition rather than polishing the earlier boar
 
 Design intent:
 
-- sober app shell with wide breathing room and restrained density;
+- full-browser app shell rather than a framed presentation mock;
+- collapsible left navigation that can expand for labels or collapse for workspace focus;
 - central evidence ledger for Work Slice posture instead of a generic project-management board;
-- persistent right-side inspector for source refs, trace context, confidence, and boundary language;
+- right-side evidence inspector as a side sheet for source refs, trace context, confidence, and boundary language;
 - trace/events integrated as context rather than a dominant decorative rail;
 - flatter surfaces with less glow, less glass, fewer pill-like controls, and tighter radius;
 - state color used only for evidence posture: review, critical, stable, and unavailable.
@@ -47,7 +48,9 @@ Design intent:
 - Does the central ledger reduce project-management-board vibes?
 - Does the inspector make source refs, confidence, trace context, and boundaries easier to read?
 - Does `unavailable` look neutral rather than failed?
-- Do interactions stay narrow: filter and inspect only?
+- Do interactions stay narrow: filter, expand/collapse navigation, and inspect only?
+- Does the full-browser shell feel like product UI rather than a centered mockup?
+- Does the side sheet make details available without permanently consuming workspace?
 
 ## Source design artifacts
 

@@ -23,6 +23,7 @@
       --violet: #8b6ee8;
       --radius: 14px;
       --radius-sm: 9px;
+      --rail-width: 72px;
       --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color-scheme: dark;
@@ -35,6 +36,7 @@
     body {
       margin: 0;
       min-height: 100vh;
+      overflow: hidden;
       background: var(--bg);
       color: var(--text);
       font-family: var(--sans);
@@ -50,36 +52,46 @@
 
     .stage {
       min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: clamp(18px, 3vw, 42px);
+      padding: 0;
     }
 
     .mission-shell {
-      width: min(1540px, 100%);
-      min-height: min(900px, calc(100vh - 48px));
+      width: 100vw;
+      height: 100vh;
       display: grid;
-      grid-template-columns: 64px minmax(0, 1fr);
-      border: 1px solid var(--line-strong);
-      border-radius: 22px;
+      grid-template-columns: var(--rail-width) minmax(0, 1fr);
       background: var(--shell);
       overflow: hidden;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
     }
+
+    .mission-shell.nav-expanded { --rail-width: 238px; }
 
     .side-rail {
       display: grid;
       grid-template-rows: auto 1fr auto;
       gap: 18px;
-      padding: 18px 10px;
+      padding: 16px 10px;
       border-right: 1px solid var(--line);
       background: #0a0e15;
+      min-width: 0;
+      transition: width 180ms ease;
+    }
+
+    .rail-top {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mark-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
     }
 
     .mark {
-      width: 34px;
-      height: 34px;
-      margin: 0 auto;
+      width: 38px;
+      height: 38px;
       display: grid;
       place-items: center;
       border: 1px solid rgba(139, 110, 232, 0.42);
@@ -87,26 +99,85 @@
       color: #c9bcff;
       font: 800 0.75rem var(--mono);
       background: rgba(139, 110, 232, 0.08);
+      flex: 0 0 auto;
     }
+
+    .rail-brand {
+      display: none;
+      min-width: 0;
+    }
+
+    .nav-expanded .rail-brand { display: block; }
+
+    .rail-brand strong {
+      display: block;
+      color: var(--text);
+      font-size: 0.84rem;
+      line-height: 1.1;
+    }
+
+    .rail-brand span {
+      display: block;
+      margin-top: 2px;
+      color: var(--text-muted);
+      font: 680 0.62rem var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-toggle {
+      width: 100%;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      font: 720 0.68rem var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-toggle:hover,
+    .nav-toggle:focus-visible {
+      color: var(--text);
+      background: var(--panel-2);
+      outline: none;
+    }
+
+    .nav-toggle-label { display: none; }
+    .nav-expanded .nav-toggle-label { display: inline; }
 
     .rail-stack {
       display: grid;
-      gap: 10px;
+      gap: 8px;
       align-content: start;
-      justify-items: center;
+      min-width: 0;
     }
 
     .rail-button {
-      width: 38px;
+      width: 100%;
       height: 38px;
-      display: grid;
-      place-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       border-radius: 11px;
       background: transparent;
       color: var(--text-muted);
       font: 760 0.66rem var(--mono);
       cursor: pointer;
+      text-align: left;
     }
+
+    .nav-expanded .rail-button { justify-content: flex-start; padding: 0 10px; }
+
+    .rail-button-label { display: none; }
+    .nav-expanded .rail-button-label { display: inline; font-family: var(--sans); font-size: 0.82rem; font-weight: 640; letter-spacing: -0.01em; }
 
     .rail-button.active,
     .rail-button:hover,
@@ -120,15 +191,16 @@
       display: grid;
       grid-template-rows: auto 1fr;
       min-width: 0;
+      min-height: 0;
     }
 
     .topbar {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(240px, 410px) auto;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 500px) auto;
       gap: 16px;
       align-items: center;
-      min-height: 74px;
-      padding: 16px 22px;
+      min-height: 72px;
+      padding: 14px 24px;
       border-bottom: 1px solid var(--line);
       background: rgba(13, 17, 25, 0.98);
     }
@@ -191,28 +263,82 @@
     }
 
     .workspace {
+      position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 360px;
+      grid-template-columns: minmax(0, 1fr);
       min-height: 0;
+      overflow: hidden;
     }
 
     .main-board {
       min-width: 0;
-      padding: 22px;
+      min-height: 0;
+      padding: 24px;
       overflow: auto;
     }
 
+    .inspector-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 19;
+      background: rgba(0, 0, 0, 0.28);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 160ms ease;
+    }
+
+    .inspector-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     .inspector {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 20;
+      width: min(430px, 100vw);
       display: grid;
       grid-template-rows: auto 1fr;
       min-height: 0;
-      border-left: 1px solid var(--line);
+      border-left: 1px solid var(--line-strong);
       background: #0b0f16;
+      transform: translateX(100%);
+      transition: transform 210ms cubic-bezier(.2,.8,.2,1);
+      box-shadow: -24px 0 70px rgba(0, 0, 0, 0.38);
     }
+
+    .inspector.open { transform: translateX(0); }
 
     .inspector-header {
       padding: 22px;
       border-bottom: 1px solid var(--line);
+    }
+
+    .inspector-title-row {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .sheet-close {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .sheet-close:hover,
+    .sheet-close:focus-visible {
+      color: var(--text);
+      background: var(--panel-2);
+      outline: none;
     }
 
     .inspector-body {
@@ -246,7 +372,7 @@
 
     .section-copy {
       margin: 8px 0 0;
-      max-width: 680px;
+      max-width: 760px;
       color: var(--text-muted);
       font-size: 0.88rem;
       line-height: 1.45;
@@ -351,13 +477,13 @@
 
     .board-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(190px, 1fr));
+      grid-template-columns: repeat(4, minmax(220px, 1fr));
       gap: 0;
-      min-width: 920px;
+      min-width: 960px;
     }
 
     .lane {
-      min-height: 560px;
+      min-height: calc(100vh - 392px);
       border-right: 1px solid var(--line);
       background: rgba(11, 16, 24, 0.38);
     }
@@ -434,10 +560,7 @@
 
     .slice-card:hover { transform: translateY(-1px); }
 
-    .slice-card.selected {
-      box-shadow: inset 3px 0 0 var(--review);
-    }
-
+    .slice-card.selected { box-shadow: inset 3px 0 0 var(--review); }
     .slice-card[data-tone="critical"].selected { box-shadow: inset 3px 0 0 var(--critical); }
     .slice-card[data-tone="stable"].selected { box-shadow: inset 3px 0 0 var(--stable); }
     .slice-card[data-tone="info"].selected { box-shadow: inset 3px 0 0 var(--info); }
@@ -607,13 +730,13 @@
     .hidden { display: none !important; }
 
     @media (prefers-reduced-motion: no-preference) {
-      .mission-shell { animation: shellIn 360ms ease both; }
-      .slice-card { animation: itemIn 260ms ease both; }
+      .mission-shell { animation: shellIn 260ms ease both; }
+      .slice-card { animation: itemIn 220ms ease both; }
     }
 
     @keyframes shellIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @keyframes itemIn {
@@ -622,40 +745,48 @@
     }
 
     @media (max-width: 1180px) {
-      .mission-shell { grid-template-columns: 1fr; }
-      .side-rail { display: none; }
-      .workspace { grid-template-columns: 1fr; }
-      .inspector { border-left: 0; border-top: 1px solid var(--line); }
+      .mission-shell.nav-expanded { --rail-width: 220px; }
       .metrics-row, .event-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .topbar { grid-template-columns: 1fr; align-items: start; }
+      .authority { text-align: left; }
     }
 
     @media (max-width: 760px) {
-      .stage { padding: 0; place-items: stretch; }
-      .mission-shell { min-height: 100vh; border: 0; border-radius: 0; }
-      .topbar { grid-template-columns: 1fr; align-items: start; }
-      .authority { text-align: left; }
+      .mission-shell, .mission-shell.nav-expanded { --rail-width: 58px; }
+      .side-rail { padding: 12px 8px; }
+      .rail-brand, .nav-toggle-label, .rail-button-label { display: none !important; }
+      .mark { width: 34px; height: 34px; }
       .section-head { grid-template-columns: 1fr; }
       .filters { justify-content: flex-start; }
       .metrics-row, .event-strip { grid-template-columns: 1fr; }
       .main-board { padding: 16px; }
       .board-grid { min-width: 760px; }
+      .inspector { width: min(390px, 100vw); }
+      .product-title { flex-direction: column; align-items: flex-start; gap: 6px; }
     }
+
   </style>
 </head>
 <body>
   <div class="stage">
-    <main class="mission-shell" aria-label="AletheIA Mission Control static prototype">
+    <main class="mission-shell" id="mission-shell" aria-label="AletheIA Mission Control static prototype">
       <aside class="side-rail" aria-label="Mission Control navigation">
-        <div class="mark">AI</div>
+        <div class="rail-top">
+          <div class="mark-row">
+            <div class="mark">AI</div>
+            <div class="rail-brand"><strong>AletheIA</strong><span>Mission Control</span></div>
+          </div>
+          <button class="nav-toggle" type="button" id="nav-toggle" aria-expanded="false" aria-controls="mission-shell"><span>⇄</span><span class="nav-toggle-label">Collapse menu</span></button>
+        </div>
         <nav class="rail-stack" aria-label="Workspace views">
-          <button class="rail-button" type="button">OV</button>
-          <button class="rail-button active" type="button">EV</button>
-          <button class="rail-button" type="button">TR</button>
-          <button class="rail-button" type="button">SRC</button>
+          <button class="rail-button" type="button"><span>OV</span><span class="rail-button-label">Overview</span></button>
+          <button class="rail-button active" type="button"><span>EV</span><span class="rail-button-label">Evidence ledger</span></button>
+          <button class="rail-button" type="button"><span>TR</span><span class="rail-button-label">Trace context</span></button>
+          <button class="rail-button" type="button"><span>SRC</span><span class="rail-button-label">Source records</span></button>
         </nav>
         <nav class="rail-stack" aria-label="Utility views">
-          <button class="rail-button" type="button">CFG</button>
-          <button class="rail-button" type="button">AUD</button>
+          <button class="rail-button" type="button"><span>CFG</span><span class="rail-button-label">Configuration</span></button>
+          <button class="rail-button" type="button"><span>AUD</span><span class="rail-button-label">Audit view</span></button>
         </nav>
       </aside>
 
@@ -774,10 +905,16 @@
             </section>
           </section>
 
-          <aside class="inspector" aria-label="Evidence inspector" id="evidence-inspector">
+          <div class="inspector-backdrop open" id="inspector-backdrop"></div>
+          <aside class="inspector open" aria-label="Evidence inspector" id="evidence-inspector" aria-hidden="false">
             <header class="inspector-header">
-              <p class="eyebrow" id="inspector-kicker">Human review · confirmed</p>
-              <h2 class="inspector-title" id="inspector-title">Critical risk signal</h2>
+              <div class="inspector-title-row">
+                <div>
+                  <p class="eyebrow" id="inspector-kicker">Human review · confirmed</p>
+                  <h2 class="inspector-title" id="inspector-title">Critical risk signal</h2>
+                </div>
+                <button class="sheet-close" type="button" id="sheet-close" aria-label="Close evidence inspector">×</button>
+              </div>
               <p class="inspector-copy" id="inspector-summary">A source says human review is required before trusting closure. This is a review prompt, not an automated decision.</p>
             </header>
             <div class="inspector-body">
@@ -892,6 +1029,12 @@
       }
     };
 
+    const shell = document.getElementById('mission-shell');
+    const navToggle = document.getElementById('nav-toggle');
+    const inspector = document.getElementById('evidence-inspector');
+    const inspectorBackdrop = document.getElementById('inspector-backdrop');
+    const sheetClose = document.getElementById('sheet-close');
+
     const fields = {
       kicker: document.getElementById('inspector-kicker'),
       title: document.getElementById('inspector-title'),
@@ -904,6 +1047,18 @@
       boundary: document.getElementById('inspector-boundary')
     };
 
+    function openInspector() {
+      inspector.classList.add('open');
+      inspectorBackdrop.classList.add('open');
+      inspector.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeInspector() {
+      inspector.classList.remove('open');
+      inspectorBackdrop.classList.remove('open');
+      inspector.setAttribute('aria-hidden', 'true');
+    }
+
     function renderInspector(key) {
       const data = details[key] || details['human-review'];
       fields.kicker.textContent = data.kicker;
@@ -915,7 +1070,20 @@
       fields.sources.innerHTML = data.sources.map(source => `<span class="source-ref">${source}</span>`).join('');
       fields.trace.innerHTML = data.trace.map(([time, copy]) => `<div class="trace-item"><span class="trace-time">${time}</span><span>${copy}</span></div>`).join('');
       fields.boundary.textContent = data.boundary;
+      openInspector();
     }
+
+    navToggle.addEventListener('click', () => {
+      const expanded = shell.classList.toggle('nav-expanded');
+      navToggle.setAttribute('aria-expanded', String(expanded));
+      navToggle.querySelector('.nav-toggle-label').textContent = expanded ? 'Collapse menu' : 'Expand menu';
+    });
+
+    sheetClose.addEventListener('click', closeInspector);
+    inspectorBackdrop.addEventListener('click', closeInspector);
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeInspector();
+    });
 
     document.querySelectorAll('.slice-card').forEach(card => {
       card.addEventListener('click', () => {
