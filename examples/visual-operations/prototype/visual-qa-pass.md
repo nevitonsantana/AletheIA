@@ -41,6 +41,16 @@ It successfully moved from a centered mock presentation into a full-browser oper
 | Source visibility | Source refs should invite verification without overwhelming card scan. | Every claim can be traced, but the card remains readable. |
 | Unavailable state | Missing telemetry or source gaps should be neutral. | `unavailable` does not look failed, critical, or complete. |
 
+## Implementation notes
+
+The first HTML QA implementation pass addressed this checklist by adding:
+
+- neutral per-lane empty states when filters hide every card in a lane;
+- an aria-live filter summary with visible-card count and active filter label;
+- explicit `Inspect` affordance on Work Slice cards;
+- responsive handling for the filter summary at narrow widths;
+- no new data source, backend, runtime, schema, collector, policy engine, or Adaptive Skills integration.
+
 ## Non-goals
 
 Do not use this QA pass to add:
