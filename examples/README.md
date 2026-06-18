@@ -63,8 +63,8 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - composição estática de board com lanes, contagens e exceções antes de wireframe/UI
   - wireframe leve/documental do Mission Control, com direção visual e hierarquia de tela
   - mock visual versionado do Mission Control, escolhendo Trace Room + Evidence Desk como direção inicial
-  - mock visual refinado de tela única para orientar um futuro protótipo estático
-  - protótipo frontend estático e read-only do Mission Control com mock data
+  - mock visual refinado de tela única, agora tratado como precursor visual
+  - protótipo frontend estático e read-only do Mission Control com mock data, aceito como Evidence Ledger + Inspector full-browser
 
 ---
 

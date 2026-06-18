@@ -11,9 +11,13 @@ backend, collector, runtime, schema, policy engine, or Adaptive Skills integrati
 
 **Trace Room + Evidence Desk**
 
-This refined mock narrows the previous three-option exploration into one screen direction: a
+This refined mock narrowed the previous three-option exploration into one screen direction: a
 trace-led, evidence-first cockpit that keeps source confidence visible while preserving a calm,
-editorial operating surface.
+editorial operating surface. It is now a precursor artifact, not the latest prototype target.
+
+The accepted static prototype direction is **Evidence Ledger + Inspector**, which keeps the same
+source-first intent but changes the composition into a full-browser operational shell with a central
+evidence ledger, collapsible navigation, and a right-side evidence side sheet.
 
 ![AletheIA Mission Control refined visual mock](assets/mission-control-trace-room-evidence-desk-refined.png)
 
@@ -71,7 +75,9 @@ This refined mock follows:
 - [Cockpit static board composition](cockpit-static-board-composition.md)
 - [Cockpit card state examples](cockpit-card-state-examples.md)
 
-It should be treated as the current visual target for any future static prototype with mock data.
+It should be treated as the precursor visual target that informed the current static prototype.
+The latest accepted artifact is the [Mission Control static prototype](prototype/README.md), using
+the **Evidence Ledger + Inspector** composition.
 
 ## Boundaries
 
@@ -97,6 +103,6 @@ Do not use this mock to justify:
 
 ## Next step
 
-If accepted, the next bounded slice can be a static frontend prototype with mock data only, using this
-refined mock as the visual target and preserving read-only semantics. See the
-[Mission Control static prototype](prototype/README.md).
+This mock has been carried forward into the static prototype. The accepted next visual baseline is
+the [Mission Control static prototype](prototype/README.md), which uses the **Evidence Ledger +
+Inspector** composition while preserving read-only semantics.
