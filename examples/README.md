@@ -65,6 +65,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - mock visual versionado do Mission Control, escolhendo Trace Room + Evidence Desk como direção inicial
   - mock visual refinado de tela única, agora tratado como precursor visual
   - protótipo frontend estático e read-only do Mission Control com mock data, aceito como Evidence Ledger + Inspector full-browser
+  - roteiro de iteração visual do protótipo, preservando read-only e source authority
 
 ---
 
