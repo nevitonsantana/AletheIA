@@ -189,6 +189,21 @@ This model may justify future design artifacts or prototypes, but it does not by
 Those require separate Work Slices with evidence that static Markdown/JSON is insufficient for a real
 cadence.
 
+## Accepted static prototype direction
+
+The current accepted prototype baseline is **Evidence Ledger + Inspector**. It preserves the
+read-only/source-first rules of Trace Room + Evidence Desk, but changes the screen composition into a
+full-browser product shell:
+
+- collapsible left navigation for workspace focus;
+- central evidence ledger for derived Work Slice posture;
+- right-side evidence inspector as a side sheet;
+- trace events integrated as context rather than a dominant decorative rail;
+- no backend, runtime, collector, schema, policy engine, or Adaptive Skills integration.
+
+Use this as the visual baseline for future static prototype iterations unless a later design review
+replaces it.
+
 ## Related
 
 - [Mission Control static prototype](../../examples/visual-operations/prototype/README.md)
