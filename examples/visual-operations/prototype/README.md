@@ -55,6 +55,7 @@ Design intent:
 ## Source design artifacts
 
 - [Prototype iteration plan](iteration-plan.md)
+- [Prototype visual QA pass](visual-qa-pass.md)
 - [Refined visual mock](../cockpit-refined-visual-mock.md)
 - [Light wireframe spec](../cockpit-light-wireframe-spec.md)
 - [Static board composition](../cockpit-static-board-composition.md)

@@ -21,6 +21,8 @@ This baseline should remain the reference point unless a later design review exp
 
 ## Next visual slices
 
+The first slice has a docs-first QA artifact: [Mission Control Prototype Visual QA Pass](visual-qa-pass.md).
+
 | Slice | Goal | Must preserve | Not included |
 |---|---|---|---|
 | 1. Visual QA pass | Tighten spacing, hierarchy, empty states, responsive behavior, and interaction clarity. | Full-browser shell, side sheet, read-only semantics. | Runtime data, backend, schemas, collectors. |
