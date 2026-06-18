@@ -204,6 +204,28 @@ full-browser product shell:
 Use this as the visual baseline for future static prototype iterations unless a later design review
 replaces it.
 
+## Future operational intelligence signals
+
+Future prototype iterations may add a Resource Observatory layer, but only as a projection of sourced
+observability records. These signals are candidates, not required fields for the current static
+prototype.
+
+| Candidate signal | Visual purpose | Source/provenance rule |
+|---|---|---|
+| Context tokens | Show context-load pressure over time. | Use reported token telemetry when available; otherwise show `unavailable`. |
+| Token/cost spend | Make cost trend visible without inventing finance data. | Mark origin as `reported`, `estimated`, or `unavailable`. |
+| Retry waste | Expose repeated attempts or failed loops. | Derive only from execution/retry logs with source refs. |
+| Runtime fit | Show whether runtime/model choice matched task needs. | Use evaluation or run metadata; do not infer fit from outcome alone. |
+| Review effort | Indicate human review time or burden. | Use review records or explicit time metadata; otherwise `unknown`. |
+| Quality signals | Summarize validation quality and evidence health. | Link to validation, CI, eval, or audit sources. |
+| Active threads | Show concurrent work/agent context pressure. | Use thread/session records, never private conversation content. |
+| Skills usage | Show traced skill activations. | Skills remain trace context, not governance authority. |
+| Agent usage | Show agent participation or runtime usage. | Use agent/run metadata with privacy-safe identifiers only. |
+
+If an observability bus such as **APOB** is introduced later, it should remain an input/source layer
+for events, logs, metrics, and correlated signals. It must not become a new authority for readiness,
+review, closure, or policy decisions.
+
 ## Related
 
 - [Mission Control static prototype](../../examples/visual-operations/prototype/README.md)
