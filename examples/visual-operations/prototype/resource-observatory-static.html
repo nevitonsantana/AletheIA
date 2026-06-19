@@ -805,6 +805,7 @@
     const signalInspector = document.getElementById('signal-inspector');
     const inspectorBackdrop = document.getElementById('inspector-backdrop');
     const inspectorClose = document.getElementById('inspector-close');
+    let inspectorTrigger = null;
     const signalDetails = {
       'context-tokens': { kicker: 'Reported signal', title: 'Context tokens · 128k', summary: 'Reported from a synthetic APOB event sample.', source: 'OBS-CTX-01', origin: 'reported', availability: 'available', interpretation: 'Context volume is visible for review. No target, threshold, or decision is inferred from this value.' },
       'token-cost': { kicker: 'Unavailable signal', title: 'Token cost · unavailable', summary: 'No durable cost export exists for this docs-only slice.', source: 'OBS-COST-∅', origin: 'unavailable', availability: 'unavailable', interpretation: 'Absence of cost telemetry is represented neutrally. The interface does not invent or estimate a replacement value.' },
@@ -839,14 +840,18 @@
     });
 
     function closeSignalInspector() {
+      const wasOpen = signalInspector.classList.contains('open');
       signalInspector.classList.remove('open');
       inspectorBackdrop.classList.remove('open');
       signalInspector.setAttribute('aria-hidden', 'true');
+      if (wasOpen && inspectorTrigger?.isConnected) inspectorTrigger.focus();
+      inspectorTrigger = null;
     }
 
-    function openSignalInspector(key) {
+    function openSignalInspector(key, trigger) {
       const detail = signalDetails[key];
       if (!detail) return;
+      inspectorTrigger = trigger;
       document.querySelectorAll('.signal-card').forEach(card => card.classList.toggle('selected', card.dataset.signal === key));
       document.getElementById('inspector-kicker').textContent = detail.kicker;
       document.getElementById('inspector-title').textContent = detail.title;
@@ -858,14 +863,15 @@
       signalInspector.classList.add('open');
       inspectorBackdrop.classList.add('open');
       signalInspector.setAttribute('aria-hidden', 'false');
+      requestAnimationFrame(() => inspectorClose.focus());
     }
 
     document.querySelectorAll('.signal-card').forEach(card => {
-      card.addEventListener('click', () => openSignalInspector(card.dataset.signal));
+      card.addEventListener('click', () => openSignalInspector(card.dataset.signal, card));
       card.addEventListener('keydown', event => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
-          openSignalInspector(card.dataset.signal);
+          openSignalInspector(card.dataset.signal, card);
         }
       });
     });
