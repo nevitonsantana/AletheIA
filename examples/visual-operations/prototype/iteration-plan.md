@@ -23,6 +23,8 @@ This baseline should remain the reference point unless a later design review exp
 
 The first slice has a docs-first QA artifact: [Mission Control Prototype Visual QA Pass](visual-qa-pass.md).
 
+Pulso Design System may be used as a design acceleration reference for future prototype passes. The boundary and recommended adoption path are recorded in [Pulso Design System Bridge](pulso-design-system-bridge.md).
+
 | Slice | Goal | Must preserve | Not included |
 |---|---|---|---|
 | 1. Visual QA pass | Tighten spacing, hierarchy, empty states, responsive behavior, and interaction clarity. | Full-browser shell, side sheet, read-only semantics. | Runtime data, backend, schemas, collectors. |
@@ -51,6 +53,7 @@ A signal can appear visually only when it has a source reference and provenance.
 A future prototype slice is acceptable only if:
 
 - the screen still feels like an operational evidence tool, not a generic dashboard;
+- Pulso alignment, when used, supports operational clarity rather than adding decorative UI polish;
 - the central ledger remains the main workspace;
 - details appear on demand through the inspector or side sheet;
 - every status, metric, alert, and source claim has source refs or explicit absence;
