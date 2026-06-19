@@ -57,6 +57,7 @@ Design intent:
 - [Prototype iteration plan](iteration-plan.md)
 - [Prototype visual QA pass](visual-qa-pass.md)
 - [Pulso Design System bridge](pulso-design-system-bridge.md)
+- [Pulso token comparison pass](pulso-token-comparison.md)
 - [Refined visual mock](../cockpit-refined-visual-mock.md)
 - [Light wireframe spec](../cockpit-light-wireframe-spec.md)
 - [Static board composition](../cockpit-static-board-composition.md)

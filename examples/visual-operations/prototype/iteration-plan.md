@@ -23,14 +23,15 @@ This baseline should remain the reference point unless a later design review exp
 
 The first slice has a docs-first QA artifact: [Mission Control Prototype Visual QA Pass](visual-qa-pass.md).
 
-Pulso Design System may be used as a design acceleration reference for future prototype passes. The boundary and recommended adoption path are recorded in [Pulso Design System Bridge](pulso-design-system-bridge.md).
+Pulso Design System may be used as a design acceleration reference for future prototype passes. The boundary and recommended adoption path are recorded in [Pulso Design System Bridge](pulso-design-system-bridge.md), followed by the docs-first [Pulso token comparison pass](pulso-token-comparison.md).
 
 | Slice | Goal | Must preserve | Not included |
 |---|---|---|---|
 | 1. Visual QA pass | Tighten spacing, hierarchy, empty states, responsive behavior, and interaction clarity. | Full-browser shell, side sheet, read-only semantics. | Runtime data, backend, schemas, collectors. |
-| 2. Observability preview | Explore a small Resource Observatory preview for sourced operational signals. | `unknown`/`unavailable` for missing sources; provenance on every metric. | Real telemetry collection or generated estimates. |
-| 3. Source detail depth | Improve inspector treatment for source refs, trace, confidence, and boundary copy. | Metadata-first privacy and source authority. | Prompt bodies, secrets, restricted content. |
-| 4. Review workflow readability | Clarify how human review, conflicts, and unavailable telemetry are scanned. | Alerts as review prompts, not decisions. | Approve/reject commands or lifecycle mutation. |
+| 2. Pulso token alignment | Align prototype CSS vocabulary with Pulso tokens before deeper UI changes. | Static HTML, local aliases, Mission Control-specific governance semantics. | Pulso package import, app build step, shared dependency. |
+| 3. Observability preview | Explore a small Resource Observatory preview for sourced operational signals. | `unknown`/`unavailable` for missing sources; provenance on every metric. | Real telemetry collection or generated estimates. |
+| 4. Source detail depth | Improve inspector treatment for source refs, trace, confidence, and boundary copy. | Metadata-first privacy and source authority. | Prompt bodies, secrets, restricted content. |
+| 5. Review workflow readability | Clarify how human review, conflicts, and unavailable telemetry are scanned. | Alerts as review prompts, not decisions. | Approve/reject commands or lifecycle mutation. |
 
 ## Operational intelligence candidates
 

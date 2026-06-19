@@ -71,3 +71,5 @@ The next safe slice is a **Pulso token comparison pass**:
 - list which ones match the current Mission Control prototype;
 - document any gaps where Mission Control needs a stricter governance-specific treatment;
 - avoid changing the HTML until the mapping is clear.
+
+That comparison is recorded in [Pulso token comparison pass](pulso-token-comparison.md).
