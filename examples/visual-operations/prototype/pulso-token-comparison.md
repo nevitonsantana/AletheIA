@@ -110,6 +110,18 @@ The first HTML pass applied this recommendation by adding local aliases inside `
 
 This keeps the prototype static and local while making later visual tuning easier.
 
+## Visible tuning pass applied
+
+A follow-up visual pass used those aliases to make the Pulso influence perceptible:
+
+- shifted the base surface from neutral blue-black toward Pulso dark indigo;
+- strengthened lavender borders and panel separation;
+- made the primary accent closer to Pulso purple while keeping it out of evidence-state meaning;
+- kept review, critical, stable, and evidence colors semantically distinct;
+- kept `unavailable` neutral and did not turn it into a warning/error color.
+
+This pass changes visual tone only. It does not add interaction, runtime data, or dependencies.
+
 ## Non-goals
 
 This pass does not:
