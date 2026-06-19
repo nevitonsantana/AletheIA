@@ -122,6 +122,20 @@ A follow-up visual pass used those aliases to make the Pulso influence perceptib
 
 This pass changes visual tone only. It does not add interaction, runtime data, or dependencies.
 
+## Component structure tuning applied
+
+A later prototype pass refined the component structure without adding new behavior:
+
+- renamed the board confidence label to `Ledger confidence`;
+- replaced the board/lifecycle hint with explicit source-authority language;
+- made lanes feel more like ledger columns than project-management buckets;
+- added a thin evidence posture rail to each Work Slice record;
+- reduced selected-card treatment from a strong vertical bar to a quieter outline;
+- made source refs and chips more like compact ledger metadata;
+- tightened the inspector boundary note into a Pulso-like side-sheet treatment.
+
+This keeps the same static mock data and interactions while reducing generic kanban cues.
+
 ## Non-goals
 
 This pass does not:
