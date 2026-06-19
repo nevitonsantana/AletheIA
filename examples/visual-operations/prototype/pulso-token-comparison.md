@@ -98,6 +98,18 @@ The next prototype edit can safely:
 4. preserve evidence-state colors and neutral `unavailable`;
 5. avoid importing any package or external build pipeline.
 
+## HTML alias pass applied
+
+The first HTML pass applied this recommendation by adding local aliases inside `mission-control-static.html`:
+
+- Pulso-inspired local type aliases: `--font-pulso-sans`, `--font-pulso-mono`, `--text-*`;
+- Pulso-inspired spacing/rhythm aliases: `--space-*`, `--rhythm-cadence-*`;
+- Pulso-inspired radius aliases: `--radius-md`, `--radius-lg`, `--radius-xl`;
+- Mission Control semantic aliases: `--mc-surface-*`, `--mc-border*`, `--mc-text*`, `--mc-critical`, `--mc-review`, `--mc-stable`, `--mc-evidence`, `--mc-primary`;
+- backward-compatible prototype tokens pointing to those aliases.
+
+This keeps the prototype static and local while making later visual tuning easier.
+
 ## Non-goals
 
 This pass does not:
