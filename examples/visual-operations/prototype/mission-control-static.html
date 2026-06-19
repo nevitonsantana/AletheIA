@@ -28,6 +28,7 @@
       --radius-md: 8px;
       --radius-lg: 10px;
       --radius-xl: 14px;
+      --radius-ledger: 7px;
 
       /* Mission Control semantic aliases. */
       --mc-surface-page: #0f0c1a;
@@ -161,7 +162,7 @@
       display: block;
       margin-top: 2px;
       color: var(--text-muted);
-      font: 680 var(--text-micro) var(--mono);
+      font: 720 var(--text-micro) var(--mono);
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
@@ -347,7 +348,7 @@
       background: color-mix(in oklab, var(--mc-surface-page) 86%, #05040a 14%);
       transform: translateX(100%);
       transition: transform 210ms cubic-bezier(.2,.8,.2,1);
-      box-shadow: -24px 0 70px rgba(0, 0, 0, 0.46);
+      box-shadow: -24px 0 70px rgba(0, 0, 0, 0.46), inset 1px 0 0 color-mix(in oklab, var(--mc-primary) 10%, transparent);
     }
 
     .inspector.open { transform: translateX(0); }
@@ -478,7 +479,7 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       overflow: hidden;
-      background: color-mix(in oklab, var(--mc-surface-panel) 78%, transparent);
+      background: linear-gradient(180deg, color-mix(in oklab, var(--mc-surface-panel) 82%, transparent), color-mix(in oklab, var(--mc-surface-page) 72%, transparent));
     }
 
     .ledger-toolbar {
@@ -526,7 +527,7 @@
     .lane {
       min-height: calc(100vh - 392px);
       border-right: 1px solid var(--line);
-      background: color-mix(in oklab, var(--mc-surface-page) 58%, transparent);
+      background: color-mix(in oklab, var(--mc-surface-page) 72%, transparent);
     }
 
     .lane:last-child { border-right: 0; }
@@ -539,9 +540,9 @@
       justify-content: space-between;
       gap: var(--space-3);
       align-items: center;
-      padding: 13px var(--space-4);
+      padding: 11px var(--space-4);
       border-bottom: 1px solid var(--line);
-      background: color-mix(in oklab, var(--mc-surface-panel) 92%, #090712 8%);
+      background: color-mix(in oklab, var(--mc-surface-shell) 74%, transparent);
     }
 
     .lane-name {
@@ -549,9 +550,11 @@
       align-items: center;
       gap: var(--space-2);
       min-width: 0;
-      font-size: var(--text-body);
+      font-size: var(--text-support);
       color: var(--text-soft);
-      font-weight: 680;
+      font-weight: 720;
+      text-transform: uppercase;
+      letter-spacing: 0.035em;
     }
 
     .lane-count {
@@ -560,8 +563,8 @@
     }
 
     .state-dot {
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       border-radius: 999px;
       background: var(--text-muted);
       flex: 0 0 auto;
@@ -574,19 +577,19 @@
 
     .slice-list {
       display: grid;
-      gap: var(--space-2);
-      padding: var(--space-3);
+      gap: 10px;
+      padding: 10px 12px 14px;
     }
 
     .slice-card {
       width: 100%;
       display: grid;
-      gap: var(--space-3);
+      gap: 10px;
       text-align: left;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      background: color-mix(in oklab, var(--mc-surface-panel-raised) 72%, transparent);
-      padding: var(--space-3);
+      border: 1px solid color-mix(in oklab, var(--mc-border) 86%, transparent);
+      border-radius: var(--radius-ledger);
+      background: color-mix(in oklab, var(--mc-surface-panel-raised) 54%, transparent);
+      padding: 13px 14px;
       cursor: pointer;
       transition: border-color 140ms ease, background 140ms ease, transform 140ms ease;
     }
@@ -595,16 +598,29 @@
     .slice-card:focus-visible,
     .slice-card.selected {
       border-color: var(--line-strong);
-      background: color-mix(in oklab, var(--mc-surface-panel-strong) 78%, transparent);
+      background: color-mix(in oklab, var(--mc-surface-panel-strong) 68%, transparent);
       outline: none;
     }
 
     .slice-card:hover { transform: translateY(-1px); }
 
-    .slice-card.selected { box-shadow: inset 3px 0 0 var(--review); }
-    .slice-card[data-tone="critical"].selected { box-shadow: inset 3px 0 0 var(--critical); }
-    .slice-card[data-tone="stable"].selected { box-shadow: inset 3px 0 0 var(--stable); }
-    .slice-card[data-tone="info"].selected { box-shadow: inset 3px 0 0 var(--info); }
+    .slice-card::before {
+      content: "";
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: color-mix(in oklab, var(--mc-border-strong) 34%, transparent);
+    }
+
+    .slice-card[data-tone="critical"]::before { background: color-mix(in oklab, var(--critical) 70%, transparent); }
+    .slice-card[data-tone="review"]::before { background: color-mix(in oklab, var(--review) 70%, transparent); }
+    .slice-card[data-tone="stable"]::before { background: color-mix(in oklab, var(--stable) 70%, transparent); }
+    .slice-card[data-tone="info"]::before { background: color-mix(in oklab, var(--info) 70%, transparent); }
+
+    .slice-card.selected { box-shadow: 0 0 0 1px color-mix(in oklab, var(--review) 52%, transparent); }
+    .slice-card[data-tone="critical"].selected { box-shadow: 0 0 0 1px color-mix(in oklab, var(--critical) 58%, transparent); }
+    .slice-card[data-tone="stable"].selected { box-shadow: 0 0 0 1px color-mix(in oklab, var(--stable) 48%, transparent); }
+    .slice-card[data-tone="info"].selected { box-shadow: 0 0 0 1px color-mix(in oklab, var(--info) 48%, transparent); }
 
     .slice-meta {
       display: flex;
@@ -612,7 +628,7 @@
       gap: var(--space-2);
       align-items: center;
       color: var(--text-muted);
-      font: 680 var(--text-micro) var(--mono);
+      font: 720 var(--text-micro) var(--mono);
     }
 
     .slice-title {
@@ -648,8 +664,8 @@
 
     .source-ref, .chip {
       border: 1px solid color-mix(in oklab, var(--mc-border-strong) 52%, transparent);
-      border-radius: 5px;
-      padding: 3px 6px;
+      border-radius: var(--radius-md);
+      padding: 3px 7px;
       background: color-mix(in oklab, var(--mc-border) 38%, transparent);
       color: var(--text-soft);
       font-size: 0.58rem;
@@ -663,7 +679,7 @@
 
     .confidence {
       color: var(--text-muted);
-      font: 680 var(--text-micro) var(--mono);
+      font: 720 var(--text-micro) var(--mono);
       white-space: nowrap;
     }
 
@@ -755,13 +771,13 @@
 
     .trace-time {
       color: var(--text-muted);
-      font: 680 var(--text-micro) var(--mono);
+      font: 720 var(--text-micro) var(--mono);
     }
 
     .boundary-note {
-      border: 1px solid rgba(132, 185, 154, 0.26);
-      border-radius: var(--radius-sm);
-      background: rgba(132, 185, 154, 0.045);
+      border: 1px solid color-mix(in oklab, var(--stable) 32%, transparent);
+      border-radius: var(--radius-lg);
+      background: color-mix(in oklab, var(--stable) 7%, transparent);
       padding: var(--space-3);
       color: #bdd7c7;
       font-size: var(--text-support);
@@ -780,7 +796,7 @@
 
     .card-action {
       color: var(--text-soft);
-      font: 720 var(--text-micro) var(--mono);
+      font: 760 var(--text-micro) var(--mono);
       text-transform: uppercase;
       letter-spacing: var(--tracking-kicker);
       white-space: nowrap;
@@ -910,8 +926,8 @@
 
             <section class="ledger-shell" aria-label="Work Slice evidence board">
               <div class="ledger-toolbar">
-                <div class="ledger-title"><span>Board confidence</span><span class="progress-track" aria-hidden="true"><span></span></span><span class="utility">42%</span></div>
-                <span class="utility">Lanes are derived presentation, not lifecycle</span>
+                <div class="ledger-title"><span>Ledger confidence</span><span class="progress-track" aria-hidden="true"><span></span></span><span class="utility">42%</span></div>
+                <span class="utility">Derived review posture · source records authoritative</span>
               </div>
 
               <div class="board-grid">
