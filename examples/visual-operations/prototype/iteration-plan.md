@@ -57,6 +57,8 @@ The static matrix now represents all nine candidates above. Missing runtime evid
 
 For scanability, the matrix is grouped into capacity and spend, execution efficiency, and quality and orchestration. These are presentation groupings only; they do not define a new operational taxonomy or authority.
 
+The page keeps only a compact projection-boundary summary in the workspace header. Full provenance and boundary explanations remain available on demand in each signal inspector, avoiding a permanently occupied side panel.
+
 ## Acceptance criteria for future slices
 
 A future prototype slice is acceptable only if:
