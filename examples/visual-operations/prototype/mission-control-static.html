@@ -727,6 +727,48 @@
       line-height: 1.42;
     }
 
+
+    .filter-summary {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font: 680 0.68rem var(--mono);
+      white-space: nowrap;
+    }
+
+    .card-action {
+      color: var(--text-soft);
+      font: 720 0.62rem var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      white-space: nowrap;
+    }
+
+    .slice-card:hover .card-action,
+    .slice-card:focus-visible .card-action,
+    .slice-card.selected .card-action {
+      color: var(--review);
+    }
+
+    .empty-lane {
+      display: none;
+      margin: 10px;
+      min-height: 118px;
+      place-items: center;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius-sm);
+      background: rgba(174, 185, 207, 0.025);
+      color: var(--text-muted);
+      text-align: center;
+      padding: 16px;
+      font-size: 0.78rem;
+      line-height: 1.42;
+    }
+
+    .lane.is-empty .empty-lane { display: grid; }
+
+
     .hidden { display: none !important; }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -758,6 +800,7 @@
       .mark { width: 34px; height: 34px; }
       .section-head { grid-template-columns: 1fr; }
       .filters { justify-content: flex-start; }
+      .filter-summary { width: 100%; }
       .metrics-row, .event-strip { grid-template-columns: 1fr; }
       .main-board { padding: 16px; }
       .board-grid { min-width: 760px; }
@@ -813,6 +856,7 @@
                 <button class="filter-button" type="button" data-filter="attention" aria-pressed="false">Needs attention</button>
                 <button class="filter-button" type="button" data-filter="stable" aria-pressed="false">Stable</button>
                 <button class="filter-button" type="button" data-filter="unavailable" aria-pressed="false">Unavailable</button>
+                <span class="filter-summary" id="filter-summary" aria-live="polite">7 visible · All</span>
               </nav>
             </div>
 
@@ -837,15 +881,16 @@
                       <span class="slice-meta"><span>WS-2026-0616-001</span><span class="chip critical">Human review</span></span>
                       <strong class="slice-title">Critical risk signal</strong>
                       <span class="slice-copy">Threshold breach detected. Human confirmation is required before trusting closure.</span>
-                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">SRC-2147</span><span class="source-ref">PR-2.1</span></span><span class="confidence">Low</span></span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">SRC-2147</span><span class="source-ref">PR-2.1</span></span><span class="card-action">Inspect</span></span>
                     </button>
                     <button class="slice-card" type="button" data-detail="conflict" data-status="attention" data-tone="review">
                       <span class="slice-meta"><span>WS-2026-0616-002</span><span class="chip review">Conflict</span></span>
                       <strong class="slice-title">Model output mismatch</strong>
                       <span class="slice-copy">Validation sources disagree with the policy baseline and risk thresholds.</span>
-                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">SRC-2149</span><span class="source-ref">Eval 3.2</span></span><span class="confidence">Medium</span></span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">SRC-2149</span><span class="source-ref">Eval 3.2</span></span><span class="card-action">Inspect</span></span>
                     </button>
                   </div>
+                  <div class="empty-lane">No review prompts match this filter. Absence is a filtered view, not source truth.</div>
                 </section>
 
                 <section class="lane" aria-label="Validation lane">
@@ -855,15 +900,16 @@
                       <span class="slice-meta"><span>WS-2026-0615-006</span><span class="chip stable">Validated</span></span>
                       <strong class="slice-title">Policy update impact check</strong>
                       <span class="slice-copy">Evidence supports the validation posture for this static example.</span>
-                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">SRC-2120</span><span class="source-ref">Eval 3.1</span></span><span class="confidence">High</span></span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">SRC-2120</span><span class="source-ref">Eval 3.1</span></span><span class="card-action">Inspect</span></span>
                     </button>
                     <button class="slice-card" type="button" data-detail="skill" data-status="stable" data-tone="stable">
                       <span class="slice-meta"><span>WS-2026-0615-004</span><span class="chip stable">Skill traced</span></span>
                       <strong class="slice-title">Adaptive skill activation</strong>
                       <span class="slice-copy">Skill activation is visible as trace context, without gate or decision authority.</span>
-                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">ACT-552</span><span class="source-ref">Trace</span></span><span class="confidence">High</span></span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">ACT-552</span><span class="source-ref">Trace</span></span><span class="card-action">Inspect</span></span>
                     </button>
                   </div>
+                  <div class="empty-lane">No validation slices match this filter. Source records remain unchanged.</div>
                 </section>
 
                 <section class="lane" aria-label="Reconcile lane">
@@ -873,9 +919,10 @@
                       <span class="slice-meta"><span>WS-2026-0616-003</span><span class="chip info">Unavailable</span></span>
                       <strong class="slice-title">Resolve missing telemetry</strong>
                       <span class="slice-copy">Runtime, token, and cost records were not exported for this docs-only slice.</span>
-                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">Telemetry</span><span class="source-ref">R-556</span></span><span class="confidence">Unknown</span></span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">Telemetry</span><span class="source-ref">R-556</span></span><span class="card-action">Inspect</span></span>
                     </button>
                   </div>
+                  <div class="empty-lane">No reconcile slices match this filter. Unknown and unavailable states stay neutral.</div>
                 </section>
 
                 <section class="lane" aria-label="Closed lane">
@@ -885,15 +932,16 @@
                       <span class="slice-meta"><span>PR #207</span><span class="chip stable">Closed</span></span>
                       <strong class="slice-title">Human-review source mapping</strong>
                       <span class="slice-copy">Source supports closure; review source remains represented as unavailable.</span>
-                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">PR #207</span><span class="source-ref">39f76cf</span></span><span class="confidence">High</span></span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">PR #207</span><span class="source-ref">39f76cf</span></span><span class="card-action">Inspect</span></span>
                     </button>
                     <button class="slice-card" type="button" data-detail="closed-201" data-status="stable" data-tone="stable">
                       <span class="slice-meta"><span>PR #201</span><span class="chip stable">Closed</span></span>
                       <strong class="slice-title">Dogfood evidence record</strong>
                       <span class="slice-copy">Snapshot evidence supports closeout; human review absence remains visible.</span>
-                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">Dogfood</span><span class="source-ref">Snapshot</span></span><span class="confidence">High</span></span>
+                      <span class="slice-footer"><span class="source-stack"><span class="source-ref">Dogfood</span><span class="source-ref">Snapshot</span></span><span class="card-action">Inspect</span></span>
                     </button>
                   </div>
+                  <div class="empty-lane">No closed slices match this filter. Filtering does not reopen or mutate work.</div>
                 </section>
               </div>
             </section>
@@ -1035,6 +1083,8 @@
     const inspectorBackdrop = document.getElementById('inspector-backdrop');
     const sheetClose = document.getElementById('sheet-close');
 
+    const filterSummary = document.getElementById('filter-summary');
+
     const fields = {
       kicker: document.getElementById('inspector-kicker'),
       title: document.getElementById('inspector-title'),
@@ -1093,6 +1143,16 @@
       });
     });
 
+    function updateLaneEmptyStates(filterLabel) {
+      let visibleCount = 0;
+      document.querySelectorAll('.lane').forEach(lane => {
+        const visibleCards = [...lane.querySelectorAll('.slice-card')].filter(card => !card.classList.contains('hidden'));
+        visibleCount += visibleCards.length;
+        lane.classList.toggle('is-empty', visibleCards.length === 0);
+      });
+      filterSummary.textContent = `${visibleCount} visible · ${filterLabel}`;
+    }
+
     document.querySelectorAll('[data-filter]').forEach(button => {
       button.addEventListener('click', () => {
         document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', 'false'));
@@ -1101,8 +1161,11 @@
         document.querySelectorAll('.slice-card').forEach(card => {
           card.classList.toggle('hidden', filter !== 'all' && card.dataset.status !== filter);
         });
+        updateLaneEmptyStates(button.textContent.trim());
       });
     });
+
+    updateLaneEmptyStates('All');
   </script>
 </body>
 </html>
