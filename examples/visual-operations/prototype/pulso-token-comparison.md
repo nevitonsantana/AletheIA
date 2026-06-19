@@ -149,6 +149,18 @@ The inspector side sheet was then refined as an evidence desk:
 
 This improves audit scanning without adding approve/reject behavior or lifecycle mutation.
 
+## Source-ref depth tuning applied
+
+The inspector source section was then expanded from simple chips into source-ledger rows:
+
+- each source ref now has a name, type, and origin label;
+- origin labels distinguish `reported`, `estimated`, and `unavailable`;
+- unavailable sources remain neutral rather than failure-colored;
+- source rows explain availability and provenance without making the inspector authoritative;
+- static mock data still drives the entire presentation.
+
+This prepares the prototype for future source-detail exploration without introducing schemas or collectors.
+
 ## Non-goals
 
 This pass does not:
