@@ -282,11 +282,43 @@
       border-bottom: 1px solid var(--mc-border);
     }
 
+    .signal-groups {
+      display: grid;
+      gap: var(--space-6);
+      align-content: start;
+    }
+
+    .signal-group {
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .signal-group-header {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-4);
+      align-items: baseline;
+      padding-bottom: var(--space-2);
+      border-bottom: 1px solid var(--mc-border);
+    }
+
+    .signal-group-header h2 {
+      margin: 0;
+      color: var(--mc-text-support);
+      font-size: var(--text-h2);
+      letter-spacing: -0.01em;
+    }
+
+    .signal-group-header p {
+      margin: 0;
+      color: var(--mc-text-muted);
+      font: 680 var(--text-micro) var(--font-pulso-mono);
+    }
+
     .signal-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: var(--space-3);
-      align-content: start;
     }
 
     .signal-card, .side-panel {
@@ -543,7 +575,13 @@
             <h1>Operational signals as sourced context</h1>
             <p class="lead">This view separates operational intelligence from the Evidence Ledger. Signals are metadata-first, sourced, and read-only; they do not collect telemetry or authorize decisions.</p>
           </header>
-        <section class="signal-grid" aria-label="Operational signal cards">
+        <div class="signal-groups" aria-label="Operational signal groups">
+        <section class="signal-group" aria-labelledby="capacity-signals-title">
+          <header class="signal-group-header">
+            <h2 id="capacity-signals-title">Capacity &amp; spend</h2>
+            <p>3 sourced signals</p>
+          </header>
+          <div class="signal-grid">
           <article class="signal-card" role="button" tabindex="0" data-signal="context-tokens" aria-label="Inspect Context tokens provenance">
             <span class="signal-label">Context tokens</span>
             <strong class="signal-value">128k</strong>
@@ -556,11 +594,32 @@
             <p class="signal-note">No durable cost export exists for this docs-only slice.</p>
             <span class="source-line"><span class="origin unavailable">unavailable</span><span class="source-ref">OBS-COST-∅</span></span>
           </article>
+          <article class="signal-card is-neutral" role="button" tabindex="0" data-signal="runtime-fit" aria-label="Inspect Runtime fit provenance">
+            <span class="signal-label">Runtime fit</span>
+            <strong class="signal-value neutral">unavailable</strong>
+            <p class="signal-note">No durable runtime profile exists for this docs-only slice.</p>
+            <span class="source-line"><span class="origin unavailable">unavailable</span><span class="source-ref">OBS-RUN-∅</span></span>
+          </article>
+          </div>
+        </section>
+
+        <section class="signal-group" aria-labelledby="efficiency-signals-title">
+          <header class="signal-group-header">
+            <h2 id="efficiency-signals-title">Execution efficiency</h2>
+            <p>3 sourced signals</p>
+          </header>
+          <div class="signal-grid">
           <article class="signal-card is-review" role="button" tabindex="0" data-signal="retry-waste" aria-label="Inspect Retry waste provenance">
             <span class="signal-label">Retry waste</span>
             <strong class="signal-value review">6.2%</strong>
             <p class="signal-note">Estimated from synthetic retry records; not a billing source.</p>
             <span class="source-line"><span class="origin estimated">estimated</span><span class="source-ref">OBS-RTY-02</span></span>
+          </article>
+          <article class="signal-card" role="button" tabindex="0" data-signal="active-threads" aria-label="Inspect Active threads provenance">
+            <span class="signal-label">Active threads</span>
+            <strong class="signal-value">37</strong>
+            <p class="signal-note">Reported from a synthetic thread inventory snapshot.</p>
+            <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">OBS-THR-08</span></span>
           </article>
           <article class="signal-card is-stable" role="button" tabindex="0" data-signal="review-effort" aria-label="Inspect Review effort provenance">
             <span class="signal-label">Review effort</span>
@@ -568,6 +627,15 @@
             <p class="signal-note">Reported from review metadata in the synthetic example.</p>
             <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">OBS-HR-04</span></span>
           </article>
+          </div>
+        </section>
+
+        <section class="signal-group" aria-labelledby="quality-signals-title">
+          <header class="signal-group-header">
+            <h2 id="quality-signals-title">Quality &amp; orchestration</h2>
+            <p>3 sourced signals</p>
+          </header>
+          <div class="signal-grid">
           <article class="signal-card" role="button" tabindex="0" data-signal="quality-signals" aria-label="Inspect Quality signals provenance">
             <span class="signal-label">Quality signals</span>
             <strong class="signal-value">94</strong>
@@ -580,25 +648,15 @@
             <p class="signal-note">Skill activation appears as trace context only.</p>
             <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">ACT-552</span></span>
           </article>
-          <article class="signal-card is-neutral" role="button" tabindex="0" data-signal="runtime-fit" aria-label="Inspect Runtime fit provenance">
-            <span class="signal-label">Runtime fit</span>
-            <strong class="signal-value neutral">unavailable</strong>
-            <p class="signal-note">No durable runtime profile exists for this docs-only slice.</p>
-            <span class="source-line"><span class="origin unavailable">unavailable</span><span class="source-ref">OBS-RUN-∅</span></span>
-          </article>
-          <article class="signal-card" role="button" tabindex="0" data-signal="active-threads" aria-label="Inspect Active threads provenance">
-            <span class="signal-label">Active threads</span>
-            <strong class="signal-value">37</strong>
-            <p class="signal-note">Reported from a synthetic thread inventory snapshot.</p>
-            <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">OBS-THR-08</span></span>
-          </article>
           <article class="signal-card is-stable" role="button" tabindex="0" data-signal="agent-usage" aria-label="Inspect Agent usage provenance">
             <span class="signal-label">Agent usage</span>
             <strong class="signal-value stable">traced</strong>
             <p class="signal-note">Agent participation is represented as sourced trace context.</p>
             <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">AGT-204</span></span>
           </article>
+          </div>
         </section>
+        </div>
 
         <aside class="side-panel" aria-label="Resource Observatory boundaries">
           <section>

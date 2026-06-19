@@ -55,6 +55,8 @@ The first static preview now lives in a dedicated Resource Observatory page at [
 
 The static matrix now represents all nine candidates above. Missing runtime evidence remains `unavailable`; thread and agent examples are explicitly sourced synthetic records rather than inferred live telemetry.
 
+For scanability, the matrix is grouped into capacity and spend, execution efficiency, and quality and orchestration. These are presentation groupings only; they do not define a new operational taxonomy or authority.
+
 ## Acceptance criteria for future slices
 
 A future prototype slice is acceptable only if:
