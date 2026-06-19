@@ -580,6 +580,24 @@
             <p class="signal-note">Skill activation appears as trace context only.</p>
             <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">ACT-552</span></span>
           </article>
+          <article class="signal-card is-neutral" role="button" tabindex="0" data-signal="runtime-fit" aria-label="Inspect Runtime fit provenance">
+            <span class="signal-label">Runtime fit</span>
+            <strong class="signal-value neutral">unavailable</strong>
+            <p class="signal-note">No durable runtime profile exists for this docs-only slice.</p>
+            <span class="source-line"><span class="origin unavailable">unavailable</span><span class="source-ref">OBS-RUN-∅</span></span>
+          </article>
+          <article class="signal-card" role="button" tabindex="0" data-signal="active-threads" aria-label="Inspect Active threads provenance">
+            <span class="signal-label">Active threads</span>
+            <strong class="signal-value">37</strong>
+            <p class="signal-note">Reported from a synthetic thread inventory snapshot.</p>
+            <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">OBS-THR-08</span></span>
+          </article>
+          <article class="signal-card is-stable" role="button" tabindex="0" data-signal="agent-usage" aria-label="Inspect Agent usage provenance">
+            <span class="signal-label">Agent usage</span>
+            <strong class="signal-value stable">traced</strong>
+            <p class="signal-note">Agent participation is represented as sourced trace context.</p>
+            <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">AGT-204</span></span>
+          </article>
         </section>
 
         <aside class="side-panel" aria-label="Resource Observatory boundaries">
@@ -649,7 +667,10 @@
       'retry-waste': { kicker: 'Estimated signal', title: 'Retry waste · 6.2%', summary: 'Estimated from synthetic retry records; not a billing source.', source: 'OBS-RTY-02', origin: 'estimated', availability: 'available', interpretation: 'This estimate can prompt inspection, but it cannot replace a reported source or authorize remediation.' },
       'review-effort': { kicker: 'Reported signal', title: 'Review effort · 3.1h', summary: 'Reported from review metadata in the synthetic example.', source: 'OBS-HR-04', origin: 'reported', availability: 'available', interpretation: 'Review effort describes recorded human activity; it is not a productivity score or approval signal.' },
       'quality-signals': { kicker: 'Reported signal', title: 'Quality signals · 94', summary: 'Reported quality score from a mocked evaluation summary.', source: 'OBS-QA-07', origin: 'reported', availability: 'available', interpretation: 'Quality remains tied to its evaluation source and cannot independently close a readiness gate.' },
-      'skill-usage': { kicker: 'Traced activation', title: 'Skill usage · traced', summary: 'Skill activation appears as trace context only.', source: 'ACT-552', origin: 'reported', availability: 'available', interpretation: 'A skill activation is observable evidence, not authority over gates, decisions, or lifecycle state.' }
+      'skill-usage': { kicker: 'Traced activation', title: 'Skill usage · traced', summary: 'Skill activation appears as trace context only.', source: 'ACT-552', origin: 'reported', availability: 'available', interpretation: 'A skill activation is observable evidence, not authority over gates, decisions, or lifecycle state.' },
+      'runtime-fit': { kicker: 'Unavailable signal', title: 'Runtime fit · unavailable', summary: 'No durable runtime profile exists for this docs-only slice.', source: 'OBS-RUN-∅', origin: 'unavailable', availability: 'unavailable', interpretation: 'Without an authoritative runtime profile, the interface presents no fit score, target, or inferred recommendation.' },
+      'active-threads': { kicker: 'Reported signal', title: 'Active threads · 37', summary: 'Reported from a synthetic thread inventory snapshot.', source: 'OBS-THR-08', origin: 'reported', availability: 'available', interpretation: 'Thread count describes observed concurrency only. It does not indicate health, priority, or required intervention.' },
+      'agent-usage': { kicker: 'Traced participation', title: 'Agent usage · traced', summary: 'Agent participation is represented as sourced trace context.', source: 'AGT-204', origin: 'reported', availability: 'available', interpretation: 'Agent participation is visible for audit. It does not confer authority or imply that an output was accepted.' }
     };
 
     function setNavigationExpanded(expanded) {
