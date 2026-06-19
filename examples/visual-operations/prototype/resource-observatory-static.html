@@ -39,6 +39,7 @@
       --mc-stable: #7ddba9;
       --mc-evidence: #5dcab8;
       --mc-primary: #8a63ff;
+      --rail-width: 72px;
       color-scheme: dark;
     }
 
@@ -59,10 +60,12 @@
       width: 100vw;
       height: 100vh;
       display: grid;
-      grid-template-columns: 238px minmax(0, 1fr);
+      grid-template-columns: var(--rail-width) minmax(0, 1fr);
       background: var(--mc-surface-shell);
       overflow: hidden;
     }
+
+    .mission-shell.nav-expanded { --rail-width: 238px; }
 
     .side-rail {
       display: grid;
@@ -74,7 +77,8 @@
       min-width: 0;
     }
 
-    .rail-top, .rail-stack { display: grid; gap: var(--space-2); align-content: start; }
+    .rail-top { display: grid; gap: var(--space-3); }
+    .rail-stack { display: grid; gap: var(--space-2); align-content: start; min-width: 0; }
 
     .mark-row {
       display: flex;
@@ -96,12 +100,42 @@
       flex: 0 0 auto;
     }
 
+    .rail-brand { display: none; min-width: 0; }
+    .nav-expanded .rail-brand { display: block; }
+
     .rail-brand strong {
       display: block;
       color: var(--mc-text);
       font-size: var(--text-body);
       line-height: 1.1;
     }
+
+    .nav-toggle {
+      width: 100%;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      border: 1px solid var(--mc-border);
+      border-radius: var(--radius-lg);
+      background: transparent;
+      color: var(--mc-text-muted);
+      cursor: pointer;
+      font: 720 var(--text-support) var(--font-pulso-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-toggle:hover,
+    .nav-toggle:focus-visible {
+      color: var(--mc-text);
+      background: var(--mc-surface-panel-raised);
+      outline: none;
+    }
+
+    .nav-toggle-label { display: none; }
+    .nav-expanded .nav-toggle-label { display: inline; }
 
     .rail-brand span {
       display: block;
@@ -117,16 +151,19 @@
       min-height: 38px;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: var(--space-3);
-      border: 1px solid transparent;
       border-radius: var(--radius-lg);
       background: transparent;
       color: var(--mc-text-muted);
-      padding: 0 var(--space-3);
       font: 760 var(--text-support) var(--font-pulso-sans);
       text-align: left;
       text-decoration: none;
     }
+
+    .nav-expanded .rail-button { justify-content: flex-start; padding: 0 var(--space-3); }
+    .rail-button-label { display: none; }
+    .nav-expanded .rail-button-label { display: inline; }
 
     .rail-button span:first-child {
       width: 24px;
@@ -138,10 +175,9 @@
     .rail-button.active,
     .rail-button:hover,
     .rail-button:focus-visible {
-      border-color: var(--mc-border-strong);
       background: var(--mc-surface-panel-raised);
       color: var(--mc-text);
-      outline: none;
+      outline: 1px solid var(--mc-border-strong);
     }
 
     .app {
@@ -153,7 +189,7 @@
 
     .topbar {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 500px) auto;
       gap: var(--space-4);
       align-items: center;
       min-height: 72px;
@@ -161,6 +197,38 @@
       border-bottom: 1px solid var(--mc-border);
       background: color-mix(in oklab, var(--mc-surface-shell) 94%, #090712 6%);
     }
+
+    .product-title { display: flex; align-items: baseline; gap: var(--space-3); min-width: 0; }
+
+    .product-title h1 {
+      margin: 0;
+      font-size: var(--text-display);
+      font-weight: 720;
+      letter-spacing: -0.035em;
+    }
+
+    .mode-label {
+      color: var(--mc-stable);
+      font: 720 var(--text-support) var(--font-pulso-mono);
+      text-transform: uppercase;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      min-width: 0;
+      height: 38px;
+      border: 1px solid var(--mc-border);
+      border-radius: var(--radius-lg);
+      background: color-mix(in oklab, var(--mc-surface-page) 72%, var(--mc-surface-panel) 28%);
+      color: var(--mc-text-muted);
+      padding: 0 var(--space-3);
+      font-size: var(--text-body);
+    }
+
+    .authority { text-align: right; color: var(--mc-text-muted); font-size: var(--text-support); line-height: 1.35; }
+    .authority strong { display: block; color: var(--mc-text-support); font-weight: 620; }
 
     .workspace {
       min-width: 0;
@@ -185,7 +253,7 @@
 
     h1, h2, h3, p { margin-top: 0; }
 
-    h1 {
+    .page-header h1 {
       margin-bottom: 6px;
       font-size: var(--text-display);
       line-height: 1.08;
@@ -206,6 +274,12 @@
       gap: var(--space-5);
       padding: var(--space-6);
       min-height: 0;
+    }
+
+    .page-header {
+      grid-column: 1 / -1;
+      padding-bottom: var(--space-5);
+      border-bottom: 1px solid var(--mc-border);
     }
 
     .signal-grid {
@@ -326,31 +400,34 @@
     }
 
     @media (max-width: 720px) {
-      .mission-shell { grid-template-columns: 58px minmax(0, 1fr); }
+      .mission-shell, .mission-shell.nav-expanded { --rail-width: 58px; }
       .side-rail { padding: 12px 8px; }
-      .rail-brand, .rail-button-label { display: none; }
+      .rail-brand, .nav-toggle-label, .rail-button-label { display: none !important; }
       .rail-button { justify-content: center; padding: 0; }
       .topbar, .content { padding: var(--space-4); }
       .topbar { grid-template-columns: 1fr; }
+      .search-box, .authority { display: none; }
       .signal-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <div class="stage">
-    <main class="mission-shell" aria-label="AletheIA Mission Control Resource Observatory static prototype">
+    <main class="mission-shell" id="mission-shell" aria-label="AletheIA Mission Control Resource Observatory static prototype">
       <aside class="side-rail" aria-label="Mission Control navigation">
         <div class="rail-top">
           <div class="mark-row">
             <div class="mark">AI</div>
             <div class="rail-brand"><strong>AletheIA</strong><span>Mission Control</span></div>
           </div>
+          <button class="nav-toggle" type="button" id="nav-toggle" aria-expanded="false" aria-controls="mission-shell"><span>⇄</span><span class="nav-toggle-label">Collapse menu</span></button>
         </div>
         <nav class="rail-stack" aria-label="Workspace views">
+          <a class="rail-button" href="mission-control-static.html"><span>OV</span><span class="rail-button-label">Overview</span></a>
           <a class="rail-button" href="mission-control-static.html"><span>EV</span><span class="rail-button-label">Evidence ledger</span></a>
-          <a class="rail-button active" href="resource-observatory-static.html" aria-current="page"><span>RO</span><span class="rail-button-label">Resource observatory</span></a>
           <a class="rail-button" href="mission-control-static.html"><span>TR</span><span class="rail-button-label">Trace context</span></a>
           <a class="rail-button" href="mission-control-static.html"><span>SRC</span><span class="rail-button-label">Source records</span></a>
+          <a class="rail-button active" href="resource-observatory-static.html" aria-current="page"><span>RO</span><span class="rail-button-label">Resource observatory</span></a>
         </nav>
         <nav class="rail-stack" aria-label="Utility views">
           <a class="rail-button" href="mission-control-static.html"><span>CFG</span><span class="rail-button-label">Configuration</span></a>
@@ -360,16 +437,21 @@
 
       <section class="app">
         <header class="topbar">
-          <div>
-            <p class="kicker">Resource Observatory · static preview</p>
-            <h1>Operational signals as sourced context</h1>
-            <p class="lead">This view separates operational intelligence from the Evidence Ledger. Signals are metadata-first, sourced, and read-only; they do not collect telemetry or authorize decisions.</p>
+          <div class="product-title">
+            <h1>AletheIA Mission Control</h1>
+            <span class="mode-label">Read-only projection</span>
           </div>
-          <span class="utility">APOB input layer · mock data only</span>
+          <div class="search-box" aria-label="Static search placeholder"><span>⌕</span><span>Search signals, source refs, traces</span></div>
+          <div class="authority"><strong>Source records remain authoritative</strong>Static prototype · mock data only</div>
         </header>
 
         <div class="workspace">
           <div class="content">
+          <header class="page-header">
+            <p class="kicker">Resource Observatory · static preview</p>
+            <h1>Operational signals as sourced context</h1>
+            <p class="lead">This view separates operational intelligence from the Evidence Ledger. Signals are metadata-first, sourced, and read-only; they do not collect telemetry or authorize decisions.</p>
+          </header>
         <section class="signal-grid" aria-label="Operational signal cards">
           <article class="signal-card">
             <span class="signal-label">Context tokens</span>
@@ -434,5 +516,15 @@
       </section>
     </main>
   </div>
+  <script>
+    const shell = document.getElementById('mission-shell');
+    const navToggle = document.getElementById('nav-toggle');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = shell.classList.toggle('nav-expanded');
+      navToggle.setAttribute('aria-expanded', String(expanded));
+      navToggle.querySelector('.nav-toggle-label').textContent = expanded ? 'Collapse menu' : 'Expand menu';
+    });
+  </script>
 </body>
 </html>
