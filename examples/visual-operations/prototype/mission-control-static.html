@@ -821,6 +821,58 @@
       gap: var(--space-3);
     }
 
+    .source-list {
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .source-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-3);
+      align-items: center;
+      padding: 9px 10px;
+      border: 1px solid color-mix(in oklab, var(--mc-border-strong) 46%, transparent);
+      border-radius: var(--radius-md);
+      background: color-mix(in oklab, var(--mc-surface-page) 36%, transparent);
+    }
+
+    .source-main {
+      display: grid;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .source-name {
+      overflow: hidden;
+      color: var(--text-soft);
+      font: 760 var(--text-support) var(--mono);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .source-type {
+      color: var(--text-muted);
+      font-size: var(--text-micro);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .source-origin {
+      border: 1px solid color-mix(in oklab, var(--mc-border-strong) 42%, transparent);
+      border-radius: var(--radius-md);
+      padding: 3px 7px;
+      color: var(--text-muted);
+      font: 760 var(--text-micro) var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .source-origin.reported { color: var(--stable); border-color: color-mix(in oklab, var(--stable) 38%, transparent); }
+    .source-origin.estimated { color: var(--review); border-color: color-mix(in oklab, var(--review) 38%, transparent); }
+    .source-origin.unavailable { color: var(--text-muted); border-color: color-mix(in oklab, var(--mc-border-strong) 46%, transparent); }
+
     .source-ledger-note {
       margin: 0;
       color: var(--text-muted);
@@ -1100,8 +1152,12 @@
               <section class="inspector-section is-primary">
                 <h3>Source refs</h3>
                 <div class="source-ledger">
-                  <div class="source-stack" id="inspector-sources"><span class="source-ref">SRC-2147</span><span class="source-ref">Risk Policy PR-2.1</span><span class="source-ref">Rule R-7</span></div>
-                  <p class="source-ledger-note">References identify where the posture came from; they do not make this panel authoritative.</p>
+                  <div class="source-list" id="inspector-sources">
+                    <div class="source-item"><span class="source-main"><span class="source-name">SRC-2147</span><span class="source-type">Risk source</span></span><span class="source-origin reported">reported</span></div>
+                    <div class="source-item"><span class="source-main"><span class="source-name">Risk Policy PR-2.1</span><span class="source-type">Policy reference</span></span><span class="source-origin reported">reported</span></div>
+                    <div class="source-item"><span class="source-main"><span class="source-name">Rule R-7</span><span class="source-type">Rule reference</span></span><span class="source-origin reported">reported</span></div>
+                  </div>
+                  <p class="source-ledger-note">References identify where the posture came from; origin labels describe availability, not authority.</p>
                 </div>
               </section>
               <section class="inspector-section is-state">
@@ -1139,7 +1195,7 @@
         lane: "Review prompts",
         status: "Pending human review",
         confidence: "Low",
-        sources: ["SRC-2147", "Risk Policy PR-2.1", "Rule R-7"],
+        sources: [{ name: "SRC-2147", type: "Risk source", origin: "reported" }, { name: "Risk Policy PR-2.1", type: "Policy reference", origin: "reported" }, { name: "Rule R-7", type: "Rule reference", origin: "reported" }],
         trace: [["10:18", "Risk threshold breach normalized into visual event."], ["10:22", "Human review source required before closure posture can be trusted."]],
         boundary: "Do not move this slice to closed without a resolving review source. The cockpit explains evidence; it does not authorize decisions."
       },
@@ -1150,7 +1206,7 @@
         lane: "Review prompts",
         status: "Conflicted validation",
         confidence: "Medium",
-        sources: ["SRC-2149", "Eval Report v3.2", "Policy M-1.4"],
+        sources: [{ name: "SRC-2149", type: "Validation source", origin: "reported" }, { name: "Eval Report v3.2", type: "Evaluation output", origin: "reported" }, { name: "Policy M-1.4", type: "Policy baseline", origin: "reported" }],
         trace: [["10:05", "Evaluation output diverged from policy baseline."], ["10:11", "Conflict surfaced as review posture, not an automated decision."]],
         boundary: "Conflicted confidence is stronger than the lane label itself. Reconcile before treating this as stable."
       },
@@ -1161,7 +1217,7 @@
         lane: "Reconcile",
         status: "Telemetry unavailable",
         confidence: "Unknown",
-        sources: ["Telemetry Spec", "Closeout R-556"],
+        sources: [{ name: "Telemetry Spec", type: "Expected source", origin: "unavailable" }, { name: "Closeout R-556", type: "Reconcile rule", origin: "reported" }],
         trace: [["09:42", "Token and cost fields marked unavailable."], ["09:44", "No estimates generated because source origin is missing."]],
         boundary: "Do not invent estimates just to complete the card. Use unavailable until a durable source exists."
       },
@@ -1172,7 +1228,7 @@
         lane: "Validation",
         status: "Validated",
         confidence: "High",
-        sources: ["SRC-2120", "Eval v3.1"],
+        sources: [{ name: "SRC-2120", type: "Evidence source", origin: "reported" }, { name: "Eval v3.1", type: "Evaluation output", origin: "reported" }],
         trace: [["08:52", "Evaluation source attached."], ["08:58", "Policy impact check remained inside expected bounds."]],
         boundary: "Stable still links to source refs for verification. Stability is derived, not authoritative."
       },
@@ -1183,7 +1239,7 @@
         lane: "Validation",
         status: "Activation tracked",
         confidence: "High",
-        sources: ["ACT-552", "Trace Event", "Skill Registry"],
+        sources: [{ name: "ACT-552", type: "Activation record", origin: "reported" }, { name: "Trace Event", type: "Trace normalization", origin: "reported" }, { name: "Skill Registry", type: "Registry reference", origin: "reported" }],
         trace: [["08:31", "Skill activation normalized into trace context."], ["08:35", "No readiness gate was changed by the activation."]],
         boundary: "Skills appear as activations. They do not approve gates, close slices, or override source records."
       },
@@ -1194,7 +1250,7 @@
         lane: "Closed stable",
         status: "Closed derived posture",
         confidence: "High",
-        sources: ["PR #207", "CI 27626141953", "Merge 39f76cf"],
+        sources: [{ name: "PR #207", type: "Pull request", origin: "reported" }, { name: "CI 27626141953", type: "Check run", origin: "reported" }, { name: "Merge 39f76cf", type: "Merge ref", origin: "reported" }],
         trace: [["2026-06-16", "PR merged after governance and test checks."], ["2026-06-16", "Review source absence preserved as unavailable metadata."]],
         boundary: "Closed is a presentation posture derived from sources, not a new authority."
       },
@@ -1205,7 +1261,7 @@
         lane: "Closed stable",
         status: "Closed derived posture",
         confidence: "High",
-        sources: ["PR #201", "Dogfood snapshot"],
+        sources: [{ name: "PR #201", type: "Pull request", origin: "reported" }, { name: "Dogfood snapshot", type: "Snapshot", origin: "reported" }, { name: "Human review", type: "Review source", origin: "unavailable" }],
         trace: [["2026-06-15", "Dogfood snapshot recorded."], ["2026-06-15", "Closeout posture reconstructed from source refs."]],
         boundary: "Unavailable is not failure; it is absence of authoritative source."
       }
@@ -1251,7 +1307,10 @@
       fields.lane.textContent = data.lane;
       fields.status.textContent = data.status;
       fields.confidence.textContent = data.confidence;
-      fields.sources.innerHTML = data.sources.map(source => `<span class="source-ref">${source}</span>`).join('');
+      fields.sources.innerHTML = data.sources.map(source => {
+        const item = typeof source === 'string' ? { name: source, type: 'Source ref', origin: 'reported' } : source;
+        return `<div class="source-item"><span class="source-main"><span class="source-name">${item.name}</span><span class="source-type">${item.type}</span></span><span class="source-origin ${item.origin}">${item.origin}</span></div>`;
+      }).join('');
       fields.trace.innerHTML = data.trace.map(([time, copy]) => `<div class="trace-item"><span class="trace-time">${time}</span><span>${copy}</span></div>`).join('');
       fields.boundary.textContent = data.boundary;
       openInspector();
