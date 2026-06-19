@@ -300,6 +300,16 @@
       gap: var(--space-3);
       min-height: 148px;
       padding: var(--space-4);
+      cursor: pointer;
+      transition: border-color 140ms ease, background 140ms ease;
+    }
+
+    .signal-card:hover,
+    .signal-card:focus-visible,
+    .signal-card.selected {
+      border-color: var(--mc-border-strong);
+      background: color-mix(in oklab, var(--mc-surface-panel-raised) 72%, transparent);
+      outline: none;
     }
 
     .signal-card::before {
@@ -394,6 +404,87 @@
       background: color-mix(in oklab, var(--mc-surface-page) 34%, transparent);
     }
 
+    .inspector-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 19;
+      background: rgb(0 0 0 / 0.28);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 160ms ease;
+    }
+
+    .inspector-backdrop.open { opacity: 1; pointer-events: auto; }
+
+    .signal-inspector {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 20;
+      width: min(430px, calc(100vw - 58px));
+      height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      border-left: 1px solid var(--mc-border-strong);
+      background: color-mix(in oklab, var(--mc-surface-shell) 96%, #090712 4%);
+      box-shadow: -18px 0 44px rgb(0 0 0 / 0.24);
+      transform: translateX(100%);
+      transition: transform 180ms ease;
+    }
+
+    .signal-inspector.open { transform: translateX(0); }
+
+    .inspector-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-4);
+      padding: var(--space-6);
+      border-bottom: 1px solid var(--mc-border);
+    }
+
+    .inspector-header h2 { margin: 4px 0 6px; font-size: var(--text-h1); }
+    .inspector-header p { margin-bottom: 0; color: var(--mc-text-muted); font-size: var(--text-support); line-height: 1.45; }
+
+    .inspector-close {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--mc-border);
+      border-radius: var(--radius-lg);
+      background: transparent;
+      color: var(--mc-text-muted);
+      cursor: pointer;
+    }
+
+    .inspector-close:hover,
+    .inspector-close:focus-visible { color: var(--mc-text); background: var(--mc-surface-panel-raised); outline: none; }
+
+    .inspector-body { overflow: auto; padding: 0 var(--space-6) var(--space-6); }
+
+    .inspector-section { padding: var(--space-5) 0; border-bottom: 1px solid var(--mc-border); }
+    .inspector-section h3 {
+      margin: 0 0 var(--space-3);
+      color: var(--mc-text-support);
+      font-size: var(--text-support);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .detail-list { display: grid; gap: var(--space-3); margin: 0; }
+    .detail-row { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: var(--space-3); }
+    .detail-row dt { color: var(--mc-text-muted); font: 720 var(--text-micro) var(--font-pulso-mono); text-transform: uppercase; }
+    .detail-row dd { margin: 0; color: var(--mc-text-support); font-size: var(--text-support); font-weight: 620; }
+
+    .boundary-note {
+      margin: 0;
+      padding: var(--space-4);
+      border: 1px solid color-mix(in oklab, var(--mc-stable) 28%, var(--mc-border));
+      border-radius: var(--radius-lg);
+      background: color-mix(in oklab, var(--mc-stable) 6%, transparent);
+      color: var(--mc-text-support);
+      font-size: var(--text-support);
+      line-height: 1.45;
+    }
+
     @media (max-width: 1100px) {
       .content { grid-template-columns: 1fr; }
       .signal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -453,37 +544,37 @@
             <p class="lead">This view separates operational intelligence from the Evidence Ledger. Signals are metadata-first, sourced, and read-only; they do not collect telemetry or authorize decisions.</p>
           </header>
         <section class="signal-grid" aria-label="Operational signal cards">
-          <article class="signal-card">
+          <article class="signal-card" role="button" tabindex="0" data-signal="context-tokens" aria-label="Inspect Context tokens provenance">
             <span class="signal-label">Context tokens</span>
             <strong class="signal-value">128k</strong>
             <p class="signal-note">Reported from a synthetic APOB event sample.</p>
             <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">OBS-CTX-01</span></span>
           </article>
-          <article class="signal-card is-neutral">
+          <article class="signal-card is-neutral" role="button" tabindex="0" data-signal="token-cost" aria-label="Inspect Token cost provenance">
             <span class="signal-label">Token cost</span>
             <strong class="signal-value neutral">unavailable</strong>
             <p class="signal-note">No durable cost export exists for this docs-only slice.</p>
             <span class="source-line"><span class="origin unavailable">unavailable</span><span class="source-ref">OBS-COST-∅</span></span>
           </article>
-          <article class="signal-card is-review">
+          <article class="signal-card is-review" role="button" tabindex="0" data-signal="retry-waste" aria-label="Inspect Retry waste provenance">
             <span class="signal-label">Retry waste</span>
             <strong class="signal-value review">6.2%</strong>
             <p class="signal-note">Estimated from synthetic retry records; not a billing source.</p>
             <span class="source-line"><span class="origin estimated">estimated</span><span class="source-ref">OBS-RTY-02</span></span>
           </article>
-          <article class="signal-card is-stable">
+          <article class="signal-card is-stable" role="button" tabindex="0" data-signal="review-effort" aria-label="Inspect Review effort provenance">
             <span class="signal-label">Review effort</span>
             <strong class="signal-value stable">3.1h</strong>
             <p class="signal-note">Reported from review metadata in the synthetic example.</p>
             <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">OBS-HR-04</span></span>
           </article>
-          <article class="signal-card">
+          <article class="signal-card" role="button" tabindex="0" data-signal="quality-signals" aria-label="Inspect Quality signals provenance">
             <span class="signal-label">Quality signals</span>
             <strong class="signal-value">94</strong>
             <p class="signal-note">Reported quality score from mocked evaluation summary.</p>
             <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">OBS-QA-07</span></span>
           </article>
-          <article class="signal-card is-stable">
+          <article class="signal-card is-stable" role="button" tabindex="0" data-signal="skill-usage" aria-label="Inspect Skill usage provenance">
             <span class="signal-label">Skill usage</span>
             <strong class="signal-value stable">traced</strong>
             <p class="signal-note">Skill activation appears as trace context only.</p>
@@ -516,10 +607,50 @@
       </section>
     </main>
   </div>
+  <div class="inspector-backdrop" id="inspector-backdrop"></div>
+  <aside class="signal-inspector" id="signal-inspector" aria-label="Operational signal inspector" aria-hidden="true">
+    <header class="inspector-header">
+      <div>
+        <span class="kicker" id="inspector-kicker">Reported signal</span>
+        <h2 id="inspector-title">Context tokens · 128k</h2>
+        <p id="inspector-summary">Reported from a synthetic APOB event sample.</p>
+      </div>
+      <button class="inspector-close" id="inspector-close" type="button" aria-label="Close signal inspector">×</button>
+    </header>
+    <div class="inspector-body">
+      <section class="inspector-section">
+        <h3>Source record</h3>
+        <dl class="detail-list">
+          <div class="detail-row"><dt>Reference</dt><dd id="inspector-source">OBS-CTX-01</dd></div>
+          <div class="detail-row"><dt>Origin</dt><dd id="inspector-origin">reported</dd></div>
+          <div class="detail-row"><dt>Availability</dt><dd id="inspector-availability">available</dd></div>
+        </dl>
+      </section>
+      <section class="inspector-section">
+        <h3>Interpretation</h3>
+        <p class="boundary-note" id="inspector-interpretation">This value is context for review. It does not authorize a decision or change Work Slice state.</p>
+      </section>
+      <section class="inspector-section">
+        <h3>Boundary</h3>
+        <p class="boundary-note">The Resource Observatory displays sourced metadata only. Source records remain authoritative; this prototype does not collect, calculate, govern, or execute.</p>
+      </section>
+    </div>
+  </aside>
   <script>
     const shell = document.getElementById('mission-shell');
     const navToggle = document.getElementById('nav-toggle');
     const navStorageKey = 'aletheia-mission-control-nav-expanded';
+    const signalInspector = document.getElementById('signal-inspector');
+    const inspectorBackdrop = document.getElementById('inspector-backdrop');
+    const inspectorClose = document.getElementById('inspector-close');
+    const signalDetails = {
+      'context-tokens': { kicker: 'Reported signal', title: 'Context tokens · 128k', summary: 'Reported from a synthetic APOB event sample.', source: 'OBS-CTX-01', origin: 'reported', availability: 'available', interpretation: 'Context volume is visible for review. No target, threshold, or decision is inferred from this value.' },
+      'token-cost': { kicker: 'Unavailable signal', title: 'Token cost · unavailable', summary: 'No durable cost export exists for this docs-only slice.', source: 'OBS-COST-∅', origin: 'unavailable', availability: 'unavailable', interpretation: 'Absence of cost telemetry is represented neutrally. The interface does not invent or estimate a replacement value.' },
+      'retry-waste': { kicker: 'Estimated signal', title: 'Retry waste · 6.2%', summary: 'Estimated from synthetic retry records; not a billing source.', source: 'OBS-RTY-02', origin: 'estimated', availability: 'available', interpretation: 'This estimate can prompt inspection, but it cannot replace a reported source or authorize remediation.' },
+      'review-effort': { kicker: 'Reported signal', title: 'Review effort · 3.1h', summary: 'Reported from review metadata in the synthetic example.', source: 'OBS-HR-04', origin: 'reported', availability: 'available', interpretation: 'Review effort describes recorded human activity; it is not a productivity score or approval signal.' },
+      'quality-signals': { kicker: 'Reported signal', title: 'Quality signals · 94', summary: 'Reported quality score from a mocked evaluation summary.', source: 'OBS-QA-07', origin: 'reported', availability: 'available', interpretation: 'Quality remains tied to its evaluation source and cannot independently close a readiness gate.' },
+      'skill-usage': { kicker: 'Traced activation', title: 'Skill usage · traced', summary: 'Skill activation appears as trace context only.', source: 'ACT-552', origin: 'reported', availability: 'available', interpretation: 'A skill activation is observable evidence, not authority over gates, decisions, or lifecycle state.' }
+    };
 
     function setNavigationExpanded(expanded) {
       shell.classList.toggle('nav-expanded', expanded);
@@ -537,6 +668,44 @@
       const expanded = !shell.classList.contains('nav-expanded');
       setNavigationExpanded(expanded);
       try { sessionStorage.setItem(navStorageKey, String(expanded)); } catch { /* Static preview may deny storage. */ }
+    });
+
+    function closeSignalInspector() {
+      signalInspector.classList.remove('open');
+      inspectorBackdrop.classList.remove('open');
+      signalInspector.setAttribute('aria-hidden', 'true');
+    }
+
+    function openSignalInspector(key) {
+      const detail = signalDetails[key];
+      if (!detail) return;
+      document.querySelectorAll('.signal-card').forEach(card => card.classList.toggle('selected', card.dataset.signal === key));
+      document.getElementById('inspector-kicker').textContent = detail.kicker;
+      document.getElementById('inspector-title').textContent = detail.title;
+      document.getElementById('inspector-summary').textContent = detail.summary;
+      document.getElementById('inspector-source').textContent = detail.source;
+      document.getElementById('inspector-origin').textContent = detail.origin;
+      document.getElementById('inspector-availability').textContent = detail.availability;
+      document.getElementById('inspector-interpretation').textContent = detail.interpretation;
+      signalInspector.classList.add('open');
+      inspectorBackdrop.classList.add('open');
+      signalInspector.setAttribute('aria-hidden', 'false');
+    }
+
+    document.querySelectorAll('.signal-card').forEach(card => {
+      card.addEventListener('click', () => openSignalInspector(card.dataset.signal));
+      card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openSignalInspector(card.dataset.signal);
+        }
+      });
+    });
+
+    inspectorClose.addEventListener('click', closeSignalInspector);
+    inspectorBackdrop.addEventListener('click', closeSignalInspector);
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeSignalInspector();
     });
   </script>
 </body>
