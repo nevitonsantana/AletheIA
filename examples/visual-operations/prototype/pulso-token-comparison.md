@@ -161,17 +161,18 @@ The inspector source section was then expanded from simple chips into source-led
 
 This prepares the prototype for future source-detail exploration without introducing schemas or collectors.
 
-## Resource Observatory preview applied
+## Resource Observatory dedicated page applied
 
-The prototype now includes a compact Resource Observatory preview:
+The Resource Observatory preview now lives on a dedicated static page:
 
-- shows context tokens, token cost, retry waste, and review effort as static operational signals;
+- keeps operational signals separate from the primary Evidence Ledger workspace;
+- shows context tokens, token cost, retry waste, review effort, quality signals, and skill usage as static operational signals;
 - every signal has a source ref and an origin label;
 - `unavailable` remains neutral for missing cost data;
 - `estimated` is visibly distinct from `reported`;
 - APOB is presented as an input/source layer only, not a governance authority.
 
-This is a visual preview only. It does not collect telemetry, calculate cost, or create a runtime observability layer.
+The main ledger now links to this page as secondary context instead of rendering the full observability panel inline. The Resource Observatory page keeps the same base Mission Control shell and navigation pattern so it feels like a sibling view, not a separate artifact. This is a visual preview only. It does not collect telemetry, calculate cost, or create a runtime observability layer.
 
 ## Review workflow readability applied
 

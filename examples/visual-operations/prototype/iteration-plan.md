@@ -51,7 +51,7 @@ Future Resource Observatory views may monitor:
 
 A signal can appear visually only when it has a source reference and provenance. If no durable source exists, the visual state must be `unknown` or `unavailable`.
 
-The first static preview is included in the prototype as a compact Resource Observatory panel. It uses mock data only and treats APOB as an input/source layer, not as a governance authority.
+The first static preview now lives in a dedicated Resource Observatory page at [resource-observatory-static.html](resource-observatory-static.html). It uses mock data only and treats APOB as an input/source layer, not as a governance authority.
 
 ## Acceptance criteria for future slices
 
