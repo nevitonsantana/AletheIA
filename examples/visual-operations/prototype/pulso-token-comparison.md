@@ -161,6 +161,18 @@ The inspector source section was then expanded from simple chips into source-led
 
 This prepares the prototype for future source-detail exploration without introducing schemas or collectors.
 
+## Resource Observatory preview applied
+
+The prototype now includes a compact Resource Observatory preview:
+
+- shows context tokens, token cost, retry waste, and review effort as static operational signals;
+- every signal has a source ref and an origin label;
+- `unavailable` remains neutral for missing cost data;
+- `estimated` is visibly distinct from `reported`;
+- APOB is presented as an input/source layer only, not a governance authority.
+
+This is a visual preview only. It does not collect telemetry, calculate cost, or create a runtime observability layer.
+
 ## Non-goals
 
 This pass does not:

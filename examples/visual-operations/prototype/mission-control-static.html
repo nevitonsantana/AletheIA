@@ -686,6 +686,94 @@
       white-space: nowrap;
     }
 
+    .observatory-panel {
+      display: grid;
+      gap: var(--space-3);
+      margin-top: var(--rhythm-cadence-beat);
+      padding: var(--space-4);
+      border: 1px solid color-mix(in oklab, var(--mc-evidence) 24%, var(--mc-border));
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, color-mix(in oklab, var(--mc-evidence) 6%, var(--mc-surface-panel) 68%), color-mix(in oklab, var(--mc-surface-page) 82%, transparent));
+    }
+
+    .observatory-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-3);
+      align-items: end;
+    }
+
+    .observatory-title {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: var(--text-h2);
+      font-weight: 760;
+      letter-spacing: -0.01em;
+    }
+
+    .observatory-copy {
+      margin: 4px 0 0;
+      color: var(--text-muted);
+      font-size: var(--text-support);
+      line-height: 1.4;
+    }
+
+    .observatory-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-2);
+    }
+
+    .signal-card {
+      display: grid;
+      gap: var(--space-2);
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid color-mix(in oklab, var(--mc-border) 82%, transparent);
+      border-radius: var(--radius-ledger);
+      background: color-mix(in oklab, var(--mc-surface-panel-raised) 42%, transparent);
+    }
+
+    .signal-label {
+      color: var(--text-muted);
+      font: 760 var(--text-micro) var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .signal-value {
+      color: var(--text);
+      font-size: 1.28rem;
+      font-weight: 760;
+      letter-spacing: -0.04em;
+    }
+
+    .signal-value.is-neutral { color: var(--text-muted); }
+    .signal-value.is-review { color: var(--review); }
+    .signal-value.is-evidence { color: var(--info); }
+    .signal-value.is-stable { color: var(--stable); }
+
+    .signal-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .signal-origin {
+      border: 1px solid color-mix(in oklab, var(--mc-border-strong) 42%, transparent);
+      border-radius: var(--radius-md);
+      padding: 3px 6px;
+      color: var(--text-muted);
+      font: 760 var(--text-micro) var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .signal-origin.reported { color: var(--stable); border-color: color-mix(in oklab, var(--stable) 36%, transparent); }
+    .signal-origin.estimated { color: var(--review); border-color: color-mix(in oklab, var(--review) 36%, transparent); }
+    .signal-origin.unavailable { color: var(--text-muted); border-color: color-mix(in oklab, var(--mc-border-strong) 46%, transparent); }
+
     .event-strip {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -972,6 +1060,7 @@
     @media (max-width: 1180px) {
       .mission-shell.nav-expanded { --rail-width: 220px; }
       .metrics-row, .event-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .observatory-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .topbar { grid-template-columns: 1fr; align-items: start; }
       .authority { text-align: left; }
     }
@@ -984,7 +1073,7 @@
       .section-head { grid-template-columns: 1fr; }
       .filters { justify-content: flex-start; }
       .filter-summary { width: 100%; }
-      .metrics-row, .event-strip { grid-template-columns: 1fr; }
+      .metrics-row, .event-strip, .observatory-grid { grid-template-columns: 1fr; }
       .main-board { padding: 16px; }
       .board-grid { min-width: 760px; }
       .inspector { width: min(390px, 100vw); }
@@ -1126,6 +1215,39 @@
                   </div>
                   <div class="empty-lane">No closed slices match this filter. Filtering does not reopen or mutate work.</div>
                 </section>
+              </div>
+            </section>
+
+            <section class="observatory-panel" aria-label="Resource Observatory preview">
+              <div class="observatory-head">
+                <div>
+                  <p class="eyebrow">Resource observatory</p>
+                  <h3 class="observatory-title">Operational signals with source posture</h3>
+                  <p class="observatory-copy">Static preview only. Signals show source availability and provenance; they do not collect telemetry or create authority.</p>
+                </div>
+                <span class="utility">APOB input layer · mock data</span>
+              </div>
+              <div class="observatory-grid">
+                <article class="signal-card">
+                  <span class="signal-label">Context tokens</span>
+                  <strong class="signal-value is-evidence">128k</strong>
+                  <span class="signal-meta"><span class="signal-origin reported">reported</span><span class="source-ref">OBS-CTX-01</span></span>
+                </article>
+                <article class="signal-card">
+                  <span class="signal-label">Token cost</span>
+                  <strong class="signal-value is-neutral">unavailable</strong>
+                  <span class="signal-meta"><span class="signal-origin unavailable">unavailable</span><span class="source-ref">OBS-COST-∅</span></span>
+                </article>
+                <article class="signal-card">
+                  <span class="signal-label">Retry waste</span>
+                  <strong class="signal-value is-review">6.2%</strong>
+                  <span class="signal-meta"><span class="signal-origin estimated">estimated</span><span class="source-ref">OBS-RTY-02</span></span>
+                </article>
+                <article class="signal-card">
+                  <span class="signal-label">Review effort</span>
+                  <strong class="signal-value is-stable">3.1h</strong>
+                  <span class="signal-meta"><span class="signal-origin reported">reported</span><span class="source-ref">OBS-HR-04</span></span>
+                </article>
               </div>
             </section>
 
