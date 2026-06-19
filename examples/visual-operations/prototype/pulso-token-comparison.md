@@ -184,6 +184,18 @@ The prototype now includes a compact review-flow rail above the ledger:
 
 This improves scanning of review states without adding approve/reject commands or lifecycle mutation.
 
+## Prototype cohesion pass applied
+
+A later cohesion pass reduced visual competition around the main ledger:
+
+- posture metrics were compacted;
+- review-flow cards were reduced into a lighter explanatory rail;
+- Resource Observatory was labeled as secondary operational context;
+- trace event cards were visually de-emphasized;
+- the evidence ledger remains the primary workspace.
+
+This keeps the screen from becoming a generic dashboard while preserving all existing static context.
+
 ## Non-goals
 
 This pass does not:
