@@ -173,6 +173,17 @@ The prototype now includes a compact Resource Observatory preview:
 
 This is a visual preview only. It does not collect telemetry, calculate cost, or create a runtime observability layer.
 
+## Review workflow readability applied
+
+The prototype now includes a compact review-flow rail above the ledger:
+
+- review prompts are described as requiring human confirmation, not automated decisions;
+- conflicts are framed as evidence disagreement to reconcile;
+- source gaps instruct the viewer to keep `unavailable` neutral until sourced;
+- stable postures remain derived and traceable.
+
+This improves scanning of review states without adding approve/reject commands or lifecycle mutation.
+
 ## Non-goals
 
 This pass does not:
