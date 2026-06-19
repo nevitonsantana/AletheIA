@@ -71,3 +71,7 @@ A future prototype slice is acceptable only if:
 - `unavailable` remains neutral rather than failure-colored;
 - no interaction mutates Work Slice truth;
 - no new backend, runtime, collector, schema, policy engine, or Adaptive Skills integration is introduced.
+
+## Transition checkpoint
+
+The accepted static baseline is now mapped into a docs-first [component implementation handoff](component-implementation-handoff.md). Further work should either address a concrete prototype defect or begin the explicitly bounded shared-shell implementation slice after the frontend host is chosen.
