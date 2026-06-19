@@ -30,21 +30,21 @@
       --radius-xl: 14px;
 
       /* Mission Control semantic aliases. */
-      --mc-surface-page: #090c12;
-      --mc-surface-shell: #0d1119;
-      --mc-surface-panel: #10151f;
-      --mc-surface-panel-raised: #141a25;
-      --mc-surface-panel-strong: #181f2b;
-      --mc-border: rgba(174, 185, 207, 0.14);
-      --mc-border-strong: rgba(174, 185, 207, 0.24);
-      --mc-text: #e7ebf2;
-      --mc-text-support: #b3bac8;
-      --mc-text-muted: #727b8e;
-      --mc-critical: #e17063;
-      --mc-review: #d6a35e;
-      --mc-stable: #84b99a;
-      --mc-evidence: #85b7d3;
-      --mc-primary: #8b6ee8;
+      --mc-surface-page: #0f0c1a;
+      --mc-surface-shell: #151126;
+      --mc-surface-panel: #1b1630;
+      --mc-surface-panel-raised: #221b3d;
+      --mc-surface-panel-strong: #2a2250;
+      --mc-border: #302a50;
+      --mc-border-strong: color-mix(in oklab, #302a50 62%, #ffffff 38%);
+      --mc-text: #f6f3ff;
+      --mc-text-support: #c5c2d2;
+      --mc-text-muted: #8f89a8;
+      --mc-critical: #da6a88;
+      --mc-review: #e0a144;
+      --mc-stable: #7ddba9;
+      --mc-evidence: #5dcab8;
+      --mc-primary: #8a63ff;
 
       /* Backward-compatible prototype tokens. */
       --bg: var(--mc-surface-page);
@@ -113,7 +113,7 @@
       gap: var(--rhythm-cadence-beat);
       padding: var(--space-4) var(--space-3);
       border-right: 1px solid var(--line);
-      background: #0a0e15;
+      background: #0f0c1a;
       min-width: 0;
       transition: width 180ms ease;
     }
@@ -135,11 +135,11 @@
       height: 38px;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(139, 110, 232, 0.42);
+      border: 1px solid color-mix(in oklab, var(--mc-primary) 48%, transparent);
       border-radius: var(--radius-lg);
-      color: #c9bcff;
+      color: #d8ceff;
       font: 800 var(--text-label) var(--mono);
-      background: rgba(139, 110, 232, 0.08);
+      background: color-mix(in oklab, var(--mc-primary) 12%, transparent);
       flex: 0 0 auto;
     }
 
@@ -243,7 +243,7 @@
       min-height: 72px;
       padding: 14px var(--space-6);
       border-bottom: 1px solid var(--line);
-      background: rgba(13, 17, 25, 0.98);
+      background: color-mix(in oklab, var(--mc-surface-shell) 94%, #090712 6%);
     }
 
     .product-title {
@@ -279,7 +279,7 @@
       height: 38px;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
-      background: #0b1018;
+      background: color-mix(in oklab, var(--mc-surface-page) 72%, var(--mc-surface-panel) 28%);
       color: var(--text-muted);
       padding: 0 var(--space-3);
       font-size: var(--text-body);
@@ -344,10 +344,10 @@
       grid-template-rows: auto 1fr;
       min-height: 0;
       border-left: 1px solid var(--line-strong);
-      background: #0b0f16;
+      background: color-mix(in oklab, var(--mc-surface-page) 86%, #05040a 14%);
       transform: translateX(100%);
       transition: transform 210ms cubic-bezier(.2,.8,.2,1);
-      box-shadow: -24px 0 70px rgba(0, 0, 0, 0.38);
+      box-shadow: -24px 0 70px rgba(0, 0, 0, 0.46);
     }
 
     .inspector.open { transform: translateX(0); }
@@ -458,7 +458,7 @@
       padding: var(--space-4);
       border: 1px solid var(--line);
       border-radius: var(--radius-sm);
-      background: rgba(20, 26, 37, 0.64);
+      background: color-mix(in oklab, var(--mc-surface-panel-raised) 66%, transparent);
     }
 
     .metric-value {
@@ -478,7 +478,7 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       overflow: hidden;
-      background: rgba(16, 21, 31, 0.72);
+      background: color-mix(in oklab, var(--mc-surface-panel) 78%, transparent);
     }
 
     .ledger-toolbar {
@@ -488,7 +488,7 @@
       align-items: center;
       padding: 13px var(--space-4);
       border-bottom: 1px solid var(--line);
-      background: rgba(13, 17, 25, 0.88);
+      background: color-mix(in oklab, var(--mc-surface-shell) 86%, #07050d 14%);
     }
 
     .ledger-title {
@@ -526,7 +526,7 @@
     .lane {
       min-height: calc(100vh - 392px);
       border-right: 1px solid var(--line);
-      background: rgba(11, 16, 24, 0.38);
+      background: color-mix(in oklab, var(--mc-surface-page) 58%, transparent);
     }
 
     .lane:last-child { border-right: 0; }
@@ -541,7 +541,7 @@
       align-items: center;
       padding: 13px var(--space-4);
       border-bottom: 1px solid var(--line);
-      background: #10151f;
+      background: color-mix(in oklab, var(--mc-surface-panel) 92%, #090712 8%);
     }
 
     .lane-name {
@@ -585,7 +585,7 @@
       text-align: left;
       border: 1px solid var(--line);
       border-radius: var(--radius-sm);
-      background: rgba(24, 31, 43, 0.68);
+      background: color-mix(in oklab, var(--mc-surface-panel-raised) 72%, transparent);
       padding: var(--space-3);
       cursor: pointer;
       transition: border-color 140ms ease, background 140ms ease, transform 140ms ease;
@@ -595,7 +595,7 @@
     .slice-card:focus-visible,
     .slice-card.selected {
       border-color: var(--line-strong);
-      background: rgba(28, 36, 50, 0.88);
+      background: color-mix(in oklab, var(--mc-surface-panel-strong) 78%, transparent);
       outline: none;
     }
 
@@ -647,10 +647,10 @@
     }
 
     .source-ref, .chip {
-      border: 1px solid rgba(174, 185, 207, 0.18);
+      border: 1px solid color-mix(in oklab, var(--mc-border-strong) 52%, transparent);
       border-radius: 5px;
       padding: 3px 6px;
-      background: rgba(174, 185, 207, 0.04);
+      background: color-mix(in oklab, var(--mc-border) 38%, transparent);
       color: var(--text-soft);
       font-size: 0.58rem;
       white-space: nowrap;
@@ -677,7 +677,7 @@
     .event-card {
       border: 1px solid var(--line);
       border-radius: var(--radius-sm);
-      background: rgba(16, 21, 31, 0.72);
+      background: color-mix(in oklab, var(--mc-surface-panel) 78%, transparent);
       padding: var(--space-3);
     }
 
@@ -799,7 +799,7 @@
       place-items: center;
       border: 1px dashed var(--line);
       border-radius: var(--radius-sm);
-      background: rgba(174, 185, 207, 0.025);
+      background: color-mix(in oklab, var(--mc-surface-panel) 28%, transparent);
       color: var(--text-muted);
       text-align: center;
       padding: var(--space-4);
