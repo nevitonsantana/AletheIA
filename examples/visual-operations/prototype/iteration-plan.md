@@ -29,7 +29,7 @@ Pulso Design System may be used as a design acceleration reference for future pr
 |---|---|---|---|
 | 1. Visual QA pass | Tighten spacing, hierarchy, empty states, responsive behavior, and interaction clarity. | Full-browser shell, side sheet, read-only semantics. | Runtime data, backend, schemas, collectors. |
 | 2. Pulso token alignment | Align prototype CSS vocabulary with Pulso tokens before deeper UI changes. | Static HTML, local aliases, Mission Control-specific governance semantics. | Pulso package import, app build step, shared dependency. |
-| 3. Observability preview | Explore a small Resource Observatory preview for sourced operational signals. | `unknown`/`unavailable` for missing sources; provenance on every metric. | Real telemetry collection or generated estimates. |
+| 3. Observability preview | Explore a small Resource Observatory preview for sourced operational signals. | `unknown`/`unavailable` for missing sources; provenance on every metric. | Real telemetry collection or unsourced estimates. |
 | 4. Source detail depth | Improve inspector treatment for source refs, trace, confidence, and boundary copy. | Metadata-first privacy and source authority. | Prompt bodies, secrets, restricted content. |
 | 5. Review workflow readability | Clarify how human review, conflicts, and unavailable telemetry are scanned. | Alerts as review prompts, not decisions. | Approve/reject commands or lifecycle mutation. |
 
@@ -48,6 +48,8 @@ Future Resource Observatory views may monitor:
 - agent usage.
 
 A signal can appear visually only when it has a source reference and provenance. If no durable source exists, the visual state must be `unknown` or `unavailable`.
+
+The first static preview is included in the prototype as a compact Resource Observatory panel. It uses mock data only and treats APOB as an input/source layer, not as a governance authority.
 
 ## Acceptance criteria for future slices
 
