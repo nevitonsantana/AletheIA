@@ -136,6 +136,19 @@ A later prototype pass refined the component structure without adding new behavi
 
 This keeps the same static mock data and interactions while reducing generic kanban cues.
 
+## Inspector depth tuning applied
+
+The inspector side sheet was then refined as an evidence desk:
+
+- source refs moved to the first body section;
+- source refs gained explanatory copy that keeps authority with the source records;
+- state posture changed from a plain key-value list into compact audit cells;
+- trace context gained a vertical timeline treatment;
+- inspector sections became contained evidence groups rather than simple dividers;
+- boundary language remains the final guardrail, not an action prompt.
+
+This improves audit scanning without adding approve/reject behavior or lifecycle mutation.
+
 ## Non-goals
 
 This pass does not:
