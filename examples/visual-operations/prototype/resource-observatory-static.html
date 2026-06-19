@@ -519,11 +519,24 @@
   <script>
     const shell = document.getElementById('mission-shell');
     const navToggle = document.getElementById('nav-toggle');
+    const navStorageKey = 'aletheia-mission-control-nav-expanded';
 
-    navToggle.addEventListener('click', () => {
-      const expanded = shell.classList.toggle('nav-expanded');
+    function setNavigationExpanded(expanded) {
+      shell.classList.toggle('nav-expanded', expanded);
       navToggle.setAttribute('aria-expanded', String(expanded));
       navToggle.querySelector('.nav-toggle-label').textContent = expanded ? 'Collapse menu' : 'Expand menu';
+    }
+
+    try {
+      setNavigationExpanded(sessionStorage.getItem(navStorageKey) === 'true');
+    } catch {
+      setNavigationExpanded(false);
+    }
+
+    navToggle.addEventListener('click', () => {
+      const expanded = !shell.classList.contains('nav-expanded');
+      setNavigationExpanded(expanded);
+      try { sessionStorage.setItem(navStorageKey, String(expanded)); } catch { /* Static preview may deny storage. */ }
     });
   </script>
 </body>
