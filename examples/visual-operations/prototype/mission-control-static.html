@@ -356,6 +356,7 @@
     .inspector-header {
       padding: var(--space-5);
       border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, color-mix(in oklab, var(--mc-surface-panel) 34%, transparent), transparent);
     }
 
     .inspector-title-row {
@@ -384,6 +385,8 @@
     }
 
     .inspector-body {
+      display: grid;
+      gap: var(--space-4);
       padding: var(--space-5);
       overflow: auto;
     }
@@ -720,19 +723,29 @@
     }
 
     .inspector-section {
-      padding: var(--rhythm-cadence-beat) 0;
-      border-bottom: 1px solid var(--line);
+      padding: var(--space-4);
+      border: 1px solid color-mix(in oklab, var(--mc-border) 82%, transparent);
+      border-radius: var(--radius-lg);
+      background: color-mix(in oklab, var(--mc-surface-panel) 42%, transparent);
     }
 
-    .inspector-section:first-child { padding-top: 0; }
-
     .inspector-section h3 {
-      margin: 0 0 10px;
+      margin: 0 0 var(--space-3);
       color: var(--text-soft);
       font-size: var(--text-support);
-      font-weight: 720;
+      font-weight: 760;
       text-transform: uppercase;
-      letter-spacing: 0.07em;
+      letter-spacing: var(--tracking-kicker);
+    }
+
+    .inspector-section.is-primary {
+      border-color: color-mix(in oklab, var(--mc-evidence) 34%, var(--mc-border));
+      background: color-mix(in oklab, var(--mc-evidence) 8%, var(--mc-surface-panel) 42%);
+    }
+
+    .inspector-section.is-state {
+      display: grid;
+      gap: var(--space-3);
     }
 
     .kv {
@@ -746,6 +759,7 @@
       gap: var(--space-3);
       color: var(--text-soft);
       font-size: var(--text-body);
+      align-items: baseline;
     }
 
     .kv-row span:first-child {
@@ -757,16 +771,34 @@
 
     .trace-list {
       display: grid;
-      gap: var(--space-3);
+      gap: 0;
+      border-left: 1px solid color-mix(in oklab, var(--mc-evidence) 34%, var(--mc-border));
+      margin-left: 4px;
     }
 
     .trace-item {
+      position: relative;
       display: grid;
       grid-template-columns: 42px 1fr;
       gap: var(--space-3);
+      padding: 0 0 var(--space-3) var(--space-4);
       color: var(--text-muted);
       font-size: var(--text-support);
       line-height: 1.35;
+    }
+
+    .trace-item:last-child { padding-bottom: 0; }
+
+    .trace-item::before {
+      content: "";
+      position: absolute;
+      left: -4px;
+      top: 0.38em;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--mc-evidence);
+      box-shadow: 0 0 0 3px color-mix(in oklab, var(--mc-surface-panel) 92%, transparent);
     }
 
     .trace-time {
@@ -782,6 +814,48 @@
       color: #bdd7c7;
       font-size: var(--text-support);
       line-height: 1.42;
+    }
+
+    .source-ledger {
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .source-ledger-note {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: var(--text-support);
+      line-height: 1.4;
+    }
+
+    .state-summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-2);
+    }
+
+    .state-cell {
+      min-width: 0;
+      padding: 10px;
+      border: 1px solid color-mix(in oklab, var(--mc-border) 76%, transparent);
+      border-radius: var(--radius-md);
+      background: color-mix(in oklab, var(--mc-surface-page) 46%, transparent);
+    }
+
+    .state-cell span {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text-muted);
+      font: 760 var(--text-micro) var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .state-cell strong {
+      display: block;
+      color: var(--text-soft);
+      font-size: var(--text-support);
+      line-height: 1.25;
     }
 
 
@@ -1023,17 +1097,20 @@
               <p class="inspector-copy" id="inspector-summary">A source says human review is required before trusting closure. This is a review prompt, not an automated decision.</p>
             </header>
             <div class="inspector-body">
-              <section class="inspector-section">
-                <h3>State posture</h3>
-                <div class="kv">
-                  <div class="kv-row"><span>Lane</span><strong id="inspector-lane">Review prompts</strong></div>
-                  <div class="kv-row"><span>Status</span><strong id="inspector-status">Pending human review</strong></div>
-                  <div class="kv-row"><span>Confidence</span><strong id="inspector-confidence">Low</strong></div>
+              <section class="inspector-section is-primary">
+                <h3>Source refs</h3>
+                <div class="source-ledger">
+                  <div class="source-stack" id="inspector-sources"><span class="source-ref">SRC-2147</span><span class="source-ref">Risk Policy PR-2.1</span><span class="source-ref">Rule R-7</span></div>
+                  <p class="source-ledger-note">References identify where the posture came from; they do not make this panel authoritative.</p>
                 </div>
               </section>
-              <section class="inspector-section">
-                <h3>Source refs</h3>
-                <div class="source-stack" id="inspector-sources"><span class="source-ref">SRC-2147</span><span class="source-ref">Risk Policy PR-2.1</span><span class="source-ref">Rule R-7</span></div>
+              <section class="inspector-section is-state">
+                <h3>State posture</h3>
+                <div class="state-summary">
+                  <div class="state-cell"><span>Lane</span><strong id="inspector-lane">Review prompts</strong></div>
+                  <div class="state-cell"><span>Status</span><strong id="inspector-status">Pending human review</strong></div>
+                  <div class="state-cell"><span>Confidence</span><strong id="inspector-confidence">Low</strong></div>
+                </div>
               </section>
               <section class="inspector-section">
                 <h3>Trace context</h3>
