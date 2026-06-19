@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AletheIA Mission Control — Resource Observatory Static Prototype</title>
+  <style>
+    :root {
+      --font-pulso-sans: Manrope, Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-pulso-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      --text-display: 1.36rem;
+      --text-h1: 1.22rem;
+      --text-h2: 0.91rem;
+      --text-body: 0.82rem;
+      --text-support: 0.76rem;
+      --text-micro: 0.62rem;
+      --tracking-kicker: 0.12em;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --radius-md: 8px;
+      --radius-lg: 10px;
+      --radius-xl: 14px;
+      --radius-ledger: 7px;
+      --mc-surface-page: #0f0c1a;
+      --mc-surface-shell: #151126;
+      --mc-surface-panel: #1b1630;
+      --mc-surface-panel-raised: #221b3d;
+      --mc-surface-panel-strong: #2a2250;
+      --mc-border: #302a50;
+      --mc-border-strong: color-mix(in oklab, #302a50 62%, #ffffff 38%);
+      --mc-text: #f6f3ff;
+      --mc-text-support: #c5c2d2;
+      --mc-text-muted: #8f89a8;
+      --mc-critical: #da6a88;
+      --mc-review: #e0a144;
+      --mc-stable: #7ddba9;
+      --mc-evidence: #5dcab8;
+      --mc-primary: #8a63ff;
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--mc-surface-page); }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--mc-surface-page);
+      color: var(--mc-text);
+      font-family: var(--font-pulso-sans);
+      letter-spacing: -0.01em;
+    }
+
+    .stage { min-height: 100vh; }
+
+    .mission-shell {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 238px minmax(0, 1fr);
+      background: var(--mc-surface-shell);
+      overflow: hidden;
+    }
+
+    .side-rail {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: var(--space-5);
+      padding: var(--space-4) var(--space-3);
+      border-right: 1px solid var(--mc-border);
+      background: #0f0c1a;
+      min-width: 0;
+    }
+
+    .rail-top, .rail-stack { display: grid; gap: var(--space-2); align-content: start; }
+
+    .mark-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      min-width: 0;
+    }
+
+    .mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid color-mix(in oklab, var(--mc-primary) 48%, transparent);
+      border-radius: var(--radius-lg);
+      color: #d8ceff;
+      font: 800 var(--text-support) var(--font-pulso-mono);
+      background: color-mix(in oklab, var(--mc-primary) 12%, transparent);
+      flex: 0 0 auto;
+    }
+
+    .rail-brand strong {
+      display: block;
+      color: var(--mc-text);
+      font-size: var(--text-body);
+      line-height: 1.1;
+    }
+
+    .rail-brand span {
+      display: block;
+      margin-top: 2px;
+      color: var(--mc-text-muted);
+      font: 720 var(--text-micro) var(--font-pulso-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .rail-button {
+      width: 100%;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      border: 1px solid transparent;
+      border-radius: var(--radius-lg);
+      background: transparent;
+      color: var(--mc-text-muted);
+      padding: 0 var(--space-3);
+      font: 760 var(--text-support) var(--font-pulso-sans);
+      text-align: left;
+      text-decoration: none;
+    }
+
+    .rail-button span:first-child {
+      width: 24px;
+      color: inherit;
+      font: 760 var(--text-micro) var(--font-pulso-mono);
+      letter-spacing: 0.04em;
+    }
+
+    .rail-button.active,
+    .rail-button:hover,
+    .rail-button:focus-visible {
+      border-color: var(--mc-border-strong);
+      background: var(--mc-surface-panel-raised);
+      color: var(--mc-text);
+      outline: none;
+    }
+
+    .app {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-width: 0;
+      min-height: 0;
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-4);
+      align-items: center;
+      min-height: 72px;
+      padding: 14px var(--space-6);
+      border-bottom: 1px solid var(--mc-border);
+      background: color-mix(in oklab, var(--mc-surface-shell) 94%, #090712 6%);
+    }
+
+    .workspace {
+      min-width: 0;
+      min-height: 0;
+      overflow: auto;
+      background: radial-gradient(circle at top right, color-mix(in oklab, var(--mc-primary) 14%, transparent), transparent 34rem), var(--mc-surface-page);
+    }
+
+    .kicker, .utility, .source-ref, .origin {
+      font-family: var(--font-pulso-mono);
+      letter-spacing: 0.04em;
+    }
+
+    .kicker {
+      margin: 0 0 7px;
+      color: var(--mc-text-muted);
+      font-size: var(--text-micro);
+      font-weight: 760;
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-kicker);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      margin-bottom: 6px;
+      font-size: var(--text-display);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: var(--mc-text-muted);
+      font-size: var(--text-body);
+      line-height: 1.45;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: var(--space-5);
+      padding: var(--space-6);
+      min-height: 0;
+    }
+
+    .signal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-3);
+      align-content: start;
+    }
+
+    .signal-card, .side-panel {
+      border: 1px solid color-mix(in oklab, var(--mc-border) 84%, transparent);
+      border-radius: var(--radius-lg);
+      background: color-mix(in oklab, var(--mc-surface-panel) 62%, transparent);
+    }
+
+    .signal-card {
+      display: grid;
+      gap: var(--space-3);
+      min-height: 148px;
+      padding: var(--space-4);
+    }
+
+    .signal-card::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--mc-evidence);
+    }
+
+    .signal-card.is-review::before { background: var(--mc-review); }
+    .signal-card.is-stable::before { background: var(--mc-stable); }
+    .signal-card.is-neutral::before { background: var(--mc-text-muted); }
+
+    .signal-label {
+      color: var(--mc-text-muted);
+      font: 760 var(--text-micro) var(--font-pulso-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .signal-value {
+      color: var(--mc-text);
+      font-size: 1.9rem;
+      font-weight: 760;
+      letter-spacing: -0.05em;
+    }
+
+    .signal-value.review { color: var(--mc-review); }
+    .signal-value.stable { color: var(--mc-stable); }
+    .signal-value.neutral { color: var(--mc-text-muted); font-size: 1.35rem; }
+
+    .signal-note {
+      margin: 0;
+      color: var(--mc-text-muted);
+      font-size: var(--text-support);
+      line-height: 1.38;
+    }
+
+    .source-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    .source-ref, .origin {
+      border: 1px solid color-mix(in oklab, var(--mc-border-strong) 44%, transparent);
+      border-radius: var(--radius-md);
+      padding: 3px 7px;
+      color: var(--mc-text-support);
+      font-size: var(--text-micro);
+      white-space: nowrap;
+    }
+
+    .origin { text-transform: uppercase; }
+    .origin.reported { color: var(--mc-stable); border-color: color-mix(in oklab, var(--mc-stable) 36%, transparent); }
+    .origin.estimated { color: var(--mc-review); border-color: color-mix(in oklab, var(--mc-review) 36%, transparent); }
+    .origin.unavailable { color: var(--mc-text-muted); }
+
+    .side-panel {
+      display: grid;
+      gap: var(--space-4);
+      align-content: start;
+      padding: var(--space-4);
+    }
+
+    .side-panel h2 {
+      margin-bottom: 6px;
+      color: var(--mc-text-support);
+      font-size: var(--text-h2);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .rule-list {
+      display: grid;
+      gap: var(--space-3);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .rule-list li {
+      padding: var(--space-3);
+      border: 1px solid color-mix(in oklab, var(--mc-border) 74%, transparent);
+      border-radius: var(--radius-ledger);
+      color: var(--mc-text-muted);
+      font-size: var(--text-support);
+      line-height: 1.38;
+      background: color-mix(in oklab, var(--mc-surface-page) 34%, transparent);
+    }
+
+    @media (max-width: 1100px) {
+      .content { grid-template-columns: 1fr; }
+      .signal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 720px) {
+      .mission-shell { grid-template-columns: 58px minmax(0, 1fr); }
+      .side-rail { padding: 12px 8px; }
+      .rail-brand, .rail-button-label { display: none; }
+      .rail-button { justify-content: center; padding: 0; }
+      .topbar, .content { padding: var(--space-4); }
+      .topbar { grid-template-columns: 1fr; }
+      .signal-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <main class="mission-shell" aria-label="AletheIA Mission Control Resource Observatory static prototype">
+      <aside class="side-rail" aria-label="Mission Control navigation">
+        <div class="rail-top">
+          <div class="mark-row">
+            <div class="mark">AI</div>
+            <div class="rail-brand"><strong>AletheIA</strong><span>Mission Control</span></div>
+          </div>
+        </div>
+        <nav class="rail-stack" aria-label="Workspace views">
+          <a class="rail-button" href="mission-control-static.html"><span>EV</span><span class="rail-button-label">Evidence ledger</span></a>
+          <a class="rail-button active" href="resource-observatory-static.html" aria-current="page"><span>RO</span><span class="rail-button-label">Resource observatory</span></a>
+          <a class="rail-button" href="mission-control-static.html"><span>TR</span><span class="rail-button-label">Trace context</span></a>
+          <a class="rail-button" href="mission-control-static.html"><span>SRC</span><span class="rail-button-label">Source records</span></a>
+        </nav>
+        <nav class="rail-stack" aria-label="Utility views">
+          <a class="rail-button" href="mission-control-static.html"><span>CFG</span><span class="rail-button-label">Configuration</span></a>
+          <a class="rail-button" href="mission-control-static.html"><span>AUD</span><span class="rail-button-label">Audit view</span></a>
+        </nav>
+      </aside>
+
+      <section class="app">
+        <header class="topbar">
+          <div>
+            <p class="kicker">Resource Observatory · static preview</p>
+            <h1>Operational signals as sourced context</h1>
+            <p class="lead">This view separates operational intelligence from the Evidence Ledger. Signals are metadata-first, sourced, and read-only; they do not collect telemetry or authorize decisions.</p>
+          </div>
+          <span class="utility">APOB input layer · mock data only</span>
+        </header>
+
+        <div class="workspace">
+          <div class="content">
+        <section class="signal-grid" aria-label="Operational signal cards">
+          <article class="signal-card">
+            <span class="signal-label">Context tokens</span>
+            <strong class="signal-value">128k</strong>
+            <p class="signal-note">Reported from a synthetic APOB event sample.</p>
+            <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">OBS-CTX-01</span></span>
+          </article>
+          <article class="signal-card is-neutral">
+            <span class="signal-label">Token cost</span>
+            <strong class="signal-value neutral">unavailable</strong>
+            <p class="signal-note">No durable cost export exists for this docs-only slice.</p>
+            <span class="source-line"><span class="origin unavailable">unavailable</span><span class="source-ref">OBS-COST-∅</span></span>
+          </article>
+          <article class="signal-card is-review">
+            <span class="signal-label">Retry waste</span>
+            <strong class="signal-value review">6.2%</strong>
+            <p class="signal-note">Estimated from synthetic retry records; not a billing source.</p>
+            <span class="source-line"><span class="origin estimated">estimated</span><span class="source-ref">OBS-RTY-02</span></span>
+          </article>
+          <article class="signal-card is-stable">
+            <span class="signal-label">Review effort</span>
+            <strong class="signal-value stable">3.1h</strong>
+            <p class="signal-note">Reported from review metadata in the synthetic example.</p>
+            <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">OBS-HR-04</span></span>
+          </article>
+          <article class="signal-card">
+            <span class="signal-label">Quality signals</span>
+            <strong class="signal-value">94</strong>
+            <p class="signal-note">Reported quality score from mocked evaluation summary.</p>
+            <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">OBS-QA-07</span></span>
+          </article>
+          <article class="signal-card is-stable">
+            <span class="signal-label">Skill usage</span>
+            <strong class="signal-value stable">traced</strong>
+            <p class="signal-note">Skill activation appears as trace context only.</p>
+            <span class="source-line"><span class="origin reported">reported</span><span class="source-ref">ACT-552</span></span>
+          </article>
+        </section>
+
+        <aside class="side-panel" aria-label="Resource Observatory boundaries">
+          <section>
+            <h2>Boundary</h2>
+            <ul class="rule-list">
+              <li>APOB is represented as an input/source layer only.</li>
+              <li>Signals show availability and provenance; they do not create governance authority.</li>
+              <li>`unavailable` is neutral and must not be colored as failure.</li>
+              <li>Estimated values must stay labeled and cannot replace reported source records.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Not included</h2>
+            <ul class="rule-list">
+              <li>No telemetry collection.</li>
+              <li>No cost calculation.</li>
+              <li>No backend, runtime, collector, schema, or policy engine.</li>
+              <li>No Adaptive Skills integration.</li>
+            </ul>
+          </section>
+        </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

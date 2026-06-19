@@ -15,6 +15,12 @@ Open:
 examples/visual-operations/prototype/mission-control-static.html
 ```
 
+Resource Observatory preview:
+
+```text
+examples/visual-operations/prototype/resource-observatory-static.html
+```
+
 No build step, server, backend, runtime, collector, schema, or package dependency is required.
 
 ## Prototype boundaries
@@ -58,6 +64,7 @@ Design intent:
 - [Prototype visual QA pass](visual-qa-pass.md)
 - [Pulso Design System bridge](pulso-design-system-bridge.md)
 - [Pulso token comparison pass](pulso-token-comparison.md)
+- [Resource Observatory static prototype](resource-observatory-static.html)
 - [Refined visual mock](../cockpit-refined-visual-mock.md)
 - [Light wireframe spec](../cockpit-light-wireframe-spec.md)
 - [Static board composition](../cockpit-static-board-composition.md)
