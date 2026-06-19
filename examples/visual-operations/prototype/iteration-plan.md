@@ -33,6 +33,8 @@ Pulso Design System may be used as a design acceleration reference for future pr
 | 4. Source detail depth | Improve inspector treatment for source refs, trace, confidence, and boundary copy. | Metadata-first privacy and source authority. | Prompt bodies, secrets, restricted content. |
 | 5. Review workflow readability | Clarify how human review, conflicts, and unavailable telemetry are scanned. | Alerts as review prompts, not decisions. | Approve/reject commands or lifecycle mutation. |
 
+The first review workflow readability pass is represented in the prototype as a compact review-flow rail. It explains review prompt, conflict, source gap, and stable derived postures without adding commands or lifecycle mutation.
+
 ## Operational intelligence candidates
 
 Future Resource Observatory views may monitor:

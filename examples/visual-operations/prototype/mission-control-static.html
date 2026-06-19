@@ -478,6 +478,61 @@
       text-transform: uppercase;
     }
 
+    .review-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-2);
+      margin-bottom: var(--rhythm-cadence-beat);
+      padding: var(--space-3);
+      border: 1px solid color-mix(in oklab, var(--mc-border) 88%, transparent);
+      border-radius: var(--radius);
+      background: color-mix(in oklab, var(--mc-surface-panel) 46%, transparent);
+    }
+
+    .review-step {
+      position: relative;
+      display: grid;
+      gap: 6px;
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid color-mix(in oklab, var(--mc-border) 72%, transparent);
+      border-radius: var(--radius-ledger);
+      background: color-mix(in oklab, var(--mc-surface-page) 42%, transparent);
+    }
+
+    .review-step::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--text-muted);
+    }
+
+    .review-step.is-review::before { background: var(--review); }
+    .review-step.is-conflict::before { background: var(--critical); }
+    .review-step.is-gap::before { background: var(--info); }
+    .review-step.is-stable::before { background: var(--stable); }
+
+    .review-step span {
+      color: var(--text-muted);
+      font: 760 var(--text-micro) var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .review-step strong {
+      color: var(--text-soft);
+      font-size: var(--text-support);
+      line-height: 1.25;
+    }
+
+    .review-step p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: var(--text-support);
+      line-height: 1.35;
+    }
+
     .ledger-shell {
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -1060,7 +1115,7 @@
     @media (max-width: 1180px) {
       .mission-shell.nav-expanded { --rail-width: 220px; }
       .metrics-row, .event-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .observatory-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .observatory-grid, .review-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .topbar { grid-template-columns: 1fr; align-items: start; }
       .authority { text-align: left; }
     }
@@ -1073,7 +1128,7 @@
       .section-head { grid-template-columns: 1fr; }
       .filters { justify-content: flex-start; }
       .filter-summary { width: 100%; }
-      .metrics-row, .event-strip, .observatory-grid { grid-template-columns: 1fr; }
+      .metrics-row, .event-strip, .observatory-grid, .review-flow { grid-template-columns: 1fr; }
       .main-board { padding: 16px; }
       .board-grid { min-width: 760px; }
       .inspector { width: min(390px, 100vw); }
@@ -1137,6 +1192,13 @@
               <div class="metric"><div class="metric-label">Critical prompt</div><div class="metric-value" style="color: var(--critical)">1</div></div>
               <div class="metric"><div class="metric-label">Source gaps</div><div class="metric-value" style="color: var(--info)">3</div></div>
               <div class="metric"><div class="metric-label">Closed stable</div><div class="metric-value" style="color: var(--stable)">2</div></div>
+            </section>
+
+            <section class="review-flow" aria-label="Review workflow readability preview">
+              <article class="review-step is-review"><span>Review prompt</span><strong>Requires human confirmation</strong><p>Prompt for review; not an automated decision.</p></article>
+              <article class="review-step is-conflict"><span>Conflict</span><strong>Evidence disagrees</strong><p>Reconcile sources before trusting posture.</p></article>
+              <article class="review-step is-gap"><span>Source gap</span><strong>Use unavailable</strong><p>Missing telemetry stays neutral until sourced.</p></article>
+              <article class="review-step is-stable"><span>Stable derived</span><strong>Still traceable</strong><p>Stable posture remains linked to source refs.</p></article>
             </section>
 
             <section class="ledger-shell" aria-label="Work Slice evidence board">
