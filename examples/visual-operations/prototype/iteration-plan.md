@@ -53,6 +53,8 @@ A signal can appear visually only when it has a source reference and provenance.
 
 The first static preview now lives in a dedicated Resource Observatory page at [resource-observatory-static.html](resource-observatory-static.html). It uses mock data only and treats APOB as an input/source layer, not as a governance authority. Each signal can open a read-only inspector with provenance, availability, interpretation, and boundary context; no action mutates source truth.
 
+The static matrix now represents all nine candidates above. Missing runtime evidence remains `unavailable`; thread and agent examples are explicitly sourced synthetic records rather than inferred live telemetry.
+
 ## Acceptance criteria for future slices
 
 A future prototype slice is acceptable only if:
