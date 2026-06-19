@@ -270,17 +270,29 @@
 
     .content {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 340px;
       gap: var(--space-5);
       padding: var(--space-6);
       min-height: 0;
     }
 
     .page-header {
-      grid-column: 1 / -1;
       padding-bottom: var(--space-5);
       border-bottom: 1px solid var(--mc-border);
     }
+
+    .boundary-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2) var(--space-4);
+      margin-top: var(--space-4);
+      color: var(--mc-text-muted);
+      font: 700 var(--text-micro) var(--font-pulso-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .boundary-summary strong { color: var(--mc-text-support); font-weight: 760; }
+    .boundary-summary span + span::before { content: "·"; margin-right: var(--space-4); color: var(--mc-border-strong); }
 
     .signal-groups {
       display: grid;
@@ -321,7 +333,7 @@
       gap: var(--space-3);
     }
 
-    .signal-card, .side-panel {
+    .signal-card {
       border: 1px solid color-mix(in oklab, var(--mc-border) 84%, transparent);
       border-radius: var(--radius-lg);
       background: color-mix(in oklab, var(--mc-surface-panel) 62%, transparent);
@@ -402,39 +414,6 @@
     .origin.reported { color: var(--mc-stable); border-color: color-mix(in oklab, var(--mc-stable) 36%, transparent); }
     .origin.estimated { color: var(--mc-review); border-color: color-mix(in oklab, var(--mc-review) 36%, transparent); }
     .origin.unavailable { color: var(--mc-text-muted); }
-
-    .side-panel {
-      display: grid;
-      gap: var(--space-4);
-      align-content: start;
-      padding: var(--space-4);
-    }
-
-    .side-panel h2 {
-      margin-bottom: 6px;
-      color: var(--mc-text-support);
-      font-size: var(--text-h2);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .rule-list {
-      display: grid;
-      gap: var(--space-3);
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .rule-list li {
-      padding: var(--space-3);
-      border: 1px solid color-mix(in oklab, var(--mc-border) 74%, transparent);
-      border-radius: var(--radius-ledger);
-      color: var(--mc-text-muted);
-      font-size: var(--text-support);
-      line-height: 1.38;
-      background: color-mix(in oklab, var(--mc-surface-page) 34%, transparent);
-    }
 
     .inspector-backdrop {
       position: fixed;
@@ -518,7 +497,6 @@
     }
 
     @media (max-width: 1100px) {
-      .content { grid-template-columns: 1fr; }
       .signal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
@@ -574,6 +552,12 @@
             <p class="kicker">Resource Observatory · static preview</p>
             <h1>Operational signals as sourced context</h1>
             <p class="lead">This view separates operational intelligence from the Evidence Ledger. Signals are metadata-first, sourced, and read-only; they do not collect telemetry or authorize decisions.</p>
+            <div class="boundary-summary" aria-label="Resource Observatory boundary summary">
+              <span><strong>Projection boundary</strong></span>
+              <span>APOB input only</span>
+              <span>No collection</span>
+              <span>No decision authority</span>
+            </div>
           </header>
         <div class="signal-groups" aria-label="Operational signal groups">
         <section class="signal-group" aria-labelledby="capacity-signals-title">
@@ -658,26 +642,6 @@
         </section>
         </div>
 
-        <aside class="side-panel" aria-label="Resource Observatory boundaries">
-          <section>
-            <h2>Boundary</h2>
-            <ul class="rule-list">
-              <li>APOB is represented as an input/source layer only.</li>
-              <li>Signals show availability and provenance; they do not create governance authority.</li>
-              <li>`unavailable` is neutral and must not be colored as failure.</li>
-              <li>Estimated values must stay labeled and cannot replace reported source records.</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Not included</h2>
-            <ul class="rule-list">
-              <li>No telemetry collection.</li>
-              <li>No cost calculation.</li>
-              <li>No backend, runtime, collector, schema, or policy engine.</li>
-              <li>No Adaptive Skills integration.</li>
-            </ul>
-          </section>
-        </aside>
           </div>
         </div>
       </section>
