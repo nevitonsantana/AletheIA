@@ -1509,6 +1509,7 @@
     const inspector = document.getElementById('evidence-inspector');
     const inspectorBackdrop = document.getElementById('inspector-backdrop');
     const sheetClose = document.getElementById('sheet-close');
+    let inspectorTrigger = null;
 
     const filterSummary = document.getElementById('filter-summary');
 
@@ -1524,19 +1525,24 @@
       boundary: document.getElementById('inspector-boundary')
     };
 
-    function openInspector() {
+    function openInspector(trigger) {
+      inspectorTrigger = trigger;
       inspector.classList.add('open');
       inspectorBackdrop.classList.add('open');
       inspector.setAttribute('aria-hidden', 'false');
+      requestAnimationFrame(() => sheetClose.focus());
     }
 
     function closeInspector() {
+      const wasOpen = inspector.classList.contains('open');
       inspector.classList.remove('open');
       inspectorBackdrop.classList.remove('open');
       inspector.setAttribute('aria-hidden', 'true');
+      if (wasOpen && inspectorTrigger?.isConnected) inspectorTrigger.focus();
+      inspectorTrigger = null;
     }
 
-    function renderInspector(key) {
+    function renderInspector(key, trigger) {
       const data = details[key] || details['human-review'];
       fields.kicker.textContent = data.kicker;
       fields.title.textContent = data.title;
@@ -1550,7 +1556,7 @@
       }).join('');
       fields.trace.innerHTML = data.trace.map(([time, copy]) => `<div class="trace-item"><span class="trace-time">${time}</span><span>${copy}</span></div>`).join('');
       fields.boundary.textContent = data.boundary;
-      openInspector();
+      openInspector(trigger);
     }
 
     function setNavigationExpanded(expanded) {
@@ -1584,7 +1590,7 @@
       card.addEventListener('click', () => {
         document.querySelectorAll('.slice-card').forEach(item => item.classList.remove('selected'));
         card.classList.add('selected');
-        renderInspector(card.dataset.detail);
+        renderInspector(card.dataset.detail, card);
       });
     });
 

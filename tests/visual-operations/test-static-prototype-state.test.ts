@@ -55,4 +55,19 @@ describe("Mission Control static prototype initial state", () => {
       }
     }
   });
+
+  it("moves focus into each inspector and restores it to its trigger", () => {
+    const home = fs.readFileSync(prototypePath, "utf8");
+    const observatory = fs.readFileSync(observatoryPath, "utf8");
+
+    expect(home).toContain("requestAnimationFrame(() => sheetClose.focus())");
+    expect(home).toContain("renderInspector(card.dataset.detail, card)");
+    expect(observatory).toContain("requestAnimationFrame(() => inspectorClose.focus())");
+    expect(observatory).toContain("openSignalInspector(card.dataset.signal, card)");
+
+    for (const html of [home, observatory]) {
+      expect(html).toContain("if (wasOpen && inspectorTrigger?.isConnected) inspectorTrigger.focus()");
+      expect(html).toContain("inspectorTrigger = null");
+    }
+  });
 });
