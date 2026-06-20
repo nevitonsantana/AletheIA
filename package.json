@@ -20,7 +20,10 @@
   "packageManager": "pnpm@9.0.0",
   "scripts": {
     "check:governance": "bash scripts/check-governance.sh",
-    "test": "vitest run",
+    "dev:mission-control": "pnpm --filter @aletheia/mission-control dev",
+    "build:mission-control": "pnpm --filter @aletheia/mission-control build",
+    "typecheck": "tsc --noEmit --project tsconfig.json && pnpm --filter @aletheia/mission-control typecheck",
+    "test": "vitest run && pnpm --filter @aletheia/mission-control test",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest",
     "test:all": "pnpm run check:governance && pnpm run test"
