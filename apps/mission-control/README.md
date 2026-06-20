@@ -5,17 +5,17 @@ projection.
 
 ## Current slice
 
-The implementation intentionally contains only:
+The implementation currently contains:
 
 - the shared full-browser shell;
 - the collapsible navigation rail;
 - the global operational header;
-- Evidence Ledger and Resource Observatory placeholder routes;
+- a functional Evidence Ledger with typed local fixtures, derived filters, Work Slice cards, and an evidence inspector;
+- a Resource Observatory placeholder route;
 - navigation, persistence, focus, and responsive tests.
 
-The accepted static prototypes remain the visual and content reference. Cards,
-inspectors, filters, signals, projection adapters, and live source integration are
-outside this slice.
+The accepted static prototypes remain the visual and content reference. Resource
+signals, projection adapters, and live source integration remain outside this slice.
 
 ## Run locally
 
