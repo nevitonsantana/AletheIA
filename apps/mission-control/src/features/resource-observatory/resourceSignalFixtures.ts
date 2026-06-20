@@ -1,0 +1,149 @@
+export type SignalOrigin = "reported" | "estimated" | "unavailable";
+export type SignalAvailability = "available" | "unavailable";
+export type SignalTone = "evidence" | "review" | "stable" | "neutral";
+export type SignalGroupId = "capacity" | "efficiency" | "quality";
+
+export type ResourceSignal = {
+  id: string;
+  groupId: SignalGroupId;
+  label: string;
+  value: string;
+  note: string;
+  sourceRef: string;
+  origin: SignalOrigin;
+  availability: SignalAvailability;
+  tone: SignalTone;
+  kicker: string;
+  interpretation: string;
+};
+
+export type ResourceSignalGroup = {
+  id: SignalGroupId;
+  label: string;
+};
+
+export const resourceSignalGroups: ResourceSignalGroup[] = [
+  { id: "capacity", label: "Capacity & spend" },
+  { id: "efficiency", label: "Execution efficiency" },
+  { id: "quality", label: "Quality & orchestration" },
+];
+
+export const resourceSignals: ResourceSignal[] = [
+  {
+    id: "context-tokens",
+    groupId: "capacity",
+    label: "Context tokens",
+    value: "128k",
+    note: "Reported from a synthetic APOB event sample.",
+    sourceRef: "OBS-CTX-01",
+    origin: "reported",
+    availability: "available",
+    tone: "evidence",
+    kicker: "Reported signal",
+    interpretation: "Context volume is visible for review. No target, threshold, or decision is inferred from this value.",
+  },
+  {
+    id: "token-cost",
+    groupId: "capacity",
+    label: "Token cost",
+    value: "unavailable",
+    note: "No durable cost export exists for this docs-only slice.",
+    sourceRef: "OBS-COST-∅",
+    origin: "unavailable",
+    availability: "unavailable",
+    tone: "neutral",
+    kicker: "Unavailable signal",
+    interpretation: "Absence of cost telemetry is represented neutrally. The interface does not invent or estimate a replacement value.",
+  },
+  {
+    id: "runtime-fit",
+    groupId: "capacity",
+    label: "Runtime fit",
+    value: "unavailable",
+    note: "No durable runtime profile exists for this docs-only slice.",
+    sourceRef: "OBS-RUN-∅",
+    origin: "unavailable",
+    availability: "unavailable",
+    tone: "neutral",
+    kicker: "Unavailable signal",
+    interpretation: "Without an authoritative runtime profile, the interface presents no fit score, target, or inferred recommendation.",
+  },
+  {
+    id: "retry-waste",
+    groupId: "efficiency",
+    label: "Retry waste",
+    value: "6.2%",
+    note: "Estimated from synthetic retry records; not a billing source.",
+    sourceRef: "OBS-RTY-02",
+    origin: "estimated",
+    availability: "available",
+    tone: "review",
+    kicker: "Estimated signal",
+    interpretation: "This estimate can prompt inspection, but it cannot replace a reported source or authorize remediation.",
+  },
+  {
+    id: "active-threads",
+    groupId: "efficiency",
+    label: "Active threads",
+    value: "37",
+    note: "Reported from a synthetic thread inventory snapshot.",
+    sourceRef: "OBS-THR-08",
+    origin: "reported",
+    availability: "available",
+    tone: "evidence",
+    kicker: "Reported signal",
+    interpretation: "Thread count describes observed concurrency only. It does not indicate health, priority, or required intervention.",
+  },
+  {
+    id: "review-effort",
+    groupId: "efficiency",
+    label: "Review effort",
+    value: "3.1h",
+    note: "Reported from review metadata in the synthetic example.",
+    sourceRef: "OBS-HR-04",
+    origin: "reported",
+    availability: "available",
+    tone: "stable",
+    kicker: "Reported signal",
+    interpretation: "Review effort describes recorded human activity; it is not a productivity score or approval signal.",
+  },
+  {
+    id: "quality-signals",
+    groupId: "quality",
+    label: "Quality signals",
+    value: "94",
+    note: "Reported quality score from a mocked evaluation summary.",
+    sourceRef: "OBS-QA-07",
+    origin: "reported",
+    availability: "available",
+    tone: "evidence",
+    kicker: "Reported signal",
+    interpretation: "Quality remains tied to its evaluation source and cannot independently close a readiness gate.",
+  },
+  {
+    id: "skill-usage",
+    groupId: "quality",
+    label: "Skill usage",
+    value: "traced",
+    note: "Skill activation appears as trace context only.",
+    sourceRef: "ACT-552",
+    origin: "reported",
+    availability: "available",
+    tone: "stable",
+    kicker: "Traced activation",
+    interpretation: "A skill activation is observable evidence, not authority over gates, decisions, or lifecycle state.",
+  },
+  {
+    id: "agent-usage",
+    groupId: "quality",
+    label: "Agent usage",
+    value: "traced",
+    note: "Agent participation is represented as sourced trace context.",
+    sourceRef: "AGT-204",
+    origin: "reported",
+    availability: "available",
+    tone: "stable",
+    kicker: "Traced participation",
+    interpretation: "Agent participation is visible for audit. It does not confer authority or imply that an output was accepted.",
+  },
+];
