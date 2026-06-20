@@ -29,7 +29,7 @@ jobs:
       - name: Install dependencies (frozen lockfile)
         run: pnpm install --frozen-lockfile
       - name: TypeScript noEmit check
-        run: pnpm exec tsc --noEmit --project tsconfig.json
+        run: pnpm typecheck
 
   governance:
     name: Governance Check (scripts/check-governance.sh)

@@ -2,7 +2,9 @@
 
 ## Status
 
-The static prototype is ready to move from visual exploration into implementation planning.
+The static prototype has moved from visual exploration into implementation. The
+shared shell slice now lives in `apps/mission-control/`; cards, signals, inspectors,
+and projection adapters remain intentionally deferred.
 
 This document freezes the accepted interaction model without choosing a frontend framework, creating an application, or changing Visual Operations contracts.
 
