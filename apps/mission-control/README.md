@@ -11,11 +11,11 @@ The implementation currently contains:
 - the collapsible navigation rail;
 - the global operational header;
 - a functional Evidence Ledger with typed local fixtures, derived filters, Work Slice cards, and an evidence inspector;
-- a Resource Observatory placeholder route;
+- a functional Resource Observatory with nine typed local signal fixtures, three presentation groups, and a provenance inspector;
 - navigation, persistence, focus, and responsive tests.
 
-The accepted static prototypes remain the visual and content reference. Resource
-signals, projection adapters, and live source integration remain outside this slice.
+The accepted static prototypes remain the visual and content reference. Projection
+adapters and live source integration remain outside this slice.
 
 ## Run locally
 
