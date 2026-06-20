@@ -61,6 +61,7 @@ Design intent:
 ## Source design artifacts
 
 - [Component implementation handoff](component-implementation-handoff.md)
+- [Frontend host decision](frontend-host-decision.md)
 - [Prototype iteration plan](iteration-plan.md)
 - [Prototype visual QA pass](visual-qa-pass.md)
 - [Pulso Design System bridge](pulso-design-system-bridge.md)
