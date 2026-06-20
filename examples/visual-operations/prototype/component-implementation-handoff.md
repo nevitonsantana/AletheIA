@@ -108,12 +108,18 @@ Evidence Ledger cards, Resource Observatory signals and source-record adapters s
 
 ## Decisions required before slice 1
 
-- where the frontend should live in the repository;
-- which supported framework and router should host it;
-- whether Pulso is consumed as a package, source tokens, or a documented visual reference;
-- which deployment surface, if any, is intended for the first read-only build.
+- [Frontend host decision](frontend-host-decision.md): use an isolated
+  `apps/mission-control/` React + Vite + TypeScript host for the first implementation
+  slice;
+- select and justify the smallest supported client router and DOM-test dependencies
+  in the scaffold PR;
+- begin with Pulso-aligned local semantic tokens, then verify package compatibility
+  before adding a Pulso dependency;
+- keep the first build local-only until a static deployment surface is explicitly
+  selected.
 
-Until these decisions are made, the static files remain the visual reference and no application scaffold should be introduced.
+The static files remain the visual reference. The application scaffold may begin
+only as the shell-only slice defined in the host decision.
 
 ## Primary risks
 
