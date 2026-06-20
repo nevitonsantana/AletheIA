@@ -3,8 +3,8 @@
 ## Status
 
 The static prototype has moved from visual exploration into implementation. The
-shared shell slice now lives in `apps/mission-control/`; cards, signals, inspectors,
-and projection adapters remain intentionally deferred.
+shared shell and typed-fixture Evidence Ledger now live in `apps/mission-control/`;
+Resource Observatory signals and projection adapters remain intentionally deferred.
 
 This document freezes the accepted interaction model without choosing a frontend framework, creating an application, or changing Visual Operations contracts.
 
@@ -103,7 +103,7 @@ Evidence Ledger cards, Resource Observatory signals and source-record adapters s
 
 | Slice | Deliverable | Proof |
 |---|---|---|
-| 2. Evidence Ledger | Read-only lanes, cards, filters and inspector using typed mock input. | Derived states and source refs match the accepted prototype. |
+| 2. Evidence Ledger — implemented | Read-only lanes, cards, filters and inspector using typed mock input. | Derived states and source refs match the accepted prototype; focus returns to the initiating card. |
 | 3. Resource Observatory | Grouped signals and signal inspector using typed mock input. | Nine candidates preserve availability and provenance semantics. |
 | 4. Projection adapter | One narrow adapter from existing Visual Operations outputs. | Dashboard reconstructs from source-backed records without creating new truth. |
 | 5. Product QA | Responsive, keyboard, contrast and visual-regression pass. | Critical interaction paths and boundary states are covered. |
