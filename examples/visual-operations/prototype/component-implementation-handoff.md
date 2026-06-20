@@ -3,9 +3,10 @@
 ## Status
 
 The static prototype has moved from visual exploration into implementation. The
-shared shell and typed-fixture Evidence Ledger now live in `apps/mission-control/`;
-the typed-fixture Resource Observatory is also implemented, while projection adapters
-remain intentionally deferred.
+shared shell and Evidence Ledger now live in `apps/mission-control/`; the typed-fixture
+Resource Observatory is also implemented. A first narrow projection adapter now maps
+two versioned GitHub pull-request snapshots into the Evidence Ledger without adding
+live integration.
 
 This document freezes the accepted interaction model without choosing a frontend framework, creating an application, or changing Visual Operations contracts.
 
@@ -106,7 +107,7 @@ Evidence Ledger cards, Resource Observatory signals and source-record adapters s
 |---|---|---|
 | 2. Evidence Ledger — implemented | Read-only lanes, cards, filters and inspector using typed mock input. | Derived states and source refs match the accepted prototype; focus returns to the initiating card. |
 | 3. Resource Observatory — implemented | Grouped signals and signal inspector using typed mock input. | Nine candidates preserve availability, provenance, and no-authority semantics. |
-| 4. Projection adapter | One narrow adapter from existing Visual Operations outputs. | Dashboard reconstructs from source-backed records without creating new truth. |
+| 4. Projection adapter — first checkpoint implemented | A pure adapter maps the versioned PR #201 and PR #207 Visual Operations outputs into Evidence Ledger records. Live delivery and additional projector types remain deferred. | Source refs, evidence posture, confidence and trace remain attributable; non-read-only input is rejected. |
 | 5. Product QA | Responsive, keyboard, contrast and visual-regression pass. | Critical interaction paths and boundary states are covered. |
 
 ## Decisions required before slice 1
