@@ -47,7 +47,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P6 — System-Aware Governance | `deferred` as umbrella | Small capability modules and evidence-backed pilots | Pilot one Design System/Pulso module before promoting broader governance. |
 | P7 — Agent Role Orchestration | `partially-delivered` | Existing portable role catalog, adoption guide and runtime adapters | Reconcile missing contract fields; do not add a second role model. |
 | P8 — Context Surface Governance | `planned` | Minimal registry and progressive-loading policy | Establish before expanding role prompts or always-loaded loop rules. |
-| P9 — Governed Loop Observation | `planned`, next UI slice | Existing Resource Observatory skill inspector | Observe first; pilot bounded debugging only after canonical sources exist. |
+| P9 — Governed Loop Observation | `partially-delivered` | Existing Resource Observatory skill inspector | Unavailable-first observation is delivered; source-backed states and the bounded debugging pilot still depend on canonical sources. |
 
 ## Dependency graph
 
@@ -104,9 +104,10 @@ P1 remains the delivered visual baseline across these slices. Its future importe
 - **Repository / layer:** AletheIA / Resource Observatory view model
 - **Covers:** P9 pattern selection and compatibility fallback
 - **Dependencies:** S0, S1
+- **Status:** `delivered` by PR #252
 - **Non-goals:** new page, card, persistence schema, selection action or loop execution.
 - **Acceptance:** optional `patternContext` renders no-context, unavailable compatibility and missing-gate states without inference.
-- **Evidence:** typed fixtures, inspector tests, keyboard/focus regression and snapshots.
+- **Evidence:** merge commit `0d8f8b8`; typed fixtures, adapter/inspector tests, keyboard/focus regression, desktop/mobile browser QA and CI snapshots.
 
 ### S4 — Context Surface minimum registry
 
@@ -234,8 +235,8 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P8-R2 On-demand loading and prompt hygiene | P8 policies | `planned` | S4 | Prevent always-loaded pack and loop bloat. |
 | P8-R3 Tool offloading and context audit | P8 guide/checklist | `planned` | S4 | Deterministic checks stay in tools. |
 | P8-R4 Automatic context router | P8 boundary | `deferred` | Post-S4 evidence gate | Manual/advisory first. |
-| P9-R1 Optional `patternContext` projection | P9 contract | `planned` | S3, S6 | View model only. |
-| P9-R2 No compatibility inference | P9 PRD/boundaries | `planned` | S3, S6 | Missing declaration means unavailable. |
+| P9-R1 Optional `patternContext` projection | P9 contract | `partially-delivered` | S3, S6 | View model delivered; source-backed states remain in S6. |
+| P9-R2 No compatibility inference | P9 PRD/boundaries | `delivered` | S3, S6 | Missing declaration renders unavailable; S6 must preserve the invariant. |
 | P9-R3 Visible loop controls and outcomes | P9 inspector spec | `planned` | S6 | Pattern, mode, autonomy and result remain separate. |
 | P9-R4 Bounded debugging pilot | P9 pilot spec | `planned` | S7 | Three iterations, objective gate and human review. |
 | P9-R5 Success percentages | P9 metrics boundary | `deferred` | After five comparable cases | Counts may appear earlier; percentages may not. |
