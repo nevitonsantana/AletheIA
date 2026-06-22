@@ -17,6 +17,7 @@ The first examples stay docs-first and intentionally small.
 - `clean-restart-command-adapter-example.md`
 - `runtime-effort-contract-example.md`
 - `harness-governance-example.md`
+- `test-output-observation-example.yaml` — lossy validation summary with a required recovery pointer and unavailable metrics
 
 ## Related pilot support
 

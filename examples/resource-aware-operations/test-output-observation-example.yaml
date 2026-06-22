@@ -1,0 +1,57 @@
+version: "0.1"
+observation_id: obs-auth-validation-002
+work_slice_id: slice-auth-002
+
+source:
+  type: test_result
+  name: focused authorization boundary test
+  outcome: failed
+  refs:
+    - synthetic://slice-auth-002/test-run-02
+
+summary: The focused authorization validation failed after the first bounded fix attempt.
+
+evidence_items:
+  - kind: failed_test
+    ref: synthetic://slice-auth-002/test-run-02#authorization-boundary
+    detail: The proposed fixture change did not preserve the expected authorization boundary.
+  - kind: pending_review
+    ref: synthetic://slice-auth-002/human-review-request
+    detail: Repository-maintainer confirmation is required before changing the fixture.
+
+hygiene:
+  strategies:
+    - failure_focus
+    - dedupe_repeated_lines
+    - preserve_source_refs
+  lossiness: lossy_with_recovery
+  signal_loss_risk: medium
+  omitted_detail_classes:
+    - repeated_stack_trace
+    - passing_test_output
+
+recovery:
+  required: true
+  pointer: synthetic://slice-auth-002/test-run-02/raw-output
+  sensitivity: restricted
+  retention: project
+
+decision_support:
+  relevance: blocks_closure
+  escalation_required: true
+  next_review: Resolve the authorization-boundary assumption and rerun the focused validation.
+
+visibility:
+  default: practitioner
+  engineer_details_available: true
+
+metrics:
+  raw_output_size:
+    value: null
+    provenance: unavailable
+  compact_output_size:
+    value: null
+    provenance: unavailable
+  compression_ratio:
+    value: null
+    provenance: unavailable
