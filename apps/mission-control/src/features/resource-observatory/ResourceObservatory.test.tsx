@@ -46,9 +46,10 @@ describe("Resource Observatory", () => {
     renderObservatory();
     const trigger = screen.getByRole("button", { name: "Inspect Skill usage provenance" });
     await user.click(trigger);
-    const inspector = screen.getByRole("dialog", { name: "Skill usage · traced" });
+    const inspector = screen.getByRole("dialog", { name: "Skill usage · feature-planning" });
 
-    expect(within(inspector).getByText(/not authority over gates, decisions, or lifecycle state/)).toBeInTheDocument();
+    expect(within(inspector).getByText("as-exec-2026-06-22-mission-control-001")).toBeInTheDocument();
+    expect(within(inspector).getByText(/AletheIA retains gate and decision authority/)).toBeInTheDocument();
     expect(within(inspector).getByRole("button", { name: "Close signal inspector" })).toHaveFocus();
     await user.keyboard("{Escape}");
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();

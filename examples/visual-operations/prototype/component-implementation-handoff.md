@@ -22,7 +22,7 @@ The implementation objective is to reproduce the accepted experience with reusab
 - no backend, collector, runtime, event bus, or persistence;
 - no new lifecycle, schema, policy engine, or gate authority;
 - no live telemetry or invented operational values;
-- no Adaptive Skills integration;
+- no Adaptive Skills runtime, collector, write-back, or governance authority;
 - no framework or Pulso package commitment before a host decision.
 
 ## Accepted experience baseline
@@ -109,6 +109,7 @@ Evidence Ledger cards, Resource Observatory signals and source-record adapters s
 | 3. Resource Observatory — implemented | Grouped signals and signal inspector using typed mock input. | Nine candidates preserve availability, provenance, and no-authority semantics. |
 | 4. Projection adapter — first checkpoint implemented | A pure adapter maps the versioned PR #201 and PR #207 Visual Operations outputs into Evidence Ledger records. Live delivery and additional projector types remain deferred. | Source refs, evidence posture, confidence and trace remain attributable; non-read-only input is rejected. |
 | 5. Product QA — first checkpoint implemented | Browser QA covers desktop and narrow geometry, filters, route navigation, inspectors, Escape close, focus return, console health and contrast-token review. The stale fixture-only authority copy was corrected. Screenshot automation remains a follow-up because the in-app capture command timed out. | Critical interaction paths preserve source authority, responsive containment and keyboard orientation without console errors. |
+| 6. Adaptive Skills dogfood — first checkpoint implemented | A consumer-owned, non-sensitive `feature-planning` execution record is adapted into the Resource Observatory. Runtime telemetry and collection remain deferred. | The signal cites a canonical versioned skill source, remains read-only, and rejects governance-authority claims. |
 
 ## Decisions required before slice 1
 

@@ -1,0 +1,35 @@
+{
+  "record_id": "as-exec-2026-06-22-mission-control-001",
+  "recorded_at": "2026-06-22T01:27:40Z",
+  "consumer_project": "aletheia",
+  "work_slice_id": "mission-control-adaptive-skills-dogfood-001",
+  "skill": {
+    "skill_id": "feature-planning",
+    "version": "0.1.0",
+    "source_ref": "https://github.com/nevitonsantana/adaptive-skills/blob/9064ec8e7bef7f3c9b649232d736f079164dfcb8/skills/feature-planning/SKILL.md"
+  },
+  "mode": "workflow/extended",
+  "context": "Plan the smallest source-backed Adaptive Skills signal for the read-only AletheIA Resource Observatory.",
+  "modules_activated": [
+    "dependencies-map",
+    "risk-review",
+    "traceability-and-anti-overengineering",
+    "scope-boundaries"
+  ],
+  "trigger_matches": [
+    "new feature work",
+    "cross-repository dependency",
+    "explicit acceptance evidence required"
+  ],
+  "result": "usable",
+  "handoff_required": true,
+  "failure_type": null,
+  "improvement_note": "Keep the first observability layer as a durable execution record; defer runtime telemetry and collectors.",
+  "evidence_refs": [
+    "https://github.com/nevitonsantana/AletheIA/pull/248",
+    "examples/visual-operations/prototype/component-implementation-handoff.md"
+  ],
+  "attribution_guess": "feature-planning made the cross-repository boundary and the smallest useful adapter slice explicit",
+  "result_mode": "reinforced",
+  "governance_authority": false
+}

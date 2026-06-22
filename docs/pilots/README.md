@@ -22,6 +22,7 @@ Operation closeouts (session/task records from Hermes and other runtimes) live i
 | [visual-operations-usage-pr-200-dogfood.md](visual-operations-usage-pr-200-dogfood.md) | First dogfood usage record: PR #200 snapshot supported a post-merge no-new-infrastructure decision |
 | [visual-operations-usage-pr-201-dogfood.md](visual-operations-usage-pr-201-dogfood.md) | Second dogfood usage record: PR #201 snapshot confirmed static closeout utility and no activation threshold met |
 | [visual-operations-usage-pr-207-dogfood.md](visual-operations-usage-pr-207-dogfood.md) | Third dogfood usage record: PR #207 confirmed human-review unavailable is a source-bound design signal, not a UI failure |
+| [visual-operations-adaptive-skills-dogfood.md](visual-operations-adaptive-skills-dogfood.md) | First full-pipeline checkpoint: a real Adaptive Skills execution record becomes a read-only Resource Observatory signal |
 | [Visual Operations phase closeout](closeouts/2026-06-15-visual-operations-phase-closeout.md) | Closure evidence and activation gates after PRs #193–#197 |
 
 ## Cycle records
