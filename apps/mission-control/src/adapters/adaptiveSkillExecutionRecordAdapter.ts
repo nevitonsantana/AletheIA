@@ -53,5 +53,21 @@ export function adaptAdaptiveSkillExecutionRecord(record: AdaptiveSkillExecution
       { label: "Handoff", value: record.handoff_required ? "required" : "not required" },
     ],
     evidenceRefs: record.evidence_refs,
+    patternContext: {
+      pattern: null,
+      selection: {
+        verdict: "unavailable",
+        selectedBy: "unavailable",
+        rationale: "No source-backed execution pattern selection record is attached to this skill usage.",
+      },
+      compatibility: {
+        status: "unavailable",
+        message: "loop candidacy not assessed",
+        declaredBy: "unavailable",
+        skillId: record.skill.skill_id,
+        skillVersion: record.skill.version,
+      },
+      refs: {},
+    },
   };
 }

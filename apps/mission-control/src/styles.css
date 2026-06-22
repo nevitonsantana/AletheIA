@@ -187,6 +187,9 @@ button, a { font: inherit; }
 .signal-detail-list > div { display: grid; grid-template-columns: 90px minmax(0, 1fr); align-items: center; gap: 12px; }
 .signal-detail-list dt { color: var(--mc-text-muted); font: 720 0.62rem var(--mono); text-transform: uppercase; }
 .signal-detail-list dd { margin: 0; color: var(--mc-text-support); font-size: 0.76rem; font-weight: 620; }
+.pattern-state-note { margin: 12px 0 0; padding-left: 12px; border-left: 2px solid var(--mc-border-strong); color: var(--mc-text-muted); font-size: 0.74rem; line-height: 1.5; }
+.pattern-state-note strong { color: var(--mc-text-support); }
+.pattern-state-note.is-warning { border-left-color: var(--mc-review); color: var(--mc-text-support); }
 .signal-interpretation { margin: 0; padding: 14px; border: 1px solid var(--mc-border); border-radius: 10px; color: var(--mc-text-support); background: #0f0c1a; font-size: 0.76rem; line-height: 1.45; }
 
 @media (max-width: 1080px) { .topbar { grid-template-columns: 1fr auto; } .search-box { display: none; } }

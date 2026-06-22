@@ -7,6 +7,7 @@ export type {
   SignalGroupId,
   SignalOrigin,
   SignalTone,
+  PatternContext,
 } from "./resourceSignalTypes";
 
 export const resourceSignalGroups: ResourceSignalGroup[] = [
