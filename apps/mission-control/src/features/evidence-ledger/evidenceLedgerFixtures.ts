@@ -1,47 +1,6 @@
-export type EvidenceFilter = "all" | "attention" | "stable" | "unavailable";
-export type EvidenceTone = "critical" | "review" | "stable" | "info";
-export type EvidenceOrigin = "reported" | "estimated" | "unavailable";
-export type EvidenceLaneId = "review" | "validation" | "reconcile" | "closed";
-
-export type EvidenceSource = {
-  name: string;
-  type: string;
-  origin: EvidenceOrigin;
-};
-
-export type EvidenceTrace = {
-  time: string;
-  description: string;
-};
-
-export type EvidenceRecord = {
-  id: string;
-  reference: string;
-  laneId: EvidenceLaneId;
-  filterStatus: Exclude<EvidenceFilter, "all">;
-  tone: EvidenceTone;
-  label: string;
-  title: string;
-  cardSummary: string;
-  sourceRefs: string[];
-  inspector: {
-    kicker: string;
-    summary: string;
-    lane: string;
-    status: string;
-    confidence: "Low" | "Medium" | "High" | "Unknown";
-    sources: EvidenceSource[];
-    trace: EvidenceTrace[];
-    boundary: string;
-  };
-};
-
-export type EvidenceLane = {
-  id: EvidenceLaneId;
-  label: string;
-  tone: EvidenceTone;
-  emptyMessage: string;
-};
+import { projectionEvidenceRecords } from "../../adapters/projectionEvidenceRecords";
+import type { EvidenceLane, EvidenceRecord } from "./evidenceLedgerTypes";
+export type { EvidenceFilter, EvidenceLaneId, EvidenceOrigin, EvidenceRecord, EvidenceSource, EvidenceTone, EvidenceTrace } from "./evidenceLedgerTypes";
 
 export const evidenceLanes: EvidenceLane[] = [
   { id: "review", label: "Review prompts", tone: "critical", emptyMessage: "No review prompts match this filter. Absence is a filtered view, not source truth." },
@@ -189,60 +148,5 @@ export const evidenceRecords: EvidenceRecord[] = [
       boundary: "Do not invent estimates just to complete the card. Use unavailable until a durable source exists.",
     },
   },
-  {
-    id: "closed-207",
-    reference: "PR #207",
-    laneId: "closed",
-    filterStatus: "stable",
-    tone: "stable",
-    label: "Closed",
-    title: "Human-review source mapping",
-    cardSummary: "Source supports closure; review source remains represented as unavailable.",
-    sourceRefs: ["PR #207", "39f76cf"],
-    inspector: {
-      kicker: "Closed · confirmed",
-      summary: "Source records support closure while human_review remains unavailable because no durable review source was supplied.",
-      lane: "Closed stable",
-      status: "Closed derived posture",
-      confidence: "High",
-      sources: [
-        { name: "PR #207", type: "Pull request", origin: "reported" },
-        { name: "CI 27626141953", type: "Check run", origin: "reported" },
-        { name: "Merge 39f76cf", type: "Merge ref", origin: "reported" },
-      ],
-      trace: [
-        { time: "2026-06-16", description: "PR merged after governance and test checks." },
-        { time: "2026-06-16", description: "Review source absence preserved as unavailable metadata." },
-      ],
-      boundary: "Closed is a presentation posture derived from sources, not a new authority.",
-    },
-  },
-  {
-    id: "closed-201",
-    reference: "PR #201",
-    laneId: "closed",
-    filterStatus: "stable",
-    tone: "stable",
-    label: "Closed",
-    title: "Dogfood evidence record",
-    cardSummary: "Snapshot evidence supports closeout; human review absence remains visible.",
-    sourceRefs: ["Dogfood", "Snapshot"],
-    inspector: {
-      kicker: "Closed · confirmed",
-      summary: "Snapshot evidence supports closeout. Human review unavailable remains visible as honest absence of source authority.",
-      lane: "Closed stable",
-      status: "Closed derived posture",
-      confidence: "High",
-      sources: [
-        { name: "PR #201", type: "Pull request", origin: "reported" },
-        { name: "Dogfood snapshot", type: "Snapshot", origin: "reported" },
-        { name: "Human review", type: "Review source", origin: "unavailable" },
-      ],
-      trace: [
-        { time: "2026-06-15", description: "Dogfood snapshot recorded." },
-        { time: "2026-06-15", description: "Closeout posture reconstructed from source refs." },
-      ],
-      boundary: "Unavailable is not failure; it is absence of authoritative source.",
-    },
-  },
+  ...projectionEvidenceRecords,
 ];

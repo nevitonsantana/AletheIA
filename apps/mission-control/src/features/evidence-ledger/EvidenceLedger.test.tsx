@@ -11,14 +11,26 @@ function renderLedger() {
 describe("Evidence Ledger", () => {
   beforeEach(() => window.sessionStorage.clear());
 
-  it("renders seven source-backed fixture cards across derived lanes", () => {
+  it("renders seven source-backed records across derived lanes", () => {
     renderLedger();
     expect(screen.getByText("7 visible · All")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /Critical risk signal/ })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /Resolve missing telemetry/ })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /Dogfood evidence record/ })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /record PR 200 dogfood evidence/ })).toBeInTheDocument();
     expect(screen.getByLabelText("Review prompts lane")).toBeInTheDocument();
     expect(screen.getByLabelText("Closed stable lane")).toBeInTheDocument();
+  });
+
+  it("opens projected PR detail with reported source references", async () => {
+    const user = userEvent.setup();
+    renderLedger();
+
+    await user.click(screen.getByRole("button", { name: /map human review sources/ }));
+    const inspector = screen.getByRole("dialog", { name: "docs(visual-ops): map human review sources" });
+
+    expect(within(inspector).getByText("High")).toBeInTheDocument();
+    expect(within(inspector).getByText("https://github.com/nevitonsantana/AletheIA/pull/207")).toBeInTheDocument();
+    expect(within(inspector).getAllByText("reported").length).toBeGreaterThan(0);
   });
 
   it("filters presentation records without mutating lane authority", async () => {
