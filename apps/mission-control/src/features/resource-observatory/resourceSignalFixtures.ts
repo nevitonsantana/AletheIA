@@ -1,26 +1,13 @@
-export type SignalOrigin = "reported" | "estimated" | "unavailable";
-export type SignalAvailability = "available" | "unavailable";
-export type SignalTone = "evidence" | "review" | "stable" | "neutral";
-export type SignalGroupId = "capacity" | "efficiency" | "quality";
-
-export type ResourceSignal = {
-  id: string;
-  groupId: SignalGroupId;
-  label: string;
-  value: string;
-  note: string;
-  sourceRef: string;
-  origin: SignalOrigin;
-  availability: SignalAvailability;
-  tone: SignalTone;
-  kicker: string;
-  interpretation: string;
-};
-
-export type ResourceSignalGroup = {
-  id: SignalGroupId;
-  label: string;
-};
+import { adaptiveSkillUsageSignal } from "../../adapters/adaptiveSkillUsageSignal";
+import type { ResourceSignal, ResourceSignalGroup } from "./resourceSignalTypes";
+export type {
+  ResourceSignal,
+  ResourceSignalGroup,
+  SignalAvailability,
+  SignalGroupId,
+  SignalOrigin,
+  SignalTone,
+} from "./resourceSignalTypes";
 
 export const resourceSignalGroups: ResourceSignalGroup[] = [
   { id: "capacity", label: "Capacity & spend" },
@@ -120,19 +107,7 @@ export const resourceSignals: ResourceSignal[] = [
     kicker: "Reported signal",
     interpretation: "Quality remains tied to its evaluation source and cannot independently close a readiness gate.",
   },
-  {
-    id: "skill-usage",
-    groupId: "quality",
-    label: "Skill usage",
-    value: "traced",
-    note: "Skill activation appears as trace context only.",
-    sourceRef: "ACT-552",
-    origin: "reported",
-    availability: "available",
-    tone: "stable",
-    kicker: "Traced activation",
-    interpretation: "A skill activation is observable evidence, not authority over gates, decisions, or lifecycle state.",
-  },
+  adaptiveSkillUsageSignal,
   {
     id: "agent-usage",
     groupId: "quality",

@@ -12,7 +12,8 @@ The implementation currently contains:
 - the global operational header;
 - a functional Evidence Ledger with derived filters, Work Slice cards, and an evidence inspector;
 - a narrow read-only adapter that renders the versioned PR #201 and PR #207 projector snapshots beside typed synthetic records;
-- a functional Resource Observatory with nine typed local signal fixtures, three presentation groups, and a provenance inspector;
+- a functional Resource Observatory with nine typed signals, three presentation groups, and a provenance inspector;
+- a first Adaptive Skills dogfood signal reconstructed from a durable `feature-planning` execution record;
 - navigation, persistence, focus, and responsive tests.
 
 The accepted static prototypes remain the visual and content reference. The first
@@ -40,10 +41,10 @@ pnpm build:mission-control
 ## Boundary
 
 - read-only presentation state only;
-- versioned projection snapshots and explicit synthetic fixtures only;
+- versioned source records, projection snapshots, and explicit synthetic fixtures only;
 - no write API, persistence, collection, backend, runtime, or event bus;
 - no new schema, lifecycle, policy, gate, or decision authority;
-- no Adaptive Skills integration;
+- no Adaptive Skills runtime, collector, write-back, or governance authority;
 - Pulso is currently represented through local semantic tokens, not a package dependency.
 
 See the [frontend host decision](../../examples/visual-operations/prototype/frontend-host-decision.md)

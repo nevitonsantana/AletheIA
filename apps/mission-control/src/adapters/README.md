@@ -11,6 +11,8 @@ The current checkpoint:
 - preserves historical closure when a later alert creates review follow-up;
 - exposes absent references as `unavailable` rather than inventing provenance;
 - maps the versioned PR #201 and PR #207 snapshots into Evidence Ledger records.
+- maps a durable `feature-planning` execution record from Adaptive Skills into
+  the Resource Observatory while rejecting any governance-authority claim.
 
 It does not fetch, collect, mutate, persist, authorize, or recalculate source state.
 Additional projector types and live delivery are separate future slices.
