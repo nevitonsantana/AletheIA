@@ -132,6 +132,12 @@ For a normative, manual registry of context surfaces and their load boundaries, 
 - `starter-pack/templates/context-surface-registry.yaml`
 - `examples/context-surface-governance/minimum-registry.yaml`
 
+For compact, source-backed observations that retain a governed path to lossy raw output, use:
+
+- `docs/contracts/observation-governance-contract.md`
+- `starter-pack/templates/observation-record-template.yaml`
+- `examples/resource-aware-operations/test-output-observation-example.yaml`
+
 
 ## 1.1 constrained adoption guidance
 

@@ -54,7 +54,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
 - `context-surface-governance/`
   - registro mínimo de superfícies que distingue contexto persistente, carregamento sob demanda, provider de skill e evidência que não deve virar instrução
 - `resource-aware-operations/`
-  - exemplos da trilha 1.2 para runtime fit, policy signals, pilotos bounded, restart/finalization e adapters
+  - exemplos da trilha 1.2 para runtime fit, policy signals, pilotos bounded, restart/finalization, adapters e observações recuperáveis
 - `visual-operations/`
   - projeção sintética e somente leitura de duas Work Slices, com eventos normalizados, evidência, revisão humana, telemetria opcional e fonte restrita representada apenas por metadados
   - entrada e saídas reproduzíveis do projetor GitHub PR → Visual Operations, incluindo distinção entre evidência observada por CI e validação reportada pelo autor

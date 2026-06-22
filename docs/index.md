@@ -95,7 +95,8 @@ Reading map organized by intent. Each entry links to the most useful starting po
 13. [Orchestration Contract](contracts/orchestration-contract.md) — stage-level declaration for orchestrated work
 14. [Objective Gate Policy](contracts/objective-gate-policy.md) — loop gates, budgets, state, and human review requirements
 15. [Context Surface Registry](contracts/context-surface-registry.md) — minimum metadata and load-mode boundaries for context that influences agent behavior
-16. [All contracts →](contracts/README.md)
+16. [Observation Governance Contract](contracts/observation-governance-contract.md) — compact tool, validation, runtime, document, or skill returns with recoverable evidence
+17. [All contracts →](contracts/README.md)
 
 ---
 

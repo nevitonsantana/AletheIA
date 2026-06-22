@@ -1,0 +1,50 @@
+version: "0.1"
+observation_id: <stable-observation-id>
+work_slice_id: <work-slice-id>
+
+source:
+  type: <test_result|lint_result|git_diff|runtime_trace|api_response|document_read|skill_output|validation_report|other>
+  name: <source-name>
+  outcome: <passed|failed|partial|unknown|unavailable>
+  refs:
+    - <authoritative-source-ref>
+
+summary: <what-matters-for-the-next-decision>
+
+evidence_items:
+  - kind: <evidence-kind>
+    ref: <source-backed-reference>
+    detail: <authorized-decision-relevant-detail>
+
+hygiene:
+  strategies:
+    - <failure_focus|status_summary|dedupe_repeated_lines|group_by_file|preserve_counts|other>
+  lossiness: <lossless|lossy_with_recovery|unavailable>
+  signal_loss_risk: <low|medium|high|unknown>
+  omitted_detail_classes: []
+
+recovery:
+  required: <true|false>
+  pointer: <governed-pointer-or-null>
+  sensitivity: <public|internal|confidential|restricted>
+  retention: <session|project|release|audit|unknown>
+
+decision_support:
+  relevance: <decision-relevance>
+  escalation_required: <true|false>
+  next_review: <review-prompt-or-none>
+
+visibility:
+  default: <guided|practitioner|engineer>
+  engineer_details_available: <true|false>
+
+metrics:
+  raw_output_size:
+    value: null
+    provenance: unavailable
+  compact_output_size:
+    value: null
+    provenance: unavailable
+  compression_ratio:
+    value: null
+    provenance: unavailable
