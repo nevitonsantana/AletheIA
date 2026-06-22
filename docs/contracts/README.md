@@ -16,6 +16,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [delivery-tooling-boundaries.md](delivery-tooling-boundaries.md) | What delivery tooling may and may not do |
 | [readiness-gates-spec.md](readiness-gates-spec.md) | When a slice is ready to continue, review, hand off, or stop |
 | [context-resource-telemetry-spec.md](context-resource-telemetry-spec.md) | Telemetry surface for resource-aware operations |
+| [context-surface-registry.md](context-surface-registry.md) | Minimum metadata, loading boundaries, freshness and evidence for surfaces that influence agent behavior |
 | [slice-telemetry-model.md](slice-telemetry-model.md) | Minimal model for recording slice-level telemetry |
 | [visual-operations-event-model.md](visual-operations-event-model.md) | Normalized, source-referenced events for read-only visual projection |
 | [work-slice-visual-state-contract.md](work-slice-visual-state-contract.md) | Presentation lanes and derived Work Slice card state without a new lifecycle |

@@ -1,0 +1,138 @@
+context_surface_registry:
+  version: "0.1"
+  owner: AletheIA maintainers
+  reviewed_at: 2026-06-22
+  surfaces:
+    - id: aletheia-repository-agents
+      title: Repository operating instructions
+      type: persistent_manifest
+      path: runtime:active-agent-instructions
+      owner: AletheIA maintainers
+      provider: project_local
+      scope: repository
+      load_mode: always
+      priority: critical
+      activation_conditions: []
+      freshness:
+        last_reviewed: 2026-06-22
+        review_interval_days: 90
+      budget:
+        max_lines: unavailable
+        max_tokens: unavailable
+        origin: unavailable
+      allowed_content:
+        - minimum operating boundaries
+        - safety and validation expectations
+      must_not_contain:
+        - full skill methods
+        - secrets
+        - restricted source content
+      evidence_required:
+        - changed files and validation reported at closure
+
+    - id: aletheia-execution-pattern-governance
+      title: Execution Pattern Governance
+      type: project_doc
+      path: docs/adr/ADR-015-execution-pattern-governance-pack.md
+      owner: AletheIA maintainers
+      provider: aletheia
+      scope: capability
+      load_mode: on_demand
+      priority: high
+      activation_conditions:
+        - condition: a Work Slice selects, reviews, or projects an execution pattern
+          rationale: pattern, mode, autonomy, controls, and result must remain separate
+          expected_extraction: selected pattern authority, objective-gate rule, required controls, and review boundary
+      freshness:
+        last_reviewed: 2026-06-22
+        review_interval_days: 180
+      budget:
+        max_lines: unavailable
+        max_tokens: unavailable
+        origin: unavailable
+      allowed_content:
+        - accepted architecture decision
+        - pattern governance boundaries
+      must_not_contain:
+        - runtime-specific execution instructions
+        - skill method content
+      evidence_required:
+        - decision reference on projected pattern context
+
+    - id: adaptive-skills-debugging-patterns
+      title: Debugging execution-pattern compatibility
+      type: skill_provider
+      path: ../adaptative-skills/examples/execution-patterns/debugging-patterns.yaml
+      owner: Adaptive Skills maintainers
+      provider: adaptive_skills
+      scope: capability
+      load_mode: capability_scoped
+      priority: high
+      activation_conditions:
+        - condition: debugging is selected for a reproducible failure and pattern compatibility must be assessed
+          rationale: Adaptive Skills owns the canonical compatibility declaration
+          expected_extraction: compatible patterns, required controls, evidence, and escalation triggers
+      freshness:
+        last_reviewed: 2026-06-22
+        review_interval_days: 90
+      budget:
+        max_lines: unavailable
+        max_tokens: unavailable
+        origin: unavailable
+      allowed_content:
+        - compatibility declaration
+        - evidence and control hints
+      must_not_contain:
+        - AletheIA pattern selection decision
+        - approval authority
+      evidence_required:
+        - skill version and declaration reference
+
+    - id: mission-control-test-output
+      title: Mission Control test results
+      type: evidence_artifact
+      path: runtime:test-output
+      owner: runtime harness
+      provider: runtime_native
+      scope: evidence
+      load_mode: evidence_only
+      priority: medium
+      activation_conditions:
+        - condition: implementation claims require test evidence
+          rationale: tests prove behavior but do not define governance
+          expected_extraction: command, pass/fail result, failures, and evidence timestamp
+      freshness:
+        last_reviewed: 2026-06-22
+        review_interval_days: 1
+      budget:
+        max_lines: unavailable
+        max_tokens: unavailable
+        origin: unavailable
+      allowed_content:
+        - test summary
+        - failure references
+      must_not_contain:
+        - new task instructions
+        - inferred approval
+      evidence_required:
+        - command and result
+
+context_surface_usage:
+  work_slice_id: mission-control-pattern-context-unavailable
+  loaded:
+    - surface_id: aletheia-repository-agents
+      reason: persistent repository boundary
+      extracted: scope, validation, safety, and communication constraints
+      evidence_ref: runtime:active-agent-instructions
+    - surface_id: aletheia-execution-pattern-governance
+      reason: the Work Slice projected execution-pattern metadata
+      extracted: pattern authority and no-inference boundary
+      evidence_ref: docs/adr/ADR-015-execution-pattern-governance-pack.md
+  intentionally_not_loaded:
+    - surface_id: adaptive-skills-debugging-patterns
+      reason: the observed skill was feature-planning and no debugging compatibility assessment was authorized
+  delegated_to_tools:
+    - rule_class: type and test correctness
+      tool: pnpm typecheck && pnpm test
+      evidence_ref: PR #252 CI
+  conflicts: []

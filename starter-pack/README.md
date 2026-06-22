@@ -126,6 +126,12 @@ If you want to test a filesystem-based context-routing pattern as a local experi
 
 - `starter-pack/experiments/workspace-context-routing/README.md`
 
+For a normative, manual registry of context surfaces and their load boundaries, use:
+
+- `docs/contracts/context-surface-registry.md`
+- `starter-pack/templates/context-surface-registry.yaml`
+- `examples/context-surface-governance/minimum-registry.yaml`
+
 
 ## 1.1 constrained adoption guidance
 

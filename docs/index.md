@@ -74,6 +74,7 @@ Reading map organized by intent. Each entry links to the most useful starting po
 8. [Runtime adapter contract](contracts/runtime-adapter-contract.md) — what any adapter must honor
 9. [Agent role catalog](reference/agent-role-catalog.md) — portable roles across runtimes
 10. [Agent runtime decision guide](guides/agent-runtime-decision-guide.md) — choosing between runtimes
+11. [Context Surface Registry](contracts/context-surface-registry.md) — what context may load, when, why, and with what evidence
 
 ---
 
@@ -93,7 +94,8 @@ Reading map organized by intent. Each entry links to the most useful starting po
 12. [Execution Pattern Selection](contracts/execution-pattern-selection.md) — selected topology and required controls before execution
 13. [Orchestration Contract](contracts/orchestration-contract.md) — stage-level declaration for orchestrated work
 14. [Objective Gate Policy](contracts/objective-gate-policy.md) — loop gates, budgets, state, and human review requirements
-15. [All contracts →](contracts/README.md)
+15. [Context Surface Registry](contracts/context-surface-registry.md) — minimum metadata and load-mode boundaries for context that influences agent behavior
+16. [All contracts →](contracts/README.md)
 
 ---
 
