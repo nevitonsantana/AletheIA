@@ -17,7 +17,7 @@ export function MissionControlShell() {
         <header className="topbar">
           <div className="product-title"><h1>AletheIA Mission Control</h1><span className="mode-label">Read-only projection</span></div>
           <div className="search-box" aria-label="Search unavailable in shell implementation"><span aria-hidden="true">⌕</span><span>{searchLabel}</span></div>
-          <div className="authority"><strong>Source records remain authoritative</strong>Shell implementation · static fixtures only</div>
+          <div className="authority"><strong>Source records remain authoritative</strong>Versioned snapshots · synthetic fixtures</div>
         </header>
         <Outlet />
       </section>

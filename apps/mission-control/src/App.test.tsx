@@ -17,6 +17,8 @@ describe("Mission Control shared shell", () => {
     expect(screen.getByRole("heading", { name: "AletheIA Mission Control" })).toBeInTheDocument();
     expect(screen.getByText("Work slices by review posture")).toBeInTheDocument();
     expect(screen.getByText("Source records remain authoritative")).toBeInTheDocument();
+    expect(screen.getByText("Versioned snapshots · synthetic fixtures")).toBeInTheDocument();
+    expect(screen.queryByText(/static fixtures only/i)).not.toBeInTheDocument();
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
