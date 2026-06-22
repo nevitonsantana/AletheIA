@@ -124,9 +124,10 @@ P1 remains the delivered visual baseline across these slices. Its future importe
 - **Repository / layer:** AletheIA contract; Adaptive Skills return pattern
 - **Covers:** P3
 - **Dependencies:** S1; aligns with S4
+- **Status:** `delivered` by AletheIA PR #256 and Adaptive Skills PR #66
 - **Non-goals:** terminal proxy, RTK dependency, evidence database or automatic normalizer.
 - **Acceptance:** structured observations preserve decision-relevant evidence; any lossy observation requires a recovery pointer; unavailable metrics are not invented.
-- **Evidence:** test-output example, skill-output example and contract validation.
+- **Evidence:** AletheIA merge `a5f3e9c` provides the contract, template and test-output example; Adaptive Skills merge `60de75d` provides the portable skill return, template and feature-planning example; both repositories passed their full CI gates.
 
 ### S6 — Source-backed pattern context
 
@@ -211,11 +212,11 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P2-R2 Layer mapping and adoption decision | P2 SDD/templates | `planned` | S2 | AletheIA owns adoption decision. |
 | P2-R3 Pilot before canon promotion | P2 guardrails | `planned` | S2 and every later epic | Adaptive Skills evolution remains governed. |
 | P2-R4 Automatic adoption/dependency installation | P2 non-goals | `rejected` | None | Conflicts with human-reviewed adoption boundary. |
-| P3-R1 Structured observation normalization | P3 PRD/contract | `planned` | S5 | Start contract-first. |
-| P3-R2 Lossy output recovery pointer | P3 contract | `planned` | S5 | Mandatory invariant. |
-| P3-R3 Progressive visibility | P3 PRD/SDD | `planned` | S5 and future UI | Guided/practitioner/engineer are rendering levels. |
+| P3-R1 Structured observation normalization | P3 PRD/contract | `partially-delivered` | S5 | Minimum record is delivered; automatic normalization remains deferred. |
+| P3-R2 Lossy output recovery pointer | P3 contract | `delivered` | S5 | Mandatory invariant in both repository templates and examples. |
+| P3-R3 Progressive visibility | P3 PRD/SDD | `partially-delivered` | S5 and future UI | Rendering levels are contracted; no new UI or visibility switch was introduced. |
 | P3-R4 Automatic adapters and telemetry | P3 implementation plan | `deferred` | Post-S5 pilot | No invented compression or token precision. |
-| P3-R5 Skill observation return | P3 Adaptive Skills addendum | `planned` | S5 | Portable summary, evidence, risk and handoff. |
+| P3-R5 Skill observation return | P3 Adaptive Skills addendum | `delivered` | S5 | Portable summary, evidence, risk, advisory handoff and governed recovery. |
 | P4-R1 Intent and Expectations references | P4 PRD/SDD | `planned` | S8 | Optional and proportional. |
 | P4-R2 Agent guessing risk and presence checkpoints | P4 SDD | `planned` | S8 | High-risk holes stop execution. |
 | P4-R3 Evidence-to-expectation and reconcile | P4 SDD/templates | `planned` | S8 | Evidence closes expectations, not agent confidence. |
@@ -264,6 +265,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P3 — Observation Governance
 
+- **Status:** `partially-delivered`; minimum recoverable records are available, while adapters, telemetry and visual projection remain evidence-gated.
 - **Guardrails:** preserve decision-relevant evidence; lossy requires recovery; no false precision; no mandatory RTK/runtime.
 - **Key contracts/templates:** observation record, adapter contract, tool-output hygiene and skill observation return.
 - **Dependencies:** P8 context loading, telemetry vocabulary and evidence retention policy.
