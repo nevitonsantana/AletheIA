@@ -17,7 +17,14 @@ describe("Adaptive Skills execution record adapter", () => {
       origin: "reported",
       availability: "available",
       tone: "stable",
+      executionContext: [
+        { label: "Mode", value: "workflow/extended" },
+        { label: "Result", value: "usable" },
+        { label: "Modules", value: "dependencies-map, risk-review, traceability-and-anti-overengineering, scope-boundaries" },
+        { label: "Handoff", value: "required" },
+      ],
     });
+    expect(adaptAdaptiveSkillExecutionRecord(executionRecord).evidenceRefs).toContain("https://github.com/nevitonsantana/AletheIA/pull/248");
   });
 
   it("keeps Adaptive Skills advisory by rejecting governance authority claims", () => {

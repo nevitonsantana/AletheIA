@@ -45,6 +45,27 @@ export function ResourceSignalInspector({ signal, onClose }: ResourceSignalInspe
                 <h3>Interpretation</h3>
                 <p className="signal-interpretation">{signal.interpretation}</p>
               </section>
+              {signal.executionContext?.length ? (
+                <section className="inspector-section">
+                  <h3>Execution context</h3>
+                  <dl className="signal-detail-list">
+                    {signal.executionContext.map((detail) => <div key={detail.label}><dt>{detail.label}</dt><dd>{detail.value}</dd></div>)}
+                  </dl>
+                </section>
+              ) : null}
+              {signal.evidenceRefs?.length ? (
+                <section className="inspector-section">
+                  <h3>Evidence refs</h3>
+                  <div className="source-list">
+                    {signal.evidenceRefs.map((sourceRef) => (
+                      <div className="source-item" key={sourceRef}>
+                        <span className="source-main"><span className="source-name" title={sourceRef}>{sourceRef}</span><span className="source-type">Execution evidence</span></span>
+                        <span className="source-origin reported">reported</span>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ) : null}
               <section className="inspector-section">
                 <h3>Boundary</h3>
                 <p className="boundary-note">The Resource Observatory displays sourced metadata only. Source records remain authoritative; this interface does not collect, calculate, govern, or execute.</p>
