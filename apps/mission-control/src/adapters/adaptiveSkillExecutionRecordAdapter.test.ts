@@ -23,6 +23,18 @@ describe("Adaptive Skills execution record adapter", () => {
         { label: "Modules", value: "dependencies-map, risk-review, traceability-and-anti-overengineering, scope-boundaries" },
         { label: "Handoff", value: "required" },
       ],
+      patternContext: {
+        pattern: null,
+        selection: { verdict: "unavailable", selectedBy: "unavailable" },
+        compatibility: {
+          status: "unavailable",
+          message: "loop candidacy not assessed",
+          declaredBy: "unavailable",
+          skillId: "feature-planning",
+          skillVersion: "0.1.0",
+        },
+        refs: {},
+      },
     });
     expect(adaptAdaptiveSkillExecutionRecord(executionRecord).evidenceRefs).toContain("https://github.com/nevitonsantana/AletheIA/pull/248");
   });

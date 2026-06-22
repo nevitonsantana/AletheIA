@@ -54,6 +54,11 @@ describe("Resource Observatory", () => {
     expect(within(inspector).getByText(/dependencies-map, risk-review/)).toBeInTheDocument();
     expect(within(inspector).getByText("required")).toBeInTheDocument();
     expect(within(inspector).getByText("https://github.com/nevitonsantana/AletheIA/pull/248")).toBeInTheDocument();
+    expect(within(inspector).getByRole("heading", { name: "Pattern selection" })).toBeInTheDocument();
+    expect(within(inspector).getByText(/No source-backed execution pattern selection record/)).toBeInTheDocument();
+    expect(within(inspector).getByRole("heading", { name: "Skill compatibility" })).toBeInTheDocument();
+    expect(within(inspector).getByText(/loop candidacy not assessed/)).toBeInTheDocument();
+    expect(within(inspector).queryByText("compatible", { exact: true })).not.toBeInTheDocument();
     expect(within(inspector).getByRole("button", { name: "Close signal inspector" })).toHaveFocus();
     await user.keyboard("{Escape}");
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
