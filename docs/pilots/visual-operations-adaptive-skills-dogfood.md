@@ -45,6 +45,10 @@ the execution record:
 - source: `as-exec-2026-06-22-mission-control-001`;
 - interpretation: activation evidence does not control gates or decisions.
 
+The contextual inspector progressively reveals the execution mode, result, activated
+modules, handoff posture, and evidence references. These fields explain the activation;
+they are not converted into a score, recommendation, or gate outcome.
+
 ## Boundary and follow-up
 
 This is a versioned snapshot integration, not automatic telemetry. The next useful

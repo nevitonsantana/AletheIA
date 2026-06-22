@@ -15,6 +15,11 @@ export type ResourceSignal = {
   tone: SignalTone;
   kicker: string;
   interpretation: string;
+  executionContext?: Array<{
+    label: string;
+    value: string;
+  }>;
+  evidenceRefs?: string[];
 };
 
 export type ResourceSignalGroup = {

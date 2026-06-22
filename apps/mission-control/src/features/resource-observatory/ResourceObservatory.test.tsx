@@ -50,6 +50,10 @@ describe("Resource Observatory", () => {
 
     expect(within(inspector).getByText("as-exec-2026-06-22-mission-control-001")).toBeInTheDocument();
     expect(within(inspector).getByText(/AletheIA retains gate and decision authority/)).toBeInTheDocument();
+    expect(within(inspector).getByText("workflow/extended")).toBeInTheDocument();
+    expect(within(inspector).getByText(/dependencies-map, risk-review/)).toBeInTheDocument();
+    expect(within(inspector).getByText("required")).toBeInTheDocument();
+    expect(within(inspector).getByText("https://github.com/nevitonsantana/AletheIA/pull/248")).toBeInTheDocument();
     expect(within(inspector).getByRole("button", { name: "Close signal inspector" })).toHaveFocus();
     await user.keyboard("{Escape}");
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();

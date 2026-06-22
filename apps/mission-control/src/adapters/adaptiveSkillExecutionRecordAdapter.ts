@@ -46,5 +46,12 @@ export function adaptAdaptiveSkillExecutionRecord(record: AdaptiveSkillExecution
     tone: "stable",
     kicker: `Adaptive Skills · ${record.result}`,
     interpretation: `Execution record references ${record.skill.skill_id}@${record.skill.version} (${shortRevision}). The activation is trace evidence only; AletheIA retains gate and decision authority.`,
+    executionContext: [
+      { label: "Mode", value: record.mode },
+      { label: "Result", value: record.result },
+      { label: "Modules", value: record.modules_activated.join(", ") || "unavailable" },
+      { label: "Handoff", value: record.handoff_required ? "required" : "not required" },
+    ],
+    evidenceRefs: record.evidence_refs,
   };
 }
