@@ -1,0 +1,34 @@
+context_surface_registry:
+  version: "0.1"
+  owner: <registry owner>
+  reviewed_at: YYYY-MM-DD
+  surfaces:
+    - id: <stable surface id>
+      title: <human-readable title>
+      type: persistent_manifest | agent_role_contract | skill_provider | project_doc | tool_config | runtime_policy | work_artifact | evidence_artifact
+      path: <repository path or authorized reference>
+      owner: <person, team, or project role>
+      provider: aletheia | adaptive_skills | project_local | runtime_native | external | user_defined
+      scope: repository | package | feature | agent_role | capability | work_slice | evidence
+      load_mode: always | on_demand | role_scoped | capability_scoped | work_slice_scoped | evidence_only | never_directly
+      priority: critical | high | medium | low
+      activation_conditions:
+        - condition: <when this surface becomes relevant>
+          rationale: <why loading is justified>
+          expected_extraction: <minimum information to retrieve>
+      freshness:
+        last_reviewed: YYYY-MM-DD
+        review_interval_days: <positive integer>
+      budget:
+        max_lines: <positive integer or unavailable>
+        max_tokens: <positive integer or unavailable>
+        origin: reported | estimated | unavailable
+      allowed_content:
+        - <allowed content class>
+      must_not_contain:
+        - prompts
+        - secrets
+        - restricted source content
+      evidence_required:
+        - <required evidence>
+

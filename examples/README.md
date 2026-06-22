@@ -51,6 +51,8 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - fluxo de **policy/verdict por ação** (allow/deny/require_approval) + audit record, contrastando skill operacional (debugging) vs consultiva (feature-value-governance)
 - `execution-patterns/`
   - Execution Pattern Selections trabalhadas (topologia antes da execução): CI triage (scheduled stateful loop), síntese de entrevistas (fan-out + filter), review adversarial de PRD (maker-checker) e feature value review (loops explicitamente inadmissíveis)
+- `context-surface-governance/`
+  - registro mínimo de superfícies que distingue contexto persistente, carregamento sob demanda, provider de skill e evidência que não deve virar instrução
 - `resource-aware-operations/`
   - exemplos da trilha 1.2 para runtime fit, policy signals, pilotos bounded, restart/finalization e adapters
 - `visual-operations/`
