@@ -46,7 +46,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P5 — Capability Routing Governance | `partially-delivered` | Existing execution vehicle, AHC, capability graph and pattern declarations | Publish one reconciliation note; do not create a routing engine. |
 | P6 — System-Aware Governance | `deferred` as umbrella | Small capability modules and evidence-backed pilots | Pilot one Design System/Pulso module before promoting broader governance. |
 | P7 — Agent Role Orchestration | `partially-delivered` | Existing portable role catalog, adoption guide and runtime adapters | Reconcile missing contract fields; do not add a second role model. |
-| P8 — Context Surface Governance | `planned` | Minimal registry and progressive-loading policy | Establish before expanding role prompts or always-loaded loop rules. |
+| P8 — Context Surface Governance | `partially-delivered` | Minimum registry and progressive-loading policy | Manual registry and provider-loading example are delivered; automation and broader smell detection remain evidence-gated. |
 | P9 — Governed Loop Observation | `partially-delivered` | Existing Resource Observatory skill inspector | Unavailable-first observation is delivered; source-backed states and the bounded debugging pilot still depend on canonical sources. |
 
 ## Dependency graph
@@ -114,9 +114,10 @@ P1 remains the delivered visual baseline across these slices. Its future importe
 - **Repository / layer:** AletheIA context governance
 - **Covers:** P8
 - **Dependencies:** S1
+- **Status:** `delivered` by AletheIA PR #254 and Adaptive Skills PR #65
 - **Non-goals:** automatic context router or mandatory registry of every document.
 - **Acceptance:** each registered surface declares owner, scope, load mode, path, activation, freshness, budget and allowed/prohibited content.
-- **Evidence:** one AletheIA Work Slice example and one Adaptive Skills provider-loading example.
+- **Evidence:** AletheIA merge `3f2df81` provides the contract, template and Work Slice example; Adaptive Skills merge `3606089` provides the capability-scoped provider-loading example; both repositories passed their full CI gates.
 
 ### S5 — Recoverable observation contract
 
@@ -231,9 +232,9 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P7-R2 Role authority, evidence, stop and output contracts | P7 prompt assessment | `planned` | S12 | Add only missing fields. |
 | P7-R3 Skill-provider independence | P7 policies | `partially-delivered` | S10, S12 | Adaptive Skills preferred, not mandatory. |
 | P7-R4 Full seven-agent orchestration | P7 roadmap | `deferred` | Post-S12 evidence gate | Pilot two roles first. |
-| P8-R1 Context Surface Registry | P8 PRD/schema | `planned` | S4 | Minimal registry, not universal inventory. |
-| P8-R2 On-demand loading and prompt hygiene | P8 policies | `planned` | S4 | Prevent always-loaded pack and loop bloat. |
-| P8-R3 Tool offloading and context audit | P8 guide/checklist | `planned` | S4 | Deterministic checks stay in tools. |
+| P8-R1 Context Surface Registry | P8 PRD/schema | `delivered` | S4 | Minimum metadata contract and adopter template delivered. |
+| P8-R2 On-demand loading and prompt hygiene | P8 policies | `partially-delivered` | S4 | Provider-loading example proves the boundary; broader prompt audits remain future work. |
+| P8-R3 Tool offloading and context audit | P8 guide/checklist | `partially-delivered` | S4 | Work Slice evidence example delegates tests/typecheck to tools; automation remains out of scope. |
 | P8-R4 Automatic context router | P8 boundary | `deferred` | Post-S4 evidence gate | Manual/advisory first. |
 | P9-R1 Optional `patternContext` projection | P9 contract | `partially-delivered` | S3, S6 | View model delivered; source-backed states remain in S6. |
 | P9-R2 No compatibility inference | P9 PRD/boundaries | `delivered` | S3, S6 | Missing declaration renders unavailable; S6 must preserve the invariant. |
