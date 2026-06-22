@@ -115,6 +115,7 @@ Reading map organized by intent. Each entry links to the most useful starting po
 2. [Enterprise readiness roadmap](roadmaps/enterprise-readiness-roadmap.md) — 1.1 constrained adoption track
 3. [Resource-aware operations roadmap](roadmaps/resource-aware-operations-roadmap.md) — 1.2 track
 4. [Evolution plan](roadmaps/evolution-plan.md) — post-1.0 direction
+5. [AletheIA + Adaptive Skills integrated evolution backlog](roadmaps/evolution-backlog-aletheia-adaptive-skills.md) — ten-pack reconciliation, dependencies, PR-ready slices, and requirement traceability
 
 ---
 
