@@ -56,7 +56,7 @@ No success percentage is admissible from this single case.
 
 ## Human review boundary
 
-The test gate permits the loop to stop; it does not authorize merge. Human review remains pending until the pull request is accepted.
+The test gate permitted the loop to stop but did not authorize merge. Human review was accepted through [PR #262](https://github.com/nevitonsantana/AletheIA/pull/262), merged as `a6acc4fd39df96e47f7abfcc552932840d4a0b7b` after all required checks passed.
 
 ## Learning signal
 
