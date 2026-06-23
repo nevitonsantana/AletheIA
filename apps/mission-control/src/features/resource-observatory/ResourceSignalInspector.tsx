@@ -95,6 +95,9 @@ export function ResourceSignalInspector({ signal, onClose }: ResourceSignalInspe
                       <div><dt>Status</dt><dd>{signal.patternContext.compatibility.status}</dd></div>
                       <div><dt>Declared by</dt><dd>{signal.patternContext.compatibility.declaredBy ?? "unavailable"}</dd></div>
                       {signal.patternContext.compatibility.skillVersion ? <div><dt>Skill version</dt><dd>{signal.patternContext.compatibility.skillVersion}</dd></div> : null}
+                      {signal.patternContext.compatibility.conditions ? <div><dt>Conditions</dt><dd>{signal.patternContext.compatibility.conditions}</dd></div> : null}
+                      {signal.patternContext.compatibility.requiredEvidence ? <div><dt>Required evidence</dt><dd>{joinOrUnavailable(signal.patternContext.compatibility.requiredEvidence)}</dd></div> : null}
+                      {signal.patternContext.compatibility.rationale ? <div><dt>Rationale</dt><dd>{signal.patternContext.compatibility.rationale}</dd></div> : null}
                       {signal.patternContext.compatibility.declarationRef ? <div><dt>Declaration</dt><dd>{signal.patternContext.compatibility.declarationRef}</dd></div> : null}
                     </dl>
                     {signal.patternContext.compatibility.message ? <p className="pattern-state-note"><strong>Unavailable</strong> — {signal.patternContext.compatibility.message}.</p> : null}
@@ -106,11 +109,34 @@ export function ResourceSignalInspector({ signal, onClose }: ResourceSignalInspe
                         <div><dt>Stop condition</dt><dd>{signal.patternContext.controls.stopCondition ?? "unavailable"}</dd></div>
                         <div><dt>Objective gate</dt><dd>{signal.patternContext.controls.objectiveGate ?? "unavailable"}</dd></div>
                         <div><dt>Iterations</dt><dd>{signal.patternContext.controls.currentIterations ?? 0} / {signal.patternContext.controls.maxIterations ?? "unavailable"}</dd></div>
+                        <div><dt>Time budget</dt><dd>{signal.patternContext.controls.budget?.timeMinutes != null ? `${signal.patternContext.controls.budget.timeMinutes} min` : "unavailable"}</dd></div>
+                        <div><dt>Token budget</dt><dd>{signal.patternContext.controls.budget?.tokenBudget ?? "unavailable"}</dd></div>
                         <div><dt>Required</dt><dd>{joinOrUnavailable(signal.patternContext.controls.requiredControls)}</dd></div>
                         <div><dt>Missing</dt><dd>{joinOrUnavailable(signal.patternContext.controls.missingPreconditions)}</dd></div>
                         <div><dt>Human review</dt><dd>{signal.patternContext.controls.humanReviewBoundary ?? "unavailable"}</dd></div>
+                        <div><dt>Source refs</dt><dd>{joinOrUnavailable([
+                          signal.patternContext.refs.selectionRef,
+                          signal.patternContext.refs.compatibilityRef,
+                          signal.patternContext.refs.loopRunRef,
+                        ].filter((ref): ref is string => Boolean(ref)))}</dd></div>
                       </dl>
                       {signal.patternContext.controls.missingPreconditions?.includes("objective_gate") ? <p className="pattern-state-note is-warning"><strong>Loop cannot be approved:</strong> objective gate missing.</p> : null}
+                    </section>
+                  ) : null}
+                  {signal.patternContext.outcome ? (
+                    <section className="inspector-section">
+                      <h3>Outcome &amp; learning</h3>
+                      <dl className="signal-detail-list">
+                        <div><dt>Outcome</dt><dd>{signal.patternContext.outcome.result}</dd></div>
+                        {signal.patternContext.outcome.rationale ? <div><dt>Rationale</dt><dd>{signal.patternContext.outcome.rationale}</dd></div> : null}
+                        <div><dt>Comparable cases</dt><dd>{signal.patternContext.outcome.comparableCaseCount ?? "unavailable"}</dd></div>
+                        {signal.patternContext.outcome.objectiveSuccessCriteriaRef ? <div><dt>Success criteria</dt><dd>{signal.patternContext.outcome.objectiveSuccessCriteriaRef}</dd></div> : null}
+                        {!signal.patternContext.outcome.showSuccessPercentage ? <div><dt>Success percentage</dt><dd>hidden</dd></div> : null}
+                        {signal.patternContext.refs.loopRunRef ? <div><dt>Run source</dt><dd>{signal.patternContext.refs.loopRunRef}</dd></div> : null}
+                        {signal.patternContext.outcome.proposalRef ? <div><dt>Proposal ref</dt><dd>{signal.patternContext.outcome.proposalRef}</dd></div> : null}
+                        {signal.patternContext.outcome.escalationRef ? <div><dt>Escalation ref</dt><dd>{signal.patternContext.outcome.escalationRef}</dd></div> : null}
+                      </dl>
+                      {signal.patternContext.outcome.evidenceRefs?.length ? <p className="pattern-state-note"><strong>Evidence:</strong> {joinOrUnavailable(signal.patternContext.outcome.evidenceRefs)}</p> : null}
                     </section>
                   ) : null}
                 </>

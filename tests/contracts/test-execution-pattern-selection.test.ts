@@ -5,18 +5,20 @@ import { validateAgainstSchema, SchemaValidationError } from "../../engine";
 
 const schemasDir = path.resolve(process.cwd(), "schemas");
 const schemaPath = path.join(schemasDir, "execution-pattern-selection.schema.json");
-const fixturePath = path.resolve(
-  process.cwd(),
-  "examples/execution-patterns/fixtures/execution-pattern-selection-ci-triage.json",
-);
+const fixturesDir = path.resolve(process.cwd(), "examples/execution-patterns/fixtures");
 
-function loadFixture(): Record<string, unknown> {
-  return JSON.parse(fs.readFileSync(fixturePath, "utf-8")) as Record<string, unknown>;
+function loadFixture(name = "execution-pattern-selection-ci-triage.json"): Record<string, unknown> {
+  return JSON.parse(fs.readFileSync(path.join(fixturesDir, name), "utf-8")) as Record<string, unknown>;
 }
 
 describe("Execution Pattern Selection (per-task declaration)", () => {
   it("validates the realistic CI triage selection against the schema", () => {
     const data = loadFixture();
+    expect(() => validateAgainstSchema(data, schemaPath)).not.toThrow();
+  });
+
+  it("validates the bounded debugging loop projection fixture", () => {
+    const data = loadFixture("execution-pattern-selection-debugging-loop.json");
     expect(() => validateAgainstSchema(data, schemaPath)).not.toThrow();
   });
 
