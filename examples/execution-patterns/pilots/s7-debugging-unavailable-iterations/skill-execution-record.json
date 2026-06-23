@@ -1,0 +1,32 @@
+{
+  "record_id": "as-exec-2026-06-23-s7-debugging-001",
+  "recorded_at": "2026-06-23T15:18:11Z",
+  "consumer_project": "aletheia",
+  "work_slice_id": "s7-debugging-unavailable-iterations",
+  "skill": {
+    "skill_id": "debugging",
+    "version": "0.1.0",
+    "source_ref": "https://github.com/nevitonsantana/adaptive-skills/blob/feafc03a1cb6ad89b66d93d9f7468afae5959742/skills/debugging/SKILL.md"
+  },
+  "mode": "focused",
+  "context": "Reproduce and correct a read-only inspector value that invented zero iterations when the source count was absent.",
+  "modules_activated": [
+    "feedback-loop-construction",
+    "recurrence-guard"
+  ],
+  "trigger_matches": [
+    "failing test",
+    "surprising presentation behavior"
+  ],
+  "result": "usable",
+  "handoff_required": true,
+  "failure_type": null,
+  "improvement_note": "Preserve unavailable at the presentation boundary instead of substituting a plausible numeric value.",
+  "evidence_refs": [
+    "examples/execution-patterns/pilots/s7-debugging-unavailable-iterations/loop-run-record.json",
+    "apps/mission-control/src/features/resource-observatory/ResourceSignalInspector.test.tsx"
+  ],
+  "attribution_guess": "The debugging method forced a failing reproduction before the one-line fix and retained the test as a recurrence guard.",
+  "result_mode": "reinforced",
+  "governance_authority": false
+}

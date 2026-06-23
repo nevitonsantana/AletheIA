@@ -51,6 +51,32 @@ describe("ResourceSignalInspector pattern context", () => {
     expect(screen.queryByRole("button", { name: /run loop|approve loop/i })).not.toBeInTheDocument();
   });
 
+  it("keeps an unreported iteration count unavailable", () => {
+    render(
+      <ResourceSignalInspector
+        signal={{
+          ...skillSignal,
+          patternContext: {
+            ...skillSignal.patternContext!,
+            controls: {
+              maxIterations: undefined,
+              currentIterations: undefined,
+              requiredControls: ["objective_gate", "explicit_budget"],
+              missingPreconditions: [],
+              humanReviewBoundary: "Merge requires human review.",
+            },
+          },
+        }}
+        onClose={vi.fn()}
+      />,
+    );
+
+    const controls = screen.getByRole("heading", { name: "Loop controls" }).closest("section");
+    expect(controls).not.toBeNull();
+    expect(within(controls!).getByText("unavailable / unavailable")).toBeInTheDocument();
+    expect(within(controls!).queryByText("0 / unavailable")).not.toBeInTheDocument();
+  });
+
   it("renders source-backed compatibility, controls and outcome without adding authority actions", () => {
     const patternContext = projectPatternContext({
       skillId: "debugging",
