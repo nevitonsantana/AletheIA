@@ -65,6 +65,8 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - segundo piloto real da PR #195, gerado e verificável pelo CLI local com `--check`
   - exemplos estáticos de cards do cockpit para revisar estados visuais antes de qualquer UI
   - composição estática de board com lanes, contagens e exceções antes de wireframe/UI
+- `work-observatory/`
+  - primeiro `work_record` derivado do piloto S7, conectando executor, skills, tools, gate, resultado e revisão sem inventar duração, custo, aceitação, retrabalho, work units ou valor
   - wireframe leve/documental do Mission Control, com direção visual e hierarquia de tela
   - mock visual versionado do Mission Control, escolhendo Trace Room + Evidence Desk como direção inicial
   - mock visual refinado de tela única, agora tratado como precursor visual

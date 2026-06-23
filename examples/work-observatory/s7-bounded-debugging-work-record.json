@@ -1,0 +1,122 @@
+{
+  "schema_version": "0.1-example",
+  "record_kind": "derived_work_observation",
+  "work_record_id": "work-record-2026-06-23-s7-debugging-001",
+  "work_slice_id": "s7-debugging-unavailable-iterations",
+  "derived_from": {
+    "execution_ref": "examples/execution-patterns/pilots/s7-debugging-unavailable-iterations/loop-run-record.json",
+    "selection_ref": "examples/execution-patterns/pilots/s7-debugging-unavailable-iterations/execution-pattern-selection.json",
+    "skill_return_ref": "examples/execution-patterns/pilots/s7-debugging-unavailable-iterations/skill-execution-record.json"
+  },
+  "task": {
+    "task_id": "s7-debugging-unavailable-iterations",
+    "task_type": "test_failure_analysis",
+    "task_family": "engineering_support",
+    "output_type": "patch",
+    "comparison_group": "unavailable"
+  },
+  "execution": {
+    "agents": [
+      {
+        "agent_id": "codex",
+        "role": "executor"
+      }
+    ],
+    "subagents": [],
+    "skills": [
+      {
+        "skill_id": "debugging",
+        "provider": "adaptive-skills",
+        "version": "0.1.0"
+      },
+      {
+        "skill_id": "frontend-testing-debugging",
+        "provider": "codex-plugin",
+        "version": "unavailable"
+      }
+    ],
+    "tools": [
+      "exec_command",
+      "apply_patch",
+      "in_app_browser"
+    ],
+    "pattern": "loop_until_done",
+    "iterations": 1,
+    "maximum_iterations": 3
+  },
+  "timing": {
+    "started_at": "unavailable",
+    "completed_at": "2026-06-23T15:18:11Z",
+    "duration_seconds": {
+      "value": null,
+      "availability": "unavailable",
+      "reason": "No durable task-start timestamp was captured; commit and merge timestamps are not execution duration."
+    }
+  },
+  "resources": {
+    "resource_record_ref": "unavailable",
+    "tokens": {
+      "value": null,
+      "provenance": "unavailable"
+    },
+    "cost": {
+      "value": null,
+      "currency": "USD",
+      "provenance": "unavailable"
+    }
+  },
+  "observations": {
+    "refs": [
+      "apps/mission-control/src/features/resource-observatory/ResourceSignalInspector.test.tsx",
+      "examples/execution-patterns/pilots/s7-debugging-unavailable-iterations/loop-run-record.json"
+    ],
+    "objective_gate": "pnpm --filter @aletheia/mission-control test -- ResourceSignalInspector.test.tsx",
+    "objective_gate_result": "passed"
+  },
+  "human_collaboration": {
+    "intervention_count": 1,
+    "intervention_types": [
+      "approval"
+    ],
+    "human_time_minutes": {
+      "value": null,
+      "provenance": "unavailable"
+    },
+    "provenance": "reported",
+    "source_ref": "https://github.com/nevitonsantana/AletheIA/pull/262"
+  },
+  "outcome": {
+    "status": "completed",
+    "loop_outcome": "reinforced",
+    "accepted": "unknown",
+    "rework_required": "unknown",
+    "closure_ref": "https://github.com/nevitonsantana/AletheIA/commit/a6acc4fd39df96e47f7abfcc552932840d4a0b7b"
+  },
+  "work": {
+    "work_units": "unavailable",
+    "quality_score": "unavailable",
+    "value_score": "unavailable"
+  },
+  "comparison": {
+    "eligible": false,
+    "reason": "No stable comparison group and fewer than five comparable reviewed records."
+  },
+  "authority": {
+    "mode": "read_only_derived_projection",
+    "source_records_remain_authoritative": true,
+    "does_not_score_people": true
+  },
+  "privacy": {
+    "metadata_only": true,
+    "stores_prompts": false,
+    "stores_personal_data": false,
+    "stores_restricted_content": false
+  },
+  "source_refs": [
+    "examples/execution-patterns/pilots/s7-debugging-unavailable-iterations/execution-pattern-selection.json",
+    "examples/execution-patterns/pilots/s7-debugging-unavailable-iterations/skill-execution-record.json",
+    "examples/execution-patterns/pilots/s7-debugging-unavailable-iterations/loop-run-record.json",
+    "https://github.com/nevitonsantana/AletheIA/pull/262",
+    "https://github.com/nevitonsantana/AletheIA/commit/a6acc4fd39df96e47f7abfcc552932840d4a0b7b"
+  ]
+}
