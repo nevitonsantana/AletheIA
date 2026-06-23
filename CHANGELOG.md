@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- expand the canonical AletheIA + Adaptive Skills evolution backlog to v0.2 with P10 Work Observatory, P11 Cognitive Documentation & Continuity, and a versioned non-normative ecosystem territory map; no runtime, schema, collector or dashboard is introduced
+
 - materialize the `example-4-layers` knowledge pack on disk under `examples/project-extension/knowledge-packs/` (schema-valid `manifest.yaml`, operational capsule, usage policy, version history, source map/link, and a `feature-value-governance` consumption walkthrough); generic and fictional, illustrating a proprietary framework registered as a `capsule_first` pack with `full_text_exposure: forbidden`
 
 - lock the canonical sensitivity vocabulary (`public | internal | confidential | restricted | regulated`) and document how project extensions map local labels (e.g. `private`, regulatory tags) to it; add a project-extension mapping example

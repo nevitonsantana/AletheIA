@@ -11,6 +11,7 @@ Reading map organized by intent. Each entry links to the most useful starting po
 3. [Operating overlay](concepts/operating-overlay.md) — what the overlay layer is and how to tell what belongs in it
 4. [ADR-004 — AletheIA as operating overlay](adr/ADR-004-aletheia-as-operating-overlay.md) — the boundary decision between product, overlay, and harness
 5. [Governance](concepts/governance.md) — what is mandatory, forbidden, and requires approval
+6. [Ecosystem territory map](concepts/ecosystem-territory-map.md) — non-normative north-star view across AletheIA, Adaptive Skills, runtime, continuity and observability
 
 ---
 
@@ -118,7 +119,7 @@ Reading map organized by intent. Each entry links to the most useful starting po
 2. [Enterprise readiness roadmap](roadmaps/enterprise-readiness-roadmap.md) — 1.1 constrained adoption track
 3. [Resource-aware operations roadmap](roadmaps/resource-aware-operations-roadmap.md) — 1.2 track
 4. [Evolution plan](roadmaps/evolution-plan.md) — post-1.0 direction
-5. [AletheIA + Adaptive Skills integrated evolution backlog](roadmaps/evolution-backlog-aletheia-adaptive-skills.md) — ten-pack reconciliation, dependencies, PR-ready slices, and requirement traceability
+5. [AletheIA + Adaptive Skills integrated evolution backlog](roadmaps/evolution-backlog-aletheia-adaptive-skills.md) — P0–P11 reconciliation, dependencies, PR-ready slices, source registry, and requirement traceability
 
 ---
 

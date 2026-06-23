@@ -2,13 +2,21 @@
 
 ## Status
 
-- **Backlog version:** 0.1
-- **Baseline date:** 2026-06-22
+- **Backlog version:** 0.2
+- **Baseline date:** 2026-06-23
 - **Canonical backlog owner:** AletheIA
 - **Capability-side partner:** Adaptive Skills
-- **Source archive SHA-256:** `dabc9d75fb4c7f4febacebe5d2032d93d92a93610d4bb857484004f1c230244f`
 
-This backlog reconciles ten evolution packs with the implementation already present in AletheIA and Adaptive Skills. It is an executive map and dependency graph, not a replacement for the source packs.
+### Registered sources
+
+| Source | Role | SHA-256 |
+|---|---|---|
+| AletheIA + Adaptive Skills Evolution Pack | Original P0–P9 detailed source | `dabc9d75fb4c7f4febacebe5d2032d93d92a93610d4bb857484004f1c230244f` |
+| Work Observatory Pack | P10 detailed source | `f83993fb35530aabcdbd2bd8ef1f19d75cf5b8656ff50e4c28896d6626d603b4` |
+| Cognitive Documentation & Continuity Governance Pack | P11 detailed source | `d9839b5edfae4cd71b83c4abca1db7525b8b4958036fa3423ad5481ebde6dd93` |
+| AletheIA + Adaptive Skills territory map | M1 non-normative north-star source | `906b89e3739c5737f9c683abc6ddc65e6040652105184d4640a4c50a5dc898c2` |
+
+This backlog reconciles the original ten evolution packs, two supplemental packs and one north-star map with the implementation already present in AletheIA and Adaptive Skills. It is an executive map and dependency graph, not a replacement for the source packs or canonical contracts.
 
 Before implementing an epic, reopen its complete pack. Ask for a new copy only when the archive is unavailable or a newer revision exists.
 
@@ -19,7 +27,8 @@ Before implementing an epic, reopen its complete pack. Ask for a new copy only w
 | AletheIA | Macro governance, Work Slice policy, pattern selection, gates, decisions, closure and visual projection contracts | Canonical skill methods or runtime execution |
 | Adaptive Skills | Portable methods, capability metadata, compatibility declarations, evidence hints and governed evolution | AletheIA decisions, approval or global routing |
 | Runtime / harness | Tool execution, tests, diffs, logs, budgets and evidence capture | Governance interpretation or canonical skill evolution |
-| Resource Observatory | Read-only projection of source-backed signals | Selection, execution, approval, mutation or inferred compatibility |
+| Resource Observatory | Read-only projection of source-backed resource and operational signals | Collection, selection, execution, approval, mutation or inferred compatibility |
+| Work Observatory (planned) | Derived relationship between execution, resource refs, outcome, rework and human effort | Raw resource collection, value authority, people scoring or a separate app by default |
 
 ## Status vocabulary
 
@@ -41,34 +50,40 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P0 — Coding Safety Workflow | `planned` | Coding specialization of the existing Work Slice plan | Start only after P4 defines intent and expectations boundaries. |
 | P1 — Visual Operations Layer | `partially-delivered` | Current Visual Operations contracts, examples and Mission Control | Treat current layer as baseline; gate live importers and advanced telemetry on repeated evidence. |
 | P2 — Reference Intake & Adoption | `planned` | Cross-repository intake protocol owned by AletheIA | Use the ten-pack archive as the first reconciliation example. |
-| P3 — Observation Governance | `planned` | AletheIA observation contract plus Adaptive Skills return pattern | Begin with docs, examples and recoverability; defer automatic adapters. |
+| P3 — Observation Governance | `partially-delivered` | AletheIA observation contract plus Adaptive Skills return pattern | Recoverable records are delivered; automatic normalizers, telemetry and visual projection remain evidence-gated. |
 | P4 — Intent-to-Evidence Work Slice | `planned` | Optional Work Slice references and consultative intent clarification | Avoid a parallel lifecycle or mandatory ceremony for every slice. |
 | P5 — Capability Routing Governance | `partially-delivered` | Existing execution vehicle, AHC, capability graph and pattern declarations | Publish one reconciliation note; do not create a routing engine. |
 | P6 — System-Aware Governance | `deferred` as umbrella | Small capability modules and evidence-backed pilots | Pilot one Design System/Pulso module before promoting broader governance. |
 | P7 — Agent Role Orchestration | `partially-delivered` | Existing portable role catalog, adoption guide and runtime adapters | Reconcile missing contract fields; do not add a second role model. |
 | P8 — Context Surface Governance | `partially-delivered` | Minimum registry and progressive-loading policy | Manual registry and provider-loading example are delivered; automation and broader smell detection remain evidence-gated. |
-| P9 — Governed Loop Observation | `partially-delivered` | Existing Resource Observatory skill inspector | Unavailable-first observation is delivered; source-backed states and the bounded debugging pilot still depend on canonical sources. |
+| P9 — Governed Loop Observation | `partially-delivered` | Existing Resource Observatory skill inspector | Observe milestone is delivered; S7 remains the first real bounded debugging pilot. |
+| P10 — Work Observatory | `planned` | Logical sublayer inside Observability & Intelligence, initially using existing records and visual surfaces | Use S7 as the first real work-record source; defer work units, value scoring and comparative dashboards. |
+| P11 — Cognitive Documentation & Continuity | `partially-delivered` | Existing comprehension debt, durable decisions, finalization/restart, handoffs and context surfaces plus bounded new contracts | Reconcile Continuity Capsule with Restart Package and keep one small `SYSTEM_STATE` per repository. |
 
 ## Dependency graph
 
 ```text
-S0 Stabilize current inspector context
-  -> S1 Register source packs and canonical backlog
-      -> S2 Reference Intake minimum protocol (P2)
-      -> S3 Pattern context unavailable states (P9)
-          -> S4 Context Surface minimum registry (P8)
-          -> S5 Observation contract + skill return (P3)
-              -> S6 Source-backed pattern context (P9)
-                  -> S7 Bounded debugging pilot (P9)
-      -> S8 Intent-to-Evidence contracts (P4)
-          -> S9 Coding Safety specialization (P0)
-      -> S10 Capability routing reconciliation (P5)
-          -> S11 System-aware Design System pilot (P6)
-      S4 + S5 + S10
-          -> S12 Agent-role reconciliation pilot (P7)
+S0–S6 Delivered foundations
+  -> S13 Backlog v0.2 + supplemental source registry + M1 north-star map
+      -> S7 Bounded debugging pilot (P9)
+          -> S14 First Work Observatory dogfood record (P10)
+
+S13
+  -> S15 SYSTEM_STATE + Restart Package continuity reconciliation (P11)
+      -> S16 Cognitive, intent and documentation closure integration (P11; after S8)
+          -> S17 First-use and explainable-language pilot (P11)
+
+S14 + at least five comparable records in one comparison group
+  -> S18 Comparative work metrics and read-only projection review (P10)
+
+Existing branches remain:
+S1 -> S2 Reference Intake minimum protocol (P2)
+S1 -> S8 Intent-to-Evidence contracts (P4) -> S9 Coding Safety specialization (P0)
+S1 -> S10 Capability routing reconciliation (P5) -> S11 System-aware Design System pilot (P6)
+S4 + S5 + S10 -> S12 Agent-role reconciliation pilot (P7)
 ```
 
-P1 remains the delivered visual baseline across these slices. Its future importers and comparative metrics reopen only when the existing next-signal gates are met.
+S7 remains the next functional slice. P1 remains the delivered visual baseline; P10 and P11 do not reopen live importers, runtime collection or new dashboards through this backlog update.
 
 ## PR-ready slices
 
@@ -195,6 +210,63 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Acceptance:** existing Software Engineer and QA/Governance Reviewer roles declare authority, allowed capabilities/tools, evidence, stop and handoff behavior for one real Work Slice.
 - **Evidence:** role plan, review record, closure brief and provider references.
 
+
+### S13 — Register supplemental packs and north-star map
+
+- **Repository / layer:** AletheIA canonical backlog and concepts; Adaptive Skills cross-link
+- **Covers:** P10, P11 and M1
+- **Dependencies:** S1; current repository evidence through S6
+- **Status:** `delivered` by the backlog v0.2 publication
+- **Non-goals:** implementing either pack, promoting the map to architecture authority, creating ADRs, schemas, runtime components or visual metrics.
+- **Acceptance:** all sources have checksums; P10/P11 have postures, requirement mapping, dependencies and incremental slices; M1 is explicitly non-normative and illustrative.
+- **Evidence:** versioned map asset, concept note, backlog traceability, documentation indexes, repository checks and untouched `plans/`.
+
+### S14 — First Work Observatory dogfood record
+
+- **Repository / layer:** AletheIA derived work observation; Adaptive Skills return reference when used
+- **Covers:** P10 minimum record
+- **Dependencies:** S7 and S13
+- **Non-goals:** work-unit scoring, value scoring, people evaluation, database, collector, dashboard or comparative claims.
+- **Acceptance:** S7 produces one source-backed `work_record` with duration, outcome, execution/resource/observation refs, human intervention and provenance; acceptance and rework remain `unknown` until reviewed.
+- **Evidence:** loop selection, run record, observation refs, validation evidence, human-review outcome and reconcile.
+
+### S15 — SYSTEM_STATE and continuity reconciliation
+
+- **Repository / layer:** one small local state registry per repository; AletheIA continuity governance
+- **Covers:** P11 continuity and project-state baseline
+- **Dependencies:** S13
+- **Non-goals:** universal truth database, automatic documentation generator, monolithic always-loaded prompt or duplicate Continuity Capsule lifecycle.
+- **Acceptance:** AletheIA and Adaptive Skills each maintain a compact first-load `SYSTEM_STATE`; Continuity Capsule fields extend the existing Restart Package and post-resume check; contracts, ADRs and evidence remain authoritative.
+- **Evidence:** two state fixtures, restart-package compatibility example, context-surface entries and resume validation.
+
+### S16 — Cognitive, intent and documentation closure integration
+
+- **Repository / layer:** AletheIA Work Slice closure governance
+- **Covers:** P11 cognitive debt, intent debt and documentation coherence
+- **Dependencies:** S8 and S15
+- **Non-goals:** blocking every Lite slice, agent self-certification, automatic documentation mutation or replacing technical/security review.
+- **Acceptance:** proportional closure review reuses comprehension debt and durable decisions, identifies required documentation updates and escalates high-risk understanding gaps without creating parallel lifecycle authority.
+- **Evidence:** low-risk docs case, stale-documentation case, high-risk human-review case and source-backed closure brief.
+
+### S17 — First-use and explainable-language pilot
+
+- **Repository / layer:** AletheIA guidance; Adaptive Skills usage documentation
+- **Covers:** P11 language modes, cognitive boundary and first-run guidance
+- **Dependencies:** S16
+- **Non-goals:** hiding technical risk, maintaining four duplicate guide sets or auto-detecting user expertise without confirmation.
+- **Acceptance:** one low-risk first-use journey supports plain/guided/professional/expert depth, expected outputs, validation, troubleshooting and explicit technical-escalation boundaries.
+- **Evidence:** first-time-user fixture, expert fixture, accessibility/readability review and user-facing validation steps.
+
+### S18 — Comparative work metrics and projection review
+
+- **Repository / layer:** Work Observatory derived metrics; existing Mission Control/Resource Observatory surface if activated
+- **Covers:** P10 comparative and visual milestones
+- **Dependencies:** S14 plus at least five reviewed records in one stable `comparison_group`
+- **Status:** `deferred` until the evidence threshold is met
+- **Non-goals:** new page by default, work-unit leaderboards, individual productivity scoring, fake ROI or mixed-task comparisons.
+- **Acceptance:** only source-backed metrics with formula, scope, provenance, confidence and limitations are eligible; unavailable inputs suppress dependent metrics; visual projection remains read-only.
+- **Evidence:** comparison-validity report, denominator audit, privacy review and explicit activation decision.
+
 ## Requirement traceability matrix
 
 The identifiers below preserve requirement families. The complete pack remains authoritative for detailed wording, examples and edge cases.
@@ -243,6 +315,18 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P9-R3 Visible loop controls and outcomes | P9 inspector spec | `partially-delivered` | S6, S7 | Inspector states are delivered; a real bounded run remains S7. |
 | P9-R4 Bounded debugging pilot | P9 pilot spec | `planned` | S7 | Three iterations, objective gate and human review. |
 | P9-R5 Success percentages | P9 metrics boundary | `deferred` | After five comparable cases | Counts may appear earlier; percentages may not. |
+| P10-R1 Source-backed execution/work record | P10 PRD/contracts | `planned` | S14 | Derive from existing execution, resource and observation refs; do not create a second execution authority. |
+| P10-R2 Acceptance, rework and human effort | P10 PRD | `planned` | S14 | Begin manual and tri-state; unknown is neither accepted nor rejected. |
+| P10-R3 Work units and calibration | P10 calibration guide | `deferred` | Post-S14 calibration | Require human calibration across at least five task types before adoption. |
+| P10-R4 Comparative rates and dashboards | P10 roadmap/visual concept | `deferred` | S18 | Require five comparable reviewed records in one stable comparison group. |
+| P10-R5 Value and efficiency scoring | P10 scoring guide | `deferred` | Post-S18 evidence gate | No value-per-cost metric without observed use, acceptance and sufficient confidence. |
+| P10-R6 Skill work return | P10 Adaptive Skills addendum | `absorbed` | S14 then evidence review | Extend the delivered observation return only if real dogfood shows a distinct work signal is needed. |
+| P11-R1 Cognitive and intent debt | P11 PRD/schemas | `partially-delivered` | S8, S16 | Reuse comprehension debt and durable decisions; add only missing closure fields. |
+| P11-R2 Documentation coherence | P11 policy | `planned` | S16 | Start as a proportional, reviewable evaluator rather than automatic mutation. |
+| P11-R3 Continuity Capsule and resume check | P11 continuity policy | `partially-delivered` | S15 | Extend Restart Package; do not create a competing continuity artifact. |
+| P11-R4 Per-repository SYSTEM_STATE | P11 system-state proposal | `planned` | S15 | First-load registry only; contracts and evidence remain authoritative. |
+| P11-R5 Explainable language and cognitive boundaries | P11 language policy | `planned` | S17 | Preserve precision and require technical review beyond the user's safe boundary. |
+| P11-R6 Documentation-health projection | P11 integration map | `deferred` | Post-S16 source evidence | Observatory remains read-only and unavailable-first. |
 
 ## Per-pack preservation appendix
 
@@ -308,6 +392,29 @@ The identifiers below preserve requirement families. The complete pack remains a
 - **Key contracts/templates:** `patternContext`, debugging pilot record, inspector states and loop-run evidence.
 - **Dependencies:** PR #250, ADR-015, Adaptive Skills compatibility declarations, P3 observation return.
 
+
+### P10 — Work Observatory
+
+- **Guardrails:** work is not output volume; Resource Observatory remains the raw-resource source; unknown review state stays unknown; do not score people; no fake ROI.
+- **Canonical position:** separate logical sublayer inside Observability & Intelligence, initially sharing existing visual surfaces rather than creating a new product area.
+- **Key future interfaces:** derived `work_record`, comparison validity, manual acceptance/rework and human-effort provenance.
+- **Dependencies:** P3 observations, resource telemetry, execution/audit records, S7 real evidence and privacy review.
+- **Deferred:** work units, value scoring, comparative dashboards, model/skill rankings and Decision Intelligence.
+
+### P11 — Cognitive Documentation & Continuity
+
+- **Guardrails:** understanding is explicit but cannot replace technical proof; plain language cannot hide risk; no closure self-certification; no compaction that loses intent, evidence or open risk.
+- **Absorbed foundations:** comprehension debt, Durable Decisions, Context Surface Registry, Handoff Record, Slice Finalization and Restart Package.
+- **Key future interfaces:** small per-repository `SYSTEM_STATE`, Restart Package continuity extension, proportional documentation-coherence report and Explainable Change Brief.
+- **Dependencies:** S8 Intent-to-Evidence, current finalization/restart guidance, documentation indexes and human-review criteria.
+- **Deferred:** automatic doc generation, mandatory ceremony for every Lite slice and documentation-health projection without records.
+
+### M1 — Ecosystem Territory Map
+
+- **Posture:** versioned north-star explanation, not a contract, ADR, implementation inventory or lifecycle.
+- **Interpretation:** agent roles and outcomes are directional; dashboard values are illustrative; numbered regions are compositional.
+- **Authority:** current contracts, decisions, records and evidence override the image.
+
 ## Validation contract for every slice
 
 Every implementation slice must report:
@@ -330,7 +437,7 @@ Minimum checks:
 
 ## Reopening and change control
 
-Before starting a pack:
+Before starting a pack or supplemental slice:
 
 1. verify the source archive checksum or register the newer revision;
 2. reopen the complete pack, including guardrails, templates, examples and assessment;
