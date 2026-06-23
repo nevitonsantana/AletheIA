@@ -34,7 +34,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S15 — compact per-repository state plus Restart Package continuity reconciliation.
+- **Active:** no implementation slice open; S15 is delivered.
 - **Next dependency path:** S8 → S16 → S17 for intent, cognitive/documentation closure and explainable first-use guidance.
 - **Parallel planned path:** S10 → S11, then S12 after its context and routing dependencies.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group.
@@ -61,13 +61,13 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Complete S15 in AletheIA and Adaptive Skills.
-2. Validate Restart Package compatibility and post-resume checks.
-3. Update the integrated backlog with accepted evidence.
-4. Begin S8 or another dependency-valid slice; do not activate S18 early.
+1. Begin S8 Intent-to-Evidence minimum contracts.
+2. Preserve the S15 Restart Package compatibility and post-resume checks.
+3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
+4. Do not activate S16 before S8 or S18 before its evidence threshold.
 
 ## Last reviewed
 
 - **Date:** 2026-06-23
-- **Evidence baseline:** AletheIA `0f9f15c`; backlog v0.2 plus accepted S7/S14 records
+- **Evidence baseline:** AletheIA `ec9e9af`; Adaptive Skills `baf4a4a`; backlog v0.2 through S15
 - **Review trigger:** accepted architecture, roadmap, maturity, deprecation or next-step change
