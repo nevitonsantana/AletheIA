@@ -216,10 +216,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA canonical backlog and concepts; Adaptive Skills cross-link
 - **Covers:** P10, P11 and M1
 - **Dependencies:** S1; current repository evidence through S6
-- **Status:** `delivered` by the backlog v0.2 publication
+- **Status:** `delivered` by AletheIA PR #260 and Adaptive Skills PR #67
 - **Non-goals:** implementing either pack, promoting the map to architecture authority, creating ADRs, schemas, runtime components or visual metrics.
 - **Acceptance:** all sources have checksums; P10/P11 have postures, requirement mapping, dependencies and incremental slices; M1 is explicitly non-normative and illustrative.
-- **Evidence:** versioned map asset, concept note, backlog traceability, documentation indexes, repository checks and untouched `plans/`.
+- **Evidence:** AletheIA merge `4b08b0f` provides the versioned map, concept note, v0.2 traceability and indexes; Adaptive Skills merge `feafc03` provides the canonical cross-link; both repositories passed their applicable CI gates and `plans/` remained untouched.
 
 ### S14 — First Work Observatory dogfood record
 
