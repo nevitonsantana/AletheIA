@@ -57,7 +57,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P7 — Agent Role Orchestration | `partially-delivered` | Existing portable role catalog, adoption guide and runtime adapters | Reconcile missing contract fields; do not add a second role model. |
 | P8 — Context Surface Governance | `partially-delivered` | Minimum registry and progressive-loading policy | Manual registry and provider-loading example are delivered; automation and broader smell detection remain evidence-gated. |
 | P9 — Governed Loop Observation | `delivered` | Resource Observatory skill inspector plus the bounded S7 debugging pilot | Use the accepted pilot as the first source for S14; keep comparative percentages deferred. |
-| P10 — Work Observatory | `planned` | Logical sublayer inside Observability & Intelligence, initially using existing records and visual surfaces | Use S7 as the first real work-record source; defer work units, value scoring and comparative dashboards. |
+| P10 — Work Observatory | `partially-delivered` | First derived `work_record` over S7 evidence; logical sublayer inside Observability & Intelligence | Accumulate comparable records without activating work units, value scoring or comparative dashboards. |
 | P11 — Cognitive Documentation & Continuity | `partially-delivered` | Existing comprehension debt, durable decisions, finalization/restart, handoffs and context surfaces plus bounded new contracts | Reconcile Continuity Capsule with Restart Package and keep one small `SYSTEM_STATE` per repository. |
 
 ## Dependency graph
@@ -83,7 +83,7 @@ S1 -> S10 Capability routing reconciliation (P5) -> S11 System-aware Design Syst
 S4 + S5 + S10 -> S12 Agent-role reconciliation pilot (P7)
 ```
 
-S14 is the next functional slice: derive the first Work Observatory record from the accepted S7 evidence. P1 remains the delivered visual baseline; P10 and P11 do not reopen live importers, runtime collection or new dashboards through this backlog update.
+S15 is the next functional slice: reconcile one compact `SYSTEM_STATE` per repository with the existing Restart Package. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10 and P11 do not reopen live importers, runtime collection or new dashboards through this backlog update.
 
 ## PR-ready slices
 
@@ -227,9 +227,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA derived work observation; Adaptive Skills return reference when used
 - **Covers:** P10 minimum record
 - **Dependencies:** S7 and S13
+- **Status:** `delivered` by AletheIA PR #264
 - **Non-goals:** work-unit scoring, value scoring, people evaluation, database, collector, dashboard or comparative claims.
 - **Acceptance:** S7 produces one source-backed `work_record` with duration, outcome, execution/resource/observation refs, human intervention and provenance; acceptance and rework remain `unknown` until reviewed.
-- **Evidence:** loop selection, run record, observation refs, validation evidence, human-review outcome and reconcile.
+- **Evidence:** merge `5835670` adds a metadata-only derived record and guardrail tests. It traces Codex, no subagents, the activated skills, invoked tools, pattern, iteration, objective gate, review and closure refs; unsupported duration, resource, acceptance, rework, work-unit, quality and value claims remain explicitly `unavailable` or `unknown`.
 
 ### S15 — SYSTEM_STATE and continuity reconciliation
 
@@ -316,8 +317,8 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P9-R3 Visible loop controls and outcomes | P9 inspector spec | `delivered` | S6, S7 | Inspector states and one source-backed bounded run are delivered. |
 | P9-R4 Bounded debugging pilot | P9 pilot spec | `delivered` | S7 | PR #262 records one iteration, objective gate, explicit budget, tool/skill trace and accepted human review. |
 | P9-R5 Success percentages | P9 metrics boundary | `deferred` | After five comparable cases | Counts may appear earlier; percentages may not. |
-| P10-R1 Source-backed execution/work record | P10 PRD/contracts | `planned` | S14 | Derive from existing execution, resource and observation refs; do not create a second execution authority. |
-| P10-R2 Acceptance, rework and human effort | P10 PRD | `planned` | S14 | Begin manual and tri-state; unknown is neither accepted nor rejected. |
+| P10-R1 Source-backed execution/work record | P10 PRD/contracts | `delivered` | S14 | PR #264 derives one record from existing execution and observation refs without creating a second authority; absent resource telemetry remains unavailable. |
+| P10-R2 Acceptance, rework and human effort | P10 PRD | `delivered` | S14 | The first record captures reported human approval provenance while preserving acceptance and rework as `unknown`; human time remains unavailable. |
 | P10-R3 Work units and calibration | P10 calibration guide | `deferred` | Post-S14 calibration | Require human calibration across at least five task types before adoption. |
 | P10-R4 Comparative rates and dashboards | P10 roadmap/visual concept | `deferred` | S18 | Require five comparable reviewed records in one stable comparison group. |
 | P10-R5 Value and efficiency scoring | P10 scoring guide | `deferred` | Post-S18 evidence gate | No value-per-cost metric without observed use, acceptance and sufficient confidence. |
@@ -396,6 +397,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P10 — Work Observatory
 
+- **Status:** `partially-delivered`; one real derived record exists, while calibrated and comparative capabilities remain deferred.
 - **Guardrails:** work is not output volume; Resource Observatory remains the raw-resource source; unknown review state stays unknown; do not score people; no fake ROI.
 - **Canonical position:** separate logical sublayer inside Observability & Intelligence, initially sharing existing visual surfaces rather than creating a new product area.
 - **Key future interfaces:** derived `work_record`, comparison validity, manual acceptance/rework and human-effort provenance.
