@@ -56,7 +56,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P6 — System-Aware Governance | `deferred` as umbrella | Small capability modules and evidence-backed pilots | Pilot one Design System/Pulso module before promoting broader governance. |
 | P7 — Agent Role Orchestration | `partially-delivered` | Existing portable role catalog, adoption guide and runtime adapters | Reconcile missing contract fields; do not add a second role model. |
 | P8 — Context Surface Governance | `partially-delivered` | Minimum registry and progressive-loading policy | Manual registry and provider-loading example are delivered; automation and broader smell detection remain evidence-gated. |
-| P9 — Governed Loop Observation | `partially-delivered` | Existing Resource Observatory skill inspector | Observe milestone is delivered; S7 remains the first real bounded debugging pilot. |
+| P9 — Governed Loop Observation | `delivered` | Resource Observatory skill inspector plus the bounded S7 debugging pilot | Use the accepted pilot as the first source for S14; keep comparative percentages deferred. |
 | P10 — Work Observatory | `planned` | Logical sublayer inside Observability & Intelligence, initially using existing records and visual surfaces | Use S7 as the first real work-record source; defer work units, value scoring and comparative dashboards. |
 | P11 — Cognitive Documentation & Continuity | `partially-delivered` | Existing comprehension debt, durable decisions, finalization/restart, handoffs and context surfaces plus bounded new contracts | Reconcile Continuity Capsule with Restart Package and keep one small `SYSTEM_STATE` per repository. |
 
@@ -83,7 +83,7 @@ S1 -> S10 Capability routing reconciliation (P5) -> S11 System-aware Design Syst
 S4 + S5 + S10 -> S12 Agent-role reconciliation pilot (P7)
 ```
 
-S7 remains the next functional slice. P1 remains the delivered visual baseline; P10 and P11 do not reopen live importers, runtime collection or new dashboards through this backlog update.
+S14 is the next functional slice: derive the first Work Observatory record from the accepted S7 evidence. P1 remains the delivered visual baseline; P10 and P11 do not reopen live importers, runtime collection or new dashboards through this backlog update.
 
 ## PR-ready slices
 
@@ -159,9 +159,10 @@ S7 remains the next functional slice. P1 remains the delivered visual baseline; 
 - **Repository / layer:** AletheIA governance; Adaptive Skills debugging declaration; runtime evidence
 - **Covers:** P9 pilot milestone
 - **Dependencies:** S5, S6
+- **Status:** `delivered` by AletheIA PR #262
 - **Non-goals:** generic loop engine, strategic loops, automatic merge or skill self-update.
 - **Acceptance:** one reproducible failure; `loop_until_done`; maximum three iterations; explicit budget; objective test/reproduction gate; evidence per iteration; human review before merge.
-- **Evidence:** selection record, compatibility declaration, loop-run record, audit refs and closure outcome.
+- **Evidence:** merge `a6acc4f` preserves absent iteration counts as `unavailable`, records the `debugging@0.1.0` activation, Codex executor, no subagents, invoked tools, one passing iteration, explicit budgets, browser validation and the accepted human review in PR #262.
 
 ### S8 — Intent-to-Evidence minimum contracts
 
@@ -312,8 +313,8 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P8-R4 Automatic context router | P8 boundary | `deferred` | Post-S4 evidence gate | Manual/advisory first. |
 | P9-R1 Optional `patternContext` projection | P9 contract | `delivered` | S3, S6 | View model and source-backed projection adapter are delivered. |
 | P9-R2 No compatibility inference | P9 PRD/boundaries | `delivered` | S3, S6 | Missing declaration renders unavailable; S6 must preserve the invariant. |
-| P9-R3 Visible loop controls and outcomes | P9 inspector spec | `partially-delivered` | S6, S7 | Inspector states are delivered; a real bounded run remains S7. |
-| P9-R4 Bounded debugging pilot | P9 pilot spec | `planned` | S7 | Three iterations, objective gate and human review. |
+| P9-R3 Visible loop controls and outcomes | P9 inspector spec | `delivered` | S6, S7 | Inspector states and one source-backed bounded run are delivered. |
+| P9-R4 Bounded debugging pilot | P9 pilot spec | `delivered` | S7 | PR #262 records one iteration, objective gate, explicit budget, tool/skill trace and accepted human review. |
 | P9-R5 Success percentages | P9 metrics boundary | `deferred` | After five comparable cases | Counts may appear earlier; percentages may not. |
 | P10-R1 Source-backed execution/work record | P10 PRD/contracts | `planned` | S14 | Derive from existing execution, resource and observation refs; do not create a second execution authority. |
 | P10-R2 Acceptance, rework and human effort | P10 PRD | `planned` | S14 | Begin manual and tri-state; unknown is neither accepted nor rejected. |
@@ -387,7 +388,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P9 — Governed Loop Observation
 
-- **Status:** `partially-delivered`; the observe milestone is complete and the bounded debugging pilot remains.
+- **Status:** `delivered`; the observe milestone and first bounded debugging pilot are both accepted.
 - **Guardrails:** observe before pilot; no UI authority; no inferred compatibility; objective gate, budget, limits and human boundary are mandatory.
 - **Key contracts/templates:** `patternContext`, debugging pilot record, inspector states and loop-run evidence.
 - **Dependencies:** PR #250, ADR-015, Adaptive Skills compatibility declarations, P3 observation return.

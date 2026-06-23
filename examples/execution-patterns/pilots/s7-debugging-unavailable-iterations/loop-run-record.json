@@ -73,7 +73,10 @@
   "outcome_rationale": "The existing unavailable-first governance rule remains valid and is now protected by a focused regression test.",
   "human_review": {
     "required_before_merge": true,
-    "status": "pending"
+    "status": "accepted",
+    "reviewed_at": "2026-06-23T15:46:25Z",
+    "review_ref": "https://github.com/nevitonsantana/AletheIA/pull/262",
+    "merge_commit": "a6acc4fd39df96e47f7abfcc552932840d4a0b7b"
   },
   "evidence_refs": [
     "apps/mission-control/src/features/resource-observatory/ResourceSignalInspector.tsx",
