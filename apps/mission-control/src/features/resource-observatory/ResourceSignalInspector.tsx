@@ -108,7 +108,7 @@ export function ResourceSignalInspector({ signal, onClose }: ResourceSignalInspe
                       <dl className="signal-detail-list">
                         <div><dt>Stop condition</dt><dd>{signal.patternContext.controls.stopCondition ?? "unavailable"}</dd></div>
                         <div><dt>Objective gate</dt><dd>{signal.patternContext.controls.objectiveGate ?? "unavailable"}</dd></div>
-                        <div><dt>Iterations</dt><dd>{signal.patternContext.controls.currentIterations ?? 0} / {signal.patternContext.controls.maxIterations ?? "unavailable"}</dd></div>
+                        <div><dt>Iterations</dt><dd>{signal.patternContext.controls.currentIterations ?? "unavailable"} / {signal.patternContext.controls.maxIterations ?? "unavailable"}</dd></div>
                         <div><dt>Time budget</dt><dd>{signal.patternContext.controls.budget?.timeMinutes != null ? `${signal.patternContext.controls.budget.timeMinutes} min` : "unavailable"}</dd></div>
                         <div><dt>Token budget</dt><dd>{signal.patternContext.controls.budget?.tokenBudget ?? "unavailable"}</dd></div>
                         <div><dt>Required</dt><dd>{joinOrUnavailable(signal.patternContext.controls.requiredControls)}</dd></div>
