@@ -63,4 +63,12 @@
 - **Known Constraints:**
 - **Governing Context Refs:**
 - **Governing Context Delta:**
+- **User Intent:**
+- **Active Decisions and Evidence Refs:**
+- **Open Questions and Owners:**
+- **Active Risks:**
+- **Accepted Limitations:**
+- **Context Intentionally Discarded:**
+- **Documentation Updates Needed:**
+- **Reload Required Before Acting:**
 <!-- RESTART_PACKAGE_END -->

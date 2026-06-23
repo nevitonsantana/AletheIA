@@ -3,6 +3,38 @@ context_surface_registry:
   owner: AletheIA maintainers
   reviewed_at: 2026-06-22
   surfaces:
+    - id: aletheia-system-state
+      title: AletheIA repository state index
+      type: project_doc
+      path: SYSTEM_STATE.md
+      owner: AletheIA maintainers
+      provider: aletheia
+      scope: repository
+      load_mode: on_demand
+      priority: high
+      activation_conditions:
+        - condition: entering, resuming, or planning repository-level work
+          rationale: establish current maturity, boundaries, open risks, and next safe step before loading detailed sources
+          expected_extraction: project posture, authoritative source refs, open risks, and next safe steps
+      freshness:
+        last_reviewed: 2026-06-23
+        review_interval_days: 30
+      budget:
+        max_lines: 120
+        max_tokens: unavailable
+        origin: unavailable
+      allowed_content:
+        - compact repository-state metadata
+        - references to authoritative sources
+      must_not_contain:
+        - prompts
+        - secrets
+        - restricted source content
+        - full plans or execution logs
+      evidence_required:
+        - review date and evidence baseline
+        - local source refs resolve
+
     - id: aletheia-repository-agents
       title: Repository operating instructions
       type: persistent_manifest
@@ -29,6 +61,37 @@ context_surface_registry:
         - restricted source content
       evidence_required:
         - changed files and validation reported at closure
+
+    - id: adaptive-skills-system-state
+      title: Adaptive Skills repository state index
+      type: project_doc
+      path: https://github.com/nevitonsantana/adaptive-skills/blob/main/SYSTEM_STATE.md
+      owner: Adaptive Skills maintainers
+      provider: adaptive_skills
+      scope: repository
+      load_mode: on_demand
+      priority: high
+      activation_conditions:
+        - condition: cross-repository planning or resume depends on current Adaptive Skills posture
+          rationale: identify current capability, evolution, projection, and open-risk summaries before loading detailed skill sources
+          expected_extraction: repository posture, authoritative source refs, open risks, and next safe steps
+      freshness:
+        last_reviewed: 2026-06-23
+        review_interval_days: 30
+      budget:
+        max_lines: 120
+        max_tokens: unavailable
+        origin: unavailable
+      allowed_content:
+        - compact repository-state metadata
+        - references to authoritative sources
+      must_not_contain:
+        - full skill methods
+        - AletheIA decisions or approval authority
+        - secrets
+      evidence_required:
+        - Adaptive Skills review date and evidence baseline
+        - canonical skill or capability source loaded before mutation
 
     - id: aletheia-execution-pattern-governance
       title: Execution Pattern Governance

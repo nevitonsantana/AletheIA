@@ -53,6 +53,13 @@ Next official step:
 
 Finalization context package:
 {{restart_package_block}}
+
+Before acting, perform the post-resume check:
+- Known from the Restart Package:
+- Missing or unavailable:
+- Sources reloaded:
+- Safe next action:
+- Human or technical review still required:
 ```
 
 ---
