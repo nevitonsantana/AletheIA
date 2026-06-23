@@ -134,9 +134,10 @@ P1 remains the delivered visual baseline across these slices. Its future importe
 - **Repository / layer:** AletheIA projection adapters; Adaptive Skills compatibility source
 - **Covers:** P9 observe milestone
 - **Dependencies:** S3, S5; canonical execution-pattern records already exist
+- **Status:** `delivered` by AletheIA PR #258
 - **Non-goals:** pattern selection or compatibility inference inside the UI.
 - **Acceptance:** inspector separates pattern, mode, autonomy and result; every displayed field carries a source reference.
-- **Evidence:** compatible, incompatible, unavailable and missing-objective-gate fixtures.
+- **Evidence:** merge `ddb6b32` adds a read-only projection adapter, a schema-valid debugging selection fixture, canonical Adaptive Skills declaration refs, and compatible, incompatible, unavailable, missing-objective-gate and analytics-gating tests; full CI passed.
 
 ### S7 — Bounded debugging loop pilot
 
@@ -237,9 +238,9 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P8-R2 On-demand loading and prompt hygiene | P8 policies | `partially-delivered` | S4 | Provider-loading example proves the boundary; broader prompt audits remain future work. |
 | P8-R3 Tool offloading and context audit | P8 guide/checklist | `partially-delivered` | S4 | Work Slice evidence example delegates tests/typecheck to tools; automation remains out of scope. |
 | P8-R4 Automatic context router | P8 boundary | `deferred` | Post-S4 evidence gate | Manual/advisory first. |
-| P9-R1 Optional `patternContext` projection | P9 contract | `partially-delivered` | S3, S6 | View model delivered; source-backed states remain in S6. |
+| P9-R1 Optional `patternContext` projection | P9 contract | `delivered` | S3, S6 | View model and source-backed projection adapter are delivered. |
 | P9-R2 No compatibility inference | P9 PRD/boundaries | `delivered` | S3, S6 | Missing declaration renders unavailable; S6 must preserve the invariant. |
-| P9-R3 Visible loop controls and outcomes | P9 inspector spec | `planned` | S6 | Pattern, mode, autonomy and result remain separate. |
+| P9-R3 Visible loop controls and outcomes | P9 inspector spec | `partially-delivered` | S6, S7 | Inspector states are delivered; a real bounded run remains S7. |
 | P9-R4 Bounded debugging pilot | P9 pilot spec | `planned` | S7 | Three iterations, objective gate and human review. |
 | P9-R5 Success percentages | P9 metrics boundary | `deferred` | After five comparable cases | Counts may appear earlier; percentages may not. |
 
@@ -302,6 +303,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P9 — Governed Loop Observation
 
+- **Status:** `partially-delivered`; the observe milestone is complete and the bounded debugging pilot remains.
 - **Guardrails:** observe before pilot; no UI authority; no inferred compatibility; objective gate, budget, limits and human boundary are mandatory.
 - **Key contracts/templates:** `patternContext`, debugging pilot record, inspector states and loop-run evidence.
 - **Dependencies:** PR #250, ADR-015, Adaptive Skills compatibility declarations, P3 observation return.
