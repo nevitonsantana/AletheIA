@@ -210,6 +210,22 @@ The package must therefore answer:
 5. what the next official step is
 6. whether the next action should open a new clean execution surface, and why
 
+### Continuity Capsule compatibility
+
+When compaction, handoff, phase transition or later resume could discard governance-critical context, the Restart Package also preserves:
+
+- current user intent;
+- active decisions and evidence refs;
+- open questions and owners;
+- active risks and accepted limitations;
+- context intentionally discarded;
+- documentation updates still needed;
+- sources that must be reloaded before acting.
+
+These are compatibility fields inside the canonical Restart Package. They do not create a second “Continuity Capsule” lifecycle. Repository-level posture stays in `SYSTEM_STATE.md`; task-level continuity stays in the Restart Package.
+
+After resume, the receiving agent must state what is known from the package, what is missing, what was reloaded, what is safe next and what still requires review.
+
 ### New execution-surface rule
 
 The restart package must explicitly say:
