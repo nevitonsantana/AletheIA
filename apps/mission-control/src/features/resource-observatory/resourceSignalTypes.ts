@@ -6,12 +6,12 @@ export type SignalGroupId = "capacity" | "efficiency" | "quality";
 export type PatternContext = {
   pattern?: {
     id: string;
-    label: string;
-    vehicle: "skill_execution" | "subagent_execution" | "tool_sequence" | "human_led_required" | "unavailable";
+    label?: string;
+    vehicle: "manual_prompt" | "single_agent" | "orchestrated_workflow" | "loop" | "human_led_workflow" | "unavailable";
     description?: string;
   } | null;
   selection?: {
-    verdict: "selected" | "not_selected" | "unavailable";
+    verdict: "approved" | "approved_with_constraints" | "rejected" | "human_led_required" | "unavailable";
     selectedBy: "aletheia" | "unavailable";
     rationale?: string;
     decisionRef?: string;
@@ -22,6 +22,8 @@ export type PatternContext = {
     declaredBy?: "adaptive_skills" | "project_local_skill_provider" | "runtime_native_skill_provider" | "unavailable";
     skillId?: string;
     skillVersion?: string;
+    conditions?: string;
+    requiredEvidence?: string[];
     rationale?: string;
     declarationRef?: string;
   };
@@ -46,6 +48,7 @@ export type PatternContext = {
     proposalRef?: string;
     escalationRef?: string;
     comparableCaseCount?: number;
+    objectiveSuccessCriteriaRef?: string;
     showSuccessPercentage?: boolean;
   } | null;
   refs: {
