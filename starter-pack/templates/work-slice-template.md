@@ -95,6 +95,7 @@ Fill these with file paths, IDs, or references.
 - Execution record:
 - Handoff record:
 - Restart package:
+- Cognitive/documentation closure review:
 - Learning record:
 
 ---

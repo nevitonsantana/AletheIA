@@ -43,6 +43,18 @@
 - Known constraints:
 - Why the next step should stay on the current surface or restart cleanly:
 
+## Proportional cognitive and documentation closure
+
+- Review required: `yes | no`
+- Review ref: (`not_required` if the slice meets the proportional exemption)
+- Confirmed intent preserved: `yes | changed_with_confirmation | unresolved | unavailable`
+- Understanding risk: `low | medium | high | critical | not_required`
+- Documentation coherence: `current | update_required | conflicting | unavailable | not_required`
+- Closure verdict: `proceed | add_explainable_brief | document_before_closing | human_review_required | block_closure | not_required`
+- Evidence refs:
+
+Use the [Cognitive, Intent and Documentation Closure Review](cognitive-documentation-closure-template.md) when this proportional review is required.
+
 ## Restart Package
 
 <!-- RESTART_PACKAGE_BEGIN -->

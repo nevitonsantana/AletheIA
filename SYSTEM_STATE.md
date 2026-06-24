@@ -35,7 +35,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** no repository-local implementation slice open; S8 is delivered.
+- **Active:** S16 — proportional cognitive, intent and documentation closure integration.
 - **Next dependency path:** S16 → S17 for cognitive/documentation closure and explainable first-use guidance; S9 is independently available for coding safety.
 - **Parallel planned path:** S10 → S11, then S12 after its context and routing dependencies.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group.
@@ -62,7 +62,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Begin S16 cognitive, intent and documentation closure integration, or S9 coding safety as an independent bounded slice.
+1. Validate the bounded S16 closure extension with low-risk, stale-documentation and high-risk human-review cases.
 2. Preserve the S15 Restart Package compatibility and post-resume checks.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S16 before S8 or S18 before its evidence threshold.
