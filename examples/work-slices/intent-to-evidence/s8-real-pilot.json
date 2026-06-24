@@ -1,0 +1,73 @@
+{
+  "work_slice_id": "s8-intent-to-evidence-minimum-contracts",
+  "proportionality": "required",
+  "intent_record": {
+    "intent_id": "intent-s8-001",
+    "human_owner": "project-owner",
+    "desired_outcome": "Reduce critical agent guessing by connecting human intent and success expectations to evidence without creating a parallel lifecycle.",
+    "constraints": ["Docs-first", "No runtime or policy engine", "Keep Lite slices free of mandatory ceremony"],
+    "success_scenarios": ["A relevant Work Slice can reference confirmed intent, expectations, guessing risk and evidence."],
+    "failure_scenarios": ["The addendum becomes mandatory for every task or lets the agent confirm intent."],
+    "connected_intents": ["S16 cognitive and documentation closure", "S9 coding safety specialization"],
+    "non_goals": ["Replace PRD, SDD, readiness gates or the Work Slice."],
+    "ambiguity_markers": [],
+    "decisions_required_before_execution": [],
+    "owner_confirmation": {
+      "status": "confirmed",
+      "confirmed_by": "project-owner",
+      "evidence_ref": "docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md#s8--intent-to-evidence-minimum-contracts"
+    }
+  },
+  "expectations_contract": {
+    "expectations_id": "expectations-s8-001",
+    "linked_intent": "intent-s8-001",
+    "success_conditions": [
+      "One minimum contract integrates optional references, guessing risk, evidence mapping and reconcile.",
+      "One synthetic and one real pilot are validated.",
+      "Adaptive Skills provides a consultative clarification capability."
+    ],
+    "failure_conditions": ["A runtime, lifecycle, automatic approval or agent-owned intent is introduced."],
+    "boundaries": {
+      "must": ["Preserve human confirmation and unavailable/missing evidence."],
+      "must_not": ["Redefine expectations inside an execution plan."]
+    },
+    "acceptance_examples": ["Standard slice references small records and stops on high guessing risk."],
+    "rejection_examples": ["Every Lite slice must fill a large intent document."],
+    "validation_methods": [
+      {"type": "test", "description": "Focused contract fixture tests."},
+      {"type": "review", "description": "Cross-repository boundary review."}
+    ],
+    "stop_conditions": ["High guessing risk", "Agent confirmation replaces human confirmation", "New lifecycle or runtime required"],
+    "human_review": {"required": true, "review_focus": ["intent_preserved", "expectation_coverage", "risk_changed"]}
+  },
+  "agent_guessing_risk": {"level": "low", "holes": [], "verdict": "ready"},
+  "evidence_to_expectation_map": {
+    "expectations": [
+      {
+        "expectation": "One minimum contract integrates optional references, guessing risk, evidence mapping and reconcile.",
+        "evidence": [{"type": "test", "reference": "tests/contracts/test-intent-to-evidence-extension.test.ts"}],
+        "status": "proven",
+        "gaps": []
+      },
+      {
+        "expectation": "One synthetic and one real pilot are validated.",
+        "evidence": [{"type": "test", "reference": "tests/contracts/test-intent-to-evidence-extension.test.ts"}],
+        "status": "proven",
+        "gaps": []
+      },
+      {
+        "expectation": "Adaptive Skills provides a consultative clarification capability.",
+        "evidence": [],
+        "status": "not_proven",
+        "gaps": ["Pending Adaptive Skills counterpart merge."]
+      }
+    ],
+    "overall_verdict": "review_required"
+  },
+  "reconcile_against_intent": {
+    "preserved": "partially",
+    "deviations": [],
+    "learning_refs": [],
+    "documentation_updates": ["Update after Adaptive Skills evidence and human review."]
+  }
+}

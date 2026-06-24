@@ -164,6 +164,8 @@ Before writing or accepting `plan.md`, inspect `spec.md` for:
 If a question changes scope, risk, or validation, do not bury it in the plan.
 Either answer it, tighten the slice, or route it to the relevant decision boundary.
 
+When ambiguity affects the human-owned outcome or the meaning of success, use the optional [Intent-to-Evidence extension](intent-to-evidence-extension.md). The spec and plan reference its confirmed Intent and Expectations; they do not redefine them.
+
 ---
 
 ## Relationship to Adaptive Skills

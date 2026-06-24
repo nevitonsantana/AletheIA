@@ -87,6 +87,10 @@ Fill these with file paths, IDs, or references.
 
 - Task brief:
 - Spec bundle:
+- Intent record:
+- Expectations contract:
+- Guessing-risk review:
+- Evidence-to-expectation map:
 - Decision record:
 - Execution record:
 - Handoff record:
