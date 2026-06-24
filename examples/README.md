@@ -24,6 +24,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
 - `handoffs/`
   - mostra restart packages compactos para continuidade operacional entre agentes
 - `work-slices/`
+  - exemplos opcionais de Intent-to-Evidence que separam intenção humana, expectativas verificáveis, risco de adivinhação, evidência e reconcile sem criar lifecycle paralelo
   - mostra como task brief, decision, execution, handoff e learning podem compor uma unidade operacional
 - `structured-risk-inference/`
   - mostra exemplos concretos de inference artifacts para risco de refactor e handoff de alto impacto

@@ -1,0 +1,47 @@
+{
+  "work_slice_id": "synthetic-settings-language-change",
+  "proportionality": "required",
+  "intent_record": {
+    "intent_id": "intent-settings-language-001",
+    "human_owner": "product-owner",
+    "desired_outcome": "People understand whether saving a setting affects only their account or the whole workspace.",
+    "constraints": ["Do not change authorization behavior."],
+    "success_scenarios": ["The interface states the affected scope before confirmation."],
+    "failure_scenarios": ["A user reasonably believes an account-only change affects the workspace."],
+    "connected_intents": ["settings safety", "plain-language guidance"],
+    "non_goals": ["Redesign settings navigation."],
+    "ambiguity_markers": [],
+    "decisions_required_before_execution": [],
+    "owner_confirmation": {
+      "status": "confirmed",
+      "confirmed_by": "product-owner",
+      "evidence_ref": "synthetic://product-owner-confirmation"
+    }
+  },
+  "expectations_contract": {
+    "expectations_id": "expectations-settings-language-001",
+    "linked_intent": "intent-settings-language-001",
+    "success_conditions": ["Scope language is visible before confirmation."],
+    "failure_conditions": ["Copy implies a broader scope than the underlying behavior."],
+    "boundaries": {
+      "must": ["Preserve existing authorization behavior."],
+      "must_not": ["Change persistence or permissions."]
+    },
+    "acceptance_examples": ["This changes your account only."],
+    "rejection_examples": ["This updates workspace settings."],
+    "validation_methods": [{"type": "review", "description": "Compare rendered copy with the existing behavior contract."}],
+    "stop_conditions": ["Existing behavior scope cannot be confirmed from an authoritative source."],
+    "human_review": {"required": true, "review_focus": ["intent_preserved", "expectation_coverage"]}
+  },
+  "agent_guessing_risk": {"level": "low", "holes": [], "verdict": "ready"},
+  "evidence_to_expectation_map": {
+    "expectations": [{
+      "expectation": "Scope language is visible before confirmation.",
+      "evidence": [{"type": "review", "reference": "synthetic://rendered-copy-review"}],
+      "status": "proven",
+      "gaps": []
+    }],
+    "overall_verdict": "pass"
+  },
+  "reconcile_against_intent": {"preserved": "yes", "deviations": [], "learning_refs": [], "documentation_updates": []}
+}

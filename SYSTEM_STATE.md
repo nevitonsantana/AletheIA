@@ -34,7 +34,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** no implementation slice open; S15 is delivered.
+- **Active:** S8 — optional Intent-to-Evidence minimum contracts and consultative Adaptive Skills counterpart.
 - **Next dependency path:** S8 → S16 → S17 for intent, cognitive/documentation closure and explainable first-use guidance.
 - **Parallel planned path:** S10 → S11, then S12 after its context and routing dependencies.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group.

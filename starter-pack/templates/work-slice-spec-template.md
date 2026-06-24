@@ -11,6 +11,9 @@ Keep it proportional. Delete sections that do not help this slice.
 - Slice ID:
 - Related Work Item ref:
 - Planning depth: `Standard` / `High-Assurance`
+- Intent Record ref: (`not_needed` when proportionality does not justify it)
+- Expectations Contract ref: (`not_needed` when proportionality does not justify it)
+- Agent Guessing Risk ref:
 
 ---
 
@@ -92,3 +95,5 @@ Use this section for questions that should not be silently inferred.
 What evidence should prove that the spec has been satisfied?
 
 - Evidence:
+
+Map each relevant expectation to evidence in the Intent-to-Evidence extension. Do not let the technical plan redefine success or failure.
