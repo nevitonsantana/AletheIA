@@ -36,7 +36,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** no repository-local implementation slice open; S16 is delivered.
+- **Active:** S17 — first-use and explainable-language pilot.
 - **Next dependency path:** S17 explainable language and first-use guidance; S9 remains independently available for coding safety.
 - **Parallel planned path:** S10 → S11, then S12 after its context and routing dependencies.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group.
