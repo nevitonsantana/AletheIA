@@ -1,0 +1,40 @@
+{
+  "cognitive_documentation_closure": {
+    "work_slice_id": "s16-high-risk-human-review",
+    "applicability": {
+      "status": "required",
+      "reasons": ["The hypothetical slice changes authorization behavior."],
+      "source_refs": ["docs/contracts/cognitive-documentation-closure-extension.md#when-the-extension-applies"]
+    },
+    "intent_preservation": {
+      "status": "preserved",
+      "intent_ref": "INTENT-AUTH-001",
+      "decision_refs": ["DECISION-AUTH-004"],
+      "accepted_limitations": []
+    },
+    "understanding_review": {
+      "accountable_reviewer": "product-owner",
+      "can_explain": {
+        "goal": "yes",
+        "main_change": "partial",
+        "consequence": "no",
+        "evidence": "partial",
+        "rollback_or_recovery": "no"
+      },
+      "risk_level": "high",
+      "explanation_needed": ["Authorization consequence", "Rollback path", "Security validation evidence"],
+      "source_refs": ["INTENT-AUTH-001", "DECISION-AUTH-004"]
+    },
+    "documentation_coherence": {
+      "checked_surfaces": [
+        {"surface": "security decision record", "status": "unavailable", "source_refs": ["unavailable:security-review-record"], "required_action": "Reload or create the authoritative security review record."}
+      ],
+      "verdict": "unavailable"
+    },
+    "closure": {
+      "verdict": "human_review_required",
+      "rationale": "The accountable reviewer cannot assess authorization consequence or recovery; understanding cannot replace specialist security review.",
+      "evidence_refs": ["INTENT-AUTH-001", "DECISION-AUTH-004"]
+    }
+  }
+}

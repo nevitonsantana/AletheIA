@@ -1,0 +1,43 @@
+{
+  "cognitive_documentation_closure": {
+    "work_slice_id": "s16-low-risk-docs",
+    "applicability": {
+      "status": "required",
+      "reasons": ["The slice changes user-facing governance guidance."],
+      "source_refs": ["docs/contracts/cognitive-documentation-closure-extension.md"]
+    },
+    "intent_preservation": {
+      "status": "preserved",
+      "intent_ref": "examples/work-slices/intent-to-evidence/s8-real-pilot.json",
+      "decision_refs": ["docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md#s16--cognitive-intent-and-documentation-closure-integration"],
+      "accepted_limitations": ["No runtime evaluator or Observatory projection is introduced."]
+    },
+    "understanding_review": {
+      "accountable_reviewer": "project-owner",
+      "can_explain": {
+        "goal": "yes",
+        "main_change": "yes",
+        "consequence": "yes",
+        "evidence": "yes",
+        "rollback_or_recovery": "not_applicable"
+      },
+      "risk_level": "low",
+      "explanation_needed": [],
+      "source_refs": ["docs/contracts/cognitive-documentation-closure-extension.md"]
+    },
+    "documentation_coherence": {
+      "checked_surfaces": [
+        {"surface": "contract index", "status": "current", "source_refs": ["docs/contracts/README.md"], "required_action": null},
+        {"surface": "examples index", "status": "current", "source_refs": ["examples/README.md"], "required_action": null},
+        {"surface": "SYSTEM_STATE", "status": "current", "source_refs": ["SYSTEM_STATE.md"], "required_action": null}
+      ],
+      "verdict": "current"
+    },
+    "closure": {
+      "verdict": "proceed",
+      "rationale": "The low-risk change preserves confirmed intent, has source-backed documentation checks and leaves no understanding gap.",
+      "evidence_refs": ["tests/contracts/test-cognitive-documentation-closure.test.ts"]
+    }
+  }
+}
+

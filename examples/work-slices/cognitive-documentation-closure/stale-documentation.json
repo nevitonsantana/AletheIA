@@ -1,0 +1,42 @@
+{
+  "cognitive_documentation_closure": {
+    "work_slice_id": "s16-stale-documentation",
+    "applicability": {
+      "status": "required",
+      "reasons": ["A delivered capability is still shown as planned in the project state."],
+      "source_refs": ["SYSTEM_STATE.md", "docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md"]
+    },
+    "intent_preservation": {
+      "status": "preserved",
+      "intent_ref": "examples/work-slices/intent-to-evidence/s8-real-pilot.json",
+      "decision_refs": [],
+      "accepted_limitations": []
+    },
+    "understanding_review": {
+      "accountable_reviewer": "project-owner",
+      "can_explain": {
+        "goal": "yes",
+        "main_change": "yes",
+        "consequence": "partial",
+        "evidence": "yes",
+        "rollback_or_recovery": "not_applicable"
+      },
+      "risk_level": "medium",
+      "explanation_needed": ["Explain which next slice the stale state would incorrectly direct a returning user toward."],
+      "source_refs": ["SYSTEM_STATE.md"]
+    },
+    "documentation_coherence": {
+      "checked_surfaces": [
+        {"surface": "SYSTEM_STATE", "status": "stale", "source_refs": ["SYSTEM_STATE.md"], "required_action": "Update active and next-safe-step sections before closure."},
+        {"surface": "integrated backlog", "status": "current", "source_refs": ["docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md"], "required_action": null}
+      ],
+      "verdict": "update_required"
+    },
+    "closure": {
+      "verdict": "document_before_closing",
+      "rationale": "A returning user would receive a stale next action from a required first-load surface.",
+      "evidence_refs": ["SYSTEM_STATE.md"]
+    }
+  }
+}
+
