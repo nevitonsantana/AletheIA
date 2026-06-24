@@ -51,7 +51,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P1 — Visual Operations Layer | `partially-delivered` | Current Visual Operations contracts, examples and Mission Control | Treat current layer as baseline; gate live importers and advanced telemetry on repeated evidence. |
 | P2 — Reference Intake & Adoption | `planned` | Cross-repository intake protocol owned by AletheIA | Use the ten-pack archive as the first reconciliation example. |
 | P3 — Observation Governance | `partially-delivered` | AletheIA observation contract plus Adaptive Skills return pattern | Recoverable records are delivered; automatic normalizers, telemetry and visual projection remain evidence-gated. |
-| P4 — Intent-to-Evidence Work Slice | `planned` | Optional Work Slice references and consultative intent clarification | Avoid a parallel lifecycle or mandatory ceremony for every slice. |
+| P4 — Intent-to-Evidence Work Slice | `delivered` | Optional Work Slice references and consultative intent clarification | Use the accepted S8 baseline; avoid a parallel lifecycle or mandatory ceremony for every slice. |
 | P5 — Capability Routing Governance | `partially-delivered` | Existing execution vehicle, AHC, capability graph and pattern declarations | Publish one reconciliation note; do not create a routing engine. |
 | P6 — System-Aware Governance | `deferred` as umbrella | Small capability modules and evidence-backed pilots | Pilot one Design System/Pulso module before promoting broader governance. |
 | P7 — Agent Role Orchestration | `partially-delivered` | Existing portable role catalog, adoption guide and runtime adapters | Reconcile missing contract fields; do not add a second role model. |
@@ -83,7 +83,7 @@ S1 -> S10 Capability routing reconciliation (P5) -> S11 System-aware Design Syst
 S4 + S5 + S10 -> S12 Agent-role reconciliation pilot (P7)
 ```
 
-S8 is the next dependency-unlocking slice: add Intent-to-Evidence minimum contracts before S16 integrates cognitive, intent and documentation closure. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10 and P11 do not reopen live importers, runtime collection or new dashboards through this backlog update.
+S8 is delivered and unlocks S9 and S16. S16 is the next dependency-valid slice on the continuity path; S9 is available on the coding-safety path. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10 and P11 do not reopen live importers, runtime collection or new dashboards through this backlog update.
 
 ## PR-ready slices
 
@@ -169,9 +169,10 @@ S8 is the next dependency-unlocking slice: add Intent-to-Evidence minimum contra
 - **Repository / layer:** AletheIA Work Slice; Adaptive Skills consultative pattern
 - **Covers:** P4
 - **Dependencies:** S1
+- **Status:** `delivered` by AletheIA PR #268 and Adaptive Skills PR #70; human review accepted before merge.
 - **Non-goals:** replacing PRD/SDD, mandatory use for Lite slices or agent-authored intent without confirmation.
 - **Acceptance:** optional Intent and Expectations references, guessing-risk review and evidence-to-expectation map integrate with readiness and reconcile.
-- **Evidence:** one synthetic example and one real bounded pilot.
+- **Evidence:** AletheIA merge `2575e07` adds the optional extension, templates, synthetic example, real bounded pilot and tests; Adaptive Skills merge `59c0f41` adds the advise-only `intent-clarification` capability, template, example, harness declaration and registries. The project owner accepted the intent and expectations before both PRs were merged.
 
 ### S9 — Coding Safety specialization
 
@@ -293,10 +294,10 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P3-R3 Progressive visibility | P3 PRD/SDD | `partially-delivered` | S5 and future UI | Rendering levels are contracted; no new UI or visibility switch was introduced. |
 | P3-R4 Automatic adapters and telemetry | P3 implementation plan | `deferred` | Post-S5 pilot | No invented compression or token precision. |
 | P3-R5 Skill observation return | P3 Adaptive Skills addendum | `delivered` | S5 | Portable summary, evidence, risk, advisory handoff and governed recovery. |
-| P4-R1 Intent and Expectations references | P4 PRD/SDD | `planned` | S8 | Optional and proportional. |
-| P4-R2 Agent guessing risk and presence checkpoints | P4 SDD | `planned` | S8 | High-risk holes stop execution. |
-| P4-R3 Evidence-to-expectation and reconcile | P4 SDD/templates | `planned` | S8 | Evidence closes expectations, not agent confidence. |
-| P4-R4 `intent-clarification` capability | P4 Adaptive Skills proposal | `planned` | S8 | Begin consultative/docs-first if skill promotion is premature. |
+| P4-R1 Intent and Expectations references | P4 PRD/SDD | `delivered` | S8 | Optional and proportional through the Work Slice extension. |
+| P4-R2 Agent guessing risk and presence checkpoints | P4 SDD | `delivered` | S8 | High-risk holes stop execution; agents cannot confirm human intent. |
+| P4-R3 Evidence-to-expectation and reconcile | P4 SDD/templates | `delivered` | S8 | Evidence closes expectations, not agent confidence. |
+| P4-R4 `intent-clarification` capability | P4 Adaptive Skills proposal | `delivered` | S8 | Advise-only skill delivered without Work Slice or gate authority. |
 | P5-R1 Tool/skill/subagent routing vocabulary | P5 PRD | `partially-delivered` | S10 | Reconcile with vehicle and pattern contracts. |
 | P5-R2 Delegation envelope and evidence | P5 SDD | `absorbed` | AHC/orchestration contracts; S10 cross-link | No duplicate schema unless a concrete gap remains. |
 | P5-R3 Adaptive Skills capability manifest | P5 proposal | `absorbed` | Existing capability graph and declarations | Extend only through governed evolution. |
@@ -360,6 +361,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P4 — Intent-to-Evidence Work Slice
 
+- **Status:** `delivered`; S8 preserves human-owned intent and adds optional evidence-backed expectations without a parallel lifecycle.
 - **Guardrails:** human confirms intent; expectations define success/failure; high guessing risk pauses execution.
 - **Key contracts/templates:** Intent Record, Expectations Contract, presence checkpoints and evidence map.
 - **Dependencies:** Work Slice, readiness, P0 coding plan and reconcile.
