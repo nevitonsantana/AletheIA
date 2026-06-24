@@ -55,4 +55,13 @@ describe("S16 cognitive and documentation closure extension", () => {
     expect(review.documentation_coherence.verdict).toBe("unavailable");
     expect(contract).toContain("Missing inspection is `unavailable`");
   });
+
+  it("closes the real pilot only with accepted merge evidence", () => {
+    const review = load("s16-real-pilot.json");
+
+    expect(review.intent_preservation.status).toBe("preserved");
+    expect(review.documentation_coherence.verdict).toBe("current");
+    expect(review.closure.verdict).toBe("proceed");
+    expect(review.closure.evidence_refs).toContain("AletheIA#270@fb6faba");
+  });
 });

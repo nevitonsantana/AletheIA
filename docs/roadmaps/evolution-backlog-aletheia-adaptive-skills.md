@@ -58,7 +58,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P8 — Context Surface Governance | `partially-delivered` | Minimum registry and progressive-loading policy | Manual registry and provider-loading example are delivered; automation and broader smell detection remain evidence-gated. |
 | P9 — Governed Loop Observation | `delivered` | Resource Observatory skill inspector plus the bounded S7 debugging pilot | Use the accepted pilot as the first source for S14; keep comparative percentages deferred. |
 | P10 — Work Observatory | `partially-delivered` | First derived `work_record` over S7 evidence; logical sublayer inside Observability & Intelligence | Accumulate comparable records without activating work units, value scoring or comparative dashboards. |
-| P11 — Cognitive Documentation & Continuity | `partially-delivered` | Existing comprehension debt plus delivered SYSTEM_STATE and Restart Package continuity baseline | Complete S8 before integrating cognitive, intent and documentation coherence through S16. |
+| P11 — Cognitive Documentation & Continuity | `partially-delivered` | Delivered SYSTEM_STATE, Restart Package continuity and proportional S16 closure review | Continue with S17 explainable language and first-use guidance; defer Observatory health projection until records accumulate. |
 
 ## Dependency graph
 
@@ -248,9 +248,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA Work Slice closure governance
 - **Covers:** P11 cognitive debt, intent debt and documentation coherence
 - **Dependencies:** S8 and S15
+- **Status:** `delivered` by AletheIA PR #270 after project-owner review.
 - **Non-goals:** blocking every Lite slice, agent self-certification, automatic documentation mutation or replacing technical/security review.
 - **Acceptance:** proportional closure review reuses comprehension debt and durable decisions, identifies required documentation updates and escalates high-risk understanding gaps without creating parallel lifecycle authority.
-- **Evidence:** low-risk docs case, stale-documentation case, high-risk human-review case and source-backed closure brief.
+- **Evidence:** merge `fb6faba` adds the proportional closure contract, finalization integration, low-risk docs case, stale-documentation case, high-risk human-review case, source-backed real closure brief and five guardrail tests.
 
 ### S17 — First-use and explainable-language pilot
 
@@ -325,8 +326,8 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P10-R4 Comparative rates and dashboards | P10 roadmap/visual concept | `deferred` | S18 | Require five comparable reviewed records in one stable comparison group. |
 | P10-R5 Value and efficiency scoring | P10 scoring guide | `deferred` | Post-S18 evidence gate | No value-per-cost metric without observed use, acceptance and sufficient confidence. |
 | P10-R6 Skill work return | P10 Adaptive Skills addendum | `absorbed` | S14 then evidence review | Extend the delivered observation return only if real dogfood shows a distinct work signal is needed. |
-| P11-R1 Cognitive and intent debt | P11 PRD/schemas | `partially-delivered` | S8, S16 | Reuse comprehension debt and durable decisions; add only missing closure fields. |
-| P11-R2 Documentation coherence | P11 policy | `planned` | S16 | Start as a proportional, reviewable evaluator rather than automatic mutation. |
+| P11-R1 Cognitive and intent debt | P11 PRD/schemas | `delivered` | S8, S16 | Reuses comprehension debt, Intent-to-Evidence and durable decisions through proportional closure fields. |
+| P11-R2 Documentation coherence | P11 policy | `delivered` | S16 | Source-backed review only; no automatic mutation or repository-wide inference. |
 | P11-R3 Continuity Capsule and resume check | P11 continuity policy | `delivered` | S15 | Continuity fields extend Restart Package and its post-resume check; no competing artifact or lifecycle was created. |
 | P11-R4 Per-repository SYSTEM_STATE | P11 system-state proposal | `delivered` | S15 | Both repositories maintain compact validated first-load indexes; contracts and evidence remain authoritative. |
 | P11-R5 Explainable language and cognitive boundaries | P11 language policy | `planned` | S17 | Preserve precision and require technical review beyond the user's safe boundary. |
@@ -409,7 +410,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P11 — Cognitive Documentation & Continuity
 
-- **Status:** `partially-delivered`; SYSTEM_STATE and continuity reconciliation are delivered, while S16/S17 remain dependency-gated.
+- **Status:** `partially-delivered`; SYSTEM_STATE, continuity reconciliation and S16 proportional closure are delivered, while S17 remains planned.
 - **Guardrails:** understanding is explicit but cannot replace technical proof; plain language cannot hide risk; no closure self-certification; no compaction that loses intent, evidence or open risk.
 - **Absorbed foundations:** comprehension debt, Durable Decisions, Context Surface Registry, Handoff Record, Slice Finalization and Restart Package.
 - **Key future interfaces:** small per-repository `SYSTEM_STATE`, Restart Package continuity extension, proportional documentation-coherence report and Explainable Change Brief.
