@@ -57,17 +57,27 @@
       },
       {
         "expectation": "Adaptive Skills provides a consultative clarification capability.",
-        "evidence": [],
-        "status": "not_proven",
-        "gaps": ["Pending Adaptive Skills counterpart merge."]
+        "evidence": [
+          {
+            "type": "merge",
+            "reference": "adaptive-skills#70@59c0f41"
+          }
+        ],
+        "status": "proven",
+        "gaps": []
       }
     ],
-    "overall_verdict": "review_required"
+    "overall_verdict": "proven"
   },
   "reconcile_against_intent": {
-    "preserved": "partially",
+    "preserved": "yes",
     "deviations": [],
-    "learning_refs": [],
-    "documentation_updates": ["Update after Adaptive Skills evidence and human review."]
+    "learning_refs": [
+      "AletheIA#268@2575e07",
+      "adaptive-skills#70@59c0f41"
+    ],
+    "documentation_updates": [
+      "S8 closure records the accepted human review and unlocks S16 and S9."
+    ]
   }
 }

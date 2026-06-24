@@ -29,15 +29,18 @@ describe("S8 Intent-to-Evidence minimum extension", () => {
     expect(fixture.agent_guessing_risk).toEqual({ level: "low", holes: [], verdict: "ready" });
   });
 
-  it("keeps missing cross-repository evidence not proven", () => {
+  it("closes only with source-backed cross-repository evidence", () => {
     const fixture = load("s8-real-pilot.json");
     const adaptiveExpectation = fixture.evidence_to_expectation_map.expectations.find(
       (item: { expectation: string }) => item.expectation.includes("Adaptive Skills"),
     );
 
-    expect(adaptiveExpectation.status).toBe("not_proven");
-    expect(adaptiveExpectation.evidence).toEqual([]);
-    expect(fixture.evidence_to_expectation_map.overall_verdict).toBe("review_required");
-    expect(fixture.reconcile_against_intent.preserved).toBe("partially");
+    expect(adaptiveExpectation.status).toBe("proven");
+    expect(adaptiveExpectation.evidence).toEqual([
+      { type: "merge", reference: "adaptive-skills#70@59c0f41" },
+    ]);
+    expect(fixture.evidence_to_expectation_map.overall_verdict).toBe("proven");
+    expect(fixture.reconcile_against_intent.preserved).toBe("yes");
+    expect(fixture.reconcile_against_intent.learning_refs).toContain("AletheIA#268@2575e07");
   });
 });

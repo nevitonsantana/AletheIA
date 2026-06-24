@@ -29,13 +29,14 @@ Authoritative entrypoints:
 - Context Surface Governance — delivered minimum registry.
 - Governed Loop Observation — delivered through the accepted S7 pilot.
 - Work Observatory — partially delivered through the first S14 derived `work_record`.
+- Intent-to-Evidence — delivered through the accepted S8 cross-repository pilot.
 
 Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md).
 
 ## Active and planned evolution
 
-- **Active:** S8 — optional Intent-to-Evidence minimum contracts and consultative Adaptive Skills counterpart.
-- **Next dependency path:** S8 → S16 → S17 for intent, cognitive/documentation closure and explainable first-use guidance.
+- **Active:** no repository-local implementation slice open; S8 is delivered.
+- **Next dependency path:** S16 → S17 for cognitive/documentation closure and explainable first-use guidance; S9 is independently available for coding safety.
 - **Parallel planned path:** S10 → S11, then S12 after its context and routing dependencies.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group.
 
@@ -48,7 +49,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current through S14 closure.
+- Integrated evolution backlog: current through S8 closure.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -61,7 +62,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Begin S8 Intent-to-Evidence minimum contracts.
+1. Begin S16 cognitive, intent and documentation closure integration, or S9 coding safety as an independent bounded slice.
 2. Preserve the S15 Restart Package compatibility and post-resume checks.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S16 before S8 or S18 before its evidence threshold.
@@ -69,5 +70,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-06-23
-- **Evidence baseline:** AletheIA `ec9e9af`; Adaptive Skills `baf4a4a`; backlog v0.2 through S15
+- **Evidence baseline:** AletheIA `2575e07`; Adaptive Skills `59c0f41`; backlog v0.2 through S8
 - **Review trigger:** accepted architecture, roadmap, maturity, deprecation or next-step change
