@@ -1,161 +1,125 @@
 # Getting Started with AletheIA
 
-## Goal
+## What you will do
 
-This guide is the shortest practical path to start using AletheIA.
+Run one low-risk, documentation-only Work Slice from intent to evidence and safe closure. This is the shortest first-use path; it does not require reading the whole framework.
 
-It is meant for readers who do not want to read the whole repository first.
+## Before starting
 
----
+You need:
 
-## One orientation note before you start
+- a local copy of this repository;
+- Node.js and `pnpm` available;
+- permission to read files and run repository checks;
+- one small documentation inconsistency to inspect.
 
-AletheIA is now **1.0.0**.
+Do not use the first journey for authentication, authorization, production data, destructive commands, dependency upgrades or releases.
 
-That means:
+## Choose explanation depth
 
-- the Alpha 1–7 baseline is considered done enough for public reuse
-- the framework now has a stable baseline reading path
-- future work now moves into **1.x evolution**, not more Alpha buildup
+Ask the user to confirm one mode. Do not infer expertise automatically.
 
-If you want to understand that maturity map first, read:
+| Mode | How AletheIA explains |
+|---|---|
+| `plain` | Simple impact-first language; technical terms are explained before use. |
+| `guided` | Explains the term, why it matters and where it appears. |
+| `professional` | Uses technical language with short contextual anchors. |
+| `expert` | Uses concise technical language, explaining only project-specific ambiguity. |
 
-1. `docs/roadmap-alpha.md`
-2. `docs/release-1.0-readiness.md`
-3. `CHANGELOG.md`
+All modes preserve the same risk, evidence and escalation boundaries. A simpler explanation never means a weaker gate.
 
----
+## The first journey
 
-## Choose your starting mode
+### 1. Pick a low-risk inconsistency
 
-Most readers should start in one of these modes:
+Example: a guide points to an old file path.
 
-### 1. I want to understand the framework
+State the desired outcome without prescribing implementation:
 
-Read in this order:
+> A first-time reader can follow the documented path without encountering a missing file.
 
-1. `docs/concepts/canonical-vocabulary.md`
-2. `docs/concepts/overview.md`
-3. `docs/concepts/operating-overlay.md`
-4. `docs/concepts/governance.md`
-5. `starter-pack/guides/daily-operations.md`
-5. `docs/token-policy.md`
-6. `docs/durable-decisions.md`
-7. `docs/enforcement-boundaries.md`
+### 2. Create one bounded Work Slice
 
-### 2. I want to operate one Work Slice
+Use [`core-operating-path.md`](core-operating-path.md) and the [Work Slice template](../../starter-pack/templates/work-slice-template.md).
 
-Read next:
+Keep in scope only:
 
-1. `docs/core-operating-path.md`
+- confirming the broken reference;
+- correcting the smallest coherent documentation surface;
+- validating the corrected path.
 
-Use this when you want the shortest path from intent to a bounded, validated, restartable slice without reading the whole repository first.
+### 3. Review before changing anything
 
-### 3. I want to try the framework quickly
+Confirm:
 
-Read and run in this order:
+- intended outcome;
+- in-scope files;
+- why the change is low risk;
+- expected evidence;
+- stop conditions.
 
-1. `README.md`
-2. `examples/`
-3. `tests/`
-4. `bash scripts/check-governance.sh`
+Stop if the correction reveals a governance, architecture, security or public-behavior decision.
 
-### 4. I want to apply it to an existing project
+### 4. Make the smallest change
 
-Read in this order:
+Change only the source-backed inconsistency. Do not rewrite adjacent guidance merely because it could be improved.
 
-1. `docs/apply-to-existing-project.md`
-2. `docs/project-extension-pattern.md`
-3. `docs/pilot-conversion.md`
-4. `starter-pack/README.md`
+### 5. Validate
 
----
+Run:
 
-## The smallest useful mental model
+```bash
+pnpm test
+pnpm typecheck
+pnpm check:governance
+git diff --check
+```
 
-AletheIA helps turn this:
+Expected result:
 
-`prompt -> output -> execution`
+- commands exit successfully;
+- the referenced file exists;
+- the diff contains only the intended slice;
+- absent evidence remains `unknown` or `unavailable`.
 
-into this:
+### 6. Explain and close
 
-`intent -> context -> decision -> execution -> validation -> learning`
+Use the [Explainable Change Brief](../../starter-pack/templates/explainable-change-brief-template.md) and the [Slice Finalization Review](../../starter-pack/templates/slice-finalization-review-template.md).
 
-If you understand that shift, you already understand the core idea of the framework.
+The user should be able to answer:
 
-If you are unsure what counts as a Work Item, Work Slice, Restart Package, or Execution Surface, read:
+- What changed?
+- Why does it matter?
+- What evidence supports it?
+- What risk remains?
+- What is safe to do next?
 
-- `docs/canonical-vocabulary.md`
+## What AletheIA will and will not do
 
----
+AletheIA may frame the slice, surface risk, suggest evidence and explain the result. It does not silently choose the user's intent, approve high-risk technical decisions, or treat a passing test as proof of understanding.
 
-## What to look at first in the repository
+## Troubleshooting
 
-If you only have a few minutes, look at:
+### A command fails
 
-- `README.md`
-- `docs/core-operating-path.md`
-- `docs/00-overview.md`
-- `docs/roadmap-alpha.md`
-- `docs/governance.md`
-- `examples/hello-world/`
-- `scripts/check-governance.sh`
+Record the exact failure. Do not claim closure. Determine whether it comes from the slice or the environment before changing scope.
 
-That gives you a compact sense of:
+### The documentation conflicts
 
-- the problem AletheIA solves
-- the operating model
-- the governance baseline
-- the maturity map behind 1.0
-- the smallest runnable proof
+Use `document_before_closing` or `block_closure` from the [cognitive closure extension](../contracts/cognitive-documentation-closure-extension.md). Do not choose one source by confidence alone.
 
----
+### You do not understand the consequence
 
-## First practical moves
+Switch to `guided` or `plain`, request an Explainable Change Brief and pause. Understanding may trigger review, but it does not replace technical proof.
 
-If you want to test AletheIA in practice, start with one of these:
+### The task becomes technical or high risk
 
-### Option A — inspect the 1.0 baseline
+Stop the first-use journey and require the appropriate software engineering, security or governance reviewer. Do not continue under the documentation-only risk posture.
 
-- read the overview, roadmap, and readiness note
-- inspect the starter-pack
-- run the lightweight examples and tests
+## Where to go next
 
-### Option B — pilot one real slice in your own project
-
-- choose one bounded slice
-- use `docs/core-operating-path.md` to shape the minimum operating path
-- define the local extension boundary
-- apply the minimum operating layer
-- validate what helped and what remained local
-
-See also:
-
-- `docs/apply-to-existing-project.md`
-
----
-
-## What not to do first
-
-Do not start by:
-
-- trying to automate the entire framework at once
-- copying every artifact into your repo before one real pilot exists
-- assuming your local rules are already reusable framework rules
-- pulling post-1.0 tracks into your first bounded adoption slice
-
-AletheIA works best when adoption starts small and becomes more explicit through use.
-
----
-
-## Suggested next step after this guide
-
-After `getting-started.md`, choose one of these paths:
-
-- **operate one Work Slice** -> `docs/core-operating-path.md`
-- **understand the core** -> `docs/00-overview.md`
-- **pilot in an existing project** -> `docs/apply-to-existing-project.md`
-- **inspect the operating method** -> `starter-pack/README.md`
-- **inspect Hermes pre-pilot guardrails** -> `docs/hermes/README.md`
-- **understand the maturity path** -> `docs/roadmap-alpha.md`
-- **understand how 1.0 was framed** -> `docs/release-1.0-readiness.md`
+- [Core Operating Path](core-operating-path.md) — the complete minimum loop.
+- [Apply to an existing project](apply-to-existing-project.md) — bounded adoption without rebuild.
+- [Slice Finalization and Restart](slice-finalization-and-restart.md) — close and resume safely.
+- [Canonical vocabulary](../concepts/canonical-vocabulary.md) — project-specific terms.
+- [Roadmap](../roadmaps/roadmap-alpha.md) and [token policy](../reference/token-policy.md) — maturity and resource boundaries.

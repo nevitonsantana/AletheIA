@@ -15,7 +15,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 
 | Document | What it guides |
 |---|---|
-| [getting-started.md](getting-started.md) | Shortest path to first work slice |
+| [getting-started.md](getting-started.md) | Low-risk first Work Slice with confirmed explanation depth, validation, troubleshooting and escalation |
 | [core-operating-path.md](core-operating-path.md) | Minimum operational loop |
 | [apply-to-existing-project.md](apply-to-existing-project.md) | Adopting AletheIA on an existing project |
 | [slice-finalization-and-restart.md](slice-finalization-and-restart.md) | Closing a slice and resuming cleanly |
