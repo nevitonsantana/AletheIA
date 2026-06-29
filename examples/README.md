@@ -10,6 +10,9 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
 
 ## Estrutura atual
 
+- `first-use/explainable-language/`
+  - fixtures guided/expert e revisão de legibilidade do piloto S17, preservando os mesmos gates em diferentes profundidades
+
 - `hello-world/`
   - fluxo mínimo de ponta a ponta
   - um exemplo para cada um dos 6 contratos centrais
