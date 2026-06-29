@@ -39,6 +39,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [runtime-effort-governance-contract.md](runtime-effort-governance-contract.md) | How an agent decides runtime effort for a work slice: start, escalate, de-escalate, stop, and human checkpoint |
 | [agent-harness-governance-extension.md](agent-harness-governance-extension.md) | How the harness validates, authorizes, executes, budgets, and returns structured observations for model-proposed actions |
 | [agent-harness-contract.md](agent-harness-contract.md) | The per-task declaration: autonomy, allowed tools/skills, gates, sensors, rollback, human review, context policy |
+| [capability-routing-reconciliation.md](capability-routing-reconciliation.md) | Canonical mapping between capability, skill, tool, agent/subagent, execution vehicle, execution pattern, AHC/AHGE and read-only Observatory evidence |
 | [policy-verdicts.md](policy-verdicts.md) | The verdict vocabulary (allow/deny/require_approval/transform/log_only) and its mapping to harness decision values |
 | [agent-action-audit-record.md](agent-action-audit-record.md) | Minimum audit fields proving skill → tool → verdict → evidence → approval |
 | [execution-pattern-selection.md](execution-pattern-selection.md) | How a task records its selected execution topology and required controls |

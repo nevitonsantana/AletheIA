@@ -190,9 +190,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA governance; Adaptive Skills capability metadata
 - **Covers:** P5
 - **Dependencies:** S1
+- **Status:** `in_review` through the S10-A reconciliation slice.
 - **Non-goals:** routing engine, hard-coded provider selection or global routing owned by Adaptive Skills.
 - **Acceptance:** one canonical mapping explains tool, skill, subagent, execution vehicle, execution pattern and AHC without adding competing terms.
-- **Evidence:** four worked decisions and explicit references to existing contracts.
+- **Evidence:** [`docs/contracts/capability-routing-reconciliation.md`](../contracts/capability-routing-reconciliation.md) defines the canonical mapping, four worked decisions, Observatory projection boundaries and explicit references to existing contracts.
 
 ### S11 — System-aware Design System pilot
 
@@ -300,7 +301,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P4-R2 Agent guessing risk and presence checkpoints | P4 SDD | `delivered` | S8 | High-risk holes stop execution; agents cannot confirm human intent. |
 | P4-R3 Evidence-to-expectation and reconcile | P4 SDD/templates | `delivered` | S8 | Evidence closes expectations, not agent confidence. |
 | P4-R4 `intent-clarification` capability | P4 Adaptive Skills proposal | `delivered` | S8 | Advise-only skill delivered without Work Slice or gate authority. |
-| P5-R1 Tool/skill/subagent routing vocabulary | P5 PRD | `partially-delivered` | S10 | Reconcile with vehicle and pattern contracts. |
+| P5-R1 Tool/skill/subagent routing vocabulary | P5 PRD | `in-review` | S10 | Reconciled by S10-A canonical mapping across capability, skill, tool, agent/subagent, vehicle, pattern, AHC/AHGE and Observatory evidence. |
 | P5-R2 Delegation envelope and evidence | P5 SDD | `absorbed` | AHC/orchestration contracts; S10 cross-link | No duplicate schema unless a concrete gap remains. |
 | P5-R3 Adaptive Skills capability manifest | P5 proposal | `absorbed` | Existing capability graph and declarations | Extend only through governed evolution. |
 | P5-R4 Runtime routing engine | P5 non-goal | `rejected` | None | Advisory routing remains the boundary. |
