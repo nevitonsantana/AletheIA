@@ -2,8 +2,8 @@
 
 ## Status
 
-- **Backlog version:** 0.2
-- **Baseline date:** 2026-06-23
+- **Backlog version:** 0.3
+- **Baseline date:** 2026-06-29
 - **Canonical backlog owner:** AletheIA
 - **Capability-side partner:** Adaptive Skills
 
@@ -12,11 +12,27 @@
 | Source | Role | SHA-256 |
 |---|---|---|
 | AletheIA + Adaptive Skills Evolution Pack | Original P0–P9 detailed source | `dabc9d75fb4c7f4febacebe5d2032d93d92a93610d4bb857484004f1c230244f` |
-| Work Observatory Pack | P10 detailed source | `f83993fb35530aabcdbd2bd8ef1f19d75cf5b8656ff50e4c28896d6626d603b4` |
+| Work Observatory Pack | P10/P12 detailed source; P12 is a duplicate/continuation marker, not a second work-observatory layer | `f83993fb35530aabcdbd2bd8ef1f19d75cf5b8656ff50e4c28896d6626d603b4` |
 | Cognitive Documentation & Continuity Governance Pack | P11 detailed source | `d9839b5edfae4cd71b83c4abca1db7525b8b4958036fa3423ad5481ebde6dd93` |
+| Governed Loop Engineering Addendum Pack | P13/P14 loop-readiness and loop-engineering addendum source | `3bca60e4afc158f1783de28fa75edcf8a40a8c6145d4e394e805f7151b15ecbe` |
+| Human Expertise & Evidence-Based Learning Governance Pack | P13/S25 human expertise and evidence-learning source | `e490bab3284fcfd8a83cf7fdaf213dcd467d5c42dc88158ed0272c50a23fd982` |
+| Design System Intelligence Pack — Pulso Lab v0.2 | P15/S24 primary Design System Intelligence source | `0204eeba6b062286609dd1d03a6395f5b20e9192fd9a485041633a72eca76fe7` |
+| Design System Intelligence Pack — Pulso Lab v0.1 | Superseded Design System Intelligence source retained for provenance | `bc5676ebf5632229c5e1218d736d10f2b1d17c7ab7b02d86b48c54a7ae8a7453` |
+| AletheIA Independent Validation Hardening Pack | P16/S21 independent validation source | `5f41dc441f9fc70de7c80e88865b21930e7d53526c5a6a63758e3d88a5cb4f79` |
+| Lean Skill Doctrine Pack | P17/S20/S22 skill-catalog and lean-implementation source | `7bf139d882afb9475b786eb0d9536b95a44dce0430176b19acd720a1c1f752a8` |
+| AletheIA Runtime 2.0 Pack | P18/S26 strategic runtime north-star source | `ce88479a13a3eeaf0b54ff9eaf291ae2f8add605cdf3d8072e770fd93c51a324` |
 | AletheIA + Adaptive Skills territory map | M1 non-normative north-star source | `906b89e3739c5737f9c683abc6ddc65e6040652105184d4640a4c50a5dc898c2` |
 
-This backlog reconciles the original ten evolution packs, two supplemental packs and one north-star map with the implementation already present in AletheIA and Adaptive Skills. It is an executive map and dependency graph, not a replacement for the source packs or canonical contracts.
+This backlog reconciles the original ten evolution packs, supplemental governance packs, screenshots of already-implemented `ok-*` folders, and newer P13–P18 sources with the implementation already present in AletheIA and Adaptive Skills. It is an executive map and dependency graph, not a replacement for the source packs or canonical contracts.
+
+### Naming and numbering normalization
+
+The attached folder screenshots are planning aids, not canonical numbering. This backlog normalizes by capability name and source checksum:
+
+- folders prefixed `ok-` are treated as delivered or absorbed baseline unless new evidence reopens them;
+- duplicate Work Observatory entries remain one canonical P10/P12 line and one S18 evidence gate;
+- Design System Intelligence v0.2 supersedes the earlier Pulso Lab package for future planning;
+- Runtime 2.0 is a north-star/boundary-review source, not an implementation authorization.
 
 Before implementing an epic, reopen its complete pack. Ask for a new copy only when the archive is unavailable or a newer revision exists.
 
@@ -37,6 +53,7 @@ Before implementing an epic, reopen its complete pack. Ask for a new copy only w
 | `delivered` | The intended capability is already represented by accepted implementation or contracts. |
 | `partially-delivered` | A meaningful baseline exists, but a bounded gap remains. |
 | `planned` | Approved backlog candidate with a dependency-aware implementation slice. |
+| `in-review` | A slice has a local or public review artifact but is not yet accepted as delivered. |
 | `absorbed` | The requirement is already covered by another canonical contract and must not create a duplicate. |
 | `deferred` | Valid idea that lacks evidence, prerequisite maturity or a safe first slice. |
 | `rejected` | The proposed form conflicts with current boundaries; the rationale is recorded. |
@@ -52,13 +69,19 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P2 — Reference Intake & Adoption | `planned` | Cross-repository intake protocol owned by AletheIA | Use the ten-pack archive as the first reconciliation example. |
 | P3 — Observation Governance | `partially-delivered` | AletheIA observation contract plus Adaptive Skills return pattern | Recoverable records are delivered; automatic normalizers, telemetry and visual projection remain evidence-gated. |
 | P4 — Intent-to-Evidence Work Slice | `delivered` | Optional Work Slice references and consultative intent clarification | Use the accepted S8 baseline; avoid a parallel lifecycle or mandatory ceremony for every slice. |
-| P5 — Capability Routing Governance | `partially-delivered` | Existing execution vehicle, AHC, capability graph and pattern declarations | Publish one reconciliation note; do not create a routing engine. |
+| P5 — Capability Routing Governance | `delivered` | S10-A reconciliation note, execution vehicle, AHC, capability graph and pattern declarations | Keep as reviewed declaration; do not create a routing engine. |
 | P6 — System-Aware Governance | `deferred` as umbrella | Small capability modules and evidence-backed pilots | Pilot one Design System/Pulso module before promoting broader governance. |
 | P7 — Agent Role Orchestration | `partially-delivered` | Existing portable role catalog, adoption guide and runtime adapters | Reconcile missing contract fields; do not add a second role model. |
 | P8 — Context Surface Governance | `partially-delivered` | Minimum registry and progressive-loading policy | Manual registry and provider-loading example are delivered; automation and broader smell detection remain evidence-gated. |
 | P9 — Governed Loop Observation | `delivered` | Resource Observatory skill inspector plus the bounded S7 debugging pilot | Use the accepted pilot as the first source for S14; keep comparative percentages deferred. |
-| P10 — Work Observatory | `partially-delivered` | First derived `work_record` over S7 evidence; logical sublayer inside Observability & Intelligence | Accumulate comparable records without activating work units, value scoring or comparative dashboards. |
-| P11 — Cognitive Documentation & Continuity | `partially-delivered` | Delivered SYSTEM_STATE, Restart Package continuity and proportional S16 closure review | Continue with S17 explainable language and first-use guidance; defer Observatory health projection until records accumulate. |
+| P10/P12 — Work Observatory | `partially-delivered` | First derived `work_record` over S7 evidence; logical sublayer inside Observability & Intelligence | Accumulate comparable records without activating work units, value scoring or comparative dashboards. |
+| P11 — Cognitive Documentation & Continuity | `delivered` | Delivered SYSTEM_STATE, Restart Package continuity, proportional S16 closure review and S17 first-use guidance | Defer Observatory documentation-health projection until enough reviewed source records exist. |
+| P13 — Human Expertise & Evidence-Based Learning | `planned` | Domain Expertise Brief and Evidence-Based Learning Record | Start only after skill governance and validation hardening define review and learning boundaries. |
+| P14 — Governed Loop Engineering Addendum | `planned` | Loop readiness, review capacity and drift controls reconciled with existing loop contracts | Add readiness gates only; do not create a loop runtime or scheduler. |
+| P15 — Design System Intelligence / Pulso Lab v0.2 | `planned` | Bounded S24 Pulso pilot for System-Aware Governance | Use v0.2 and its Pattern Generalization Gate; Pulso is a lab, not a structural dependency. |
+| P16 — Independent Validation Hardening | `planned` | Independent critic, evidence-to-expectation gate and validation review record | Strengthen validation before expanding loops, agents or runtime surfaces. |
+| P17 — Lean Skill Doctrine | `planned` | Adaptive Skills doctrine, quality gate and AletheIA Skill Catalog Governance Contract | Implement before creating the `lean-implementation` skill or expanding the catalog. |
+| P18 — AletheIA Runtime 2.0 | `deferred` | Strategic boundary review / north-star source | No runtime kernel, SDK, CLI or provider adapter until an explicit architecture decision approves the boundary. |
 
 ## Dependency graph
 
@@ -74,16 +97,26 @@ S13
           -> S17 First-use and explainable-language pilot (P11)
 
 S14 + at least five comparable records in one comparison group
-  -> S18 Comparative work metrics and read-only projection review (P10)
+  -> S18 Comparative work metrics and read-only projection review (P10/P12)
+
+S17
+  -> S19 Backlog v0.3 source registry and prioritization (P13-P18)
+      -> S20 Lean Skill Doctrine + Skill Catalog Governance (P17)
+          -> S22 Lean Implementation Skill (P17)
+      -> S21 Independent Validation Hardening (P16)
+          -> S23 Governed Loop Engineering Addendum reconciliation (P14)
+      -> S24 Design System Intelligence / Pulso pilot (P15; after S10)
+      -> S25 Human Expertise & Evidence-Based Learning (P13; after S20/S21)
+      -> S26 Runtime 2.0 boundary review (P18; strategic/deferred)
 
 Existing branches remain:
 S1 -> S2 Reference Intake minimum protocol (P2)
 S1 -> S8 Intent-to-Evidence contracts (P4) -> S9 Coding Safety specialization (P0)
-S1 -> S10 Capability routing reconciliation (P5) -> S11 System-aware Design System pilot (P6)
+S1 -> S10 Capability routing reconciliation (P5) -> S11/S24 System-aware Design System pilot (P6/P15)
 S4 + S5 + S10 -> S12 Agent-role reconciliation pilot (P7)
 ```
 
-S8 is delivered and unlocks S9 and S16. S16 is the next dependency-valid slice on the continuity path; S9 is available on the coding-safety path. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10 and P11 do not reopen live importers, runtime collection or new dashboards through this backlog update.
+S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe organizational slice because it reconciles new source packs before any implementation. S20 and S21 should precede new skill creation, broader loops, agents or runtime surfaces. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10/P12, P13 and P18 do not reopen live importers, runtime collection, learning automation or new dashboards through this backlog update.
 
 ## PR-ready slices
 
@@ -190,10 +223,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA governance; Adaptive Skills capability metadata
 - **Covers:** P5
 - **Dependencies:** S1
-- **Status:** `in_review` through the S10-A reconciliation slice.
+- **Status:** `delivered` by AletheIA PR #276 and Adaptive Skills PR #77.
 - **Non-goals:** routing engine, hard-coded provider selection or global routing owned by Adaptive Skills.
 - **Acceptance:** one canonical mapping explains tool, skill, subagent, execution vehicle, execution pattern and AHC without adding competing terms.
-- **Evidence:** [`docs/contracts/capability-routing-reconciliation.md`](../contracts/capability-routing-reconciliation.md) defines the canonical mapping, four worked decisions, Observatory projection boundaries and explicit references to existing contracts.
+- **Evidence:** AletheIA merge `393cab4` adds [`docs/contracts/capability-routing-reconciliation.md`](../contracts/capability-routing-reconciliation.md), four worked decisions, Observatory projection boundaries and tests; Adaptive Skills merge `156dc9c` adds the capability routing boundary note.
 
 ### S11 — System-aware Design System pilot
 
@@ -274,6 +307,86 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Acceptance:** only source-backed metrics with formula, scope, provenance, confidence and limitations are eligible; unavailable inputs suppress dependent metrics; visual projection remains read-only.
 - **Evidence:** comparison-validity report, denominator audit, privacy review and explicit activation decision.
 
+### S19 — Backlog v0.3 source registry and prioritization
+
+- **Repository / layer:** AletheIA canonical backlog
+- **Covers:** P13–P18 plus screenshot-based implemented/absorbed plan normalization
+- **Dependencies:** S17 delivered baseline; S10 delivered reconciliation baseline
+- **Status:** `in-review` through this docs-only backlog update
+- **Non-goals:** implementing any pack, creating runtime surfaces, creating Adaptive Skills changes or treating screenshots as canonical evidence.
+- **Acceptance:** new source packs have checksums, posture, destination, dependency order and deferred/rejected rationale; `ok-*` folders are preserved as delivered/absorbed baseline; numbering divergence is normalized by capability name.
+- **Evidence:** backlog v0.3 source registry, dependency graph and priority ordering in this review slice.
+
+### S20 — Lean Skill Doctrine + Skill Catalog Governance
+
+- **Repository / layer:** Adaptive Skills catalog governance; AletheIA governance contract
+- **Covers:** P17; public issues AletheIA #274 and Adaptive Skills #74
+- **Dependencies:** S19
+- **Status:** `planned`
+- **Non-goals:** runtime policy engine, automatic skill routing, blocking inside `SKILL.md`, rewriting existing skills or merging AletheIA governance into skill methods.
+- **Acceptance:** Adaptive Skills defines lean doctrine and Skill Quality Gate; AletheIA defines skill selection/proposal governance, over-selection signals, narrow blocking cases and provenance requirements.
+- **Evidence:** doctrine docs, template, AletheIA contract, cross-links and repository validators.
+
+### S21 — Independent Validation Hardening
+
+- **Repository / layer:** AletheIA validation governance and starter-pack review surfaces
+- **Covers:** P16
+- **Dependencies:** S19; aligns with S8, S16, maker-checker and AHC/AHGE
+- **Status:** `planned`
+- **Non-goals:** making LLM review proof, requiring critic review for every low-risk task, autonomous merge/deploy, benchmark framework or hidden chain-of-thought transfer.
+- **Acceptance:** proportional independent critic context, evidence-to-expectation gate, validation review record and blind-review checklist exist with schemas/examples where justified.
+- **Evidence:** checklist, prompts/templates, schema tests and one calibrated real or synthetic review case.
+
+### S22 — Lean Implementation Skill
+
+- **Repository / layer:** Adaptive Skills engineering skill; AletheIA observation compatibility
+- **Covers:** P17 lean implementation follow-up; public issue Adaptive Skills #75
+- **Dependencies:** S20 quality gate and catalog doctrine
+- **Status:** `planned`
+- **Non-goals:** replacing architecture review, testing, debugging, security, accessibility or data-integrity requirements; adding benchmark harness in v0.1.
+- **Acceptance:** `lean-implementation` passes the Skill Quality Gate, keeps 3–5 core moves, preserves safety exceptions and emits a compact observation-compatible result.
+- **Evidence:** skill validation, projection status and a synthetic engineering example.
+
+### S23 — Governed Loop Engineering Addendum reconciliation
+
+- **Repository / layer:** AletheIA loop governance; Adaptive Skills loop compatibility where needed
+- **Covers:** P14
+- **Dependencies:** S10, S21 and existing ADR-015 / objective-gate / loop-state / maker-checker contracts
+- **Status:** `planned`
+- **Non-goals:** scheduler, loop runtime, self-running agents, automatic permissions or loops without objective gates.
+- **Acceptance:** one Loop Readiness Gate and review-capacity/drift guidance reconcile with existing loop contracts without duplicating them.
+- **Evidence:** readiness gate contract/checklist, fixture or example, and guardrail test if structured artifacts are added.
+
+### S24 — Design System Intelligence / Pulso pilot
+
+- **Repository / layer:** Adaptive Skills design-system governance module; AletheIA pilot governance
+- **Covers:** P6 plus P15 v0.2
+- **Dependencies:** S10 and S20; S21 recommended before review-heavy adoption
+- **Status:** `planned`
+- **Non-goals:** making Pulso a structural dependency, institutionalizing patterns from statistics alone, automatic remediation, broad DS automation or many first-class skills.
+- **Acceptance:** one Pulso-aware review uses source registry, conformance/candidate outputs and Pattern Generalization Gate; at least one actionable finding is classified without promotion authority.
+- **Evidence:** baseline source refs, conformance report, candidate/promotion decision, review owner and validation commands.
+
+### S25 — Human Expertise & Evidence-Based Learning
+
+- **Repository / layer:** AletheIA human planning and learning governance; Adaptive Skills evidence hints where appropriate
+- **Covers:** P13
+- **Dependencies:** S20 and S21
+- **Status:** `planned`
+- **Non-goals:** unrestricted autoevolution, skills mutating themselves, replacing human review at high risk, or capability fitness rankings without evidence.
+- **Acceptance:** smallest useful Domain Expertise Brief and Evidence-Based Learning Record capture domain rules, hypotheses, observed outcomes, surprises and future recommendations without creating a learning automation layer.
+- **Evidence:** one governed slice using the brief + learning record, with explicit human authority and validation evidence.
+
+### S26 — Runtime 2.0 boundary review
+
+- **Repository / layer:** AletheIA architecture decision / strategic roadmap
+- **Covers:** P18
+- **Dependencies:** S19; should consider outcomes from S20–S25 before implementation
+- **Status:** `deferred`
+- **Non-goals:** runtime kernel, SDK, CLI, plugin interface, provider adapter, capability runtime or execution engine before an explicit ADR.
+- **Acceptance:** one boundary decision states whether Runtime 2.0 remains a north-star, becomes a future track, or is rejected/absorbed into existing harness/runtime boundaries.
+- **Evidence:** ADR or roadmap decision referencing current AletheIA macro-governance, Adaptive Skills micro-capability and runtime/harness execution boundaries.
+
 ## Requirement traceability matrix
 
 The identifiers below preserve requirement families. The complete pack remains authoritative for detailed wording, examples and edge cases.
@@ -301,7 +414,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P4-R2 Agent guessing risk and presence checkpoints | P4 SDD | `delivered` | S8 | High-risk holes stop execution; agents cannot confirm human intent. |
 | P4-R3 Evidence-to-expectation and reconcile | P4 SDD/templates | `delivered` | S8 | Evidence closes expectations, not agent confidence. |
 | P4-R4 `intent-clarification` capability | P4 Adaptive Skills proposal | `delivered` | S8 | Advise-only skill delivered without Work Slice or gate authority. |
-| P5-R1 Tool/skill/subagent routing vocabulary | P5 PRD | `in-review` | S10 | Reconciled by S10-A canonical mapping across capability, skill, tool, agent/subagent, vehicle, pattern, AHC/AHGE and Observatory evidence. |
+| P5-R1 Tool/skill/subagent routing vocabulary | P5 PRD | `delivered` | S10 | Reconciled by S10-A canonical mapping across capability, skill, tool, agent/subagent, vehicle, pattern, AHC/AHGE and Observatory evidence. |
 | P5-R2 Delegation envelope and evidence | P5 SDD | `absorbed` | AHC/orchestration contracts; S10 cross-link | No duplicate schema unless a concrete gap remains. |
 | P5-R3 Adaptive Skills capability manifest | P5 proposal | `absorbed` | Existing capability graph and declarations | Extend only through governed evolution. |
 | P5-R4 Runtime routing engine | P5 non-goal | `rejected` | None | Advisory routing remains the boundary. |
@@ -334,6 +447,22 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P11-R4 Per-repository SYSTEM_STATE | P11 system-state proposal | `delivered` | S15 | Both repositories maintain compact validated first-load indexes; contracts and evidence remain authoritative. |
 | P11-R5 Explainable language and cognitive boundaries | P11 language policy | `delivered` | S17 | Confirmed depth preserves precision and requires technical review beyond the user's safe boundary. |
 | P11-R6 Documentation-health projection | P11 integration map | `deferred` | Post-S16 source evidence | Observatory remains read-only and unavailable-first. |
+| P13-R1 Domain Expertise Brief | P13 PRD/SDD | `planned` | S25 | Capture human domain rules and edge cases before execution; do not replace human authority. |
+| P13-R2 Evidence-Based Learning Record | P13 schemas/policies | `planned` | S25 | Record hypothesis, observed result, surprise and future recommendation as evidence, not self-evolution. |
+| P13-R3 Capability fitness and learning dashboards | P13 metrics | `deferred` | Post-S25 evidence gate | No ranking or automation until comparable reviewed records exist. |
+| P14-R1 Loop readiness gate | P14 PRD/SDD/schema | `planned` | S23 | Loops require recurrence, objective gate, bounded budget, observable state and review capacity. |
+| P14-R2 Loop scheduler/runtime | P14 non-goals | `rejected` | None | Existing AletheIA contracts stay governance-only; execution belongs to runtime/harness. |
+| P15-R1 Design System Intelligence Pulso pilot | P15 v0.2 PRD/roadmap | `planned` | S24 | Pulso is the lab for one bounded System-Aware Governance pilot. |
+| P15-R2 Pattern Generalization Gate | P15 v0.2 modules | `planned` | S24 | Recurrence is signal, not promotion authority. |
+| P15-R3 Automated weekly DS scanning | P15 roadmap | `deferred` | Post-S24 evidence gate | Requires low-noise manual pilot evidence first. |
+| P16-R1 Independent critic context | P16 schemas/prompts | `planned` | S21 | Critic receives artifact and evidence context, not hidden actor reasoning. |
+| P16-R2 Evidence-to-expectation gate | P16 schemas/checklists | `planned` | S21 | Clean proceed cannot be represented while required expectations remain unproven. |
+| P16-R3 LLM review as proof | P16 non-goals | `rejected` | None | Independent critic is one validation layer, never proof or final human authority. |
+| P17-R1 Lean Skill Doctrine | P17 PRD/SDD | `planned` | S20 | Every skill must prove necessity, distinctness, proportionality, verifiability and governability. |
+| P17-R2 Skill Catalog Governance Contract | P17 AletheIA docs | `planned` | S20 | AletheIA governs selection/proposal decisions; Adaptive Skills remains catalog-facing. |
+| P17-R3 Lean Implementation Skill | P17 skill prompt | `planned` | S22 | Create only after the doctrine/quality gate; keep safety exceptions explicit. |
+| P18-R1 Work Episode / Runtime 2.0 model | P18 PRD/SDD | `deferred` | S26 | Strategic review only until boundary ADR decides whether this becomes an implementation track. |
+| P18-R2 Runtime kernel, SDK, CLI and provider adapters | P18 roadmap | `deferred` | Post-S26 decision | No execution substrate work before explicit approval. |
 
 ## Per-pack preservation appendix
 
@@ -418,6 +547,54 @@ The identifiers below preserve requirement families. The complete pack remains a
 - **Key future interfaces:** small per-repository `SYSTEM_STATE`, Restart Package continuity extension, proportional documentation-coherence report and Explainable Change Brief.
 - **Dependencies:** S8 Intent-to-Evidence, current finalization/restart guidance, documentation indexes and human-review criteria.
 - **Deferred:** automatic doc generation, mandatory ceremony for every Lite slice and documentation-health projection without records.
+
+### P12 — Work Observatory duplicate/continuation marker
+
+- **Status:** `absorbed`; treated as the same Work Observatory source family as P10.
+- **Guardrails:** no second observatory lifecycle, no duplicate metric authority and no comparative claims without denominator evidence.
+- **Destination:** S18 remains the only comparative work-metrics review gate.
+
+### P13 — Human Expertise & Evidence-Based Learning
+
+- **Status:** `planned`; start with the smallest Domain Expertise Brief and Evidence-Based Learning Record.
+- **Guardrails:** AletheIA amplifies human expertise; it does not replace human decision, approve high-risk work or let skills self-evolve.
+- **Dependencies:** S20 skill governance and S21 validation hardening.
+- **Deferred:** capability fitness dashboards, rankings and learning automation.
+
+### P14 — Governed Loop Engineering Addendum
+
+- **Status:** `planned`; reconcile with existing execution-pattern and loop contracts.
+- **Guardrails:** loops must be recurring, verifiable, bounded, observable and reviewable; no objective gate means no autonomous loop.
+- **Dependencies:** S10 routing clarity, S21 validation hardening and existing maker-checker/objective-gate policies.
+- **Deferred:** schedulers, policy engines and automatic loop execution.
+
+### P15 — Design System Intelligence / Pulso Lab
+
+- **Status:** `planned`; use v0.2 as authoritative for future slices.
+- **Guardrails:** Pulso is a lab; statistics are signals, not promotion decisions; who proposes does not approve.
+- **Dependencies:** S10 routing, S20 skill governance and current Pulso source registry when the pilot starts.
+- **Deferred:** weekly scanners, automated remediation and cross-DS generalization until a manual pilot proves value.
+
+### P16 — Independent Validation Hardening
+
+- **Status:** `planned`; prioritize before broader automation.
+- **Guardrails:** independent critic is not proof, not hidden chain-of-thought sharing and not mandatory ceremony for low-risk work.
+- **Dependencies:** existing Intent-to-Evidence, maker-checker, AHC/AHGE and closure governance.
+- **Deferred:** benchmark framework, autonomous merge/deploy and universal critic requirement.
+
+### P17 — Lean Skill Doctrine
+
+- **Status:** `planned`; public issues already track the AletheIA and Adaptive Skills halves.
+- **Guardrails:** prevent skill sprawl, overlap, context bloat and mini-framework skills; block only narrow authority/safety violations.
+- **Dependencies:** S19 source registry; S22 depends on S20.
+- **Deferred:** skill-catalog-review skill, automatic skill routing and existing skill rewrites.
+
+### P18 — AletheIA Runtime 2.0
+
+- **Status:** `deferred`; use as a strategic north-star and boundary-review source.
+- **Guardrails:** Runtime 2.0 cannot silently move AletheIA from macro-governance into execution substrate ownership.
+- **Destination:** S26 decides whether to keep, absorb, reject or open a future runtime implementation track.
+- **Deferred:** runtime kernel, SDK, CLI, event bus, plugin interface, provider adapters and capability runtime.
 
 ### M1 — Ecosystem Territory Map
 

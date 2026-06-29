@@ -32,15 +32,16 @@ Authoritative entrypoints:
 - Intent-to-Evidence — delivered through the accepted S8 cross-repository pilot.
 - Cognitive, intent and documentation closure — delivered through the accepted S16 pilot.
 - Explainable first use — delivered through the accepted cross-repository S17 pilot.
+- Capability routing reconciliation — delivered through the accepted cross-repository S10-A slice.
 
 Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md).
 
 ## Active and planned evolution
 
-- **Active:** S10-A — capability routing reconciliation, docs-first and non-executing.
-- **Next dependency path:** finish S10-A review, then S11 Design System pilot or S12 agent-role reconciliation becomes dependency-valid.
-- **Parallel planned path:** S10 → S11, then S12 after its context and routing dependencies.
-- **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group.
+- **Active:** S19 — backlog v0.3 source registry and prioritization, docs-only and in review.
+- **Next dependency path:** finish S19 review, then start S20 Lean Skill Doctrine + Skill Catalog Governance or S21 Independent Validation Hardening.
+- **Parallel planned path:** S10 delivered → S24 Design System Intelligence/Pulso pilot; S20 → S22 Lean Implementation Skill; S21 → S23 Governed Loop Engineering Addendum.
+- **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; S26 Runtime 2.0 until explicit boundary review.
 
 ## Deprecated or merged plans
 
@@ -51,7 +52,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current through S16 closure.
+- Integrated evolution backlog: being updated to v0.3 through S19 source registry and prioritization.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -60,17 +61,18 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - **Current level:** medium — multiple delivered contracts remain difficult to understand without guided explanation.
 - SYSTEM_STATE can become stale; every claim must retain a source reference and review date.
 - Work Observatory has one record only; no success rate, ranking, work-unit or value claim is admissible.
-- Automatic collectors, routing engines and documentation generators remain out of scope.
+- New P13–P18 packs are registered as backlog sources, not implementation authority.
+- Automatic collectors, routing engines, runtime kernels, SDKs and documentation generators remain out of scope.
 
 ## Next safe steps
 
-1. Finish S10-A by validating the canonical mapping and Adaptive Skills alignment without creating routing machinery.
+1. Finish S19 review before creating new skills, broader loops, agents or runtime surfaces.
 2. Preserve the S15 Restart Package compatibility and post-resume checks.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
-4. Do not activate S16 before S8 or S18 before its evidence threshold.
+4. Do not activate S18 before its evidence threshold or S26 before an explicit boundary decision.
 
 ## Last reviewed
 
-- **Date:** 2026-06-23
-- **Evidence baseline:** AletheIA `6dba175`; Adaptive Skills `e4a5591`; backlog v0.2 through S17
-- **Review trigger:** accepted architecture, roadmap, maturity, deprecation or next-step change
+- **Date:** 2026-06-29
+- **Evidence baseline:** AletheIA `393cab4` and Adaptive Skills `156dc9c` after S10-A; backlog v0.3/S19 in review
+- **Review trigger:** new source-pack registry, backlog prioritization, maturity, deprecation or next-step change
