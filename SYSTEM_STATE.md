@@ -37,8 +37,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** no repository-local implementation slice open; S17 is delivered.
-- **Next dependency path:** S9 coding safety or S10 capability-routing reconciliation.
+- **Active:** S10-A — capability routing reconciliation, docs-first and non-executing.
+- **Next dependency path:** finish S10-A review, then S11 Design System pilot or S12 agent-role reconciliation becomes dependency-valid.
 - **Parallel planned path:** S10 → S11, then S12 after its context and routing dependencies.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group.
 
@@ -64,7 +64,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Begin S9 coding safety or S10 capability-routing reconciliation as the next bounded slice.
+1. Finish S10-A by validating the canonical mapping and Adaptive Skills alignment without creating routing machinery.
 2. Preserve the S15 Restart Package compatibility and post-resume checks.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S16 before S8 or S18 before its evidence threshold.
