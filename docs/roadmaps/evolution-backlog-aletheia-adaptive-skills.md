@@ -258,9 +258,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA guidance; Adaptive Skills usage documentation
 - **Covers:** P11 language modes, cognitive boundary and first-run guidance
 - **Dependencies:** S16
+- **Status:** `delivered` by AletheIA PR #272 and Adaptive Skills PR #73 after project-owner review.
 - **Non-goals:** hiding technical risk, maintaining four duplicate guide sets or auto-detecting user expertise without confirmation.
 - **Acceptance:** one low-risk first-use journey supports plain/guided/professional/expert depth, expected outputs, validation, troubleshooting and explicit technical-escalation boundaries.
-- **Evidence:** first-time-user fixture, expert fixture, accessibility/readability review and user-facing validation steps.
+- **Evidence:** AletheIA merge `6dba175` supplies the single adaptive-depth journey, Explainable Change Brief and tests; Adaptive Skills merge `e4a5591` aligns safe skill first use. Guided and expert fixtures preserve equivalent validation/escalation, with a bounded readability review.
 
 ### S18 — Comparative work metrics and projection review
 
@@ -330,7 +331,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P11-R2 Documentation coherence | P11 policy | `delivered` | S16 | Source-backed review only; no automatic mutation or repository-wide inference. |
 | P11-R3 Continuity Capsule and resume check | P11 continuity policy | `delivered` | S15 | Continuity fields extend Restart Package and its post-resume check; no competing artifact or lifecycle was created. |
 | P11-R4 Per-repository SYSTEM_STATE | P11 system-state proposal | `delivered` | S15 | Both repositories maintain compact validated first-load indexes; contracts and evidence remain authoritative. |
-| P11-R5 Explainable language and cognitive boundaries | P11 language policy | `planned` | S17 | Preserve precision and require technical review beyond the user's safe boundary. |
+| P11-R5 Explainable language and cognitive boundaries | P11 language policy | `delivered` | S17 | Confirmed depth preserves precision and requires technical review beyond the user's safe boundary. |
 | P11-R6 Documentation-health projection | P11 integration map | `deferred` | Post-S16 source evidence | Observatory remains read-only and unavailable-first. |
 
 ## Per-pack preservation appendix
@@ -410,7 +411,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P11 — Cognitive Documentation & Continuity
 
-- **Status:** `partially-delivered`; SYSTEM_STATE, continuity reconciliation and S16 proportional closure are delivered, while S17 remains planned.
+- **Status:** `delivered baseline`; SYSTEM_STATE, continuity, proportional closure and S17 explainable first use are delivered. Observatory health projection remains evidence-gated.
 - **Guardrails:** understanding is explicit but cannot replace technical proof; plain language cannot hide risk; no closure self-certification; no compaction that loses intent, evidence or open risk.
 - **Absorbed foundations:** comprehension debt, Durable Decisions, Context Surface Registry, Handoff Record, Slice Finalization and Restart Package.
 - **Key future interfaces:** small per-repository `SYSTEM_STATE`, Restart Package continuity extension, proportional documentation-coherence report and Explainable Change Brief.
