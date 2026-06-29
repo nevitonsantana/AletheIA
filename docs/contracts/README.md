@@ -36,6 +36,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [knowledge-audit-log-spec.md](knowledge-audit-log-spec.md) | Minimum audit fields when a knowledge source influences output |
 | [sensitivity-vocabulary-mapping.md](sensitivity-vocabulary-mapping.md) | Canonical sensitivity taxonomy and how project extensions map local labels to it |
 | [skill-evolution-validation-contract.md](skill-evolution-validation-contract.md) | What a skill evolution experiment and its validation evidence must satisfy to be governed |
+| [skill-catalog-governance-contract.md](skill-catalog-governance-contract.md) | How AletheIA governs skill selection, rejection, override, proposal decisions and catalog-review observations without becoming the skill authoring system |
 | [runtime-effort-governance-contract.md](runtime-effort-governance-contract.md) | How an agent decides runtime effort for a work slice: start, escalate, de-escalate, stop, and human checkpoint |
 | [agent-harness-governance-extension.md](agent-harness-governance-extension.md) | How the harness validates, authorizes, executes, budgets, and returns structured observations for model-proposed actions |
 | [agent-harness-contract.md](agent-harness-contract.md) | The per-task declaration: autonomy, allowed tools/skills, gates, sensors, rollback, human review, context policy |

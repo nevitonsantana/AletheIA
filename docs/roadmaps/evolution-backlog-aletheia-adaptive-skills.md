@@ -322,10 +322,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** Adaptive Skills catalog governance; AletheIA governance contract
 - **Covers:** P17; public issues AletheIA #274 and Adaptive Skills #74
 - **Dependencies:** S19
-- **Status:** `planned`
+- **Status:** `in-review` through the S20 docs-first cross-repository slice.
 - **Non-goals:** runtime policy engine, automatic skill routing, blocking inside `SKILL.md`, rewriting existing skills or merging AletheIA governance into skill methods.
 - **Acceptance:** Adaptive Skills defines lean doctrine and Skill Quality Gate; AletheIA defines skill selection/proposal governance, over-selection signals, narrow blocking cases and provenance requirements.
-- **Evidence:** doctrine docs, template, AletheIA contract, cross-links and repository validators.
+- **Evidence:** Adaptive Skills doctrine docs and quality-gate template; AletheIA [`docs/contracts/skill-catalog-governance-contract.md`](../contracts/skill-catalog-governance-contract.md); cross-links and repository validators.
 
 ### S21 — Independent Validation Hardening
 
