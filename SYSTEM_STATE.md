@@ -38,8 +38,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S19 — backlog v0.3 source registry and prioritization, docs-only and in review.
-- **Next dependency path:** finish S19 review, then start S20 Lean Skill Doctrine + Skill Catalog Governance or S21 Independent Validation Hardening.
+- **Active:** no repository-local implementation slice open; S19 backlog v0.3 source registry is delivered.
+- **Next dependency path:** start S20 Lean Skill Doctrine + Skill Catalog Governance or S21 Independent Validation Hardening.
 - **Parallel planned path:** S10 delivered → S24 Design System Intelligence/Pulso pilot; S20 → S22 Lean Implementation Skill; S21 → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; S26 Runtime 2.0 until explicit boundary review.
 
@@ -52,7 +52,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: being updated to v0.3 through S19 source registry and prioritization.
+- Integrated evolution backlog: current as v0.3 through S19 source registry and prioritization.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -66,7 +66,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Finish S19 review before creating new skills, broader loops, agents or runtime surfaces.
+1. Start S20 or S21 before creating new skills, broader loops, agents or runtime surfaces.
 2. Preserve the S15 Restart Package compatibility and post-resume checks.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold or S26 before an explicit boundary decision.
@@ -74,5 +74,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-06-29
-- **Evidence baseline:** AletheIA `393cab4` and Adaptive Skills `156dc9c` after S10-A; backlog v0.3/S19 in review
+- **Evidence baseline:** AletheIA `bb342fc` after S19; Adaptive Skills `156dc9c` after S10-A
 - **Review trigger:** new source-pack registry, backlog prioritization, maturity, deprecation or next-step change

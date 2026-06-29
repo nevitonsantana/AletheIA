@@ -312,10 +312,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA canonical backlog
 - **Covers:** P13–P18 plus screenshot-based implemented/absorbed plan normalization
 - **Dependencies:** S17 delivered baseline; S10 delivered reconciliation baseline
-- **Status:** `in-review` through this docs-only backlog update
+- **Status:** `delivered` by AletheIA PR #278.
 - **Non-goals:** implementing any pack, creating runtime surfaces, creating Adaptive Skills changes or treating screenshots as canonical evidence.
 - **Acceptance:** new source packs have checksums, posture, destination, dependency order and deferred/rejected rationale; `ok-*` folders are preserved as delivered/absorbed baseline; numbering divergence is normalized by capability name.
-- **Evidence:** backlog v0.3 source registry, dependency graph and priority ordering in this review slice.
+- **Evidence:** AletheIA merge `bb342fc` registers backlog v0.3 source registry, dependency graph and priority ordering.
 
 ### S20 — Lean Skill Doctrine + Skill Catalog Governance
 
