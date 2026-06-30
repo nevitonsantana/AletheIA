@@ -46,6 +46,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [agent-action-audit-record.md](agent-action-audit-record.md) | Minimum audit fields proving skill → tool → verdict → evidence → approval |
 | [execution-pattern-selection.md](execution-pattern-selection.md) | How a task records its selected execution topology and required controls |
 | [orchestration-contract.md](orchestration-contract.md) | What an orchestrated execution must declare before stages run |
+| [loop-readiness-gate.md](loop-readiness-gate.md) | Minimum readiness record before a Work Slice may use loop-shaped execution without creating a scheduler or runtime |
 | [loop-state-contract.md](loop-state-contract.md) | Minimum state shape for recurring or looped work |
 | [objective-gate-policy.md](objective-gate-policy.md) | Objective stop/gate requirements before loops can run safely |
 | [maker-checker-policy.md](maker-checker-policy.md) | When separate generation and verification roles are required |
