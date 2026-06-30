@@ -69,6 +69,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - snapshot dogfood do PR #200 usado para registrar a primeira evidência real de uso da Visual Operations no próprio AletheIA
   - snapshot dogfood do PR #201 usado como segunda evidência real e confirmação de que não há threshold para nova infraestrutura
   - registro real e não sensível de `feature-planning` usado para provar a primeira esteira AletheIA + Adaptive Skills no Resource Observatory
+  - evento sintético S22 para `lean-implementation`, mostrando skill activation como evidência read-only sem autoridade sobre gates ou decisões
   - segundo piloto real da PR #195, gerado e verificável pelo CLI local com `--check`
   - exemplos estáticos de cards do cockpit para revisar estados visuais antes de qualquer UI
   - composição estática de board com lanes, contagens e exceções antes de wireframe/UI
