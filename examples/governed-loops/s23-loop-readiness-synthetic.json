@@ -1,0 +1,53 @@
+{
+  "loop_readiness_gate": {
+    "gate_id": "LRG-20260629-001",
+    "work_slice_ref": "WS-20260629-S23-synthetic",
+    "execution_pattern_selection_ref": "EPS-20260629-001",
+    "proposed_pattern": "loop_until_done",
+    "loop_purpose": "Run a bounded documentation consistency check until the contract references are reconciled or the gate fails twice.",
+    "recurrence": {
+      "kind": "single_session",
+      "max_iterations": 3,
+      "max_runtime": "unavailable",
+      "budget_ref": "BUDGET-S23-001"
+    },
+    "objective_stop_condition": {
+      "condition": "All required contract links resolve and the local governance/test commands pass.",
+      "verification_method": "governance check, Vitest contract tests and markdown link inspection",
+      "evidence_ref": "EVID-S23-001"
+    },
+    "objective_gate": {
+      "required": true,
+      "gate_ref": "GATE-S23-001",
+      "gate_type": "test"
+    },
+    "state": {
+      "required": false,
+      "loop_state_ref": "not_needed"
+    },
+    "review_capacity": {
+      "reviewer_ref": "human-owner",
+      "cadence": "after_each_failed_gate_or_before_closure",
+      "max_unreviewed_iterations": 1,
+      "escalation_owner": "human-owner"
+    },
+    "drift_controls": {
+      "drift_signals": [
+        "new runtime requirement appears",
+        "scope expands beyond documentation reconciliation",
+        "required evidence remains unavailable after one retry"
+      ],
+      "stop_on": ["repeated_failed_gate", "scope_change", "unavailable_required_evidence"],
+      "rescope_requires_human": true
+    },
+    "safety_controls": {
+      "irreversible_action": false,
+      "sensitive_context": false,
+      "human_review_ref": "not_required"
+    },
+    "evidence_refs": ["docs/contracts/loop-readiness-gate.md", "docs/contracts/objective-gate-policy.md"],
+    "source_refs": ["P14-R1", "objective-gate-policy", "loop-state-contract", "maker-checker-policy", "independent-validation-hardening-contract"],
+    "verdict": "ready_with_constraints",
+    "constraints": ["maximum three iterations", "human review after any failed objective gate", "no runtime, scheduler or automated permission expansion"]
+  }
+}

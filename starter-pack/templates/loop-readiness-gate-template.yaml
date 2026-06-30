@@ -1,0 +1,42 @@
+loop_readiness_gate:
+  gate_id: LRG-YYYYMMDD-001
+  work_slice_ref: WS-YYYYMMDD-001
+  execution_pattern_selection_ref: EPS-YYYYMMDD-001
+  proposed_pattern: loop_until_done
+  loop_purpose: "Narrow, verifiable loop purpose."
+  recurrence:
+    kind: single_session
+    max_iterations: 3
+    max_runtime: unavailable
+    budget_ref: pending
+  objective_stop_condition:
+    condition: "Define a verifiable stop condition."
+    verification_method: pending
+    evidence_ref: pending
+  objective_gate:
+    required: true
+    gate_ref: pending
+    gate_type: test
+  state:
+    required: false
+    loop_state_ref: not_needed
+  review_capacity:
+    reviewer_ref: pending
+    cadence: before_closure
+    max_unreviewed_iterations: 1
+    escalation_owner: pending
+  drift_controls:
+    drift_signals: []
+    stop_on:
+      - repeated_failed_gate
+      - unavailable_required_evidence
+      - scope_change
+    rescope_requires_human: true
+  safety_controls:
+    irreversible_action: false
+    sensitive_context: false
+    human_review_ref: not_required
+  evidence_refs: []
+  source_refs: []
+  verdict: not_ready
+  constraints: []

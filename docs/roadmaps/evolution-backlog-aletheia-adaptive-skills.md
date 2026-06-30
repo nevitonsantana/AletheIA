@@ -77,7 +77,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P10/P12 — Work Observatory | `partially-delivered` | First derived `work_record` over S7 evidence; logical sublayer inside Observability & Intelligence | Accumulate comparable records without activating work units, value scoring or comparative dashboards. |
 | P11 — Cognitive Documentation & Continuity | `delivered` | Delivered SYSTEM_STATE, Restart Package continuity, proportional S16 closure review and S17 first-use guidance | Defer Observatory documentation-health projection until enough reviewed source records exist. |
 | P13 — Human Expertise & Evidence-Based Learning | `planned` | Domain Expertise Brief and Evidence-Based Learning Record | Start only after skill governance and validation hardening define review and learning boundaries. |
-| P14 — Governed Loop Engineering Addendum | `planned` | Loop readiness, review capacity and drift controls reconciled with existing loop contracts | Add readiness gates only; do not create a loop runtime or scheduler. |
+| P14 — Governed Loop Engineering Addendum | `in-review` | Loop readiness, review capacity and drift controls reconciled with existing loop contracts | S23 adds readiness gate artifacts only; no loop runtime or scheduler. |
 | P15 — Design System Intelligence / Pulso Lab v0.2 | `planned` | Bounded S24 Pulso pilot for System-Aware Governance | Use v0.2 and its Pattern Generalization Gate; Pulso is a lab, not a structural dependency. |
 | P16 — Independent Validation Hardening | `delivered` | Independent critic, evidence-to-expectation gate and validation review record | Delivered by S21 / AletheIA PR #281 before expanding loops, agents or runtime surfaces. |
 | P17 — Lean Skill Doctrine | `partially delivered` | Adaptive Skills doctrine, quality gate and AletheIA Skill Catalog Governance Contract | S20 delivered doctrine and governance; S22 remains planned for the bounded `lean-implementation` skill. |
@@ -352,10 +352,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA loop governance; Adaptive Skills loop compatibility where needed
 - **Covers:** P14
 - **Dependencies:** S10, S21 and existing ADR-015 / objective-gate / loop-state / maker-checker contracts
-- **Status:** `planned`
+- **Status:** `in-review` through the S23 docs-first loop readiness slice.
 - **Non-goals:** scheduler, loop runtime, self-running agents, automatic permissions or loops without objective gates.
 - **Acceptance:** one Loop Readiness Gate and review-capacity/drift guidance reconcile with existing loop contracts without duplicating them.
-- **Evidence:** readiness gate contract/checklist, fixture or example, and guardrail test if structured artifacts are added.
+- **Evidence:** [`docs/contracts/loop-readiness-gate.md`](../contracts/loop-readiness-gate.md), [`docs/reference/loop-readiness-review-checklist.md`](../reference/loop-readiness-review-checklist.md), [`starter-pack/templates/loop-readiness-gate-template.yaml`](../../starter-pack/templates/loop-readiness-gate-template.yaml), [`examples/governed-loops/s23-loop-readiness-synthetic.json`](../../examples/governed-loops/s23-loop-readiness-synthetic.json) and guardrail tests.
 
 ### S24 — Design System Intelligence / Pulso pilot
 
@@ -450,7 +450,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P13-R1 Domain Expertise Brief | P13 PRD/SDD | `planned` | S25 | Capture human domain rules and edge cases before execution; do not replace human authority. |
 | P13-R2 Evidence-Based Learning Record | P13 schemas/policies | `planned` | S25 | Record hypothesis, observed result, surprise and future recommendation as evidence, not self-evolution. |
 | P13-R3 Capability fitness and learning dashboards | P13 metrics | `deferred` | Post-S25 evidence gate | No ranking or automation until comparable reviewed records exist. |
-| P14-R1 Loop readiness gate | P14 PRD/SDD/schema | `planned` | S23 | Loops require recurrence, objective gate, bounded budget, observable state and review capacity. |
+| P14-R1 Loop readiness gate | P14 PRD/SDD/schema | `in-review` | S23 | Loops require objective stop conditions, objective gate, bounded budget, observable state when recurring and review capacity. |
 | P14-R2 Loop scheduler/runtime | P14 non-goals | `rejected` | None | Existing AletheIA contracts stay governance-only; execution belongs to runtime/harness. |
 | P15-R1 Design System Intelligence Pulso pilot | P15 v0.2 PRD/roadmap | `planned` | S24 | Pulso is the lab for one bounded System-Aware Governance pilot. |
 | P15-R2 Pattern Generalization Gate | P15 v0.2 modules | `planned` | S24 | Recurrence is signal, not promotion authority. |
@@ -563,9 +563,10 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P14 — Governed Loop Engineering Addendum
 
-- **Status:** `planned`; reconcile with existing execution-pattern and loop contracts.
-- **Guardrails:** loops must be recurring, verifiable, bounded, observable and reviewable; no objective gate means no autonomous loop.
+- **Status:** `in-review`; reconcile with existing execution-pattern and loop contracts.
+- **Guardrails:** loops must be verifiable, bounded, observable when recurring and reviewable; no objective gate means no autonomous loop.
 - **Dependencies:** S10 routing clarity, S21 validation hardening and existing maker-checker/objective-gate policies.
+- **Evidence:** S23 Loop Readiness Gate contract, review checklist, template, synthetic fixture and guardrail tests.
 - **Deferred:** schedulers, policy engines and automatic loop execution.
 
 ### P15 — Design System Intelligence / Pulso Lab

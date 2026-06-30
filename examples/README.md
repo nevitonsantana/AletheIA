@@ -57,6 +57,8 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
 - `execution-patterns/`
   - Execution Pattern Selections trabalhadas (topologia antes da execução): CI triage (scheduled stateful loop), síntese de entrevistas (fan-out + filter), review adversarial de PRD (maker-checker) e feature value review (loops explicitamente inadmissíveis)
   - piloto real S7 de debugging governado, com skill e tools rastreadas, falha reproduzida, uma iteração, gate objetivo, orçamento explícito e revisão humana antes do merge
+- `governed-loops/`
+  - exemplo sintético S23 de Loop Readiness Gate com stop condition objetivo, orçamento, review capacity, drift controls e proibição explícita de scheduler/runtime
 - `context-surface-governance/`
   - registro mínimo de superfícies que distingue contexto persistente, carregamento sob demanda, provider de skill e evidência que não deve virar instrução
 - `resource-aware-operations/`
