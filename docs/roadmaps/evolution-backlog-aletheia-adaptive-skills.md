@@ -79,7 +79,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P13 — Human Expertise & Evidence-Based Learning | `planned` | Domain Expertise Brief and Evidence-Based Learning Record | Start only after skill governance and validation hardening define review and learning boundaries. |
 | P14 — Governed Loop Engineering Addendum | `planned` | Loop readiness, review capacity and drift controls reconciled with existing loop contracts | Add readiness gates only; do not create a loop runtime or scheduler. |
 | P15 — Design System Intelligence / Pulso Lab v0.2 | `planned` | Bounded S24 Pulso pilot for System-Aware Governance | Use v0.2 and its Pattern Generalization Gate; Pulso is a lab, not a structural dependency. |
-| P16 — Independent Validation Hardening | `in-review` | Independent critic, evidence-to-expectation gate and validation review record | S21 adds the minimum contract, checklist, template and synthetic review case before expanding loops, agents or runtime surfaces. |
+| P16 — Independent Validation Hardening | `delivered` | Independent critic, evidence-to-expectation gate and validation review record | Delivered by S21 / AletheIA PR #281 before expanding loops, agents or runtime surfaces. |
 | P17 — Lean Skill Doctrine | `partially delivered` | Adaptive Skills doctrine, quality gate and AletheIA Skill Catalog Governance Contract | S20 delivered doctrine and governance; S22 remains planned for the bounded `lean-implementation` skill. |
 | P18 — AletheIA Runtime 2.0 | `deferred` | Strategic boundary review / north-star source | No runtime kernel, SDK, CLI or provider adapter until an explicit architecture decision approves the boundary. |
 
@@ -332,10 +332,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA validation governance and starter-pack review surfaces
 - **Covers:** P16
 - **Dependencies:** S19; aligns with S8, S16, maker-checker and AHC/AHGE
-- **Status:** `in-review` through the S21 docs-first validation hardening slice.
+- **Status:** `delivered` through AletheIA PR #281.
 - **Non-goals:** making LLM review proof, requiring critic review for every low-risk task, autonomous merge/deploy, benchmark framework or hidden chain-of-thought transfer.
 - **Acceptance:** proportional independent critic context, evidence-to-expectation gate, validation review record and blind-review checklist exist with examples where justified.
-- **Evidence:** [`docs/contracts/independent-validation-hardening-contract.md`](../contracts/independent-validation-hardening-contract.md), [`docs/reference/independent-validation-blind-review-checklist.md`](../reference/independent-validation-blind-review-checklist.md), [`starter-pack/templates/independent-validation-review-template.yaml`](../../starter-pack/templates/independent-validation-review-template.yaml), [`examples/independent-validation/synthetic-review-case.json`](../../examples/independent-validation/synthetic-review-case.json) and contract tests.
+- **Evidence:** AletheIA PR #281 / `fb9f900`; [`docs/contracts/independent-validation-hardening-contract.md`](../contracts/independent-validation-hardening-contract.md), [`docs/reference/independent-validation-blind-review-checklist.md`](../reference/independent-validation-blind-review-checklist.md), [`starter-pack/templates/independent-validation-review-template.yaml`](../../starter-pack/templates/independent-validation-review-template.yaml), [`examples/independent-validation/synthetic-review-case.json`](../../examples/independent-validation/synthetic-review-case.json) and contract tests.
 
 ### S22 — Lean Implementation Skill
 
@@ -455,8 +455,8 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P15-R1 Design System Intelligence Pulso pilot | P15 v0.2 PRD/roadmap | `planned` | S24 | Pulso is the lab for one bounded System-Aware Governance pilot. |
 | P15-R2 Pattern Generalization Gate | P15 v0.2 modules | `planned` | S24 | Recurrence is signal, not promotion authority. |
 | P15-R3 Automated weekly DS scanning | P15 roadmap | `deferred` | Post-S24 evidence gate | Requires low-noise manual pilot evidence first. |
-| P16-R1 Independent critic context | P16 schemas/prompts | `in-review` | S21 | Critic receives artifact and evidence context, not hidden actor reasoning. |
-| P16-R2 Evidence-to-expectation gate | P16 schemas/checklists | `in-review` | S21 | Clean proceed cannot be represented while required expectations remain unproven. |
+| P16-R1 Independent critic context | P16 schemas/prompts | `delivered` | S21 | Critic receives artifact and evidence context, not hidden actor reasoning. |
+| P16-R2 Evidence-to-expectation gate | P16 schemas/checklists | `delivered` | S21 | Clean proceed cannot be represented while required expectations remain unproven. |
 | P16-R3 LLM review as proof | P16 non-goals | `rejected` | None | Independent critic is one validation layer, never proof or final human authority. |
 | P17-R1 Lean Skill Doctrine | P17 PRD/SDD | `delivered` | S20 | Every skill must prove necessity, distinctness, proportionality, verifiability and governability. |
 | P17-R2 Skill Catalog Governance Contract | P17 AletheIA docs | `delivered` | S20 | AletheIA governs selection/proposal decisions; Adaptive Skills remains catalog-facing. |
@@ -577,10 +577,10 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P16 — Independent Validation Hardening
 
-- **Status:** `in-review`; prioritize before broader automation.
+- **Status:** `delivered`; prioritize its guardrails before broader automation.
 - **Guardrails:** independent critic is not proof, not hidden chain-of-thought sharing and not mandatory ceremony for low-risk work.
 - **Dependencies:** existing Intent-to-Evidence, maker-checker, AHC/AHGE and closure governance.
-- **Evidence:** S21 contract, blind-review checklist, starter-pack template, synthetic review case and contract tests.
+- **Evidence:** AletheIA PR #281 / `fb9f900`; S21 contract, blind-review checklist, starter-pack template, synthetic review case and contract tests.
 - **Deferred:** benchmark framework, autonomous merge/deploy and universal critic requirement.
 
 ### P17 — Lean Skill Doctrine

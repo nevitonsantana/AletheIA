@@ -34,13 +34,14 @@ Authoritative entrypoints:
 - Explainable first use — delivered through the accepted cross-repository S17 pilot.
 - Capability routing reconciliation — delivered through the accepted cross-repository S10-A slice.
 - Lean Skill Doctrine + Skill Catalog Governance — delivered through AletheIA PR #280 and Adaptive Skills PR #78.
+- Independent Validation Hardening — delivered through AletheIA PR #281.
 
 Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md).
 
 ## Active and planned evolution
 
-- **Active:** S21 — Independent Validation Hardening, docs-first and in review.
-- **Next dependency path:** finish S21 review before broadening loops, agents or runtime surfaces; S22 Lean Implementation Skill remains dependency-valid after S20.
+- **Active:** None — S21 was delivered; choose the next backlog slice before starting new work.
+- **Next dependency path:** S21 now supports S23 Governed Loop Engineering Addendum; S22 Lean Implementation Skill remains dependency-valid after S20.
 - **Parallel planned path:** S10 delivered → S24 Design System Intelligence/Pulso pilot; S20 delivered → S22 Lean Implementation Skill; S21 → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; S26 Runtime 2.0 until explicit boundary review.
 
@@ -67,7 +68,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Finish S21 review before broader loops, agents or runtime surfaces; keep `lean-implementation` bounded by S20 quality gates.
+1. Choose the next bounded slice: S22 Lean Implementation Skill or S23 Governed Loop Engineering Addendum.
 2. Preserve the S15 Restart Package compatibility and post-resume checks.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold or S26 before an explicit boundary decision.
@@ -75,5 +76,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-06-29
-- **Evidence baseline:** AletheIA `25e4d51` after S20 merge; Adaptive Skills `4f37e29` after S20 merge; S21 in local review
-- **Review trigger:** S20 merge completed and S21 independent validation hardening started
+- **Evidence baseline:** AletheIA `fb9f900` after S21 merge; Adaptive Skills `4f37e29` after S20 merge
+- **Review trigger:** S21 independent validation hardening merged and local main synced
