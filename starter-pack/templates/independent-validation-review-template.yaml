@@ -1,0 +1,42 @@
+independent_critic_context:
+  context_id: IVCTX-YYYYMMDD-001
+  work_slice_ref: WS-YYYYMMDD-001
+  artifact_refs: []
+  intent_ref: not_needed
+  expectations_ref: not_needed
+  evidence_refs: []
+  source_refs: []
+  known_constraints: []
+  known_gaps: []
+  review_focus: []
+  privacy_boundary:
+    prompt_content: excluded
+    restricted_sources: metadata_only
+    secrets: excluded
+
+evidence_to_expectation_gate:
+  gate_id: IVGATE-YYYYMMDD-001
+  expectations:
+    - expectation_ref: EXP-001
+      required: true
+      evidence_status: unavailable
+      evidence_refs: []
+      gap_reason: Evidence has not been produced yet.
+      disposition: human_review_required
+  overall_disposition: human_review_required
+
+validation_review_record:
+  review_id: IVR-YYYYMMDD-001
+  work_slice_ref: WS-YYYYMMDD-001
+  reviewer:
+    independence: independent_critic
+    reviewer_ref: reviewer-or-agent-ref
+    relationship_to_maker: separate_role
+  critic_context_ref: IVCTX-YYYYMMDD-001
+  evidence_gate_ref: IVGATE-YYYYMMDD-001
+  findings: []
+  verdict: human_review_required
+  confidence: low
+  limitations: []
+  human_review_ref: pending
+  audit_refs: []
