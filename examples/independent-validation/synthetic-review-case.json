@@ -1,0 +1,77 @@
+{
+  "independent_critic_context": {
+    "context_id": "IVCTX-20260629-001",
+    "work_slice_ref": "WS-20260629-S21-synthetic",
+    "artifact_refs": ["docs/contracts/intent-to-evidence-extension.md", "docs/contracts/maker-checker-policy.md"],
+    "intent_ref": "INTENT-S21-001",
+    "expectations_ref": "EXPECT-S21-001",
+    "evidence_refs": ["TEST-contracts-local"],
+    "source_refs": ["P16-R1", "P16-R2", "maker-checker-policy", "objective-gate-policy"],
+    "known_constraints": [
+      "Independent critic is a review layer, not proof.",
+      "No hidden chain-of-thought transfer is allowed.",
+      "Human review remains required for sensitive or irreversible decisions."
+    ],
+    "known_gaps": [
+      {
+        "gap": "No real critical Work Slice is used in this initial docs-first fixture.",
+        "status": "unavailable"
+      }
+    ],
+    "review_focus": ["evidence coverage", "expectation mismatch", "authority boundary"],
+    "privacy_boundary": {
+      "prompt_content": "excluded",
+      "restricted_sources": "metadata_only",
+      "secrets": "excluded"
+    }
+  },
+  "evidence_to_expectation_gate": {
+    "gate_id": "IVGATE-20260629-001",
+    "expectations": [
+      {
+        "expectation_ref": "EXPECT-S21-001-A",
+        "required": true,
+        "evidence_status": "proven",
+        "evidence_refs": ["docs/contracts/independent-validation-hardening-contract.md"],
+        "gap_reason": null,
+        "disposition": "proceed"
+      },
+      {
+        "expectation_ref": "EXPECT-S21-001-B",
+        "required": true,
+        "evidence_status": "unavailable",
+        "evidence_refs": [],
+        "gap_reason": "Real-world review outcome is not available in a synthetic S21 fixture.",
+        "disposition": "human_review_required"
+      }
+    ],
+    "overall_disposition": "human_review_required"
+  },
+  "validation_review_record": {
+    "review_id": "IVR-20260629-001",
+    "work_slice_ref": "WS-20260629-S21-synthetic",
+    "reviewer": {
+      "independence": "independent_critic",
+      "reviewer_ref": "synthetic-reviewer",
+      "relationship_to_maker": "separate_role"
+    },
+    "critic_context_ref": "IVCTX-20260629-001",
+    "evidence_gate_ref": "IVGATE-20260629-001",
+    "findings": [
+      {
+        "finding_id": "IVF-001",
+        "severity": "medium",
+        "claim": "A clean proceed verdict is not available while one required expectation has unavailable real-world evidence.",
+        "expectation_refs": ["EXPECT-S21-001-B"],
+        "evidence_refs": [],
+        "source_refs": ["P16-R2", "objective-gate-policy"],
+        "recommendation": "human_review_required"
+      }
+    ],
+    "verdict": "human_review_required",
+    "confidence": "medium",
+    "limitations": ["Synthetic fixture validates contract shape only; it does not prove reviewer accuracy."],
+    "human_review_ref": "pending",
+    "audit_refs": ["execution-audit-record", "agent-action-audit-record"]
+  }
+}
