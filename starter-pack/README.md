@@ -214,6 +214,19 @@ Read:
 
 This future track should build on the current starter-pack surfaces rather than replace them.
 
+## Design System Intelligence pilot
+
+If you need to review a work artifact against a design system without adding scanners,
+automation, or promotion authority, use:
+
+- `docs/contracts/design-system-intelligence-pilot.md`
+- `starter-pack/templates/design-system-intelligence-review-template.yaml`
+- `examples/design-system-intelligence/pulso-pilot-review.yaml`
+
+The first pilot uses Pulso as a lab case. Pulso remains an external design-system
+source; AletheIA records source-backed review evidence and does not become the
+design-system authority.
+
 ## Visual Operations docs-first projection
 
 If you want to make governed Work Slices visible without adding a runtime, backend, or new source of
