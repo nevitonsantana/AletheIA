@@ -42,10 +42,10 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** none.
-- **Next dependency path:** S26 Runtime 2.0 remains deferred until explicit boundary review; S18 remains deferred until evidence threshold is met.
+- **Active:** S26 Runtime 2.0 boundary review in progress.
+- **Next dependency path:** S26 is a docs-only boundary decision; S18 remains deferred until evidence threshold is met.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
-- **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; S26 Runtime 2.0 until explicit boundary review.
+- **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; Runtime 2.0 implementation until a later explicit boundary decision.
 
 ## Deprecated or merged plans
 
@@ -66,17 +66,17 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - SYSTEM_STATE can become stale; every claim must retain a source reference and review date.
 - Work Observatory has one record only; no success rate, ranking, work-unit or value claim is admissible.
 - New P13–P18 packs are registered as backlog sources, not implementation authority.
-- Automatic collectors, routing engines, runtime kernels, SDKs and documentation generators remain out of scope.
+- Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters and documentation generators remain out of scope.
 
 ## Next safe steps
 
-1. Choose the next planned slice only after reviewing deferred gates for S18 and S26; do not start runtime work without an explicit boundary decision.
+1. Review S26 as a boundary decision only; do not start runtime work, SDK, CLI, provider adapter or execution substrate implementation.
 2. Preserve the S15 Restart Package compatibility and post-resume checks.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
-4. Do not activate S18 before its evidence threshold or S26 before an explicit boundary decision.
+4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
 
 ## Last reviewed
 
 - **Date:** 2026-07-01
-- **Evidence baseline:** AletheIA `0800cd0` after S25 human expertise and learning merge; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** S25 Human Expertise & Evidence-Based Learning merged and local state synchronized
+- **Evidence baseline:** AletheIA `c07e6a2` after S25 closure; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** S26 Runtime 2.0 boundary review started after S25 closure
