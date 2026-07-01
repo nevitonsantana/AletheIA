@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S26 Runtime 2.0 boundary review in progress.
-- **Next dependency path:** S26 is a docs-only boundary decision; S18 remains deferred until evidence threshold is met.
+- **Active:** none.
+- **Next dependency path:** S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -79,4 +79,4 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 - **Date:** 2026-07-01
 - **Evidence baseline:** AletheIA `c07e6a2` after S25 closure; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** S26 Runtime 2.0 boundary review started after S25 closure
+- **Review trigger:** S26 Runtime 2.0 boundary review merged and local state synchronized

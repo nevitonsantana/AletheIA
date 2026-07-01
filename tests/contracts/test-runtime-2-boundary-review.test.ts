@@ -46,7 +46,8 @@ describe("S26 Runtime 2.0 boundary review", () => {
     expect(adrIndex).toContain("ADR-016-runtime-2-boundary-review.md");
     expect(backlog).toContain("ADR-016 — Runtime 2.0 Boundary Review");
     expect(backlog).toContain("requires a later explicit implementation decision");
-    expect(systemState).toContain("S26 Runtime 2.0 boundary review in progress");
+    expect(systemState).toContain("**Active:** none");
+    expect(systemState).toContain("S26 Runtime 2.0 boundary review merged");
     expect(systemState).toContain("Runtime 2.0 implementation until a later explicit boundary decision");
   });
 });
