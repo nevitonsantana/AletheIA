@@ -214,6 +214,16 @@ Read:
 
 This future track should build on the current starter-pack surfaces rather than replace them.
 
+## Reference intake and adoption
+
+Before using an external pack, plan, screenshot, repository or capability proposal as input to AletheIA or Adaptive Skills evolution, use:
+
+- `docs/contracts/reference-intake-adoption-contract.md`
+- `starter-pack/templates/reference-intake-decision-template.yaml`
+- `examples/reference-intake/evolution-pack-intake.yaml`
+
+This keeps external references as governed source material, not automatic instructions, dependencies, skill mutations or runtime authority changes.
+
 ## Design System Intelligence pilot
 
 If you need to review a work artifact against a design system without adding scanners,

@@ -35,6 +35,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [restricted-knowledge-usage-policy.md](restricted-knowledge-usage-policy.md) | Usage rules for confidential, restricted, and regulated sources |
 | [knowledge-audit-log-spec.md](knowledge-audit-log-spec.md) | Minimum audit fields when a knowledge source influences output |
 | [sensitivity-vocabulary-mapping.md](sensitivity-vocabulary-mapping.md) | Canonical sensitivity taxonomy and how project extensions map local labels to it |
+| [reference-intake-adoption-contract.md](reference-intake-adoption-contract.md) | Minimum intake, layer mapping and adoption decision record before external references influence AletheIA or Adaptive Skills |
 | [skill-evolution-validation-contract.md](skill-evolution-validation-contract.md) | What a skill evolution experiment and its validation evidence must satisfy to be governed |
 | [skill-catalog-governance-contract.md](skill-catalog-governance-contract.md) | How AletheIA governs skill selection, rejection, override, proposal decisions and catalog-review observations without becoming the skill authoring system |
 | [independent-validation-hardening-contract.md](independent-validation-hardening-contract.md) | Minimum critic context, evidence-to-expectation gate, validation review record and blind-review constraints for proportional independent validation |

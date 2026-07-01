@@ -66,7 +66,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 |---|---|---|---|
 | P0 — Coding Safety Workflow | `planned` | Coding specialization of the existing Work Slice plan | Start only after P4 defines intent and expectations boundaries. |
 | P1 — Visual Operations Layer | `partially-delivered` | Current Visual Operations contracts, examples and Mission Control | Treat current layer as baseline; gate live importers and advanced telemetry on repeated evidence. |
-| P2 — Reference Intake & Adoption | `planned` | Cross-repository intake protocol owned by AletheIA | Use the ten-pack archive as the first reconciliation example. |
+| P2 — Reference Intake & Adoption | `in-review` | Cross-repository intake protocol owned by AletheIA | S2 adds the minimum intake contract, decision template and ten-pack archive example without automatic adoption. |
 | P3 — Observation Governance | `partially-delivered` | AletheIA observation contract plus Adaptive Skills return pattern | Recoverable records are delivered; automatic normalizers, telemetry and visual projection remain evidence-gated. |
 | P4 — Intent-to-Evidence Work Slice | `delivered` | Optional Work Slice references and consultative intent clarification | Use the accepted S8 baseline; avoid a parallel lifecycle or mandatory ceremony for every slice. |
 | P5 — Capability Routing Governance | `delivered` | S10-A reconciliation note, execution vehicle, AHC, capability graph and pattern declarations | Keep as reviewed declaration; do not create a routing engine. |
@@ -140,12 +140,13 @@ S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe 
 
 ### S2 — Reference Intake minimum protocol
 
-- **Repository / layer:** AletheIA governance; Adaptive Skills capability-side template
+- **Repository / layer:** AletheIA governance; Adaptive Skills capability-side proposal template
 - **Covers:** P2
 - **Dependencies:** S1
-- **Non-goals:** dependency installation, automatic adoption or skill mutation.
+- **Status:** `in-review`
+- **Non-goals:** dependency installation, automatic adoption, runtime authority changes or skill mutation.
 - **Acceptance:** one intake contract, one adoption decision template and one worked example based on this archive.
-- **Evidence:** source provenance, layer mapping and adopt/adapt/reference/defer/reject decision are explicit.
+- **Evidence:** [`reference-intake-adoption-contract.md`](../contracts/reference-intake-adoption-contract.md), [`reference-intake-decision-template.yaml`](../../starter-pack/templates/reference-intake-decision-template.yaml), [`evolution-pack-intake.yaml`](../../examples/reference-intake/evolution-pack-intake.yaml) and guardrail tests make source provenance, layer mapping and adopt/adapt/reference/defer/reject decisions explicit.
 
 ### S3 — Pattern context unavailable states
 
@@ -401,9 +402,9 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P1-R2 Source refs, unavailable and metadata-first privacy | P1 SDD/guardrails | `delivered` | P1 baseline, all UI slices | Remains invariant. |
 | P1-R3 Static/typed cockpit and Observatory | P1 roadmap | `delivered` | P1 baseline | Evidence Ledger and Resource Observatory exist. |
 | P1-R4 Live importers and advanced observability | P1 roadmap | `deferred` | Future next-signal review | Requires repeated real evidence. |
-| P2-R1 External reference intake and pattern extraction | P2 PRD | `planned` | S2 | First example uses the ten-pack archive. |
-| P2-R2 Layer mapping and adoption decision | P2 SDD/templates | `planned` | S2 | AletheIA owns adoption decision. |
-| P2-R3 Pilot before canon promotion | P2 guardrails | `planned` | S2 and every later epic | Adaptive Skills evolution remains governed. |
+| P2-R1 External reference intake and pattern extraction | P2 PRD | `in-review` | S2 | First example uses the ten-pack archive and preserves checksum/source refs. |
+| P2-R2 Layer mapping and adoption decision | P2 SDD/templates | `in-review` | S2 | AletheIA owns adoption decision through explicit layer mapping and posture. |
+| P2-R3 Pilot before canon promotion | P2 guardrails | `in-review` | S2 and every later epic | Adaptive Skills evolution remains governed; intake can propose but not mutate skills. |
 | P2-R4 Automatic adoption/dependency installation | P2 non-goals | `rejected` | None | Conflicts with human-reviewed adoption boundary. |
 | P3-R1 Structured observation normalization | P3 PRD/contract | `partially-delivered` | S5 | Minimum record is delivered; automatic normalization remains deferred. |
 | P3-R2 Lossy output recovery pointer | P3 contract | `delivered` | S5 | Mandatory invariant in both repository templates and examples. |
