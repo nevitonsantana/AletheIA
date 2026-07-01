@@ -214,6 +214,17 @@ Read:
 
 This future track should build on the current starter-pack surfaces rather than replace them.
 
+## Coding safety plan profile
+
+For bounded coding Work Slices that need explicit base state, scope, verification, drift, rollback and stop conditions, use:
+
+- `docs/contracts/coding-safety-plan-profile.md`
+- `starter-pack/templates/coding-safety-plan-template.yaml`
+- `docs/reference/coding-safety-non-engineer-checklist.md`
+- `examples/coding-safety/s9-standard-docs-slice.yaml`
+
+This is a planning profile, not a runtime, command, auto-merge flow or new Adaptive Skill promotion.
+
 ## Reference intake and adoption
 
 Before using an external pack, plan, screenshot, repository or capability proposal as input to AletheIA or Adaptive Skills evolution, use:

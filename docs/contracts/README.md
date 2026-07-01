@@ -25,6 +25,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [visual-ops-privacy-boundaries.md](visual-ops-privacy-boundaries.md) | Metadata-first privacy rules for cockpit views, traces, telemetry, and exports |
 | [work-slice-spec-bundle.md](work-slice-spec-bundle.md) | Optional spec bundle for slices that need pre-execution clarity |
 | [intent-to-evidence-extension.md](intent-to-evidence-extension.md) | Optional human-owned Intent, Expectations, Guessing Risk, evidence mapping and reconcile inside a Work Slice |
+| [coding-safety-plan-profile.md](coding-safety-plan-profile.md) | Minimum coding plan profile for base state, scope, verification, drift, rollback, stop conditions and human merge decision |
 | [cognitive-documentation-closure-extension.md](cognitive-documentation-closure-extension.md) | Proportional finalization review for preserved intent, human understanding, documentation coherence and technical escalation |
 | [durable-decision-finalization-context-prompt.md](durable-decision-finalization-context-prompt.md) | Accepted durable decision: require finalization context prompt at slice close |
 | [consumer-project-overlay.md](consumer-project-overlay.md) | How a consumer project instantiates the operating overlay (`ops/ai/` + harness shims). Reference example: [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/) |
