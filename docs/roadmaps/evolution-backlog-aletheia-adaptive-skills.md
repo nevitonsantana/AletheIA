@@ -78,7 +78,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P11 — Cognitive Documentation & Continuity | `delivered` | Delivered SYSTEM_STATE, Restart Package continuity, proportional S16 closure review and S17 first-use guidance | Defer Observatory documentation-health projection until enough reviewed source records exist. |
 | P13 — Human Expertise & Evidence-Based Learning | `planned` | Domain Expertise Brief and Evidence-Based Learning Record | Start only after skill governance and validation hardening define review and learning boundaries. |
 | P14 — Governed Loop Engineering Addendum | `delivered` | Loop readiness, review capacity and drift controls reconciled with existing loop contracts | Delivered by S23 / AletheIA PR #283; no loop runtime or scheduler. |
-| P15 — Design System Intelligence / Pulso Lab v0.2 | `in-review` | Bounded S24 Pulso pilot for System-Aware Governance | S24 starts with a manual Pulso-aware review contract, skill method and Pattern Generalization Gate; Pulso remains a lab, not a structural dependency. |
+| P15 — Design System Intelligence / Pulso Lab v0.2 | `delivered` | Bounded S24 Pulso pilot for System-Aware Governance | Delivered by S24 through a manual Pulso-aware review contract, skill method and Pattern Generalization Gate; Pulso remains a lab, not a structural dependency. |
 | P16 — Independent Validation Hardening | `delivered` | Independent critic, evidence-to-expectation gate and validation review record | Delivered by S21 / AletheIA PR #281 before expanding loops, agents or runtime surfaces. |
 | P17 — Lean Skill Doctrine | `delivered` | Adaptive Skills doctrine, quality gate, bounded `lean-implementation` skill and AletheIA Skill Catalog Governance Contract | S20 delivered doctrine and governance; S22 delivered the bounded implementation skill and AletheIA observation compatibility. |
 | P18 — AletheIA Runtime 2.0 | `deferred` | Strategic boundary review / north-star source | No runtime kernel, SDK, CLI or provider adapter until an explicit architecture decision approves the boundary. |
@@ -362,10 +362,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** Adaptive Skills design-system governance module; AletheIA pilot governance
 - **Covers:** P6 plus P15 v0.2
 - **Dependencies:** S10 and S20; S21 recommended before review-heavy adoption
-- **Status:** `in-review` through the S24 cross-repository Pulso pilot slice.
+- **Status:** `delivered` through Adaptive Skills PR #81 and AletheIA PR #287.
 - **Non-goals:** making Pulso a structural dependency, institutionalizing patterns from statistics alone, automatic remediation, broad DS automation or many first-class skills.
 - **Acceptance:** one Pulso-aware review uses source registry, conformance/candidate outputs and Pattern Generalization Gate; at least one actionable finding is classified without promotion authority.
-- **Evidence:** AletheIA Design System Intelligence pilot contract, starter-pack template, synthetic Pulso review, Adaptive Skills `design-system-intelligence` skill, capability metadata and validation commands.
+- **Evidence:** Adaptive Skills PR #81 / `a7c5dc2`; AletheIA PR #287 / `e180f0a`; AletheIA Design System Intelligence pilot contract, starter-pack template, synthetic Pulso review, Adaptive Skills `design-system-intelligence` skill, capability metadata and validation commands.
 
 ### S25 — Human Expertise & Evidence-Based Learning
 
@@ -452,8 +452,8 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P13-R3 Capability fitness and learning dashboards | P13 metrics | `deferred` | Post-S25 evidence gate | No ranking or automation until comparable reviewed records exist. |
 | P14-R1 Loop readiness gate | P14 PRD/SDD/schema | `delivered` | S23 | Loops require objective stop conditions, objective gate, bounded budget, observable state when recurring and review capacity. |
 | P14-R2 Loop scheduler/runtime | P14 non-goals | `rejected` | None | Existing AletheIA contracts stay governance-only; execution belongs to runtime/harness. |
-| P15-R1 Design System Intelligence Pulso pilot | P15 v0.2 PRD/roadmap | `in-review` | S24 | Pulso is the lab for one bounded System-Aware Governance pilot. |
-| P15-R2 Pattern Generalization Gate | P15 v0.2 modules | `in-review` | S24 | Recurrence is signal, not promotion authority. |
+| P15-R1 Design System Intelligence Pulso pilot | P15 v0.2 PRD/roadmap | `delivered` | S24 | Pulso is the lab for one bounded System-Aware Governance pilot. |
+| P15-R2 Pattern Generalization Gate | P15 v0.2 modules | `delivered` | S24 | Recurrence is signal, not promotion authority. |
 | P15-R3 Automated weekly DS scanning | P15 roadmap | `deferred` | Post-S24 evidence gate | Requires low-noise manual pilot evidence first. |
 | P16-R1 Independent critic context | P16 schemas/prompts | `delivered` | S21 | Critic receives artifact and evidence context, not hidden actor reasoning. |
 | P16-R2 Evidence-to-expectation gate | P16 schemas/checklists | `delivered` | S21 | Clean proceed cannot be represented while required expectations remain unproven. |
@@ -571,10 +571,10 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P15 — Design System Intelligence / Pulso Lab
 
-- **Status:** `in-review`; use v0.2 as authoritative for the S24 Pulso pilot slice.
+- **Status:** `delivered`; use v0.2 as authoritative for the S24 Pulso pilot slice.
 - **Guardrails:** Pulso is a lab; statistics are signals, not promotion decisions; who proposes does not approve.
 - **Dependencies:** S10 routing, S20 skill governance and current Pulso source registry when the pilot starts.
-- **Evidence:** AletheIA Design System Intelligence pilot contract, starter-pack template and synthetic Pulso review; Adaptive Skills `design-system-intelligence` skill, capability route and example review.
+- **Evidence:** Adaptive Skills PR #81 / `a7c5dc2`; AletheIA PR #287 / `e180f0a`; AletheIA Design System Intelligence pilot contract, starter-pack template and synthetic Pulso review; Adaptive Skills `design-system-intelligence` skill, capability route and example review.
 - **Deferred:** weekly scanners, automated remediation and cross-DS generalization until a manual pilot proves value.
 
 ### P16 — Independent Validation Hardening
