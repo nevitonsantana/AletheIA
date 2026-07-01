@@ -63,6 +63,8 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - exemplo sintético S24 de revisão Pulso-aware, com observações de conformidade, finding acionável e Pattern Generalization Gate sem autoridade de promoção
 - `human-expertise-learning/`
   - exemplo sintético S25 que separa regras de especialista humano, limites de decisão e aprendizado evidenciado sem autoevolução
+- `reference-intake/`
+  - exemplo S2 de intake do pack de evolução AletheIA + Adaptive Skills, com mapeamento de camadas, decisão adapt/reference/defer/reject e guardrails contra adoção automática
 - `context-surface-governance/`
   - registro mínimo de superfícies que distingue contexto persistente, carregamento sob demanda, provider de skill e evidência que não deve virar instrução
 - `resource-aware-operations/`
