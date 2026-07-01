@@ -342,10 +342,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** Adaptive Skills engineering skill; AletheIA observation compatibility
 - **Covers:** P17 lean implementation follow-up; public issue Adaptive Skills #75
 - **Dependencies:** S20 quality gate and catalog doctrine
-- **Status:** `planned`
+- **Status:** `in-review` through the S22 cross-repository lean implementation slice.
 - **Non-goals:** replacing architecture review, testing, debugging, security, accessibility or data-integrity requirements; adding benchmark harness in v0.1.
 - **Acceptance:** `lean-implementation` passes the Skill Quality Gate, keeps 3–5 core moves, preserves safety exceptions and emits a compact observation-compatible result.
-- **Evidence:** skill validation, projection status and a synthetic engineering example.
+- **Evidence:** Adaptive Skills `lean-implementation` skill, quality-gate record, projection status, synthetic engineering example and AletheIA observation-compatibility fixture.
 
 ### S23 — Governed Loop Engineering Addendum reconciliation
 
@@ -460,7 +460,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P16-R3 LLM review as proof | P16 non-goals | `rejected` | None | Independent critic is one validation layer, never proof or final human authority. |
 | P17-R1 Lean Skill Doctrine | P17 PRD/SDD | `delivered` | S20 | Every skill must prove necessity, distinctness, proportionality, verifiability and governability. |
 | P17-R2 Skill Catalog Governance Contract | P17 AletheIA docs | `delivered` | S20 | AletheIA governs selection/proposal decisions; Adaptive Skills remains catalog-facing. |
-| P17-R3 Lean Implementation Skill | P17 skill prompt | `planned` | S22 | Create only after the doctrine/quality gate; keep safety exceptions explicit. |
+| P17-R3 Lean Implementation Skill | P17 skill prompt | `in-review` | S22 | Create only after the doctrine/quality gate; keep safety exceptions explicit. |
 | P18-R1 Work Episode / Runtime 2.0 model | P18 PRD/SDD | `deferred` | S26 | Strategic review only until boundary ADR decides whether this becomes an implementation track. |
 | P18-R2 Runtime kernel, SDK, CLI and provider adapters | P18 roadmap | `deferred` | Post-S26 decision | No execution substrate work before explicit approval. |
 
@@ -586,7 +586,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P17 — Lean Skill Doctrine
 
-- **Status:** `partially delivered`; S20 delivered the AletheIA and Adaptive Skills governance halves, while S22 remains planned for a bounded implementation skill.
+- **Status:** `in-review`; S20 delivered the AletheIA and Adaptive Skills governance halves, while S22 adds the bounded implementation skill.
 - **Guardrails:** prevent skill sprawl, overlap, context bloat and mini-framework skills; block only narrow authority/safety violations.
 - **Dependencies:** S19 source registry; S22 depends on S20.
 - **Deferred:** skill-catalog-review skill, automatic skill routing and existing skill rewrites.
