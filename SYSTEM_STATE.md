@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S25 — Human Expertise & Evidence-Based Learning, AletheIA governance slice.
-- **Next dependency path:** finish S25 before treating Domain Expertise Brief and Evidence-Based Learning Record as delivered operating surfaces.
+- **Active:** none.
+- **Next dependency path:** S26 Runtime 2.0 remains deferred until explicit boundary review; S18 remains deferred until evidence threshold is met.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; S26 Runtime 2.0 until explicit boundary review.
 
@@ -70,7 +70,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Finish S25 review before using human expertise and learning records as delivered operating surfaces.
+1. Choose the next planned slice only after reviewing deferred gates for S18 and S26; do not start runtime work without an explicit boundary decision.
 2. Preserve the S15 Restart Package compatibility and post-resume checks.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold or S26 before an explicit boundary decision.
@@ -78,5 +78,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-01
-- **Evidence baseline:** AletheIA `88da44a` after S24 closure; Adaptive Skills `e434483` after S24 closure; S25 in local review
-- **Review trigger:** S25 Human Expertise & Evidence-Based Learning started
+- **Evidence baseline:** AletheIA `0800cd0` after S25 human expertise and learning merge; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** S25 Human Expertise & Evidence-Based Learning merged and local state synchronized
