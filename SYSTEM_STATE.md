@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S2 Reference Intake minimum protocol in review.
-- **Next dependency path:** S2 establishes governed intake for external references; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
+- **Active:** none.
+- **Next dependency path:** S9 Coding Safety specialization, S11/S12 pilots or another planned slice may proceed; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -70,7 +70,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Complete S2 as a docs-first intake protocol before using additional external plans or packs as implementation authority.
+1. Choose the next planned slice without activating S18 before its evidence threshold or Runtime 2.0 implementation before a later explicit boundary decision.
 2. Preserve the S15 Restart Package compatibility and post-resume checks.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
@@ -78,5 +78,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-01
-- **Evidence baseline:** AletheIA `3128d3f` after S26 closure; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** S2 Reference Intake minimum protocol started after S26 closure
+- **Evidence baseline:** AletheIA `53b555a` after S2 reference intake merge; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** S2 Reference Intake minimum protocol merged and local state synchronized
