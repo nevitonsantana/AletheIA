@@ -81,7 +81,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P15 — Design System Intelligence / Pulso Lab v0.2 | `delivered` | Bounded S24 Pulso pilot for System-Aware Governance | Delivered by S24 through a manual Pulso-aware review contract, skill method and Pattern Generalization Gate; Pulso remains a lab, not a structural dependency. |
 | P16 — Independent Validation Hardening | `delivered` | Independent critic, evidence-to-expectation gate and validation review record | Delivered by S21 / AletheIA PR #281 before expanding loops, agents or runtime surfaces. |
 | P17 — Lean Skill Doctrine | `delivered` | Adaptive Skills doctrine, quality gate, bounded `lean-implementation` skill and AletheIA Skill Catalog Governance Contract | S20 delivered doctrine and governance; S22 delivered the bounded implementation skill and AletheIA observation compatibility. |
-| P18 — AletheIA Runtime 2.0 | `deferred` | Strategic boundary review / north-star source | No runtime kernel, SDK, CLI or provider adapter until an explicit architecture decision approves the boundary. |
+| P18 — AletheIA Runtime 2.0 | `in-review` | Strategic north-star retained by S26 boundary review | ADR-016 keeps Runtime 2.0 as a source, not an implementation track; no kernel, SDK, CLI or provider adapter is authorized. |
 
 ## Dependency graph
 
@@ -381,11 +381,11 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 
 - **Repository / layer:** AletheIA architecture decision / strategic roadmap
 - **Covers:** P18
-- **Dependencies:** S19; should consider outcomes from S20–S25 before implementation
-- **Status:** `deferred`
-- **Non-goals:** runtime kernel, SDK, CLI, plugin interface, provider adapter, capability runtime or execution engine before an explicit ADR.
+- **Dependencies:** S19; considers outcomes from S20–S25 before implementation
+- **Status:** `in-review` through ADR-016
+- **Non-goals:** runtime kernel, SDK, CLI, plugin interface, provider adapter, capability runtime or execution engine.
 - **Acceptance:** one boundary decision states whether Runtime 2.0 remains a north-star, becomes a future track, or is rejected/absorbed into existing harness/runtime boundaries.
-- **Evidence:** ADR or roadmap decision referencing current AletheIA macro-governance, Adaptive Skills micro-capability and runtime/harness execution boundaries.
+- **Evidence:** [`ADR-016 — Runtime 2.0 Boundary Review`](../adr/ADR-016-runtime-2-boundary-review.md) keeps Runtime 2.0 as a strategic north-star, preserves current AletheIA / Adaptive Skills / runtime-harness boundaries and requires a later explicit implementation decision before code begins.
 
 ## Requirement traceability matrix
 
@@ -461,8 +461,8 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P17-R1 Lean Skill Doctrine | P17 PRD/SDD | `delivered` | S20 | Every skill must prove necessity, distinctness, proportionality, verifiability and governability. |
 | P17-R2 Skill Catalog Governance Contract | P17 AletheIA docs | `delivered` | S20 | AletheIA governs selection/proposal decisions; Adaptive Skills remains catalog-facing. |
 | P17-R3 Lean Implementation Skill | P17 skill prompt | `delivered` | S22 | Created after the doctrine/quality gate; safety exceptions remain explicit. |
-| P18-R1 Work Episode / Runtime 2.0 model | P18 PRD/SDD | `deferred` | S26 | Strategic review only until boundary ADR decides whether this becomes an implementation track. |
-| P18-R2 Runtime kernel, SDK, CLI and provider adapters | P18 roadmap | `deferred` | Post-S26 decision | No execution substrate work before explicit approval. |
+| P18-R1 Work Episode / Runtime 2.0 model | P18 PRD/SDD | `in-review` | S26 | ADR-016 keeps the model as north-star vocabulary; implementation remains deferred until repeated evidence proves a missing interface. |
+| P18-R2 Runtime kernel, SDK, CLI and provider adapters | P18 roadmap | `deferred` | Post-S26 decision | ADR-016 explicitly does not authorize execution substrate work; a later boundary decision is required. |
 
 ## Per-pack preservation appendix
 
@@ -596,9 +596,9 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P18 — AletheIA Runtime 2.0
 
-- **Status:** `deferred`; use as a strategic north-star and boundary-review source.
+- **Status:** `in-review`; ADR-016 keeps it as a strategic north-star and boundary-review source.
 - **Guardrails:** Runtime 2.0 cannot silently move AletheIA from macro-governance into execution substrate ownership.
-- **Destination:** S26 decides whether to keep, absorb, reject or open a future runtime implementation track.
+- **Destination:** S26 preserves the north-star, rejects immediate implementation and requires a later explicit boundary decision before any runtime track.
 - **Deferred:** runtime kernel, SDK, CLI, event bus, plugin interface, provider adapters and capability runtime.
 
 ### M1 — Ecosystem Territory Map
