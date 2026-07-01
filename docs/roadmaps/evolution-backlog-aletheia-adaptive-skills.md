@@ -76,7 +76,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P9 — Governed Loop Observation | `delivered` | Resource Observatory skill inspector plus the bounded S7 debugging pilot | Use the accepted pilot as the first source for S14; keep comparative percentages deferred. |
 | P10/P12 — Work Observatory | `partially-delivered` | First derived `work_record` over S7 evidence; logical sublayer inside Observability & Intelligence | Accumulate comparable records without activating work units, value scoring or comparative dashboards. |
 | P11 — Cognitive Documentation & Continuity | `delivered` | Delivered SYSTEM_STATE, Restart Package continuity, proportional S16 closure review and S17 first-use guidance | Defer Observatory documentation-health projection until enough reviewed source records exist. |
-| P13 — Human Expertise & Evidence-Based Learning | `planned` | Domain Expertise Brief and Evidence-Based Learning Record | Start only after skill governance and validation hardening define review and learning boundaries. |
+| P13 — Human Expertise & Evidence-Based Learning | `in-review` | Domain Expertise Brief and Evidence-Based Learning Record | S25 starts with minimal records for scoped human expertise and evidence-backed learning without automation or ranking. |
 | P14 — Governed Loop Engineering Addendum | `delivered` | Loop readiness, review capacity and drift controls reconciled with existing loop contracts | Delivered by S23 / AletheIA PR #283; no loop runtime or scheduler. |
 | P15 — Design System Intelligence / Pulso Lab v0.2 | `delivered` | Bounded S24 Pulso pilot for System-Aware Governance | Delivered by S24 through a manual Pulso-aware review contract, skill method and Pattern Generalization Gate; Pulso remains a lab, not a structural dependency. |
 | P16 — Independent Validation Hardening | `delivered` | Independent critic, evidence-to-expectation gate and validation review record | Delivered by S21 / AletheIA PR #281 before expanding loops, agents or runtime surfaces. |
@@ -372,10 +372,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA human planning and learning governance; Adaptive Skills evidence hints where appropriate
 - **Covers:** P13
 - **Dependencies:** S20 and S21
-- **Status:** `planned`
+- **Status:** `in-review` through the S25 AletheIA human expertise and learning slice.
 - **Non-goals:** unrestricted autoevolution, skills mutating themselves, replacing human review at high risk, or capability fitness rankings without evidence.
 - **Acceptance:** smallest useful Domain Expertise Brief and Evidence-Based Learning Record capture domain rules, hypotheses, observed outcomes, surprises and future recommendations without creating a learning automation layer.
-- **Evidence:** one governed slice using the brief + learning record, with explicit human authority and validation evidence.
+- **Evidence:** AletheIA human expertise and evidence-based learning contract, starter-pack templates, synthetic governed slice and contract tests.
 
 ### S26 — Runtime 2.0 boundary review
 
@@ -447,8 +447,8 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P11-R4 Per-repository SYSTEM_STATE | P11 system-state proposal | `delivered` | S15 | Both repositories maintain compact validated first-load indexes; contracts and evidence remain authoritative. |
 | P11-R5 Explainable language and cognitive boundaries | P11 language policy | `delivered` | S17 | Confirmed depth preserves precision and requires technical review beyond the user's safe boundary. |
 | P11-R6 Documentation-health projection | P11 integration map | `deferred` | Post-S16 source evidence | Observatory remains read-only and unavailable-first. |
-| P13-R1 Domain Expertise Brief | P13 PRD/SDD | `planned` | S25 | Capture human domain rules and edge cases before execution; do not replace human authority. |
-| P13-R2 Evidence-Based Learning Record | P13 schemas/policies | `planned` | S25 | Record hypothesis, observed result, surprise and future recommendation as evidence, not self-evolution. |
+| P13-R1 Domain Expertise Brief | P13 PRD/SDD | `in-review` | S25 | Capture human domain rules and edge cases before execution; do not replace human authority. |
+| P13-R2 Evidence-Based Learning Record | P13 schemas/policies | `in-review` | S25 | Record hypothesis, observed result, surprise and future recommendation as evidence, not self-evolution. |
 | P13-R3 Capability fitness and learning dashboards | P13 metrics | `deferred` | Post-S25 evidence gate | No ranking or automation until comparable reviewed records exist. |
 | P14-R1 Loop readiness gate | P14 PRD/SDD/schema | `delivered` | S23 | Loops require objective stop conditions, objective gate, bounded budget, observable state when recurring and review capacity. |
 | P14-R2 Loop scheduler/runtime | P14 non-goals | `rejected` | None | Existing AletheIA contracts stay governance-only; execution belongs to runtime/harness. |
@@ -556,9 +556,10 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P13 — Human Expertise & Evidence-Based Learning
 
-- **Status:** `planned`; start with the smallest Domain Expertise Brief and Evidence-Based Learning Record.
+- **Status:** `in-review`; start with the smallest Domain Expertise Brief and Evidence-Based Learning Record.
 - **Guardrails:** AletheIA amplifies human expertise; it does not replace human decision, approve high-risk work or let skills self-evolve.
 - **Dependencies:** S20 skill governance and S21 validation hardening.
+- **Evidence:** AletheIA human expertise and evidence-based learning contract, starter-pack templates and synthetic example.
 - **Deferred:** capability fitness dashboards, rankings and learning automation.
 
 ### P14 — Governed Loop Engineering Addendum

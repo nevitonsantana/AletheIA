@@ -227,6 +227,19 @@ The first pilot uses Pulso as a lab case. Pulso remains an external design-syste
 source; AletheIA records source-backed review evidence and does not become the
 design-system authority.
 
+## Human expertise and evidence-based learning
+
+If a slice depends on scoped human expertise or produces learning that may affect
+future work, use:
+
+- `docs/contracts/human-expertise-learning-contract.md`
+- `starter-pack/templates/domain-expertise-brief-template.yaml`
+- `starter-pack/templates/evidence-based-learning-record-template.yaml`
+- `examples/human-expertise-learning/s25-domain-expertise-learning-synthetic.yaml`
+
+These records preserve expert guidance and learning evidence without allowing
+skills, dashboards, or agents to mutate themselves automatically.
+
 ## Visual Operations docs-first projection
 
 If you want to make governed Work Slices visible without adding a runtime, backend, or new source of

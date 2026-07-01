@@ -61,6 +61,8 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - exemplo sintético S23 de Loop Readiness Gate com stop condition objetivo, orçamento, review capacity, drift controls e proibição explícita de scheduler/runtime
 - `design-system-intelligence/`
   - exemplo sintético S24 de revisão Pulso-aware, com observações de conformidade, finding acionável e Pattern Generalization Gate sem autoridade de promoção
+- `human-expertise-learning/`
+  - exemplo sintético S25 que separa regras de especialista humano, limites de decisão e aprendizado evidenciado sem autoevolução
 - `context-surface-governance/`
   - registro mínimo de superfícies que distingue contexto persistente, carregamento sob demanda, provider de skill e evidência que não deve virar instrução
 - `resource-aware-operations/`
