@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** none.
-- **Next dependency path:** S25 Human Expertise & Evidence-Based Learning remains planned after S20/S21/S24.
+- **Active:** S25 — Human Expertise & Evidence-Based Learning, AletheIA governance slice.
+- **Next dependency path:** finish S25 before treating Domain Expertise Brief and Evidence-Based Learning Record as delivered operating surfaces.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; S26 Runtime 2.0 until explicit boundary review.
 
@@ -70,7 +70,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Start S25 Human Expertise & Evidence-Based Learning as the next ordered functional slice, unless a higher-risk review interrupts it.
+1. Finish S25 review before using human expertise and learning records as delivered operating surfaces.
 2. Preserve the S15 Restart Package compatibility and post-resume checks.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold or S26 before an explicit boundary decision.
@@ -78,5 +78,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-01
-- **Evidence baseline:** AletheIA `e180f0a` after S24 pilot contract merge; Adaptive Skills `a7c5dc2` after S24 skill merge
-- **Review trigger:** S24 Design System Intelligence / Pulso pilot merged and local state synchronized
+- **Evidence baseline:** AletheIA `88da44a` after S24 closure; Adaptive Skills `e434483` after S24 closure; S25 in local review
+- **Review trigger:** S25 Human Expertise & Evidence-Based Learning started
