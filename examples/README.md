@@ -59,6 +59,8 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - piloto real S7 de debugging governado, com skill e tools rastreadas, falha reproduzida, uma iteração, gate objetivo, orçamento explícito e revisão humana antes do merge
 - `governed-loops/`
   - exemplo sintético S23 de Loop Readiness Gate com stop condition objetivo, orçamento, review capacity, drift controls e proibição explícita de scheduler/runtime
+- `design-system-intelligence/`
+  - exemplo sintético S24 de revisão Pulso-aware, com observações de conformidade, finding acionável e Pattern Generalization Gate sem autoridade de promoção
 - `context-surface-governance/`
   - registro mínimo de superfícies que distingue contexto persistente, carregamento sob demanda, provider de skill e evidência que não deve virar instrução
 - `resource-aware-operations/`
