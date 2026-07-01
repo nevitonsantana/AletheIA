@@ -80,7 +80,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P14 — Governed Loop Engineering Addendum | `delivered` | Loop readiness, review capacity and drift controls reconciled with existing loop contracts | Delivered by S23 / AletheIA PR #283; no loop runtime or scheduler. |
 | P15 — Design System Intelligence / Pulso Lab v0.2 | `planned` | Bounded S24 Pulso pilot for System-Aware Governance | Use v0.2 and its Pattern Generalization Gate; Pulso is a lab, not a structural dependency. |
 | P16 — Independent Validation Hardening | `delivered` | Independent critic, evidence-to-expectation gate and validation review record | Delivered by S21 / AletheIA PR #281 before expanding loops, agents or runtime surfaces. |
-| P17 — Lean Skill Doctrine | `partially delivered` | Adaptive Skills doctrine, quality gate and AletheIA Skill Catalog Governance Contract | S20 delivered doctrine and governance; S22 remains planned for the bounded `lean-implementation` skill. |
+| P17 — Lean Skill Doctrine | `delivered` | Adaptive Skills doctrine, quality gate, bounded `lean-implementation` skill and AletheIA Skill Catalog Governance Contract | S20 delivered doctrine and governance; S22 delivered the bounded implementation skill and AletheIA observation compatibility. |
 | P18 — AletheIA Runtime 2.0 | `deferred` | Strategic boundary review / north-star source | No runtime kernel, SDK, CLI or provider adapter until an explicit architecture decision approves the boundary. |
 
 ## Dependency graph
@@ -342,10 +342,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** Adaptive Skills engineering skill; AletheIA observation compatibility
 - **Covers:** P17 lean implementation follow-up; public issue Adaptive Skills #75
 - **Dependencies:** S20 quality gate and catalog doctrine
-- **Status:** `in-review` through the S22 cross-repository lean implementation slice.
+- **Status:** `delivered` through Adaptive Skills PR #79 and AletheIA PR #285.
 - **Non-goals:** replacing architecture review, testing, debugging, security, accessibility or data-integrity requirements; adding benchmark harness in v0.1.
 - **Acceptance:** `lean-implementation` passes the Skill Quality Gate, keeps 3–5 core moves, preserves safety exceptions and emits a compact observation-compatible result.
-- **Evidence:** Adaptive Skills `lean-implementation` skill, quality-gate record, projection status, synthetic engineering example and AletheIA observation-compatibility fixture.
+- **Evidence:** Adaptive Skills PR #79 / `95408c4`; AletheIA PR #285 / `9bc12f9`; Adaptive Skills `lean-implementation` skill, quality-gate record, projection status, synthetic engineering example and AletheIA observation-compatibility fixture.
 
 ### S23 — Governed Loop Engineering Addendum reconciliation
 
@@ -460,7 +460,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P16-R3 LLM review as proof | P16 non-goals | `rejected` | None | Independent critic is one validation layer, never proof or final human authority. |
 | P17-R1 Lean Skill Doctrine | P17 PRD/SDD | `delivered` | S20 | Every skill must prove necessity, distinctness, proportionality, verifiability and governability. |
 | P17-R2 Skill Catalog Governance Contract | P17 AletheIA docs | `delivered` | S20 | AletheIA governs selection/proposal decisions; Adaptive Skills remains catalog-facing. |
-| P17-R3 Lean Implementation Skill | P17 skill prompt | `in-review` | S22 | Create only after the doctrine/quality gate; keep safety exceptions explicit. |
+| P17-R3 Lean Implementation Skill | P17 skill prompt | `delivered` | S22 | Created after the doctrine/quality gate; safety exceptions remain explicit. |
 | P18-R1 Work Episode / Runtime 2.0 model | P18 PRD/SDD | `deferred` | S26 | Strategic review only until boundary ADR decides whether this becomes an implementation track. |
 | P18-R2 Runtime kernel, SDK, CLI and provider adapters | P18 roadmap | `deferred` | Post-S26 decision | No execution substrate work before explicit approval. |
 
@@ -586,9 +586,10 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P17 — Lean Skill Doctrine
 
-- **Status:** `in-review`; S20 delivered the AletheIA and Adaptive Skills governance halves, while S22 adds the bounded implementation skill.
+- **Status:** `delivered`; S20 delivered the AletheIA and Adaptive Skills governance halves, while S22 added the bounded implementation skill and observation compatibility.
 - **Guardrails:** prevent skill sprawl, overlap, context bloat and mini-framework skills; block only narrow authority/safety violations.
 - **Dependencies:** S19 source registry; S22 depends on S20.
+- **Evidence:** Adaptive Skills PR #79 / `95408c4`; AletheIA PR #285 / `9bc12f9`; quality-gate record, projection status and observation-compatibility fixture.
 - **Deferred:** skill-catalog-review skill, automatic skill routing and existing skill rewrites.
 
 ### P18 — AletheIA Runtime 2.0
