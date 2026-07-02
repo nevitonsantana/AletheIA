@@ -33,11 +33,13 @@ const records = fs
 const s7Record = records.find(({ fileName }) => fileName === "s7-bounded-debugging-work-record.json")?.record;
 const s12Record = records.find(({ fileName }) => fileName === "s12-agent-role-reconciliation-work-record.json")?.record;
 const s25Record = records.find(({ fileName }) => fileName === "s25-human-expertise-learning-work-record.json")?.record;
+const s21Record = records.find(({ fileName }) => fileName === "s21-independent-validation-work-record.json")?.record;
 
 describe("Work Observatory dogfood records", () => {
   it("keeps every record a metadata-only derived projection with resolvable local source refs", () => {
     expect(records.map(({ fileName }) => fileName).sort()).toEqual([
       "s12-agent-role-reconciliation-work-record.json",
+      "s21-independent-validation-work-record.json",
       "s25-human-expertise-learning-work-record.json",
       "s7-bounded-debugging-work-record.json",
     ]);
@@ -108,5 +110,18 @@ describe("S25 Work Observatory dogfood record", () => {
     expect(s25Record?.execution.skills).toEqual([]);
     expect(s25Record?.execution.tools).toEqual(["exec_command", "apply_patch"]);
     expect(s25Record?.comparison.eligible).toBe(false);
+  });
+});
+
+
+// S21 records independent validation hardening without treating critic review as proof.
+describe("S21 Work Observatory dogfood record", () => {
+  it("traces independent validation hardening without unlocking comparison", () => {
+    expect(s21Record).toBeDefined();
+    expect(s21Record?.work_record_id).toBe("work-record-2026-07-02-s21-independent-validation-001");
+    expect(s21Record?.execution.subagents).toEqual([]);
+    expect(s21Record?.execution.skills).toEqual([]);
+    expect(s21Record?.execution.tools).toEqual(["exec_command", "apply_patch"]);
+    expect(s21Record?.comparison.eligible).toBe(false);
   });
 });
