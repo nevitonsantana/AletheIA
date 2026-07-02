@@ -43,7 +43,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Active and planned evolution
 
 - **Active:** none.
-- **Next dependency path:** S11/S12 pilots or another planned slice may proceed; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
+- **Next dependency path:** S12 Agent-role reconciliation or another planned slice may proceed; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.3 through S19 source registry and prioritization.
+- Integrated evolution backlog: current as v0.3 through S19 source registry and prioritization; S11 reconciled as delivered through S24.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -78,5 +78,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-01
-- **Evidence baseline:** AletheIA `9579df5` after S9 coding safety merge; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** S9 Coding Safety specialization merged and local state synchronized
+- **Evidence baseline:** AletheIA `f1c4bd5` after S9 closure; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** S11/S24 status reconciliation after S9 closure
