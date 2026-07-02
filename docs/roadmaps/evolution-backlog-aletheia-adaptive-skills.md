@@ -2,8 +2,8 @@
 
 ## Status
 
-- **Backlog version:** 0.3
-- **Baseline date:** 2026-06-29
+- **Backlog version:** 0.4
+- **Baseline date:** 2026-07-02
 - **Canonical backlog owner:** AletheIA
 - **Capability-side partner:** Adaptive Skills
 
@@ -22,6 +22,18 @@
 | Lean Skill Doctrine Pack | P17/S20/S22 skill-catalog and lean-implementation source | `7bf139d882afb9475b786eb0d9536b95a44dce0430176b19acd720a1c1f752a8` |
 | AletheIA Runtime 2.0 Pack | P18/S26 strategic runtime north-star source | `ce88479a13a3eeaf0b54ff9eaf291ae2f8add605cdf3d8072e770fd93c51a324` |
 | AletheIA + Adaptive Skills territory map | M1 non-normative north-star source | `906b89e3739c5737f9c683abc6ddc65e6040652105184d4640a4c50a5dc898c2` |
+
+### v0.4 repository sources
+
+These are repository-native sources, not imported packs. They become planning inputs for the next backlog round, but do not create implementation authority by themselves.
+
+| Source | Role | Authority note |
+|---|---|---|
+| [`docs/concepts/domain-governance-packs.md`](../concepts/domain-governance-packs.md) | P19 domain governance pack framing | Future reusable domain layer; not core enforcement. |
+| [`docs/concepts/ai-agent-security-prompt-injection.md`](../concepts/ai-agent-security-prompt-injection.md) | P20 first candidate domain pack | Candidate operating guidance for agent-security trust boundaries. |
+| [`docs/concepts/web-app-security-trust-boundaries.md`](../concepts/web-app-security-trust-boundaries.md) | P21 second candidate domain pack | Candidate operating guidance for web/API trust boundaries. |
+| [`docs/roadmaps/enterprise-readiness-roadmap.md`](enterprise-readiness-roadmap.md) | P22 constrained adoption maturity | Adoption posture and local trust-boundary evidence, not enterprise-platform claims. |
+| [`docs/roadmaps/resource-aware-next-signals.md`](resource-aware-next-signals.md) | P23 evidence maturity watch-list | Evidence trigger for reopening resource/work comparison, not benchmark authorization. |
 
 This backlog reconciles the original ten evolution packs, supplemental governance packs, screenshots of already-implemented `ok-*` folders, and newer P13–P18 sources with the implementation already present in AletheIA and Adaptive Skills. It is an executive map and dependency graph, not a replacement for the source packs or canonical contracts.
 
@@ -82,6 +94,11 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P16 — Independent Validation Hardening | `delivered` | Independent critic, evidence-to-expectation gate and validation review record | Delivered by S21 / AletheIA PR #281 before expanding loops, agents or runtime surfaces. |
 | P17 — Lean Skill Doctrine | `delivered` | Adaptive Skills doctrine, quality gate, bounded `lean-implementation` skill and AletheIA Skill Catalog Governance Contract | S20 delivered doctrine and governance; S22 delivered the bounded implementation skill and AletheIA observation compatibility. |
 | P18 — AletheIA Runtime 2.0 | `delivered` for boundary review | Strategic north-star retained by S26 boundary review | ADR-016 keeps Runtime 2.0 as a source, not an implementation track; no kernel, SDK, CLI or provider adapter is authorized. |
+| P19 — Domain Governance Packs | `planned` | Backlog v0.4 domain-pack registry and first-pack sequencing | Start with reusable operating guidance only; do not create technical enforcement or core bloat. |
+| P20 — AI Agent Security & Prompt Injection | `planned` | First candidate domain governance pack | Prioritize because it directly governs agents, tools, memory/retrieval, external content and prompt-injection boundaries. |
+| P21 — Web App Security & Trust Boundaries | `planned` | Second candidate domain governance pack | Useful reusable layer, but sequence after agent-security unless a web-product implementation becomes the immediate pilot. |
+| P22 — Enterprise / Constrained Adoption Evidence | `planned` | Evidence loop for constrained/local trust-boundary adoption | Strengthen adoption posture with bounded evidence before claiming enterprise readiness. |
+| P23 — Resource-Aware Next Signals | `planned` | Watch-list review, not S18 activation | Review evidence quality and repeated signals while keeping comparative metrics blocked. |
 
 ## Dependency graph
 
@@ -114,11 +131,81 @@ S1 -> S2 Reference Intake minimum protocol (P2)
 S1 -> S8 Intent-to-Evidence contracts (P4) -> S9 Coding Safety specialization (P0)
 S1 -> S10 Capability routing reconciliation (P5) -> S11/S24 System-aware Design System pilot (P6/P15)
 S4 + S5 + S10 -> S12 Agent-role reconciliation pilot (P7)
+
+S0-S26 closure + S18/S26 blockers
+  -> S27 Backlog v0.4 source registry and prioritization
+      -> S28 AI Agent Security & Prompt Injection domain-pack minimum (P20)
+          -> S29 Web App Security & Trust Boundaries domain-pack minimum (P21)
+      -> S30 Enterprise / constrained adoption evidence loop (P22)
+      -> S31 Resource-aware next-signals review (P23; does not activate S18)
+      -> S32 Observatory maturity review (P1/P3/P10/P11; only after source-backed evidence)
 ```
 
 S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe organizational slice because it reconciles new source packs before any implementation. S20 and S21 should precede new skill creation, broader loops, agents or runtime surfaces. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10/P12, P13 and P18 do not reopen live importers, runtime collection, learning automation or new dashboards through this backlog update.
 
+S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next evidence-respecting track, not to reopen blocked runtime, benchmark, auto-routing, learning automation or dashboard work. Domain governance is the strongest next path because it can improve agent/tool safety and trust-boundary clarity without requiring runtime implementation.
+
 ## PR-ready slices
+
+### S27 — Backlog v0.4 source registry and prioritization
+
+- **Repository / layer:** AletheIA canonical backlog
+- **Covers:** P19-P23 planning sources and post-S0-S26 prioritization
+- **Dependencies:** S0-S26 delivered/deferred closure; S18 comparison-readiness review; ADR-016 Runtime 2.0 boundary review
+- **Status:** `in-review` in the S27 planning PR
+- **Non-goals:** implementing domain packs, creating runtime enforcement, creating dashboards, activating S18, building Runtime 2.0 or changing Adaptive Skills.
+- **Acceptance:** v0.4 sources are registered, next slices are sequenced, blocked tracks remain blocked and every candidate has repository/layer, dependencies, non-goals and acceptance direction.
+- **Evidence:** this backlog update, SYSTEM_STATE update and governance/test validation.
+
+### S28 — AI Agent Security & Prompt Injection domain-pack minimum
+
+- **Repository / layer:** AletheIA domain governance pack; optional Adaptive Skills compatibility later
+- **Covers:** P20 instruction trust hierarchy, untrusted content, prompt-injection resistance, tool least privilege, memory/retrieval safety and safe failure.
+- **Dependencies:** S27; existing execution boundaries, AHC/AHGE, restricted knowledge policy, source precedence and tool-risk taxonomy.
+- **Status:** `planned`
+- **Non-goals:** provider-specific jailbreak recipe, technical enforcement engine, secret policy replacement, runtime scanner, or claims of perfect defense.
+- **Acceptance:** one reusable domain-pack contract or guide defines trust categories, escalation boundaries, source refs and adversarial evaluation scenarios without becoming core framework law.
+- **Evidence:** source-backed examples or fixtures showing retrieved/monitored content treated as data, not instruction.
+
+### S29 — Web App Security & Trust Boundaries domain-pack minimum
+
+- **Repository / layer:** AletheIA domain governance pack
+- **Covers:** P21 client/server separation, secrets, auth/data isolation, tenant-scoped retrieval, authoritative business logic, webhook/integration trust and artifact hygiene.
+- **Dependencies:** S27; S28 recommended if the implementation involves agents consuming web or monitored content.
+- **Status:** `planned`
+- **Non-goals:** vendor tutorial, complete AppSec manual, framework-core expansion, or executable enforcement.
+- **Acceptance:** one reusable web/API trust-boundary pack with review checklist and at least one evaluation scenario.
+- **Evidence:** source-backed scenario for secret exposure, cross-tenant context leak, unverified webhook or client-owned critical logic.
+
+### S30 — Enterprise / constrained adoption evidence loop
+
+- **Repository / layer:** AletheIA adoption guidance and project-extension examples
+- **Covers:** P22 constrained adoption, local trust-boundary posture, heavier review mapping and project-local extension evidence.
+- **Dependencies:** existing enterprise-readiness roadmap, local trust-boundary posture and constrained adoption examples.
+- **Status:** `planned`
+- **Non-goals:** enterprise product packaging, universal compliance preset, CLI/bootstrap promise or org-specific policy hardcoding.
+- **Acceptance:** one bounded adoption lane maps task brief, gates, handoff, validation and durable decisions to a constrained/local approval context.
+- **Evidence:** constrained adoption review record with reusable learning and local-only rules clearly separated.
+
+### S31 — Resource-aware next-signals review
+
+- **Repository / layer:** AletheIA resource/work evidence review
+- **Covers:** P23 next-signal watch-list and S18 blocker monitoring.
+- **Dependencies:** S27 and current Work Observatory comparison-readiness review.
+- **Status:** `planned`
+- **Non-goals:** activating S18, benchmark packaging, vendor ranking, auto-routing, learning-layer behavior or new telemetry collection.
+- **Acceptance:** review accumulated evidence for repeated comparable slices, late-stage waste, local rule repetition and stable reinforced outcomes; record whether thresholds remain unmet.
+- **Evidence:** source-backed next-signals review; unavailable inputs remain unavailable.
+
+### S32 — Observatory maturity review
+
+- **Repository / layer:** AletheIA Visual/Resource/Work Observatory planning
+- **Covers:** P1, P3, P10/P12 and P11 deferred visual/evidence projections.
+- **Dependencies:** S31 or a new source-backed evidence review showing repeated need.
+- **Status:** `planned`
+- **Non-goals:** live importers, collectors, dashboards, ranking, people scoring or automatic documentation-health inference.
+- **Acceptance:** decide whether existing Observatory surfaces need refinement, not expansion by default; every visual claim must have source_refs and unavailable state.
+- **Evidence:** bounded design/evidence review with explicit no-build outcome allowed.
 
 ### S0 — Integrate skill execution context
 
@@ -467,6 +554,14 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P17-R3 Lean Implementation Skill | P17 skill prompt | `delivered` | S22 | Created after the doctrine/quality gate; safety exceptions remain explicit. |
 | P18-R1 Work Episode / Runtime 2.0 model | P18 PRD/SDD | `delivered` for boundary review | S26 | ADR-016 keeps the model as north-star vocabulary; implementation remains deferred until repeated evidence proves a missing interface. |
 | P18-R2 Runtime kernel, SDK, CLI and provider adapters | P18 roadmap | `deferred` | Post-S26 decision | ADR-016 explicitly does not authorize execution substrate work; a later boundary decision is required. |
+| P19-R1 Domain governance pack layer | Domain governance concept | `planned` | S27/S28/S29 | Reusable domain layer sits between framework core and project extension; enforcement remains later. |
+| P20-R1 Agent instruction trust hierarchy | AI Agent Security concept | `planned` | S28 | Distinguish framework/project/user/tool/retrieved/external authority without provider-specific prompt recipes. |
+| P20-R2 Prompt injection and untrusted content boundaries | AI Agent Security concept | `planned` | S28 | External and monitored content enter as data/evidence, not instructions by default. |
+| P20-R3 Tool least privilege and memory/retrieval safety | AI Agent Security concept | `planned` | S28 | Reviewable permission and retrieval boundaries before action. |
+| P21-R1 Web/API trust boundaries | Web App Security concept | `planned` | S29 | Client/server, auth, tenant, webhook and artifact-hygiene boundaries as reusable guidance. |
+| P22-R1 Constrained adoption evidence loop | Enterprise-readiness roadmap | `planned` | S30 | Bounded local-trust adoption evidence before enterprise-readiness claims. |
+| P23-R1 Resource-aware next-signal review | Resource-aware next-signals roadmap | `planned` | S31 | Review repeated evidence without activating S18 or benchmarks. |
+| P1/P3/P10/P11-RX Observatory maturity | Existing partial/deferred observability lines | `planned` | S32 | Review visual/evidence maturity only after source-backed need; no collector/dashboard by default. |
 
 ## Per-pack preservation appendix
 
