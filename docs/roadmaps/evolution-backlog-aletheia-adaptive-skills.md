@@ -74,7 +74,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P7 — Agent Role Orchestration | `delivered` for two-role pilot; full suite deferred | Existing portable role catalog plus S12 professional-role reconciliation | S12 maps Software Engineer and QA/Governance Reviewer to portable roles without adding a second catalog or seven-agent suite. |
 | P8 — Context Surface Governance | `partially-delivered` | Minimum registry and progressive-loading policy | Manual registry and provider-loading example are delivered; automation and broader smell detection remain evidence-gated. |
 | P9 — Governed Loop Observation | `delivered` | Resource Observatory skill inspector plus the bounded S7 debugging pilot | Use the accepted pilot as the first source for S14; keep comparative percentages deferred. |
-| P10/P12 — Work Observatory | `partially-delivered` | Two derived `work_record` examples over S7 and S12 evidence; logical sublayer inside Observability & Intelligence | Accumulate comparable records without activating work units, value scoring or comparative dashboards. |
+| P10/P12 — Work Observatory | `partially-delivered` | Three derived `work_record` examples over S7, S12 and S25 evidence; logical sublayer inside Observability & Intelligence | Accumulate comparable records without activating work units, value scoring or comparative dashboards. |
 | P11 — Cognitive Documentation & Continuity | `delivered` | Delivered SYSTEM_STATE, Restart Package continuity, proportional S16 closure review and S17 first-use guidance | Defer Observatory documentation-health projection until enough reviewed source records exist. |
 | P13 — Human Expertise & Evidence-Based Learning | `delivered` | Domain Expertise Brief and Evidence-Based Learning Record | Delivered by S25 through minimal records for scoped human expertise and evidence-backed learning without automation or ranking. |
 | P14 — Governed Loop Engineering Addendum | `delivered` | Loop readiness, review capacity and drift controls reconciled with existing loop contracts | Delivered by S23 / AletheIA PR #283; no loop runtime or scheduler. |
@@ -269,7 +269,7 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Status:** `delivered` by AletheIA PR #264
 - **Non-goals:** work-unit scoring, value scoring, people evaluation, database, collector, dashboard or comparative claims.
 - **Acceptance:** S7 produces one source-backed `work_record` with duration, outcome, execution/resource/observation refs, human intervention and provenance; acceptance and rework remain `unknown` until reviewed.
-- **Evidence:** merge `5835670` adds the first metadata-only derived record and guardrail tests for S7. A later S12 dogfood record adds a second source-backed work observation for agent-role reconciliation. Both keep unsupported duration, resource, acceptance, rework, work-unit, quality and value claims explicitly `unavailable` or `unknown`.
+- **Evidence:** merge `5835670` adds the first metadata-only derived record and guardrail tests for S7. Later S12 and S25 dogfood records add source-backed work observations for agent-role reconciliation and human-expertise learning. All keep unsupported duration, resource, acceptance, rework, work-unit, quality and value claims explicitly `unavailable` or `unknown`.
 
 ### S15 — SYSTEM_STATE and continuity reconciliation
 
@@ -536,7 +536,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P10 — Work Observatory
 
-- **Status:** `partially-delivered`; two real derived records exist, while calibrated and comparative capabilities remain deferred.
+- **Status:** `partially-delivered`; three real derived records exist, while calibrated and comparative capabilities remain deferred.
 - **Guardrails:** work is not output volume; Resource Observatory remains the raw-resource source; unknown review state stays unknown; do not score people; no fake ROI.
 - **Canonical position:** separate logical sublayer inside Observability & Intelligence, initially sharing existing visual surfaces rather than creating a new product area.
 - **Key future interfaces:** derived `work_record`, comparison validity, manual acceptance/rework and human-effort provenance.
