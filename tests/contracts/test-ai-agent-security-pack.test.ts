@@ -55,7 +55,7 @@ describe("S28 AI Agent Security & Prompt Injection pack", () => {
     expect(examplesIndex).toContain("agent-security/");
     expect(starterIndex).toContain("ai-agent-security-review-template.yaml");
     expect(backlog).toContain("### S28 — AI Agent Security & Prompt Injection domain-pack minimum");
-    expect(backlog).toContain("in-review");
-    expect(systemState).toContain("S28 AI Agent Security & Prompt Injection domain-pack minimum");
+    expect(backlog).toContain("delivered` by AletheIA PR #316");
+    expect(systemState).toContain("S28 AI Agent Security is delivered");
   });
 });
