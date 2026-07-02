@@ -74,7 +74,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P7 — Agent Role Orchestration | `delivered` for two-role pilot; full suite deferred | Existing portable role catalog plus S12 professional-role reconciliation | S12 maps Software Engineer and QA/Governance Reviewer to portable roles without adding a second catalog or seven-agent suite. |
 | P8 — Context Surface Governance | `partially-delivered` | Minimum registry and progressive-loading policy | Manual registry and provider-loading example are delivered; automation and broader smell detection remain evidence-gated. |
 | P9 — Governed Loop Observation | `delivered` | Resource Observatory skill inspector plus the bounded S7 debugging pilot | Use the accepted pilot as the first source for S14; keep comparative percentages deferred. |
-| P10/P12 — Work Observatory | `partially-delivered` | Five derived `work_record` examples over S7, S12, S21, S23 and S25 evidence; logical sublayer inside Observability & Intelligence | S18 remains blocked because the records are heterogeneous, not one reviewed stable comparison group. |
+| P10/P12 — Work Observatory | `partially-delivered` | Five derived `work_record` examples over S7, S12, S21, S23 and S25 evidence; logical sublayer inside Observability & Intelligence; S18 comparison-readiness review merged in PR #313 | S18 remains blocked because the records are heterogeneous, not one reviewed stable comparison group. |
 | P11 — Cognitive Documentation & Continuity | `delivered` | Delivered SYSTEM_STATE, Restart Package continuity, proportional S16 closure review and S17 first-use guidance | Defer Observatory documentation-health projection until enough reviewed source records exist. |
 | P13 — Human Expertise & Evidence-Based Learning | `delivered` | Domain Expertise Brief and Evidence-Based Learning Record | Delivered by S25 through minimal records for scoped human expertise and evidence-backed learning without automation or ranking. |
 | P14 — Governed Loop Engineering Addendum | `delivered` | Loop readiness, review capacity and drift controls reconciled with existing loop contracts | Delivered by S23 / AletheIA PR #283; no loop runtime or scheduler. |
@@ -306,10 +306,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** Work Observatory derived metrics; existing Mission Control/Resource Observatory surface if activated
 - **Covers:** P10 comparative and visual milestones
 - **Dependencies:** S14 plus at least five reviewed records in one stable `comparison_group`
-- **Status:** `deferred` until the evidence threshold is met
+- **Status:** `deferred` until the evidence threshold is met; PR #313 adds a comparison-readiness review confirming the current five records are not eligible.
 - **Non-goals:** new page by default, work-unit leaderboards, individual productivity scoring, fake ROI or mixed-task comparisons.
 - **Acceptance:** only source-backed metrics with formula, scope, provenance, confidence and limitations are eligible; unavailable inputs suppress dependent metrics; visual projection remains read-only.
-- **Evidence:** comparison-validity report, denominator audit, privacy review and explicit activation decision.
+- **Evidence:** [`comparison-readiness-review.json`](../../examples/work-observatory/comparison-readiness-review.json) records the current denominator audit and keeps S18 blocked; future activation still requires a comparison-validity report, privacy review and explicit activation decision.
 
 ### S19 — Backlog v0.3 source registry and prioritization
 
@@ -536,7 +536,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P10 — Work Observatory
 
-- **Status:** `partially-delivered`; five real derived records exist, while calibrated and comparative capabilities remain deferred because the records are not one stable comparison group.
+- **Status:** `partially-delivered`; five real derived records exist, and PR #313 adds the comparison-readiness review that keeps calibrated and comparative capabilities deferred because the records are not one stable comparison group.
 - **Guardrails:** work is not output volume; Resource Observatory remains the raw-resource source; unknown review state stays unknown; do not score people; no fake ROI.
 - **Canonical position:** separate logical sublayer inside Observability & Intelligence, initially sharing existing visual surfaces rather than creating a new product area.
 - **Key future interfaces:** derived `work_record`, comparison validity, manual acceptance/rework and human-effort provenance.
