@@ -67,6 +67,8 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - exemplo S2 de intake do pack de evolução AletheIA + Adaptive Skills, com mapeamento de camadas, decisão adapt/reference/defer/reject e guardrails contra adoção automática
 - `coding-safety/`
   - exemplo S9 de plano Standard para coding seguro, declarando base state, escopo, verificação, drift, rollback, stop conditions e revisão humana
+- `agent-roles/`
+  - exemplo S12 que mapeia Software Engineer para `implementer` e QA/Governance Reviewer para `reviewer`, com autoridade, evidência, stop rules e handoff explícitos
 - `context-surface-governance/`
   - registro mínimo de superfícies que distingue contexto persistente, carregamento sob demanda, provider de skill e evidência que não deve virar instrução
 - `resource-aware-operations/`

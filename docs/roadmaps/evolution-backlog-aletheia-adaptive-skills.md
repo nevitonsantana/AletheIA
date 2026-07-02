@@ -71,7 +71,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P4 — Intent-to-Evidence Work Slice | `delivered` | Optional Work Slice references and consultative intent clarification | Use the accepted S8 baseline; avoid a parallel lifecycle or mandatory ceremony for every slice. |
 | P5 — Capability Routing Governance | `delivered` | S10-A reconciliation note, execution vehicle, AHC, capability graph and pattern declarations | Keep as reviewed declaration; do not create a routing engine. |
 | P6 — System-Aware Governance | `partially-delivered` as bounded pilot; umbrella deferred | S11/S24 Pulso pilot delivered as one capability module | Broader System-Aware Governance remains decomposed and deferred; do not promote the umbrella from one pilot. |
-| P7 — Agent Role Orchestration | `partially-delivered` | Existing portable role catalog, adoption guide and runtime adapters | Reconcile missing contract fields; do not add a second role model. |
+| P7 — Agent Role Orchestration | `in-review` | Existing portable role catalog plus S12 professional-role reconciliation | S12 maps Software Engineer and QA/Governance Reviewer to portable roles without adding a second catalog or seven-agent suite. |
 | P8 — Context Surface Governance | `partially-delivered` | Minimum registry and progressive-loading policy | Manual registry and provider-loading example are delivered; automation and broader smell detection remain evidence-gated. |
 | P9 — Governed Loop Observation | `delivered` | Resource Observatory skill inspector plus the bounded S7 debugging pilot | Use the accepted pilot as the first source for S14; keep comparative percentages deferred. |
 | P10/P12 — Work Observatory | `partially-delivered` | First derived `work_record` over S7 evidence; logical sublayer inside Observability & Intelligence | Accumulate comparable records without activating work units, value scoring or comparative dashboards. |
@@ -242,12 +242,13 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 
 ### S12 — Agent-role contract reconciliation pilot
 
-- **Repository / layer:** AletheIA roles and adapters; Adaptive Skills provider integration
+- **Repository / layer:** AletheIA roles and adapters; Adaptive Skills provider integration remains future repository-side alignment
 - **Covers:** P7
 - **Dependencies:** S4, S5, S10
-- **Non-goals:** seven autonomous agents, provider lock-in or duplicated role catalog.
+- **Status:** `in-review`
+- **Non-goals:** seven autonomous agents, provider lock-in, duplicated role catalog, routing engine, runtime integration or Adaptive Skills mutation.
 - **Acceptance:** existing Software Engineer and QA/Governance Reviewer roles declare authority, allowed capabilities/tools, evidence, stop and handoff behavior for one real Work Slice.
-- **Evidence:** role plan, review record, closure brief and provider references.
+- **Evidence:** [`agent-role-contract-reconciliation.md`](../contracts/agent-role-contract-reconciliation.md), [`agent-role-plan-template.yaml`](../../starter-pack/templates/agent-role-plan-template.yaml), [`s12-software-engineer-qa-governance.yaml`](../../examples/agent-roles/s12-software-engineer-qa-governance.yaml) and guardrail tests provide a role plan, review record, closure brief and provider references.
 
 
 ### S13 — Register supplemental packs and north-star map
@@ -397,7 +398,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | Requirement family | Source | Status | Backlog destination | Preservation note |
 |---|---|---|---|---|
 | P0-R1 Plan-first coding governance | P0 PRD/SDD | `delivered` | S9 | Specialization of Work Slice planning, not a lifecycle. |
-| P0-R2 Advisor/executor/verifier/reconciler separation | P0 PRD | `partially-delivered` | S9, S12 | S9 covers plan/review boundaries; S12 remains for role contract reconciliation. |
+| P0-R2 Advisor/executor/verifier/reconciler separation | P0 PRD | `in-review` | S9, S12 | S9 covers plan/review boundaries; S12 reconciles implementer/reviewer role boundaries. |
 | P0-R3 Scope, drift, rollback, stop and expected evidence | P0 templates | `delivered` | S9 | Preserve non-engineer review checklist. |
 | P0-R4 Optional plan validator | P0 roadmap | `deferred` | Post-S9 evidence gate | Stabilize manually first. |
 | P1-R1 Read-only Mission Control projection | P1 PRD/guardrails | `delivered` | P1 baseline | Existing Visual Operations contracts and app. |
@@ -425,9 +426,9 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P6-R2 Quality, design, engineering and QA governance umbrella | P6 packs | `deferred` | Post-S11 modules | Decompose; do not batch. |
 | P6-R3 Capability-first modules and route hints | P6 assessment | `delivered baseline` | S11/S24 | Bounded module and route hints exist for Design System Intelligence; promotion beyond Pulso still requires recurring evidence. |
 | P6-R4 Large set of new skills | P6 anti-patterns | `rejected` | None | Prefer modules and metadata. |
-| P7-R1 Portable professional roles | P7 PRD | `partially-delivered` | S12 | Existing role catalog is canonical. |
-| P7-R2 Role authority, evidence, stop and output contracts | P7 prompt assessment | `planned` | S12 | Add only missing fields. |
-| P7-R3 Skill-provider independence | P7 policies | `partially-delivered` | S10, S12 | Adaptive Skills preferred, not mandatory. |
+| P7-R1 Portable professional roles | P7 PRD | `in-review` | S12 | Existing role catalog remains canonical; professional labels are projections. |
+| P7-R2 Role authority, evidence, stop and output contracts | P7 prompt assessment | `in-review` | S12 | S12 adds the missing fields through a role plan record. |
+| P7-R3 Skill-provider independence | P7 policies | `in-review` | S10, S12 | Runtime/provider mapping remains optional and does not redefine portable roles. |
 | P7-R4 Full seven-agent orchestration | P7 roadmap | `deferred` | Post-S12 evidence gate | Pilot two roles first. |
 | P8-R1 Context Surface Registry | P8 PRD/schema | `delivered` | S4 | Minimum metadata contract and adopter template delivered. |
 | P8-R2 On-demand loading and prompt hygiene | P8 policies | `partially-delivered` | S4 | Provider-loading example proves the boundary; broader prompt audits remain future work. |

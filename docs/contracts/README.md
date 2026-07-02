@@ -44,6 +44,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [agent-harness-governance-extension.md](agent-harness-governance-extension.md) | How the harness validates, authorizes, executes, budgets, and returns structured observations for model-proposed actions |
 | [agent-harness-contract.md](agent-harness-contract.md) | The per-task declaration: autonomy, allowed tools/skills, gates, sensors, rollback, human review, context policy |
 | [capability-routing-reconciliation.md](capability-routing-reconciliation.md) | Canonical mapping between capability, skill, tool, agent/subagent, execution vehicle, execution pattern, AHC/AHGE and read-only Observatory evidence |
+| [agent-role-contract-reconciliation.md](agent-role-contract-reconciliation.md) | How professional projections such as Software Engineer and QA/Governance Reviewer map to portable roles without creating a second role catalog |
 | [design-system-intelligence-pilot.md](design-system-intelligence-pilot.md) | Minimum source-backed review record for bounded Design System Intelligence pilots such as Pulso, without scanners or promotion authority |
 | [human-expertise-learning-contract.md](human-expertise-learning-contract.md) | How scoped human expertise and evidence-based learning are recorded without automatic authority or self-evolution |
 | [policy-verdicts.md](policy-verdicts.md) | The verdict vocabulary (allow/deny/require_approval/transform/log_only) and its mapping to harness decision values |

@@ -214,6 +214,16 @@ Read:
 
 This future track should build on the current starter-pack surfaces rather than replace them.
 
+## Agent role reconciliation
+
+When a Work Slice needs professional role labels without creating a second agent catalog, use:
+
+- `docs/contracts/agent-role-contract-reconciliation.md`
+- `starter-pack/templates/agent-role-plan-template.yaml`
+- `examples/agent-roles/s12-software-engineer-qa-governance.yaml`
+
+This maps Software Engineer to the portable `implementer` role and QA/Governance Reviewer to the portable `reviewer` role while preserving human acceptance and AHC/AHGE boundaries.
+
 ## Coding safety plan profile
 
 For bounded coding Work Slices that need explicit base state, scope, verification, drift, rollback and stop conditions, use:

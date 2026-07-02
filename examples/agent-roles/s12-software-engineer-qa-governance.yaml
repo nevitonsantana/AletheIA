@@ -1,0 +1,128 @@
+work_slice_ref: examples/coding-safety/s9-standard-docs-slice.yaml
+source_refs:
+  - docs/contracts/agent-role-contract-reconciliation.md
+  - docs/reference/agent-role-implementer.md
+  - docs/reference/agent-role-reviewer.md
+  - docs/contracts/capability-routing-reconciliation.md
+  - docs/contracts/agent-harness-contract.md
+
+role_plans:
+  - plan_id: role-plan-s12-software-engineer
+    professional_projection: software_engineer
+    portable_role: implementer
+    runtime_or_provider: codex
+    authority:
+      autonomy_level: act_with_approval
+      may_modify_artifacts: true
+      may_approve_gate: false
+      may_merge_or_deploy: false
+    allowed_capabilities:
+      - coding_safety_plan_profile
+      - lean_implementation
+    allowed_skills:
+      - lean-implementation
+    allowed_tools:
+      - name: filesystem
+        permission: write
+        constraints:
+          - only paths declared in the coding safety plan
+      - name: test_runner
+        permission: execute
+        constraints:
+          - only validation commands declared in the plan
+    blocked_actions:
+      - approve_own_work
+      - merge_without_human
+      - deploy
+      - mutate_adaptive_skill
+      - create_runtime_or_policy_engine
+    required_inputs:
+      - confirmed Work Slice scope
+      - coding safety plan
+      - allowed paths and validation commands
+    expected_outputs:
+      - bounded patch or docs artifact
+      - execution summary
+      - validation evidence or unavailable checks
+      - handoff note for reviewer
+    evidence_required:
+      - git diff summary
+      - check-governance output
+      - CI=true pnpm test output
+      - git diff --check output
+    stop_rules:
+      - scope expands beyond allowed paths
+      - validation expected results are unclear
+      - implementation requires schema, runtime, dependency or auto-merge authority
+    handoff:
+      target_role: reviewer
+      trigger: implementation complete or semantic/governance risk detected
+      handoff_refs:
+        - role-plan-s12-qa-governance-reviewer
+
+  - plan_id: role-plan-s12-qa-governance-reviewer
+    professional_projection: qa_governance_reviewer
+    portable_role: reviewer
+    runtime_or_provider: human
+    authority:
+      autonomy_level: advise
+      may_modify_artifacts: false
+      may_approve_gate: false
+      may_merge_or_deploy: false
+    allowed_capabilities:
+      - independent_validation
+      - governance_review
+    allowed_skills:
+      - architecture-review
+      - testing
+    allowed_tools:
+      - name: repository_read
+        permission: read
+        constraints:
+          - inspect changed files and evidence refs only
+    blocked_actions:
+      - approve_as_human_owner
+      - implement_broad_redesign
+      - merge_without_human
+      - mutate_skill_catalog
+    required_inputs:
+      - role-plan-s12-software-engineer output
+      - validation evidence
+      - coding safety non-engineer checklist
+      - source refs for changed contracts
+    expected_outputs:
+      - review posture: proceed | revise | stop | escalate
+      - proof gaps
+      - contract drift notes
+      - human-owner decision needs
+    evidence_required:
+      - source-backed review notes
+      - explicit acceptability statement
+      - unresolved evidence gaps marked unknown or unavailable
+    stop_rules:
+      - critique turns into implementation ownership
+      - final acceptance requires human owner
+      - evidence is missing for a required expectation
+    handoff:
+      target_role: human_owner
+      trigger: review completed and merge/acceptance decision remains human-owned
+      handoff_refs: []
+
+review_record:
+  reviewer_projection: qa_governance_reviewer
+  portable_role: reviewer
+  reviewed_role_plan: role-plan-s12-software-engineer
+  posture: proceed_with_human_owner_review
+  findings:
+    - Software Engineer may modify bounded artifacts but cannot approve, merge or deploy.
+    - QA/Governance Reviewer may recommend proceed/revise/stop/escalate but cannot replace human acceptance.
+    - Missing provider/runtime metrics remain unavailable unless recorded by a source.
+  unresolved:
+    - Adaptive Skills provider integration remains a future repository-side alignment, not delivered by this AletheIA-only example.
+
+closure_brief:
+  status: example_only
+  evidence_refs:
+    - docs/contracts/agent-role-contract-reconciliation.md
+    - starter-pack/templates/agent-role-plan-template.yaml
+  next_step: Use this role plan shape in a real Work Slice before considering broader agent-role orchestration.
