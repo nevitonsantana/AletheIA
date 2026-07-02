@@ -28,7 +28,7 @@ Authoritative entrypoints:
 - Recoverable Observation Governance — delivered baseline.
 - Context Surface Governance — delivered minimum registry.
 - Governed Loop Observation — delivered through the accepted S7 pilot.
-- Work Observatory — partially delivered through S14 plus S12, S21, S23 and S25 derived `work_record` examples.
+- Work Observatory — partially delivered through S14 plus S12, S21, S23 and S25 derived `work_record` examples, with an S18 comparison-readiness review that keeps comparative metrics blocked.
 - Intent-to-Evidence — delivered through the accepted S8 cross-repository pilot.
 - Cognitive, intent and documentation closure — delivered through the accepted S16 pilot.
 - Explainable first use — delivered through the accepted cross-repository S17 pilot.
@@ -45,7 +45,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - **Active:** none.
 - **Next dependency path:** choose the next planned slice or evidence-gathering step; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
-- **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; Runtime 2.0 implementation until a later explicit boundary decision.
+- **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
 ## Deprecated or merged plans
 
@@ -64,7 +64,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 - **Current level:** medium — multiple delivered contracts remain difficult to understand without guided explanation.
 - SYSTEM_STATE can become stale; every claim must retain a source reference and review date.
-- Work Observatory has five total records, but they are heterogeneous and not one reviewed stable comparison group; no success rate, ranking, work-unit or value claim is admissible, and S18 remains blocked until at least five comparable records share one stable comparison group.
+- Work Observatory has five total records, and the S18 comparison-readiness review confirms they are heterogeneous and not one reviewed stable comparison group; no success rate, ranking, work-unit or value claim is admissible until at least five comparable records share one stable comparison group.
 - External references require S2 intake before they influence implementation; new P13–P18 packs remain registered as backlog sources, not implementation authority.
 - Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters and documentation generators remain out of scope.
 
@@ -78,5 +78,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-02
-- **Evidence baseline:** AletheIA `f38ae5d` after the fifth Work Observatory dogfood record; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** S23 Work Observatory dogfood record merged, active evolution remains clear and S18 remains comparison-blocked
+- **Evidence baseline:** AletheIA `4133c27` after the S18 comparison-readiness review; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** PR #313 comparison-readiness review merged, active evolution remains clear and S18 remains comparison-blocked
