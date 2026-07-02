@@ -10,6 +10,10 @@ This directory contains source-backed Work Observatory projections derived from 
 - [`s21-independent-validation-work-record.json`](s21-independent-validation-work-record.json) derives one work observation from the delivered S21 independent validation hardening slice.
 - [`s23-loop-readiness-work-record.json`](s23-loop-readiness-work-record.json) derives one work observation from the delivered S23 governed loop readiness slice.
 
+## Comparison readiness
+
+- [`comparison-readiness-review.json`](comparison-readiness-review.json) reviews the five current records and keeps S18 blocked because they are heterogeneous and do not share one reviewed stable comparison group.
+
 ## What it answers
 
 The record makes visible:
