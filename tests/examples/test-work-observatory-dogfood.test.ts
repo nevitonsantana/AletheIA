@@ -32,11 +32,13 @@ const records = fs
 
 const s7Record = records.find(({ fileName }) => fileName === "s7-bounded-debugging-work-record.json")?.record;
 const s12Record = records.find(({ fileName }) => fileName === "s12-agent-role-reconciliation-work-record.json")?.record;
+const s25Record = records.find(({ fileName }) => fileName === "s25-human-expertise-learning-work-record.json")?.record;
 
 describe("Work Observatory dogfood records", () => {
   it("keeps every record a metadata-only derived projection with resolvable local source refs", () => {
     expect(records.map(({ fileName }) => fileName).sort()).toEqual([
       "s12-agent-role-reconciliation-work-record.json",
+      "s25-human-expertise-learning-work-record.json",
       "s7-bounded-debugging-work-record.json",
     ]);
 
@@ -93,5 +95,18 @@ describe("Work Observatory dogfood records", () => {
     expect(s12Record?.execution.subagents).toEqual([]);
     expect(s12Record?.execution.skills).toEqual([]);
     expect(s12Record?.execution.tools).toEqual(["exec_command", "apply_patch"]);
+  });
+});
+
+
+// S25 stays source-backed: it records learning evidence, not automatic self-evolution.
+describe("S25 Work Observatory dogfood record", () => {
+  it("traces human expertise and evidence learning without unlocking automation", () => {
+    expect(s25Record).toBeDefined();
+    expect(s25Record?.work_record_id).toBe("work-record-2026-07-02-s25-human-expertise-001");
+    expect(s25Record?.execution.subagents).toEqual([]);
+    expect(s25Record?.execution.skills).toEqual([]);
+    expect(s25Record?.execution.tools).toEqual(["exec_command", "apply_patch"]);
+    expect(s25Record?.comparison.eligible).toBe(false);
   });
 });
