@@ -172,10 +172,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA domain governance pack
 - **Covers:** P21 client/server separation, secrets, auth/data isolation, tenant-scoped retrieval, authoritative business logic, webhook/integration trust and artifact hygiene.
 - **Dependencies:** S27; S28 recommended if the implementation involves agents consuming web or monitored content.
-- **Status:** `planned`
+- **Status:** `in-review` in the S29 domain-pack PR
 - **Non-goals:** vendor tutorial, complete AppSec manual, framework-core expansion, or executable enforcement.
 - **Acceptance:** one reusable web/API trust-boundary pack with review checklist and at least one evaluation scenario.
-- **Evidence:** source-backed scenario for secret exposure, cross-tenant context leak, unverified webhook or client-owned critical logic.
+- **Evidence:** [`web-app-security-trust-boundaries.md`](../domain-governance-packs/web-app-security-trust-boundaries.md), [`web-app-security-review-checklist.md`](../reference/web-app-security-review-checklist.md), [`web-app-security-review-template.yaml`](../../starter-pack/templates/web-app-security-review-template.yaml) and [`trust-boundary-review.yaml`](../../examples/web-app-security/trust-boundary-review.yaml).
 
 ### S30 — Enterprise / constrained adoption evidence loop
 

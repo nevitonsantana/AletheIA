@@ -178,6 +178,17 @@ For the S28 minimum AI Agent Security & Prompt Injection pack, read:
 
 This pack is docs-first and provider-agnostic. It does not add runtime enforcement, scanners, provider-specific prompt recipes or perfect-defense claims.
 
+## Domain governance: web app security
+
+For the S29 minimum Web App Security & Trust Boundaries pack, read:
+
+- `docs/domain-governance-packs/web-app-security-trust-boundaries.md`
+- `docs/reference/web-app-security-review-checklist.md`
+- `starter-pack/templates/web-app-security-review-template.yaml`
+- `examples/web-app-security/trust-boundary-review.yaml`
+
+This pack is docs-first and provider-agnostic. It does not add runtime enforcement, scanners, vendor tutorials or framework-core expansion.
+
 ## Queued 1.2 operationalization track
 
 The next queued post-1.0 track is resource-aware operations.
