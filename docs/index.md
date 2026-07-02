@@ -56,9 +56,10 @@ Reading map organized by intent. Each entry links to the most useful starting po
 
 1. [Domain Governance Packs](concepts/domain-governance-packs.md) — reusable domain layer between core and project extension
 2. [AI Agent Security & Prompt Injection Pack](domain-governance-packs/ai-agent-security-prompt-injection.md) — S28 minimum pack for agent-security boundaries
-3. [AI Agent Security review checklist](reference/ai-agent-security-review-checklist.md) — practical review checklist for suspicious content/tool boundaries
-4. [AI Agent Security concept](concepts/ai-agent-security-prompt-injection.md) — conceptual source for the pack
-5. [Tool Risk Taxonomy](concepts/tool-risk-taxonomy.md) — tool-risk language that the pack relies on
+3. [Web App Security & Trust Boundaries Pack](domain-governance-packs/web-app-security-trust-boundaries.md) — S29 minimum pack for web/API boundaries
+4. [AI Agent Security review checklist](reference/ai-agent-security-review-checklist.md) — practical review checklist for suspicious content/tool boundaries
+5. [Web App Security review checklist](reference/web-app-security-review-checklist.md) — practical review checklist for client/server, auth, tenant and artifact boundaries
+6. [Tool Risk Taxonomy](concepts/tool-risk-taxonomy.md) — tool-risk language that these packs rely on
 
 ## I want to choose an execution pattern
 

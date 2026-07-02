@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** none.
-- **Next dependency path:** S29 Web App Security & Trust Boundaries domain-pack minimum is the next planned v0.4 slice unless the user chooses a different focus; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
+- **Active:** S29 Web App Security & Trust Boundaries domain-pack minimum.
+- **Next dependency path:** S29 creates the minimum reusable web/API trust-boundary domain pack; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered and S29 Web App Security remains planned.
+- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered and S29 Web App Security is active.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -65,18 +65,18 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - **Current level:** medium — multiple delivered contracts remain difficult to understand without guided explanation.
 - SYSTEM_STATE can become stale; every claim must retain a source reference and review date.
 - Work Observatory has five total records, and the S18 comparison-readiness review confirms they are heterogeneous and not one reviewed stable comparison group; no success rate, ranking, work-unit or value claim is admissible until at least five comparable records share one stable comparison group.
-- External references require S2 intake before they influence implementation; P20/S28 is accepted as a docs-first domain pack, while P21–P23 v0.4 candidates remain planning sources until their slices are explicitly accepted.
+- External references require S2 intake before they influence implementation; P20/S28 is accepted as a docs-first domain pack, while P21/S29 is in review and P22–P23 remain planning sources until explicitly accepted.
 - Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters and documentation generators remain out of scope.
 
 ## Next safe steps
 
-1. Choose whether to start S29 Web App Security & Trust Boundaries or pause for review.
-2. Keep S29 docs-first and provider-agnostic if started; do not add runtime enforcement, scanners, vendor tutorials or framework-core expansion.
+1. Complete S29 by adding the minimum Web App Security & Trust Boundaries pack, checklist, template and evaluation example.
+2. Keep S29 docs-first and provider-agnostic; do not add runtime enforcement, scanners, vendor tutorials or framework-core expansion.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
 
 ## Last reviewed
 
 - **Date:** 2026-07-02
-- **Evidence baseline:** AletheIA `a8c492b` after S28 AI Agent Security pack; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** PR #316 merged; S28 delivered without reopening blocked runtime, scanner or S18 tracks
+- **Evidence baseline:** AletheIA `4425f9e` after S28 status refresh; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** PR #317 merged; S29 starts the second v0.4 domain-governance pack without reopening blocked runtime, scanner or S18 tracks
