@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** none.
-- **Next dependency path:** choose the next planned slice or evidence-gathering step; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
+- **Active:** S27 Backlog v0.4 source registry and prioritization.
+- **Next dependency path:** S27 chooses the next evidence-respecting track; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.3 through S19 source registry and prioritization; S11 reconciled as delivered through S24.
+- Integrated evolution backlog: being updated to v0.4 to register domain governance, constrained adoption and resource-aware next-signal candidates after S0-S26 closure.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -65,18 +65,18 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - **Current level:** medium — multiple delivered contracts remain difficult to understand without guided explanation.
 - SYSTEM_STATE can become stale; every claim must retain a source reference and review date.
 - Work Observatory has five total records, and the S18 comparison-readiness review confirms they are heterogeneous and not one reviewed stable comparison group; no success rate, ranking, work-unit or value claim is admissible until at least five comparable records share one stable comparison group.
-- External references require S2 intake before they influence implementation; new P13–P18 packs remain registered as backlog sources, not implementation authority.
+- External references require S2 intake before they influence implementation; P19–P23 v0.4 candidates remain planning sources until their slices are explicitly accepted.
 - Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters and documentation generators remain out of scope.
 
 ## Next safe steps
 
-1. Choose the next planned slice without activating S18 before its evidence threshold or Runtime 2.0 implementation before a later explicit boundary decision.
-2. Preserve the S15 Restart Package compatibility and post-resume checks.
+1. Complete S27 by registering v0.4 sources and prioritizing the next domain/evidence track.
+2. Prefer S28 AI Agent Security & Prompt Injection as the first new domain-governance pack unless a stronger user-selected focus supersedes it.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
 
 ## Last reviewed
 
 - **Date:** 2026-07-02
-- **Evidence baseline:** AletheIA `4133c27` after the S18 comparison-readiness review; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** PR #313 comparison-readiness review merged, active evolution remains clear and S18 remains comparison-blocked
+- **Evidence baseline:** AletheIA `d63022b` after the S18 status refresh; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** S0-S26 closure and issue #274 cleanup; S27 selects the next backlog without reopening blocked tracks
