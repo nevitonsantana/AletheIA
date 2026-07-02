@@ -70,7 +70,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P3 — Observation Governance | `partially-delivered` | AletheIA observation contract plus Adaptive Skills return pattern | Recoverable records are delivered; automatic normalizers, telemetry and visual projection remain evidence-gated. |
 | P4 — Intent-to-Evidence Work Slice | `delivered` | Optional Work Slice references and consultative intent clarification | Use the accepted S8 baseline; avoid a parallel lifecycle or mandatory ceremony for every slice. |
 | P5 — Capability Routing Governance | `delivered` | S10-A reconciliation note, execution vehicle, AHC, capability graph and pattern declarations | Keep as reviewed declaration; do not create a routing engine. |
-| P6 — System-Aware Governance | `deferred` as umbrella | Small capability modules and evidence-backed pilots | Pilot one Design System/Pulso module before promoting broader governance. |
+| P6 — System-Aware Governance | `partially-delivered` as bounded pilot; umbrella deferred | S11/S24 Pulso pilot delivered as one capability module | Broader System-Aware Governance remains decomposed and deferred; do not promote the umbrella from one pilot. |
 | P7 — Agent Role Orchestration | `partially-delivered` | Existing portable role catalog, adoption guide and runtime adapters | Reconcile missing contract fields; do not add a second role model. |
 | P8 — Context Surface Governance | `partially-delivered` | Minimum registry and progressive-loading policy | Manual registry and provider-loading example are delivered; automation and broader smell detection remain evidence-gated. |
 | P9 — Governed Loop Observation | `delivered` | Resource Observatory skill inspector plus the bounded S7 debugging pilot | Use the accepted pilot as the first source for S14; keep comparative percentages deferred. |
@@ -235,9 +235,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** Adaptive Skills capability module; AletheIA pilot governance
 - **Covers:** first bounded slice of P6
 - **Dependencies:** S2, S4, S10
+- **Status:** `delivered` through S24 / AletheIA PR #287 and Adaptive Skills PR #81
 - **Non-goals:** adopting the entire SAGP umbrella or creating many first-class skills.
 - **Acceptance:** one Pulso-aware review loads the governing Design System only when relevant, reports compliance and exceptions, and creates an evolution proposal only when evidence supports it.
-- **Evidence:** source registry, activation record, review output and reconcile.
+- **Evidence:** S24 delivered the same bounded Pulso-aware pilot through the AletheIA Design System Intelligence pilot contract, starter-pack template, synthetic Pulso review, Adaptive Skills `design-system-intelligence` skill, capability metadata and validation commands. This closes the original S11 pilot slot without promoting the broader System-Aware Governance umbrella.
 
 ### S12 — Agent-role contract reconciliation pilot
 
@@ -420,9 +421,9 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P5-R2 Delegation envelope and evidence | P5 SDD | `absorbed` | AHC/orchestration contracts; S10 cross-link | No duplicate schema unless a concrete gap remains. |
 | P5-R3 Adaptive Skills capability manifest | P5 proposal | `absorbed` | Existing capability graph and declarations | Extend only through governed evolution. |
 | P5-R4 Runtime routing engine | P5 non-goal | `rejected` | None | Advisory routing remains the boundary. |
-| P6-R1 Detect and honor existing systems | P6 PRD | `planned` | S11 | First pilot: Pulso Design System. |
+| P6-R1 Detect and honor existing systems | P6 PRD | `delivered` | S11/S24 | First pilot delivered through Pulso Design System review; broader system awareness remains decomposed. |
 | P6-R2 Quality, design, engineering and QA governance umbrella | P6 packs | `deferred` | Post-S11 modules | Decompose; do not batch. |
-| P6-R3 Capability-first modules and route hints | P6 assessment | `planned` | S11 | Promote only after recurring evidence. |
+| P6-R3 Capability-first modules and route hints | P6 assessment | `delivered baseline` | S11/S24 | Bounded module and route hints exist for Design System Intelligence; promotion beyond Pulso still requires recurring evidence. |
 | P6-R4 Large set of new skills | P6 anti-patterns | `rejected` | None | Prefer modules and metadata. |
 | P7-R1 Portable professional roles | P7 PRD | `partially-delivered` | S12 | Existing role catalog is canonical. |
 | P7-R2 Role authority, evidence, stop and output contracts | P7 prompt assessment | `planned` | S12 | Add only missing fields. |
@@ -574,7 +575,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P15 — Design System Intelligence / Pulso Lab
 
-- **Status:** `delivered`; use v0.2 as authoritative for the S24 Pulso pilot slice.
+- **Status:** `delivered`; use v0.2 as authoritative for the S24 Pulso pilot slice and as the delivered evidence for the original S11 Design System pilot.
 - **Guardrails:** Pulso is a lab; statistics are signals, not promotion decisions; who proposes does not approve.
 - **Dependencies:** S10 routing, S20 skill governance and current Pulso source registry when the pilot starts.
 - **Evidence:** Adaptive Skills PR #81 / `a7c5dc2`; AletheIA PR #287 / `e180f0a`; AletheIA Design System Intelligence pilot contract, starter-pack template and synthetic Pulso review; Adaptive Skills `design-system-intelligence` skill, capability route and example review.
