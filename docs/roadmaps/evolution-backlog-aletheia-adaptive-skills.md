@@ -162,10 +162,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA domain governance pack; optional Adaptive Skills compatibility later
 - **Covers:** P20 instruction trust hierarchy, untrusted content, prompt-injection resistance, tool least privilege, memory/retrieval safety and safe failure.
 - **Dependencies:** S27; existing execution boundaries, AHC/AHGE, restricted knowledge policy, source precedence and tool-risk taxonomy.
-- **Status:** `in-review` in the S28 domain-pack PR
+- **Status:** `delivered` by AletheIA PR #316
 - **Non-goals:** provider-specific jailbreak recipe, technical enforcement engine, secret policy replacement, runtime scanner, or claims of perfect defense.
 - **Acceptance:** one reusable domain-pack contract or guide defines trust categories, escalation boundaries, source refs and adversarial evaluation scenarios without becoming core framework law.
-- **Evidence:** [`ai-agent-security-prompt-injection.md`](../domain-governance-packs/ai-agent-security-prompt-injection.md), [`ai-agent-security-review-checklist.md`](../reference/ai-agent-security-review-checklist.md), [`ai-agent-security-review-template.yaml`](../../starter-pack/templates/ai-agent-security-review-template.yaml) and [`prompt-injection-review.yaml`](../../examples/agent-security/prompt-injection-review.yaml).
+- **Evidence:** AletheIA PR #316 / `a8c492b`; [`ai-agent-security-prompt-injection.md`](../domain-governance-packs/ai-agent-security-prompt-injection.md), [`ai-agent-security-review-checklist.md`](../reference/ai-agent-security-review-checklist.md), [`ai-agent-security-review-template.yaml`](../../starter-pack/templates/ai-agent-security-review-template.yaml), [`prompt-injection-review.yaml`](../../examples/agent-security/prompt-injection-review.yaml) and contract tests.
 
 ### S29 — Web App Security & Trust Boundaries domain-pack minimum
 
