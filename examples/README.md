@@ -87,6 +87,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - caso sintético S21 para critic context, evidence-to-expectation gate e validation review record, mantendo evidência indisponível como `unavailable` e sem transformar LLM review em prova
 - `work-observatory/`
   - primeiro `work_record` derivado do piloto S7, conectando executor, skills, tools, gate, resultado e revisão sem inventar duração, custo, aceitação, retrabalho, work units ou valor
+  - segundo `work_record` derivado do piloto S12, registrando reconciliação de papéis, artefatos, gate e revisão humana sem ativar métricas comparativas
   - wireframe leve/documental do Mission Control, com direção visual e hierarquia de tela
   - mock visual versionado do Mission Control, escolhendo Trace Room + Evidence Desk como direção inicial
   - mock visual refinado de tela única, agora tratado como precursor visual

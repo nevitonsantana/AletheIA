@@ -1,10 +1,11 @@
-# Work Observatory — First Dogfood Record
+# Work Observatory — Dogfood Records
 
-This directory contains the first source-backed Work Observatory projection derived from work performed on AletheIA itself.
+This directory contains source-backed Work Observatory projections derived from work performed on AletheIA itself.
 
 ## Record
 
 - [`s7-bounded-debugging-work-record.json`](s7-bounded-debugging-work-record.json) derives one work observation from the accepted S7 bounded debugging pilot.
+- [`s12-agent-role-reconciliation-work-record.json`](s12-agent-role-reconciliation-work-record.json) derives one work observation from the delivered S12 agent-role reconciliation pilot.
 
 ## What it answers
 
@@ -23,7 +24,7 @@ The record makes visible:
 
 This is a read-only derived observation, not a second execution authority. The source selection, skill return, loop run, test and merge records remain authoritative.
 
-The first record deliberately does **not** provide:
+These records deliberately do **not** provide:
 
 - work units;
 - quality or value scores;
