@@ -90,6 +90,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - segundo `work_record` derivado do piloto S12, registrando reconciliação de papéis, artefatos, gate e revisão humana sem ativar métricas comparativas
   - terceiro `work_record` derivado da S25, registrando contrato, templates, exemplo e gate de aprendizado evidenciado sem autoevolução
   - quarto `work_record` derivado da S21, registrando validação independente, checklist, template, exemplo e gate sem transformar crítica em prova
+  - quinto `work_record` derivado da S23, registrando loop readiness, stop conditions, review capacity e drift controls sem ativar scheduler/runtime
   - wireframe leve/documental do Mission Control, com direção visual e hierarquia de tela
   - mock visual versionado do Mission Control, escolhendo Trace Room + Evidence Desk como direção inicial
   - mock visual refinado de tela única, agora tratado como precursor visual

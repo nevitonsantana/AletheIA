@@ -34,12 +34,14 @@ const s7Record = records.find(({ fileName }) => fileName === "s7-bounded-debuggi
 const s12Record = records.find(({ fileName }) => fileName === "s12-agent-role-reconciliation-work-record.json")?.record;
 const s25Record = records.find(({ fileName }) => fileName === "s25-human-expertise-learning-work-record.json")?.record;
 const s21Record = records.find(({ fileName }) => fileName === "s21-independent-validation-work-record.json")?.record;
+const s23Record = records.find(({ fileName }) => fileName === "s23-loop-readiness-work-record.json")?.record;
 
 describe("Work Observatory dogfood records", () => {
   it("keeps every record a metadata-only derived projection with resolvable local source refs", () => {
     expect(records.map(({ fileName }) => fileName).sort()).toEqual([
       "s12-agent-role-reconciliation-work-record.json",
       "s21-independent-validation-work-record.json",
+      "s23-loop-readiness-work-record.json",
       "s25-human-expertise-learning-work-record.json",
       "s7-bounded-debugging-work-record.json",
     ]);
@@ -123,5 +125,18 @@ describe("S21 Work Observatory dogfood record", () => {
     expect(s21Record?.execution.skills).toEqual([]);
     expect(s21Record?.execution.tools).toEqual(["exec_command", "apply_patch"]);
     expect(s21Record?.comparison.eligible).toBe(false);
+  });
+});
+
+
+// S23 records loop readiness without authorizing a scheduler or loop runtime.
+describe("S23 Work Observatory dogfood record", () => {
+  it("traces loop readiness while keeping comparison ineligible", () => {
+    expect(s23Record).toBeDefined();
+    expect(s23Record?.work_record_id).toBe("work-record-2026-07-02-s23-loop-readiness-001");
+    expect(s23Record?.execution.subagents).toEqual([]);
+    expect(s23Record?.execution.skills).toEqual([]);
+    expect(s23Record?.execution.tools).toEqual(["exec_command", "apply_patch"]);
+    expect(s23Record?.comparison.eligible).toBe(false);
   });
 });
