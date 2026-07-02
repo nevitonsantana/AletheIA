@@ -77,6 +77,6 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Last reviewed
 
-- **Date:** 2026-07-01
-- **Evidence baseline:** AletheIA `da75d60` after S12 agent-role reconciliation merge; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** S12 Agent-role contract reconciliation merged and local state synchronized
+- **Date:** 2026-07-02
+- **Evidence baseline:** AletheIA `eda37b4` after S12 closure status merge; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** S12 closure merged, active evolution cleared and local state synchronized
