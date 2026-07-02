@@ -166,6 +166,18 @@ If you want to run a bounded pilot in a constrained environment before broader r
 - `starter-pack/templates/constrained-pilot-review-template.md`
 - `examples/pilot-conversion/constrained-adoption-bounded-validation.md`
 
+
+## Domain governance: AI agent security
+
+For the S28 minimum AI Agent Security & Prompt Injection pack, read:
+
+- `docs/domain-governance-packs/ai-agent-security-prompt-injection.md`
+- `docs/reference/ai-agent-security-review-checklist.md`
+- `starter-pack/templates/ai-agent-security-review-template.yaml`
+- `examples/agent-security/prompt-injection-review.yaml`
+
+This pack is docs-first and provider-agnostic. It does not add runtime enforcement, scanners, provider-specific prompt recipes or perfect-defense claims.
+
 ## Queued 1.2 operationalization track
 
 The next queued post-1.0 track is resource-aware operations.

@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S27 Backlog v0.4 source registry and prioritization.
-- **Next dependency path:** S27 chooses the next evidence-respecting track; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
+- **Active:** S28 AI Agent Security & Prompt Injection domain-pack minimum.
+- **Next dependency path:** S28 creates the minimum reusable agent-security domain pack; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: being updated to v0.4 to register domain governance, constrained adoption and resource-aware next-signal candidates after S0-S26 closure.
+- Integrated evolution backlog: current as v0.4 after S27; S28 is the active domain-governance pack minimum.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -70,13 +70,13 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Complete S27 by registering v0.4 sources and prioritizing the next domain/evidence track.
-2. Prefer S28 AI Agent Security & Prompt Injection as the first new domain-governance pack unless a stronger user-selected focus supersedes it.
+1. Complete S28 by adding the minimum AI Agent Security & Prompt Injection pack, checklist, template and adversarial example.
+2. Keep S28 docs-first and provider-agnostic; do not add runtime enforcement, scanners, provider-specific prompt recipes or perfect-defense claims.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
 
 ## Last reviewed
 
 - **Date:** 2026-07-02
-- **Evidence baseline:** AletheIA `d63022b` after the S18 status refresh; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** S0-S26 closure and issue #274 cleanup; S27 selects the next backlog without reopening blocked tracks
+- **Evidence baseline:** AletheIA `685b1ab` after backlog v0.4 / S27; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** PR #315 merged; S28 starts the first v0.4 domain-governance pack without reopening blocked tracks

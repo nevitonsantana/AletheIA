@@ -152,20 +152,20 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA canonical backlog
 - **Covers:** P19-P23 planning sources and post-S0-S26 prioritization
 - **Dependencies:** S0-S26 delivered/deferred closure; S18 comparison-readiness review; ADR-016 Runtime 2.0 boundary review
-- **Status:** `in-review` in the S27 planning PR
+- **Status:** `delivered` by AletheIA PR #315
 - **Non-goals:** implementing domain packs, creating runtime enforcement, creating dashboards, activating S18, building Runtime 2.0 or changing Adaptive Skills.
 - **Acceptance:** v0.4 sources are registered, next slices are sequenced, blocked tracks remain blocked and every candidate has repository/layer, dependencies, non-goals and acceptance direction.
-- **Evidence:** this backlog update, SYSTEM_STATE update and governance/test validation.
+- **Evidence:** AletheIA PR #315 / `685b1ab`; backlog v0.4 source registry, S27-S32 sequencing, SYSTEM_STATE update and governance/test validation.
 
 ### S28 — AI Agent Security & Prompt Injection domain-pack minimum
 
 - **Repository / layer:** AletheIA domain governance pack; optional Adaptive Skills compatibility later
 - **Covers:** P20 instruction trust hierarchy, untrusted content, prompt-injection resistance, tool least privilege, memory/retrieval safety and safe failure.
 - **Dependencies:** S27; existing execution boundaries, AHC/AHGE, restricted knowledge policy, source precedence and tool-risk taxonomy.
-- **Status:** `planned`
+- **Status:** `in-review` in the S28 domain-pack PR
 - **Non-goals:** provider-specific jailbreak recipe, technical enforcement engine, secret policy replacement, runtime scanner, or claims of perfect defense.
 - **Acceptance:** one reusable domain-pack contract or guide defines trust categories, escalation boundaries, source refs and adversarial evaluation scenarios without becoming core framework law.
-- **Evidence:** source-backed examples or fixtures showing retrieved/monitored content treated as data, not instruction.
+- **Evidence:** [`ai-agent-security-prompt-injection.md`](../domain-governance-packs/ai-agent-security-prompt-injection.md), [`ai-agent-security-review-checklist.md`](../reference/ai-agent-security-review-checklist.md), [`ai-agent-security-review-template.yaml`](../../starter-pack/templates/ai-agent-security-review-template.yaml) and [`prompt-injection-review.yaml`](../../examples/agent-security/prompt-injection-review.yaml).
 
 ### S29 — Web App Security & Trust Boundaries domain-pack minimum
 

@@ -1,0 +1,31 @@
+agent_security_review:
+  review_id: ASR-YYYYMMDD-001
+  work_slice_ref: WS-YYYY-001
+  reviewer: unknown
+  source_refs: []
+  content_boundary:
+    suspicious_source_ref: SRC-UNKNOWN
+    source_category: external_content # external_content | retrieved_content | tool_output | memory | user_request
+    content_trust: unavailable # trusted | partially_trusted | untrusted | unavailable
+    instruction_authority: unavailable # none | limited | binding | unavailable
+    reclassified_as: unavailable # context | evidence | instruction | unavailable
+  detected_risks:
+    - unavailable
+  tool_boundary:
+    requested_tool_action: unavailable
+    requested_tool_risk: unavailable
+    allowed_by_envelope: unavailable
+    human_approval_required: unavailable
+  retrieval_memory_boundary:
+    provenance_available: unavailable
+    stale_or_poisoned_risk: unavailable
+    fact_inference_instruction_separated: unavailable
+  decision:
+    posture: require_human_review # allow_read_only | transform_to_context | require_human_review | block
+    rationale: "Unreviewed template; do not treat as approval."
+    evidence_refs: []
+  non_goals_confirmed:
+    runtime_enforcement_added: false
+    scanner_added: false
+    provider_specific_prompt_recipe_added: false
+    perfect_defense_claimed: false
