@@ -7,6 +7,7 @@ This directory contains source-backed Work Observatory projections derived from 
 - [`s7-bounded-debugging-work-record.json`](s7-bounded-debugging-work-record.json) derives one work observation from the accepted S7 bounded debugging pilot.
 - [`s12-agent-role-reconciliation-work-record.json`](s12-agent-role-reconciliation-work-record.json) derives one work observation from the delivered S12 agent-role reconciliation pilot.
 - [`s25-human-expertise-learning-work-record.json`](s25-human-expertise-learning-work-record.json) derives one work observation from the delivered S25 human expertise and evidence-based learning slice.
+- [`s21-independent-validation-work-record.json`](s21-independent-validation-work-record.json) derives one work observation from the delivered S21 independent validation hardening slice.
 
 ## What it answers
 
