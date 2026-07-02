@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S12 Agent-role contract reconciliation in review.
-- **Next dependency path:** S12 reconciles professional role projections with portable roles; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
+- **Active:** none.
+- **Next dependency path:** choose the next planned slice or evidence-gathering step; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -70,7 +70,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Complete S12 without creating a second role catalog, seven-agent suite, routing engine or provider-specific authority.
+1. Choose the next planned slice without activating S18 before its evidence threshold or Runtime 2.0 implementation before a later explicit boundary decision.
 2. Preserve the S15 Restart Package compatibility and post-resume checks.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
@@ -78,5 +78,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-01
-- **Evidence baseline:** AletheIA `9991c33` after S11/S24 reconciliation; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** S12 Agent-role contract reconciliation started after S11 reconciliation
+- **Evidence baseline:** AletheIA `da75d60` after S12 agent-role reconciliation merge; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** S12 Agent-role contract reconciliation merged and local state synchronized
