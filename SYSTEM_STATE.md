@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S9 Coding Safety specialization in review.
-- **Next dependency path:** S9 establishes a bounded coding plan profile; S11/S12 or another planned slice may proceed later; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
+- **Active:** none.
+- **Next dependency path:** S11/S12 pilots or another planned slice may proceed; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -70,7 +70,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Complete S9 as a planning-profile slice without creating a runtime, command, policy engine, auto-merge flow or Adaptive Skill promotion.
+1. Choose the next planned slice without activating S18 before its evidence threshold or Runtime 2.0 implementation before a later explicit boundary decision.
 2. Preserve the S15 Restart Package compatibility and post-resume checks.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
@@ -78,5 +78,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-01
-- **Evidence baseline:** AletheIA `4f9907b` after S2 closure; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** S9 Coding Safety specialization started after S2 closure
+- **Evidence baseline:** AletheIA `9579df5` after S9 coding safety merge; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** S9 Coding Safety specialization merged and local state synchronized
