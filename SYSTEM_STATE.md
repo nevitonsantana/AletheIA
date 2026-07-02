@@ -28,7 +28,7 @@ Authoritative entrypoints:
 - Recoverable Observation Governance — delivered baseline.
 - Context Surface Governance — delivered minimum registry.
 - Governed Loop Observation — delivered through the accepted S7 pilot.
-- Work Observatory — partially delivered through S14 plus a second S12 derived `work_record`.
+- Work Observatory — partially delivered through S14 plus S12 and S25 derived `work_record` examples.
 - Intent-to-Evidence — delivered through the accepted S8 cross-repository pilot.
 - Cognitive, intent and documentation closure — delivered through the accepted S16 pilot.
 - Explainable first use — delivered through the accepted cross-repository S17 pilot.
@@ -64,7 +64,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 - **Current level:** medium — multiple delivered contracts remain difficult to understand without guided explanation.
 - SYSTEM_STATE can become stale; every claim must retain a source reference and review date.
-- Work Observatory has two records only; no success rate, ranking, work-unit or value claim is admissible, and S18 remains blocked until at least five reviewed comparable records share one stable comparison group.
+- Work Observatory has three records only; no success rate, ranking, work-unit or value claim is admissible, and S18 remains blocked until at least five reviewed comparable records share one stable comparison group.
 - External references require S2 intake before they influence implementation; new P13–P18 packs remain registered as backlog sources, not implementation authority.
 - Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters and documentation generators remain out of scope.
 
@@ -78,5 +78,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-02
-- **Evidence baseline:** AletheIA `e60a92c` after the second Work Observatory dogfood record; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** S12 Work Observatory dogfood record merged, active evolution remains clear and local state synchronized
+- **Evidence baseline:** AletheIA `55f7845` after the third Work Observatory dogfood record; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** S25 Work Observatory dogfood record merged, active evolution remains clear and local state synchronized
