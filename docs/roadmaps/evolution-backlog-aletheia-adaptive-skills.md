@@ -64,7 +64,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 
 | Pack | Posture | Canonical destination | Next decision |
 |---|---|---|---|
-| P0 — Coding Safety Workflow | `in-review` | Coding specialization of the existing Work Slice plan | S9 adds the minimum coding safety profile without runtime, command, auto-merge or skill promotion. |
+| P0 — Coding Safety Workflow | `delivered` | Coding specialization of the existing Work Slice plan | Delivered by S9 through the minimum coding safety profile without runtime, command, auto-merge or skill promotion. |
 | P1 — Visual Operations Layer | `partially-delivered` | Current Visual Operations contracts, examples and Mission Control | Treat current layer as baseline; gate live importers and advanced telemetry on repeated evidence. |
 | P2 — Reference Intake & Adoption | `delivered` | Cross-repository intake protocol owned by AletheIA | Delivered by S2 through the minimum intake contract, decision template and ten-pack archive example without automatic adoption. |
 | P3 — Observation Governance | `partially-delivered` | AletheIA observation contract plus Adaptive Skills return pattern | Recoverable records are delivered; automatic normalizers, telemetry and visual projection remain evidence-gated. |
@@ -213,10 +213,10 @@ S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe 
 - **Repository / layer:** AletheIA coding plan profile; Adaptive Skills planning advisor candidate
 - **Covers:** P0
 - **Dependencies:** S8
-- **Status:** `in-review`
+- **Status:** `delivered` through AletheIA PR #299
 - **Non-goals:** new runtime, `/improve` command, autonomous coding, policy engine, dependency installation, schema or auto-merge.
 - **Acceptance:** plan declares base state, in/out scope, verification commands and expected results, drift check, rollback and stop conditions.
-- **Evidence:** [`coding-safety-plan-profile.md`](../contracts/coding-safety-plan-profile.md), [`coding-safety-plan-template.yaml`](../../starter-pack/templates/coding-safety-plan-template.yaml), [`coding-safety-non-engineer-checklist.md`](../reference/coding-safety-non-engineer-checklist.md), [`s9-standard-docs-slice.yaml`](../../examples/coding-safety/s9-standard-docs-slice.yaml) and guardrail tests.
+- **Evidence:** AletheIA PR #299 / `9579df5`; [`coding-safety-plan-profile.md`](../contracts/coding-safety-plan-profile.md), [`coding-safety-plan-template.yaml`](../../starter-pack/templates/coding-safety-plan-template.yaml), [`coding-safety-non-engineer-checklist.md`](../reference/coding-safety-non-engineer-checklist.md), [`s9-standard-docs-slice.yaml`](../../examples/coding-safety/s9-standard-docs-slice.yaml) and guardrail tests.
 
 Promote `implementation-planning-advisor` only if the pilot proves a recurring gap not covered by `feature-planning`, `testing`, `debugging`, `architecture-review`, Lean Implementation and independent validation guidance.
 
@@ -395,9 +395,9 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 | Requirement family | Source | Status | Backlog destination | Preservation note |
 |---|---|---|---|---|
-| P0-R1 Plan-first coding governance | P0 PRD/SDD | `in-review` | S9 | Specialization of Work Slice planning, not a lifecycle. |
+| P0-R1 Plan-first coding governance | P0 PRD/SDD | `delivered` | S9 | Specialization of Work Slice planning, not a lifecycle. |
 | P0-R2 Advisor/executor/verifier/reconciler separation | P0 PRD | `partially-delivered` | S9, S12 | S9 covers plan/review boundaries; S12 remains for role contract reconciliation. |
-| P0-R3 Scope, drift, rollback, stop and expected evidence | P0 templates | `in-review` | S9 | Preserve non-engineer review checklist. |
+| P0-R3 Scope, drift, rollback, stop and expected evidence | P0 templates | `delivered` | S9 | Preserve non-engineer review checklist. |
 | P0-R4 Optional plan validator | P0 roadmap | `deferred` | Post-S9 evidence gate | Stabilize manually first. |
 | P1-R1 Read-only Mission Control projection | P1 PRD/guardrails | `delivered` | P1 baseline | Existing Visual Operations contracts and app. |
 | P1-R2 Source refs, unavailable and metadata-first privacy | P1 SDD/guardrails | `delivered` | P1 baseline, all UI slices | Remains invariant. |
