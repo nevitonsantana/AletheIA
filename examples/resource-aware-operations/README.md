@@ -18,6 +18,7 @@ The first examples stay docs-first and intentionally small.
 - `runtime-effort-contract-example.md`
 - `harness-governance-example.md`
 - `test-output-observation-example.yaml` — lossy validation summary with a required recovery pointer and unavailable metrics
+- `s31-next-signals-review.json` — S31 source-backed review that keeps 1.2 stable and S18 deferred because current records are heterogeneous
 
 ## Related pilot support
 

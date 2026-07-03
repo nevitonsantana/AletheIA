@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** none.
-- **Next dependency path:** S31 Resource-aware next-signals review is the next planned docs-first review; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
+- **Active:** S31 Resource-aware next-signals review.
+- **Next dependency path:** S31 reviews accumulated source-backed signals without activating S18; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered.
+- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 is active.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -70,7 +70,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Start S31 only as a resource-aware next-signals review; do not activate S18 comparative metrics or benchmark claims.
+1. Complete S31 by recording whether current source-backed records satisfy next-signal thresholds.
 2. Keep S31 source-backed and docs-first; unavailable inputs remain `unavailable` and repeated-signal claims require evidence.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
@@ -78,5 +78,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-02
-- **Evidence baseline:** AletheIA `0a46aa3` after S30 constrained-adoption evidence loop; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** PR #320 merged; S30 is delivered and S31 becomes the next planned resource-aware next-signals review without activating S18, benchmarks, dashboards or runtime collection
+- **Evidence baseline:** AletheIA `dae1ce3` after S30 status refresh; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** PR #321 merged; S31 reviews resource-aware next signals without activating S18, benchmarks, dashboards or runtime collection
