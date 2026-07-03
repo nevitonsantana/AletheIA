@@ -143,7 +143,7 @@ For compact, source-backed observations that retain a governed path to lossy raw
 
 If you are applying AletheIA in an environment with heavier approvals, stricter trust boundaries, or stronger local restrictions, read:
 
-- `docs/enterprise-readiness-roadmap.md`
+- `docs/roadmaps/enterprise-readiness-roadmap.md`
 - `starter-pack/guides/enterprise-adoption-considerations.md`
 - `examples/project-extension/restricted-enterprise-context.md`
 
@@ -152,7 +152,7 @@ If you are applying AletheIA in an environment with heavier approvals, stricter 
 
 If your constrained environment needs an explicit local trust and hosting posture, read:
 
-- `docs/local-trust-boundary-posture.md`
+- `docs/concepts/local-trust-boundary-posture.md`
 - `starter-pack/templates/local-trust-boundary-template.md`
 - `examples/project-extension/local-trust-boundary-mapping.md`
 
@@ -161,10 +161,12 @@ If your constrained environment needs an explicit local trust and hosting postur
 
 If you want to run a bounded pilot in a constrained environment before broader rollout, read:
 
-- `docs/constrained-adoption-pilot.md`
-- `docs/constrained-pilot-review-checklist.md`
+- `docs/guides/constrained-adoption-pilot.md`
+- `docs/reference/constrained-pilot-review-checklist.md`
 - `starter-pack/templates/constrained-pilot-review-template.md`
+- `starter-pack/templates/constrained-adoption-evidence-loop-template.yaml`
 - `examples/pilot-conversion/constrained-adoption-bounded-validation.md`
+- `examples/pilot-conversion/s30-constrained-adoption-evidence-loop.yaml`
 
 
 ## Domain governance: AI agent security
