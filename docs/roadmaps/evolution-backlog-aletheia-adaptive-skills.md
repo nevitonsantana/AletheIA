@@ -94,9 +94,9 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P16 — Independent Validation Hardening | `delivered` | Independent critic, evidence-to-expectation gate and validation review record | Delivered by S21 / AletheIA PR #281 before expanding loops, agents or runtime surfaces. |
 | P17 — Lean Skill Doctrine | `delivered` | Adaptive Skills doctrine, quality gate, bounded `lean-implementation` skill and AletheIA Skill Catalog Governance Contract | S20 delivered doctrine and governance; S22 delivered the bounded implementation skill and AletheIA observation compatibility. |
 | P18 — AletheIA Runtime 2.0 | `delivered` for boundary review | Strategic north-star retained by S26 boundary review | ADR-016 keeps Runtime 2.0 as a source, not an implementation track; no kernel, SDK, CLI or provider adapter is authorized. |
-| P19 — Domain Governance Packs | `planned` | Backlog v0.4 domain-pack registry and first-pack sequencing | Start with reusable operating guidance only; do not create technical enforcement or core bloat. |
-| P20 — AI Agent Security & Prompt Injection | `planned` | First candidate domain governance pack | Prioritize because it directly governs agents, tools, memory/retrieval, external content and prompt-injection boundaries. |
-| P21 — Web App Security & Trust Boundaries | `planned` | Second candidate domain governance pack | Useful reusable layer, but sequence after agent-security unless a web-product implementation becomes the immediate pilot. |
+| P19 — Domain Governance Packs | `partially delivered` | Backlog v0.4 domain-pack registry with first two minimum packs delivered | S28 and S29 validate the reusable operating-guidance layer; enforcement remains later/out of scope. |
+| P20 — AI Agent Security & Prompt Injection | `delivered` | First domain governance pack | Delivered by S28 as docs-first guidance for agents, tools, memory/retrieval, external content and prompt-injection boundaries. |
+| P21 — Web App Security & Trust Boundaries | `delivered` | Second domain governance pack | Delivered by S29 as docs-first web/API trust-boundary guidance without scanners, enforcement engines or framework-core expansion. |
 | P22 — Enterprise / Constrained Adoption Evidence | `planned` | Evidence loop for constrained/local trust-boundary adoption | Strengthen adoption posture with bounded evidence before claiming enterprise readiness. |
 | P23 — Resource-Aware Next Signals | `planned` | Watch-list review, not S18 activation | Review evidence quality and repeated signals while keeping comparative metrics blocked. |
 
@@ -172,10 +172,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA domain governance pack
 - **Covers:** P21 client/server separation, secrets, auth/data isolation, tenant-scoped retrieval, authoritative business logic, webhook/integration trust and artifact hygiene.
 - **Dependencies:** S27; S28 recommended if the implementation involves agents consuming web or monitored content.
-- **Status:** `in-review` in the S29 domain-pack PR
+- **Status:** `delivered` by AletheIA PR #318
 - **Non-goals:** vendor tutorial, complete AppSec manual, framework-core expansion, or executable enforcement.
 - **Acceptance:** one reusable web/API trust-boundary pack with review checklist and at least one evaluation scenario.
-- **Evidence:** [`web-app-security-trust-boundaries.md`](../domain-governance-packs/web-app-security-trust-boundaries.md), [`web-app-security-review-checklist.md`](../reference/web-app-security-review-checklist.md), [`web-app-security-review-template.yaml`](../../starter-pack/templates/web-app-security-review-template.yaml) and [`trust-boundary-review.yaml`](../../examples/web-app-security/trust-boundary-review.yaml).
+- **Evidence:** AletheIA PR #318 / `b864419`; [`web-app-security-trust-boundaries.md`](../domain-governance-packs/web-app-security-trust-boundaries.md), [`web-app-security-review-checklist.md`](../reference/web-app-security-review-checklist.md), [`web-app-security-review-template.yaml`](../../starter-pack/templates/web-app-security-review-template.yaml), [`trust-boundary-review.yaml`](../../examples/web-app-security/trust-boundary-review.yaml) and contract tests.
 
 ### S30 — Enterprise / constrained adoption evidence loop
 

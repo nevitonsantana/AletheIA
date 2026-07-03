@@ -54,7 +54,8 @@ describe("S29 Web App Security & Trust Boundaries pack", () => {
     expect(examplesIndex).toContain("web-app-security/");
     expect(starterIndex).toContain("web-app-security-review-template.yaml");
     expect(backlog).toContain("### S29 — Web App Security & Trust Boundaries domain-pack minimum");
-    expect(backlog).toContain("in-review");
-    expect(systemState).toContain("S29 Web App Security & Trust Boundaries domain-pack minimum");
+    expect(backlog).toContain("delivered` by AletheIA PR #318");
+    expect(systemState).toContain("S29 Web App Security is delivered");
+    expect(systemState).toContain("S30 Enterprise / constrained adoption evidence loop");
   });
 });
