@@ -73,6 +73,7 @@ describe("S35 domain governance usage evidence capture", () => {
     expect(examplesIndex).toContain("captura S35");
     expect(reviewIndex).toContain("s35-domain-governance-usage-evidence-capture.json");
     expect(backlog).toContain("### S35 — Domain Governance Usage Evidence Capture");
+    expect(backlog).toContain("delivered` by AletheIA PR #331");
     expect(systemState).toContain("S35 Domain Governance Usage Evidence Capture");
   });
 });
