@@ -71,7 +71,7 @@ describe("S33 backlog v0.5 readiness review", () => {
     expect(examplesIndex).toContain("backlog-readiness/");
     expect(reviewIndex).toContain("s33-v05-readiness-review.json");
     expect(backlog).toContain("### S33 — Backlog v0.5 readiness review");
-    expect(backlog).toContain("in-review` in the S33 readiness PR");
+    expect(backlog).toContain("delivered` by AletheIA PR #327");
     expect(systemState).toContain("S33 Backlog v0.5 readiness review");
   });
 });
