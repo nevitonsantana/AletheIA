@@ -554,14 +554,14 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P17-R3 Lean Implementation Skill | P17 skill prompt | `delivered` | S22 | Created after the doctrine/quality gate; safety exceptions remain explicit. |
 | P18-R1 Work Episode / Runtime 2.0 model | P18 PRD/SDD | `delivered` for boundary review | S26 | ADR-016 keeps the model as north-star vocabulary; implementation remains deferred until repeated evidence proves a missing interface. |
 | P18-R2 Runtime kernel, SDK, CLI and provider adapters | P18 roadmap | `deferred` | Post-S26 decision | ADR-016 explicitly does not authorize execution substrate work; a later boundary decision is required. |
-| P19-R1 Domain governance pack layer | Domain governance concept | `planned` | S27/S28/S29 | Reusable domain layer sits between framework core and project extension; enforcement remains later. |
-| P20-R1 Agent instruction trust hierarchy | AI Agent Security concept | `planned` | S28 | Distinguish framework/project/user/tool/retrieved/external authority without provider-specific prompt recipes. |
-| P20-R2 Prompt injection and untrusted content boundaries | AI Agent Security concept | `planned` | S28 | External and monitored content enter as data/evidence, not instructions by default. |
-| P20-R3 Tool least privilege and memory/retrieval safety | AI Agent Security concept | `planned` | S28 | Reviewable permission and retrieval boundaries before action. |
-| P21-R1 Web/API trust boundaries | Web App Security concept | `planned` | S29 | Client/server, auth, tenant, webhook and artifact-hygiene boundaries as reusable guidance. |
+| P19-R1 Domain governance pack layer | Domain governance concept | `partially-delivered` | S27/S28/S29 | Registry and two minimum packs are delivered; executable enforcement remains later/out of scope. |
+| P20-R1 Agent instruction trust hierarchy | AI Agent Security concept | `delivered` | S28 | Delivered as docs-first guidance distinguishing framework/project/user/tool/retrieved/external authority without provider-specific prompt recipes. |
+| P20-R2 Prompt injection and untrusted content boundaries | AI Agent Security concept | `delivered` | S28 | Delivered as guidance that external and monitored content enter as data/evidence, not instructions by default. |
+| P20-R3 Tool least privilege and memory/retrieval safety | AI Agent Security concept | `delivered` | S28 | Delivered as reviewable permission and retrieval boundaries before action. |
+| P21-R1 Web/API trust boundaries | Web App Security concept | `delivered` | S29 | Delivered as reusable guidance for client/server, auth, tenant, webhook and artifact-hygiene boundaries. |
 | P22-R1 Constrained adoption evidence loop | Enterprise-readiness roadmap | `delivered` | S30 | Bounded local-trust adoption evidence before enterprise-readiness claims. |
 | P23-R1 Resource-aware next-signal review | Resource-aware next-signals roadmap | `delivered` | S31 | Reviewed repeated evidence without activating S18 or benchmarks. |
-| P1/P3/P10/P11-RX Observatory maturity | Existing partial/deferred observability lines | `in-review` | S32 | Review visual/evidence maturity only after source-backed need; no collector/dashboard by default. |
+| P1/P3/P10/P11-RX Observatory maturity | Existing partial/deferred observability lines | `delivered` | S32 | Maturity review delivered a no-build/refine-when-needed decision; collectors, dashboards and telemetry remain gated by repeated source-backed need. |
 
 ## Per-pack preservation appendix
 
