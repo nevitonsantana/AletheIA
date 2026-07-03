@@ -87,7 +87,8 @@ describe("S31 resource-aware next-signals review", () => {
     expect(examplesIndex).toContain("revisão S31 de next-signals");
     expect(resourceIndex).toContain("s31-next-signals-review.json");
     expect(backlog).toContain("### S31 — Resource-aware next-signals review");
-    expect(backlog).toContain("in-review` in the S31 resource-aware next-signals PR");
-    expect(systemState).toContain("S31 Resource-aware next-signals review");
+    expect(backlog).toContain("delivered` by AletheIA PR #322");
+    expect(systemState).toContain("S31 Resource-aware next-signals review is delivered");
+    expect(systemState).toContain("S32 Observatory maturity review");
   });
 });
