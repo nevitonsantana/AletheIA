@@ -25,6 +25,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [visual-ops-privacy-boundaries.md](visual-ops-privacy-boundaries.md) | Metadata-first privacy rules for cockpit views, traces, telemetry, and exports |
 | [work-slice-spec-bundle.md](work-slice-spec-bundle.md) | Optional spec bundle for slices that need pre-execution clarity |
 | [intent-to-evidence-extension.md](intent-to-evidence-extension.md) | Optional human-owned Intent, Expectations, Guessing Risk, evidence mapping and reconcile inside a Work Slice |
+| [coding-safety-plan-profile.md](coding-safety-plan-profile.md) | Minimum coding plan profile for base state, scope, verification, drift, rollback, stop conditions and human merge decision |
 | [cognitive-documentation-closure-extension.md](cognitive-documentation-closure-extension.md) | Proportional finalization review for preserved intent, human understanding, documentation coherence and technical escalation |
 | [durable-decision-finalization-context-prompt.md](durable-decision-finalization-context-prompt.md) | Accepted durable decision: require finalization context prompt at slice close |
 | [consumer-project-overlay.md](consumer-project-overlay.md) | How a consumer project instantiates the operating overlay (`ops/ai/` + harness shims). Reference example: [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/) |
@@ -35,6 +36,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [restricted-knowledge-usage-policy.md](restricted-knowledge-usage-policy.md) | Usage rules for confidential, restricted, and regulated sources |
 | [knowledge-audit-log-spec.md](knowledge-audit-log-spec.md) | Minimum audit fields when a knowledge source influences output |
 | [sensitivity-vocabulary-mapping.md](sensitivity-vocabulary-mapping.md) | Canonical sensitivity taxonomy and how project extensions map local labels to it |
+| [reference-intake-adoption-contract.md](reference-intake-adoption-contract.md) | Minimum intake, layer mapping and adoption decision record before external references influence AletheIA or Adaptive Skills |
 | [skill-evolution-validation-contract.md](skill-evolution-validation-contract.md) | What a skill evolution experiment and its validation evidence must satisfy to be governed |
 | [skill-catalog-governance-contract.md](skill-catalog-governance-contract.md) | How AletheIA governs skill selection, rejection, override, proposal decisions and catalog-review observations without becoming the skill authoring system |
 | [independent-validation-hardening-contract.md](independent-validation-hardening-contract.md) | Minimum critic context, evidence-to-expectation gate, validation review record and blind-review constraints for proportional independent validation |
@@ -42,7 +44,9 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [agent-harness-governance-extension.md](agent-harness-governance-extension.md) | How the harness validates, authorizes, executes, budgets, and returns structured observations for model-proposed actions |
 | [agent-harness-contract.md](agent-harness-contract.md) | The per-task declaration: autonomy, allowed tools/skills, gates, sensors, rollback, human review, context policy |
 | [capability-routing-reconciliation.md](capability-routing-reconciliation.md) | Canonical mapping between capability, skill, tool, agent/subagent, execution vehicle, execution pattern, AHC/AHGE and read-only Observatory evidence |
+| [agent-role-contract-reconciliation.md](agent-role-contract-reconciliation.md) | How professional projections such as Software Engineer and QA/Governance Reviewer map to portable roles without creating a second role catalog |
 | [design-system-intelligence-pilot.md](design-system-intelligence-pilot.md) | Minimum source-backed review record for bounded Design System Intelligence pilots such as Pulso, without scanners or promotion authority |
+| [human-expertise-learning-contract.md](human-expertise-learning-contract.md) | How scoped human expertise and evidence-based learning are recorded without automatic authority or self-evolution |
 | [policy-verdicts.md](policy-verdicts.md) | The verdict vocabulary (allow/deny/require_approval/transform/log_only) and its mapping to harness decision values |
 | [agent-action-audit-record.md](agent-action-audit-record.md) | Minimum audit fields proving skill → tool → verdict → evidence → approval |
 | [execution-pattern-selection.md](execution-pattern-selection.md) | How a task records its selected execution topology and required controls |

@@ -1,0 +1,35 @@
+reference_intake:
+  id: REF-YYYY-NNN
+  title: ""
+  source_type: pack # pack | plan | screenshot | research | repo | conversation | other
+  source_refs: []
+  received_at: YYYY-MM-DD
+  reviewer: ""
+  sensitivity: unknown # public | internal | restricted | unknown
+  summary: ""
+  extracted_requirements:
+    - id: R1
+      description: ""
+      source_refs: []
+      status: proposed # proposed | already_covered | deferred | rejected
+  layer_mapping:
+    aletheia: []
+    adaptive_skills: []
+    runtime_harness: []
+    observatory: []
+    out_of_scope: []
+  adoption_decision:
+    posture: reference_only # adopt | adapt | reference_only | defer | reject
+    rationale: ""
+    covered_by_existing_contracts: []
+    proposed_slices: []
+    deferred_items: []
+    rejected_items: []
+  evidence:
+    checks_performed: []
+    unavailable: []
+  guardrails:
+    no_automatic_adoption: true
+    no_dependency_installation: true
+    no_skill_mutation_without_review: true
+    no_runtime_authority_change: true

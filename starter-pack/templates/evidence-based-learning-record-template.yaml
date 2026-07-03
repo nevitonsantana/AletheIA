@@ -1,0 +1,17 @@
+evidence_based_learning_record:
+  learning_id: EBL-YYYYMMDD-001
+  work_slice_ref: WS-YYYYMMDD-001
+  hypothesis_or_expectation: pending
+  observed_result: unavailable
+  surprise_or_delta: unknown
+  evidence_refs: []
+  source_refs: []
+  recommended_future_change:
+    target: none
+    summary: pending
+    rationale: unavailable
+  change_authority:
+    required_reviewer: human_or_governance_reviewer
+    automatic_change_allowed: false
+  status: captured
+  limitations: []

@@ -1,0 +1,97 @@
+coding_safety_plan:
+  slice_id: WS-S9-CODING-SAFETY-DOCS
+  planning_depth: Standard
+  base_state:
+    branch: codex/s9-coding-safety-specialization
+    starting_commit: 4f9907b
+    dirty_state: untracked_present
+    protected_paths:
+      - plans/
+  intent_refs:
+    intent_to_evidence_ref: examples/work-slices/intent-to-evidence/s8-real-pilot.json
+    work_slice_ref: docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md#s9--coding-safety-specialization
+  scope:
+    in_scope:
+      - Add a minimum coding safety plan profile.
+      - Add a reusable plan template.
+      - Add a non-engineer review checklist.
+      - Add one Standard docs-first example.
+    out_of_scope:
+      - New runtime, CLI, slash command or policy engine.
+      - Autonomous coding or auto-merge.
+      - Adaptive Skills promotion of implementation-planning-advisor.
+      - Schema or dependency changes.
+    assumptions:
+      - S8 Intent-to-Evidence baseline is already delivered.
+      - S9 can be delivered docs-first before any skill promotion.
+    human_decisions_needed:
+      - Whether the docs-first profile is sufficient before any Adaptive Skills candidate is proposed.
+  execution_boundary:
+    allowed_paths:
+      - docs/contracts/
+      - docs/reference/
+      - starter-pack/templates/
+      - examples/coding-safety/
+      - tests/contracts/
+      - docs/roadmaps/
+      - SYSTEM_STATE.md
+    blocked_paths:
+      - plans/
+      - apps/
+      - engine/
+      - schemas/
+    allowed_commands:
+      - bash scripts/check-governance.sh
+      - CI=true pnpm test
+      - git diff --check
+    blocked_actions:
+      - auto_merge
+      - deploy
+      - dependency_installation
+      - runtime_creation
+  expected_changes:
+    files_or_areas:
+      - docs/contracts/coding-safety-plan-profile.md
+      - starter-pack/templates/coding-safety-plan-template.yaml
+      - docs/reference/coding-safety-non-engineer-checklist.md
+      - examples/coding-safety/s9-standard-docs-slice.yaml
+    behavior_change: docs_only
+    user_visible_change: no
+  verification:
+    commands:
+      - bash scripts/check-governance.sh
+      - CI=true pnpm test
+      - git diff --check
+    expected_results:
+      - Governance baseline passes.
+      - Vitest and Mission Control tests pass.
+      - No whitespace errors are reported.
+    manual_checks:
+      - Non-engineer checklist can identify scope, evidence, drift, rollback and human merge decision.
+      - plans/ remains untracked and untouched.
+    unavailable_checks:
+      - No real Adaptive Skills planning-advisor pilot exists yet.
+  drift_control:
+    drift_signals:
+      - Need for schema, runtime, CLI, backend, app or dependency changes.
+      - Need to promote a new Adaptive Skill before proving a recurring gap.
+      - Need to alter S18 or Runtime 2.0 gates.
+    check_cadence: before_pr
+    response: stop
+  rollback:
+    strategy: git_revert
+    rollback_refs:
+      - PR branch diff
+    irreversible_risks: []
+  stop_conditions:
+    - Any change requires app/runtime/schema/dependency work.
+    - The plan tries to authorize merge or deployment.
+    - The slice cannot explain verification expected results.
+  human_review:
+    required: true
+    reviewer_profile: non_engineer
+    review_focus:
+      - Scope is understandable.
+      - Validation evidence is concrete.
+      - Stop lines and rollback are visible.
+      - Human merge decision remains explicit.

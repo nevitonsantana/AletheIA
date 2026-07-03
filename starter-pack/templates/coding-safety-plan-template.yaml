@@ -1,0 +1,45 @@
+coding_safety_plan:
+  slice_id: ""
+  planning_depth: Standard # Lite | Standard | High-Assurance
+  base_state:
+    branch: ""
+    starting_commit: ""
+    dirty_state: unknown # clean | tracked_changes | untracked_present | unknown
+    protected_paths: []
+  intent_refs:
+    intent_to_evidence_ref: not_needed
+    work_slice_ref: ""
+  scope:
+    in_scope: []
+    out_of_scope: []
+    assumptions: []
+    human_decisions_needed: []
+  execution_boundary:
+    allowed_paths: []
+    blocked_paths: []
+    allowed_commands: []
+    blocked_actions:
+      - auto_merge
+      - deploy
+  expected_changes:
+    files_or_areas: []
+    behavior_change: unknown # none | docs_only | test_only | code | config | schema | runtime | unknown
+    user_visible_change: unknown # yes | no | unknown
+  verification:
+    commands: []
+    expected_results: []
+    manual_checks: []
+    unavailable_checks: []
+  drift_control:
+    drift_signals: []
+    check_cadence: before_pr # before_commit | before_pr | per_checkpoint | manual
+    response: ask_human # tighten_scope | ask_human | stop | split_slice
+  rollback:
+    strategy: unavailable # git_revert | restore_files | feature_flag | migration_rollback | not_applicable | unavailable
+    rollback_refs: []
+    irreversible_risks: []
+  stop_conditions: []
+  human_review:
+    required: true
+    reviewer_profile: non_engineer
+    review_focus: []
