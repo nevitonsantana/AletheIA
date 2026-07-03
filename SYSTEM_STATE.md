@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** none.
-- **Next dependency path:** S30 Enterprise / constrained adoption evidence loop is the next planned docs-first slice; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
+- **Active:** S30 Enterprise / constrained adoption evidence loop.
+- **Next dependency path:** S30 creates a bounded constrained-adoption evidence record; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered.
+- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 is active.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -70,7 +70,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Start S30 only as a bounded enterprise / constrained adoption evidence loop, reusing existing trust-boundary and constrained-adoption sources.
+1. Complete S30 by adding a bounded constrained-adoption evidence-loop template and example that map task brief, gates, handoff, validation and durable decisions.
 2. Keep S30 docs-first; do not add enterprise product packaging, universal compliance presets, CLI/bootstrap promises or org-specific policy hardcoding.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
@@ -78,5 +78,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-02
-- **Evidence baseline:** AletheIA `b864419` after S29 Web App Security & Trust Boundaries pack; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** PR #318 merged; S29 is delivered, and S30 becomes the next planned constrained-adoption evidence slice without reopening blocked runtime, scanner or S18 tracks
+- **Evidence baseline:** AletheIA `a0fcdc8` after S29 status refresh; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** PR #319 merged; S30 starts the constrained-adoption evidence loop without reopening blocked runtime, scanner, enterprise packaging or S18 tracks

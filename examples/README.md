@@ -38,6 +38,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - mostra um loop de manutenção em três rodadas com regressão escalando o gate e gerando learning reutilizável
 - `pilot-conversion/`
   - mostra como uma validação real no Crisis Monitor vira endurecimento pequeno e reutilizável no framework
+  - inclui o loop sintético S30 para adoção constrained, conectando task brief, gates, handoff, validação e decisões duráveis sem criar preset enterprise universal
 - `consumer-overlay-minimal/`
   - instância mínima viável do [consumer-project-overlay contract](../docs/contracts/consumer-project-overlay.md) — layout `ops/ai/` + shims Claude prontos para copiar
 - `delivery/`
