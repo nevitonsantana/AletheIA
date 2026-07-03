@@ -79,6 +79,8 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
 - `resource-aware-operations/`
   - exemplos da trilha 1.2 para runtime fit, policy signals, pilotos bounded, restart/finalization, adapters e observações recuperáveis
   - revisão S31 de next-signals mantendo S18 bloqueada porque os registros atuais são source-backed, porém heterogêneos
+- `observatory-maturity/`
+  - revisão S32 da maturidade Visual/Resource/Work Observatory, concluindo no-build/refinement até existir necessidade repetida e source-backed
 - `visual-operations/`
   - projeção sintética e somente leitura de duas Work Slices, com eventos normalizados, evidência, revisão humana, telemetria opcional e fonte restrita representada apenas por metadados
   - entrada e saídas reproduzíveis do projetor GitHub PR → Visual Operations, incluindo distinção entre evidência observada por CI e validação reportada pelo autor
