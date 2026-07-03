@@ -232,10 +232,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA domain governance evidence capture
 - **Covers:** future P19/S28/S29 usage evidence capture before expansion.
 - **Dependencies:** S34 delivered.
-- **Status:** `in-review` in the S35 evidence-capture PR
+- **Status:** `delivered` by AletheIA PR #331
 - **Non-goals:** claiming real usage evidence, new domain packs, scanners, policy engines, runtime enforcement, dashboards, schemas, automatic classification, Adaptive Skills changes or S18 activation.
 - **Acceptance:** add a minimal template and reviewed example that define how future real usage evidence is captured while preserving `unavailable` values and confirming the template itself is not evidence.
-- **Evidence:** [`domain-governance-usage-evidence-template.yaml`](../../starter-pack/templates/domain-governance-usage-evidence-template.yaml) and [`s35-domain-governance-usage-evidence-capture.json`](../../examples/domain-governance-usage/s35-domain-governance-usage-evidence-capture.json) define future capture without claiming usage.
+- **Evidence:** AletheIA PR #331 / `256436d`; [`domain-governance-usage-evidence-template.yaml`](../../starter-pack/templates/domain-governance-usage-evidence-template.yaml) and [`s35-domain-governance-usage-evidence-capture.json`](../../examples/domain-governance-usage/s35-domain-governance-usage-evidence-capture.json) define future capture without claiming usage.
 
 ### S0 — Integrate skill execution context
 
