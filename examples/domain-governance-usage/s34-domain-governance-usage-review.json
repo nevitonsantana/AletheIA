@@ -1,0 +1,115 @@
+{
+  "review_id": "s34-domain-governance-usage-review-2026-07-03",
+  "review_date": "2026-07-03",
+  "purpose": "Review whether delivered domain governance packs are usable as advisory, source-backed guidance before adding more packs, scanners, policy engines or enforcement.",
+  "source_refs": {
+    "s33_readiness_review": "examples/backlog-readiness/s33-v05-readiness-review.json",
+    "domain_governance_concept": "docs/concepts/domain-governance-packs.md",
+    "ai_agent_security_pack": "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+    "ai_agent_security_checklist": "docs/reference/ai-agent-security-review-checklist.md",
+    "ai_agent_security_template": "starter-pack/templates/ai-agent-security-review-template.yaml",
+    "ai_agent_security_example": "examples/agent-security/prompt-injection-review.yaml",
+    "web_app_security_pack": "docs/domain-governance-packs/web-app-security-trust-boundaries.md",
+    "web_app_security_checklist": "docs/reference/web-app-security-review-checklist.md",
+    "web_app_security_template": "starter-pack/templates/web-app-security-review-template.yaml",
+    "web_app_security_example": "examples/web-app-security/trust-boundary-review.yaml"
+  },
+  "packs_reviewed": [
+    {
+      "pack": "AI Agent Security & Prompt Injection",
+      "delivered_by": "S28",
+      "usage_posture": "usable_as_advisory_guidance",
+      "observed_strengths": [
+        "Separates content trust from instruction authority.",
+        "Keeps external, retrieved, monitored and tool-returned content as evidence/context by default.",
+        "Connects pack guidance to checklist, template and synthetic review example."
+      ],
+      "observed_gaps": [
+        {
+          "gap": "No repeated real usage record yet.",
+          "status": "unavailable",
+          "action": "Use in at least one future reviewed Work Slice before adding automation or additional pack surface."
+        },
+        {
+          "gap": "No enforcement failure mode observed yet.",
+          "status": "unavailable",
+          "action": "Keep scanners and policy engines deferred."
+        }
+      ]
+    },
+    {
+      "pack": "Web App Security & Trust Boundaries",
+      "delivered_by": "S29",
+      "usage_posture": "usable_as_advisory_guidance",
+      "observed_strengths": [
+        "Defines clear public-client versus authoritative-layer boundary.",
+        "Preserves unavailable fields instead of assuming security posture.",
+        "Connects pack guidance to checklist, template and synthetic review example."
+      ],
+      "observed_gaps": [
+        {
+          "gap": "No repeated real usage record yet.",
+          "status": "unavailable",
+          "action": "Use in at least one future reviewed web/API Work Slice before expanding domain-pack coverage."
+        },
+        {
+          "gap": "No project-specific control mapping is proven reusable yet.",
+          "status": "unavailable",
+          "action": "Keep project-local controls out of framework truth until repeated cross-project need appears."
+        }
+      ]
+    }
+  ],
+  "usage_decision": {
+    "posture": "adopt_for_manual_review_before_expansion",
+    "next_candidate": "Use S28/S29 packs in future applicable Work Slices and record usage evidence.",
+    "rationale": "The packs are coherent enough to guide manual review, but not mature enough to justify enforcement, scanners, dashboards, automatic classification or additional domain-pack proliferation."
+  },
+  "recommended_next_signals": [
+    {
+      "signal": "pack_used_in_real_work_slice",
+      "meaning": "A reviewer applies S28 or S29 to an actual task and records source refs, finding posture and unavailable fields.",
+      "minimum_count_before_expansion": 2
+    },
+    {
+      "signal": "manual_review_gap_repeats",
+      "meaning": "The same ambiguity blocks closure in more than one reviewed usage case.",
+      "minimum_count_before_expansion": 2
+    },
+    {
+      "signal": "project_local_rule_reused_cross_context",
+      "meaning": "A project-local control appears useful outside one project vocabulary.",
+      "minimum_count_before_expansion": 2
+    }
+  ],
+  "deferred_items": {
+    "new_domain_pack": {
+      "status": "deferred",
+      "reason": "Adding more packs before usage evidence risks catalog growth without adoption proof."
+    },
+    "domain_pack_enforcement": {
+      "status": "deferred",
+      "reason": "No repeated manual failure mode proves that executable enforcement is needed."
+    },
+    "scanner_or_policy_engine": {
+      "status": "deferred",
+      "reason": "Current packs are advisory guidance; technical enforcement remains outside scope."
+    },
+    "automatic_classification": {
+      "status": "deferred",
+      "reason": "No validated classifier contract, training data or human review threshold exists."
+    }
+  },
+  "guardrails": {
+    "created_new_domain_pack": false,
+    "created_scanner": false,
+    "created_policy_engine": false,
+    "created_runtime_enforcement": false,
+    "created_dashboard": false,
+    "created_schema": false,
+    "changed_framework_core_authority": false,
+    "changed_adaptive_skills": false,
+    "activated_s18": false,
+    "authorized_runtime_2_0_implementation": false
+  }
+}
