@@ -81,7 +81,7 @@ describe("S34 domain governance usage review", () => {
     expect(examplesIndex).toContain("domain-governance-usage/");
     expect(reviewIndex).toContain("s34-domain-governance-usage-review.json");
     expect(backlog).toContain("### S34 — Domain Governance Usage Review");
-    expect(backlog).toContain("in-review` in the S34 usage review PR");
+    expect(backlog).toContain("delivered` by AletheIA PR #329");
     expect(systemState).toContain("S34 Domain Governance Usage Review");
   });
 });
