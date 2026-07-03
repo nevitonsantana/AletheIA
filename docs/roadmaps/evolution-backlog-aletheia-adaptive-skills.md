@@ -207,6 +207,16 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Acceptance:** decide whether existing Observatory surfaces need refinement, not expansion by default; every visual claim must have source_refs and unavailable state.
 - **Evidence:** AletheIA PR #324 / `b93b3d7`; [`s32-observatory-maturity-review.json`](../../examples/observatory-maturity/s32-observatory-maturity-review.json) records the maturity decision; no-build/refine-when-needed outcome remains accepted.
 
+### S33 — Backlog v0.5 readiness review
+
+- **Repository / layer:** AletheIA backlog planning
+- **Covers:** post-S27-S32 cycle closure, P19 partial-delivery posture and deferred-track readiness.
+- **Dependencies:** S27-S32 delivered and v0.4 traceability refreshed.
+- **Status:** `in-review` in the S33 readiness PR
+- **Non-goals:** activating S18, Runtime 2.0, collectors, dashboards, policy engines, automatic routing, new domain packs or Adaptive Skills changes.
+- **Acceptance:** record a source-backed next-cycle posture, preserve blocked/deferred tracks, and select the next safe candidate without expanding implementation scope.
+- **Evidence:** [`s33-v05-readiness-review.json`](../../examples/backlog-readiness/s33-v05-readiness-review.json) selects a domain-governance usage review as the next safe candidate and keeps S18, Runtime 2.0 and Observatory expansion deferred.
+
 ### S0 — Integrate skill execution context
 
 - **Repository / layer:** AletheIA / Resource Observatory
