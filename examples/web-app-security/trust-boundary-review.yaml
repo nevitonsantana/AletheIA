@@ -1,0 +1,41 @@
+web_app_security_review:
+  review_id: WASR-20260702-001
+  work_slice_ref: WS-S29-WEB-SECURITY-PILOT
+  reviewer: governance_reviewer
+  source_refs:
+    - docs/domain-governance-packs/web-app-security-trust-boundaries.md
+    - docs/concepts/web-app-security-trust-boundaries.md
+    - docs/contracts/restricted-knowledge-usage-policy.md
+  boundary_review:
+    public_client_authority: "client attempts to set tenant_id and final_price directly"
+    authoritative_layer_ref: unavailable
+    secrets_config_separation: "no secret evidence observed in this synthetic case"
+    auth_data_isolation: unavailable
+    tenant_context_scoping: "tenant context is user-provided by client, not authoritative"
+    inbound_integration_trust: unavailable
+    logs_artifacts_hygiene: unavailable
+    untrusted_content_handling: unavailable
+  findings:
+    - id: WAS-FINDING-001
+      category: client_owned_critical_logic
+      severity: high
+      evidence_refs:
+        - SRC-CLIENT-CHECKOUT-001
+      required_action: human_review_required
+    - id: WAS-FINDING-002
+      category: cross_tenant_context
+      severity: high
+      evidence_refs:
+        - SRC-TENANT-CONTEXT-001
+      required_action: block_until_authoritative_scoping_exists
+  decision:
+    posture: block
+    rationale: "The client is treated as source of truth for critical tenant and pricing context. An authoritative server/API layer must validate tenant scope and price before proceeding."
+    evidence_refs:
+      - SRC-CLIENT-CHECKOUT-001
+      - SRC-TENANT-CONTEXT-001
+  non_goals_confirmed:
+    runtime_enforcement_added: false
+    scanner_added: false
+    vendor_tutorial_added: false
+    framework_core_expanded: false

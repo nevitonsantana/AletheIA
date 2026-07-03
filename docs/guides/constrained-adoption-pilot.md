@@ -107,6 +107,13 @@ A bounded constrained pilot usually benefits from these artifacts:
 
 That set is usually enough to create reviewability without inventing a new framework layer.
 
+For S30, that output set can be recorded with the structured, non-normative evidence-loop template:
+
+- `starter-pack/templates/constrained-adoption-evidence-loop-template.yaml`
+- `examples/pilot-conversion/s30-constrained-adoption-evidence-loop.yaml`
+
+The template is deliberately a review record, not a schema, collector, compliance preset, CLI promise, or enterprise policy engine. Unknown acceptance, retrabalho, work units and value scores should stay `unavailable` until a real constrained pilot produces source-backed evidence.
+
 ---
 
 ## What success looks like

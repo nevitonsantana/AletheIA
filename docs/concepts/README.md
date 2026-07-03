@@ -47,8 +47,8 @@ If you need a step-by-step guide, see [`guides/`](../guides/README.md). If you n
 | [adapter-taxonomy.md](adapter-taxonomy.md) | Taxonomy for AletheIA adapters |
 | [preset-taxonomy.md](preset-taxonomy.md) | Taxonomy for AletheIA presets |
 | [domain-governance-packs.md](domain-governance-packs.md) | Future domain-specific governance packs |
-| [ai-agent-security-prompt-injection.md](ai-agent-security-prompt-injection.md) | Future domain pack for AI agent security |
-| [web-app-security-trust-boundaries.md](web-app-security-trust-boundaries.md) | Future domain pack for web security |
+| [ai-agent-security-prompt-injection.md](ai-agent-security-prompt-injection.md) | Concept source for AI agent security; S28 pack lives in `domain-governance-packs/` |
+| [web-app-security-trust-boundaries.md](web-app-security-trust-boundaries.md) | Concept source for web/API trust boundaries; S29 pack lives in `domain-governance-packs/` |
 | [knowledge-governance-layer.md](knowledge-governance-layer.md) | Layer that governs user-provided knowledge bases used by agents and skills |
 | [user-provided-knowledge.md](user-provided-knowledge.md) | How users register knowledge bases without dumping documents into prompts |
 | [framework-capsules.md](framework-capsules.md) | Operational summary of a framework or large source; the default unit a skill consumes |

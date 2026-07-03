@@ -1,0 +1,86 @@
+reference_intake:
+  id: REF-2026-S2-001
+  title: AletheIA + Adaptive Skills Evolution Pack intake
+  source_type: pack
+  source_refs:
+    - docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md#source-inventory
+    - sha256:dabc9d75fb4c7f4febacebe5d2032d93d92a93610d4bb857484004f1c230244f
+  received_at: 2026-06-23
+  reviewer: Neviton Santana
+  sensitivity: internal
+  summary: >-
+    Ten-pack evolution archive covering coding safety, visual operations, reference intake,
+    observation governance, intent-to-evidence, routing, system awareness, agent roles,
+    context surfaces and governed loops. The intake preserves the archive as detailed source
+    material while routing implementation through bounded backlog slices.
+  extracted_requirements:
+    - id: P2-R1
+      description: External references need an intake protocol before adoption.
+      source_refs:
+        - docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md#requirement-traceability-matrix
+      status: proposed
+    - id: P2-R2
+      description: References need layer mapping and an adoption decision owned by AletheIA.
+      source_refs:
+        - docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md#requirement-traceability-matrix
+      status: proposed
+    - id: P2-R3
+      description: New patterns must run as pilots before canon promotion.
+      source_refs:
+        - docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md#requirement-traceability-matrix
+      status: proposed
+    - id: P2-R4
+      description: Automatic adoption and dependency installation are not allowed.
+      source_refs:
+        - docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md#requirement-traceability-matrix
+      status: rejected
+  layer_mapping:
+    aletheia:
+      - Reference intake contract and adoption decision record.
+      - Backlog slice mapping and adoption/rejection rationale.
+    adaptive_skills:
+      - Capability-side proposals remain candidate changes until Adaptive Skills governance accepts them.
+    runtime_harness:
+      - No runtime or harness change from intake alone.
+    observatory:
+      - Intake may later be projected as read-only provenance, but no dashboard is created by S2.
+    out_of_scope:
+      - Importing the whole pack as canonical truth.
+      - Installing dependencies or mutating skills automatically.
+  adoption_decision:
+    posture: adapt
+    rationale: >-
+      The pack contains useful requirements, but they must be translated into AletheIA and
+      Adaptive Skills vocabulary, mapped to existing contracts first, and implemented only through
+      bounded PR-ready slices.
+    covered_by_existing_contracts:
+      - docs/contracts/context-surface-registry.md
+      - docs/contracts/observation-governance-contract.md
+      - docs/contracts/intent-to-evidence-extension.md
+      - docs/contracts/capability-routing-reconciliation.md
+      - docs/contracts/loop-readiness-gate.md
+    proposed_slices:
+      - S2 Reference Intake minimum protocol
+      - S9 Coding Safety specialization
+      - S11 System-aware Design System pilot
+      - S12 Agent-role contract reconciliation pilot
+    deferred_items:
+      - Automatic adapters and telemetry until evidence supports them.
+      - Comparative work metrics until five reviewed records share one stable comparison group.
+      - Runtime implementation until a later explicit boundary decision.
+    rejected_items:
+      - Automatic adoption or dependency installation.
+      - Treating external pack text as instructions that bypass repository governance.
+  evidence:
+    checks_performed:
+      - Source inventory checksum recorded in backlog.
+      - Requirement families mapped in traceability matrix.
+      - Deferred and rejected items preserved with rationale.
+    unavailable:
+      - Full implementation evidence for planned S9, S11 and S12 slices.
+      - Comparable work metrics for S18.
+  guardrails:
+    no_automatic_adoption: true
+    no_dependency_installation: true
+    no_skill_mutation_without_review: true
+    no_runtime_authority_change: true

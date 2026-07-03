@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.1-example",
+  "review_kind": "work_observatory_comparison_readiness_review",
+  "review_id": "comparison-review-2026-07-02-work-observatory-001",
+  "reviewed_at": "2026-07-02",
+  "purpose": "Determine whether existing Work Observatory dogfood records can unlock S18 comparative work metrics.",
+  "decision": {
+    "s18_status": "blocked",
+    "comparison_eligible": false,
+    "reason": "Five total work records exist, but they are heterogeneous and do not share one reviewed stable comparison group."
+  },
+  "records_reviewed": [
+    {
+      "work_record_ref": "examples/work-observatory/s7-bounded-debugging-work-record.json",
+      "task_family": "engineering_support",
+      "task_type": "test_failure_analysis",
+      "comparison_group": "unavailable"
+    },
+    {
+      "work_record_ref": "examples/work-observatory/s12-agent-role-reconciliation-work-record.json",
+      "task_family": "documentation_governance",
+      "task_type": "governance_contract_reconciliation",
+      "comparison_group": "unavailable"
+    },
+    {
+      "work_record_ref": "examples/work-observatory/s21-independent-validation-work-record.json",
+      "task_family": "documentation_governance",
+      "task_type": "validation_governance_hardening",
+      "comparison_group": "unavailable"
+    },
+    {
+      "work_record_ref": "examples/work-observatory/s23-loop-readiness-work-record.json",
+      "task_family": "documentation_governance",
+      "task_type": "loop_governance_reconciliation",
+      "comparison_group": "unavailable"
+    },
+    {
+      "work_record_ref": "examples/work-observatory/s25-human-expertise-learning-work-record.json",
+      "task_family": "documentation_governance",
+      "task_type": "governance_contract_and_example",
+      "comparison_group": "unavailable"
+    }
+  ],
+  "comparison_blockers": [
+    {
+      "blocker": "comparison_group_unavailable",
+      "detail": "No record has a reviewed stable comparison_group."
+    },
+    {
+      "blocker": "mixed_task_types",
+      "detail": "The records span debugging, role reconciliation, validation hardening, loop readiness and human-expertise learning."
+    },
+    {
+      "blocker": "unsupported_outcomes",
+      "detail": "Acceptance, rework, duration, resource use, work units, quality and value remain unknown or unavailable."
+    }
+  ],
+  "minimum_unlock_conditions": [
+    "At least five records must share one reviewed stable comparison_group.",
+    "Each record must preserve source_refs and metadata-only boundaries.",
+    "Outcome, rework and human-effort claims must remain unknown or unavailable unless directly evidenced.",
+    "Any future metric must explain denominator, exclusions and confidence before appearing in the Observatory."
+  ],
+  "non_goals": [
+    "activate S18",
+    "create comparative metrics",
+    "rank people, skills or agents",
+    "invent work units, quality scores or value scores",
+    "create a collector, dashboard, schema, runtime or backend"
+  ],
+  "source_refs": [
+    "SYSTEM_STATE.md",
+    "docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md",
+    "examples/work-observatory/s7-bounded-debugging-work-record.json",
+    "examples/work-observatory/s12-agent-role-reconciliation-work-record.json",
+    "examples/work-observatory/s21-independent-validation-work-record.json",
+    "examples/work-observatory/s23-loop-readiness-work-record.json",
+    "examples/work-observatory/s25-human-expertise-learning-work-record.json"
+  ]
+}
