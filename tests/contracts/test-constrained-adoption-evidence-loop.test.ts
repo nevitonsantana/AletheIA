@@ -46,7 +46,8 @@ describe("S30 constrained adoption evidence loop", () => {
     expect(starter).toContain("examples/pilot-conversion/s30-constrained-adoption-evidence-loop.yaml");
     expect(examples).toContain("loop sintético S30");
     expect(backlog).toContain("### S30 — Enterprise / constrained adoption evidence loop");
-    expect(backlog).toContain("in-review` in the S30 constrained-adoption evidence-loop PR");
-    expect(systemState).toContain("S30 Enterprise / constrained adoption evidence loop");
+    expect(backlog).toContain("delivered` by AletheIA PR #320");
+    expect(systemState).toContain("S30 Enterprise / constrained adoption evidence loop is delivered");
+    expect(systemState).toContain("S31 Resource-aware next-signals review");
   });
 });

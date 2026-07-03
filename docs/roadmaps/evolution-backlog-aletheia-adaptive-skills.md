@@ -97,7 +97,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P19 — Domain Governance Packs | `partially delivered` | Backlog v0.4 domain-pack registry with first two minimum packs delivered | S28 and S29 validate the reusable operating-guidance layer; enforcement remains later/out of scope. |
 | P20 — AI Agent Security & Prompt Injection | `delivered` | First domain governance pack | Delivered by S28 as docs-first guidance for agents, tools, memory/retrieval, external content and prompt-injection boundaries. |
 | P21 — Web App Security & Trust Boundaries | `delivered` | Second domain governance pack | Delivered by S29 as docs-first web/API trust-boundary guidance without scanners, enforcement engines or framework-core expansion. |
-| P22 — Enterprise / Constrained Adoption Evidence | `in-review` | Evidence loop for constrained/local trust-boundary adoption | S30 adds a bounded evidence-loop record before any enterprise-readiness claim. |
+| P22 — Enterprise / Constrained Adoption Evidence | `delivered` | Evidence loop for constrained/local trust-boundary adoption | Delivered by S30 as a bounded evidence-loop record before any enterprise-readiness claim. |
 | P23 — Resource-Aware Next Signals | `planned` | Watch-list review, not S18 activation | Review evidence quality and repeated signals while keeping comparative metrics blocked. |
 
 ## Dependency graph
@@ -182,10 +182,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA adoption guidance and project-extension examples
 - **Covers:** P22 constrained adoption, local trust-boundary posture, heavier review mapping and project-local extension evidence.
 - **Dependencies:** existing enterprise-readiness roadmap, local trust-boundary posture and constrained adoption examples.
-- **Status:** `in-review` in the S30 constrained-adoption evidence-loop PR
+- **Status:** `delivered` by AletheIA PR #320
 - **Non-goals:** enterprise product packaging, universal compliance preset, CLI/bootstrap promise or org-specific policy hardcoding.
 - **Acceptance:** one bounded adoption lane maps task brief, gates, handoff, validation and durable decisions to a constrained/local approval context.
-- **Evidence:** [`constrained-adoption-evidence-loop-template.yaml`](../../starter-pack/templates/constrained-adoption-evidence-loop-template.yaml) and [`s30-constrained-adoption-evidence-loop.yaml`](../../examples/pilot-conversion/s30-constrained-adoption-evidence-loop.yaml), with reusable learning and local-only rules clearly separated.
+- **Evidence:** AletheIA PR #320 / `0a46aa3`; [`constrained-adoption-evidence-loop-template.yaml`](../../starter-pack/templates/constrained-adoption-evidence-loop-template.yaml), [`s30-constrained-adoption-evidence-loop.yaml`](../../examples/pilot-conversion/s30-constrained-adoption-evidence-loop.yaml) and contract tests, with reusable learning and local-only rules clearly separated.
 
 ### S31 — Resource-aware next-signals review
 
@@ -559,7 +559,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P20-R2 Prompt injection and untrusted content boundaries | AI Agent Security concept | `planned` | S28 | External and monitored content enter as data/evidence, not instructions by default. |
 | P20-R3 Tool least privilege and memory/retrieval safety | AI Agent Security concept | `planned` | S28 | Reviewable permission and retrieval boundaries before action. |
 | P21-R1 Web/API trust boundaries | Web App Security concept | `planned` | S29 | Client/server, auth, tenant, webhook and artifact-hygiene boundaries as reusable guidance. |
-| P22-R1 Constrained adoption evidence loop | Enterprise-readiness roadmap | `planned` | S30 | Bounded local-trust adoption evidence before enterprise-readiness claims. |
+| P22-R1 Constrained adoption evidence loop | Enterprise-readiness roadmap | `delivered` | S30 | Bounded local-trust adoption evidence before enterprise-readiness claims. |
 | P23-R1 Resource-aware next-signal review | Resource-aware next-signals roadmap | `planned` | S31 | Review repeated evidence without activating S18 or benchmarks. |
 | P1/P3/P10/P11-RX Observatory maturity | Existing partial/deferred observability lines | `planned` | S32 | Review visual/evidence maturity only after source-backed need; no collector/dashboard by default. |
 
