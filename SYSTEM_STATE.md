@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S31 Resource-aware next-signals review.
-- **Next dependency path:** S31 reviews accumulated source-backed signals without activating S18; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
+- **Active:** none.
+- **Next dependency path:** S32 Observatory maturity review is the next planned docs-first review; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 is active.
+- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -65,18 +65,18 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - **Current level:** medium — multiple delivered contracts remain difficult to understand without guided explanation.
 - SYSTEM_STATE can become stale; every claim must retain a source reference and review date.
 - Work Observatory has five total records, and the S18 comparison-readiness review confirms they are heterogeneous and not one reviewed stable comparison group; no success rate, ranking, work-unit or value claim is admissible until at least five comparable records share one stable comparison group.
-- External references require S2 intake before they influence implementation; P20/S28, P21/S29 and P22/S30 are accepted as docs-first evidence/guidance slices, while P23 remains a planning source until explicitly accepted.
+- External references require S2 intake before they influence implementation; P20/S28, P21/S29, P22/S30 and P23/S31 are accepted as docs-first evidence/guidance slices.
 - Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters and documentation generators remain out of scope.
 
 ## Next safe steps
 
-1. Complete S31 by recording whether current source-backed records satisfy next-signal thresholds.
-2. Keep S31 source-backed and docs-first; unavailable inputs remain `unavailable` and repeated-signal claims require evidence.
+1. Start S32 only as an Observatory maturity review; do not add collectors, dashboards, schemas, runtime telemetry, importers or visual features by default.
+2. Keep S32 source-backed and docs-first; visual/evidence projections remain deferred unless repeated need is proven.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
 
 ## Last reviewed
 
 - **Date:** 2026-07-02
-- **Evidence baseline:** AletheIA `dae1ce3` after S30 status refresh; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** PR #321 merged; S31 reviews resource-aware next signals without activating S18, benchmarks, dashboards or runtime collection
+- **Evidence baseline:** AletheIA `ef25f60` after S31 resource-aware next-signals review; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** PR #322 merged; S31 is delivered, keeps S18 deferred, and S32 becomes the next planned Observatory maturity review without adding collectors, dashboards or runtime telemetry
