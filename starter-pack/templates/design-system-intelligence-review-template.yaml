@@ -1,0 +1,49 @@
+design_system_intelligence_review:
+  review_id: DSIR-YYYYMMDD-001
+  work_slice_ref: WS-YYYYMMDD-001
+  design_system_ref:
+    id: pulso
+    version: unavailable
+    source_refs: []
+  artifact_refs: []
+  scope:
+    review_focus: []
+    non_goals:
+      - automatic_remediation
+      - design_system_promotion
+      - package_dependency_change
+  review_owner:
+    reviewer_ref: pending
+    role: design_system_reviewer
+  approval_owner:
+    owner_ref: pending
+    required_for_promotion: true
+  conformance_observations:
+    - observation_id: OBS-001
+      area: tokens
+      finding: unavailable
+      confidence: low
+      source_refs: []
+      evidence_refs: []
+  candidate_findings:
+    - finding_id: FIND-001
+      kind: candidate_issue
+      summary: pending
+      severity: unknown
+      confidence: low
+      source_refs: []
+      recommended_next_step: human_review_required
+  pattern_generalization_gate:
+    candidate_ref: FIND-001
+    recurrence_evidence: unavailable
+    comparable_artifacts_count: unknown
+    accessibility_review: unavailable
+    design_system_owner_review: pending
+    outcome: needs_more_evidence
+    source_refs: []
+  reconcile:
+    disposition: human_review_required
+    accepted: []
+    deferred: []
+    rejected: []
+    limitations: []

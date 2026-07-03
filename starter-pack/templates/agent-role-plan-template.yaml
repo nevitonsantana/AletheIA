@@ -1,0 +1,27 @@
+agent_role_plan:
+  plan_id: role-plan-001
+  work_slice_ref: ""
+  professional_projection: software_engineer # software_engineer | qa_governance_reviewer
+  portable_role: implementer # implementer | reviewer
+  runtime_or_provider: unavailable # codex | claude_code | qwen | human | other | unavailable
+  authority:
+    autonomy_level: act_with_approval # observe | advise | act_with_approval | autonomous_within_bounds
+    may_modify_artifacts: true
+    may_approve_gate: false
+    may_merge_or_deploy: false
+  allowed_capabilities: []
+  allowed_skills: []
+  allowed_tools: []
+  blocked_actions:
+    - approve_own_work
+    - merge_without_human
+    - deploy
+  required_inputs: []
+  expected_outputs: []
+  evidence_required: []
+  stop_rules: []
+  handoff:
+    target_role: reviewer # implementer | reviewer | validator | orchestrator | human_owner | none
+    trigger: ""
+    handoff_refs: []
+  source_refs: []

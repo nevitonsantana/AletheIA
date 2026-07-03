@@ -26,6 +26,7 @@ Consultable material: catalogs, checklists, policies, examples, adapter guides, 
 | [delivery-mapping-examples.md](delivery-mapping-examples.md) | Examples of mapping framework concepts across surfaces |
 | [bootstrap-output-examples.md](bootstrap-output-examples.md) | Examples of healthy Alpha 7 bootstrap outputs |
 | [constrained-pilot-review-checklist.md](constrained-pilot-review-checklist.md) | Review checklist for constrained-adoption pilots |
+| [coding-safety-non-engineer-checklist.md](coding-safety-non-engineer-checklist.md) | Plain-language checklist for reviewing coding scope, evidence, drift, rollback and human merge boundaries |
 | [resource-aware-pilot-review-checklist.md](resource-aware-pilot-review-checklist.md) | Review checklist for resource-aware pilots |
 | [external-references-execution-patterns.md](external-references-execution-patterns.md) | External sources evaluated for Execution Pattern Governance and their vocabulary boundary |
 | [visual-operations-human-review-source-mapping.md](visual-operations-human-review-source-mapping.md) | Source mapping rules for Visual Operations `human_review` fields |

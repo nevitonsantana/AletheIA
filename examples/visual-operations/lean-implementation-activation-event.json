@@ -1,0 +1,33 @@
+{
+  "event_id": "evt-s22-lean-implementation-activation",
+  "project_id": "aletheia-adaptive-skills-s22",
+  "work_slice_id": "slice-s22-lean-implementation",
+  "timestamp": "2026-06-29T22:30:00Z",
+  "source_type": "adaptive_skill",
+  "event_type": "skill.activated",
+  "actor": "operator",
+  "summary": "The lean-implementation skill was activated to keep a bounded implementation slice small, validated, and handoff-ready.",
+  "payload_metadata": {
+    "skill_id": "lean-implementation",
+    "governance_authority": false,
+    "expected_output": "smallest safe change, validation evidence, unavailable fields, and boundary notes",
+    "modules_selected": ["observation return"],
+    "modules_rejected": ["safety exception escalation"],
+    "decision_authority": "AletheIA and human reviewer remain authoritative"
+  },
+  "evidence_refs": [
+    "adaptive-skills:skills/lean-implementation/SKILL.md",
+    "adaptive-skills:examples/engineering/lean-implementation-synthetic-example.md"
+  ],
+  "source_refs": [
+    {
+      "kind": "skill_activation",
+      "ref": "synthetic://s22/lean-implementation/activation"
+    },
+    {
+      "kind": "skill_catalog_governance",
+      "ref": "docs/contracts/skill-catalog-governance-contract.md"
+    }
+  ],
+  "sensitivity": "internal"
+}

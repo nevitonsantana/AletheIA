@@ -1,0 +1,58 @@
+{
+  "review_id": "s35-domain-governance-usage-evidence-capture-2026-07-03",
+  "review_date": "2026-07-03",
+  "purpose": "Define the minimum capture shape for future real usage evidence of S28/S29 domain governance packs without counting this template as real usage.",
+  "source_refs": {
+    "s34_usage_review": "examples/domain-governance-usage/s34-domain-governance-usage-review.json",
+    "usage_template": "starter-pack/templates/domain-governance-usage-evidence-template.yaml",
+    "ai_agent_security_pack": "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+    "web_app_security_pack": "docs/domain-governance-packs/web-app-security-trust-boundaries.md"
+  },
+  "capture_contract": {
+    "record_name": "domain_governance_usage_evidence",
+    "required_minimum": [
+      "usage_id",
+      "work_slice_ref",
+      "pack_refs",
+      "source_refs",
+      "applicability.pack_used",
+      "applicability.evidence_source",
+      "usage_observation",
+      "decision.posture",
+      "non_goals_confirmed"
+    ],
+    "unavailable_policy": "Unknown or absent observations must remain unavailable, not inferred.",
+    "real_usage_requirement": "A record only counts as real usage evidence when applicability.evidence_source is real_work_slice and source_refs resolve to the reviewed Work Slice evidence."
+  },
+  "template_status": {
+    "is_real_usage_evidence": false,
+    "comparison_group": "unavailable",
+    "success_rate_claim": "unavailable",
+    "value_score_claim": "unavailable",
+    "human_acceptance_claim": "unavailable"
+  },
+  "next_use": {
+    "posture": "ready_to_capture_future_usage",
+    "recommended_when": [
+      "A future Work Slice applies the AI Agent Security pack to prompt-injection or untrusted-content risk.",
+      "A future Work Slice applies the Web App Security pack to client/server, tenant, auth, secret, webhook or artifact boundary risk."
+    ],
+    "not_recommended_for": [
+      "Retrofitting synthetic examples as real usage evidence.",
+      "Computing success rates or rankings.",
+      "Authorizing runtime enforcement or scanners."
+    ]
+  },
+  "guardrails": {
+    "created_new_domain_pack": false,
+    "created_scanner": false,
+    "created_policy_engine": false,
+    "created_runtime_enforcement": false,
+    "created_dashboard": false,
+    "created_schema": false,
+    "changed_adaptive_skills": false,
+    "activated_s18": false,
+    "claimed_real_usage": false,
+    "claimed_success_rate": false
+  }
+}

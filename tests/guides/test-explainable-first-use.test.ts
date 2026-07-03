@@ -8,6 +8,14 @@ const brief = fs.readFileSync(
   path.join(root, "starter-pack/templates/explainable-change-brief-template.md"),
   "utf8",
 );
+const firstTime = fs.readFileSync(
+  path.join(root, "examples/first-use/explainable-language/first-time-user.md"),
+  "utf8",
+);
+const expert = fs.readFileSync(
+  path.join(root, "examples/first-use/explainable-language/expert-user.md"),
+  "utf8",
+);
 
 describe("S17 explainable first-use journey", () => {
   it("uses one confirmed journey across four explanation depths", () => {
@@ -29,5 +37,14 @@ describe("S17 explainable first-use journey", () => {
     expect(brief).toContain("Requires technical review");
     expect(brief).toContain("Simpler language must not remove risk or uncertainty");
   });
-});
 
+  it("keeps validation and escalation equivalent at guided and expert depth", () => {
+    for (const fixture of [firstTime, expert]) {
+      expect(fixture).toContain("pnpm test");
+      expect(fixture).toContain("pnpm typecheck");
+      expect(fixture).toContain("pnpm check:governance");
+      expect(fixture).toMatch(/technical|security/i);
+    }
+    expect(firstTime.length).toBeGreaterThan(expert.length);
+  });
+});

@@ -1,0 +1,78 @@
+# AletheIA constrained adoption evidence loop template
+# Docs-first record. This is not a schema, collector, compliance preset or enterprise policy engine.
+constrained_adoption_evidence_loop:
+  id: unavailable
+  status: draft # draft | in_review | accepted | rejected | unavailable
+  review_date: unavailable
+
+  source_refs:
+    task_brief: unavailable
+    local_trust_boundary_posture: unavailable
+    risk_to_gate_mapping: unavailable
+    validation_evidence: unavailable
+    durable_decision: unavailable
+    handoff_or_restart: unavailable
+
+  lane:
+    name: unavailable
+    purpose: unavailable
+    boundary_summary: unavailable
+    excluded_scope: unavailable
+    local_owner: unavailable
+
+  local_context:
+    environment_type: unavailable
+    data_classification: unavailable
+    hosting_posture: unavailable
+    allowed_tool_classes: []
+    blocked_tool_classes: []
+    local_rules:
+      - id: unavailable
+        summary: unavailable
+        remains_local: true
+
+  gates:
+    review_posture: unavailable # suggestion_only | bounded_execution | human_gated_execution | unavailable
+    required_human_gates: []
+    escalation_triggers: []
+    stop_conditions: []
+
+  proof_chain:
+    minimum_proof_required: unavailable
+    evidence_present:
+      - ref: unavailable
+        summary: unavailable
+        confidence: unavailable
+    validation_result: unavailable
+    unresolved_ambiguity:
+      - unavailable
+
+  handoff:
+    required: unavailable
+    recipient_boundary: unavailable
+    handoff_ref: unavailable
+    restart_ref: unavailable
+
+  durable_decisions:
+    - decision_ref: unavailable
+      decision: unavailable
+      rationale: unavailable
+      local_only: unavailable
+
+  learning:
+    reusable_local_pattern: unavailable
+    candidate_framework_learning: unavailable
+    non_reusable_local_residue:
+      - unavailable
+
+  expansion_decision:
+    posture: later # expand_now | later | not_now | unavailable
+    reason: unavailable
+    trigger_required: unavailable
+
+  guardrails:
+    enterprise_product_packaging_added: false
+    universal_compliance_preset_added: false
+    cli_or_bootstrap_promise_added: false
+    org_specific_policy_hardcoded: false
+    framework_core_expanded: false

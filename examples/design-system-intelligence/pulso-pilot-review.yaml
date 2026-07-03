@@ -1,0 +1,84 @@
+design_system_intelligence_review:
+  review_id: DSIR-20260701-001
+  work_slice_ref: WS-S24-PULSO-PILOT
+  design_system_ref:
+    id: pulso
+    version: v3-reference
+    source_refs:
+      - kind: design_system_doc
+        ref: pulso://DESIGN.md
+      - kind: design_system_tokens
+        ref: pulso://src/app/globals.css
+  artifact_refs:
+    - kind: static_prototype
+      ref: aletheia://examples/visual-operations/prototype/mission-control-static.html
+  scope:
+    review_focus:
+      - typography hierarchy
+      - spacing rhythm
+      - border and side-sheet structure
+      - semantic state color usage
+    non_goals:
+      - automatic_remediation
+      - design_system_promotion
+      - package_dependency_change
+  review_owner:
+    reviewer_ref: synthetic://s24/design-system-reviewer
+    role: design_system_reviewer
+  approval_owner:
+    owner_ref: pending_design_system_owner
+    required_for_promotion: true
+  conformance_observations:
+    - observation_id: OBS-001
+      area: typography
+      finding: aligned
+      summary: Prototype uses compact hierarchy compatible with the Pulso-style type rhythm already documented in the bridge note.
+      confidence: medium
+      source_refs:
+        - kind: bridge_note
+          ref: aletheia://examples/visual-operations/prototype/pulso-token-comparison.md
+      evidence_refs:
+        - synthetic://s24/pulso-review/typography
+    - observation_id: OBS-002
+      area: state_color
+      finding: candidate_issue
+      summary: Review and critical states are visually distinct, but the source refs do not yet prove accessibility contrast against every card state.
+      confidence: low
+      source_refs:
+        - kind: static_prototype
+          ref: aletheia://examples/visual-operations/prototype/mission-control-static.html
+        - kind: bridge_note
+          ref: aletheia://examples/visual-operations/prototype/pulso-token-comparison.md
+      evidence_refs: []
+  candidate_findings:
+    - finding_id: FIND-001
+      kind: candidate_issue
+      summary: Add a source-backed accessibility contrast check before treating semantic state colors as reusable Pulso-aligned primitives.
+      severity: medium
+      confidence: medium
+      source_refs:
+        - kind: static_prototype
+          ref: aletheia://examples/visual-operations/prototype/mission-control-static.html
+        - kind: contract
+          ref: aletheia://docs/contracts/design-system-intelligence-pilot.md
+      recommended_next_step: human_review_required
+  pattern_generalization_gate:
+    candidate_ref: FIND-001
+    recurrence_evidence: unavailable
+    comparable_artifacts_count: 1
+    accessibility_review: unavailable
+    design_system_owner_review: pending
+    outcome: needs_more_evidence
+    source_refs:
+      - kind: contract
+        ref: aletheia://docs/contracts/design-system-intelligence-pilot.md
+  reconcile:
+    disposition: human_review_required
+    accepted:
+      - Treat typography and spacing alignment as review observations for this slice only.
+    deferred:
+      - Promote semantic state-color primitives only after more comparable records and accessibility evidence exist.
+    rejected:
+      - Do not add automatic scanning or Pulso package dependency in S24.
+    limitations:
+      - Synthetic example; Pulso source refs are represented as registry pointers, not copied content.

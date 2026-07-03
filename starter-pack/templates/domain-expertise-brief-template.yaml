@@ -1,0 +1,24 @@
+domain_expertise_brief:
+  brief_id: DEB-YYYYMMDD-001
+  work_slice_ref: WS-YYYYMMDD-001
+  expert_ref: role-or-person-reference
+  expertise_scope: pending
+  domain_rules:
+    - rule_id: RULE-001
+      statement: pending
+      authority: human_expert
+      source_refs: []
+  edge_cases:
+    - case_id: EDGE-001
+      description: unknown
+      handling_guidance: human_review_required
+      source_refs: []
+  decision_boundaries:
+    can_clarify: []
+    cannot_authorize: []
+  review_required_for: []
+  privacy_boundary:
+    secrets: excluded
+    personal_data: role_reference_only
+    restricted_sources: metadata_only
+  source_refs: []

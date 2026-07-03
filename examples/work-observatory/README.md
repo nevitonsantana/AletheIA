@@ -1,10 +1,18 @@
-# Work Observatory — First Dogfood Record
+# Work Observatory — Dogfood Records
 
-This directory contains the first source-backed Work Observatory projection derived from work performed on AletheIA itself.
+This directory contains source-backed Work Observatory projections derived from work performed on AletheIA itself.
 
 ## Record
 
 - [`s7-bounded-debugging-work-record.json`](s7-bounded-debugging-work-record.json) derives one work observation from the accepted S7 bounded debugging pilot.
+- [`s12-agent-role-reconciliation-work-record.json`](s12-agent-role-reconciliation-work-record.json) derives one work observation from the delivered S12 agent-role reconciliation pilot.
+- [`s25-human-expertise-learning-work-record.json`](s25-human-expertise-learning-work-record.json) derives one work observation from the delivered S25 human expertise and evidence-based learning slice.
+- [`s21-independent-validation-work-record.json`](s21-independent-validation-work-record.json) derives one work observation from the delivered S21 independent validation hardening slice.
+- [`s23-loop-readiness-work-record.json`](s23-loop-readiness-work-record.json) derives one work observation from the delivered S23 governed loop readiness slice.
+
+## Comparison readiness
+
+- [`comparison-readiness-review.json`](comparison-readiness-review.json) reviews the five current records and keeps S18 blocked because they are heterogeneous and do not share one reviewed stable comparison group.
 
 ## What it answers
 
@@ -23,7 +31,7 @@ The record makes visible:
 
 This is a read-only derived observation, not a second execution authority. The source selection, skill return, loop run, test and merge records remain authoritative.
 
-The first record deliberately does **not** provide:
+These records deliberately do **not** provide:
 
 - work units;
 - quality or value scores;
