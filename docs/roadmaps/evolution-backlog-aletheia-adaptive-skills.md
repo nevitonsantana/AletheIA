@@ -222,10 +222,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA domain governance planning
 - **Covers:** P19 domain-pack usage posture after S28/S29 delivery.
 - **Dependencies:** S28, S29, S33 and v0.4 traceability refresh.
-- **Status:** `in-review` in the S34 usage review PR
+- **Status:** `delivered` by AletheIA PR #329
 - **Non-goals:** new domain packs, scanners, policy engines, runtime enforcement, dashboards, schemas, automatic classification, Adaptive Skills changes or framework-core authority changes.
 - **Acceptance:** review whether delivered domain packs are usable as advisory guidance, record gaps as `unavailable` where evidence is missing, and define source-backed next signals before expansion.
-- **Evidence:** [`s34-domain-governance-usage-review.json`](../../examples/domain-governance-usage/s34-domain-governance-usage-review.json) keeps S28/S29 usable as manual/advisory guidance and defers new packs or enforcement until repeated usage evidence exists.
+- **Evidence:** AletheIA PR #329 / `f3ccc9f`; [`s34-domain-governance-usage-review.json`](../../examples/domain-governance-usage/s34-domain-governance-usage-review.json) keeps S28/S29 usable as manual/advisory guidance and defers new packs or enforcement until repeated usage evidence exists.
 
 ### S0 — Integrate skill execution context
 
