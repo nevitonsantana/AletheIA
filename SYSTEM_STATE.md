@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S30 Enterprise / constrained adoption evidence loop.
-- **Next dependency path:** S30 creates a bounded constrained-adoption evidence record; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
+- **Active:** none.
+- **Next dependency path:** S31 Resource-aware next-signals review is the next planned docs-first review; S18 remains deferred until evidence threshold is met; Runtime 2.0 implementation remains deferred until a later explicit boundary decision.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 is active.
+- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -65,18 +65,18 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - **Current level:** medium — multiple delivered contracts remain difficult to understand without guided explanation.
 - SYSTEM_STATE can become stale; every claim must retain a source reference and review date.
 - Work Observatory has five total records, and the S18 comparison-readiness review confirms they are heterogeneous and not one reviewed stable comparison group; no success rate, ranking, work-unit or value claim is admissible until at least five comparable records share one stable comparison group.
-- External references require S2 intake before they influence implementation; P20/S28 and P21/S29 are accepted as docs-first domain packs, while P22–P23 remain planning sources until explicitly accepted.
+- External references require S2 intake before they influence implementation; P20/S28, P21/S29 and P22/S30 are accepted as docs-first evidence/guidance slices, while P23 remains a planning source until explicitly accepted.
 - Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters and documentation generators remain out of scope.
 
 ## Next safe steps
 
-1. Complete S30 by adding a bounded constrained-adoption evidence-loop template and example that map task brief, gates, handoff, validation and durable decisions.
-2. Keep S30 docs-first; do not add enterprise product packaging, universal compliance presets, CLI/bootstrap promises or org-specific policy hardcoding.
+1. Start S31 only as a resource-aware next-signals review; do not activate S18 comparative metrics or benchmark claims.
+2. Keep S31 source-backed and docs-first; unavailable inputs remain `unavailable` and repeated-signal claims require evidence.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
 
 ## Last reviewed
 
 - **Date:** 2026-07-02
-- **Evidence baseline:** AletheIA `a0fcdc8` after S29 status refresh; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** PR #319 merged; S30 starts the constrained-adoption evidence loop without reopening blocked runtime, scanner, enterprise packaging or S18 tracks
+- **Evidence baseline:** AletheIA `0a46aa3` after S30 constrained-adoption evidence loop; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** PR #320 merged; S30 is delivered and S31 becomes the next planned resource-aware next-signals review without activating S18, benchmarks, dashboards or runtime collection
