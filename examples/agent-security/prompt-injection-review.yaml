@@ -1,0 +1,38 @@
+agent_security_review:
+  review_id: ASR-20260702-001
+  work_slice_ref: WS-S28-AGENT-SECURITY-PILOT
+  reviewer: governance_reviewer
+  source_refs:
+    - docs/domain-governance-packs/ai-agent-security-prompt-injection.md
+    - docs/concepts/ai-agent-security-prompt-injection.md
+    - docs/contracts/source-precedence-policy.md
+  content_boundary:
+    suspicious_source_ref: SRC-RETRIEVED-DOC-001
+    source_category: retrieved_content
+    content_trust: untrusted
+    instruction_authority: none
+    reclassified_as: evidence
+  detected_risks:
+    - prompt_injection_attempt
+    - attempts_to_override_scope
+    - attempts_to_call_tool_outside_envelope
+  tool_boundary:
+    requested_tool_action: "send external summary and delete audit log"
+    requested_tool_risk: critical
+    allowed_by_envelope: false
+    human_approval_required: true
+  retrieval_memory_boundary:
+    provenance_available: true
+    stale_or_poisoned_risk: possible
+    fact_inference_instruction_separated: true
+  decision:
+    posture: block
+    rationale: "Retrieved content has no instruction authority and requests a destructive/external action outside the active envelope. Preserve as evidence; do not execute."
+    evidence_refs:
+      - SRC-RETRIEVED-DOC-001
+      - docs/concepts/tool-risk-taxonomy.md
+  non_goals_confirmed:
+    runtime_enforcement_added: false
+    scanner_added: false
+    provider_specific_prompt_recipe_added: false
+    perfect_defense_claimed: false
