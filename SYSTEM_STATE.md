@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S32 Observatory maturity review.
-- **Next dependency path:** S32 reviews Visual/Resource/Work Observatory maturity without adding collectors, dashboards, schemas, runtime telemetry, importers or visual features by default; S18 and Runtime 2.0 remain deferred.
+- **Active:** none.
+- **Next dependency path:** choose the next backlog/source-backed review from the integrated roadmap; S18 and Runtime 2.0 remain deferred until their explicit evidence gates are met.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 is active.
+- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -70,13 +70,13 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Complete S32 by recording whether existing Observatory surfaces need refinement or expansion.
-2. Keep S32 source-backed and docs-first; visual/evidence projections remain deferred unless repeated need is proven.
+1. Choose the next source-backed backlog item or review current deferred tracks before mutation.
+2. Keep Observatory expansion gated: visual/evidence projections remain deferred unless repeated need is proven.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
 
 ## Last reviewed
 
-- **Date:** 2026-07-02
-- **Evidence baseline:** AletheIA `115ef68` after S31 status refresh; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** PR #323 merged; S32 reviews Observatory maturity without adding collectors, dashboards, schemas, runtime telemetry, importers or visual features
+- **Date:** 2026-07-03
+- **Evidence baseline:** AletheIA `b93b3d7` after S32 Observatory maturity review; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** PR #324 merged; S32 delivered a no-build/refine-when-needed Observatory maturity decision without collectors, dashboards, schemas, runtime telemetry, importers or visual features

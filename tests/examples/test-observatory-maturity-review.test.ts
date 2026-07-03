@@ -81,7 +81,7 @@ describe("S32 Observatory maturity review", () => {
     expect(examplesIndex).toContain("revisão S32 da maturidade");
     expect(reviewIndex).toContain("s32-observatory-maturity-review.json");
     expect(backlog).toContain("### S32 — Observatory maturity review");
-    expect(backlog).toContain("in-review` in the S32 Observatory maturity PR");
+    expect(backlog).toContain("delivered` by AletheIA PR #324");
     expect(systemState).toContain("S32 Observatory maturity review");
   });
 });

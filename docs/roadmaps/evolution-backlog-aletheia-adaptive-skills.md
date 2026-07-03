@@ -202,10 +202,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA Visual/Resource/Work Observatory planning
 - **Covers:** P1, P3, P10/P12 and P11 deferred visual/evidence projections.
 - **Dependencies:** S31 or a new source-backed evidence review showing repeated need.
-- **Status:** `in-review` in the S32 Observatory maturity PR
+- **Status:** `delivered` by AletheIA PR #324
 - **Non-goals:** live importers, collectors, dashboards, ranking, people scoring or automatic documentation-health inference.
 - **Acceptance:** decide whether existing Observatory surfaces need refinement, not expansion by default; every visual claim must have source_refs and unavailable state.
-- **Evidence:** [`s32-observatory-maturity-review.json`](../../examples/observatory-maturity/s32-observatory-maturity-review.json) records the maturity decision; no-build outcome remains allowed.
+- **Evidence:** AletheIA PR #324 / `b93b3d7`; [`s32-observatory-maturity-review.json`](../../examples/observatory-maturity/s32-observatory-maturity-review.json) records the maturity decision; no-build/refine-when-needed outcome remains accepted.
 
 ### S0 — Integrate skill execution context
 
