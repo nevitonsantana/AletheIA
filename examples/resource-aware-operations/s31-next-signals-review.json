@@ -1,0 +1,92 @@
+{
+  "review_id": "s31-resource-aware-next-signals-2026-07-02",
+  "review_date": "2026-07-02",
+  "purpose": "Review accumulated resource-aware and Work Observatory evidence for next-signal thresholds without activating S18, benchmarks, dashboards or runtime collection.",
+  "source_refs": {
+    "next_signals_roadmap": "docs/roadmaps/resource-aware-next-signals.md",
+    "validation_checklist": "docs/reference/resource-aware-next-signals-validation-checklist.md",
+    "work_observatory_comparison_review": "examples/work-observatory/comparison-readiness-review.json",
+    "runtime_effort_schema": "schemas/resource-aware-signal-evidence.schema.json"
+  },
+  "records_reviewed": [
+    {
+      "ref": "examples/work-observatory/s7-bounded-debugging-work-record.json",
+      "record_type": "work_record",
+      "comparison_group": "unavailable",
+      "signal_input": "single bounded debugging dogfood record",
+      "threshold_posture": "input_not_threshold"
+    },
+    {
+      "ref": "examples/work-observatory/s12-agent-role-reconciliation-work-record.json",
+      "record_type": "work_record",
+      "comparison_group": "unavailable",
+      "signal_input": "agent-role reconciliation record",
+      "threshold_posture": "input_not_threshold"
+    },
+    {
+      "ref": "examples/work-observatory/s21-independent-validation-work-record.json",
+      "record_type": "work_record",
+      "comparison_group": "unavailable",
+      "signal_input": "independent validation hardening record",
+      "threshold_posture": "input_not_threshold"
+    },
+    {
+      "ref": "examples/work-observatory/s23-loop-readiness-work-record.json",
+      "record_type": "work_record",
+      "comparison_group": "unavailable",
+      "signal_input": "loop readiness governance record",
+      "threshold_posture": "input_not_threshold"
+    },
+    {
+      "ref": "examples/work-observatory/s25-human-expertise-learning-work-record.json",
+      "record_type": "work_record",
+      "comparison_group": "unavailable",
+      "signal_input": "human expertise and evidence-based learning record",
+      "threshold_posture": "input_not_threshold"
+    }
+  ],
+  "healthy_signal_review": {
+    "repeated_comparable_slices": {
+      "fired": false,
+      "reason": "Five total records exist, but no record has a reviewed stable comparison_group."
+    },
+    "repeated_late_stage_waste": {
+      "fired": false,
+      "reason": "No repeated late-stage waste pattern is source-backed across comparable slices."
+    },
+    "repeated_local_translations": {
+      "fired": false,
+      "reason": "No repeated local rule translation is present across multiple projects."
+    },
+    "stable_reinforced_outcomes": {
+      "fired": false,
+      "reason": "Outcomes are useful but not comparable enough to claim a stable reinforced pattern."
+    }
+  },
+  "threshold_decision": {
+    "decision": "keep_1_2_stable",
+    "s18_status": "deferred",
+    "reason": "The available records are source-backed but heterogeneous. They do not clear the next-signals threshold for S18 comparative metrics, benchmark packaging or 1.3+ reopening.",
+    "required_before_reopen": [
+      "at least two believable real slices with comparable review language for a next-signals record",
+      "at least five reviewed records in one stable comparison_group before S18 comparative work metrics",
+      "explicit human decision before any benchmark or 1.3+ framing"
+    ]
+  },
+  "unavailable_inputs": [
+    "stable comparison_group",
+    "cross-project repeated signal",
+    "comparable review language",
+    "observed repeated late-stage waste",
+    "benchmark-ready baseline"
+  ],
+  "guardrails": {
+    "activated_s18": false,
+    "created_benchmark": false,
+    "created_dashboard": false,
+    "created_runtime_collection": false,
+    "created_auto_routing": false,
+    "created_learning_layer_behavior": false,
+    "ranked_vendors_or_models": false
+  }
+}

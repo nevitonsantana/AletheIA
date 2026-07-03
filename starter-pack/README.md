@@ -143,7 +143,7 @@ For compact, source-backed observations that retain a governed path to lossy raw
 
 If you are applying AletheIA in an environment with heavier approvals, stricter trust boundaries, or stronger local restrictions, read:
 
-- `docs/enterprise-readiness-roadmap.md`
+- `docs/roadmaps/enterprise-readiness-roadmap.md`
 - `starter-pack/guides/enterprise-adoption-considerations.md`
 - `examples/project-extension/restricted-enterprise-context.md`
 
@@ -152,7 +152,7 @@ If you are applying AletheIA in an environment with heavier approvals, stricter 
 
 If your constrained environment needs an explicit local trust and hosting posture, read:
 
-- `docs/local-trust-boundary-posture.md`
+- `docs/concepts/local-trust-boundary-posture.md`
 - `starter-pack/templates/local-trust-boundary-template.md`
 - `examples/project-extension/local-trust-boundary-mapping.md`
 
@@ -161,10 +161,35 @@ If your constrained environment needs an explicit local trust and hosting postur
 
 If you want to run a bounded pilot in a constrained environment before broader rollout, read:
 
-- `docs/constrained-adoption-pilot.md`
-- `docs/constrained-pilot-review-checklist.md`
+- `docs/guides/constrained-adoption-pilot.md`
+- `docs/reference/constrained-pilot-review-checklist.md`
 - `starter-pack/templates/constrained-pilot-review-template.md`
+- `starter-pack/templates/constrained-adoption-evidence-loop-template.yaml`
 - `examples/pilot-conversion/constrained-adoption-bounded-validation.md`
+- `examples/pilot-conversion/s30-constrained-adoption-evidence-loop.yaml`
+
+
+## Domain governance: AI agent security
+
+For the S28 minimum AI Agent Security & Prompt Injection pack, read:
+
+- `docs/domain-governance-packs/ai-agent-security-prompt-injection.md`
+- `docs/reference/ai-agent-security-review-checklist.md`
+- `starter-pack/templates/ai-agent-security-review-template.yaml`
+- `examples/agent-security/prompt-injection-review.yaml`
+
+This pack is docs-first and provider-agnostic. It does not add runtime enforcement, scanners, provider-specific prompt recipes or perfect-defense claims.
+
+## Domain governance: web app security
+
+For the S29 minimum Web App Security & Trust Boundaries pack, read:
+
+- `docs/domain-governance-packs/web-app-security-trust-boundaries.md`
+- `docs/reference/web-app-security-review-checklist.md`
+- `starter-pack/templates/web-app-security-review-template.yaml`
+- `examples/web-app-security/trust-boundary-review.yaml`
+
+This pack is docs-first and provider-agnostic. It does not add runtime enforcement, scanners, vendor tutorials or framework-core expansion.
 
 ## Queued 1.2 operationalization track
 
@@ -214,6 +239,37 @@ Read:
 
 This future track should build on the current starter-pack surfaces rather than replace them.
 
+## Agent role reconciliation
+
+When a Work Slice needs professional role labels without creating a second agent catalog, use:
+
+- `docs/contracts/agent-role-contract-reconciliation.md`
+- `starter-pack/templates/agent-role-plan-template.yaml`
+- `examples/agent-roles/s12-software-engineer-qa-governance.yaml`
+
+This maps Software Engineer to the portable `implementer` role and QA/Governance Reviewer to the portable `reviewer` role while preserving human acceptance and AHC/AHGE boundaries.
+
+## Coding safety plan profile
+
+For bounded coding Work Slices that need explicit base state, scope, verification, drift, rollback and stop conditions, use:
+
+- `docs/contracts/coding-safety-plan-profile.md`
+- `starter-pack/templates/coding-safety-plan-template.yaml`
+- `docs/reference/coding-safety-non-engineer-checklist.md`
+- `examples/coding-safety/s9-standard-docs-slice.yaml`
+
+This is a planning profile, not a runtime, command, auto-merge flow or new Adaptive Skill promotion.
+
+## Reference intake and adoption
+
+Before using an external pack, plan, screenshot, repository or capability proposal as input to AletheIA or Adaptive Skills evolution, use:
+
+- `docs/contracts/reference-intake-adoption-contract.md`
+- `starter-pack/templates/reference-intake-decision-template.yaml`
+- `examples/reference-intake/evolution-pack-intake.yaml`
+
+This keeps external references as governed source material, not automatic instructions, dependencies, skill mutations or runtime authority changes.
+
 ## Design System Intelligence pilot
 
 If you need to review a work artifact against a design system without adding scanners,
@@ -226,6 +282,19 @@ automation, or promotion authority, use:
 The first pilot uses Pulso as a lab case. Pulso remains an external design-system
 source; AletheIA records source-backed review evidence and does not become the
 design-system authority.
+
+## Human expertise and evidence-based learning
+
+If a slice depends on scoped human expertise or produces learning that may affect
+future work, use:
+
+- `docs/contracts/human-expertise-learning-contract.md`
+- `starter-pack/templates/domain-expertise-brief-template.yaml`
+- `starter-pack/templates/evidence-based-learning-record-template.yaml`
+- `examples/human-expertise-learning/s25-domain-expertise-learning-synthetic.yaml`
+
+These records preserve expert guidance and learning evidence without allowing
+skills, dashboards, or agents to mutate themselves automatically.
 
 ## Visual Operations docs-first projection
 

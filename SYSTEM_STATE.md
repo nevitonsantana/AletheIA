@@ -28,7 +28,7 @@ Authoritative entrypoints:
 - Recoverable Observation Governance — delivered baseline.
 - Context Surface Governance — delivered minimum registry.
 - Governed Loop Observation — delivered through the accepted S7 pilot.
-- Work Observatory — partially delivered through the first S14 derived `work_record`.
+- Work Observatory — partially delivered through S14 plus S12, S21, S23 and S25 derived `work_record` examples, with an S18 comparison-readiness review that keeps comparative metrics blocked.
 - Intent-to-Evidence — delivered through the accepted S8 cross-repository pilot.
 - Cognitive, intent and documentation closure — delivered through the accepted S16 pilot.
 - Explainable first use — delivered through the accepted cross-repository S17 pilot.
@@ -43,9 +43,9 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Active and planned evolution
 
 - **Active:** none.
-- **Next dependency path:** S25 Human Expertise & Evidence-Based Learning remains planned after S20/S21/S24.
+- **Next dependency path:** use the S35 capture template when future Work Slices apply S28/S29 packs; do not expand domain governance before repeated real usage evidence exists. S18 and Runtime 2.0 remain deferred until their explicit evidence gates are met.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
-- **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; S26 Runtime 2.0 until explicit boundary review.
+- **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
 ## Deprecated or merged plans
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.3 through S19 source registry and prioritization.
+- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered; S33 Backlog v0.5 readiness review is delivered; S34 Domain Governance Usage Review is delivered; S35 Domain Governance Usage Evidence Capture is delivered.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -64,19 +64,19 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 - **Current level:** medium — multiple delivered contracts remain difficult to understand without guided explanation.
 - SYSTEM_STATE can become stale; every claim must retain a source reference and review date.
-- Work Observatory has one record only; no success rate, ranking, work-unit or value claim is admissible.
-- New P13–P18 packs are registered as backlog sources, not implementation authority.
-- Automatic collectors, routing engines, runtime kernels, SDKs and documentation generators remain out of scope.
+- Work Observatory has five total records, and the S18 comparison-readiness review confirms they are heterogeneous and not one reviewed stable comparison group; no success rate, ranking, work-unit or value claim is admissible until at least five comparable records share one stable comparison group.
+- External references require S2 intake before they influence implementation; P20/S28, P21/S29, P22/S30 and P23/S31 are accepted as docs-first evidence/guidance slices.
+- Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters and documentation generators remain out of scope.
 
 ## Next safe steps
 
-1. Start S25 Human Expertise & Evidence-Based Learning as the next ordered functional slice, unless a higher-risk review interrupts it.
-2. Preserve the S15 Restart Package compatibility and post-resume checks.
+1. Apply the S35 capture template only when a future real Work Slice uses S28/S29 domain governance packs.
+2. Keep domain governance source-backed and read-only/advisory; do not treat templates or synthetic examples as real usage evidence or create scanners, policy engines, runtime enforcement or automatic classification.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
-4. Do not activate S18 before its evidence threshold or S26 before an explicit boundary decision.
+4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
 
 ## Last reviewed
 
-- **Date:** 2026-07-01
-- **Evidence baseline:** AletheIA `e180f0a` after S24 pilot contract merge; Adaptive Skills `a7c5dc2` after S24 skill merge
-- **Review trigger:** S24 Design System Intelligence / Pulso pilot merged and local state synchronized
+- **Date:** 2026-07-03
+- **Evidence baseline:** AletheIA `256436d` after S35 Domain Governance Usage Evidence Capture; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** PR #331 merged; S35 delivered future usage capture for S28/S29 packs without claiming real usage or activating enforcement

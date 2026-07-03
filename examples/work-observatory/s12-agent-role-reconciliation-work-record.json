@@ -1,0 +1,116 @@
+{
+  "schema_version": "0.1-example",
+  "record_kind": "derived_work_observation",
+  "work_record_id": "work-record-2026-07-02-s12-agent-role-001",
+  "work_slice_id": "s12-agent-role-contract-reconciliation",
+  "derived_from": {
+    "backlog_ref": "docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md#s12--agent-role-contract-reconciliation-pilot",
+    "contract_ref": "docs/contracts/agent-role-contract-reconciliation.md",
+    "example_ref": "examples/agent-roles/s12-software-engineer-qa-governance.yaml",
+    "test_ref": "tests/contracts/test-agent-role-contract-reconciliation.test.ts"
+  },
+  "task": {
+    "task_id": "s12-agent-role-contract-reconciliation",
+    "task_type": "governance_contract_reconciliation",
+    "task_family": "documentation_governance",
+    "output_type": "docs_contract_template_example_test",
+    "comparison_group": "unavailable"
+  },
+  "execution": {
+    "agents": [
+      {
+        "agent_id": "codex",
+        "role": "executor",
+        "role_projection": "software_engineer"
+      }
+    ],
+    "subagents": [],
+    "skills": [],
+    "tools": [
+      "exec_command",
+      "apply_patch"
+    ],
+    "pattern": "bounded_docs_first_slice",
+    "iterations": 1,
+    "maximum_iterations": "unavailable"
+  },
+  "timing": {
+    "started_at": "unavailable",
+    "completed_at": "2026-07-02T03:26:01Z",
+    "duration_seconds": {
+      "value": null,
+      "availability": "unavailable",
+      "reason": "No durable task-start timestamp was captured; commit and merge timestamps are not execution duration."
+    }
+  },
+  "resources": {
+    "resource_record_ref": "unavailable",
+    "tokens": {
+      "value": null,
+      "provenance": "unavailable"
+    },
+    "cost": {
+      "value": null,
+      "currency": "USD",
+      "provenance": "unavailable"
+    }
+  },
+  "observations": {
+    "refs": [
+      "docs/contracts/agent-role-contract-reconciliation.md",
+      "starter-pack/templates/agent-role-plan-template.yaml",
+      "examples/agent-roles/s12-software-engineer-qa-governance.yaml",
+      "tests/contracts/test-agent-role-contract-reconciliation.test.ts"
+    ],
+    "objective_gate": "CI=true pnpm test",
+    "objective_gate_result": "passed"
+  },
+  "human_collaboration": {
+    "intervention_count": 1,
+    "intervention_types": [
+      "merge_or_acceptance_review"
+    ],
+    "human_time_minutes": {
+      "value": null,
+      "provenance": "unavailable"
+    },
+    "provenance": "reported",
+    "source_ref": "https://github.com/nevitonsantana/AletheIA/pull/302"
+  },
+  "outcome": {
+    "status": "completed",
+    "loop_outcome": "not_applicable",
+    "accepted": "unknown",
+    "rework_required": "unknown",
+    "closure_ref": "https://github.com/nevitonsantana/AletheIA/commit/da75d60cc11799a0cea7dde250ccd19a2c90e933"
+  },
+  "work": {
+    "work_units": "unavailable",
+    "quality_score": "unavailable",
+    "value_score": "unavailable"
+  },
+  "comparison": {
+    "eligible": false,
+    "reason": "No stable comparison group and fewer than five comparable reviewed records."
+  },
+  "authority": {
+    "mode": "read_only_derived_projection",
+    "source_records_remain_authoritative": true,
+    "does_not_score_people": true
+  },
+  "privacy": {
+    "metadata_only": true,
+    "stores_prompts": false,
+    "stores_personal_data": false,
+    "stores_restricted_content": false
+  },
+  "source_refs": [
+    "docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md",
+    "docs/contracts/agent-role-contract-reconciliation.md",
+    "starter-pack/templates/agent-role-plan-template.yaml",
+    "examples/agent-roles/s12-software-engineer-qa-governance.yaml",
+    "tests/contracts/test-agent-role-contract-reconciliation.test.ts",
+    "https://github.com/nevitonsantana/AletheIA/pull/302",
+    "https://github.com/nevitonsantana/AletheIA/commit/da75d60cc11799a0cea7dde250ccd19a2c90e933"
+  ]
+}

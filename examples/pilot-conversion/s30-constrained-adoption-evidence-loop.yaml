@@ -1,0 +1,107 @@
+constrained_adoption_evidence_loop:
+  id: s30-demo-local-review-lane
+  status: in_review
+  review_date: "2026-07-02"
+
+  source_refs:
+    task_brief: docs/guides/constrained-adoption-pilot.md#recommended-pilot-shape
+    local_trust_boundary_posture: docs/concepts/local-trust-boundary-posture.md
+    risk_to_gate_mapping: docs/reference/constrained-pilot-review-checklist.md#3-risk-to-gate-posture-remained-proportional
+    validation_evidence: examples/pilot-conversion/constrained-adoption-bounded-validation.md
+    durable_decision: unavailable
+    handoff_or_restart: unavailable
+
+  lane:
+    name: Local approval mapping for a restricted web change
+    purpose: Map task brief, gates, handoff, validation and durable decisions before broad adoption claims.
+    boundary_summary: Only review whether AletheIA can represent the local approval lane; do not execute or integrate the product change.
+    excluded_scope: No enterprise rollout, no compliance certification, no runtime enforcement, no scanner, no bootstrap promise.
+    local_owner: Local governance reviewer
+
+  local_context:
+    environment_type: constrained internal product team
+    data_classification: restricted metadata only; no secrets or personal data stored in this record
+    hosting_posture: local review surface with repository evidence links
+    allowed_tool_classes:
+      - repository read
+      - documentation review
+      - synthetic examples
+    blocked_tool_classes:
+      - production deploy
+      - secret inspection
+      - live customer data access
+      - automated policy enforcement
+    local_rules:
+      - id: LOCAL-R1
+        summary: Human approval is required before any production-impacting change.
+        remains_local: true
+      - id: LOCAL-R2
+        summary: Provider allowlists are project-local and must not become AletheIA framework truth.
+        remains_local: true
+
+  gates:
+    review_posture: human_gated_execution
+    required_human_gates:
+      - local governance reviewer accepts the proof chain
+      - product owner confirms the lane remains bounded
+    escalation_triggers:
+      - restricted data class becomes unclear
+      - local policy conflict appears
+      - team proposes expanding beyond the first lane
+    stop_conditions:
+      - validation evidence is unavailable
+      - human gate cannot be identified
+      - local rules start leaking into framework core
+
+  proof_chain:
+    minimum_proof_required: One reviewable lane with explicit trust posture, gates, validation evidence and local-only residue.
+    evidence_present:
+      - ref: docs/guides/constrained-adoption-pilot.md
+        summary: Defines the bounded pilot shape and conversion boundary.
+        confidence: high
+      - ref: docs/reference/constrained-pilot-review-checklist.md
+        summary: Defines review questions for boundary, trust posture, proof and expansion.
+        confidence: high
+      - ref: starter-pack/templates/constrained-adoption-evidence-loop-template.yaml
+        summary: Provides a reusable structured record without becoming a schema.
+        confidence: medium
+    validation_result: sufficient_for_template_review
+    unresolved_ambiguity:
+      - Real acceptance and retrabalho remain unavailable until a real constrained pilot uses this record.
+      - Work units and value score are intentionally unavailable.
+
+  handoff:
+    required: true
+    recipient_boundary: project-local governance or compliance owner
+    handoff_ref: unavailable
+    restart_ref: unavailable
+
+  durable_decisions:
+    - decision_ref: unavailable
+      decision: Do not promote local provider allowlists or approval matrices into AletheIA core.
+      rationale: S30 strengthens adoption evidence without creating universal enterprise policy.
+      local_only: false
+    - decision_ref: LOCAL-R1
+      decision: Require human gate before production-impacting changes in this local lane.
+      rationale: This is a local approval posture, not a framework-wide rule.
+      local_only: true
+
+  learning:
+    reusable_local_pattern: A constrained lane should map task brief, trust posture, gates, proof, handoff, durable decisions and expansion trigger before claiming readiness.
+    candidate_framework_learning: AletheIA can offer a structured evidence-loop template while keeping enterprise-specific residue local.
+    non_reusable_local_residue:
+      - local approval matrix
+      - provider allowlist
+      - compliance owner names
+
+  expansion_decision:
+    posture: later
+    reason: The record proves the evidence shape, not enterprise readiness or rollout readiness.
+    trigger_required: A real constrained pilot with accepted proof, observed human review and reusable learning.
+
+  guardrails:
+    enterprise_product_packaging_added: false
+    universal_compliance_preset_added: false
+    cli_or_bootstrap_promise_added: false
+    org_specific_policy_hardcoded: false
+    framework_core_expanded: false

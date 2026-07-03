@@ -1,0 +1,36 @@
+domain_governance_usage_evidence:
+  usage_id: DGU-YYYYMMDD-001
+  work_slice_ref: WS-YYYY-001
+  review_date: YYYY-MM-DD
+  reviewer: unknown
+  pack_refs:
+    - docs/domain-governance-packs/ai-agent-security-prompt-injection.md # or web-app-security-trust-boundaries.md
+  source_refs: []
+  applicability:
+    pack_used: unavailable # ai_agent_security | web_app_security | multiple | unavailable
+    trigger: unavailable # prompt_injection_risk | web_trust_boundary | untrusted_content | other | unavailable
+    used_during: unavailable # planning | implementation | review | closure | incident_review | unavailable
+    evidence_source: unavailable # real_work_slice | synthetic_example | template_only | unavailable
+  usage_observation:
+    helped_decision: unavailable # true | false | unavailable
+    clarified_boundary: unavailable # true | false | unavailable
+    found_gap: unavailable # true | false | unavailable
+    blocked_or_changed_work: unavailable # true | false | unavailable
+    notes: "Unreviewed template; do not treat as usage evidence."
+  gaps:
+    - gap: unavailable
+      status: unavailable # unavailable | observed | resolved | deferred
+      source_refs: []
+  decision:
+    posture: unavailable # continue_advisory_use | needs_pack_refinement | needs_project_extension | requires_human_review | unavailable
+    rationale: "Unreviewed template; do not treat as approval."
+    evidence_refs: []
+  non_goals_confirmed:
+    created_new_domain_pack: false
+    created_scanner: false
+    created_policy_engine: false
+    created_runtime_enforcement: false
+    created_dashboard: false
+    created_schema: false
+    changed_adaptive_skills: false
+    activated_s18: false

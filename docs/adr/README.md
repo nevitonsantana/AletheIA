@@ -77,3 +77,4 @@ Do *not* write one for:
 | [ADR-013](ADR-013-agent-harness-contract.md) | Agent Harness Contract (per-task declaration) | Accepted |
 | [ADR-014](ADR-014-harness-enforcement-addendum.md) | Harness Enforcement Addendum: vocabulary reconciliation | Accepted |
 | [ADR-015](ADR-015-execution-pattern-governance-pack.md) | Execution Pattern Governance Pack | Accepted |
+| [ADR-016](ADR-016-runtime-2-boundary-review.md) | Runtime 2.0 Boundary Review | Accepted |

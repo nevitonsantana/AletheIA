@@ -1,0 +1,29 @@
+web_app_security_review:
+  review_id: WASR-YYYYMMDD-001
+  work_slice_ref: WS-YYYY-001
+  reviewer: unknown
+  source_refs: []
+  boundary_review:
+    public_client_authority: unavailable
+    authoritative_layer_ref: unavailable
+    secrets_config_separation: unavailable
+    auth_data_isolation: unavailable
+    tenant_context_scoping: unavailable
+    inbound_integration_trust: unavailable
+    logs_artifacts_hygiene: unavailable
+    untrusted_content_handling: unavailable
+  findings:
+    - id: WAS-FINDING-001
+      category: unavailable
+      severity: unavailable
+      evidence_refs: []
+      required_action: human_review_required
+  decision:
+    posture: require_human_review
+    rationale: "Unreviewed template; do not treat as approval."
+    evidence_refs: []
+  non_goals_confirmed:
+    runtime_enforcement_added: false
+    scanner_added: false
+    vendor_tutorial_added: false
+    framework_core_expanded: false

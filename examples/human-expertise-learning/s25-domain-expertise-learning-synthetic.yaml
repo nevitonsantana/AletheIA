@@ -1,0 +1,63 @@
+domain_expertise_brief:
+  brief_id: DEB-20260701-001
+  work_slice_ref: WS-S25-HUMAN-EXPERTISE
+  expert_ref: synthetic://roles/design-system-owner
+  expertise_scope: Semantic state colors in an operational cockpit using Pulso as a reference.
+  domain_rules:
+    - rule_id: RULE-001
+      statement: Review and critical colors must remain distinguishable from source/reference colors because they imply different operational consequences.
+      authority: human_expert
+      source_refs:
+        - kind: prior_slice
+          ref: aletheia://examples/design-system-intelligence/pulso-pilot-review.yaml
+  edge_cases:
+    - case_id: EDGE-001
+      description: A visual state may be Pulso-aligned but still require AletheIA-specific evidence semantics.
+      handling_guidance: human_review_required
+      source_refs:
+        - kind: contract
+          ref: aletheia://docs/contracts/design-system-intelligence-pilot.md
+  decision_boundaries:
+    can_clarify:
+      - visual semantics
+      - edge cases
+      - review expectations
+    cannot_authorize:
+      - automatic skill mutation
+      - bypassing accessibility evidence
+      - promoting Pulso primitives without owner review
+  review_required_for:
+    - semantic state color changes
+    - reusable pattern promotion
+  privacy_boundary:
+    secrets: excluded
+    personal_data: role_reference_only
+    restricted_sources: metadata_only
+  source_refs:
+    - kind: synthetic_expert_brief
+      ref: synthetic://s25/domain-expertise-brief
+
+evidence_based_learning_record:
+  learning_id: EBL-20260701-001
+  work_slice_ref: WS-S25-HUMAN-EXPERTISE
+  hypothesis_or_expectation: A scoped expert brief can make the Pattern Generalization Gate easier to review without granting automatic promotion authority.
+  observed_result: The brief separates what a design-system owner can clarify from what still requires evidence and governance review.
+  surprise_or_delta: The most useful learning is a boundary clarification, not a new dashboard metric or automatic ranking.
+  evidence_refs:
+    - synthetic://s25/domain-expertise-brief
+  source_refs:
+    - kind: contract
+      ref: aletheia://docs/contracts/human-expertise-learning-contract.md
+    - kind: prior_slice
+      ref: aletheia://examples/design-system-intelligence/pulso-pilot-review.yaml
+  recommended_future_change:
+    target: future_work_slice_planning
+    summary: Ask for scoped expert rules before promoting repeated design-system findings.
+    rationale: Expert boundaries reduce ambiguity while preserving human review and evidence gates.
+  change_authority:
+    required_reviewer: human_or_governance_reviewer
+    automatic_change_allowed: false
+  status: captured
+  limitations:
+    - Synthetic example; no real domain expert identity or restricted content is stored.
+    - Does not create capability fitness ranking or learning automation.
