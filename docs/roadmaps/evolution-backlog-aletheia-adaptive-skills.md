@@ -202,10 +202,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA Visual/Resource/Work Observatory planning
 - **Covers:** P1, P3, P10/P12 and P11 deferred visual/evidence projections.
 - **Dependencies:** S31 or a new source-backed evidence review showing repeated need.
-- **Status:** `planned`
+- **Status:** `in-review` in the S32 Observatory maturity PR
 - **Non-goals:** live importers, collectors, dashboards, ranking, people scoring or automatic documentation-health inference.
 - **Acceptance:** decide whether existing Observatory surfaces need refinement, not expansion by default; every visual claim must have source_refs and unavailable state.
-- **Evidence:** bounded design/evidence review with explicit no-build outcome allowed.
+- **Evidence:** [`s32-observatory-maturity-review.json`](../../examples/observatory-maturity/s32-observatory-maturity-review.json) records the maturity decision; no-build outcome remains allowed.
 
 ### S0 — Integrate skill execution context
 
@@ -561,7 +561,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P21-R1 Web/API trust boundaries | Web App Security concept | `planned` | S29 | Client/server, auth, tenant, webhook and artifact-hygiene boundaries as reusable guidance. |
 | P22-R1 Constrained adoption evidence loop | Enterprise-readiness roadmap | `delivered` | S30 | Bounded local-trust adoption evidence before enterprise-readiness claims. |
 | P23-R1 Resource-aware next-signal review | Resource-aware next-signals roadmap | `delivered` | S31 | Reviewed repeated evidence without activating S18 or benchmarks. |
-| P1/P3/P10/P11-RX Observatory maturity | Existing partial/deferred observability lines | `planned` | S32 | Review visual/evidence maturity only after source-backed need; no collector/dashboard by default. |
+| P1/P3/P10/P11-RX Observatory maturity | Existing partial/deferred observability lines | `in-review` | S32 | Review visual/evidence maturity only after source-backed need; no collector/dashboard by default. |
 
 ## Per-pack preservation appendix
 

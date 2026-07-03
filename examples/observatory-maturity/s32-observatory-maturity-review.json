@@ -1,0 +1,99 @@
+{
+  "review_id": "s32-observatory-maturity-review-2026-07-02",
+  "review_date": "2026-07-02",
+  "purpose": "Review whether existing Visual, Resource and Work Observatory surfaces need refinement or expansion after S31, without adding collectors, dashboards, schemas, runtime telemetry, importers or visual features by default.",
+  "source_refs": {
+    "visual_operations_phase_closeout": "docs/pilots/closeouts/2026-06-15-visual-operations-phase-closeout.md",
+    "visual_operations_usage_evidence": "docs/guides/visual-operations-usage-evidence.md",
+    "visual_operations_dogfood_protocol": "docs/guides/visual-operations-aletheia-dogfood-protocol.md",
+    "work_observatory_comparison_readiness": "examples/work-observatory/comparison-readiness-review.json",
+    "resource_aware_next_signals_review": "examples/resource-aware-operations/s31-next-signals-review.json",
+    "mission_control_static_prototype": "examples/visual-operations/prototype/mission-control-static.html",
+    "resource_observatory_static_prototype": "examples/visual-operations/prototype/resource-observatory-static.html"
+  },
+  "surfaces_reviewed": [
+    {
+      "surface": "Visual Operations / Mission Control",
+      "current_posture": "delivered_baseline",
+      "evidence_summary": "Contracts, snapshots, static prototype and dogfood records exist; phase closeout keeps collectors, UI/backend and telemetry gated by repeated usage evidence.",
+      "maturity": "usable_static_projection",
+      "refinement_need": "documentation_and_label_clarity_only",
+      "expansion_decision": "do_not_expand"
+    },
+    {
+      "surface": "Resource Observatory",
+      "current_posture": "read_only_projection",
+      "evidence_summary": "Skill/tool/resource signals can be represented as source-backed metadata, but collection and runtime telemetry remain deferred.",
+      "maturity": "early_projection",
+      "refinement_need": "keep unknown/unavailable semantics visible",
+      "expansion_decision": "do_not_expand"
+    },
+    {
+      "surface": "Work Observatory",
+      "current_posture": "partially_delivered",
+      "evidence_summary": "Five work_record examples exist, but comparison-readiness review shows they are heterogeneous and not one stable comparison group.",
+      "maturity": "evidence_accumulation",
+      "refinement_need": "preserve source_refs and denominator discipline",
+      "expansion_decision": "do_not_expand"
+    },
+    {
+      "surface": "Documentation continuity projection",
+      "current_posture": "deferred_projection",
+      "evidence_summary": "SYSTEM_STATE and continuity contracts help first-load/restart, but source-backed documentation-health records are not yet sufficient for an Observatory health projection.",
+      "maturity": "not_ready_for_projection",
+      "refinement_need": "manual review only",
+      "expansion_decision": "defer"
+    }
+  ],
+  "activation_gate_review": {
+    "collector_or_importer": {
+      "threshold_met": false,
+      "reason": "No repeated manual evidence-assembly failures are documented as materially limiting the existing projector."
+    },
+    "dashboard_or_ui": {
+      "threshold_met": false,
+      "reason": "Static Markdown/JSON and prototype review records exist, but no repeated review cadence proves they are insufficient."
+    },
+    "persistent_event_store_or_backend": {
+      "threshold_met": false,
+      "reason": "No demonstrated cross-slice query or retention need exceeds checked-in artifacts."
+    },
+    "runtime_token_or_cost_telemetry": {
+      "threshold_met": false,
+      "reason": "No authoritative provider or harness record with consent, provenance and sensitivity classification is available."
+    },
+    "comparative_work_metrics": {
+      "threshold_met": false,
+      "reason": "S18 remains deferred; five work records do not share one reviewed stable comparison_group."
+    },
+    "documentation_health_projection": {
+      "threshold_met": false,
+      "reason": "No source-backed documentation coherence records exist at a sufficient cadence."
+    }
+  },
+  "decision": {
+    "posture": "no_build_refine_when_needed",
+    "summary": "Existing Observatory surfaces are mature enough for static read-only review and evidence accumulation, but not mature enough for collectors, dashboards, runtime telemetry, comparative metrics or automatic health inference.",
+    "next_small_slice": "If a future review is needed, patch wording, labels or source mapping in the existing surfaces before adding new infrastructure.",
+    "s18_status": "deferred"
+  },
+  "unavailable_inputs": [
+    "stable comparison_group",
+    "repeated manual evidence assembly failure",
+    "repeated UI insufficiency in a real review cadence",
+    "authoritative runtime token/cost telemetry",
+    "source-backed documentation health cadence"
+  ],
+  "guardrails": {
+    "created_collector": false,
+    "created_dashboard": false,
+    "created_schema": false,
+    "created_runtime_telemetry": false,
+    "created_importer": false,
+    "created_visual_feature": false,
+    "created_people_scoring": false,
+    "created_ranking": false,
+    "created_automatic_documentation_health_inference": false,
+    "activated_s18": false
+  }
+}
