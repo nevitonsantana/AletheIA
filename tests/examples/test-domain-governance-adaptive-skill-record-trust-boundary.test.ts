@@ -114,7 +114,7 @@ describe("S38 Adaptive Skill record trust-boundary review", () => {
     expect(examplesIndex).toContain("evidência S38");
     expect(reviewIndex).toContain("s38-adaptive-skill-record-trust-boundary-review.json");
     expect(backlog).toContain("### S38 — Adaptive Skill Record Trust-Boundary Review");
-    expect(backlog).toContain("Status:** `in-review`");
-    expect(systemState).toContain("S38 Adaptive Skill Record Trust-Boundary Review is in review");
+    expect(backlog).toContain("Status:** `delivered` by AletheIA PR #337");
+    expect(systemState).toContain("S38 Adaptive Skill Record Trust-Boundary Review is delivered");
   });
 });
