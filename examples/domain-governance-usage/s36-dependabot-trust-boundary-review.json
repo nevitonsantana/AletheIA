@@ -1,0 +1,177 @@
+{
+  "review_id": "s36-dependabot-trust-boundary-review-2026-07-04",
+  "review_date": "2026-07-04",
+  "work_slice_ref": "S36",
+  "purpose": "Record the first real, source-backed S28/S29 usage evidence from the completed Dependabot dependency PR cycle without expanding domain governance into enforcement or automation.",
+  "source_refs": {
+    "s35_capture_template": "starter-pack/templates/domain-governance-usage-evidence-template.yaml",
+    "ai_agent_security_pack": "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+    "web_app_security_pack": "docs/domain-governance-packs/web-app-security-trust-boundaries.md",
+    "root_package_manifest": "package.json",
+    "mission_control_manifest": "apps/mission-control/package.json",
+    "lockfile": "pnpm-lock.yaml",
+    "ci_workflow": ".github/workflows/ci.yml"
+  },
+  "external_refs": {
+    "pr_273": "https://github.com/nevitonsantana/AletheIA/pull/273",
+    "pr_293": "https://github.com/nevitonsantana/AletheIA/pull/293",
+    "pr_292": "https://github.com/nevitonsantana/AletheIA/pull/292",
+    "pr_291": "https://github.com/nevitonsantana/AletheIA/pull/291",
+    "pr_290": "https://github.com/nevitonsantana/AletheIA/pull/290"
+  },
+  "domain_governance_usage_evidence": {
+    "usage_id": "DGU-20260704-001",
+    "work_slice_ref": "S36",
+    "review_date": "2026-07-04",
+    "reviewer": "codex",
+    "pack_refs": [
+      "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+      "docs/domain-governance-packs/web-app-security-trust-boundaries.md"
+    ],
+    "source_refs": [
+      "starter-pack/templates/domain-governance-usage-evidence-template.yaml",
+      "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+      "docs/domain-governance-packs/web-app-security-trust-boundaries.md",
+      "package.json",
+      "apps/mission-control/package.json",
+      "pnpm-lock.yaml",
+      ".github/workflows/ci.yml"
+    ],
+    "applicability": {
+      "pack_used": "multiple",
+      "trigger": "untrusted_content_and_web_build_boundary",
+      "used_during": "review",
+      "evidence_source": "real_work_slice"
+    },
+    "usage_observation": {
+      "helped_decision": true,
+      "clarified_boundary": true,
+      "found_gap": true,
+      "blocked_or_changed_work": false,
+      "notes": "S28 treated Dependabot, release notes, GitHub PR content and check output as external data rather than instructions; S29 framed dependency, CI action and web build package boundaries without creating enforcement. The only observed gap is evidence maturity: one real usage record is not enough to justify new packs, scanners or policy engines."
+    },
+    "gaps": [
+      {
+        "gap": "Only one real usage record exists for applying S28/S29 during a dependency-maintenance work slice.",
+        "status": "observed",
+        "source_refs": [
+          "starter-pack/templates/domain-governance-usage-evidence-template.yaml",
+          "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+          "docs/domain-governance-packs/web-app-security-trust-boundaries.md"
+        ]
+      },
+      {
+        "gap": "No reusable project-local control, metric, scanner or policy rule was proven by this review.",
+        "status": "unavailable",
+        "source_refs": [
+          "package.json",
+          "apps/mission-control/package.json",
+          "pnpm-lock.yaml",
+          ".github/workflows/ci.yml"
+        ]
+      }
+    ],
+    "decision": {
+      "posture": "continue_advisory_use",
+      "rationale": "The packs were useful as manual review guidance for an actual dependency-update cycle, but the evidence supports only continued advisory use and future capture, not governance expansion.",
+      "evidence_refs": [
+        "examples/domain-governance-usage/s36-dependabot-trust-boundary-review.json",
+        "starter-pack/templates/domain-governance-usage-evidence-template.yaml"
+      ]
+    },
+    "non_goals_confirmed": {
+      "created_new_domain_pack": false,
+      "created_scanner": false,
+      "created_policy_engine": false,
+      "created_runtime_enforcement": false,
+      "created_dashboard": false,
+      "created_schema": false,
+      "changed_adaptive_skills": false,
+      "activated_s18": false,
+      "claimed_success_rate": false,
+      "claimed_security_proof": false
+    }
+  },
+  "reviewed_prs": [
+    {
+      "pr": 273,
+      "dependency": "actions/checkout 6 -> 7",
+      "boundary": "ci_action_supply_chain",
+      "pack_application": "S28 kept GitHub/Dependabot text as untrusted external content; S29 treated the workflow action as a tooling trust boundary.",
+      "outcome": "Merged after source-backed review and validation; no new enforcement created."
+    },
+    {
+      "pr": 293,
+      "dependency": "vite 8.0.16 -> 8.1.2",
+      "boundary": "web_build_tooling",
+      "pack_application": "S29 framed the bundler update as a build/runtime boundary for Mission Control; S28 kept changelog and bot content advisory only.",
+      "outcome": "Merged after dependency-cycle validation; no dashboard, scanner or policy rule created."
+    },
+    {
+      "pr": 292,
+      "dependency": "react-router-dom 7.18.0 -> 7.18.1",
+      "boundary": "client_routing_dependency",
+      "pack_application": "S29 framed route handling as a web trust-boundary dependency; S28 kept generated PR content non-authoritative.",
+      "outcome": "Merged after branch update and validation; no runtime governance behavior changed."
+    },
+    {
+      "pr": 291,
+      "dependency": "@vitejs/plugin-react 6.0.2 -> 6.0.3",
+      "boundary": "react_build_plugin",
+      "pack_application": "S29 framed the plugin as build tooling that can influence shipped web assets; S28 kept conflict-resolution prompts and bot text subordinate to local source evidence.",
+      "outcome": "Conflict resolved by preserving the newer dependency set and validating locally."
+    },
+    {
+      "pr": 290,
+      "dependency": "@types/node 25.9.1 -> 26.1.0",
+      "boundary": "type_and_tooling_surface",
+      "pack_application": "S29 treated type-surface drift as tooling risk rather than product-runtime behavior; S28 kept external PR content as review input only.",
+      "outcome": "Conflict resolved by preserving the newer dependency set and validating locally."
+    }
+  ],
+  "pack_application": {
+    "ai_agent_security_prompt_injection": {
+      "pack_ref": "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+      "used_for": [
+        "classifying Dependabot/GitHub PR text, release notes and check output as external data",
+        "keeping local source files, lockfile diffs and validation results as the decision evidence",
+        "separating read-only review from state-changing merge and push actions"
+      ],
+      "did_not_do": [
+        "follow external content as instructions",
+        "add agent enforcement",
+        "create prompt-injection scanners"
+      ]
+    },
+    "web_app_security_trust_boundaries": {
+      "pack_ref": "docs/domain-governance-packs/web-app-security-trust-boundaries.md",
+      "used_for": [
+        "identifying CI action, bundler, build plugin, router and type packages as trust-boundary surfaces",
+        "checking that dependency review stayed source-backed and validation-gated",
+        "keeping web/API/auth/tenant/secrets boundary changes out of scope because no such implementation changed"
+      ],
+      "did_not_do": [
+        "add auth, tenant, secret or API policy code",
+        "create web security enforcement",
+        "claim a security proof from dependency updates"
+      ]
+    }
+  },
+  "expansion_decision": {
+    "posture": "no_expansion",
+    "rationale": "This is useful first real evidence, but it is a single maintenance cycle. Domain governance should keep collecting source-backed usage records before changing packs or introducing automation.",
+    "next_safe_step": "Use the S35 template again when a future real Work Slice applies S28/S29 to agent, prompt-injection, untrusted-content, web/API, auth, tenant, secrets or trust-boundary work."
+  },
+  "guardrails": {
+    "created_new_domain_pack": false,
+    "created_scanner": false,
+    "created_policy_engine": false,
+    "created_runtime_enforcement": false,
+    "created_dashboard": false,
+    "created_schema": false,
+    "changed_adaptive_skills": false,
+    "activated_s18": false,
+    "claimed_success_rate": false,
+    "claimed_security_proof": false
+  }
+}

@@ -237,6 +237,16 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Acceptance:** add a minimal template and reviewed example that define how future real usage evidence is captured while preserving `unavailable` values and confirming the template itself is not evidence.
 - **Evidence:** AletheIA PR #331 / `256436d`; [`domain-governance-usage-evidence-template.yaml`](../../starter-pack/templates/domain-governance-usage-evidence-template.yaml) and [`s35-domain-governance-usage-evidence-capture.json`](../../examples/domain-governance-usage/s35-domain-governance-usage-evidence-capture.json) define future capture without claiming usage.
 
+### S36 — Dependabot Trust-Boundary Usage Review
+
+- **Repository / layer:** AletheIA domain governance usage evidence
+- **Covers:** first real/source-backed S28/S29 usage evidence from the completed Dependabot dependency PR cycle.
+- **Dependencies:** S35 capture template and merged dependency PRs #273, #293, #292, #291 and #290.
+- **Status:** `in-review`
+- **Non-goals:** new domain packs, scanners, policy engines, runtime enforcement, dashboards, schemas, automatic classification, Adaptive Skills changes, S18 activation or security/success-rate claims.
+- **Acceptance:** apply S28/S29 as manual/advisory review guidance to the real dependency-maintenance cycle, capture evidence with the S35 shape, and keep expansion blocked until repeated real usage evidence exists.
+- **Evidence:** [`s36-dependabot-trust-boundary-review.json`](../../examples/domain-governance-usage/s36-dependabot-trust-boundary-review.json) records Dependabot PR usage evidence while keeping the packs advisory and non-enforcing.
+
 ### S0 — Integrate skill execution context
 
 - **Repository / layer:** AletheIA / Resource Observatory
