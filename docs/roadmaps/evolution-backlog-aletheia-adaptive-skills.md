@@ -262,10 +262,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA Mission Control domain governance usage evidence
 - **Covers:** real S28/S29 usage on the Adaptive Skills execution-record adapter boundary in Mission Control.
 - **Dependencies:** S35 capture template, S37 readiness criteria and the existing Mission Control Adaptive Skills execution-record adapter.
-- **Status:** `in-review`
+- **Status:** `delivered` by AletheIA PR #337
 - **Non-goals:** new domain packs, scanners, policy engines, runtime enforcement, dashboards, schemas, automatic classification, Adaptive Skills changes, S18 activation, auth/tenant/secrets changes or security/success-rate claims.
 - **Acceptance:** apply S28/S29 to the real cross-repository record projection boundary, add a focused regression test for prompt-like record content, and capture source-backed usage evidence without expanding governance.
-- **Evidence:** [`s38-adaptive-skill-record-trust-boundary-review.json`](../../examples/domain-governance-usage/s38-adaptive-skill-record-trust-boundary-review.json) records the S28/S29 usage decision and adapter test coverage.
+- **Evidence:** AletheIA PR #337 / `1ea0725`; [`s38-adaptive-skill-record-trust-boundary-review.json`](../../examples/domain-governance-usage/s38-adaptive-skill-record-trust-boundary-review.json) records the S28/S29 usage decision and adapter test coverage.
 
 ### S0 — Integrate skill execution context
 
