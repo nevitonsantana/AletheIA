@@ -1,0 +1,141 @@
+{
+  "review_id": "s38-adaptive-skill-record-trust-boundary-review-2026-07-04",
+  "review_date": "2026-07-04",
+  "work_slice_ref": "S38",
+  "purpose": "Apply S28/S29 to the real Mission Control Adaptive Skills execution-record adapter boundary, where cross-repository skill records become read-only web UI evidence.",
+  "source_refs": {
+    "s35_capture_template": "starter-pack/templates/domain-governance-usage-evidence-template.yaml",
+    "s37_readiness_gate": "examples/domain-governance-usage/s37-domain-governance-next-use-readiness.json",
+    "ai_agent_security_pack": "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+    "web_app_security_pack": "docs/domain-governance-packs/web-app-security-trust-boundaries.md",
+    "adapter": "apps/mission-control/src/adapters/adaptiveSkillExecutionRecordAdapter.ts",
+    "adapter_test": "apps/mission-control/src/adapters/adaptiveSkillExecutionRecordAdapter.test.ts",
+    "adapter_readme": "apps/mission-control/src/adapters/README.md",
+    "source_record": "examples/visual-operations/adaptive-skills-feature-planning-dogfood-record.json",
+    "resource_signal_inspector": "apps/mission-control/src/features/resource-observatory/ResourceSignalInspector.tsx"
+  },
+  "domain_governance_usage_evidence": {
+    "usage_id": "DGU-20260704-002",
+    "work_slice_ref": "S38",
+    "review_date": "2026-07-04",
+    "reviewer": "codex",
+    "pack_refs": [
+      "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+      "docs/domain-governance-packs/web-app-security-trust-boundaries.md"
+    ],
+    "source_refs": [
+      "starter-pack/templates/domain-governance-usage-evidence-template.yaml",
+      "examples/domain-governance-usage/s37-domain-governance-next-use-readiness.json",
+      "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+      "docs/domain-governance-packs/web-app-security-trust-boundaries.md",
+      "apps/mission-control/src/adapters/adaptiveSkillExecutionRecordAdapter.ts",
+      "apps/mission-control/src/adapters/adaptiveSkillExecutionRecordAdapter.test.ts",
+      "apps/mission-control/src/adapters/README.md",
+      "examples/visual-operations/adaptive-skills-feature-planning-dogfood-record.json",
+      "apps/mission-control/src/features/resource-observatory/ResourceSignalInspector.tsx"
+    ],
+    "applicability": {
+      "pack_used": "multiple",
+      "trigger": "untrusted_content_and_web_trust_boundary",
+      "used_during": "implementation_review",
+      "evidence_source": "real_work_slice"
+    },
+    "usage_observation": {
+      "helped_decision": true,
+      "clarified_boundary": true,
+      "found_gap": true,
+      "blocked_or_changed_work": true,
+      "notes": "S28 framed Adaptive Skills execution-record fields as cross-repository evidence, not instructions. S29 framed Mission Control as a web UI projection boundary that displays sourced data without becoming an authority. The work added a regression test for prompt-like record content while preserving the existing governance_authority rejection."
+    },
+    "gaps": [
+      {
+        "gap": "The adapter already rejects governance authority claims, but lacked an explicit prompt-like content regression test.",
+        "status": "resolved",
+        "source_refs": [
+          "apps/mission-control/src/adapters/adaptiveSkillExecutionRecordAdapter.test.ts"
+        ]
+      },
+      {
+        "gap": "Repeated real S28/S29 usage evidence is still limited to two records after S36 and S38; this is not enough to justify scanners, policy engines, enforcement or pack expansion.",
+        "status": "observed",
+        "source_refs": [
+          "examples/domain-governance-usage/s36-dependabot-trust-boundary-review.json",
+          "examples/domain-governance-usage/s38-adaptive-skill-record-trust-boundary-review.json"
+        ]
+      }
+    ],
+    "decision": {
+      "posture": "continue_advisory_use",
+      "rationale": "S28/S29 were useful for a real Mission Control adapter review and justified a focused regression test, but the evidence supports only continued advisory use and future capture.",
+      "evidence_refs": [
+        "examples/domain-governance-usage/s38-adaptive-skill-record-trust-boundary-review.json",
+        "apps/mission-control/src/adapters/adaptiveSkillExecutionRecordAdapter.test.ts"
+      ]
+    },
+    "non_goals_confirmed": {
+      "created_new_domain_pack": false,
+      "created_scanner": false,
+      "created_policy_engine": false,
+      "created_runtime_enforcement": false,
+      "created_dashboard": false,
+      "created_schema": false,
+      "changed_adaptive_skills": false,
+      "activated_s18": false,
+      "claimed_success_rate": false,
+      "claimed_security_proof": false
+    }
+  },
+  "pack_application": {
+    "ai_agent_security_prompt_injection": {
+      "pack_ref": "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+      "used_for": [
+        "classifying Adaptive Skills execution-record fields as external/cross-repository evidence rather than instructions",
+        "checking that prompt-like record text cannot change the adapter's authority interpretation",
+        "preserving explicit rejection of records that claim Mission Control governance authority"
+      ],
+      "did_not_do": [
+        "create prompt-injection detection or scanning",
+        "change runtime/tool permissions",
+        "treat external record text as policy authority"
+      ]
+    },
+    "web_app_security_trust_boundaries": {
+      "pack_ref": "docs/domain-governance-packs/web-app-security-trust-boundaries.md",
+      "used_for": [
+        "reviewing Mission Control as a public/read-only web projection of sourced records",
+        "checking that source refs and execution context remain displayed evidence, not decisions",
+        "confirming no auth, tenant, secret, API or state-changing behavior was added"
+      ],
+      "did_not_do": [
+        "add web security enforcement",
+        "add auth or tenant logic",
+        "claim React rendering is a complete security proof"
+      ]
+    }
+  },
+  "reviewed_boundary": {
+    "boundary_name": "Adaptive Skills execution record -> Mission Control Resource Observatory signal",
+    "input_source": "examples/visual-operations/adaptive-skills-feature-planning-dogfood-record.json",
+    "adapter_source": "apps/mission-control/src/adapters/adaptiveSkillExecutionRecordAdapter.ts",
+    "web_projection_source": "apps/mission-control/src/features/resource-observatory/ResourceSignalInspector.tsx",
+    "authority_posture": "Adaptive Skills records are trace evidence only; AletheIA retains gate and decision authority.",
+    "added_regression": "apps/mission-control/src/adapters/adaptiveSkillExecutionRecordAdapter.test.ts#treats-prompt-like-record-content-as-display-evidence-not-instruction-authority"
+  },
+  "expansion_decision": {
+    "posture": "no_expansion",
+    "rationale": "S38 is real usage evidence and resolved one local regression-test gap, but it does not justify new packs, schemas, scanners, dashboards, policy engines or runtime enforcement.",
+    "next_safe_step": "Keep capturing future real S28/S29 usage with the S35 template when S37 criteria are met."
+  },
+  "guardrails": {
+    "created_new_domain_pack": false,
+    "created_scanner": false,
+    "created_policy_engine": false,
+    "created_runtime_enforcement": false,
+    "created_dashboard": false,
+    "created_schema": false,
+    "changed_adaptive_skills": false,
+    "activated_s18": false,
+    "claimed_success_rate": false,
+    "claimed_security_proof": false
+  }
+}
