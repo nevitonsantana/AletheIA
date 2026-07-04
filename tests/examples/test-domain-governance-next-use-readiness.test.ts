@@ -115,7 +115,7 @@ describe("S37 domain governance next-use readiness", () => {
     expect(examplesIndex).toContain("readiness S37");
     expect(reviewIndex).toContain("s37-domain-governance-next-use-readiness.json");
     expect(backlog).toContain("### S37 — Domain Governance Next-Use Readiness Review");
-    expect(backlog).toContain("Status:** `in-review`");
-    expect(systemState).toContain("S37 Domain Governance Next-Use Readiness Review is in review");
+    expect(backlog).toContain("Status:** `delivered` by AletheIA PR #335");
+    expect(systemState).toContain("S37 Domain Governance Next-Use Readiness Review is delivered");
   });
 });
