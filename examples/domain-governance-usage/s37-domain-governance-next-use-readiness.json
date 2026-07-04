@@ -1,0 +1,116 @@
+{
+  "review_id": "s37-domain-governance-next-use-readiness-2026-07-04",
+  "review_date": "2026-07-04",
+  "work_slice_ref": "S37",
+  "purpose": "Define source-backed readiness criteria for the next legitimate S28/S29 usage capture without treating readiness planning as real usage evidence.",
+  "source_refs": {
+    "s35_capture_template": "starter-pack/templates/domain-governance-usage-evidence-template.yaml",
+    "s36_usage_evidence": "examples/domain-governance-usage/s36-dependabot-trust-boundary-review.json",
+    "ai_agent_security_pack": "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+    "web_app_security_pack": "docs/domain-governance-packs/web-app-security-trust-boundaries.md",
+    "system_state": "SYSTEM_STATE.md",
+    "integrated_backlog": "docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md"
+  },
+  "readiness_status": {
+    "is_real_usage_evidence": false,
+    "evidence_source": "readiness_review",
+    "repeated_real_usage_available": false,
+    "posture": "wait_for_real_work_slice",
+    "rationale": "S36 is one real usage record. S37 only clarifies when a future task should use the S35 template again; it does not add usage evidence or authorize governance expansion."
+  },
+  "next_use_entry_criteria": [
+    {
+      "criterion": "A real Work Slice involves agent behavior, prompt injection risk, retrieved or external untrusted content, web/API boundaries, auth, tenant context, secrets handling or another explicit trust boundary.",
+      "required": true,
+      "why": "S28/S29 should be applied to actual decisions with source refs, not synthetic examples or template exercises."
+    },
+    {
+      "criterion": "The task has concrete source refs such as code, config, PRs, issues, logs, docs, incidents or review artifacts.",
+      "required": true,
+      "why": "Future evidence must be reviewable and traceable."
+    },
+    {
+      "criterion": "The reviewer can separate external content as data from authoritative project instructions before any state-changing action.",
+      "required": true,
+      "why": "This preserves the S28 prompt-injection boundary."
+    },
+    {
+      "criterion": "Any web/API/auth/tenant/secrets or dependency boundary change can be described without inventing scanners, policy engines, enforcement or dashboards.",
+      "required": true,
+      "why": "This preserves the S29 advisory posture and the current no-expansion gate."
+    }
+  ],
+  "candidate_future_triggers": [
+    {
+      "trigger": "agent_or_tool_prompt_injection_review",
+      "example_task": "Review a Work Slice where an agent reads external issue, PR, email, document or web content before proposing tool use.",
+      "packs_to_consider": ["S28"],
+      "capture_with_s35_template": true,
+      "do_not_count_if": "The example is synthetic, template-only or not tied to a real Work Slice."
+    },
+    {
+      "trigger": "web_api_or_auth_boundary_change",
+      "example_task": "Review a real code/config change that touches API trust boundaries, auth, tenant context, secrets or client/server authority.",
+      "packs_to_consider": ["S29"],
+      "capture_with_s35_template": true,
+      "do_not_count_if": "No source-backed implementation, config, incident or review artifact exists."
+    },
+    {
+      "trigger": "dependency_or_ci_supply_chain_boundary",
+      "example_task": "Review a dependency, CI action, build tool or package update that can affect shipped assets or trusted automation.",
+      "packs_to_consider": ["S28", "S29"],
+      "capture_with_s35_template": true,
+      "do_not_count_if": "The review only repeats S36 without a new real dependency-maintenance event."
+    },
+    {
+      "trigger": "secrets_or_tenant_data_exposure_review",
+      "example_task": "Review a real task involving secrets, credentials, tenant identifiers, access context or data isolation.",
+      "packs_to_consider": ["S29"],
+      "capture_with_s35_template": true,
+      "do_not_count_if": "The concern is hypothetical and no affected source or artifact is available."
+    }
+  ],
+  "non_triggers": [
+    "adding another blank template",
+    "creating a synthetic usage example",
+    "summarizing the packs without a real Work Slice",
+    "counting S36 again without new source-backed work",
+    "building scanners, dashboards, policy engines, enforcement, schemas or automatic classification before repeated evidence"
+  ],
+  "expansion_gate": {
+    "current_state": "blocked",
+    "reason": "Only one real S28/S29 usage record exists after S36.",
+    "minimum_next_signal": "At least one additional real Work Slice should apply S28/S29 with source-backed S35 evidence before discussing pack refinement; stronger claims require repeated comparable records.",
+    "forbidden_in_s37": [
+      "new_domain_pack",
+      "scanner",
+      "policy_engine",
+      "runtime_enforcement",
+      "dashboard",
+      "schema",
+      "adaptive_skills_change",
+      "s18_activation",
+      "success_rate_claim",
+      "security_proof_claim"
+    ]
+  },
+  "decision": {
+    "posture": "readiness_only",
+    "next_safe_step": "Wait for a real task matching the entry criteria, then apply S28/S29 manually and capture evidence with the S35 template.",
+    "rationale": "S37 improves decision quality by defining when to capture future usage, while avoiding false evidence or premature governance expansion."
+  },
+  "guardrails": {
+    "created_new_domain_pack": false,
+    "created_scanner": false,
+    "created_policy_engine": false,
+    "created_runtime_enforcement": false,
+    "created_dashboard": false,
+    "created_schema": false,
+    "changed_adaptive_skills": false,
+    "activated_s18": false,
+    "claimed_real_usage": false,
+    "claimed_repeated_usage": false,
+    "claimed_success_rate": false,
+    "claimed_security_proof": false
+  }
+}
