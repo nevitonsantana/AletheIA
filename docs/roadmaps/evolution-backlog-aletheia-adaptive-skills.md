@@ -272,10 +272,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA domain governance sufficiency review
 - **Covers:** whether S36 and S38 provide enough real S28/S29 usage evidence to justify domain-governance expansion.
 - **Dependencies:** S35 capture template, S36 and S38 real usage records, and S37 readiness criteria.
-- **Status:** `in-review`
+- **Status:** `delivered` by AletheIA PR #339
 - **Non-goals:** new domain packs, scanners, policy engines, runtime enforcement, dashboards, schemas, automatic classification, Adaptive Skills changes, S18 activation, auth/tenant/secrets changes or security/success-rate claims.
 - **Acceptance:** compare the real usage records, separate readiness-only S37 from usage evidence, and decide whether evidence is sufficient for refinement or expansion.
-- **Evidence:** [`s39-domain-governance-evidence-sufficiency-review.json`](../../examples/domain-governance-usage/s39-domain-governance-evidence-sufficiency-review.json) keeps expansion blocked because S36/S38 are useful but still too few and heterogeneous.
+- **Evidence:** AletheIA PR #339 / `ca36bab`; [`s39-domain-governance-evidence-sufficiency-review.json`](../../examples/domain-governance-usage/s39-domain-governance-evidence-sufficiency-review.json) keeps expansion blocked because S36/S38 are useful but still too few and heterogeneous.
 
 ### S0 — Integrate skill execution context
 

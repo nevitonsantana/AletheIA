@@ -121,7 +121,7 @@ describe("S39 domain governance evidence sufficiency review", () => {
     expect(examplesIndex).toContain("suficiência S39");
     expect(reviewIndex).toContain("s39-domain-governance-evidence-sufficiency-review.json");
     expect(backlog).toContain("### S39 — Domain Governance Evidence Sufficiency Review");
-    expect(backlog).toContain("Status:** `in-review`");
-    expect(systemState).toContain("S39 Domain Governance Evidence Sufficiency Review is in review");
+    expect(backlog).toContain("Status:** `delivered` by AletheIA PR #339");
+    expect(systemState).toContain("S39 Domain Governance Evidence Sufficiency Review is delivered");
   });
 });
