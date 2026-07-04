@@ -247,6 +247,16 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Acceptance:** apply S28/S29 as manual/advisory review guidance to the real dependency-maintenance cycle, capture evidence with the S35 shape, and keep expansion blocked until repeated real usage evidence exists.
 - **Evidence:** AletheIA PR #333 / `91c2a55`; [`s36-dependabot-trust-boundary-review.json`](../../examples/domain-governance-usage/s36-dependabot-trust-boundary-review.json) records Dependabot PR usage evidence while keeping the packs advisory and non-enforcing.
 
+### S37 — Domain Governance Next-Use Readiness Review
+
+- **Repository / layer:** AletheIA domain governance readiness
+- **Covers:** criteria for when a future real Work Slice should apply S28/S29 and capture evidence with the S35 template.
+- **Dependencies:** S35 capture template and S36 delivered first real usage record.
+- **Status:** `in-review`
+- **Non-goals:** claiming new real usage evidence, new domain packs, scanners, policy engines, runtime enforcement, dashboards, schemas, automatic classification, Adaptive Skills changes, S18 activation or security/success-rate claims.
+- **Acceptance:** define source-backed entry criteria, candidate triggers and non-triggers for future S28/S29 capture while confirming readiness planning does not count as usage evidence.
+- **Evidence:** [`s37-domain-governance-next-use-readiness.json`](../../examples/domain-governance-usage/s37-domain-governance-next-use-readiness.json) keeps the next-use gate explicit and blocked until a real Work Slice appears.
+
 ### S0 — Integrate skill execution context
 
 - **Repository / layer:** AletheIA / Resource Observatory
