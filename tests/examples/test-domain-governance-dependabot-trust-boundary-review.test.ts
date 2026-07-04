@@ -107,7 +107,7 @@ describe("S36 Dependabot trust-boundary usage review", () => {
     expect(examplesIndex).toContain("evidência S36");
     expect(reviewIndex).toContain("s36-dependabot-trust-boundary-review.json");
     expect(backlog).toContain("### S36 — Dependabot Trust-Boundary Usage Review");
-    expect(backlog).toContain("Status:** `in-review`");
-    expect(systemState).toContain("S36 Dependabot Trust-Boundary Usage Review is in review");
+    expect(backlog).toContain("Status:** `delivered` by AletheIA PR #333");
+    expect(systemState).toContain("S36 Dependabot Trust-Boundary Usage Review is delivered");
   });
 });
