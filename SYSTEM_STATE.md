@@ -42,7 +42,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S37 Domain Governance Next-Use Readiness Review is in review as a readiness-only planning slice.
+- **Active:** none.
 - **Next dependency path:** S37 defines when a future real Work Slice should apply S28/S29 and use the S35 capture template; it does not count as usage evidence. Do not expand domain governance before repeated real usage evidence exists. S18 and Runtime 2.0 remain deferred until their explicit evidence gates are met.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered; S33 Backlog v0.5 readiness review is delivered; S34 Domain Governance Usage Review is delivered; S35 Domain Governance Usage Evidence Capture is delivered; S36 Dependabot Trust-Boundary Usage Review is delivered; S37 Domain Governance Next-Use Readiness Review is in review.
+- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered; S33 Backlog v0.5 readiness review is delivered; S34 Domain Governance Usage Review is delivered; S35 Domain Governance Usage Evidence Capture is delivered; S36 Dependabot Trust-Boundary Usage Review is delivered; S37 Domain Governance Next-Use Readiness Review is delivered.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -71,7 +71,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Complete or close S37, then apply the S35 capture template only when future real Work Slices use S28/S29 domain governance packs; S36 is the first real usage record, not a repeated-evidence threshold.
+1. Apply the S35 capture template only when future real Work Slices use S28/S29 domain governance packs; S36 is the first real usage record, and S37 is the readiness gate for future capture.
 2. Keep domain governance source-backed and read-only/advisory; do not treat templates or synthetic examples as real usage evidence or create scanners, policy engines, runtime enforcement or automatic classification.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
@@ -79,5 +79,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-04
-- **Evidence baseline:** AletheIA `96125f2` after PR #334 closed S36 status; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** user-approved S37 readiness slice to define future S28/S29 entry criteria without counting readiness as usage evidence
+- **Evidence baseline:** AletheIA `38dabc0` after PR #335 delivered S37 Domain Governance Next-Use Readiness Review; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** PR #335 merged; S37 delivered readiness criteria for future S28/S29 usage capture without counting readiness as usage evidence
