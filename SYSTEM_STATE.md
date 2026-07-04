@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** none.
-- **Next dependency path:** use the S35 capture template when future Work Slices apply S28/S29 packs; do not expand domain governance before repeated real usage evidence exists. S18 and Runtime 2.0 remain deferred until their explicit evidence gates are met.
+- **Active:** S36 Dependabot Trust-Boundary Usage Review is in review as a bounded domain-governance evidence slice.
+- **Next dependency path:** S36 records first real/source-backed S28/S29 usage evidence from the Dependabot dependency PR cycle; continue using the S35 capture template for future real Work Slices and do not expand domain governance before repeated real usage evidence exists. S18 and Runtime 2.0 remain deferred until their explicit evidence gates are met.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered; S33 Backlog v0.5 readiness review is delivered; S34 Domain Governance Usage Review is delivered; S35 Domain Governance Usage Evidence Capture is delivered.
+- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered; S33 Backlog v0.5 readiness review is delivered; S34 Domain Governance Usage Review is delivered; S35 Domain Governance Usage Evidence Capture is delivered; S36 Dependabot Trust-Boundary Usage Review is in review.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; tracked for later proportional review.
 
@@ -66,17 +66,18 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - SYSTEM_STATE can become stale; every claim must retain a source reference and review date.
 - Work Observatory has five total records, and the S18 comparison-readiness review confirms they are heterogeneous and not one reviewed stable comparison group; no success rate, ranking, work-unit or value claim is admissible until at least five comparable records share one stable comparison group.
 - External references require S2 intake before they influence implementation; P20/S28, P21/S29, P22/S30 and P23/S31 are accepted as docs-first evidence/guidance slices.
+- S36 provides one real S28/S29 usage record, but repeated real usage evidence remains unavailable; do not infer reusable controls, success rates or security proof from a single dependency-maintenance cycle.
 - Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters and documentation generators remain out of scope.
 
 ## Next safe steps
 
-1. Apply the S35 capture template only when a future real Work Slice uses S28/S29 domain governance packs.
+1. Complete or close S36, then apply the S35 capture template only when future real Work Slices use S28/S29 domain governance packs.
 2. Keep domain governance source-backed and read-only/advisory; do not treat templates or synthetic examples as real usage evidence or create scanners, policy engines, runtime enforcement or automatic classification.
 3. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
 4. Do not activate S18 before its evidence threshold; do not activate Runtime 2.0 implementation before a later explicit boundary decision.
 
 ## Last reviewed
 
-- **Date:** 2026-07-03
-- **Evidence baseline:** AletheIA `256436d` after S35 Domain Governance Usage Evidence Capture; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** PR #331 merged; S35 delivered future usage capture for S28/S29 packs without claiming real usage or activating enforcement
+- **Date:** 2026-07-04
+- **Evidence baseline:** AletheIA branch `codex/s36-dependabot-trust-boundary-review` after local main synced through PR #332; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** user-approved S36 evidence slice applying S28/S29 manually to the completed Dependabot PR cycle without claiming repeated usage or activating enforcement

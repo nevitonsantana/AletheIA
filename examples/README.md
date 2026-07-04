@@ -62,6 +62,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
 - `domain-governance-usage/`
   - revisão S34 do uso dos packs S28/S29 antes de criar novos packs, scanners, enforcement ou automação
   - captura S35 para registrar uso real futuro dos packs sem transformar template em evidência real
+  - evidência S36 de uso real/source-backed dos packs S28/S29 durante o ciclo de PRs Dependabot, sem ativar enforcement, scanners ou novos packs
 - `execution-patterns/`
   - Execution Pattern Selections trabalhadas (topologia antes da execução): CI triage (scheduled stateful loop), síntese de entrevistas (fan-out + filter), review adversarial de PRD (maker-checker) e feature value review (loops explicitamente inadmissíveis)
   - piloto real S7 de debugging governado, com skill e tools rastreadas, falha reproduzida, uma iteração, gate objetivo, orçamento explícito e revisão humana antes do merge
