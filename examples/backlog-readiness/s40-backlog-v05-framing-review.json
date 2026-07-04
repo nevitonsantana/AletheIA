@@ -1,0 +1,121 @@
+{
+  "review_id": "s40-backlog-v05-framing-review-2026-07-04",
+  "review_date": "2026-07-04",
+  "work_slice_ref": "S40",
+  "purpose": "Frame the next safe backlog v0.5 move after S36-S39 without treating two heterogeneous S28/S29 usage records as expansion evidence.",
+  "source_refs": {
+    "system_state": "SYSTEM_STATE.md",
+    "integrated_backlog": "docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md",
+    "s33_v05_readiness": "examples/backlog-readiness/s33-v05-readiness-review.json",
+    "s37_next_use_readiness": "examples/domain-governance-usage/s37-domain-governance-next-use-readiness.json",
+    "s39_sufficiency_review": "examples/domain-governance-usage/s39-domain-governance-evidence-sufficiency-review.json",
+    "first_use_guide": "docs/guides/getting-started.md",
+    "changelog": "CHANGELOG.md"
+  },
+  "completed_cycle": {
+    "name": "post-s33-domain-governance-usage-cycle",
+    "delivered_slices": [
+      "S34",
+      "S35",
+      "S36",
+      "S37",
+      "S38",
+      "S39"
+    ],
+    "accepted_outcome": "S28/S29 remain usable as manual advisory guidance; expansion is blocked until more comparable real usage evidence exists.",
+    "real_s28_s29_usage_records": [
+      "S36",
+      "S38"
+    ],
+    "readiness_only_records": [
+      "S37"
+    ]
+  },
+  "blocked_or_deferred_tracks": {
+    "domain_governance_expansion": {
+      "status": "blocked",
+      "reason": "S39 found only two real usage records, and they are too heterogeneous for reusable controls, automation, success rates or security-proof claims.",
+      "reopen_condition": "Another real Work Slice meets S37 entry criteria and is captured with S35; repeated comparable records then justify a new sufficiency review."
+    },
+    "s18_comparative_work_metrics": {
+      "status": "blocked",
+      "reason": "The current five Work Observatory records do not share one reviewed stable comparison group.",
+      "reopen_condition": "At least five reviewed records sharing one stable comparison_group plus explicit comparison-validity and privacy review."
+    },
+    "runtime_2_0_implementation": {
+      "status": "deferred",
+      "reason": "ADR-016 keeps Runtime 2.0 as a strategic north-star and boundary-review source, not an implementation authorization.",
+      "reopen_condition": "Later explicit boundary decision with repeated evidence proving a missing execution interface."
+    },
+    "observatory_or_policy_automation": {
+      "status": "deferred",
+      "reason": "No current review proves a need for collectors, dashboards, scanners, policy engines, schemas or enforcement.",
+      "reopen_condition": "Source-backed repeated manual failures that cannot be handled by existing advisory contracts."
+    }
+  },
+  "candidate_next_tracks": [
+    {
+      "candidate": "documentation_and_first_use_coherence_review",
+      "posture": "recommended",
+      "why": "SYSTEM_STATE explicitly tracks CHANGELOG and first-use guide coherence as not assessed by S15, and cognitive debt remains medium; this can improve understanding without adding runtime or enforcement.",
+      "non_goals": [
+        "automatic documentation generator",
+        "new onboarding product UI",
+        "mandatory ceremony for every Lite slice"
+      ],
+      "evidence_needed": [
+        "source-backed comparison of README, CHANGELOG, SYSTEM_STATE and first-use guide",
+        "reader-facing clarity gaps",
+        "bounded doc corrections only if necessary"
+      ]
+    },
+    {
+      "candidate": "future_real_domain_governance_usage_capture",
+      "posture": "wait_for_real_trigger",
+      "why": "S28/S29 should be applied only when a real Work Slice involves agent, prompt-injection, untrusted-content, web/API, auth, tenant, secrets or trust-boundary concerns.",
+      "non_goals": [
+        "synthetic evidence",
+        "template-only evidence",
+        "new scanners or policy engines"
+      ],
+      "evidence_needed": [
+        "S37 trigger met",
+        "S35 capture completed",
+        "local source refs"
+      ]
+    },
+    {
+      "candidate": "work_observatory_comparison",
+      "posture": "blocked",
+      "why": "S18 remains blocked because existing records are heterogeneous.",
+      "non_goals": [
+        "success rates",
+        "rankings",
+        "work-unit metrics",
+        "value scoring"
+      ],
+      "evidence_needed": [
+        "five comparable reviewed records in one stable comparison group"
+      ]
+    }
+  ],
+  "decision": {
+    "next_slice": "S41 documentation and first-use coherence review",
+    "posture": "advance_clarity_before_new_capability",
+    "rationale": "After S39, the safest backlog progress is to reduce cognitive debt and documentation mismatch risk, not to expand domain governance or reopen deferred infrastructure tracks."
+  },
+  "guardrails": {
+    "activated_s18": false,
+    "authorized_runtime_2_0_implementation": false,
+    "created_collector": false,
+    "created_dashboard": false,
+    "created_scanner": false,
+    "created_schema": false,
+    "created_policy_engine": false,
+    "created_domain_pack_enforcement": false,
+    "created_new_domain_pack": false,
+    "changed_adaptive_skills": false,
+    "counts_synthetic_examples_as_real_evidence": false,
+    "treats_templates_as_usage_evidence": false
+  }
+}
