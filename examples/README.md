@@ -64,6 +64,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - captura S35 para registrar uso real futuro dos packs sem transformar template em evidência real
   - evidência S36 de uso real/source-backed dos packs S28/S29 durante o ciclo de PRs Dependabot, sem ativar enforcement, scanners ou novos packs
   - readiness S37 para decidir quando aplicar novamente S28/S29 em uma Work Slice real, sem contar planejamento como evidência de uso
+  - evidência S38 de uso real/source-backed dos packs S28/S29 no adapter Mission Control ⇄ Adaptive Skills, mantendo registros externos como evidência sem autoridade
 - `execution-patterns/`
   - Execution Pattern Selections trabalhadas (topologia antes da execução): CI triage (scheduled stateful loop), síntese de entrevistas (fan-out + filter), review adversarial de PRD (maker-checker) e feature value review (loops explicitamente inadmissíveis)
   - piloto real S7 de debugging governado, com skill e tools rastreadas, falha reproduzida, uma iteração, gate objetivo, orçamento explícito e revisão humana antes do merge
