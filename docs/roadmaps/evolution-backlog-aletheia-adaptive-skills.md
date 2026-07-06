@@ -285,10 +285,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA backlog planning
 - **Covers:** post-S34-S39 cycle closure, S28/S29 usage posture, deferred-track blockers and next safe v0.5 candidate selection.
 - **Dependencies:** S33 readiness review, S35 capture template, S37 next-use gate and S39 sufficiency review.
-- **Status:** `in-review` in branch `codex/s40-backlog-v05-framing`
+- **Status:** `delivered` by AletheIA PR #341
 - **Non-goals:** S18 activation, Runtime 2.0 implementation, collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification, Adaptive Skills changes or treating synthetic/template examples as real evidence.
 - **Acceptance:** record the source-backed post-S39 posture, keep domain-governance expansion blocked, preserve deferred tracks and select the next safe backlog candidate without introducing implementation authority.
-- **Evidence:** [`s40-backlog-v05-framing-review.json`](../../examples/backlog-readiness/s40-backlog-v05-framing-review.json) closes the S34-S39 usage/evidence cycle and recommends a bounded documentation and first-use coherence review next.
+- **Evidence:** AletheIA PR #341 / `a256365`; [`s40-backlog-v05-framing-review.json`](../../examples/backlog-readiness/s40-backlog-v05-framing-review.json) closes the S34-S39 usage/evidence cycle and recommends a bounded documentation and first-use coherence review next.
 
 ### S0 — Integrate skill execution context
 

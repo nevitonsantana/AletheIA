@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S40 Backlog v0.5 framing review.
-- **Next dependency path:** S40 frames the next safe v0.5 move after S39: reduce documentation/first-use coherence risk before adding new capabilities. Continue using S35 only for future real S28/S29 Work Slices; S18 and Runtime 2.0 remain deferred until their explicit evidence gates are met.
+- **Active:** none.
+- **Next dependency path:** S40 frames S41 documentation and first-use coherence review as the next safe v0.5 move after S39. Continue using S35 only for future real S28/S29 Work Slices; S18 and Runtime 2.0 remain deferred until their explicit evidence gates are met.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered; S33 Backlog v0.5 readiness review is delivered; S34 Domain Governance Usage Review is delivered; S35 Domain Governance Usage Evidence Capture is delivered; S36 Dependabot Trust-Boundary Usage Review is delivered; S37 Domain Governance Next-Use Readiness Review is delivered; S38 Adaptive Skill Record Trust-Boundary Review is delivered; S39 Domain Governance Evidence Sufficiency Review is delivered; S40 Backlog v0.5 framing review is in review.
+- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered; S33 Backlog v0.5 readiness review is delivered; S34 Domain Governance Usage Review is delivered; S35 Domain Governance Usage Evidence Capture is delivered; S36 Dependabot Trust-Boundary Usage Review is delivered; S37 Domain Governance Next-Use Readiness Review is delivered; S38 Adaptive Skill Record Trust-Boundary Review is delivered; S39 Domain Governance Evidence Sufficiency Review is delivered; S40 Backlog v0.5 framing review is delivered.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: not assessed by S15; S40 selects this as the next safe proportional review candidate.
 
@@ -80,5 +80,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-04
-- **Evidence baseline:** AletheIA branch `codex/s40-backlog-v05-framing` after PR #340 merged; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** user approved continuing backlog after S39; S40 frames the next safe v0.5 move without expanding Domain Governance
+- **Evidence baseline:** AletheIA `a256365` after PR #341 delivered S40 Backlog v0.5 framing review; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** PR #341 merged; S40 selected S41 documentation and first-use coherence review as the next safe v0.5 candidate
