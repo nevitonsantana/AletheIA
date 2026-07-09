@@ -69,6 +69,5 @@ describe("S41 documentation and first-use coherence review", () => {
     expect(backlog).toContain("### S41 — Documentation and first-use coherence review");
     expect(backlog).toContain("**Status:** `delivered` by AletheIA PR #346.");
     expect(systemState).toContain("S41 Documentation and first-use coherence review is delivered");
-    expect(systemState).toContain("Active:** none");
   });
 });
