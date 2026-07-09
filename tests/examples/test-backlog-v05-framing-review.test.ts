@@ -95,6 +95,6 @@ describe("S40 backlog v0.5 framing review", () => {
     expect(backlog).toContain("### S40 — Backlog v0.5 framing review");
     expect(backlog).toContain("Status:** `delivered` by AletheIA PR #341");
     expect(systemState).toContain("S40 Backlog v0.5 framing review is delivered");
-    expect(systemState).toContain("Active:** none");
+    expect(systemState).toContain("S40 Backlog v0.5 framing review is delivered");
   });
 });

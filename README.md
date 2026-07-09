@@ -99,10 +99,10 @@ The active post-1.0 work has moved in three important directions:
 For release framing, see:
 
 - `CHANGELOG.md`
-- `docs/release-1.0-readiness.md`
-- `docs/roadmap-alpha.md`
-- `docs/enterprise-readiness-roadmap.md`
-- `docs/resource-aware-operations-roadmap.md`
+- `docs/roadmaps/release-1.0-readiness.md`
+- `docs/roadmaps/roadmap-alpha.md`
+- `docs/roadmaps/enterprise-readiness-roadmap.md`
+- `docs/roadmaps/resource-aware-operations-roadmap.md`
 
 ---
 
@@ -124,10 +124,10 @@ The most important concepts are:
 
 Canonical definitions start here:
 
-- `docs/canonical-vocabulary.md`
-- `docs/canonical-definitions.md`
-- `docs/work-slice-pattern.md`
-- `docs/runtime-adapter-contract.md`
+- `docs/concepts/canonical-vocabulary.md`
+- `docs/concepts/overview.md`
+- `docs/concepts/work-slice-pattern.md`
+- `docs/contracts/runtime-adapter-contract.md`
 
 ---
 
@@ -160,12 +160,12 @@ These components are **not bundled runtime dependencies** of the framework core.
 
 | Component | Role in the complete system | Current posture | Links |
 |---|---|---|---|
-| **AletheIA core** | Macro governance: Work Slice, context, decision, risk, validation, handoff, closeout and learning. | Stable 1.0 baseline; evolves through bounded 1.x tracks. | `docs/00-overview.md`, `docs/governance.md`, `docs/canonical-vocabulary.md`, `docs/runtime-adapter-contract.md` |
-| **Adaptive Skills** | Micro capability layer for specialist execution patterns such as product, UX, technical review, QA, observability or domain analysis. | Complementary external skill library; AletheIA should make its macro posture explicit around skills, not absorb every skill into core. | [nevitonsantana/adaptive-skills](https://github.com/nevitonsantana/adaptive-skills), `docs/resource-aware-operations-roadmap.md`, `starter-pack/templates/agent-role-card-template.md` |
-| **Runtime adapters / execution surfaces** | Local mapping from AletheIA semantics to a concrete executor. | Runtime-specific; should preserve AletheIA meaning without becoming process authority. | `docs/runtime-adapter-contract.md`, `docs/runtime-adapter-codex.md`, `docs/runtime-adapter-claude-code.md`, `docs/runtime-adapter-qwen.md` |
-| **Hermes Agent** | Candidate controlled runtime executor. It may execute bounded work only under AletheIA policy and human gates. | Pre-pilot / guarded. Hermes must not govern process, promote memory/skills automatically or expand autonomy by habit. | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent), `docs/hermes/README.md`, `docs/adr/ADR-001-hermes-role.md`, `docs/adr/ADR-002-memory-and-skill-promotion-policy.md` |
-| **Agentic Stack** | Optional infrastructure/harness for portable agent folders, memory, skills, protocols and tools. | Optional complement; not part of AletheIA core and not required for the baseline. | [codejunkie99/agentic-stack](https://github.com/codejunkie99/agentic-stack), `docs/aletheia/closeouts/2026-04-25-hermes-agentic-stack-sandbox-readiness.md` |
-| **Context graph tooling** | Advisory context access for code structure, impact exploration and review support. | Experimental/consultative. The graph informs; it does not govern, gate, orchestrate or replace validation. | `docs/context-graph-integration.md`, `docs/context-graph-decision.md`, `starter-pack/guides/context-graph-usage-guide.md` |
+| **AletheIA core** | Macro governance: Work Slice, context, decision, risk, validation, handoff, closeout and learning. | Stable 1.0 baseline; evolves through bounded 1.x tracks. | `docs/concepts/overview.md`, `docs/concepts/governance.md`, `docs/concepts/canonical-vocabulary.md`, `docs/contracts/runtime-adapter-contract.md` |
+| **Adaptive Skills** | Micro capability layer for specialist execution patterns such as product, UX, technical review, QA, observability or domain analysis. | Complementary external skill library; AletheIA should make its macro posture explicit around skills, not absorb every skill into core. | [nevitonsantana/adaptive-skills](https://github.com/nevitonsantana/adaptive-skills), `docs/roadmaps/resource-aware-operations-roadmap.md`, `starter-pack/templates/agent-role-card-template.md` |
+| **Runtime adapters / execution surfaces** | Local mapping from AletheIA semantics to a concrete executor. | Runtime-specific; should preserve AletheIA meaning without becoming process authority. | `docs/contracts/runtime-adapter-contract.md`, `docs/reference/runtime-adapter-codex.md`, `docs/reference/runtime-adapter-claude-code.md`, `docs/reference/runtime-adapter-qwen.md` |
+| **Hermes Agent** | Candidate controlled runtime executor. It may execute bounded work only under AletheIA policy and human gates. | Pre-pilot / guarded. Hermes must not govern process, promote memory/skills automatically or expand autonomy by habit. | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent), `docs/pilots/closeouts/2026-04-25-hermes-agentic-stack-sandbox-readiness.md`, `docs/adr/ADR-001-hermes-role.md`, `docs/adr/ADR-002-memory-and-skill-promotion-policy.md` |
+| **Agentic Stack** | Optional infrastructure/harness for portable agent folders, memory, skills, protocols and tools. | Optional complement; not part of AletheIA core and not required for the baseline. | [codejunkie99/agentic-stack](https://github.com/codejunkie99/agentic-stack), `docs/pilots/closeouts/2026-04-25-hermes-agentic-stack-sandbox-readiness.md` |
+| **Context graph tooling** | Advisory context access for code structure, impact exploration and review support. | Experimental/consultative. The graph informs; it does not govern, gate, orchestrate or replace validation. | `docs/concepts/context-graph-integration.md`, `docs/pilots/context-graph-decision.md`, `starter-pack/guides/context-graph-usage-guide.md` |
 
 ### Integration rule of thumb
 
@@ -199,34 +199,34 @@ Four documents for adopters with no prior context:
 ### Fastest understanding path (deep dive)
 
 1. `docs/getting-started/overview.md`
-2. `docs/core-operating-path.md`
-3. `docs/00-overview.md`
-4. `docs/governance.md`
-5. `docs/token-policy.md`
-6. `docs/canonical-vocabulary.md`
+2. `docs/guides/core-operating-path.md`
+3. `docs/concepts/overview.md`
+4. `docs/concepts/governance.md`
+5. `docs/reference/token-policy.md`
+6. `docs/concepts/canonical-vocabulary.md`
 
 ### Apply AletheIA to a project
 
 1. `starter-pack/README.md`
 2. `starter-pack/guides/daily-operations.md`
-3. `docs/apply-to-existing-project.md`
-4. `docs/project-extension-pattern.md`
-5. `docs/work-slice-spec-bundle.md` when a `Standard` or `High-Assurance` slice needs clearer pre-execution specification
+3. `docs/guides/apply-to-existing-project.md`
+4. `docs/concepts/project-extension-pattern.md`
+5. `docs/contracts/work-slice-spec-bundle.md` when a `Standard` or `High-Assurance` slice needs clearer pre-execution specification
 
 ### Work with handoffs and restart
 
-1. `docs/agent-handoffs.md`
-2. `docs/slice-finalization-and-restart.md`
+1. `docs/concepts/agent-handoffs.md`
+2. `docs/guides/slice-finalization-and-restart.md`
 3. `starter-pack/guides/clean-restart-command-adapters.md`
 4. `starter-pack/templates/restart-bootstrap-prompt-template.md`
 
 ### Work with runtime fit and resource-aware operations
 
-1. `docs/runtime-adapter-contract.md`
-2. `docs/agent-runtime-decision-guide.md`
-3. `docs/context-resource-telemetry-spec.md`
-4. `docs/slice-telemetry-model.md`
-5. `docs/waste-heuristics.md`
+1. `docs/contracts/runtime-adapter-contract.md`
+2. `docs/guides/agent-runtime-decision-guide.md`
+3. `docs/contracts/context-resource-telemetry-spec.md`
+4. `docs/contracts/slice-telemetry-model.md`
+5. `docs/reference/waste-heuristics.md`
 
 ### Inspect examples first
 
@@ -275,7 +275,7 @@ AletheIA is released under the Apache License 2.0. See `LICENSE`.
 
 ## See also
 
-- `docs/launch-kit.md`
+- `docs/reference/launch-kit.md`
 - `CHANGELOG.md`
 - `CONTRIBUTING.md`
 - `SECURITY.md`

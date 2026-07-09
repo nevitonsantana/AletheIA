@@ -1,0 +1,66 @@
+{
+  "review_id": "s41-documentation-first-use-coherence-review-2026-07-09",
+  "review_date": "2026-07-09",
+  "work_slice_ref": "S41",
+  "purpose": "Review the reader-facing coherence of the first-use path without adding onboarding automation, a product UI, or new governance authority.",
+  "source_refs": {
+    "readme": "README.md",
+    "changelog": "CHANGELOG.md",
+    "system_state": "SYSTEM_STATE.md",
+    "first_use_guide": "docs/guides/getting-started.md",
+    "core_operating_path": "docs/guides/core-operating-path.md",
+    "s40_framing": "examples/backlog-readiness/s40-backlog-v05-framing-review.json"
+  },
+  "review_scope": {
+    "reader": "A first-time adopter who follows the repository entry points before using deeper framework material.",
+    "checked": [
+      "README first-use and deep-dive links",
+      "getting-started journey and safety posture",
+      "core operating path",
+      "SYSTEM_STATE documentation-health posture",
+      "CHANGELOG role as release history"
+    ],
+    "not_checked": [
+      "link completeness across the entire repository",
+      "automatic documentation generation",
+      "new onboarding UI or mandatory ceremony",
+      "runtime, policy, schema, collector, scanner, dashboard or enforcement behavior"
+    ]
+  },
+  "findings": [
+    {
+      "id": "S41-F1",
+      "severity": "reader-blocking",
+      "source": "README.md",
+      "finding": "The deep-dive, adoption, handoff, runtime-fit, canonical-definition and release-framing paths used pre-move document locations that no longer resolve.",
+      "resolution": "Correct the README paths to the existing guides, concepts, contracts, reference and roadmap locations.",
+      "evidence": "All corrected targets exist locally; the first-use guide and core operating path remain unchanged."
+    },
+    {
+      "id": "S41-F2",
+      "severity": "clarity",
+      "source": "CHANGELOG.md",
+      "finding": "The Unreleased section is a chronological release-history surface, not a replacement for the first-use path or current backlog state.",
+      "resolution": "No changelog rewrite in this slice; keep README entry points and SYSTEM_STATE/backlog as the current-operating sources.",
+      "evidence": "README identifies the changelog as release framing, while SYSTEM_STATE identifies the current active and deferred posture."
+    }
+  ],
+  "decision": {
+    "posture": "correct_bounded_reader_blockers",
+    "next_step_after_closure": "Reassess the integrated backlog from the documented baseline; future S28/S29 use still waits for a real qualifying Work Slice."
+  },
+  "guardrails": {
+    "activated_s18": false,
+    "authorized_runtime_2_0_implementation": false,
+    "created_collector": false,
+    "created_dashboard": false,
+    "created_scanner": false,
+    "created_schema": false,
+    "created_policy_engine": false,
+    "created_domain_pack_enforcement": false,
+    "created_new_domain_pack": false,
+    "changed_adaptive_skills": false,
+    "counts_synthetic_examples_as_real_evidence": false,
+    "treats_templates_as_usage_evidence": false
+  }
+}
