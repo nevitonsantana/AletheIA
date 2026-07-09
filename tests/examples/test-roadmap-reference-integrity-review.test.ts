@@ -52,7 +52,7 @@ describe("S43 roadmap documentation reference integrity repair", () => {
     }
   });
 
-  it("keeps S43 bounded while the repair is in review", () => {
+  it("keeps S43 bounded after the repair closes", () => {
     const review = readReview();
     const backlog = fs.readFileSync(
       path.join(root, "docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md"),
@@ -75,7 +75,7 @@ describe("S43 roadmap documentation reference integrity repair", () => {
       changed_adaptive_skills: false,
     });
     expect(backlog).toContain("### S43 — Roadmap documentation reference integrity repair");
-    expect(backlog).toContain("**Status:** `in-review`.");
-    expect(systemState).toContain("Active:** S43 Roadmap documentation reference integrity repair");
+    expect(backlog).toContain("**Status:** `delivered` by AletheIA PR #350.");
+    expect(systemState).toContain("S43 Roadmap documentation reference integrity repair is delivered");
   });
 });

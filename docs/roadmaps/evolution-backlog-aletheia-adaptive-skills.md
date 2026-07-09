@@ -318,10 +318,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA roadmap documentation
 - **Covers:** repair of the unresolved internal Markdown paths in the constrained-adoption and resource-aware operations roadmaps identified by S42.
 - **Dependencies:** S42 Backlog v0.6 opportunity inventory.
-- **Status:** `in-review`.
+- **Status:** `delivered` by AletheIA PR #350.
 - **Non-goals:** repository-wide link scanner, automatic documentation generation, content rewrites, new constrained-adoption or resource-aware capability, S18 activation, Runtime 2.0 implementation, collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** all inline `docs/...md` paths in the two reviewed roadmap documents resolve locally; existing roadmap claims and scope remain unchanged.
-- **Evidence:** [`s43-roadmap-reference-integrity-review.json`](../../examples/backlog-readiness/s43-roadmap-reference-integrity-review.json) records the repaired source set and resolution result.
+- **Evidence:** AletheIA PR #350 / `35594ff`; [`s43-roadmap-reference-integrity-review.json`](../../examples/backlog-readiness/s43-roadmap-reference-integrity-review.json) records the repaired source set and resolution result.
 
 ### S0 — Integrate skill execution context
 
