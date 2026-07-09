@@ -307,10 +307,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA backlog planning and source-backed documentation inventory
 - **Covers:** the post-S41 candidate set, including evidence-gated tracks, real-work triggers and observable reader-facing documentation gaps in current roadmap sources.
 - **Dependencies:** S40 framing review and S41 documentation/first-use coherence review.
-- **Status:** `in-review`.
+- **Status:** `delivered` by AletheIA PR #348.
 - **Non-goals:** treating planning as a real S28/S29 usage record, activating S18, implementing Runtime 2.0, creating collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** inventory the candidates with their evidence posture; keep gated tracks gated; select at most one small source-backed next move without creating implementation authority.
-- **Evidence:** [`s42-backlog-v06-opportunity-inventory.json`](../../examples/backlog-readiness/s42-backlog-v06-opportunity-inventory.json) records the candidate decision.
+- **Evidence:** AletheIA PR #348 / `4734661`; [`s42-backlog-v06-opportunity-inventory.json`](../../examples/backlog-readiness/s42-backlog-v06-opportunity-inventory.json) records the candidate decision.
 
 ### S0 — Integrate skill execution context
 

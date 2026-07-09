@@ -40,7 +40,7 @@ describe("S42 backlog v0.6 opportunity inventory", () => {
     }
   });
 
-  it("keeps gated implementation tracks off while S42 is in review", () => {
+  it("keeps gated implementation tracks off after S42 closes", () => {
     const review = readReview();
     const backlog = fs.readFileSync(
       path.join(root, "docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md"),
@@ -61,7 +61,7 @@ describe("S42 backlog v0.6 opportunity inventory", () => {
       changed_adaptive_skills: false,
     });
     expect(backlog).toContain("### S42 — Backlog v0.6 opportunity inventory");
-    expect(backlog).toContain("**Status:** `in-review`.");
-    expect(systemState).toContain("Active:** S42 Backlog v0.6 opportunity inventory");
+    expect(backlog).toContain("**Status:** `delivered` by AletheIA PR #348.");
+    expect(systemState).toContain("S42 Backlog v0.6 opportunity inventory is delivered");
   });
 });
