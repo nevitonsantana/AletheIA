@@ -1,0 +1,47 @@
+{
+  "review_id": "s43-roadmap-reference-integrity-review-2026-07-09",
+  "review_date": "2026-07-09",
+  "work_slice_ref": "S43",
+  "purpose": "Repair the observable internal-reference blockers in exactly two roadmap documents selected by S42.",
+  "source_refs": {
+    "s42_inventory": "examples/backlog-readiness/s42-backlog-v06-opportunity-inventory.json",
+    "enterprise_roadmap": "docs/roadmaps/enterprise-readiness-roadmap.md",
+    "resource_aware_roadmap": "docs/roadmaps/resource-aware-operations-roadmap.md"
+  },
+  "resolution": {
+    "enterprise_readiness_roadmap": {
+      "paths_checked": 11,
+      "unresolved_before": 11,
+      "unresolved_after": 0
+    },
+    "resource_aware_operations_roadmap": {
+      "paths_checked": 29,
+      "unresolved_before": 21,
+      "unresolved_after": 0
+    }
+  },
+  "scope_boundary": {
+    "documents_changed": [
+      "docs/roadmaps/enterprise-readiness-roadmap.md",
+      "docs/roadmaps/resource-aware-operations-roadmap.md"
+    ],
+    "not_a_repository_wide_link_audit": true,
+    "created_link_scanner": false,
+    "created_documentation_generator": false,
+    "changed_runtime_or_adaptive_skills": false
+  },
+  "guardrails": {
+    "activated_s18": false,
+    "authorized_runtime_2_0_implementation": false,
+    "created_collector": false,
+    "created_dashboard": false,
+    "created_scanner": false,
+    "created_schema": false,
+    "created_policy_engine": false,
+    "created_domain_pack_enforcement": false,
+    "created_new_domain_pack": false,
+    "changed_adaptive_skills": false,
+    "counts_synthetic_examples_as_real_evidence": false,
+    "treats_templates_as_usage_evidence": false
+  }
+}

@@ -61,7 +61,7 @@ This matters because enterprise restrictions usually depend on:
 
 Anchor:
 
-- `docs/project-extension-pattern.md`
+- `docs/concepts/project-extension-pattern.md`
 
 ### 2. Adoption modes
 
@@ -75,7 +75,7 @@ This matters because highly constrained environments often need:
 
 Anchor:
 
-- `docs/adoption-mode-guidance.md`
+- `docs/guides/adoption-mode-guidance.md`
 
 ### 3. Distribution / preset / adapter framing
 
@@ -90,7 +90,7 @@ This matters because constrained environments often require a specific delivery 
 
 Anchor:
 
-- `docs/distribution-presets-adapters.md`
+- `docs/concepts/distribution-presets-adapters.md`
 
 ### 4. Existing trust-boundary and governance direction
 
@@ -105,9 +105,9 @@ It begins from a baseline that already treats those topics as real.
 
 Anchors:
 
-- `docs/web-app-security-trust-boundaries.md`
-- `docs/ai-agent-security-prompt-injection.md`
-- `docs/domain-governance-packs.md`
+- `docs/concepts/web-app-security-trust-boundaries.md`
+- `docs/concepts/ai-agent-security-prompt-injection.md`
+- `docs/concepts/domain-governance-packs.md`
 
 ### 5. Operational-composition baseline
 
@@ -214,7 +214,7 @@ not in the framework core.
 
 This step now begins with:
 
-- `docs/local-trust-boundary-posture.md`
+- `docs/concepts/local-trust-boundary-posture.md`
 - `starter-pack/templates/local-trust-boundary-template.md`
 - `examples/project-extension/local-trust-boundary-mapping.md`
 
@@ -231,9 +231,9 @@ That means:
 
 This step now begins with:
 
-- `docs/constrained-adoption-pilot.md`
+- `docs/guides/constrained-adoption-pilot.md`
 - `examples/pilot-conversion/constrained-adoption-bounded-validation.md`
-- `docs/constrained-pilot-review-checklist.md`
+- `docs/reference/constrained-pilot-review-checklist.md`
 - `starter-pack/templates/constrained-pilot-review-template.md`
 
 ---
@@ -272,7 +272,7 @@ To keep the track healthy, AletheIA 1.1 should preserve a few boundaries.
 
 This track currently begins with:
 
-- `docs/enterprise-readiness-roadmap.md`
+- `docs/roadmaps/enterprise-readiness-roadmap.md`
 - `starter-pack/guides/enterprise-adoption-considerations.md`
 - `examples/project-extension/restricted-enterprise-context.md`
 
@@ -286,6 +286,6 @@ It should not become the place where AletheIA tries to solve broader resource-aw
 
 The next queued track after this one is:
 
-- `docs/resource-aware-operations-roadmap.md`
+- `docs/roadmaps/resource-aware-operations-roadmap.md`
 
 That later track should build on the 1.1 posture work, but it should solve a different problem: making context and resource use more observable, comparable, and reviewable across real runtimes and agents.
