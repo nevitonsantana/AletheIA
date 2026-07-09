@@ -142,6 +142,7 @@ S0-S26 closure + S18/S26 blockers
           -> S33 Backlog v0.5 readiness review
               -> S34-S39 Domain Governance usage/evidence cycle
                   -> S40 Backlog v0.5 framing review
+                      -> S41 Documentation and first-use coherence review
 ```
 
 S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe organizational slice because it reconciles new source packs before any implementation. S20 and S21 should precede new skill creation, broader loops, agents or runtime surfaces. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10/P12, P13 and P18 do not reopen live importers, runtime collection, learning automation or new dashboards through this backlog update.
@@ -289,6 +290,16 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Non-goals:** S18 activation, Runtime 2.0 implementation, collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification, Adaptive Skills changes or treating synthetic/template examples as real evidence.
 - **Acceptance:** record the source-backed post-S39 posture, keep domain-governance expansion blocked, preserve deferred tracks and select the next safe backlog candidate without introducing implementation authority.
 - **Evidence:** AletheIA PR #341 / `a256365`; [`s40-backlog-v05-framing-review.json`](../../examples/backlog-readiness/s40-backlog-v05-framing-review.json) closes the S34-S39 usage/evidence cycle and recommends a bounded documentation and first-use coherence review next.
+
+### S41 — Documentation and first-use coherence review
+
+- **Repository / layer:** AletheIA reader-facing documentation and backlog evidence
+- **Covers:** source-backed coherence of README entry points, first-use guidance, core operating path, SYSTEM_STATE posture and the changelog's release-history role.
+- **Dependencies:** S40 backlog v0.5 framing review.
+- **Status:** `in-review`.
+- **Non-goals:** automatic documentation generation, a new onboarding product UI, mandatory ceremony for Lite slices, S18 activation, Runtime 2.0 implementation, collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification or Adaptive Skills changes.
+- **Acceptance:** identify reader-facing coherence gaps from the named sources; correct only bounded, source-backed documentation blockers; keep current state and release-history surfaces distinguishable.
+- **Evidence:** [`s41-documentation-first-use-coherence-review.json`](../../examples/backlog-readiness/s41-documentation-first-use-coherence-review.json) records the scope and initial README path corrections.
 
 ### S0 — Integrate skill execution context
 

@@ -91,6 +91,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
 - `backlog-readiness/`
   - revisão S33 de prontidão do próximo ciclo, mantendo S18, Runtime 2.0 e expansão do Observatory bloqueados/deferidos até existir evidência suficiente
   - framing S40 do backlog v0.5, fechando S34-S39 sem expandir S28/S29 e escolhendo clareza documental/first-use como próxima fatia segura
+  - revisão S41 da coerência documentação/first-use, corrigindo caminhos bloqueantes no README sem criar automação ou nova autoridade
 - `visual-operations/`
   - projeção sintética e somente leitura de duas Work Slices, com eventos normalizados, evidência, revisão humana, telemetria opcional e fonte restrita representada apenas por metadados
   - entrada e saídas reproduzíveis do projetor GitHub PR → Visual Operations, incluindo distinção entre evidência observada por CI e validação reportada pelo autor
