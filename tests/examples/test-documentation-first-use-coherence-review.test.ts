@@ -46,7 +46,7 @@ describe("S41 documentation and first-use coherence review", () => {
     expect(readme).not.toContain("`docs/runtime-adapter-contract.md`");
   });
 
-  it("keeps implementation guardrails off while S41 is in review", () => {
+  it("keeps implementation guardrails off after S41 closes", () => {
     const review = readReview();
     const backlog = fs.readFileSync(
       path.join(root, "docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md"),
@@ -67,7 +67,8 @@ describe("S41 documentation and first-use coherence review", () => {
       changed_adaptive_skills: false,
     });
     expect(backlog).toContain("### S41 — Documentation and first-use coherence review");
-    expect(backlog).toContain("**Status:** `in-review`.");
-    expect(systemState).toContain("Active:** S41 Documentation and first-use coherence review");
+    expect(backlog).toContain("**Status:** `delivered` by AletheIA PR #346.");
+    expect(systemState).toContain("S41 Documentation and first-use coherence review is delivered");
+    expect(systemState).toContain("Active:** none");
   });
 });

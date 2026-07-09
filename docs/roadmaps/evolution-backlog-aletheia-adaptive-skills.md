@@ -296,10 +296,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA reader-facing documentation and backlog evidence
 - **Covers:** source-backed coherence of README entry points, first-use guidance, core operating path, SYSTEM_STATE posture and the changelog's release-history role.
 - **Dependencies:** S40 backlog v0.5 framing review.
-- **Status:** `in-review`.
+- **Status:** `delivered` by AletheIA PR #346.
 - **Non-goals:** automatic documentation generation, a new onboarding product UI, mandatory ceremony for Lite slices, S18 activation, Runtime 2.0 implementation, collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** identify reader-facing coherence gaps from the named sources; correct only bounded, source-backed documentation blockers; keep current state and release-history surfaces distinguishable.
-- **Evidence:** [`s41-documentation-first-use-coherence-review.json`](../../examples/backlog-readiness/s41-documentation-first-use-coherence-review.json) records the scope and initial README path corrections.
+- **Evidence:** AletheIA PR #346 / `679bb6c`; [`s41-documentation-first-use-coherence-review.json`](../../examples/backlog-readiness/s41-documentation-first-use-coherence-review.json) records the scope, findings and bounded README path corrections.
 
 ### S0 — Integrate skill execution context
 
