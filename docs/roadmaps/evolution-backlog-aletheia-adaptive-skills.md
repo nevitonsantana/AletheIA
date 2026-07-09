@@ -144,6 +144,7 @@ S0-S26 closure + S18/S26 blockers
                   -> S40 Backlog v0.5 framing review
                       -> S41 Documentation and first-use coherence review
                           -> S42 Backlog v0.6 opportunity inventory
+                              -> S43 Roadmap documentation reference integrity repair
 ```
 
 S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe organizational slice because it reconciles new source packs before any implementation. S20 and S21 should precede new skill creation, broader loops, agents or runtime surfaces. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10/P12, P13 and P18 do not reopen live importers, runtime collection, learning automation or new dashboards through this backlog update.
@@ -311,6 +312,16 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Non-goals:** treating planning as a real S28/S29 usage record, activating S18, implementing Runtime 2.0, creating collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** inventory the candidates with their evidence posture; keep gated tracks gated; select at most one small source-backed next move without creating implementation authority.
 - **Evidence:** AletheIA PR #348 / `4734661`; [`s42-backlog-v06-opportunity-inventory.json`](../../examples/backlog-readiness/s42-backlog-v06-opportunity-inventory.json) records the candidate decision.
+
+### S43 — Roadmap documentation reference integrity repair
+
+- **Repository / layer:** AletheIA roadmap documentation
+- **Covers:** repair of the unresolved internal Markdown paths in the constrained-adoption and resource-aware operations roadmaps identified by S42.
+- **Dependencies:** S42 Backlog v0.6 opportunity inventory.
+- **Status:** `in-review`.
+- **Non-goals:** repository-wide link scanner, automatic documentation generation, content rewrites, new constrained-adoption or resource-aware capability, S18 activation, Runtime 2.0 implementation, collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification or Adaptive Skills changes.
+- **Acceptance:** all inline `docs/...md` paths in the two reviewed roadmap documents resolve locally; existing roadmap claims and scope remain unchanged.
+- **Evidence:** [`s43-roadmap-reference-integrity-review.json`](../../examples/backlog-readiness/s43-roadmap-reference-integrity-review.json) records the repaired source set and resolution result.
 
 ### S0 — Integrate skill execution context
 
