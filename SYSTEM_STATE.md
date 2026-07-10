@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered; S33 Backlog v0.5 readiness review is delivered; S34 Domain Governance Usage Review is delivered; S35 Domain Governance Usage Evidence Capture is delivered; S36 Dependabot Trust-Boundary Usage Review is delivered; S37 Domain Governance Next-Use Readiness Review is delivered; S38 Adaptive Skill Record Trust-Boundary Review is delivered; S39 Domain Governance Evidence Sufficiency Review is delivered; S40 Backlog v0.5 framing review is delivered; S41 Documentation and first-use coherence review is delivered; S42 Backlog v0.6 opportunity inventory is delivered; S43 Roadmap documentation reference integrity repair is delivered; S44 Post-S43 backlog gate review is in review.
+- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered; S33 Backlog v0.5 readiness review is delivered; S34 Domain Governance Usage Review is delivered; S35 Domain Governance Usage Evidence Capture is delivered; S36 Dependabot Trust-Boundary Usage Review is delivered; S37 Domain Governance Next-Use Readiness Review is delivered; S38 Adaptive Skill Record Trust-Boundary Review is delivered; S39 Domain Governance Evidence Sufficiency Review is delivered; S40 Backlog v0.5 framing review is delivered; S41 Documentation and first-use coherence review is delivered; S42 Backlog v0.6 opportunity inventory is delivered; S43 Roadmap documentation reference integrity repair is delivered; S44 Post-S43 backlog gate review is delivered.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: assessed by S41; README reader paths are corrected, while CHANGELOG remains release history rather than current-operating state.
 
@@ -80,5 +80,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-09
-- **Evidence baseline:** AletheIA `9b958a9` after PR #351 closed S43 status; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** post-S43 backlog gate review; no open GitHub issues or remaining ungated S42 candidate justify a new implementation slice
+- **Evidence baseline:** AletheIA `683b841` after PR #352 delivered S44 post-S43 backlog gate review; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** PR #352 merged; S44 records that no open GitHub issues or remaining ungated S42 candidate justify a new implementation slice
