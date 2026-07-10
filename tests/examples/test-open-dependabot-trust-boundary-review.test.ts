@@ -107,7 +107,7 @@ describe("S45 open Dependabot trust-boundary review", () => {
 
     expect(reviewIndex).toContain("s45-open-dependabot-trust-boundary-review.json");
     expect(backlog).toContain("### S45 — Open Dependabot trust-boundary review");
-    expect(backlog).toContain("**Status:** `in review`.");
-    expect(systemState).toContain("S45 Open Dependabot trust-boundary review is in review");
+    expect(backlog).toContain("**Status:** `delivered` by AletheIA PR #354.");
+    expect(systemState).toContain("S45 Open Dependabot trust-boundary review is delivered");
   });
 });

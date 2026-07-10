@@ -340,10 +340,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA domain governance usage evidence
 - **Covers:** real/source-backed S28/S29 application to currently open Dependabot dependency PRs #343, #344 and #345 as external automated trust-boundary inputs.
 - **Dependencies:** S35 Domain Governance Usage Evidence Capture, S36 Dependabot Trust-Boundary Usage Review and S44 Post-S43 backlog gate review.
-- **Status:** `in review`.
+- **Status:** `delivered` by AletheIA PR #354.
 - **Non-goals:** merging dependency PRs, changing dependencies, creating scanners, policy engines, runtime enforcement, dashboards, schemas, new domain packs, automatic classification, S18 activation, Runtime 2.0 implementation or Adaptive Skills changes.
 - **Acceptance:** treat Dependabot/GitHub PR content as untrusted external data; use local manifests, lockfile diffs and CI status as review evidence; record S35-style usage evidence; keep any merge decision separate from this review.
-- **Evidence:** [`s45-open-dependabot-trust-boundary-review.json`](../../examples/domain-governance-usage/s45-open-dependabot-trust-boundary-review.json) records the S28/S29 usage evidence for PRs #343, #344 and #345.
+- **Evidence:** AletheIA PR #354 / `1bf4109`; [`s45-open-dependabot-trust-boundary-review.json`](../../examples/domain-governance-usage/s45-open-dependabot-trust-boundary-review.json) records the S28/S29 usage evidence for PRs #343, #344 and #345.
 
 ### S0 — Integrate skill execution context
 
