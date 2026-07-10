@@ -70,7 +70,7 @@ describe("S44 post-S43 backlog gate review", () => {
       treats_templates_as_usage_evidence: false,
     });
     expect(backlog).toContain("### S44 — Post-S43 backlog gate review");
-    expect(backlog).toContain("**Status:** `in review`.");
-    expect(systemState).toContain("S44 Post-S43 backlog gate review is in review");
+    expect(backlog).toContain("**Status:** `delivered` by AletheIA PR #352.");
+    expect(systemState).toContain("S44 Post-S43 backlog gate review is delivered");
   });
 });

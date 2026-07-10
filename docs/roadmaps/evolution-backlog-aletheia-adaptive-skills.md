@@ -329,10 +329,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA backlog planning and evidence gates
 - **Covers:** the post-S43 decision point after the selected documentation repair is delivered, including whether any remaining candidate can safely move without new source-backed evidence.
 - **Dependencies:** S42 Backlog v0.6 opportunity inventory and S43 Roadmap documentation reference integrity repair.
-- **Status:** `in review`.
+- **Status:** `delivered` by AletheIA PR #352.
 - **Non-goals:** inventing a synthetic S28/S29 usage record, activating S18, implementing Runtime 2.0, creating collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** record the current no-go/gated posture from source-backed inputs; keep `Active: none`; define the next admissible trigger for a future Work Slice without introducing implementation authority.
-- **Evidence:** [`s44-post-s43-backlog-gate-review.json`](../../examples/backlog-readiness/s44-post-s43-backlog-gate-review.json) records the post-S43 decision gate.
+- **Evidence:** AletheIA PR #352 / `683b841`; [`s44-post-s43-backlog-gate-review.json`](../../examples/backlog-readiness/s44-post-s43-backlog-gate-review.json) records the post-S43 decision gate.
 
 ### S0 — Integrate skill execution context
 
