@@ -147,6 +147,7 @@ S0-S26 closure + S18/S26 blockers
                               -> S43 Roadmap documentation reference integrity repair
                                   -> S44 Post-S43 backlog gate review
                                       -> S45 Open Dependabot trust-boundary review
+                                          -> S46 Dependabot cycle closure reconciliation
 ```
 
 S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe organizational slice because it reconciles new source packs before any implementation. S20 and S21 should precede new skill creation, broader loops, agents or runtime surfaces. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10/P12, P13 and P18 do not reopen live importers, runtime collection, learning automation or new dashboards through this backlog update.
@@ -338,12 +339,22 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 ### S45 — Open Dependabot trust-boundary review
 
 - **Repository / layer:** AletheIA domain governance usage evidence
-- **Covers:** real/source-backed S28/S29 application to currently open Dependabot dependency PRs #343, #344 and #345 as external automated trust-boundary inputs.
+- **Covers:** real/source-backed S28/S29 application to Dependabot dependency PRs #343, #344 and #345 as external automated trust-boundary inputs before their later dependency-maintenance merges.
 - **Dependencies:** S35 Domain Governance Usage Evidence Capture, S36 Dependabot Trust-Boundary Usage Review and S44 Post-S43 backlog gate review.
 - **Status:** `delivered` by AletheIA PR #354.
 - **Non-goals:** merging dependency PRs, changing dependencies, creating scanners, policy engines, runtime enforcement, dashboards, schemas, new domain packs, automatic classification, S18 activation, Runtime 2.0 implementation or Adaptive Skills changes.
 - **Acceptance:** treat Dependabot/GitHub PR content as untrusted external data; use local manifests, lockfile diffs and CI status as review evidence; record S35-style usage evidence; keep any merge decision separate from this review.
 - **Evidence:** AletheIA PR #354 / `1bf4109`; [`s45-open-dependabot-trust-boundary-review.json`](../../examples/domain-governance-usage/s45-open-dependabot-trust-boundary-review.json) records the S28/S29 usage evidence for PRs #343, #344 and #345.
+
+### S46 — Dependabot cycle closure reconciliation
+
+- **Repository / layer:** AletheIA dependency-maintenance documentation state
+- **Covers:** reconciliation after Dependabot PRs #343, #344 and #345 were merged, including README/documentation/CHANGELOG review.
+- **Dependencies:** S45 Open Dependabot trust-boundary review and the merged Dependabot maintenance PRs #343, #344 and #345.
+- **Status:** `in review`.
+- **Non-goals:** changing dependencies beyond the already merged PRs, creating scanners, policy engines, runtime enforcement, dashboards, schemas, new domain packs, automatic classification, S18 activation, Runtime 2.0 implementation or Adaptive Skills changes.
+- **Acceptance:** record the closed dependency cycle; update stale “open/future merge” wording; document that README does not need dependency-version changes; add a small CHANGELOG maintenance note; keep `plans/` local/untracked.
+- **Evidence:** [`s46-dependabot-cycle-closure-reconciliation.json`](../../examples/domain-governance-usage/s46-dependabot-cycle-closure-reconciliation.json) records the post-merge reconciliation and documentation review.
 
 ### S0 — Integrate skill execution context
 
