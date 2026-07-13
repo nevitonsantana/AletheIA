@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- reconcile the completed Dependabot maintenance cycle for `@types/node`, Vite and TypeScript with source-backed governance documentation; README remains current and no runtime, scanner, policy engine or schema is introduced
+
 - expand the canonical AletheIA + Adaptive Skills evolution backlog to v0.2 with P10 Work Observatory, P11 Cognitive Documentation & Continuity, and a versioned non-normative ecosystem territory map; no runtime, schema, collector or dashboard is introduced
 
 - materialize the `example-4-layers` knowledge pack on disk under `examples/project-extension/knowledge-packs/` (schema-valid `manifest.yaml`, operational capsule, usage policy, version history, source map/link, and a `feature-value-governance` consumption walkthrough); generic and fictional, illustrating a proprietary framework registered as a `capsule_first` pack with `full_text_exposure: forbidden`

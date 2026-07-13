@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** none.
-- **Next dependency path:** S45 delivered the S28/S29 review for currently open Dependabot PRs #343, #344 and #345 as real external automated trust-boundary inputs; continue using S35 only for future real S28/S29 Work Slices, while S18 and Runtime 2.0 remain deferred until their explicit evidence gates are met.
+- **Active:** S46 Dependabot cycle closure reconciliation.
+- **Next dependency path:** S46 reconciles repository documentation after Dependabot PRs #343, #344 and #345 merged; continue using S35 only for future real S28/S29 Work Slices, while S18 and Runtime 2.0 remain deferred until their explicit evidence gates are met.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered; S33 Backlog v0.5 readiness review is delivered; S34 Domain Governance Usage Review is delivered; S35 Domain Governance Usage Evidence Capture is delivered; S36 Dependabot Trust-Boundary Usage Review is delivered; S37 Domain Governance Next-Use Readiness Review is delivered; S38 Adaptive Skill Record Trust-Boundary Review is delivered; S39 Domain Governance Evidence Sufficiency Review is delivered; S40 Backlog v0.5 framing review is delivered; S41 Documentation and first-use coherence review is delivered; S42 Backlog v0.6 opportunity inventory is delivered; S43 Roadmap documentation reference integrity repair is delivered; S44 Post-S43 backlog gate review is delivered; S45 Open Dependabot trust-boundary review is delivered.
+- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered; S33 Backlog v0.5 readiness review is delivered; S34 Domain Governance Usage Review is delivered; S35 Domain Governance Usage Evidence Capture is delivered; S36 Dependabot Trust-Boundary Usage Review is delivered; S37 Domain Governance Next-Use Readiness Review is delivered; S38 Adaptive Skill Record Trust-Boundary Review is delivered; S39 Domain Governance Evidence Sufficiency Review is delivered; S40 Backlog v0.5 framing review is delivered; S41 Documentation and first-use coherence review is delivered; S42 Backlog v0.6 opportunity inventory is delivered; S43 Roadmap documentation reference integrity repair is delivered; S44 Post-S43 backlog gate review is delivered; S45 Open Dependabot trust-boundary review is delivered; S46 Dependabot cycle closure reconciliation is in review.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: assessed by S41; README reader paths are corrected, while CHANGELOG remains release history rather than current-operating state.
 
@@ -71,7 +71,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Treat future dependency merge/update decisions for #343, #344 and #345 as separate dependency-maintenance work with current branch status and validation; S45 only captured read-only trust-boundary evidence.
+1. Complete S46 as a documentation-state reconciliation for the already merged Dependabot PRs #343, #344 and #345; do not infer new implementation authority from the maintenance cycle.
 2. Apply the S35 capture template only when future real Work Slices use S28/S29 domain governance packs; S37 remains the readiness gate for future capture.
 3. Keep domain governance source-backed and read-only/advisory; do not treat templates or synthetic examples as real usage evidence or create scanners, policy engines, runtime enforcement or automatic classification.
 4. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
@@ -80,5 +80,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-09
-- **Evidence baseline:** AletheIA `1bf4109` after PR #354 delivered S45 open Dependabot trust-boundary review; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** PR #354 merged; S45 captured real S28/S29 usage evidence for open Dependabot PRs #343, #344 and #345 without merging dependencies
+- **Evidence baseline:** AletheIA `9958648` after PR #345 completed the Dependabot maintenance cycle; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** Dependabot PRs #343, #344 and #345 merged after S45, making documentation-state reconciliation necessary
