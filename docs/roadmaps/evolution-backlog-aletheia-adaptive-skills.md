@@ -351,10 +351,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA dependency-maintenance documentation state
 - **Covers:** reconciliation after Dependabot PRs #343, #344 and #345 were merged, including README/documentation/CHANGELOG review.
 - **Dependencies:** S45 Open Dependabot trust-boundary review and the merged Dependabot maintenance PRs #343, #344 and #345.
-- **Status:** `in review`.
+- **Status:** `delivered` by AletheIA PR #356.
 - **Non-goals:** changing dependencies beyond the already merged PRs, creating scanners, policy engines, runtime enforcement, dashboards, schemas, new domain packs, automatic classification, S18 activation, Runtime 2.0 implementation or Adaptive Skills changes.
 - **Acceptance:** record the closed dependency cycle; update stale “open/future merge” wording; document that README does not need dependency-version changes; add a small CHANGELOG maintenance note; keep `plans/` local/untracked.
-- **Evidence:** [`s46-dependabot-cycle-closure-reconciliation.json`](../../examples/domain-governance-usage/s46-dependabot-cycle-closure-reconciliation.json) records the post-merge reconciliation and documentation review.
+- **Evidence:** AletheIA PR #356 / `7be5ad9`; [`s46-dependabot-cycle-closure-reconciliation.json`](../../examples/domain-governance-usage/s46-dependabot-cycle-closure-reconciliation.json) records the post-merge reconciliation and documentation review.
 
 ### S0 — Integrate skill execution context
 
