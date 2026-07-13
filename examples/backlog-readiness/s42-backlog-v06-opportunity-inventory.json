@@ -1,0 +1,79 @@
+{
+  "review_id": "s42-backlog-v06-opportunity-inventory-2026-07-09",
+  "review_date": "2026-07-09",
+  "work_slice_ref": "S42",
+  "purpose": "Select one real, bounded post-S41 backlog move without reopening tracks that lack their explicit evidence gates.",
+  "source_refs": {
+    "system_state": "SYSTEM_STATE.md",
+    "integrated_backlog": "docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md",
+    "s40_framing": "examples/backlog-readiness/s40-backlog-v05-framing-review.json",
+    "s41_coherence": "examples/backlog-readiness/s41-documentation-first-use-coherence-review.json",
+    "enterprise_roadmap": "docs/roadmaps/enterprise-readiness-roadmap.md",
+    "resource_aware_roadmap": "docs/roadmaps/resource-aware-operations-roadmap.md",
+    "resource_next_signals": "docs/roadmaps/resource-aware-next-signals.md",
+    "runtime_boundary": "docs/adr/ADR-016-runtime-2-boundary-review.md"
+  },
+  "candidate_inventory": [
+    {
+      "candidate": "roadmap_documentation_reference_integrity",
+      "posture": "recommended",
+      "evidence": "The constrained-adoption roadmap has 11 unresolved internal documentation paths and the resource-aware roadmap has 21 unresolved internal documentation paths; the paths are reader-facing and independently observable.",
+      "next_slice": "S43 Roadmap documentation reference integrity repair",
+      "non_goals": [
+        "repository-wide link scanner",
+        "automatic documentation generator",
+        "new adoption or resource-aware capability"
+      ]
+    },
+    {
+      "candidate": "future_real_domain_governance_usage_capture",
+      "posture": "wait_for_real_trigger",
+      "evidence": "S35 is a capture template and S37 requires a real Work Slice involving a qualifying agent or trust-boundary concern; no such issue is open.",
+      "non_goals": [
+        "synthetic evidence",
+        "template-only evidence",
+        "new enforcement or scanners"
+      ]
+    },
+    {
+      "candidate": "comparative_work_metrics",
+      "posture": "blocked",
+      "evidence": "S18 remains blocked because five reviewed Work Observatory records do not share one stable comparison group.",
+      "non_goals": [
+        "success rates",
+        "ranking",
+        "work-unit metrics"
+      ]
+    },
+    {
+      "candidate": "runtime_2_0_implementation",
+      "posture": "deferred",
+      "evidence": "ADR-016 requires repeated evidence that existing contracts cannot carry required runtime meaning before an explicit boundary decision.",
+      "non_goals": [
+        "runtime kernel",
+        "SDK",
+        "CLI",
+        "provider adapter"
+      ]
+    }
+  ],
+  "decision": {
+    "next_slice": "S43 Roadmap documentation reference integrity repair",
+    "posture": "repair_observable_reader_blockers_before_new_capability",
+    "rationale": "The unresolved roadmap paths are a concrete, current reader-facing problem. Repairing only the two affected roadmap sources is smaller and more evidence-based than reopening deferred infrastructure or inventing a domain-governance use case."
+  },
+  "guardrails": {
+    "activated_s18": false,
+    "authorized_runtime_2_0_implementation": false,
+    "created_collector": false,
+    "created_dashboard": false,
+    "created_scanner": false,
+    "created_schema": false,
+    "created_policy_engine": false,
+    "created_domain_pack_enforcement": false,
+    "created_new_domain_pack": false,
+    "changed_adaptive_skills": false,
+    "counts_synthetic_examples_as_real_evidence": false,
+    "treats_templates_as_usage_evidence": false
+  }
+}

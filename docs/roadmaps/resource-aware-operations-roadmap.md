@@ -30,15 +30,15 @@ The 1.2 track should explicitly reuse what the repository already established.
 
 This includes:
 
-- `docs/token-policy.md`
-- `docs/agent-handoffs.md`
-- `docs/handoff-capture-pattern.md`
-- `docs/work-slice-pattern.md`
+- `docs/reference/token-policy.md`
+- `docs/concepts/agent-handoffs.md`
+- `docs/concepts/handoff-capture-pattern.md`
+- `docs/concepts/work-slice-pattern.md`
 - `starter-pack/guides/risk-to-gate-mapping.md`
 - `starter-pack/guides/model-strategy-by-task.md`
-- `docs/project-extension-pattern.md`
-- `docs/enterprise-readiness-roadmap.md`
-- `docs/local-trust-boundary-posture.md`
+- `docs/concepts/project-extension-pattern.md`
+- `docs/roadmaps/enterprise-readiness-roadmap.md`
+- `docs/concepts/local-trust-boundary-posture.md`
 
 The goal is not to restate these as fresh gaps.
 The goal is to operationalize them more concretely.
@@ -89,9 +89,9 @@ Expected outputs:
 
 This phase now begins with:
 
-- `docs/context-resource-telemetry-spec.md`
-- `docs/slice-telemetry-model.md`
-- `docs/waste-heuristics.md`
+- `docs/contracts/context-resource-telemetry-spec.md`
+- `docs/contracts/slice-telemetry-model.md`
+- `docs/reference/waste-heuristics.md`
 
 ### Phase B — progressive policy signals
 
@@ -116,7 +116,7 @@ Expected outputs:
 
 This phase now begins with:
 
-- `docs/progressive-policy-signals.md`
+- `docs/concepts/progressive-policy-signals.md`
 - `examples/resource-aware-operations/policy-signals-review-example.md`
 
 ### Phase C — runtime adapter contract
@@ -142,7 +142,7 @@ Expected outputs:
 
 This phase now begins with:
 
-- `docs/runtime-adapter-contract.md`
+- `docs/contracts/runtime-adapter-contract.md`
 - `examples/resource-aware-operations/minimal-runtime-adapter-example.md`
 
 ### Phase D — advisory multi-agent decision layer
@@ -164,7 +164,7 @@ Expected outputs:
 
 This phase now begins with:
 
-- `docs/agent-runtime-decision-guide.md`
+- `docs/guides/agent-runtime-decision-guide.md`
 - `examples/resource-aware-operations/agent-runtime-decision-example.md`
 
 ### Phase E — workflow guide and readiness layer
@@ -197,8 +197,8 @@ Expected outputs:
 
 This phase now begins with:
 
-- `docs/planning-depth-profiles.md`
-- `docs/readiness-gates-spec.md`
+- `docs/reference/planning-depth-profiles.md`
+- `docs/contracts/readiness-gates-spec.md`
 - `examples/resource-aware-operations/workflow-readiness-example.md`
 
 ### Phase F — examples before learning
@@ -214,7 +214,7 @@ The purpose is to prove that the operational surfaces help in real use before th
 
 A focused bridge between Alpha 4 handoffs and the 1.2 resource-aware posture now also includes:
 
-- `docs/slice-finalization-and-restart.md`
+- `docs/guides/slice-finalization-and-restart.md`
 - `starter-pack/templates/slice-finalization-review-template.md`
 - `examples/resource-aware-operations/slice-finalization-reference.md`
 - `starter-pack/guides/clean-restart-command-adapters.md`
@@ -226,12 +226,12 @@ This phase now begins with:
 - `examples/resource-aware-operations/comparative-review-example.md`
 - `examples/resource-aware-operations/constrained-local-review-example.md`
 - `examples/resource-aware-operations/bounded-pilot-conversion-loop.md`
-- `docs/resource-aware-bounded-pilot.md`
-- `docs/resource-aware-pilot-review-checklist.md`
+- `docs/guides/resource-aware-bounded-pilot.md`
+- `docs/reference/resource-aware-pilot-review-checklist.md`
 - `starter-pack/templates/resource-aware-pilot-review-template.md`
-- `docs/resource-aware-crisis-monitor-reference.md`
+- `docs/pilots/resource-aware-crisis-monitor-reference.md`
 - `examples/resource-aware-operations/resource-aware-pilot-review-reference.md`
-- `docs/resource-aware-next-signals.md`
+- `docs/roadmaps/resource-aware-next-signals.md`
 
 ---
 
@@ -309,15 +309,15 @@ without becoming a heavyweight orchestration product.
 
 This track now begins with:
 
-- `docs/resource-aware-operations-roadmap.md`
-- `docs/context-resource-telemetry-spec.md`
-- `docs/slice-telemetry-model.md`
-- `docs/waste-heuristics.md`
-- `docs/progressive-policy-signals.md`
+- `docs/roadmaps/resource-aware-operations-roadmap.md`
+- `docs/contracts/context-resource-telemetry-spec.md`
+- `docs/contracts/slice-telemetry-model.md`
+- `docs/reference/waste-heuristics.md`
+- `docs/concepts/progressive-policy-signals.md`
 - `examples/resource-aware-operations/policy-signals-review-example.md`
-- `docs/runtime-adapter-contract.md`
+- `docs/contracts/runtime-adapter-contract.md`
 - `examples/resource-aware-operations/minimal-runtime-adapter-example.md`
-- `docs/agent-runtime-decision-guide.md`
+- `docs/guides/agent-runtime-decision-guide.md`
 - `examples/resource-aware-operations/agent-runtime-decision-example.md`
 
 These are meant to establish the first observability spine, the first advisory signal layer, a minimal runtime contract, and an advisory fit layer before any benchmark or learning-layer work is attempted.
