@@ -88,8 +88,8 @@ describe("S46 Dependabot cycle closure reconciliation", () => {
 
     expect(usageIndex).toContain("s46-dependabot-cycle-closure-reconciliation.json");
     expect(backlog).toContain("### S46 — Dependabot cycle closure reconciliation");
-    expect(backlog).toContain("**Status:** `in review`.");
-    expect(systemState).toContain("S46 Dependabot cycle closure reconciliation is in review");
+    expect(backlog).toContain("**Status:** `delivered` by AletheIA PR #356.");
+    expect(systemState).toContain("S46 Dependabot cycle closure reconciliation is delivered");
     expect(changelog).toContain("reconcile the completed Dependabot maintenance cycle");
   });
 });
