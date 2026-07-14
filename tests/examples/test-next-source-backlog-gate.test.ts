@@ -94,7 +94,7 @@ describe("S49 next-source backlog gate", () => {
 
     expect(readinessIndex).toContain("s49-next-source-gate.json");
     expect(backlog).toContain("### S49 — Next-source backlog gate");
-    expect(backlog).toContain("**Status:** `in review`.");
-    expect(systemState).toContain("S49 Next-source backlog gate is in review");
+    expect(backlog).toContain("**Status:** `delivered` by AletheIA PR #362.");
+    expect(systemState).toContain("S49 Next-source backlog gate is delivered");
   });
 });

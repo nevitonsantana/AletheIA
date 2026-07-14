@@ -384,10 +384,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA backlog planning and source-intake boundary
 - **Covers:** criteria for what may safely reopen the next backlog round after S48 without inventing implementation.
 - **Dependencies:** S47 Backlog development measurement readiness, S48 Backlog development descriptive snapshot, S35/S37/S39 domain-governance evidence boundaries and current `Active: none` posture.
-- **Status:** `in review`.
+- **Status:** `delivered` by AletheIA PR #362.
 - **Non-goals:** S18 activation, success rates, productivity ranking, value/cost scoring, work-unit calibration, dashboards, collectors, scanners, policy engines, runtime enforcement, schemas, Runtime 2.0 implementation, new domain packs, automatic classification, Adaptive Skills changes or treating planning/templates as real usage evidence.
 - **Acceptance:** define admissible source kinds, non-triggers and required handling for the next backlog round; keep future development unblocked only when a real source appears.
-- **Evidence:** [`s49-next-source-gate.json`](../../examples/backlog-readiness/s49-next-source-gate.json) records the next-source gate and preserves existing blockers.
+- **Evidence:** AletheIA PR #362 / `56b4113`; [`s49-next-source-gate.json`](../../examples/backlog-readiness/s49-next-source-gate.json) records the next-source gate and preserves existing blockers.
 
 ### S0 — Integrate skill execution context
 
