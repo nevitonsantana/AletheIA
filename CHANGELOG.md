@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- repair stale documentation references in the logs/handoffs policy and Crisis Monitor overlay pilot handoff so local Markdown links resolve without reintroducing presets or cross-repo skill paths
+
 - reconcile the completed Dependabot maintenance cycle for `@types/node`, Vite and TypeScript with source-backed governance documentation; README remains current and no runtime, scanner, policy engine or schema is introduced
 
 - expand the canonical AletheIA + Adaptive Skills evolution backlog to v0.2 with P10 Work Observatory, P11 Cognitive Documentation & Continuity, and a versioned non-normative ecosystem territory map; no runtime, schema, collector or dashboard is introduced
