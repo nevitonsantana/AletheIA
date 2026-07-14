@@ -10,5 +10,5 @@ Previously located in `docs/aletheia/closeouts/` and `docs/hermes/`. Moved here 
 
 | Document | What it closes |
 |---|---|
-| [2026-06-15-visual-operations-phase-closeout.md](2026-06-15-visual-operations-phase-closeout.md) | Visual Operations docs-first contracts, real pilots, projector, local CLI, and CI snapshot gate |
-| [2026-05-19-spec-planning-cross-repo-closeout.md](2026-05-19-spec-planning-cross-repo-closeout.md) | AletheIA and Adaptive Skills planning/specification facilitation alignment |
+| [06-15-visual-operations-phase-closeout.md](06-15-visual-operations-phase-closeout.md) | Visual Operations docs-first contracts, real pilots, projector, local CLI, and CI snapshot gate |
+| [05-19-spec-planning-cross-repo-closeout.md](05-19-spec-planning-cross-repo-closeout.md) | AletheIA and Adaptive Skills planning/specification facilitation alignment |

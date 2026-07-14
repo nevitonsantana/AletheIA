@@ -11,7 +11,7 @@
 
 ## 1. Context
 
-AletheIA was developed against a single consumer project — **Crisis Monitor** — used as sandbox throughout its formative phase. That project shaped the canonical vocabulary, the slice/handoff patterns, the closeout templates, and the pilots in [`docs/pilots/`](../pilots/). The shaping is real and useful, but it leaves a residue: Crisis Monitor appears as the implicit reference example in canonical content, and a new reader cannot always tell whether a given decision is general or Crisis-Monitor-specific.
+AletheIA was developed against a single consumer project — **Crisis Monitor** — used as sandbox throughout its formative phase. That project shaped the canonical vocabulary, the slice/handoff patterns, the closeout templates, and the pilots in [`docs/pilots/README.md`](../pilots/README.md). The shaping is real and useful, but it leaves a residue: Crisis Monitor appears as the implicit reference example in canonical content, and a new reader cannot always tell whether a given decision is general or Crisis-Monitor-specific.
 
 The 2026-05-21 cross-repo plan declares the soft-launch goal — adopting AletheIA inside the author's company alongside BMAD/SDD — which forces this question: *is AletheIA a Crisis-Monitor framework that pretends to be general, or a general framework that was first validated on Crisis Monitor?*
 
@@ -25,7 +25,7 @@ Both readings are possible from the current state of `docs/`. The reading must b
 
 A piece of content belongs in **canonical layer** (`docs/concepts/`, `docs/contracts/`, `docs/guides/`, `docs/adr/`) only if it remains true after substituting Crisis Monitor for any other domain (software product, design system, data pipeline, operations runbook, regulatory program, etc.).
 
-A piece of content belongs in **example layer** (`docs/pilots/`, `docs/examples/`, case studies) when it depends on Crisis-Monitor-specific facts, vocabulary, stakeholders, or incidents.
+A piece of content belongs in **example layer** (`docs/pilots/README.md`, `docs/examples/`, case studies) when it depends on Crisis-Monitor-specific facts, vocabulary, stakeholders, or incidents.
 
 When an artifact mixes both, it is mis-factored: separate the canonical insight from the Crisis-Monitor illustration, place each in its layer, and link.
 
@@ -36,7 +36,7 @@ For any canonical document, the test is: *if a new adopter from a different doma
 ### 2.3 What this is not
 
 - This is **not** a requirement to produce a fictional second case study for balance. Declared agnosticism plus first-validation transparency is sufficient until soft-launch produces real cases.
-- This is **not** a removal of Crisis Monitor content. The case study is preserved as labeled evidence in [`docs/pilots/`](../pilots/) and (after Epic 2) in `docs/examples/`.
+- This is **not** a removal of Crisis Monitor content. The case study is preserved as labeled evidence in [`docs/pilots/README.md`](../pilots/README.md) and (after Epic 2) in `docs/examples/`.
 - This is **not** a claim that *any* domain is equally well-supported today. The claim is that nothing in the *framework* prevents another domain; the framework was *exercised* on one.
 
 ## 3. Consequences

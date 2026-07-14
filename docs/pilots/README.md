@@ -4,7 +4,7 @@ Real adoption evidence, operation records, and case reports. These answer "what 
 
 > **Pilots are labeled field evidence — not canonical content.** AletheIA is domain-agnostic (see [ADR-006](../adr/ADR-006-domain-agnosticism.md)). The pilots below were the first concrete instances of the patterns the framework codifies; they document *what happened*, not *what must happen*. Crisis Monitor is the first validation case, not the canonical reference — other consumer projects across other domains are expected.
 
-Operation closeouts (session/task records from Hermes and other runtimes) live in [`closeouts/`](closeouts/).
+Operation closeouts (session/task records from Hermes and other runtimes) live in [`closeouts/`](closeouts/README.md).
 
 **What NOT to put here:** prescriptive guides on how to run a pilot (those go in `guides/`). A pilot document reports what happened; it does not instruct.
 
@@ -23,7 +23,7 @@ Operation closeouts (session/task records from Hermes and other runtimes) live i
 | [visual-operations-usage-pr-201-dogfood.md](visual-operations-usage-pr-201-dogfood.md) | Second dogfood usage record: PR #201 snapshot confirmed static closeout utility and no activation threshold met |
 | [visual-operations-usage-pr-207-dogfood.md](visual-operations-usage-pr-207-dogfood.md) | Third dogfood usage record: PR #207 confirmed human-review unavailable is a source-bound design signal, not a UI failure |
 | [visual-operations-adaptive-skills-dogfood.md](visual-operations-adaptive-skills-dogfood.md) | First full-pipeline checkpoint: a real Adaptive Skills execution record becomes a read-only Resource Observatory signal |
-| [Visual Operations phase closeout](closeouts/2026-06-15-visual-operations-phase-closeout.md) | Closure evidence and activation gates after PRs #193–#197 |
+| [Visual Operations phase closeout](closeouts/06-15-visual-operations-phase-closeout.md) | Closure evidence and activation gates after PRs #193–#197 |
 
 ## Cycle records
 
@@ -44,4 +44,4 @@ The friction log will land here as `pilot-crisis-monitor-overlay-adoption.md` on
 
 ## Closeouts
 
-[`closeouts/`](closeouts/) contains individual operation records from the Hermes pre-pilot and other bounded execution sessions. Each file follows the closeout template.
+[`closeouts/`](closeouts/README.md) contains individual operation records from the Hermes pre-pilot and other bounded execution sessions. Each file follows the closeout template.
