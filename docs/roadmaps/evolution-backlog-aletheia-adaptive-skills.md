@@ -155,6 +155,7 @@ S0-S26 closure + S18/S26 blockers
                                                       -> S49 Next-source backlog gate
                                                           -> S50 Learning Distillation & Context Hygiene Addendum v0.7 intake review
                                                               -> S51 Restart Package learning and context hygiene compatibility review
+                                                                  -> S52 AletheIA to Adaptive Skills evolution bridge compatibility review
 ```
 
 S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe organizational slice because it reconciles new source packs before any implementation. S20 and S21 should precede new skill creation, broader loops, agents or runtime surfaces. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10/P12, P13 and P18 do not reopen live importers, runtime collection, learning automation or new dashboards through this backlog update.
@@ -684,6 +685,16 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Acceptance:** add a manual optional learning/context-hygiene compatibility block to the existing Restart Package guidance and template while preserving Restart Package as the only task-level continuity artifact.
 - **Evidence:** AletheIA PR #367 / `0860531`; `docs/guides/slice-finalization-and-restart.md`, `starter-pack/templates/slice-finalization-review-template.md` and continuity tests.
 
+### S52 — AletheIA to Adaptive Skills evolution bridge compatibility review
+
+- **Repository / layer:** AletheIA skill evolution governance
+- **Covers:** P24-R2 AletheIA to Adaptive Skills evolution bridge as a compatibility extension to the existing Skill Evolution Validation Contract.
+- **Dependencies:** S50 delivered intake, S51 Restart Package compatibility review and existing Skill Catalog Governance / Skill Evolution Validation contracts.
+- **Status:** `in-review` by this slice.
+- **Non-goals:** changing Adaptive Skills, creating skills, automatic skill mutation, memory writeback, canonical schema adoption, collectors, dashboards, S18 activation or Runtime 2.0 implementation.
+- **Acceptance:** record the manual routing categories and evidence requirements for turning Work Slice learning into an Adaptive Skills evolution signal while preserving proposal/human-review/PR governance.
+- **Evidence:** `docs/contracts/skill-evolution-validation-contract.md` and contract tests.
+
 ## Requirement traceability matrix
 
 The identifiers below preserve requirement families. The complete pack remains authoritative for detailed wording, examples and edge cases.
@@ -769,7 +780,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P23-R1 Resource-aware next-signal review | Resource-aware next-signals roadmap | `delivered` | S31 | Reviewed repeated evidence without activating S18 or benchmarks. |
 | P1/P3/P10/P11-RX Observatory maturity | Existing partial/deferred observability lines | `delivered` | S32 | Maturity review delivered a no-build/refine-when-needed decision; collectors, dashboards and telemetry remain gated by repeated source-backed need. |
 | P24-R1 Learning distillation and context hygiene | Learning Distillation & Context Hygiene Addendum v0.7 README/PRD/SDD | `delivered` for compatibility | S50/S51 | S50 registers v0.7 as current source; S51 delivers the smallest Restart Package compatibility extension without automation or new memory surfaces. |
-| P24-R2 AletheIA to Adaptive Skills evolution bridge | v0.7 bridge policy | `delivered` for intake | S50 | Candidate signals remain proposals; no automatic skill mutation or writeback is authorized. |
+| P24-R2 AletheIA to Adaptive Skills evolution bridge | v0.7 bridge policy | `in-review` for compatibility | S50/S52 | Candidate signals remain evidence or proposal candidates; S52 reviews manual routing categories without automatic skill mutation or writeback. |
 | P24-R3 Minimum sufficient solution guardrail | v0.7 guardrail docs/schema | `delivered` for intake | S50 | Complexity guardrail is recorded as a candidate planning constraint; no standalone skill or enforcement surface is created by intake. |
 
 ## Per-pack preservation appendix
@@ -914,7 +925,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 - **Status:** `delivered` for intake only; v0.7 is the current package and supersedes v0.1-v0.6 variants of the same addendum.
 - **Guardrails:** preserve validated learning, not raw conversation history; route learning only after evidence, classification and destination review; prevent new references from silently hijacking active work; treat complexity as cost before adding new surfaces.
-- **Candidate destinations:** existing Restart Package, SYSTEM_STATE index, finalization guidance, AletheIA-to-Adaptive-Skills evolution signals and future source-backed backlog slices. S51 reviews the Restart Package compatibility destination first.
+- **Candidate destinations:** existing Restart Package, SYSTEM_STATE index, finalization guidance, AletheIA-to-Adaptive-Skills evolution signals and future source-backed backlog slices. S51 reviews the Restart Package compatibility destination first; S52 reviews the Adaptive Skills evolution-signal bridge.
 - **Dependencies:** S2 reference intake, S49 next-source gate, existing continuity/finalization contracts and Adaptive Skills PR-governed evolution.
 - **Deferred:** learning automation, automatic memory writeback, canonical schema adoption, new skills, Adaptive Skills mutations, dashboards, collectors and runtime enforcement.
 
