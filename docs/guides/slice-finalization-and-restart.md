@@ -226,6 +226,24 @@ These are compatibility fields inside the canonical Restart Package. They do not
 
 After resume, the receiving agent must state what is known from the package, what is missing, what was reloaded, what is safe next and what still requires review.
 
+### Learning and context hygiene compatibility
+
+S50 registered the Learning Distillation & Context Hygiene Addendum v0.7 as an intake-only source. The compatible minimum is to extend the Restart Package review questions, not to create a new memory surface, schema, classifier or automation.
+
+When a slice produces lessons that might affect the next execution, the Restart Package may preserve a compact optional block with:
+
+- validated learnings that should guide the next execution;
+- learnings that remain local history only;
+- decisions or assumptions that must not be reopened;
+- claims that require verification before reuse;
+- context intentionally discarded;
+- user-facing explanation of the learning;
+- technical review still required.
+
+Do not carry a learning forward merely because it appeared in the previous transcript. Carry it forward only when it has evidence or review, an explicit destination and enough explanation for the responsible user to understand the consequence.
+
+This is an advisory compatibility review. It does not authorize automatic learning classification, memory writeback, canonical schema adoption, Adaptive Skills mutation, collectors, dashboards or runtime enforcement.
+
 ### New execution-surface rule
 
 The restart package must explicitly say:

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add a manual Restart Package learning/context-hygiene compatibility review from S50 without introducing automation, memory writeback, schemas or Adaptive Skills changes
+
 - close S50 after the Learning Distillation & Context Hygiene Addendum v0.7 intake merge, returning Active to none while keeping implementation blocked behind future bounded review
 
 - register Learning Distillation & Context Hygiene Addendum v0.7 as an intake-only backlog source, marking older v0.1-v0.6 variants as superseded without implementing learning automation, memory writeback, schemas or Adaptive Skills changes
