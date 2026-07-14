@@ -117,7 +117,7 @@ describe("S48 backlog development descriptive snapshot", () => {
 
     expect(readinessIndex).toContain("s48-backlog-development-descriptive-snapshot.json");
     expect(backlog).toContain("### S48 — Backlog development descriptive snapshot");
-    expect(backlog).toContain("**Status:** `in review`.");
-    expect(systemState).toContain("S48 Backlog development descriptive snapshot is in review");
+    expect(backlog).toContain("**Status:** `delivered` by AletheIA PR #360.");
+    expect(systemState).toContain("S48 Backlog development descriptive snapshot is delivered");
   });
 });

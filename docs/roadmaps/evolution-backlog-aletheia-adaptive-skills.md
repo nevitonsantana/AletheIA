@@ -373,10 +373,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA backlog planning and descriptive measurement record
 - **Covers:** a first S47-compliant descriptive snapshot of the recent S40-S47 backlog-development cycle.
 - **Dependencies:** S47 Backlog development measurement readiness and delivered S40-S47 backlog slices.
-- **Status:** `in review`.
+- **Status:** `delivered` by AletheIA PR #360.
 - **Non-goals:** S18 activation, success rates, productivity ranking, value/cost scoring, work-unit calibration, dashboards, collectors, scanners, policy engines, runtime enforcement, schemas, Runtime 2.0 implementation, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** record only descriptive counts and source refs for the cycle; keep comparison group unavailable; confirm no success-rate, ranking or efficiency claim is derived.
-- **Evidence:** [`s48-backlog-development-descriptive-snapshot.json`](../../examples/backlog-readiness/s48-backlog-development-descriptive-snapshot.json) records the bounded descriptive snapshot.
+- **Evidence:** AletheIA PR #360 / `ae6bb7b`; [`s48-backlog-development-descriptive-snapshot.json`](../../examples/backlog-readiness/s48-backlog-development-descriptive-snapshot.json) records the bounded descriptive snapshot.
 
 ### S0 — Integrate skill execution context
 
