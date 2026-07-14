@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S55 after the Blume documentation-site spike merge, returning Active to none while keeping official publishing gated by link validation and source coverage
+
 - add an isolated Blume documentation-site spike for the existing AletheIA Markdown corpus, with build support and explicit validation gaps before any official publishing decision
 
 - close S54 after the Resource Observatory interface refinement merge, returning Active to none while preserving read-only/non-dashboard boundaries
