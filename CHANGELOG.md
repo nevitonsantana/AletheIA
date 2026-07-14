@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add S57 Blume publication-source map to decide official docs coverage before link repair or GitHub Pages deployment
+
 - close S56 after the Blume validation/source-coverage triage merge, returning Active to none while keeping publishing blocked pending source mapping
 
 - add S56 Blume validation and source-coverage triage to classify publication blockers before any GitHub Pages or official documentation deployment
