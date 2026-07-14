@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add an isolated Blume documentation-site spike for the existing AletheIA Markdown corpus, with build support and explicit validation gaps before any official publishing decision
+
 - close S54 after the Resource Observatory interface refinement merge, returning Active to none while preserving read-only/non-dashboard boundaries
 
 - polish the Resource Observatory visual treatment with richer read-only cards, premium depth and clearer signal hierarchy without changing data, sources or authority

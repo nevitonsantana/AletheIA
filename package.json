@@ -26,7 +26,10 @@
     "test": "vitest run && pnpm --filter @aletheia/mission-control test",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest",
-    "test:all": "pnpm run check:governance && pnpm run test"
+    "test:all": "pnpm run check:governance && pnpm run test",
+    "docs:dev": "pnpm --filter @aletheia/docs dev",
+    "docs:build": "pnpm --filter @aletheia/docs build",
+    "docs:validate": "pnpm --filter @aletheia/docs validate"
   },
   "devDependencies": {
     "@types/node": "^26.1.1",
