@@ -80,5 +80,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-14
-- **Evidence baseline:** AletheIA `2029463` after PR #372 closed S53; Adaptive Skills `acba2de` after PR #72 dependency maintenance
-- **Review trigger:** S54 opens a read-only Observatory interface refinement from the existing S32 no-build/refine-when-needed decision
+- **Evidence baseline:** AletheIA `c8a061e` after PR #375 closed S54; Adaptive Skills `acba2de` after PR #72 dependency maintenance
+- **Review trigger:** S54 is closed after the read-only Resource Observatory interface refinement delivered by PR #373 and PR #374, with Active returned to none by PR #375
