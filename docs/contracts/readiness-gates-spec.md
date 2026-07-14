@@ -105,6 +105,24 @@ Healthy outcome:
 
 - the slice is not obviously over-allocated or under-allocated
 
+
+### 6. Minimum sufficient solution is justified
+
+Ask before adding a new surface, layer, contract, skill, dependency, schema, dashboard, collector, automation, or governance artifact:
+
+- does this need to exist for the current slice?
+- can an existing asset solve it?
+- can a small extension to an existing asset solve it?
+- is the escalation justified by evidence, risk, recurrence, validation, portability, or explicit human choice?
+
+Healthy outcome:
+
+- complexity is treated as cost before it enters the plan
+- new surfaces appear only when smaller options are insufficient or unsafe
+- the reviewer can explain the trade-off in plain language
+
+This is a manual guardrail, not a blocker engine. It does not authorize schemas, dashboards, collectors, policy engines, automatic classification, skill mutation, Runtime 2.0 implementation, or S18 activation.
+
 ---
 
 ## Gate outcomes
@@ -131,6 +149,7 @@ For `Lite`, the bar is usually:
 - context minimum exists
 - decision is clear enough
 - runtime fit is acceptable enough
+- minimum sufficient solution is justified when new surfaces or complexity are proposed
 
 ### Standard
 
@@ -140,6 +159,7 @@ For `Standard`, the bar is usually:
 - decision is clear enough
 - risk is mapped enough
 - runtime fit is acceptable enough
+- minimum sufficient solution is justified when new surfaces or complexity are proposed
 
 ### High-Assurance
 
@@ -150,6 +170,7 @@ For `High-Assurance`, the bar is usually:
 - risk is mapped enough
 - handoff is usable enough when a boundary is likely
 - runtime fit is acceptable enough
+- minimum sufficient solution is justified when new surfaces or complexity are proposed
 
 ---
 
@@ -161,7 +182,7 @@ Examples:
 
 - context inflation warning -> gate 1 deserves review
 - retry waste warning -> gate 5 deserves review
-- weak expansion rationale -> gates 1 and 2 deserve review
+- weak expansion rationale -> gates 1, 2 and 6 deserve review
 - handoff inflation warning -> gate 4 deserves review
 
 Signals do not replace judgment.

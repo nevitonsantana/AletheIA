@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add a manual minimum-sufficient-solution readiness guardrail from S50 without creating schemas, skills, automation, dashboards or enforcement
+
 - close S52 after the AletheIA-to-Adaptive-Skills evolution bridge review merge, returning Active to none and preserving blocked mutation boundaries
 
 - add a manual AletheIA-to-Adaptive-Skills evolution bridge review from S50 without mutating Adaptive Skills or authorizing automatic skill changes
