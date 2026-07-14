@@ -727,6 +727,16 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Acceptance:** prove whether Blume can build the existing docs corpus from an isolated package; record build/validation gaps before any official-docs publishing decision.
 - **Evidence:** `apps/docs`, `pnpm run docs:build`, `pnpm run docs:validate`, Blume docs at `https://useblume.dev/` and `https://useblume.dev/docs/quickstart`.
 
+### S56 — Blume validation and source-coverage triage
+
+- **Repository / layer:** AletheIA documentation tooling
+- **Covers:** Source-backed classification of Blume `docs:validate` failures before any official documentation publishing decision.
+- **Dependencies:** S55 Blume docs shell spike.
+- **Status:** `in-review` by this slice.
+- **Non-goals:** publishing GitHub Pages, fixing all links at once, broad documentation rewrite, automatic documentation generation, dashboards, collectors, scoring, ranking, S18 metrics, Runtime 2.0 behavior or Adaptive Skills mutation.
+- **Acceptance:** record the validation failure categories and define a safe next-step sequence for publication-source mapping and later link repair.
+- **Evidence:** `docs/reports/blume-validation-triage-s56.md`, `pnpm run docs:validate`.
+
 ## Requirement traceability matrix
 
 The identifiers below preserve requirement families. The complete pack remains authoritative for detailed wording, examples and edge cases.
@@ -786,7 +796,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P11-R3 Continuity Capsule and resume check | P11 continuity policy | `delivered` | S15 | Continuity fields extend Restart Package and its post-resume check; no competing artifact or lifecycle was created. |
 | P11-R4 Per-repository SYSTEM_STATE | P11 system-state proposal | `delivered` | S15 | Both repositories maintain compact validated first-load indexes; contracts and evidence remain authoritative. |
 | P11-R5 Explainable language and cognitive boundaries | P11 language policy | `delivered` | S17 | Confirmed depth preserves precision and requires technical review beyond the user's safe boundary. |
-| P11-R6 Documentation-health projection | P11 integration map | `delivered` as docs shell spike; publishing gated | S55 | S55 proved an isolated static documentation shell can build from existing Markdown; publishing, automatic mutation and documentation-health projection remain blocked until link/source coverage is resolved or explicitly accepted. |
+| P11-R6 Documentation-health projection | P11 integration map | `in-review` for validation triage | S55, S56 | S55 proved an isolated static documentation shell can build from existing Markdown; S56 classifies validation/source-coverage gaps before any publishing, automatic mutation or documentation-health projection. |
 | P13-R1 Domain Expertise Brief | P13 PRD/SDD | `delivered` | S25 | Capture human domain rules and edge cases before execution; do not replace human authority. |
 | P13-R2 Evidence-Based Learning Record | P13 schemas/policies | `delivered` | S25 | Record hypothesis, observed result, surprise and future recommendation as evidence, not self-evolution. |
 | P13-R3 Capability fitness and learning dashboards | P13 metrics | `deferred` | Post-S25 evidence gate | No ranking or automation until comparable reviewed records exist. |

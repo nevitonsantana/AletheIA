@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add S56 Blume validation and source-coverage triage to classify publication blockers before any GitHub Pages or official documentation deployment
+
 - close S55 after the Blume documentation-site spike merge, returning Active to none while keeping official publishing gated by link validation and source coverage
 
 - add an isolated Blume documentation-site spike for the existing AletheIA Markdown corpus, with build support and explicit validation gaps before any official publishing decision
