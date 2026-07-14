@@ -701,10 +701,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA readiness and planning governance
 - **Covers:** P24-R3 minimum sufficient solution guardrail as a compatibility extension to readiness gates.
 - **Dependencies:** S50 delivered intake and existing Readiness Gates / Work Slice Spec Bundle guidance.
-- **Status:** `in-review` by this slice.
+- **Status:** `delivered` by AletheIA PR #371
 - **Non-goals:** new schemas, new skills, automatic classification, policy engines, collectors, dashboards, Runtime 2.0 implementation, S18 activation or Adaptive Skills mutation.
 - **Acceptance:** record a manual readiness gate and template fields requiring evidence before new complexity enters a Work Slice plan.
-- **Evidence:** `docs/contracts/readiness-gates-spec.md`, `starter-pack/templates/work-slice-readiness-review-template.md` and contract tests.
+- **Evidence:** AletheIA PR #371 / `7554700`; `docs/contracts/readiness-gates-spec.md`, `starter-pack/templates/work-slice-readiness-review-template.md` and contract tests.
 
 ## Requirement traceability matrix
 
@@ -792,7 +792,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P1/P3/P10/P11-RX Observatory maturity | Existing partial/deferred observability lines | `delivered` | S32 | Maturity review delivered a no-build/refine-when-needed decision; collectors, dashboards and telemetry remain gated by repeated source-backed need. |
 | P24-R1 Learning distillation and context hygiene | Learning Distillation & Context Hygiene Addendum v0.7 README/PRD/SDD | `delivered` for compatibility | S50/S51 | S50 registers v0.7 as current source; S51 delivers the smallest Restart Package compatibility extension without automation or new memory surfaces. |
 | P24-R2 AletheIA to Adaptive Skills evolution bridge | v0.7 bridge policy | `delivered` for compatibility | S50/S52 | Candidate signals remain evidence or proposal candidates; S52 delivers manual routing categories without automatic skill mutation or writeback. |
-| P24-R3 Minimum sufficient solution guardrail | v0.7 guardrail docs/schema | `in-review` for compatibility | S50/S53 | Complexity guardrail is reviewed as a manual readiness gate; no standalone skill, schema or enforcement surface is created. |
+| P24-R3 Minimum sufficient solution guardrail | v0.7 guardrail docs/schema | `delivered` for compatibility | S50/S53 | Complexity guardrail is delivered as a manual readiness gate; no standalone skill, schema or enforcement surface is created. |
 
 ## Per-pack preservation appendix
 
@@ -936,7 +936,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 - **Status:** `delivered` for intake only; v0.7 is the current package and supersedes v0.1-v0.6 variants of the same addendum.
 - **Guardrails:** preserve validated learning, not raw conversation history; route learning only after evidence, classification and destination review; prevent new references from silently hijacking active work; treat complexity as cost before adding new surfaces.
-- **Candidate destinations:** existing Restart Package, SYSTEM_STATE index, finalization guidance, AletheIA-to-Adaptive-Skills evolution signals and future source-backed backlog slices. S51 reviews the Restart Package compatibility destination first; S52 reviews the Adaptive Skills evolution-signal bridge; S53 reviews the minimum-sufficient-solution planning guardrail.
+- **Candidate destinations:** existing Restart Package, SYSTEM_STATE index, finalization guidance, AletheIA-to-Adaptive-Skills evolution signals and future source-backed backlog slices. S51 reviewed the Restart Package compatibility destination; S52 reviewed the Adaptive Skills evolution-signal bridge; S53 reviewed the minimum-sufficient-solution planning guardrail.
 - **Dependencies:** S2 reference intake, S49 next-source gate, existing continuity/finalization contracts and Adaptive Skills PR-governed evolution.
 - **Deferred:** learning automation, automatic memory writeback, canonical schema adoption, new skills, Adaptive Skills mutations, dashboards, collectors and runtime enforcement.
 
