@@ -17,6 +17,9 @@ describe("Resource Observatory", () => {
     expect(screen.getByText("Execution efficiency")).toBeInTheDocument();
     expect(screen.getByText("Quality & orchestration")).toBeInTheDocument();
     expect(screen.getAllByRole("button", { name: /provenance/ })).toHaveLength(9);
+    expect(screen.getByRole("region", { name: "Observatory interpretation guide" })).toBeInTheDocument();
+    expect(screen.getByText("Unavailable is neutral")).toBeInTheDocument();
+    expect(screen.getByText(/cannot approve, rank, collect, or remediate/)).toBeInTheDocument();
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
@@ -29,6 +32,7 @@ describe("Resource Observatory", () => {
     expect(within(inspector).getByText("OBS-COST-∅")).toBeInTheDocument();
     expect(within(inspector).getByText(/does not invent or estimate/)).toBeInTheDocument();
     expect(within(inspector).getByText("unavailable", { selector: ".source-origin" })).toBeInTheDocument();
+    expect(within(inspector).getByText(/Unavailable is neutral:/)).toBeInTheDocument();
   });
 
   it("keeps estimated retry context visibly distinct from reported sources", async () => {

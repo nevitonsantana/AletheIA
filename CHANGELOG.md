@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- refine the existing Resource Observatory interface to make source authority, neutral unavailable state and no-decision authority clearer without adding dashboards, collectors or metrics
+
 - close S53 after the minimum-sufficient-solution readiness guardrail merge, returning Active to none while preserving blocked automation and schema boundaries
 
 - add a manual minimum-sufficient-solution readiness guardrail from S50 without creating schemas, skills, automation, dashboards or enforcement

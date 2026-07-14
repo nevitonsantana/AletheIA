@@ -44,6 +44,7 @@ export function ResourceSignalInspector({ signal, onClose }: ResourceSignalInspe
                   <div><dt>Origin</dt><dd><span className={`source-origin ${signal.origin}`}>{signal.origin}</span></dd></div>
                   <div><dt>Availability</dt><dd>{signal.availability}</dd></div>
                 </dl>
+                {signal.availability === "unavailable" ? <p className="pattern-state-note is-neutral"><strong>Unavailable is neutral:</strong> this card preserves the source gap and does not infer a value.</p> : null}
               </section>
               <section className="inspector-section">
                 <h3>Interpretation</h3>
