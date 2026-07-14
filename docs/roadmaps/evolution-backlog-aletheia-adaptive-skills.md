@@ -150,6 +150,7 @@ S0-S26 closure + S18/S26 blockers
                                           -> S46 Dependabot cycle closure reconciliation
                                               -> S47 Backlog development measurement readiness
                                                   -> S48 Backlog development descriptive snapshot
+                                                      -> S49 Next-source backlog gate
 ```
 
 S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe organizational slice because it reconciles new source packs before any implementation. S20 and S21 should precede new skill creation, broader loops, agents or runtime surfaces. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10/P12, P13 and P18 do not reopen live importers, runtime collection, learning automation or new dashboards through this backlog update.
@@ -377,6 +378,16 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Non-goals:** S18 activation, success rates, productivity ranking, value/cost scoring, work-unit calibration, dashboards, collectors, scanners, policy engines, runtime enforcement, schemas, Runtime 2.0 implementation, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** record only descriptive counts and source refs for the cycle; keep comparison group unavailable; confirm no success-rate, ranking or efficiency claim is derived.
 - **Evidence:** AletheIA PR #360 / `ae6bb7b`; [`s48-backlog-development-descriptive-snapshot.json`](../../examples/backlog-readiness/s48-backlog-development-descriptive-snapshot.json) records the bounded descriptive snapshot.
+
+### S49 — Next-source backlog gate
+
+- **Repository / layer:** AletheIA backlog planning and source-intake boundary
+- **Covers:** criteria for what may safely reopen the next backlog round after S48 without inventing implementation.
+- **Dependencies:** S47 Backlog development measurement readiness, S48 Backlog development descriptive snapshot, S35/S37/S39 domain-governance evidence boundaries and current `Active: none` posture.
+- **Status:** `in review`.
+- **Non-goals:** S18 activation, success rates, productivity ranking, value/cost scoring, work-unit calibration, dashboards, collectors, scanners, policy engines, runtime enforcement, schemas, Runtime 2.0 implementation, new domain packs, automatic classification, Adaptive Skills changes or treating planning/templates as real usage evidence.
+- **Acceptance:** define admissible source kinds, non-triggers and required handling for the next backlog round; keep future development unblocked only when a real source appears.
+- **Evidence:** [`s49-next-source-gate.json`](../../examples/backlog-readiness/s49-next-source-gate.json) records the next-source gate and preserves existing blockers.
 
 ### S0 — Integrate skill execution context
 
