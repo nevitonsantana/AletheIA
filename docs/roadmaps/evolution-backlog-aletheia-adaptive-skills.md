@@ -712,10 +712,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA Mission Control read-only UI
 - **Covers:** P1/P3/P10/P11 Observatory maturity refinement after S32, limited to clearer read-only interpretation of existing sourced signals.
 - **Dependencies:** S32 Observatory maturity review, S49 next-source gate and delivered S50-S53 manual compatibility path.
-- **Status:** `in-review` by this slice.
+- **Status:** `delivered` by PR #373 and PR #374.
 - **Non-goals:** new dashboards, collectors, live importers, ranking, scoring, comparative metrics, S18 activation, Runtime 2.0 implementation, automatic inference, policy engines or new data sources.
-- **Acceptance:** improve the existing Resource Observatory interface so source authority, neutral unavailable state and no-decision authority are more visible without changing projection data or behavior.
-- **Evidence:** `apps/mission-control/src/views/ResourceObservatoryView.tsx`, `ResourceSignalInspector.tsx`, styles and UI tests.
+- **Acceptance:** improved the existing Resource Observatory interface so source authority, neutral unavailable state and no-decision authority are more visible without changing projection data or behavior.
+- **Evidence:** `apps/mission-control/src/views/ResourceObservatoryView.tsx`, `ResourceSignalInspector.tsx`, `apps/mission-control/src/styles.css`, `apps/mission-control/src/features/resource-observatory/ResourceObservatory.test.tsx`, PR #373 and PR #374.
 
 ## Requirement traceability matrix
 
@@ -800,7 +800,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P21-R1 Web/API trust boundaries | Web App Security concept | `delivered` | S29 | Delivered as reusable guidance for client/server, auth, tenant, webhook and artifact-hygiene boundaries. |
 | P22-R1 Constrained adoption evidence loop | Enterprise-readiness roadmap | `delivered` | S30 | Bounded local-trust adoption evidence before enterprise-readiness claims. |
 | P23-R1 Resource-aware next-signal review | Resource-aware next-signals roadmap | `delivered` | S31 | Reviewed repeated evidence without activating S18 or benchmarks. |
-| P1/P3/P10/P11-RX Observatory maturity | Existing partial/deferred observability lines | `in-review` for UI refinement | S32/S54 | S32 delivered no-build/refine-when-needed; S54 refines the existing read-only UI copy/states without collectors, dashboards or telemetry. |
+| P1/P3/P10/P11-RX Observatory maturity | Existing partial/deferred observability lines | `delivered` for UI refinement | S32/S54 | S32 delivered no-build/refine-when-needed; S54 refined the existing read-only UI copy/states and visual hierarchy without collectors, dashboards or telemetry. |
 | P24-R1 Learning distillation and context hygiene | Learning Distillation & Context Hygiene Addendum v0.7 README/PRD/SDD | `delivered` for compatibility | S50/S51 | S50 registers v0.7 as current source; S51 delivers the smallest Restart Package compatibility extension without automation or new memory surfaces. |
 | P24-R2 AletheIA to Adaptive Skills evolution bridge | v0.7 bridge policy | `delivered` for compatibility | S50/S52 | Candidate signals remain evidence or proposal candidates; S52 delivers manual routing categories without automatic skill mutation or writeback. |
 | P24-R3 Minimum sufficient solution guardrail | v0.7 guardrail docs/schema | `delivered` for compatibility | S50/S53 | Complexity guardrail is delivered as a manual readiness gate; no standalone skill, schema or enforcement surface is created. |
