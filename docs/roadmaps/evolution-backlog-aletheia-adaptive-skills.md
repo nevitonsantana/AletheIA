@@ -717,6 +717,16 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Acceptance:** improved the existing Resource Observatory interface so source authority, neutral unavailable state and no-decision authority are more visible without changing projection data or behavior.
 - **Evidence:** `apps/mission-control/src/views/ResourceObservatoryView.tsx`, `ResourceSignalInspector.tsx`, `apps/mission-control/src/styles.css`, `apps/mission-control/src/features/resource-observatory/ResourceObservatory.test.tsx`, PR #373 and PR #374.
 
+### S55 — Blume official docs shell spike
+
+- **Repository / layer:** AletheIA documentation tooling
+- **Covers:** Source-backed evaluation of Blume as a static, AI-ready documentation shell for the existing AletheIA Markdown corpus.
+- **Dependencies:** S41 documentation coherence review, S43 documentation reference integrity repair, S54 closure state and Blume documentation reviewed on 2026-07-14.
+- **Status:** `in-review` by this slice.
+- **Non-goals:** replacing canonical Markdown sources, publishing production docs, changing AletheIA runtime behavior, adding dashboards, collectors, scoring, ranking, S18 metrics, Runtime 2.0 behavior, Adaptive Skills mutation or automatic documentation generation.
+- **Acceptance:** prove whether Blume can build the existing docs corpus from an isolated package; record build/validation gaps before any official-docs publishing decision.
+- **Evidence:** `apps/docs`, `pnpm run docs:build`, `pnpm run docs:validate`, Blume docs at `https://useblume.dev/` and `https://useblume.dev/docs/quickstart`.
+
 ## Requirement traceability matrix
 
 The identifiers below preserve requirement families. The complete pack remains authoritative for detailed wording, examples and edge cases.
@@ -776,7 +786,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P11-R3 Continuity Capsule and resume check | P11 continuity policy | `delivered` | S15 | Continuity fields extend Restart Package and its post-resume check; no competing artifact or lifecycle was created. |
 | P11-R4 Per-repository SYSTEM_STATE | P11 system-state proposal | `delivered` | S15 | Both repositories maintain compact validated first-load indexes; contracts and evidence remain authoritative. |
 | P11-R5 Explainable language and cognitive boundaries | P11 language policy | `delivered` | S17 | Confirmed depth preserves precision and requires technical review beyond the user's safe boundary. |
-| P11-R6 Documentation-health projection | P11 integration map | `deferred` | Post-S16 source evidence | Observatory remains read-only and unavailable-first. |
+| P11-R6 Documentation-health projection | P11 integration map | `in-review` for docs shell spike | S55 | S55 tests a static documentation shell from existing Markdown only; publishing, automatic mutation and documentation-health projection remain blocked until link/source coverage is resolved. |
 | P13-R1 Domain Expertise Brief | P13 PRD/SDD | `delivered` | S25 | Capture human domain rules and edge cases before execution; do not replace human authority. |
 | P13-R2 Evidence-Based Learning Record | P13 schemas/policies | `delivered` | S25 | Record hypothesis, observed result, surprise and future recommendation as evidence, not self-evolution. |
 | P13-R3 Capability fitness and learning dashboards | P13 metrics | `deferred` | Post-S25 evidence gate | No ranking or automation until comparable reviewed records exist. |
