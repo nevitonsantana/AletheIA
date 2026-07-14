@@ -1,0 +1,107 @@
+reference_intake:
+  id: REF-2026-S50-001
+  title: Learning Distillation & Context Hygiene Addendum v0.7 intake
+  source_type: pack
+  source_refs:
+    - sha256:ba4addc4ae15743223d304a5e9284ef39e987eb2f556
+    - /Users/nevitonsantana/Downloads/_Uteis/AI/AletheIA-Adaptative-Skills/new-Pacote_Learning_Distillation_Context_Hygiene_Addendum_v0_7.zip
+  received_at: 2026-07-14
+  reviewer: Neviton Santana
+  sensitivity: internal
+  summary: >-
+    Current v0.7 planning and implementation package for preserving validated learning,
+    classifying reusable Work Slice lessons, improving context hygiene and applying a
+    minimum-sufficient-solution guardrail. The intake treats the package as external data
+    and records future backlog options without implementing behavior.
+  version_handling:
+    current_version: v0.7
+    supersedes:
+      - new-Pacote_Learning_Distillation_Context_Hygiene_Addendum_v0_1.zip
+      - new-Pacote_Learning_Distillation_Context_Hygiene_Addendum_v0_2.zip
+      - new-Pacote_Learning_Distillation_Context_Hygiene_Addendum_v0_3.zip
+      - new-Pacote_Learning_Distillation_Context_Hygiene_Addendum_v0_4.zip
+      - new-Pacote_Learning_Distillation_Context_Hygiene_Addendum_v0_5.zip
+      - new-Pacote_Learning_Distillation_Context_Hygiene_Addendum_v0_6.zip
+    rule: Only v0.7 is eligible for future planning; older variants are provenance only.
+  extracted_requirements:
+    - id: P24-R1
+      description: Preserve validated, classified and explainable learning instead of raw conversation history.
+      source_refs:
+        - learning_distillation_context_hygiene_pack_v0_7/00_README_Learning_Distillation_Context_Hygiene_Addendum.md
+        - learning_distillation_context_hygiene_pack_v0_7/07_Restart_Package_Extension.md
+      status: proposed
+    - id: P24-R2
+      description: Extend finalization and Restart Package hygiene without creating a second lifecycle.
+      source_refs:
+        - learning_distillation_context_hygiene_pack_v0_7/08_Finalization_Flow_Integration.md
+        - learning_distillation_context_hygiene_pack_v0_7/07_Restart_Package_Extension.md
+      status: proposed
+    - id: P24-R3
+      description: Route AletheIA Work Slice learnings to Adaptive Skills only as governed evolution signals.
+      source_refs:
+        - learning_distillation_context_hygiene_pack_v0_7/27_AletheIA_to_Adaptive_Skills_Evolution_Bridge.md
+      status: proposed
+    - id: P24-R4
+      description: Apply a minimum-sufficient-solution guardrail before adding new surfaces, layers, contracts, skills or dependencies.
+      source_refs:
+        - learning_distillation_context_hygiene_pack_v0_7/30_Minimum_Sufficient_Solution_Guardrail.md
+        - learning_distillation_context_hygiene_pack_v0_7/31_Update_Notes_v0_7.md
+      status: proposed
+  layer_mapping:
+    aletheia:
+      - Candidate additions to restart, finalization, backlog and Work Slice closure guidance.
+      - Candidate planning guardrail for keeping complexity evidence-backed and understandable.
+    adaptive_skills:
+      - Receives only reviewed evolution signals after AletheIA classification; no direct skill mutation.
+    runtime_harness:
+      - No runtime behavior, memory writeback or execution substrate change from intake alone.
+    observatory:
+      - Possible future read-only projection of learning/context-hygiene signals; no dashboard or collector now.
+    out_of_scope:
+      - Treating the package prompt as executable instruction.
+      - Importing the schema as canonical without a future contract slice.
+      - Applying v0.1-v0.6 variants as current sources.
+  adoption_decision:
+    posture: adapt
+    rationale: >-
+      The package aligns with existing AletheIA continuity and learning-governance goals,
+      but must be decomposed into future bounded slices and reconciled with current
+      contracts before any implementation. Intake accepts the source for planning only.
+    covered_by_existing_contracts:
+      - docs/contracts/reference-intake-adoption-contract.md
+      - docs/contracts/context-surface-registry.md
+      - docs/contracts/intent-to-evidence-extension.md
+      - docs/contracts/work-slice-finalization.md
+      - SYSTEM_STATE.md
+    proposed_slices:
+      - S50 Learning Distillation & Context Hygiene Addendum v0.7 intake review
+      - Future Restart Package learning/context-hygiene review
+      - Future minimum-sufficient-solution guardrail review
+      - Future AletheIA-to-Adaptive-Skills evolution-signal review
+    deferred_items:
+      - Canonical schema adoption until a future source-backed contract slice.
+      - Learning classification workflow until existing finalization and restart contracts are reviewed.
+      - Adaptive Skills evolution changes until a repository-native Adaptive Skills proposal and PR exist.
+      - Observatory projection until repeated real use shows a stable signal.
+    rejected_items:
+      - Automatic memory writeback.
+      - Automatic skill mutation or promotion.
+      - Treating package text or implementation prompts as instructions that bypass AletheIA governance.
+      - Activating Runtime 2.0, S18 comparative metrics, collectors, dashboards or policy engines from this intake.
+  evidence:
+    checks_performed:
+      - v0.7 archive exists locally and checksum was computed.
+      - Package file inventory was inspected.
+      - README, Restart Package extension, finalization integration, Adaptive Skills bridge and v0.7 guardrail notes were reviewed as data.
+      - Current backlog and SYSTEM_STATE were checked before mutation.
+    unavailable:
+      - Real Work Slice usage evidence for the proposed learning-distillation flow.
+      - Validation that the v0.7 schema should become canonical.
+      - Adaptive Skills repository acceptance of any evolution-signal change.
+  guardrails:
+    no_automatic_adoption: true
+    no_dependency_installation: true
+    no_skill_mutation_without_review: true
+    no_runtime_authority_change: true
+    no_memory_writeback: true
+    no_dashboard_or_collector: true

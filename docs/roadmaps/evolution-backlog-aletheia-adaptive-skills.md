@@ -22,6 +22,7 @@
 | Lean Skill Doctrine Pack | P17/S20/S22 skill-catalog and lean-implementation source | `7bf139d882afb9475b786eb0d9536b95a44dce0430176b19acd720a1c1f752a8` |
 | AletheIA Runtime 2.0 Pack | P18/S26 strategic runtime north-star source | `ce88479a13a3eeaf0b54ff9eaf291ae2f8add605cdf3d8072e770fd93c51a324` |
 | AletheIA + Adaptive Skills territory map | M1 non-normative north-star source | `906b89e3739c5737f9c683abc6ddc65e6040652105184d4640a4c50a5dc898c2` |
+| Learning Distillation & Context Hygiene Addendum v0.7 | P24/S50 current external reference for learning distillation, restart/context hygiene and minimum-sufficient-solution planning guardrails; supersedes v0.1-v0.6 variants of the same addendum | `ba4addc4ae15743223d304a5e9284ef39e987eb2f556` |
 
 ### v0.4 repository sources
 
@@ -99,6 +100,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P21 — Web App Security & Trust Boundaries | `delivered` | Second domain governance pack | Delivered by S29 as docs-first web/API trust-boundary guidance without scanners, enforcement engines or framework-core expansion. |
 | P22 — Enterprise / Constrained Adoption Evidence | `delivered` | Evidence loop for constrained/local trust-boundary adoption | Delivered by S30 as a bounded evidence-loop record before any enterprise-readiness claim. |
 | P23 — Resource-Aware Next Signals | `delivered` | Watch-list review, not S18 activation | Delivered by S31; evidence quality was reviewed and comparative metrics remain blocked. |
+| P24 — Learning Distillation & Context Hygiene Addendum v0.7 | `in-review` for intake only | Existing Restart Package, SYSTEM_STATE, finalization and Adaptive Skills evolution-signal boundaries | S50 registers v0.7 as the current source, supersedes v0.1-v0.6 variants, and decides future adoption posture without implementing learning automation, memory writeback, new schemas or Adaptive Skills changes. |
 
 ## Dependency graph
 
@@ -151,6 +153,7 @@ S0-S26 closure + S18/S26 blockers
                                               -> S47 Backlog development measurement readiness
                                                   -> S48 Backlog development descriptive snapshot
                                                       -> S49 Next-source backlog gate
+                                                          -> S50 Learning Distillation & Context Hygiene Addendum v0.7 intake review
 ```
 
 S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe organizational slice because it reconciles new source packs before any implementation. S20 and S21 should precede new skill creation, broader loops, agents or runtime surfaces. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10/P12, P13 and P18 do not reopen live importers, runtime collection, learning automation or new dashboards through this backlog update.
@@ -660,6 +663,16 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Acceptance:** one boundary decision states whether Runtime 2.0 remains a north-star, becomes a future track, or is rejected/absorbed into existing harness/runtime boundaries.
 - **Evidence:** [`ADR-016 — Runtime 2.0 Boundary Review`](../adr/ADR-016-runtime-2-boundary-review.md) keeps Runtime 2.0 as a strategic north-star, preserves current AletheIA / Adaptive Skills / runtime-harness boundaries and requires a later explicit implementation decision before code begins.
 
+### S50 — Learning Distillation & Context Hygiene Addendum v0.7 intake review
+
+- **Repository / layer:** AletheIA reference intake and backlog planning
+- **Covers:** P24 learning distillation, context hygiene, Restart Package/finalization extension ideas, AletheIA-to-Adaptive-Skills evolution bridge and minimum-sufficient-solution guardrail.
+- **Dependencies:** S2 reference intake protocol, S49 next-source backlog gate, current Restart Package/SYSTEM_STATE/finalization boundaries and Adaptive Skills governance boundaries.
+- **Status:** `in-review` by this slice.
+- **Non-goals:** implementing learning automation, memory writeback, new runtime behavior, new schemas as canonical contracts, Adaptive Skills changes, collectors, dashboards, policy engines, automatic classification, S18 activation or Runtime 2.0 implementation.
+- **Acceptance:** register the v0.7 package checksum and provenance, mark v0.1-v0.6 variants of the same addendum as superseded, map the source to existing AletheIA/Adaptive Skills boundaries, and record a conservative adoption posture before any implementation proposal.
+- **Evidence:** [`s50-learning-distillation-context-hygiene-intake.yaml`](../../examples/reference-intake/s50-learning-distillation-context-hygiene-intake.yaml) records the source hash, extracted requirement families, layer mapping, deferred implementation items and guardrails.
+
 ## Requirement traceability matrix
 
 The identifiers below preserve requirement families. The complete pack remains authoritative for detailed wording, examples and edge cases.
@@ -744,6 +757,9 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P22-R1 Constrained adoption evidence loop | Enterprise-readiness roadmap | `delivered` | S30 | Bounded local-trust adoption evidence before enterprise-readiness claims. |
 | P23-R1 Resource-aware next-signal review | Resource-aware next-signals roadmap | `delivered` | S31 | Reviewed repeated evidence without activating S18 or benchmarks. |
 | P1/P3/P10/P11-RX Observatory maturity | Existing partial/deferred observability lines | `delivered` | S32 | Maturity review delivered a no-build/refine-when-needed decision; collectors, dashboards and telemetry remain gated by repeated source-backed need. |
+| P24-R1 Learning distillation and context hygiene | Learning Distillation & Context Hygiene Addendum v0.7 README/PRD/SDD | `in-review` | S50 | Intake registers v0.7 as current source and defers implementation until mapped to existing Restart Package, finalization and memory surfaces. |
+| P24-R2 AletheIA to Adaptive Skills evolution bridge | v0.7 bridge policy | `in-review` | S50 | Candidate signals remain proposals; no automatic skill mutation or writeback is authorized. |
+| P24-R3 Minimum sufficient solution guardrail | v0.7 guardrail docs/schema | `in-review` | S50 | Complexity guardrail is recorded as a candidate planning constraint; no standalone skill or enforcement surface is created by intake. |
 
 ## Per-pack preservation appendix
 
@@ -881,6 +897,15 @@ The identifiers below preserve requirement families. The complete pack remains a
 - **Guardrails:** Runtime 2.0 cannot silently move AletheIA from macro-governance into execution substrate ownership.
 - **Destination:** S26 preserves the north-star, rejects immediate implementation and requires a later explicit boundary decision before any runtime track.
 - **Deferred:** runtime kernel, SDK, CLI, event bus, plugin interface, provider adapters and capability runtime.
+
+
+### P24 — Learning Distillation & Context Hygiene Addendum v0.7
+
+- **Status:** `in-review` for intake only; v0.7 is the current package and supersedes v0.1-v0.6 variants of the same addendum.
+- **Guardrails:** preserve validated learning, not raw conversation history; route learning only after evidence, classification and destination review; prevent new references from silently hijacking active work; treat complexity as cost before adding new surfaces.
+- **Candidate destinations:** existing Restart Package, SYSTEM_STATE index, finalization guidance, AletheIA-to-Adaptive-Skills evolution signals and future source-backed backlog slices.
+- **Dependencies:** S2 reference intake, S49 next-source gate, existing continuity/finalization contracts and Adaptive Skills PR-governed evolution.
+- **Deferred:** learning automation, automatic memory writeback, canonical schema adoption, new skills, Adaptive Skills mutations, dashboards, collectors and runtime enforcement.
 
 ### M1 — Ecosystem Territory Map
 
