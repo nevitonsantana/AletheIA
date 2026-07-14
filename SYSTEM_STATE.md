@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S47 Backlog development measurement readiness.
-- **Next dependency path:** S47 defines safe descriptive measurement boundaries for backlog development so the backlog can keep moving without activating S18, success-rate claims, dashboards or comparative metrics.
+- **Active:** none.
+- **Next dependency path:** S47 delivered safe descriptive measurement boundaries for backlog development so the backlog can keep moving without activating S18, success-rate claims, dashboards or comparative metrics.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -56,7 +56,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Documentation health
 
 - README: current for the 1.x operating baseline.
-- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered; S33 Backlog v0.5 readiness review is delivered; S34 Domain Governance Usage Review is delivered; S35 Domain Governance Usage Evidence Capture is delivered; S36 Dependabot Trust-Boundary Usage Review is delivered; S37 Domain Governance Next-Use Readiness Review is delivered; S38 Adaptive Skill Record Trust-Boundary Review is delivered; S39 Domain Governance Evidence Sufficiency Review is delivered; S40 Backlog v0.5 framing review is delivered; S41 Documentation and first-use coherence review is delivered; S42 Backlog v0.6 opportunity inventory is delivered; S43 Roadmap documentation reference integrity repair is delivered; S44 Post-S43 backlog gate review is delivered; S45 Open Dependabot trust-boundary review is delivered; S46 Dependabot cycle closure reconciliation is delivered; S47 Backlog development measurement readiness is in review.
+- Integrated evolution backlog: current as v0.4 after S27; S28 AI Agent Security is delivered; S29 Web App Security is delivered; S30 Enterprise / constrained adoption evidence loop is delivered; S31 Resource-aware next-signals review is delivered; S32 Observatory maturity review is delivered; S33 Backlog v0.5 readiness review is delivered; S34 Domain Governance Usage Review is delivered; S35 Domain Governance Usage Evidence Capture is delivered; S36 Dependabot Trust-Boundary Usage Review is delivered; S37 Domain Governance Next-Use Readiness Review is delivered; S38 Adaptive Skill Record Trust-Boundary Review is delivered; S39 Domain Governance Evidence Sufficiency Review is delivered; S40 Backlog v0.5 framing review is delivered; S41 Documentation and first-use coherence review is delivered; S42 Backlog v0.6 opportunity inventory is delivered; S43 Roadmap documentation reference integrity repair is delivered; S44 Post-S43 backlog gate review is delivered; S45 Open Dependabot trust-boundary review is delivered; S46 Dependabot cycle closure reconciliation is delivered; S47 Backlog development measurement readiness is delivered.
 - Architecture and canonical vocabulary: authoritative; S15 adds a narrow continuity clarification.
 - CHANGELOG and first-use guide coherence: assessed by S41; README reader paths are corrected, while CHANGELOG remains release history rather than current-operating state.
 
@@ -71,7 +71,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Next safe steps
 
-1. Complete S47 as a read-only measurement-readiness slice that allows descriptive backlog-development signals while keeping S18 and comparative metrics blocked.
+1. Use S47's descriptive measurement boundary only for future real backlog-development cycles; keep S18 and comparative metrics blocked until their evidence threshold is met.
 2. Apply the S35 capture template only when future real Work Slices use S28/S29 domain governance packs; S37 remains the readiness gate for future capture.
 3. Keep domain governance source-backed and read-only/advisory; do not treat templates or synthetic examples as real usage evidence or create scanners, policy engines, runtime enforcement or automatic classification.
 4. Use SYSTEM_STATE as an index and load authoritative sources before mutation.
@@ -80,5 +80,5 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Date:** 2026-07-09
-- **Evidence baseline:** AletheIA `a424049` after PR #357 closed S46 status; Adaptive Skills `e434483` after S24 closure
-- **Review trigger:** user request to keep developing backlog plans while measuring only safe backlog-development signals
+- **Evidence baseline:** AletheIA `0d2ba32` after PR #358 delivered S47 backlog development measurement readiness; Adaptive Skills `e434483` after S24 closure
+- **Review trigger:** PR #358 merged; S47 allows descriptive backlog-development measurement while keeping S18 comparative metrics blocked

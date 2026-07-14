@@ -91,7 +91,7 @@ describe("S47 backlog development measurement readiness", () => {
 
     expect(readinessIndex).toContain("s47-backlog-development-measurement-readiness.json");
     expect(backlog).toContain("### S47 — Backlog development measurement readiness");
-    expect(backlog).toContain("**Status:** `in review`.");
-    expect(systemState).toContain("S47 Backlog development measurement readiness is in review");
+    expect(backlog).toContain("**Status:** `delivered` by AletheIA PR #358.");
+    expect(systemState).toContain("S47 Backlog development measurement readiness is delivered");
   });
 });

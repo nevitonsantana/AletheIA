@@ -362,10 +362,10 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Repository / layer:** AletheIA backlog planning and descriptive measurement boundaries
 - **Covers:** which backlog-development signals can be measured safely from delivered PR/work-slice history without activating S18 or creating comparative metrics.
 - **Dependencies:** S18 comparison-readiness review, S44 post-S43 gate, S45/S46 Dependabot cycle evidence and current SYSTEM_STATE posture.
-- **Status:** `in review`.
+- **Status:** `delivered` by AletheIA PR #358.
 - **Non-goals:** S18 activation, success rates, productivity ranking, value/cost scoring, work-unit calibration, dashboards, collectors, scanners, policy engines, runtime enforcement, schemas, Runtime 2.0 implementation, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** separate descriptive operational counters from inadmissible comparative claims; define a minimal future record shape for backlog-development cycles; confirm that this supports continuing backlog development rather than pausing work.
-- **Evidence:** [`s47-backlog-development-measurement-readiness.json`](../../examples/backlog-readiness/s47-backlog-development-measurement-readiness.json) records the measurement boundary and next-safe usage.
+- **Evidence:** AletheIA PR #358 / `0d2ba32`; [`s47-backlog-development-measurement-readiness.json`](../../examples/backlog-readiness/s47-backlog-development-measurement-readiness.json) records the measurement boundary and next-safe usage.
 
 ### S0 — Integrate skill execution context
 
