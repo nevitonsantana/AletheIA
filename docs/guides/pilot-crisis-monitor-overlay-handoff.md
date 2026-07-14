@@ -10,7 +10,7 @@ Closes Epic 7 of the AletheIA documentation-improvement plan. Epics 0–6 produc
 - The concept: [`concepts/operating-overlay.md`](../concepts/operating-overlay.md).
 - The contract: [`contracts/consumer-project-overlay.md`](../contracts/consumer-project-overlay.md).
 - The shim pack: [`starter-pack/harness-shims/claude/`](../../starter-pack/harness-shims/claude/).
-- The preset bundle: [`starter-pack/presets/minimal-overlay/`](../../starter-pack/presets/minimal-overlay/).
+- The minimal overlay example bundle: [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/).
 - The reference example: [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/).
 
 This pilot is the first real-world validation. **Frictions are the expected output, not failures** — the goal is to falsify hypotheses (especially H2 from the plan: "the taxonomy covers ≥90% of docs without forcing").
@@ -19,15 +19,15 @@ This pilot is the first real-world validation. **Frictions are the expected outp
 
 ### 1. Adopt the preset
 
-Copy the bundle into the Crisis Monitor repo root and follow the README:
+Copy the minimal overlay example into the Crisis Monitor repo root and follow the README:
 
 ```bash
-cp -R /path/to/aletheia/starter-pack/presets/minimal-overlay/. /path/to/crisis-monitor/
+cp -R /path/to/aletheia/examples/consumer-overlay-minimal/. /path/to/crisis-monitor/
 cd /path/to/crisis-monitor
 rm README.md manifest.yaml   # source artifacts, not runtime
 ```
 
-Use [`starter-pack/presets/minimal-overlay/README.md`](../../starter-pack/presets/minimal-overlay/README.md) for the substitution steps and variable list.
+Use [`examples/consumer-overlay-minimal/README.md`](../../examples/consumer-overlay-minimal/README.md) for the substitution steps and variable list.
 
 ### 2. Fill the constitution
 

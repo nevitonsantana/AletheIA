@@ -33,8 +33,7 @@ downgrade to capsule + id + version, or refuse. Restrictions never weaken by tra
 ## Restriction labels that must travel
 
 These labels are set by the resolver and the
-[restricted-context-check](../../adaptative-skills/skills/restricted-context-check/SKILL.md)
-skill, and must be preserved on every handoff:
+`restricted-context-check` skill, and must be preserved on every handoff:
 
 | Label | Meaning |
 |---|---|
@@ -74,7 +73,7 @@ When a source conflict is resolved or a review is requested, the **record** cros
 boundaries even though the restricted content does not:
 
 - The conflict record (prevailing / suppressed sources, decision) is preserved and
-  handed forward — see [knowledge-conflict-resolution](../../adaptative-skills/skills/knowledge-conflict-resolution/SKILL.md).
+  handed forward — see the `knowledge-conflict-resolution` skill.
 - A pending human-review request blocks production of a final deliverable until it
   returns; the pending state travels with the handoff.
 
