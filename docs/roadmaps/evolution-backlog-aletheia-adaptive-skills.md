@@ -149,6 +149,7 @@ S0-S26 closure + S18/S26 blockers
                                       -> S45 Open Dependabot trust-boundary review
                                           -> S46 Dependabot cycle closure reconciliation
                                               -> S47 Backlog development measurement readiness
+                                                  -> S48 Backlog development descriptive snapshot
 ```
 
 S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe organizational slice because it reconciles new source packs before any implementation. S20 and S21 should precede new skill creation, broader loops, agents or runtime surfaces. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10/P12, P13 and P18 do not reopen live importers, runtime collection, learning automation or new dashboards through this backlog update.
@@ -366,6 +367,16 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Non-goals:** S18 activation, success rates, productivity ranking, value/cost scoring, work-unit calibration, dashboards, collectors, scanners, policy engines, runtime enforcement, schemas, Runtime 2.0 implementation, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** separate descriptive operational counters from inadmissible comparative claims; define a minimal future record shape for backlog-development cycles; confirm that this supports continuing backlog development rather than pausing work.
 - **Evidence:** AletheIA PR #358 / `0d2ba32`; [`s47-backlog-development-measurement-readiness.json`](../../examples/backlog-readiness/s47-backlog-development-measurement-readiness.json) records the measurement boundary and next-safe usage.
+
+### S48 — Backlog development descriptive snapshot
+
+- **Repository / layer:** AletheIA backlog planning and descriptive measurement record
+- **Covers:** a first S47-compliant descriptive snapshot of the recent S40-S47 backlog-development cycle.
+- **Dependencies:** S47 Backlog development measurement readiness and delivered S40-S47 backlog slices.
+- **Status:** `in review`.
+- **Non-goals:** S18 activation, success rates, productivity ranking, value/cost scoring, work-unit calibration, dashboards, collectors, scanners, policy engines, runtime enforcement, schemas, Runtime 2.0 implementation, new domain packs, automatic classification or Adaptive Skills changes.
+- **Acceptance:** record only descriptive counts and source refs for the cycle; keep comparison group unavailable; confirm no success-rate, ranking or efficiency claim is derived.
+- **Evidence:** [`s48-backlog-development-descriptive-snapshot.json`](../../examples/backlog-readiness/s48-backlog-development-descriptive-snapshot.json) records the bounded descriptive snapshot.
 
 ### S0 — Integrate skill execution context
 

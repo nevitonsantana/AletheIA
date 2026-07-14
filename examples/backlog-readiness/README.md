@@ -9,3 +9,4 @@ This folder contains source-backed reviews that decide whether the integrated ba
 - [`s43-roadmap-reference-integrity-review.json`](s43-roadmap-reference-integrity-review.json) — registra o reparo limitado das referências internas dos roadmaps de adoção restrita e operações resource-aware.
 - [`s44-post-s43-backlog-gate-review.json`](s44-post-s43-backlog-gate-review.json) — registra o gate pós-S43, mantendo o backlog em pausa até existir gatilho real ou evidência explícita.
 - [`s47-backlog-development-measurement-readiness.json`](s47-backlog-development-measurement-readiness.json) — separa medições descritivas seguras do desenvolvimento do backlog de métricas comparativas ainda bloqueadas por S18.
+- [`s48-backlog-development-descriptive-snapshot.json`](s48-backlog-development-descriptive-snapshot.json) — aplica a fronteira S47 ao ciclo S40-S47 com contadores descritivos, sem taxa de sucesso, ranking ou dashboard.
