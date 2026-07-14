@@ -83,4 +83,10 @@ Use the [Cognitive, Intent and Documentation Closure Review](cognitive-documenta
 - **Context Intentionally Discarded:**
 - **Documentation Updates Needed:**
 - **Reload Required Before Acting:**
+- **Validated Learnings for Next Execution:**
+- **Local-History-Only Learnings:**
+- **Do-Not-Reopen Decisions or Assumptions:**
+- **Claims Requiring Verification Before Reuse:**
+- **User-Facing Learning Explanation:**
+- **Technical Review Still Required:**
 <!-- RESTART_PACKAGE_END -->

@@ -50,9 +50,20 @@ describe("S15 SYSTEM_STATE and continuity reconciliation", () => {
       "Context Intentionally Discarded",
       "Documentation Updates Needed",
       "Reload Required Before Acting",
+      "Validated Learnings for Next Execution",
+      "Local-History-Only Learnings",
+      "Claims Requiring Verification Before Reuse",
+      "Technical Review Still Required",
     ]) {
       expect(finalizationTemplate).toContain(`**${field}:**`);
     }
+
+    const guide = fs.readFileSync(
+      path.join(root, "docs/guides/slice-finalization-and-restart.md"),
+      "utf-8",
+    );
+    expect(guide).toContain("Learning and context hygiene compatibility");
+    expect(guide).toContain("does not authorize automatic learning classification");
 
     expect(restartTemplate).toContain("Before acting, perform the post-resume check");
     expect(restartTemplate).toContain("Missing or unavailable");
