@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
@@ -21,6 +23,17 @@ describe("Resource Observatory", () => {
     expect(screen.getByText("Unavailable is neutral")).toBeInTheDocument();
     expect(screen.getByText(/cannot approve, rank, collect, or remediate/)).toBeInTheDocument();
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  });
+
+  it("keeps the signal inspector positioned as a viewport sidesheet", () => {
+    const css = readFileSync(resolve(process.cwd(), "src/styles.css"), "utf8");
+
+    expect(css).toContain(".inspector { position: fixed;");
+    expect(css).toContain("right: 0;");
+    expect(css).toContain("transform: translateX(100%)");
+    expect(css).toContain(".inspector.open { transform: translateX(0); }");
+    expect(css).toContain(".resource-workspace > :not(.inspector):not(.inspector-backdrop)");
+    expect(css).not.toContain(".resource-workspace > * { position: relative;");
   });
 
   it("represents unavailable cost telemetry without inventing a value", async () => {
