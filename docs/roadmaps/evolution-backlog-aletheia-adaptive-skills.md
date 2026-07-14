@@ -679,10 +679,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA finalization/restart guidance
 - **Covers:** P24-R1 learning distillation and context hygiene as a compatibility extension to the existing Restart Package.
 - **Dependencies:** S50 delivered intake, existing slice finalization guidance and Restart Package compatibility fields.
-- **Status:** `in-review` by this slice.
+- **Status:** `delivered` by AletheIA PR #367
 - **Non-goals:** learning automation, automatic classification, memory writeback, canonical schema adoption, Adaptive Skills mutation, collectors, dashboards, S18 activation or Runtime 2.0 implementation.
 - **Acceptance:** add a manual optional learning/context-hygiene compatibility block to the existing Restart Package guidance and template while preserving Restart Package as the only task-level continuity artifact.
-- **Evidence:** `docs/guides/slice-finalization-and-restart.md`, `starter-pack/templates/slice-finalization-review-template.md` and continuity tests.
+- **Evidence:** AletheIA PR #367 / `0860531`; `docs/guides/slice-finalization-and-restart.md`, `starter-pack/templates/slice-finalization-review-template.md` and continuity tests.
 
 ## Requirement traceability matrix
 
@@ -768,7 +768,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P22-R1 Constrained adoption evidence loop | Enterprise-readiness roadmap | `delivered` | S30 | Bounded local-trust adoption evidence before enterprise-readiness claims. |
 | P23-R1 Resource-aware next-signal review | Resource-aware next-signals roadmap | `delivered` | S31 | Reviewed repeated evidence without activating S18 or benchmarks. |
 | P1/P3/P10/P11-RX Observatory maturity | Existing partial/deferred observability lines | `delivered` | S32 | Maturity review delivered a no-build/refine-when-needed decision; collectors, dashboards and telemetry remain gated by repeated source-backed need. |
-| P24-R1 Learning distillation and context hygiene | Learning Distillation & Context Hygiene Addendum v0.7 README/PRD/SDD | `in-review` for compatibility | S50/S51 | S50 registers v0.7 as current source; S51 reviews the smallest Restart Package compatibility extension without automation or new memory surfaces. |
+| P24-R1 Learning distillation and context hygiene | Learning Distillation & Context Hygiene Addendum v0.7 README/PRD/SDD | `delivered` for compatibility | S50/S51 | S50 registers v0.7 as current source; S51 delivers the smallest Restart Package compatibility extension without automation or new memory surfaces. |
 | P24-R2 AletheIA to Adaptive Skills evolution bridge | v0.7 bridge policy | `delivered` for intake | S50 | Candidate signals remain proposals; no automatic skill mutation or writeback is authorized. |
 | P24-R3 Minimum sufficient solution guardrail | v0.7 guardrail docs/schema | `delivered` for intake | S50 | Complexity guardrail is recorded as a candidate planning constraint; no standalone skill or enforcement surface is created by intake. |
 

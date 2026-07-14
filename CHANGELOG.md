@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S51 after the Restart Package learning/context-hygiene compatibility review merge, returning Active to none and preserving blocked automation boundaries
+
 - add a manual Restart Package learning/context-hygiene compatibility review from S50 without introducing automation, memory writeback, schemas or Adaptive Skills changes
 
 - close S50 after the Learning Distillation & Context Hygiene Addendum v0.7 intake merge, returning Active to none while keeping implementation blocked behind future bounded review
