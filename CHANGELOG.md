@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S52 after the AletheIA-to-Adaptive-Skills evolution bridge review merge, returning Active to none and preserving blocked mutation boundaries
+
 - add a manual AletheIA-to-Adaptive-Skills evolution bridge review from S50 without mutating Adaptive Skills or authorizing automatic skill changes
 
 - close S51 after the Restart Package learning/context-hygiene compatibility review merge, returning Active to none and preserving blocked automation boundaries
