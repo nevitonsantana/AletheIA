@@ -66,6 +66,34 @@ this contract governs the **decision**, not the execution.
 
 ---
 
+
+## Work Slice learning bridge
+
+AletheIA may observe a reusable learning during Work Slice closure or restart review. That learning
+can become an Adaptive Skills evolution signal only as evidence, never as a direct catalog change.
+
+Before routing a Work Slice learning toward Adaptive Skills, a reviewer must classify it as one of:
+
+- `observe_only` — keep as AletheIA evidence; not ready for Adaptive Skills.
+- `validation_case_candidate` — convert into a reproducible expectation before any experiment.
+- `module_candidate` — repeated evidence suggests an optional module may be missing.
+- `skill_update_candidate` — an existing skill may need a trigger, verification, anti-pattern, template or example adjustment.
+- `new_skill_candidate` — repeated evidence suggests the current skill boundary may be insufficient.
+
+The routing decision must preserve:
+
+- source Work Slice or Restart Package refs;
+- the distilled learning in user-facing language;
+- evidence quality and confidence;
+- whether the pattern is local, possibly generalizable or generalizable;
+- human review requirement;
+- technical review requirement;
+- the next Adaptive Skills surface, if any.
+
+This bridge does not authorize automatic skill mutation, memory writeback, proposal approval,
+canonical schema adoption or repository writes. The strongest immediate outcome remains an evidence
+record or proposal candidate that must follow the authorized flow below.
+
 ## The authorized flow
 
 ```txt
