@@ -148,6 +148,7 @@ S0-S26 closure + S18/S26 blockers
                                   -> S44 Post-S43 backlog gate review
                                       -> S45 Open Dependabot trust-boundary review
                                           -> S46 Dependabot cycle closure reconciliation
+                                              -> S47 Backlog development measurement readiness
 ```
 
 S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe organizational slice because it reconciles new source packs before any implementation. S20 and S21 should precede new skill creation, broader loops, agents or runtime surfaces. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10/P12, P13 and P18 do not reopen live importers, runtime collection, learning automation or new dashboards through this backlog update.
@@ -355,6 +356,16 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Non-goals:** changing dependencies beyond the already merged PRs, creating scanners, policy engines, runtime enforcement, dashboards, schemas, new domain packs, automatic classification, S18 activation, Runtime 2.0 implementation or Adaptive Skills changes.
 - **Acceptance:** record the closed dependency cycle; update stale “open/future merge” wording; document that README does not need dependency-version changes; add a small CHANGELOG maintenance note; keep `plans/` local/untracked.
 - **Evidence:** AletheIA PR #356 / `7be5ad9`; [`s46-dependabot-cycle-closure-reconciliation.json`](../../examples/domain-governance-usage/s46-dependabot-cycle-closure-reconciliation.json) records the post-merge reconciliation and documentation review.
+
+### S47 — Backlog development measurement readiness
+
+- **Repository / layer:** AletheIA backlog planning and descriptive measurement boundaries
+- **Covers:** which backlog-development signals can be measured safely from delivered PR/work-slice history without activating S18 or creating comparative metrics.
+- **Dependencies:** S18 comparison-readiness review, S44 post-S43 gate, S45/S46 Dependabot cycle evidence and current SYSTEM_STATE posture.
+- **Status:** `in review`.
+- **Non-goals:** S18 activation, success rates, productivity ranking, value/cost scoring, work-unit calibration, dashboards, collectors, scanners, policy engines, runtime enforcement, schemas, Runtime 2.0 implementation, new domain packs, automatic classification or Adaptive Skills changes.
+- **Acceptance:** separate descriptive operational counters from inadmissible comparative claims; define a minimal future record shape for backlog-development cycles; confirm that this supports continuing backlog development rather than pausing work.
+- **Evidence:** [`s47-backlog-development-measurement-readiness.json`](../../examples/backlog-readiness/s47-backlog-development-measurement-readiness.json) records the measurement boundary and next-safe usage.
 
 ### S0 — Integrate skill execution context
 
