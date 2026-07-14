@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- polish the Resource Observatory visual treatment with richer read-only cards, premium depth and clearer signal hierarchy without changing data, sources or authority
+
 - refine the existing Resource Observatory interface to make source authority, neutral unavailable state and no-decision authority clearer without adding dashboards, collectors or metrics
 
 - close S53 after the minimum-sufficient-solution readiness guardrail merge, returning Active to none while preserving blocked automation and schema boundaries
