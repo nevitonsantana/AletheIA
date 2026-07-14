@@ -1,0 +1,79 @@
+{
+  "record_id": "BRG-20260714-001",
+  "review_id": "s49-next-source-gate-2026-07-14",
+  "review_date": "2026-07-14",
+  "work_slice_ref": "S49",
+  "purpose": "Define the next-source gate for opening a future backlog round after S48 without inventing implementation or relaxing existing evidence gates.",
+  "source_refs": {
+    "system_state": "SYSTEM_STATE.md",
+    "integrated_backlog": "docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md",
+    "s47_measurement_readiness": "examples/backlog-readiness/s47-backlog-development-measurement-readiness.json",
+    "s48_descriptive_snapshot": "examples/backlog-readiness/s48-backlog-development-descriptive-snapshot.json",
+    "s35_capture_template": "starter-pack/templates/domain-governance-usage-evidence-template.yaml",
+    "s37_next_use_readiness": "examples/domain-governance-usage/s37-domain-governance-next-use-readiness.json",
+    "s39_evidence_sufficiency": "examples/domain-governance-usage/s39-domain-governance-evidence-sufficiency-review.json"
+  },
+  "current_posture": {
+    "active_work_slice_before_s49": "none",
+    "open_prs_at_review_time": 0,
+    "open_issues_at_review_time": 0,
+    "backlog_end_marker_before_s49": "S48",
+    "s18_status": "deferred",
+    "runtime_2_0_status": "deferred_until_explicit_boundary_decision"
+  },
+  "admissible_next_sources": [
+    {
+      "source_kind": "real_work_slice",
+      "entry_criteria": "A concrete task involving agent behavior, prompt injection, untrusted content, web/API, auth, tenant isolation, secrets or another trust boundary.",
+      "required_handling": "Apply S28/S29 as advisory guidance when relevant and capture S35 evidence only if the pack is actually used."
+    },
+    {
+      "source_kind": "dependency_or_tooling_pr",
+      "entry_criteria": "An opened dependency, lockfile, build-tooling or CI-maintenance PR whose external PR/release-note content must be treated as data, not instructions.",
+      "required_handling": "Review local manifests, diffs and CI before any merge decision; use S28/S29 only when a trust-boundary trigger is present."
+    },
+    {
+      "source_kind": "source_backed_documentation_gap",
+      "entry_criteria": "A current repository document contradicts accepted source records, broken reader paths or SYSTEM_STATE/backlog status.",
+      "required_handling": "Patch only the bounded stale or broken reference; do not broaden into automatic documentation generation."
+    },
+    {
+      "source_kind": "new_external_reference_pack",
+      "entry_criteria": "A new pack, roadmap or reference archive is explicitly supplied or identified as a candidate source.",
+      "required_handling": "Use S2-style intake before adoption; record checksum/provenance and choose adopt/adapt/reference/defer/reject before implementation."
+    },
+    {
+      "source_kind": "future_backlog_development_cycle",
+      "entry_criteria": "A later sequence of delivered backlog slices accumulates enough source-backed activity to describe without comparison claims.",
+      "required_handling": "Reuse S47/S48 descriptive measurement boundaries; keep comparison_group unavailable unless S18 evidence threshold is met."
+    }
+  ],
+  "non_triggers": [
+    "a desire to keep moving without a concrete source",
+    "synthetic examples or templates by themselves",
+    "planning-only records counted as real S28/S29 usage",
+    "descriptive counters treated as success rates or productivity metrics",
+    "dashboard or collector ideas without repeated source-backed need"
+  ],
+  "decision": {
+    "posture": "next_source_gate_defined",
+    "next_safe_step": "Wait for one admissible source before opening a new implementation or evidence slice; planning may continue only as source intake or status hygiene.",
+    "rationale": "After S48, the backlog is current and Active is none. The safe move is to define what can reopen the backlog rather than invent work."
+  },
+  "guardrails": {
+    "activated_s18": false,
+    "created_dashboard": false,
+    "created_collector": false,
+    "created_scanner": false,
+    "created_schema": false,
+    "created_policy_engine": false,
+    "created_runtime_enforcement": false,
+    "authorized_runtime_2_0_implementation": false,
+    "changed_adaptive_skills": false,
+    "created_new_domain_pack": false,
+    "claimed_real_usage_evidence": false,
+    "claimed_success_rate": false,
+    "claimed_productivity_score": false,
+    "claimed_value_metric": false
+  }
+}

@@ -10,3 +10,4 @@ This folder contains source-backed reviews that decide whether the integrated ba
 - [`s44-post-s43-backlog-gate-review.json`](s44-post-s43-backlog-gate-review.json) — registra o gate pós-S43, mantendo o backlog em pausa até existir gatilho real ou evidência explícita.
 - [`s47-backlog-development-measurement-readiness.json`](s47-backlog-development-measurement-readiness.json) — separa medições descritivas seguras do desenvolvimento do backlog de métricas comparativas ainda bloqueadas por S18.
 - [`s48-backlog-development-descriptive-snapshot.json`](s48-backlog-development-descriptive-snapshot.json) — aplica a fronteira S47 ao ciclo S40-S47 com contadores descritivos, sem taxa de sucesso, ranking ou dashboard.
+- [`s49-next-source-gate.json`](s49-next-source-gate.json) — define quais fontes reais podem reabrir o próximo ciclo do backlog sem inventar implementação ou relaxar gates.
