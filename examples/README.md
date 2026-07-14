@@ -77,6 +77,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
   - exemplo sintético S25 que separa regras de especialista humano, limites de decisão e aprendizado evidenciado sem autoevolução
 - `reference-intake/`
   - exemplo S2 de intake do pack de evolução AletheIA + Adaptive Skills, com mapeamento de camadas, decisão adapt/reference/defer/reject e guardrails contra adoção automática
+  - intake S50 do Learning Distillation & Context Hygiene Addendum v0.7, registrando checksum, supersedência v0.1-v0.6 e bloqueios contra automação/memory writeback/skill mutation
 - `coding-safety/`
   - exemplo S9 de plano Standard para coding seguro, declarando base state, escopo, verificação, drift, rollback, stop conditions e revisão humana
 - `agent-roles/`
