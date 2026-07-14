@@ -100,7 +100,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P21 — Web App Security & Trust Boundaries | `delivered` | Second domain governance pack | Delivered by S29 as docs-first web/API trust-boundary guidance without scanners, enforcement engines or framework-core expansion. |
 | P22 — Enterprise / Constrained Adoption Evidence | `delivered` | Evidence loop for constrained/local trust-boundary adoption | Delivered by S30 as a bounded evidence-loop record before any enterprise-readiness claim. |
 | P23 — Resource-Aware Next Signals | `delivered` | Watch-list review, not S18 activation | Delivered by S31; evidence quality was reviewed and comparative metrics remain blocked. |
-| P24 — Learning Distillation & Context Hygiene Addendum v0.7 | `in-review` for intake only | Existing Restart Package, SYSTEM_STATE, finalization and Adaptive Skills evolution-signal boundaries | S50 registers v0.7 as the current source, supersedes v0.1-v0.6 variants, and decides future adoption posture without implementing learning automation, memory writeback, new schemas or Adaptive Skills changes. |
+| P24 — Learning Distillation & Context Hygiene Addendum v0.7 | `delivered` for intake only | Existing Restart Package, SYSTEM_STATE, finalization and Adaptive Skills evolution-signal boundaries | Delivered by S50; v0.7 is registered as the current source, v0.1-v0.6 variants are superseded, and future implementation remains blocked until a separate bounded slice. |
 
 ## Dependency graph
 
@@ -668,10 +668,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA reference intake and backlog planning
 - **Covers:** P24 learning distillation, context hygiene, Restart Package/finalization extension ideas, AletheIA-to-Adaptive-Skills evolution bridge and minimum-sufficient-solution guardrail.
 - **Dependencies:** S2 reference intake protocol, S49 next-source backlog gate, current Restart Package/SYSTEM_STATE/finalization boundaries and Adaptive Skills governance boundaries.
-- **Status:** `in-review` by this slice.
+- **Status:** `delivered` by AletheIA PR #365
 - **Non-goals:** implementing learning automation, memory writeback, new runtime behavior, new schemas as canonical contracts, Adaptive Skills changes, collectors, dashboards, policy engines, automatic classification, S18 activation or Runtime 2.0 implementation.
 - **Acceptance:** register the v0.7 package checksum and provenance, mark v0.1-v0.6 variants of the same addendum as superseded, map the source to existing AletheIA/Adaptive Skills boundaries, and record a conservative adoption posture before any implementation proposal.
-- **Evidence:** [`s50-learning-distillation-context-hygiene-intake.yaml`](../../examples/reference-intake/s50-learning-distillation-context-hygiene-intake.yaml) records the source hash, extracted requirement families, layer mapping, deferred implementation items and guardrails.
+- **Evidence:** AletheIA PR #365 / `808420c`; [`s50-learning-distillation-context-hygiene-intake.yaml`](../../examples/reference-intake/s50-learning-distillation-context-hygiene-intake.yaml) records the source hash, extracted requirement families, layer mapping, deferred implementation items and guardrails.
 
 ## Requirement traceability matrix
 
@@ -757,9 +757,9 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P22-R1 Constrained adoption evidence loop | Enterprise-readiness roadmap | `delivered` | S30 | Bounded local-trust adoption evidence before enterprise-readiness claims. |
 | P23-R1 Resource-aware next-signal review | Resource-aware next-signals roadmap | `delivered` | S31 | Reviewed repeated evidence without activating S18 or benchmarks. |
 | P1/P3/P10/P11-RX Observatory maturity | Existing partial/deferred observability lines | `delivered` | S32 | Maturity review delivered a no-build/refine-when-needed decision; collectors, dashboards and telemetry remain gated by repeated source-backed need. |
-| P24-R1 Learning distillation and context hygiene | Learning Distillation & Context Hygiene Addendum v0.7 README/PRD/SDD | `in-review` | S50 | Intake registers v0.7 as current source and defers implementation until mapped to existing Restart Package, finalization and memory surfaces. |
-| P24-R2 AletheIA to Adaptive Skills evolution bridge | v0.7 bridge policy | `in-review` | S50 | Candidate signals remain proposals; no automatic skill mutation or writeback is authorized. |
-| P24-R3 Minimum sufficient solution guardrail | v0.7 guardrail docs/schema | `in-review` | S50 | Complexity guardrail is recorded as a candidate planning constraint; no standalone skill or enforcement surface is created by intake. |
+| P24-R1 Learning distillation and context hygiene | Learning Distillation & Context Hygiene Addendum v0.7 README/PRD/SDD | `delivered` for intake | S50 | Intake registers v0.7 as current source and defers implementation until mapped to existing Restart Package, finalization and memory surfaces. |
+| P24-R2 AletheIA to Adaptive Skills evolution bridge | v0.7 bridge policy | `delivered` for intake | S50 | Candidate signals remain proposals; no automatic skill mutation or writeback is authorized. |
+| P24-R3 Minimum sufficient solution guardrail | v0.7 guardrail docs/schema | `delivered` for intake | S50 | Complexity guardrail is recorded as a candidate planning constraint; no standalone skill or enforcement surface is created by intake. |
 
 ## Per-pack preservation appendix
 
@@ -901,7 +901,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 
 ### P24 — Learning Distillation & Context Hygiene Addendum v0.7
 
-- **Status:** `in-review` for intake only; v0.7 is the current package and supersedes v0.1-v0.6 variants of the same addendum.
+- **Status:** `delivered` for intake only; v0.7 is the current package and supersedes v0.1-v0.6 variants of the same addendum.
 - **Guardrails:** preserve validated learning, not raw conversation history; route learning only after evidence, classification and destination review; prevent new references from silently hijacking active work; treat complexity as cost before adding new surfaces.
 - **Candidate destinations:** existing Restart Package, SYSTEM_STATE index, finalization guidance, AletheIA-to-Adaptive-Skills evolution signals and future source-backed backlog slices.
 - **Dependencies:** S2 reference intake, S49 next-source gate, existing continuity/finalization contracts and Adaptive Skills PR-governed evolution.

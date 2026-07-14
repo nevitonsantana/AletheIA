@@ -28,7 +28,7 @@ describe('S50 Learning Distillation & Context Hygiene intake', () => {
     expect(intake).toContain('no_memory_writeback: true');
     expect(intake).toContain('no_dashboard_or_collector: true');
     expect(intake).toContain('no_skill_mutation_without_review: true');
-    expect(backlog).toContain('S50 registers v0.7 as the current source');
-    expect(backlog).toContain('without implementing learning automation, memory writeback, new schemas or Adaptive Skills changes');
+    expect(backlog).toContain('Delivered by S50; v0.7 is registered as the current source');
+    expect(backlog).toContain('future implementation remains blocked until a separate bounded slice');
   });
 });
