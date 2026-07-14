@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S54 after the Resource Observatory interface refinement merge, returning Active to none while preserving read-only/non-dashboard boundaries
+
 - polish the Resource Observatory visual treatment with richer read-only cards, premium depth and clearer signal hierarchy without changing data, sources or authority
 
 - refine the existing Resource Observatory interface to make source authority, neutral unavailable state and no-decision authority clearer without adding dashboards, collectors or metrics
