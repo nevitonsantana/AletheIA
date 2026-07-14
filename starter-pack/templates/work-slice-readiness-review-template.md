@@ -48,6 +48,17 @@ Do not redefine the gates here. See `docs/readiness-gates-spec.md` for the canon
 - Evidence:
 - Gap, if any:
 
+### Minimum sufficient solution is justified
+
+Use when the plan adds a new surface, layer, contract, skill, dependency, schema, dashboard, collector, automation, or governance artifact.
+
+- Status: `pass` / `not_needed` / `tighten` / `review`
+- Smallest sufficient option considered:
+- Existing asset or small extension considered:
+- Escalation reason, if any:
+- Complexity added:
+- Evidence or human decision ref:
+
 ---
 
 ## Outcome
