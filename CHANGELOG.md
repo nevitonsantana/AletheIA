@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add S64 Blume asset-check warning readiness review, confirming link validation is clean while official publishing remains gated by asset strategy
+
 - close S63 after the Blume non-Visual-Operations example source-link handling merge, returning Active to none while keeping publishing blocked pending asset-check review
 
 - add S63 Blume non-Visual-Operations example source-link handling, clearing remaining broken-link validation errors while publishing remains gated by asset-check review
