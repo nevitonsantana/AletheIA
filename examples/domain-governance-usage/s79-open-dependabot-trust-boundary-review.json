@@ -1,0 +1,192 @@
+{
+  "review_id": "s79-open-dependabot-trust-boundary-review-2026-07-15",
+  "review_date": "2026-07-15",
+  "work_slice_ref": "S79",
+  "purpose": "Apply S28/S29 as advisory review guidance to currently open Dependabot PRs without updating, merging or changing dependency branches.",
+  "source_refs": {
+    "s35_capture_template": "starter-pack/templates/domain-governance-usage-evidence-template.yaml",
+    "s36_prior_dependabot_review": "examples/domain-governance-usage/s36-dependabot-trust-boundary-review.json",
+    "s45_prior_open_dependabot_review": "examples/domain-governance-usage/s45-open-dependabot-trust-boundary-review.json",
+    "ai_agent_security_pack": "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+    "web_app_security_pack": "docs/domain-governance-packs/web-app-security-trust-boundaries.md",
+    "ci_workflow": ".github/workflows/ci.yml",
+    "docs_pages_workflow": ".github/workflows/docs-pages.yml",
+    "docs_package_manifest": "apps/docs/package.json",
+    "lockfile": "pnpm-lock.yaml"
+  },
+  "external_refs": {
+    "pr_422": "https://github.com/nevitonsantana/AletheIA/pull/422",
+    "pr_423": "https://github.com/nevitonsantana/AletheIA/pull/423",
+    "pr_424": "https://github.com/nevitonsantana/AletheIA/pull/424"
+  },
+  "domain_governance_usage_evidence": {
+    "usage_id": "DGU-20260715-001",
+    "work_slice_ref": "S79",
+    "review_date": "2026-07-15",
+    "reviewer": "codex",
+    "pack_refs": [
+      "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+      "docs/domain-governance-packs/web-app-security-trust-boundaries.md"
+    ],
+    "source_refs": [
+      "starter-pack/templates/domain-governance-usage-evidence-template.yaml",
+      "examples/domain-governance-usage/s36-dependabot-trust-boundary-review.json",
+      "examples/domain-governance-usage/s45-open-dependabot-trust-boundary-review.json",
+      "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+      "docs/domain-governance-packs/web-app-security-trust-boundaries.md",
+      ".github/workflows/ci.yml",
+      ".github/workflows/docs-pages.yml",
+      "apps/docs/package.json",
+      "pnpm-lock.yaml"
+    ],
+    "applicability": {
+      "pack_used": "multiple",
+      "trigger": "untrusted_content_and_web_build_boundary",
+      "used_during": "review",
+      "evidence_source": "real_work_slice"
+    },
+    "usage_observation": {
+      "helped_decision": true,
+      "clarified_boundary": true,
+      "found_gap": true,
+      "blocked_or_changed_work": true,
+      "notes": "S28 classified Dependabot PR bodies, release links and GitHub check output as external/tool data rather than instructions. S29 classified setup-node, Blume and TypeScript as CI/docs-build/compiler trust-boundary surfaces. All three PRs showed green checks at review time, but all were behind main, so merge should wait for branch update and refreshed validation."
+    },
+    "gaps": [
+      {
+        "gap": "PRs #422, #423 and #424 had successful historical CI but mergeStateStatus=BEHIND at review time.",
+        "status": "observed",
+        "source_refs": [
+          "https://github.com/nevitonsantana/AletheIA/pull/422",
+          "https://github.com/nevitonsantana/AletheIA/pull/423",
+          "https://github.com/nevitonsantana/AletheIA/pull/424"
+        ]
+      },
+      {
+        "gap": "This review did not update branches, rerun post-update checks, merge dependencies or validate upstream release content beyond local PR metadata and changed-file surfaces.",
+        "status": "observed",
+        "source_refs": [
+          "examples/domain-governance-usage/s79-open-dependabot-trust-boundary-review.json"
+        ]
+      },
+      {
+        "gap": "Repeated Dependabot evidence remains insufficient to justify reusable controls, success rates, scanners, dashboards or policy engines.",
+        "status": "observed",
+        "source_refs": [
+          "examples/domain-governance-usage/s39-domain-governance-evidence-sufficiency-review.json",
+          "examples/domain-governance-usage/s45-open-dependabot-trust-boundary-review.json"
+        ]
+      }
+    ],
+    "decision": {
+      "posture": "continue_advisory_use",
+      "rationale": "S28/S29 helped separate external automated PR content from local evidence and identified CI/docs-build/compiler boundaries. The safe next dependency action is to update each behind Dependabot branch and require fresh green checks before any merge decision.",
+      "evidence_refs": [
+        "examples/domain-governance-usage/s79-open-dependabot-trust-boundary-review.json",
+        "starter-pack/templates/domain-governance-usage-evidence-template.yaml"
+      ]
+    },
+    "non_goals_confirmed": {
+      "created_new_domain_pack": false,
+      "created_scanner": false,
+      "created_policy_engine": false,
+      "created_runtime_enforcement": false,
+      "created_dashboard": false,
+      "created_schema": false,
+      "changed_adaptive_skills": false,
+      "activated_s18": false,
+      "claimed_success_rate": false,
+      "claimed_security_proof": false,
+      "merged_dependency_pr": false,
+      "updated_dependency_branch": false
+    }
+  },
+  "reviewed_prs": [
+    {
+      "pr": 422,
+      "dependency": "actions/setup-node 6 -> 7",
+      "changed_files": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/docs-pages.yml"
+      ],
+      "boundary": "ci_runtime_and_docs_publication_workflow",
+      "observed_ci_status": "success",
+      "observed_merge_state": "BEHIND",
+      "pack_application": "S28 treats Dependabot text, release notes and check output as external data; S29 treats CI runtime and docs-publication workflow dependency changes as build/deployment trust-boundary surfaces.",
+      "review_outcome": "Evidence captured; update branch and rerun checks before any merge decision."
+    },
+    {
+      "pr": 423,
+      "dependency": "blume 1.0.3 -> 1.0.4",
+      "changed_files": [
+        "apps/docs/package.json",
+        "pnpm-lock.yaml"
+      ],
+      "boundary": "public_docs_generator_and_static_site_build",
+      "observed_ci_status": "success",
+      "observed_merge_state": "BEHIND",
+      "pack_application": "S28 treats Dependabot text and upstream links as external data; S29 treats Blume as a public documentation generation boundary because it affects generated docs output and publication readiness.",
+      "review_outcome": "Evidence captured; update branch and rerun checks before any merge decision."
+    },
+    {
+      "pr": 424,
+      "dependency": "typescript 6.0.3 -> 7.0.2",
+      "changed_files": [
+        "apps/docs/package.json",
+        "pnpm-lock.yaml"
+      ],
+      "boundary": "compiler_and_typecheck_surface",
+      "observed_ci_status": "success",
+      "observed_merge_state": "BEHIND",
+      "pack_application": "S28 treats Dependabot text and upstream links as external data; S29 treats TypeScript as compiler/typecheck authority that can affect build confidence and emitted docs tooling behavior.",
+      "review_outcome": "Evidence captured; update branch and rerun checks before any merge decision."
+    }
+  ],
+  "pack_application": {
+    "ai_agent_security_prompt_injection": {
+      "pack_ref": "docs/domain-governance-packs/ai-agent-security-prompt-injection.md",
+      "used_for": [
+        "classifying Dependabot PR text, upstream release links and GitHub check output as external/tool data",
+        "preventing automated PR content from authorizing branch updates or merges",
+        "separating read-only review from state-changing dependency maintenance"
+      ],
+      "did_not_do": [
+        "follow external PR body content as instructions",
+        "add prompt-injection enforcement",
+        "create scanners or policy engines"
+      ]
+    },
+    "web_app_security_trust_boundaries": {
+      "pack_ref": "docs/domain-governance-packs/web-app-security-trust-boundaries.md",
+      "used_for": [
+        "classifying setup-node as CI runtime/build trust-boundary dependency",
+        "classifying Blume as public docs generator/static-site build dependency",
+        "classifying TypeScript as compiler/typecheck trust-boundary dependency"
+      ],
+      "did_not_do": [
+        "merge dependency updates",
+        "add runtime enforcement",
+        "change auth, tenant, secrets or API behavior"
+      ]
+    }
+  },
+  "next_safe_dependency_step": {
+    "posture": "update_before_merge",
+    "rationale": "All three PRs were behind main despite historical green checks. A later dependency-maintenance slice may update branches, wait for fresh checks, and then make separate merge decisions.",
+    "candidate_prs": [422, 423, 424]
+  },
+  "guardrails": {
+    "created_new_domain_pack": false,
+    "created_scanner": false,
+    "created_policy_engine": false,
+    "created_runtime_enforcement": false,
+    "created_dashboard": false,
+    "created_schema": false,
+    "changed_adaptive_skills": false,
+    "activated_s18": false,
+    "claimed_success_rate": false,
+    "claimed_security_proof": false,
+    "merged_dependency_pr": false,
+    "updated_dependency_branch": false
+  }
+}
