@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add S72 public documentation language policy, setting English as the official published docs language
+
 - add S71 docs language and ADR navigation audit with explicit Blume metadata for ADR ordering
 
 - add S70 Blume Pages post-guard smoke-test evidence after explicit manual publication approval
