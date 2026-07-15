@@ -17,6 +17,11 @@ pnpm --filter @aletheia/docs dev
 pnpm --filter @aletheia/docs validate
 ```
 
+The production build is configured for the intended GitHub Pages project URL:
+
+- site origin: `https://nevitonsantana.github.io`
+- deployment base: `/AletheIA`
+
 ## Current findings
 
 - `pnpm run docs:build` passes and generates a static site from the existing AletheIA docs corpus.
@@ -29,4 +34,4 @@ pnpm --filter @aletheia/docs validate
 
 ## Publication gate
 
-Do not publish this as official documentation until a separate implementation slice configures the selected GitHub Pages target, validates the base path, and completes a deployed smoke test. S66 identifies GitHub Pages as the intended future host; it does not publish the site.
+Do not publish this as official documentation automatically. The Pages workflow is manual-only and should be run only after review. After a manual deployment, complete the S67 smoke test before treating the Blume shell as official documentation.
