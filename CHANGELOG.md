@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- normalize S76 ADR-007 language residuals
+
 - close S75 after architecture concept flow label normalization
 
 - normalize S74 Launch Kit to English-only canonical public documentation copy
