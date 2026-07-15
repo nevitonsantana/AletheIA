@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- normalize S77 KGL prep roadmap language residual
+
 - close S76 after ADR-007 language normalization
 
 - close S75 after architecture concept flow label normalization
