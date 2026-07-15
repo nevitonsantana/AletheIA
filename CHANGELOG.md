@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add S70 Blume Pages post-guard smoke-test evidence after explicit manual publication approval
+
 - add S69 Blume docs output postprocess/audit to remove duplicate first headings, internal Markdown links and raw Markdown artifacts from the published build
 
 - add S68 Blume GitHub Pages deploy smoke-test evidence after explicit manual publication approval
