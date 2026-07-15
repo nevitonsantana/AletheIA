@@ -43,7 +43,7 @@ Reading map organized by intent. Each entry links to the most useful starting po
 3. [Visual Operations Event Model](contracts/visual-operations-event-model.md) — normalized source-referenced event envelope
 4. [Work Slice Visual State Contract](contracts/work-slice-visual-state-contract.md) — presentation lanes without a new lifecycle
 5. [Visual Operations Privacy Boundaries](contracts/visual-ops-privacy-boundaries.md) — metadata-first handling of sensitive sources
-6. [Synthetic Mission Control example](../examples/visual-operations/dashboard-snapshot.md) — reconstructible static snapshot
+6. [Synthetic Mission Control example](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/dashboard-snapshot.md) — reconstructible static snapshot
 7. [GitHub PR projector](guides/github-pr-visual-operations-projector.md) — deterministic JSON and Markdown projection from supplied evidence
 8. [Visual Operations phase closeout](pilots/closeouts/06-15-visual-operations-phase-closeout.md) — delivered boundary, evidence, and future activation gates
 9. [Usage evidence guide](guides/visual-operations-usage-evidence.md) — how to record real snapshot use without backfilling or expanding scope

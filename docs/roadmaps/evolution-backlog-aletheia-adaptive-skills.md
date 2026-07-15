@@ -767,6 +767,16 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Acceptance:** remove the `SYSTEM_STATE.md`, `_meta/MIGRATION.md` and `policies/feature-readiness-gates.md` validation category by treating them as explicit GitHub source links.
 - **Evidence:** `docs/reports/blume-root-meta-policy-source-links-s59.md`, `pnpm run docs:validate`; PR #385.
 
+### S60 — Blume Visual Operations example source-link handling
+
+- **Repository / layer:** AletheIA documentation tooling
+- **Covers:** Narrow handling of Blume validation failures caused by `docs/` links to repository-level `examples/visual-operations/` source files.
+- **Dependencies:** S55 Blume docs shell spike, S56 validation/source-coverage triage, S57 publication-source map, S58 internal docs route repair and S59 root/meta/policy source-link handling.
+- **Status:** `in review`; publishing remains gated.
+- **Non-goals:** publishing GitHub Pages, changing Blume config, moving examples into `docs/`, fixing starter-pack/packs/non-Visual-Operations examples/assets, broad documentation rewrite, automatic documentation generation, dashboards, collectors, scoring, ranking, S18 metrics, Runtime 2.0 behavior or Adaptive Skills mutation.
+- **Acceptance:** remove the `examples/visual-operations` validation category by treating those example artifacts as explicit GitHub source links.
+- **Evidence:** `docs/reports/blume-visual-ops-example-source-links-s60.md`, `pnpm run docs:validate`.
+
 ## Requirement traceability matrix
 
 The identifiers below preserve requirement families. The complete pack remains authoritative for detailed wording, examples and edge cases.
@@ -826,7 +836,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P11-R3 Continuity Capsule and resume check | P11 continuity policy | `delivered` | S15 | Continuity fields extend Restart Package and its post-resume check; no competing artifact or lifecycle was created. |
 | P11-R4 Per-repository SYSTEM_STATE | P11 system-state proposal | `delivered` | S15 | Both repositories maintain compact validated first-load indexes; contracts and evidence remain authoritative. |
 | P11-R5 Explainable language and cognitive boundaries | P11 language policy | `delivered` | S17 | Confirmed depth preserves precision and requires technical review beyond the user's safe boundary. |
-| P11-R6 Documentation-health projection | P11 integration map | `delivered` for root/meta and policy source-link handling; publishing gated | S55, S56, S57, S58, S59 | S55 proved an isolated static documentation shell can build from existing Markdown; S56 classified validation/source-coverage gaps; S57 mapped publication sources; S58 repaired internal docs routes; S59 handled repository-root, `_meta` and policy references as explicit source links before any publishing, automatic mutation or documentation-health projection. |
+| P11-R6 Documentation-health projection | P11 integration map | `in review` for Visual Operations example source-link handling; publishing gated | S55, S56, S57, S58, S59, S60 | S55 proved an isolated static documentation shell can build from existing Markdown; S56 classified validation/source-coverage gaps; S57 mapped publication sources; S58 repaired internal docs routes; S59 handled repository-root, `_meta` and policy references; S60 handles Visual Operations examples as explicit source links before any publishing, automatic mutation or documentation-health projection. |
 | P13-R1 Domain Expertise Brief | P13 PRD/SDD | `delivered` | S25 | Capture human domain rules and edge cases before execution; do not replace human authority. |
 | P13-R2 Evidence-Based Learning Record | P13 schemas/policies | `delivered` | S25 | Record hypothesis, observed result, surprise and future recommendation as evidence, not self-evolution. |
 | P13-R3 Capability fitness and learning dashboards | P13 metrics | `deferred` | Post-S25 evidence gate | No ranking or automation until comparable reviewed records exist. |

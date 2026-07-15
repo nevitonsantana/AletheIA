@@ -228,12 +228,12 @@ review, closure, or policy decisions.
 
 ## Related
 
-- [Mission Control static prototype](../../examples/visual-operations/prototype/README.md)
-- [Cockpit refined visual mock](../../examples/visual-operations/cockpit-refined-visual-mock.md)
-- [Cockpit visual mock direction](../../examples/visual-operations/cockpit-visual-mock-direction.md)
-- [Cockpit light wireframe spec](../../examples/visual-operations/cockpit-light-wireframe-spec.md)
-- [Cockpit static board composition](../../examples/visual-operations/cockpit-static-board-composition.md)
-- [Cockpit card state examples](../../examples/visual-operations/cockpit-card-state-examples.md)
+- [Mission Control static prototype](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/prototype/README.md)
+- [Cockpit refined visual mock](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/cockpit-refined-visual-mock.md)
+- [Cockpit visual mock direction](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/cockpit-visual-mock-direction.md)
+- [Cockpit light wireframe spec](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/cockpit-light-wireframe-spec.md)
+- [Cockpit static board composition](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/cockpit-static-board-composition.md)
+- [Cockpit card state examples](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/cockpit-card-state-examples.md)
 - [Mission Control Cockpit](../concepts/mission-control-cockpit.md)
 - [Visual Operations Layer](../concepts/visual-operations-layer.md)
 - [Work Slice Visual State Contract](../contracts/work-slice-visual-state-contract.md)

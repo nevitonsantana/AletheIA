@@ -57,7 +57,7 @@ Primary operational surfaces:
 - [`scripts/visual-ops-project.sh`](../../../scripts/visual-ops-project.sh);
 - [`scripts/check-visual-ops-snapshots.sh`](../../../scripts/check-visual-ops-snapshots.sh);
 - [PR #193 retrospective](../visual-operations-pr-193-retrospective.md);
-- [PR #195 CLI snapshot](../../../examples/visual-operations/github-pr-195-cli-output.md).
+- [PR #195 CLI snapshot](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-195-cli-output.md).
 
 ## Validation evidence
 
