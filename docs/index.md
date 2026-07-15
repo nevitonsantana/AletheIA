@@ -45,7 +45,7 @@ Reading map organized by intent. Each entry links to the most useful starting po
 5. [Visual Operations Privacy Boundaries](contracts/visual-ops-privacy-boundaries.md) — metadata-first handling of sensitive sources
 6. [Synthetic Mission Control example](../examples/visual-operations/dashboard-snapshot.md) — reconstructible static snapshot
 7. [GitHub PR projector](guides/github-pr-visual-operations-projector.md) — deterministic JSON and Markdown projection from supplied evidence
-8. [Visual Operations phase closeout](pilots/closeouts/2026-06-15-visual-operations-phase-closeout.md) — delivered boundary, evidence, and future activation gates
+8. [Visual Operations phase closeout](pilots/closeouts/06-15-visual-operations-phase-closeout.md) — delivered boundary, evidence, and future activation gates
 9. [Usage evidence guide](guides/visual-operations-usage-evidence.md) — how to record real snapshot use without backfilling or expanding scope
 10. [AletheIA dogfood protocol](guides/visual-operations-aletheia-dogfood-protocol.md) — measuring real snapshot use in AletheIA development
 
@@ -119,7 +119,7 @@ Reading map organized by intent. Each entry links to the most useful starting po
 1. [Crisis Monitor pilot](pilots/pilot-crisis-monitor.md) — first validation case
 2. [Migration from Crisis Monitor](pilots/migration-from-crisis-monitor.md) — how AletheIA became standalone after the first case
 3. [Context graph decision](pilots/context-graph-decision.md) — decision record with real test data
-4. [Hermes closeouts →](pilots/closeouts/) — operation records from Hermes pre-pilot
+4. [Hermes closeouts →](pilots/closeouts/README.md) — operation records from Hermes pre-pilot
 5. [All pilots →](pilots/README.md)
 
 ---

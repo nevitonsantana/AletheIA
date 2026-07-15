@@ -1,6 +1,6 @@
 # Pilot handoff — Crisis Monitor overlay adoption
 
-> **Audience:** Crisis Monitor team. This is the brief for adopting the AletheIA operating overlay in the Crisis Monitor repo and reporting back. It is a *prescriptive guide* — what to do, in what order, with what gates. The *result* will be recorded separately in [`docs/pilots/pilot-crisis-monitor-overlay-adoption.md`](../pilots/) (created by the team or by AletheIA maintainers once the pilot reports back).
+> **Audience:** Crisis Monitor team. This is the brief for adopting the AletheIA operating overlay in the Crisis Monitor repo and reporting back. It is a *prescriptive guide* — what to do, in what order, with what gates. The *result* will be recorded separately under `docs/pilots/pilot-crisis-monitor-overlay-adoption.md` (created by the team or by AletheIA maintainers once the pilot reports back).
 
 ## Why this pilot
 
