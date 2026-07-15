@@ -5,7 +5,7 @@ How to wire a consumer project to a harness (currently: Claude Code) so the harn
 For the **what** and **why**, see:
 - [operating-overlay](../concepts/operating-overlay.md) — three-layer model.
 - [consumer-project-overlay](../contracts/consumer-project-overlay.md) — normative spec for the overlay surface.
-- [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/) — fully populated reference instantiation.
+- [`examples/consumer-overlay-minimal/`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/consumer-overlay-minimal/) — fully populated reference instantiation.
 
 This guide assumes you already have at least a draft overlay (`ops/ai/` with the four constitution files) or are about to write one alongside the shim setup.
 

@@ -29,7 +29,7 @@ The extension shipped first as docs-first in the prior PR: the
 [tool permission matrix](../reference/tool-permission-matrix.md), the
 [runtime budget policy](../reference/runtime-budget-policy.md), the
 [prompt caching and context cost strategy](../reference/prompt-caching-context-cost-strategy.md),
-and an [operational example](../../examples/resource-aware-operations/harness-governance-example.md).
+and an [operational example](https://github.com/nevitonsantana/AletheIA/blob/main/examples/resource-aware-operations/harness-governance-example.md).
 This ADR records the decision and the follow-on choice to formalize the per-action harness
 record as an optional schema once the semantics had stabilized.
 
@@ -108,7 +108,7 @@ record as an optional schema once the semantics had stabilized.
   [`tool-permission-matrix.md`](../reference/tool-permission-matrix.md),
   [`runtime-budget-policy.md`](../reference/runtime-budget-policy.md),
   [`prompt-caching-context-cost-strategy.md`](../reference/prompt-caching-context-cost-strategy.md),
-  [`harness-governance-example.md`](../../examples/resource-aware-operations/harness-governance-example.md).
+  [`harness-governance-example.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/resource-aware-operations/harness-governance-example.md).
 - Schema + fixture + test:
   [`schemas/agent-harness-governance-record.schema.json`](../../schemas/agent-harness-governance-record.schema.json),
   `examples/resource-aware-operations/fixtures/harness-action.json`,

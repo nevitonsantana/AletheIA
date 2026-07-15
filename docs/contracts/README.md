@@ -28,7 +28,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [coding-safety-plan-profile.md](coding-safety-plan-profile.md) | Minimum coding plan profile for base state, scope, verification, drift, rollback, stop conditions and human merge decision |
 | [cognitive-documentation-closure-extension.md](cognitive-documentation-closure-extension.md) | Proportional finalization review for preserved intent, human understanding, documentation coherence and technical escalation |
 | [durable-decision-finalization-context-prompt.md](durable-decision-finalization-context-prompt.md) | Accepted durable decision: require finalization context prompt at slice close |
-| [consumer-project-overlay.md](consumer-project-overlay.md) | How a consumer project instantiates the operating overlay (`ops/ai/` + harness shims). Reference example: [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/) |
+| [consumer-project-overlay.md](consumer-project-overlay.md) | How a consumer project instantiates the operating overlay (`ops/ai/` + harness shims). Reference example: [`examples/consumer-overlay-minimal/`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/consumer-overlay-minimal/) |
 | [knowledge-source-contract.md](knowledge-source-contract.md) | What every knowledge source must satisfy to be governed by the Knowledge Governance Layer |
 | [knowledge-pack-manifest.md](knowledge-pack-manifest.md) | YAML manifest schema for a knowledge pack on disk |
 | [skill-knowledge-dependency-contract.md](skill-knowledge-dependency-contract.md) | How a skill declares knowledge it needs without binding to a specific source |

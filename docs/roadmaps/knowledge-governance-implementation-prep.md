@@ -86,7 +86,7 @@ two columns as binding.
   [knowledge-resolver.md](../concepts/knowledge-resolver.md) §"Selection logic, in order"
   as a deterministic, side-effect-free function: `(task, skillDeps, registry, policies) → contextPack`.
 - **Context-pack assembly.** Produce a *knowledge-aware context pack* in the shape of
-  [`knowledge-aware-context-pack.json`](../../examples/project-extension/knowledge-aware-context-pack.json)
+  [`knowledge-aware-context-pack.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/project-extension/knowledge-aware-context-pack.json)
   — fields `knowledge_dependencies_resolution`, `restrictions_active`, `conflicts_detected`,
   `gaps`, `human_review`, `audit_log_entries_to_write`. This is a distinct shape from the
   generic `aletheia-context-pack.schema.json`; if a JSON Schema for it is needed, adding one
@@ -137,7 +137,7 @@ step's tests are green. **All six are delivered** (PR per step noted below).
    applied, conflict detected and resolved by precedence.
 
 4. ✅ (#170) **Context-pack assembly.** Serialize the resolver output to a knowledge-aware context
-   pack in the shape of [`knowledge-aware-context-pack.json`](../../examples/project-extension/knowledge-aware-context-pack.json)
+   pack in the shape of [`knowledge-aware-context-pack.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/project-extension/knowledge-aware-context-pack.json)
    (`restrictions_active`, `conflicts_detected`, `gaps`, `human_review`,
    `audit_log_entries_to_write`). *Test:* output matches the example shape; restricted
    sources never carry verbatim text.

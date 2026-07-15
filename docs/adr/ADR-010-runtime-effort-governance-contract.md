@@ -105,7 +105,7 @@ record as an optional schema once the semantics had stabilized.
   [`runtime-effort-governance-contract.md`](../contracts/runtime-effort-governance-contract.md),
   [`effort-escalation-signals.md`](../reference/effort-escalation-signals.md),
   [`runtime-effort-policy-template.md`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/runtime-effort-policy-template.md),
-  [`runtime-effort-contract-example.md`](../../examples/resource-aware-operations/runtime-effort-contract-example.md).
+  [`runtime-effort-contract-example.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/resource-aware-operations/runtime-effort-contract-example.md).
 - Schema + fixture + test:
   [`schemas/runtime-effort-governance-contract.schema.json`](../../schemas/runtime-effort-governance-contract.schema.json),
   `examples/resource-aware-operations/fixtures/standard-slice.json`,

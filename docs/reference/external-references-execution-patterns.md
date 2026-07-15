@@ -37,7 +37,7 @@ How it informed the layer:
 
 - translating execution shapes to product, research, and PM work;
 - the interviews → opportunities → score → prototypes example behind the
-  [interview synthesis example](../../examples/execution-patterns/interview-synthesis-pattern-selection.md);
+  [interview synthesis example](https://github.com/nevitonsantana/AletheIA/blob/main/examples/execution-patterns/interview-synthesis-pattern-selection.md);
 - the principle that code can coordinate while the model judges.
 
 Decision: used as an applied reference. The example's numbers are not treated as general

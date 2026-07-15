@@ -37,7 +37,7 @@ here — see [How the strategic lens plugs in](#how-the-strategic-lens-plugs-in)
   the minimum fields a feature must declare to advance.
 - **Readiness gates** — [`policies/feature-readiness-gates.md`](https://github.com/nevitonsantana/AletheIA/blob/main/policies/feature-readiness-gates.md):
   the seven gates and the default Build / Test / Discovery / Park / Kill / Sunset decisions.
-- **Worked examples** — [`examples/feature-governance/`](../../examples/feature-governance/):
+- **Worked examples** — [`examples/feature-governance/`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/feature-governance/):
   `build`, `test`, `kill`, and `sunset` decision records against the contract.
 - **Runtime governance pack** — [`policies/feature-value-governance.v1.json`](../../policies/feature-value-governance.v1.json):
   the seven gates and born-measurable obligations encoded as engine-evaluable rules

@@ -124,7 +124,7 @@ knowledge_pack:
     Capsule reviewed alongside every minor version bump.
 ```
 
-> Note: the sensitivity vocabulary in this manifest uses the framework taxonomy (`public | internal | confidential | restricted | regulated`). If a project uses local labels (e.g. `private`), it maps them explicitly in its project extension — see [sensitivity-vocabulary-mapping](sensitivity-vocabulary-mapping.md) and [the mapping example](../../examples/project-extension/sensitivity-mapping-example.md).
+> Note: the sensitivity vocabulary in this manifest uses the framework taxonomy (`public | internal | confidential | restricted | regulated`). If a project uses local labels (e.g. `private`), it maps them explicitly in its project extension — see [sensitivity-vocabulary-mapping](sensitivity-vocabulary-mapping.md) and [the mapping example](https://github.com/nevitonsantana/AletheIA/blob/main/examples/project-extension/sensitivity-mapping-example.md).
 
 ---
 

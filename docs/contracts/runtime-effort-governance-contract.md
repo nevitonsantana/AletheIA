@@ -368,7 +368,7 @@ Examples:
 
 ## Examples
 
-See [runtime-effort-contract-example.md](../../examples/resource-aware-operations/runtime-effort-contract-example.md).
+See [runtime-effort-contract-example.md](https://github.com/nevitonsantana/AletheIA/blob/main/examples/resource-aware-operations/runtime-effort-contract-example.md).
 
 ## Schema
 

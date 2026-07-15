@@ -10,8 +10,8 @@ Closes Epic 7 of the AletheIA documentation-improvement plan. Epics 0–6 produc
 - The concept: [`concepts/operating-overlay.md`](../concepts/operating-overlay.md).
 - The contract: [`contracts/consumer-project-overlay.md`](../contracts/consumer-project-overlay.md).
 - The shim pack: [`starter-pack/harness-shims/claude/`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/harness-shims/claude/).
-- The minimal overlay example bundle: [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/).
-- The reference example: [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/).
+- The minimal overlay example bundle: [`examples/consumer-overlay-minimal/`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/consumer-overlay-minimal/).
+- The reference example: [`examples/consumer-overlay-minimal/`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/consumer-overlay-minimal/).
 
 This pilot is the first real-world validation. **Frictions are the expected output, not failures** — the goal is to falsify hypotheses (especially H2 from the plan: "the taxonomy covers ≥90% of docs without forcing").
 
@@ -27,7 +27,7 @@ cd /path/to/crisis-monitor
 rm README.md manifest.yaml   # source artifacts, not runtime
 ```
 
-Use [`examples/consumer-overlay-minimal/README.md`](../../examples/consumer-overlay-minimal/README.md) for the substitution steps and variable list.
+Use [`examples/consumer-overlay-minimal/README.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/consumer-overlay-minimal/README.md) for the substitution steps and variable list.
 
 ### 2. Fill the constitution
 
@@ -38,7 +38,7 @@ Replace `ops/ai/constitution/README.md` with four files:
 - `stack.md`
 - `principles.md`
 
-Crisis Monitor already has implicit answers to all four in scattered places (wiki, Slack pins, tribal knowledge). The pilot value is partially in *forcing those answers into one place*. If writing one of them surfaces a question the team has been avoiding, **stop and answer it** — that's the constitution doing its job (see [`learnings/2026-05-20-overlay-adoption-cost.md`](../../examples/consumer-overlay-minimal/ops/ai/learnings/2026-05-20-overlay-adoption-cost.md) for the pattern).
+Crisis Monitor already has implicit answers to all four in scattered places (wiki, Slack pins, tribal knowledge). The pilot value is partially in *forcing those answers into one place*. If writing one of them surfaces a question the team has been avoiding, **stop and answer it** — that's the constitution doing its job (see [`learnings/2026-05-20-overlay-adoption-cost.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/consumer-overlay-minimal/ops/ai/learnings/2026-05-20-overlay-adoption-cost.md) for the pattern).
 
 ### 3. Run the conformance test
 

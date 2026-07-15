@@ -112,4 +112,4 @@ The mapping table is owned by the project extension, not by the framework.
 - [knowledge-source-contract](knowledge-source-contract.md)
 - [knowledge-pack-manifest](knowledge-pack-manifest.md)
 - [restricted-knowledge-usage-policy](restricted-knowledge-usage-policy.md)
-- Example: [project-extension/sensitivity-mapping-example.md](../../examples/project-extension/sensitivity-mapping-example.md)
+- Example: [project-extension/sensitivity-mapping-example.md](https://github.com/nevitonsantana/AletheIA/blob/main/examples/project-extension/sensitivity-mapping-example.md)
