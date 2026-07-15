@@ -40,7 +40,7 @@ State the desired outcome without prescribing implementation:
 
 ### 2. Create one bounded Work Slice
 
-Use [`core-operating-path.md`](core-operating-path.md) and the [Work Slice template](../../starter-pack/templates/work-slice-template.md).
+Use [`core-operating-path.md`](core-operating-path.md) and the [Work Slice template](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/work-slice-template.md).
 
 Keep in scope only:
 
@@ -84,7 +84,7 @@ Expected result:
 
 ### 6. Explain and close
 
-Use the [Explainable Change Brief](../../starter-pack/templates/explainable-change-brief-template.md) and the [Slice Finalization Review](../../starter-pack/templates/slice-finalization-review-template.md).
+Use the [Explainable Change Brief](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/explainable-change-brief-template.md) and the [Slice Finalization Review](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/slice-finalization-review-template.md).
 
 The user should be able to answer:
 

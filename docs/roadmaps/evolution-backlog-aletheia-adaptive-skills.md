@@ -184,7 +184,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #316
 - **Non-goals:** provider-specific jailbreak recipe, technical enforcement engine, secret policy replacement, runtime scanner, or claims of perfect defense.
 - **Acceptance:** one reusable domain-pack contract or guide defines trust categories, escalation boundaries, source refs and adversarial evaluation scenarios without becoming core framework law.
-- **Evidence:** AletheIA PR #316 / `a8c492b`; [`ai-agent-security-prompt-injection.md`](../domain-governance-packs/ai-agent-security-prompt-injection.md), [`ai-agent-security-review-checklist.md`](../reference/ai-agent-security-review-checklist.md), [`ai-agent-security-review-template.yaml`](../../starter-pack/templates/ai-agent-security-review-template.yaml), [`prompt-injection-review.yaml`](../../examples/agent-security/prompt-injection-review.yaml) and contract tests.
+- **Evidence:** AletheIA PR #316 / `a8c492b`; [`ai-agent-security-prompt-injection.md`](../domain-governance-packs/ai-agent-security-prompt-injection.md), [`ai-agent-security-review-checklist.md`](../reference/ai-agent-security-review-checklist.md), [`ai-agent-security-review-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/ai-agent-security-review-template.yaml), [`prompt-injection-review.yaml`](../../examples/agent-security/prompt-injection-review.yaml) and contract tests.
 
 ### S29 — Web App Security & Trust Boundaries domain-pack minimum
 
@@ -194,7 +194,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #318
 - **Non-goals:** vendor tutorial, complete AppSec manual, framework-core expansion, or executable enforcement.
 - **Acceptance:** one reusable web/API trust-boundary pack with review checklist and at least one evaluation scenario.
-- **Evidence:** AletheIA PR #318 / `b864419`; [`web-app-security-trust-boundaries.md`](../domain-governance-packs/web-app-security-trust-boundaries.md), [`web-app-security-review-checklist.md`](../reference/web-app-security-review-checklist.md), [`web-app-security-review-template.yaml`](../../starter-pack/templates/web-app-security-review-template.yaml), [`trust-boundary-review.yaml`](../../examples/web-app-security/trust-boundary-review.yaml) and contract tests.
+- **Evidence:** AletheIA PR #318 / `b864419`; [`web-app-security-trust-boundaries.md`](../domain-governance-packs/web-app-security-trust-boundaries.md), [`web-app-security-review-checklist.md`](../reference/web-app-security-review-checklist.md), [`web-app-security-review-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/web-app-security-review-template.yaml), [`trust-boundary-review.yaml`](../../examples/web-app-security/trust-boundary-review.yaml) and contract tests.
 
 ### S30 — Enterprise / constrained adoption evidence loop
 
@@ -204,7 +204,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #320
 - **Non-goals:** enterprise product packaging, universal compliance preset, CLI/bootstrap promise or org-specific policy hardcoding.
 - **Acceptance:** one bounded adoption lane maps task brief, gates, handoff, validation and durable decisions to a constrained/local approval context.
-- **Evidence:** AletheIA PR #320 / `0a46aa3`; [`constrained-adoption-evidence-loop-template.yaml`](../../starter-pack/templates/constrained-adoption-evidence-loop-template.yaml), [`s30-constrained-adoption-evidence-loop.yaml`](../../examples/pilot-conversion/s30-constrained-adoption-evidence-loop.yaml) and contract tests, with reusable learning and local-only rules clearly separated.
+- **Evidence:** AletheIA PR #320 / `0a46aa3`; [`constrained-adoption-evidence-loop-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/constrained-adoption-evidence-loop-template.yaml), [`s30-constrained-adoption-evidence-loop.yaml`](../../examples/pilot-conversion/s30-constrained-adoption-evidence-loop.yaml) and contract tests, with reusable learning and local-only rules clearly separated.
 
 ### S31 — Resource-aware next-signals review
 
@@ -254,7 +254,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #331
 - **Non-goals:** claiming real usage evidence, new domain packs, scanners, policy engines, runtime enforcement, dashboards, schemas, automatic classification, Adaptive Skills changes or S18 activation.
 - **Acceptance:** add a minimal template and reviewed example that define how future real usage evidence is captured while preserving `unavailable` values and confirming the template itself is not evidence.
-- **Evidence:** AletheIA PR #331 / `256436d`; [`domain-governance-usage-evidence-template.yaml`](../../starter-pack/templates/domain-governance-usage-evidence-template.yaml) and [`s35-domain-governance-usage-evidence-capture.json`](../../examples/domain-governance-usage/s35-domain-governance-usage-evidence-capture.json) define future capture without claiming usage.
+- **Evidence:** AletheIA PR #331 / `256436d`; [`domain-governance-usage-evidence-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/domain-governance-usage-evidence-template.yaml) and [`s35-domain-governance-usage-evidence-capture.json`](../../examples/domain-governance-usage/s35-domain-governance-usage-evidence-capture.json) define future capture without claiming usage.
 
 ### S36 — Dependabot Trust-Boundary Usage Review
 
@@ -422,7 +422,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` through AletheIA PR #297
 - **Non-goals:** dependency installation, automatic adoption, runtime authority changes or skill mutation.
 - **Acceptance:** one intake contract, one adoption decision template and one worked example based on this archive.
-- **Evidence:** AletheIA PR #297 / `53b555a`; [`reference-intake-adoption-contract.md`](../contracts/reference-intake-adoption-contract.md), [`reference-intake-decision-template.yaml`](../../starter-pack/templates/reference-intake-decision-template.yaml), [`evolution-pack-intake.yaml`](../../examples/reference-intake/evolution-pack-intake.yaml) and guardrail tests make source provenance, layer mapping and adopt/adapt/reference/defer/reject decisions explicit.
+- **Evidence:** AletheIA PR #297 / `53b555a`; [`reference-intake-adoption-contract.md`](../contracts/reference-intake-adoption-contract.md), [`reference-intake-decision-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/reference-intake-decision-template.yaml), [`evolution-pack-intake.yaml`](../../examples/reference-intake/evolution-pack-intake.yaml) and guardrail tests make source provenance, layer mapping and adopt/adapt/reference/defer/reject decisions explicit.
 
 ### S3 — Pattern context unavailable states
 
@@ -492,7 +492,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` through AletheIA PR #299
 - **Non-goals:** new runtime, `/improve` command, autonomous coding, policy engine, dependency installation, schema or auto-merge.
 - **Acceptance:** plan declares base state, in/out scope, verification commands and expected results, drift check, rollback and stop conditions.
-- **Evidence:** AletheIA PR #299 / `9579df5`; [`coding-safety-plan-profile.md`](../contracts/coding-safety-plan-profile.md), [`coding-safety-plan-template.yaml`](../../starter-pack/templates/coding-safety-plan-template.yaml), [`coding-safety-non-engineer-checklist.md`](../reference/coding-safety-non-engineer-checklist.md), [`s9-standard-docs-slice.yaml`](../../examples/coding-safety/s9-standard-docs-slice.yaml) and guardrail tests.
+- **Evidence:** AletheIA PR #299 / `9579df5`; [`coding-safety-plan-profile.md`](../contracts/coding-safety-plan-profile.md), [`coding-safety-plan-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/coding-safety-plan-template.yaml), [`coding-safety-non-engineer-checklist.md`](../reference/coding-safety-non-engineer-checklist.md), [`s9-standard-docs-slice.yaml`](../../examples/coding-safety/s9-standard-docs-slice.yaml) and guardrail tests.
 
 Promote `implementation-planning-advisor` only if the pilot proves a recurring gap not covered by `feature-planning`, `testing`, `debugging`, `architecture-review`, Lean Implementation and independent validation guidance.
 
@@ -524,7 +524,7 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Status:** `delivered` through AletheIA PR #302
 - **Non-goals:** seven autonomous agents, provider lock-in, duplicated role catalog, routing engine, runtime integration or Adaptive Skills mutation.
 - **Acceptance:** existing Software Engineer and QA/Governance Reviewer roles declare authority, allowed capabilities/tools, evidence, stop and handoff behavior for one real Work Slice.
-- **Evidence:** AletheIA PR #302 / `da75d60`; [`agent-role-contract-reconciliation.md`](../contracts/agent-role-contract-reconciliation.md), [`agent-role-plan-template.yaml`](../../starter-pack/templates/agent-role-plan-template.yaml), [`s12-software-engineer-qa-governance.yaml`](../../examples/agent-roles/s12-software-engineer-qa-governance.yaml) and guardrail tests provide a role plan, review record, closure brief and provider references.
+- **Evidence:** AletheIA PR #302 / `da75d60`; [`agent-role-contract-reconciliation.md`](../contracts/agent-role-contract-reconciliation.md), [`agent-role-plan-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/agent-role-plan-template.yaml), [`s12-software-engineer-qa-governance.yaml`](../../examples/agent-roles/s12-software-engineer-qa-governance.yaml) and guardrail tests provide a role plan, review record, closure brief and provider references.
 
 
 ### S13 — Register supplemental packs and north-star map
@@ -615,7 +615,7 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Status:** `delivered` through AletheIA PR #281.
 - **Non-goals:** making LLM review proof, requiring critic review for every low-risk task, autonomous merge/deploy, benchmark framework or hidden chain-of-thought transfer.
 - **Acceptance:** proportional independent critic context, evidence-to-expectation gate, validation review record and blind-review checklist exist with examples where justified.
-- **Evidence:** AletheIA PR #281 / `fb9f900`; [`docs/contracts/independent-validation-hardening-contract.md`](../contracts/independent-validation-hardening-contract.md), [`docs/reference/independent-validation-blind-review-checklist.md`](../reference/independent-validation-blind-review-checklist.md), [`starter-pack/templates/independent-validation-review-template.yaml`](../../starter-pack/templates/independent-validation-review-template.yaml), [`examples/independent-validation/synthetic-review-case.json`](../../examples/independent-validation/synthetic-review-case.json) and contract tests.
+- **Evidence:** AletheIA PR #281 / `fb9f900`; [`docs/contracts/independent-validation-hardening-contract.md`](../contracts/independent-validation-hardening-contract.md), [`docs/reference/independent-validation-blind-review-checklist.md`](../reference/independent-validation-blind-review-checklist.md), [`starter-pack/templates/independent-validation-review-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/independent-validation-review-template.yaml), [`examples/independent-validation/synthetic-review-case.json`](../../examples/independent-validation/synthetic-review-case.json) and contract tests.
 
 ### S22 — Lean Implementation Skill
 
@@ -635,7 +635,7 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Status:** `delivered` through AletheIA PR #283.
 - **Non-goals:** scheduler, loop runtime, self-running agents, automatic permissions or loops without objective gates.
 - **Acceptance:** one Loop Readiness Gate and review-capacity/drift guidance reconcile with existing loop contracts without duplicating them.
-- **Evidence:** AletheIA PR #283 / `0b0531a`; [`docs/contracts/loop-readiness-gate.md`](../contracts/loop-readiness-gate.md), [`docs/reference/loop-readiness-review-checklist.md`](../reference/loop-readiness-review-checklist.md), [`starter-pack/templates/loop-readiness-gate-template.yaml`](../../starter-pack/templates/loop-readiness-gate-template.yaml), [`examples/governed-loops/s23-loop-readiness-synthetic.json`](../../examples/governed-loops/s23-loop-readiness-synthetic.json) and guardrail tests.
+- **Evidence:** AletheIA PR #283 / `0b0531a`; [`docs/contracts/loop-readiness-gate.md`](../contracts/loop-readiness-gate.md), [`docs/reference/loop-readiness-review-checklist.md`](../reference/loop-readiness-review-checklist.md), [`starter-pack/templates/loop-readiness-gate-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/loop-readiness-gate-template.yaml), [`examples/governed-loops/s23-loop-readiness-synthetic.json`](../../examples/governed-loops/s23-loop-readiness-synthetic.json) and guardrail tests.
 
 ### S24 — Design System Intelligence / Pulso pilot
 
@@ -777,6 +777,16 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Acceptance:** remove the `examples/visual-operations` validation category by treating those example artifacts as explicit GitHub source links.
 - **Evidence:** `docs/reports/blume-visual-ops-example-source-links-s60.md`, `pnpm run docs:validate`; PR #387.
 
+### S61 — Blume starter-pack source-link handling
+
+- **Repository / layer:** AletheIA documentation tooling
+- **Covers:** Narrow handling of Blume validation failures caused by `docs/` links to repository-level `starter-pack/` templates, guides and harness shims.
+- **Dependencies:** S55 Blume docs shell spike, S56 validation/source-coverage triage, S57 publication-source map, S58 internal docs route repair, S59 root/meta/policy source-link handling and S60 Visual Operations example source-link handling.
+- **Status:** `in review`; publishing remains gated.
+- **Non-goals:** publishing GitHub Pages, changing Blume config, moving starter-pack content into `docs/`, fixing packs/non-starter examples/assets, broad documentation rewrite, automatic documentation generation, dashboards, collectors, scoring, ranking, S18 metrics, Runtime 2.0 behavior or Adaptive Skills mutation.
+- **Acceptance:** remove the `starter-pack/` validation category by treating those operational artifacts as explicit GitHub source links.
+- **Evidence:** `docs/reports/blume-starter-pack-source-links-s61.md`, `pnpm run docs:validate`.
+
 ## Requirement traceability matrix
 
 The identifiers below preserve requirement families. The complete pack remains authoritative for detailed wording, examples and edge cases.
@@ -836,7 +846,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P11-R3 Continuity Capsule and resume check | P11 continuity policy | `delivered` | S15 | Continuity fields extend Restart Package and its post-resume check; no competing artifact or lifecycle was created. |
 | P11-R4 Per-repository SYSTEM_STATE | P11 system-state proposal | `delivered` | S15 | Both repositories maintain compact validated first-load indexes; contracts and evidence remain authoritative. |
 | P11-R5 Explainable language and cognitive boundaries | P11 language policy | `delivered` | S17 | Confirmed depth preserves precision and requires technical review beyond the user's safe boundary. |
-| P11-R6 Documentation-health projection | P11 integration map | `delivered` for Visual Operations example source-link handling; publishing gated | S55, S56, S57, S58, S59, S60 | S55 proved an isolated static documentation shell can build from existing Markdown; S56 classified validation/source-coverage gaps; S57 mapped publication sources; S58 repaired internal docs routes; S59 handled repository-root, `_meta` and policy references; S60 handled Visual Operations examples as explicit source links before any publishing, automatic mutation or documentation-health projection. |
+| P11-R6 Documentation-health projection | P11 integration map | `in review` for starter-pack source-link handling; publishing gated | S55, S56, S57, S58, S59, S60, S61 | S55 proved an isolated static documentation shell can build from existing Markdown; S56 classified validation/source-coverage gaps; S57 mapped publication sources; S58 repaired internal docs routes; S59 handled repository-root, `_meta` and policy references; S60 handled Visual Operations examples; S61 handles starter-pack artifacts as explicit source links before any publishing, automatic mutation or documentation-health projection. |
 | P13-R1 Domain Expertise Brief | P13 PRD/SDD | `delivered` | S25 | Capture human domain rules and edge cases before execution; do not replace human authority. |
 | P13-R2 Evidence-Based Learning Record | P13 schemas/policies | `delivered` | S25 | Record hypothesis, observed result, surprise and future recommendation as evidence, not self-evolution. |
 | P13-R3 Capability fitness and learning dashboards | P13 metrics | `deferred` | Post-S25 evidence gate | No ranking or automation until comparable reviewed records exist. |

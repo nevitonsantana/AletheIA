@@ -9,7 +9,7 @@ Closes Epic 7 of the AletheIA documentation-improvement plan. Epics 0–6 produc
 - The boundary decision: [ADR-004](../adr/ADR-004-aletheia-as-operating-overlay.md).
 - The concept: [`concepts/operating-overlay.md`](../concepts/operating-overlay.md).
 - The contract: [`contracts/consumer-project-overlay.md`](../contracts/consumer-project-overlay.md).
-- The shim pack: [`starter-pack/harness-shims/claude/`](../../starter-pack/harness-shims/claude/).
+- The shim pack: [`starter-pack/harness-shims/claude/`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/harness-shims/claude/).
 - The minimal overlay example bundle: [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/).
 - The reference example: [`examples/consumer-overlay-minimal/`](../../examples/consumer-overlay-minimal/).
 

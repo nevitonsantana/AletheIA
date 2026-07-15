@@ -4,7 +4,7 @@
 >
 > **Audience:** Framework maintainers and future adopters. Squads are not identified by name without explicit authorization.
 >
-> **Template used for squad collection:** [`starter-pack/templates/squad-feedback-template.md`](../../starter-pack/templates/squad-feedback-template.md)
+> **Template used for squad collection:** [`starter-pack/templates/squad-feedback-template.md`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/squad-feedback-template.md)
 
 ---
 

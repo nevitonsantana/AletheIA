@@ -1,6 +1,6 @@
 # Closeouts
 
-Individual operation records from bounded execution sessions. Each file is a completed closeout following the [Hermes closeout template](../../../starter-pack/templates/hermes-closeout-template.md).
+Individual operation records from bounded execution sessions. Each file is a completed closeout following the [Hermes closeout template](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/hermes-closeout-template.md).
 
 Files are named `YYYY-MM-DD-<slug>.md` or `<system>-<slug>-closeout.md`.
 
