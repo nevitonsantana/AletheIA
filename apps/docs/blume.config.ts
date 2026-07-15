@@ -6,4 +6,8 @@ export default defineConfig({
   content: {
     sources: [{ type: "filesystem", root: "../../docs" }],
   },
+  deployment: {
+    site: "https://nevitonsantana.github.io",
+    base: "/AletheIA",
+  },
 });
