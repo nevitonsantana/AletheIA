@@ -180,4 +180,4 @@ If any box is unchecked, the overlay is not fully active. See [`installation-gui
 | Governance gates and decision records | [`docs/concepts/governance.md`](../concepts/governance.md) |
 | Daily operations workflow | [`starter-pack/guides/daily-operations.md`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/guides/daily-operations.md) |
 | Harness-specific setup (Claude Code, Codex, etc.) | [`docs/guides/setting-up-harnesses.md`](../guides/setting-up-harnesses.md) |
-| Manual adoption (no APM) | [`packs/operating-overlay/README.md`](../../packs/operating-overlay/README.md) |
+| Manual adoption (no APM) | [`packs/operating-overlay/README.md`](https://github.com/nevitonsantana/AletheIA/blob/main/packs/operating-overlay/README.md) |

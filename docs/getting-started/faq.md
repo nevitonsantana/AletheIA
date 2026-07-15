@@ -32,7 +32,7 @@ The APM package is in alpha. The core framework (AletheIA 1.0) is stable — the
 APM does not support install-time hooks for materializing project scaffolds. `apm install` downloads the package; `apm run scaffold-overlay` copies it into your project. This is a known limitation of the current APM spec, documented in [ADR-007](../adr/ADR-007-apm-packaging-strategy.md).
 
 **Can I install AletheIA without APM?**  
-Yes. The manual adoption path copies the pack directly without APM. See [`packs/operating-overlay/README.md`](../../packs/operating-overlay/README.md) for the manual steps.
+Yes. The manual adoption path copies the pack directly without APM. See [`packs/operating-overlay/README.md`](https://github.com/nevitonsantana/AletheIA/blob/main/packs/operating-overlay/README.md) for the manual steps.
 
 **I ran `apm install` but `apm_modules/AletheIA/` is empty. What happened?**  
 This is usually a network or auth issue. Run `apm install --verbose` for details. If you are behind a corporate proxy or require GitHub auth, configure APM credentials first: `apm config set github.token <your-pat>`.
