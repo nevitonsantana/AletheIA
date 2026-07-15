@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add S79 open Dependabot trust-boundary review evidence
+
 - close S78 after public language residual classification
 
 - close S77 after KGL prep language normalization
