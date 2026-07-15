@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S59 after the Blume root/meta and policy source-link handling merge, returning Active to none while keeping publishing blocked pending remaining source-coverage categories
+
 - add S59 Blume root/meta and policy source-link handling to remove repository-root, `_meta` and policy references from the internal-route validation category while publishing remains gated
 
 - close S58 after the Blume internal docs route repair merge, returning Active to none while keeping publishing blocked pending source-coverage handling
