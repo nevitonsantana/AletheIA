@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S66 after the Blume publication-readiness decision merge, returning Active to none while keeping publishing blocked pending gated Pages implementation
+
 - add S66 Blume publication-readiness decision, selecting GitHub Pages as the intended future host while keeping deployment and config changes gated
 
 - close S65 after the Blume asset-check warning decision merge, returning Active to none while keeping publishing blocked pending publication-readiness decision
