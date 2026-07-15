@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S63 after the Blume non-Visual-Operations example source-link handling merge, returning Active to none while keeping publishing blocked pending asset-check review
+
 - add S63 Blume non-Visual-Operations example source-link handling, clearing remaining broken-link validation errors while publishing remains gated by asset-check review
 
 - close S62 after the Blume operating-overlay pack source-link handling merge, returning Active to none while keeping publishing blocked pending remaining source-coverage categories
