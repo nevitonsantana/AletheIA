@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- normalize S75 architecture concept flow label to English
+- close S75 after architecture concept flow label normalization
 
 - normalize S74 Launch Kit to English-only canonical public documentation copy
 
