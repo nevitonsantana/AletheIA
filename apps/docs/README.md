@@ -29,4 +29,4 @@ pnpm --filter @aletheia/docs validate
 
 ## Publication gate
 
-Do not publish this as official documentation until a separate publication-readiness decision defines the hosting target, deployment workflow, base URL and final smoke test. S65 accepts the current asset-check warning for the spike; it does not publish the site.
+Do not publish this as official documentation until a separate implementation slice configures the selected GitHub Pages target, validates the base path, and completes a deployed smoke test. S66 identifies GitHub Pages as the intended future host; it does not publish the site.

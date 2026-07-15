@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add S66 Blume publication-readiness decision, selecting GitHub Pages as the intended future host while keeping deployment and config changes gated
+
 - close S65 after the Blume asset-check warning decision merge, returning Active to none while keeping publishing blocked pending publication-readiness decision
 
 - add S65 Blume asset-check warning decision, accepting the remaining warning as non-blocking for the spike while keeping publishing gated by a separate deployment decision
