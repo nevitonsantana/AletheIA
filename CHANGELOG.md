@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S79 after open Dependabot trust-boundary review
+
 - add S79 open Dependabot trust-boundary review evidence
 
 - close S78 after public language residual classification

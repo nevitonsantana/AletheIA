@@ -962,10 +962,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA dependency maintenance governance
 - **Covers:** S28/S29 advisory review of open Dependabot PRs #422, #423 and #424 before any branch update or merge.
 - **Dependencies:** S35 Domain Governance Usage Evidence Capture, S36/S45 Dependabot trust-boundary usage records and S78 public language residual classification.
-- **Status:** `in review`; branch updates and merge decisions remain separate follow-up work.
+- **Status:** `delivered`; branch updates and merge decisions remain separate follow-up work.
 - **Non-goals:** updating Dependabot branches, merging dependency PRs, validating upstream release notes as authoritative, creating scanners, policy engines, runtime enforcement, dashboards, schemas, S18 metrics, Runtime 2.0 behavior or Adaptive Skills mutation.
 - **Acceptance:** S35-style evidence records the applicable packs, reviewed PRs, observed trust boundaries, current CI posture and the branch-update-before-merge decision boundary.
-- **Evidence:** `examples/domain-governance-usage/s79-open-dependabot-trust-boundary-review.json`.
+- **Evidence:** `examples/domain-governance-usage/s79-open-dependabot-trust-boundary-review.json`; PR #426.
 
 ## Requirement traceability matrix
 
