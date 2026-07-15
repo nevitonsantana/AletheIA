@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S61 after the Blume starter-pack source-link handling merge, returning Active to none while keeping publishing blocked pending remaining source-coverage categories
+
 - add S61 Blume starter-pack source-link handling, reducing validation findings for templates, guides and harness shims while publishing remains gated
 
 - close S60 after the Blume Visual Operations example source-link handling merge, returning Active to none while keeping publishing blocked pending remaining source-coverage categories
