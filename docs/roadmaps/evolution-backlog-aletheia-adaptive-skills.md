@@ -817,6 +817,16 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Acceptance:** document the meaning of the remaining Blume asset warning, identify the tracked local asset sources involved, and keep the publication gate explicit.
 - **Evidence:** `docs/reports/blume-asset-warning-readiness-s64.md`, `pnpm run docs:validate`; PR #395.
 
+### S65 — Blume asset-check warning acceptance decision
+
+- **Repository / layer:** AletheIA documentation tooling
+- **Covers:** Decision on whether the remaining `BLUME_ASSETS_UNCHECKED` warning blocks publication-readiness planning after S64.
+- **Dependencies:** S55 Blume docs shell spike, S56 validation/source-coverage triage, S57 publication-source map, S58 internal docs route repair, S59 root/meta/policy source-link handling, S60 Visual Operations example source-link handling, S61 starter-pack source-link handling, S62 pack source-link handling, S63 non-Visual-Operations example source-link handling and S64 asset-check warning readiness review.
+- **Status:** `in review`; official publishing remains gated by a separate publication-readiness decision.
+- **Non-goals:** publishing GitHub Pages, changing Blume config, creating `apps/docs/public/`, copying or relocating assets, automatic documentation generation, dashboards, collectors, scoring, ranking, S18 metrics, Runtime 2.0 behavior or Adaptive Skills mutation.
+- **Acceptance:** document the asset warning as accepted for the current spike if build evidence shows docs-local images are emitted as optimized static assets.
+- **Evidence:** `docs/reports/blume-asset-warning-decision-s65.md`, `pnpm run docs:validate`, `pnpm run docs:build`.
+
 ## Requirement traceability matrix
 
 The identifiers below preserve requirement families. The complete pack remains authoritative for detailed wording, examples and edge cases.
@@ -876,7 +886,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P11-R3 Continuity Capsule and resume check | P11 continuity policy | `delivered` | S15 | Continuity fields extend Restart Package and its post-resume check; no competing artifact or lifecycle was created. |
 | P11-R4 Per-repository SYSTEM_STATE | P11 system-state proposal | `delivered` | S15 | Both repositories maintain compact validated first-load indexes; contracts and evidence remain authoritative. |
 | P11-R5 Explainable language and cognitive boundaries | P11 language policy | `delivered` | S17 | Confirmed depth preserves precision and requires technical review beyond the user's safe boundary. |
-| P11-R6 Documentation-health projection | P11 integration map | `delivered` for asset-check warning readiness; official publishing gated by asset strategy or accepted warning | S55, S56, S57, S58, S59, S60, S61, S62, S63, S64 | S55 proved an isolated static documentation shell can build from existing Markdown; S56 classified validation/source-coverage gaps; S57 mapped publication sources; S58 repaired internal docs routes; S59 handled repository-root, `_meta` and policy references; S60 handled Visual Operations examples; S61 handled starter-pack artifacts; S62 handled operating-overlay pack material; S63 cleared remaining example broken links; S64 documented the remaining asset-check warning before any publishing, automatic mutation or documentation-health projection. |
+| P11-R6 Documentation-health projection | P11 integration map | `in review` for asset-check warning acceptance; official publishing gated by separate publication-readiness decision | S55, S56, S57, S58, S59, S60, S61, S62, S63, S64, S65 | S55 proved an isolated static documentation shell can build from existing Markdown; S56 classified validation/source-coverage gaps; S57 mapped publication sources; S58 repaired internal docs routes; S59 handled repository-root, `_meta` and policy references; S60 handled Visual Operations examples; S61 handled starter-pack artifacts; S62 handled operating-overlay pack material; S63 cleared remaining example broken links; S64 documented the asset-check warning; S65 decides whether the warning is acceptable for the spike before any publishing, automatic mutation or documentation-health projection. |
 | P13-R1 Domain Expertise Brief | P13 PRD/SDD | `delivered` | S25 | Capture human domain rules and edge cases before execution; do not replace human authority. |
 | P13-R2 Evidence-Based Learning Record | P13 schemas/policies | `delivered` | S25 | Record hypothesis, observed result, surprise and future recommendation as evidence, not self-evolution. |
 | P13-R3 Capability fitness and learning dashboards | P13 metrics | `deferred` | Post-S25 evidence gate | No ranking or automation until comparable reviewed records exist. |
