@@ -151,7 +151,7 @@ Read the tiers top-down:
 - `missing_required_context` + `answer_sufficient_without_more_tools` → escalate if the missing
   context is required for quality; de-escalate only if it is not required for the requested
   output. See example 4 in
-  [runtime-effort-contract-example.md](../../examples/resource-aware-operations/runtime-effort-contract-example.md).
+  [runtime-effort-contract-example.md](https://github.com/nevitonsantana/AletheIA/blob/main/examples/resource-aware-operations/runtime-effort-contract-example.md).
 - `scope_became_local` + `risk_confirmed_low` + `answer_sufficient_without_more_tools` with no
   blocking risk → de-escalate to Lite. See example 7 in the same file.
 
@@ -162,4 +162,4 @@ Read the tiers top-down:
 - [runtime-effort-governance-contract.md](../contracts/runtime-effort-governance-contract.md)
 - [planning-depth-profiles.md](planning-depth-profiles.md)
 - [waste-heuristics.md](waste-heuristics.md)
-- [runtime-effort-contract-example.md](../../examples/resource-aware-operations/runtime-effort-contract-example.md)
+- [runtime-effort-contract-example.md](https://github.com/nevitonsantana/AletheIA/blob/main/examples/resource-aware-operations/runtime-effort-contract-example.md)

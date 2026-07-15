@@ -184,7 +184,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #316
 - **Non-goals:** provider-specific jailbreak recipe, technical enforcement engine, secret policy replacement, runtime scanner, or claims of perfect defense.
 - **Acceptance:** one reusable domain-pack contract or guide defines trust categories, escalation boundaries, source refs and adversarial evaluation scenarios without becoming core framework law.
-- **Evidence:** AletheIA PR #316 / `a8c492b`; [`ai-agent-security-prompt-injection.md`](../domain-governance-packs/ai-agent-security-prompt-injection.md), [`ai-agent-security-review-checklist.md`](../reference/ai-agent-security-review-checklist.md), [`ai-agent-security-review-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/ai-agent-security-review-template.yaml), [`prompt-injection-review.yaml`](../../examples/agent-security/prompt-injection-review.yaml) and contract tests.
+- **Evidence:** AletheIA PR #316 / `a8c492b`; [`ai-agent-security-prompt-injection.md`](../domain-governance-packs/ai-agent-security-prompt-injection.md), [`ai-agent-security-review-checklist.md`](../reference/ai-agent-security-review-checklist.md), [`ai-agent-security-review-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/ai-agent-security-review-template.yaml), [`prompt-injection-review.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/agent-security/prompt-injection-review.yaml) and contract tests.
 
 ### S29 — Web App Security & Trust Boundaries domain-pack minimum
 
@@ -194,7 +194,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #318
 - **Non-goals:** vendor tutorial, complete AppSec manual, framework-core expansion, or executable enforcement.
 - **Acceptance:** one reusable web/API trust-boundary pack with review checklist and at least one evaluation scenario.
-- **Evidence:** AletheIA PR #318 / `b864419`; [`web-app-security-trust-boundaries.md`](../domain-governance-packs/web-app-security-trust-boundaries.md), [`web-app-security-review-checklist.md`](../reference/web-app-security-review-checklist.md), [`web-app-security-review-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/web-app-security-review-template.yaml), [`trust-boundary-review.yaml`](../../examples/web-app-security/trust-boundary-review.yaml) and contract tests.
+- **Evidence:** AletheIA PR #318 / `b864419`; [`web-app-security-trust-boundaries.md`](../domain-governance-packs/web-app-security-trust-boundaries.md), [`web-app-security-review-checklist.md`](../reference/web-app-security-review-checklist.md), [`web-app-security-review-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/web-app-security-review-template.yaml), [`trust-boundary-review.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/web-app-security/trust-boundary-review.yaml) and contract tests.
 
 ### S30 — Enterprise / constrained adoption evidence loop
 
@@ -204,7 +204,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #320
 - **Non-goals:** enterprise product packaging, universal compliance preset, CLI/bootstrap promise or org-specific policy hardcoding.
 - **Acceptance:** one bounded adoption lane maps task brief, gates, handoff, validation and durable decisions to a constrained/local approval context.
-- **Evidence:** AletheIA PR #320 / `0a46aa3`; [`constrained-adoption-evidence-loop-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/constrained-adoption-evidence-loop-template.yaml), [`s30-constrained-adoption-evidence-loop.yaml`](../../examples/pilot-conversion/s30-constrained-adoption-evidence-loop.yaml) and contract tests, with reusable learning and local-only rules clearly separated.
+- **Evidence:** AletheIA PR #320 / `0a46aa3`; [`constrained-adoption-evidence-loop-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/constrained-adoption-evidence-loop-template.yaml), [`s30-constrained-adoption-evidence-loop.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/pilot-conversion/s30-constrained-adoption-evidence-loop.yaml) and contract tests, with reusable learning and local-only rules clearly separated.
 
 ### S31 — Resource-aware next-signals review
 
@@ -214,7 +214,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #322
 - **Non-goals:** activating S18, benchmark packaging, vendor ranking, auto-routing, learning-layer behavior or new telemetry collection.
 - **Acceptance:** review accumulated evidence for repeated comparable slices, late-stage waste, local rule repetition and stable reinforced outcomes; record whether thresholds remain unmet.
-- **Evidence:** AletheIA PR #322 / `ef25f60`; [`s31-next-signals-review.json`](../../examples/resource-aware-operations/s31-next-signals-review.json) reviews current Work Observatory records and keeps S18 deferred; unavailable inputs remain unavailable.
+- **Evidence:** AletheIA PR #322 / `ef25f60`; [`s31-next-signals-review.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/resource-aware-operations/s31-next-signals-review.json) reviews current Work Observatory records and keeps S18 deferred; unavailable inputs remain unavailable.
 
 ### S32 — Observatory maturity review
 
@@ -224,7 +224,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #324
 - **Non-goals:** live importers, collectors, dashboards, ranking, people scoring or automatic documentation-health inference.
 - **Acceptance:** decide whether existing Observatory surfaces need refinement, not expansion by default; every visual claim must have source_refs and unavailable state.
-- **Evidence:** AletheIA PR #324 / `b93b3d7`; [`s32-observatory-maturity-review.json`](../../examples/observatory-maturity/s32-observatory-maturity-review.json) records the maturity decision; no-build/refine-when-needed outcome remains accepted.
+- **Evidence:** AletheIA PR #324 / `b93b3d7`; [`s32-observatory-maturity-review.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/observatory-maturity/s32-observatory-maturity-review.json) records the maturity decision; no-build/refine-when-needed outcome remains accepted.
 
 ### S33 — Backlog v0.5 readiness review
 
@@ -234,7 +234,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #327
 - **Non-goals:** activating S18, Runtime 2.0, collectors, dashboards, policy engines, automatic routing, new domain packs or Adaptive Skills changes.
 - **Acceptance:** record a source-backed next-cycle posture, preserve blocked/deferred tracks, and select the next safe candidate without expanding implementation scope.
-- **Evidence:** AletheIA PR #327 / `5dfd0a4`; [`s33-v05-readiness-review.json`](../../examples/backlog-readiness/s33-v05-readiness-review.json) selects a domain-governance usage review as the next safe candidate and keeps S18, Runtime 2.0 and Observatory expansion deferred.
+- **Evidence:** AletheIA PR #327 / `5dfd0a4`; [`s33-v05-readiness-review.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/backlog-readiness/s33-v05-readiness-review.json) selects a domain-governance usage review as the next safe candidate and keeps S18, Runtime 2.0 and Observatory expansion deferred.
 
 ### S34 — Domain Governance Usage Review
 
@@ -244,7 +244,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #329
 - **Non-goals:** new domain packs, scanners, policy engines, runtime enforcement, dashboards, schemas, automatic classification, Adaptive Skills changes or framework-core authority changes.
 - **Acceptance:** review whether delivered domain packs are usable as advisory guidance, record gaps as `unavailable` where evidence is missing, and define source-backed next signals before expansion.
-- **Evidence:** AletheIA PR #329 / `f3ccc9f`; [`s34-domain-governance-usage-review.json`](../../examples/domain-governance-usage/s34-domain-governance-usage-review.json) keeps S28/S29 usable as manual/advisory guidance and defers new packs or enforcement until repeated usage evidence exists.
+- **Evidence:** AletheIA PR #329 / `f3ccc9f`; [`s34-domain-governance-usage-review.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/domain-governance-usage/s34-domain-governance-usage-review.json) keeps S28/S29 usable as manual/advisory guidance and defers new packs or enforcement until repeated usage evidence exists.
 
 ### S35 — Domain Governance Usage Evidence Capture
 
@@ -254,7 +254,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #331
 - **Non-goals:** claiming real usage evidence, new domain packs, scanners, policy engines, runtime enforcement, dashboards, schemas, automatic classification, Adaptive Skills changes or S18 activation.
 - **Acceptance:** add a minimal template and reviewed example that define how future real usage evidence is captured while preserving `unavailable` values and confirming the template itself is not evidence.
-- **Evidence:** AletheIA PR #331 / `256436d`; [`domain-governance-usage-evidence-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/domain-governance-usage-evidence-template.yaml) and [`s35-domain-governance-usage-evidence-capture.json`](../../examples/domain-governance-usage/s35-domain-governance-usage-evidence-capture.json) define future capture without claiming usage.
+- **Evidence:** AletheIA PR #331 / `256436d`; [`domain-governance-usage-evidence-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/domain-governance-usage-evidence-template.yaml) and [`s35-domain-governance-usage-evidence-capture.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/domain-governance-usage/s35-domain-governance-usage-evidence-capture.json) define future capture without claiming usage.
 
 ### S36 — Dependabot Trust-Boundary Usage Review
 
@@ -264,7 +264,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #333
 - **Non-goals:** new domain packs, scanners, policy engines, runtime enforcement, dashboards, schemas, automatic classification, Adaptive Skills changes, S18 activation or security/success-rate claims.
 - **Acceptance:** apply S28/S29 as manual/advisory review guidance to the real dependency-maintenance cycle, capture evidence with the S35 shape, and keep expansion blocked until repeated real usage evidence exists.
-- **Evidence:** AletheIA PR #333 / `91c2a55`; [`s36-dependabot-trust-boundary-review.json`](../../examples/domain-governance-usage/s36-dependabot-trust-boundary-review.json) records Dependabot PR usage evidence while keeping the packs advisory and non-enforcing.
+- **Evidence:** AletheIA PR #333 / `91c2a55`; [`s36-dependabot-trust-boundary-review.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/domain-governance-usage/s36-dependabot-trust-boundary-review.json) records Dependabot PR usage evidence while keeping the packs advisory and non-enforcing.
 
 ### S37 — Domain Governance Next-Use Readiness Review
 
@@ -274,7 +274,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #335
 - **Non-goals:** claiming new real usage evidence, new domain packs, scanners, policy engines, runtime enforcement, dashboards, schemas, automatic classification, Adaptive Skills changes, S18 activation or security/success-rate claims.
 - **Acceptance:** define source-backed entry criteria, candidate triggers and non-triggers for future S28/S29 capture while confirming readiness planning does not count as usage evidence.
-- **Evidence:** AletheIA PR #335 / `38dabc0`; [`s37-domain-governance-next-use-readiness.json`](../../examples/domain-governance-usage/s37-domain-governance-next-use-readiness.json) keeps the next-use gate explicit and blocked until a real Work Slice appears.
+- **Evidence:** AletheIA PR #335 / `38dabc0`; [`s37-domain-governance-next-use-readiness.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/domain-governance-usage/s37-domain-governance-next-use-readiness.json) keeps the next-use gate explicit and blocked until a real Work Slice appears.
 
 ### S38 — Adaptive Skill Record Trust-Boundary Review
 
@@ -284,7 +284,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #337
 - **Non-goals:** new domain packs, scanners, policy engines, runtime enforcement, dashboards, schemas, automatic classification, Adaptive Skills changes, S18 activation, auth/tenant/secrets changes or security/success-rate claims.
 - **Acceptance:** apply S28/S29 to the real cross-repository record projection boundary, add a focused regression test for prompt-like record content, and capture source-backed usage evidence without expanding governance.
-- **Evidence:** AletheIA PR #337 / `1ea0725`; [`s38-adaptive-skill-record-trust-boundary-review.json`](../../examples/domain-governance-usage/s38-adaptive-skill-record-trust-boundary-review.json) records the S28/S29 usage decision and adapter test coverage.
+- **Evidence:** AletheIA PR #337 / `1ea0725`; [`s38-adaptive-skill-record-trust-boundary-review.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/domain-governance-usage/s38-adaptive-skill-record-trust-boundary-review.json) records the S28/S29 usage decision and adapter test coverage.
 
 ### S39 — Domain Governance Evidence Sufficiency Review
 
@@ -294,7 +294,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #339
 - **Non-goals:** new domain packs, scanners, policy engines, runtime enforcement, dashboards, schemas, automatic classification, Adaptive Skills changes, S18 activation, auth/tenant/secrets changes or security/success-rate claims.
 - **Acceptance:** compare the real usage records, separate readiness-only S37 from usage evidence, and decide whether evidence is sufficient for refinement or expansion.
-- **Evidence:** AletheIA PR #339 / `ca36bab`; [`s39-domain-governance-evidence-sufficiency-review.json`](../../examples/domain-governance-usage/s39-domain-governance-evidence-sufficiency-review.json) keeps expansion blocked because S36/S38 are useful but still too few and heterogeneous.
+- **Evidence:** AletheIA PR #339 / `ca36bab`; [`s39-domain-governance-evidence-sufficiency-review.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/domain-governance-usage/s39-domain-governance-evidence-sufficiency-review.json) keeps expansion blocked because S36/S38 are useful but still too few and heterogeneous.
 
 ### S40 — Backlog v0.5 framing review
 
@@ -304,7 +304,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #341
 - **Non-goals:** S18 activation, Runtime 2.0 implementation, collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification, Adaptive Skills changes or treating synthetic/template examples as real evidence.
 - **Acceptance:** record the source-backed post-S39 posture, keep domain-governance expansion blocked, preserve deferred tracks and select the next safe backlog candidate without introducing implementation authority.
-- **Evidence:** AletheIA PR #341 / `a256365`; [`s40-backlog-v05-framing-review.json`](../../examples/backlog-readiness/s40-backlog-v05-framing-review.json) closes the S34-S39 usage/evidence cycle and recommends a bounded documentation and first-use coherence review next.
+- **Evidence:** AletheIA PR #341 / `a256365`; [`s40-backlog-v05-framing-review.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/backlog-readiness/s40-backlog-v05-framing-review.json) closes the S34-S39 usage/evidence cycle and recommends a bounded documentation and first-use coherence review next.
 
 ### S41 — Documentation and first-use coherence review
 
@@ -314,7 +314,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #346.
 - **Non-goals:** automatic documentation generation, a new onboarding product UI, mandatory ceremony for Lite slices, S18 activation, Runtime 2.0 implementation, collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** identify reader-facing coherence gaps from the named sources; correct only bounded, source-backed documentation blockers; keep current state and release-history surfaces distinguishable.
-- **Evidence:** AletheIA PR #346 / `679bb6c`; [`s41-documentation-first-use-coherence-review.json`](../../examples/backlog-readiness/s41-documentation-first-use-coherence-review.json) records the scope, findings and bounded README path corrections.
+- **Evidence:** AletheIA PR #346 / `679bb6c`; [`s41-documentation-first-use-coherence-review.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/backlog-readiness/s41-documentation-first-use-coherence-review.json) records the scope, findings and bounded README path corrections.
 
 ### S42 — Backlog v0.6 opportunity inventory
 
@@ -324,7 +324,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #348.
 - **Non-goals:** treating planning as a real S28/S29 usage record, activating S18, implementing Runtime 2.0, creating collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** inventory the candidates with their evidence posture; keep gated tracks gated; select at most one small source-backed next move without creating implementation authority.
-- **Evidence:** AletheIA PR #348 / `4734661`; [`s42-backlog-v06-opportunity-inventory.json`](../../examples/backlog-readiness/s42-backlog-v06-opportunity-inventory.json) records the candidate decision.
+- **Evidence:** AletheIA PR #348 / `4734661`; [`s42-backlog-v06-opportunity-inventory.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/backlog-readiness/s42-backlog-v06-opportunity-inventory.json) records the candidate decision.
 
 ### S43 — Roadmap documentation reference integrity repair
 
@@ -334,7 +334,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #350.
 - **Non-goals:** repository-wide link scanner, automatic documentation generation, content rewrites, new constrained-adoption or resource-aware capability, S18 activation, Runtime 2.0 implementation, collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** all inline `docs/...md` paths in the two reviewed roadmap documents resolve locally; existing roadmap claims and scope remain unchanged.
-- **Evidence:** AletheIA PR #350 / `35594ff`; [`s43-roadmap-reference-integrity-review.json`](../../examples/backlog-readiness/s43-roadmap-reference-integrity-review.json) records the repaired source set and resolution result.
+- **Evidence:** AletheIA PR #350 / `35594ff`; [`s43-roadmap-reference-integrity-review.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/backlog-readiness/s43-roadmap-reference-integrity-review.json) records the repaired source set and resolution result.
 
 ### S44 — Post-S43 backlog gate review
 
@@ -344,7 +344,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #352.
 - **Non-goals:** inventing a synthetic S28/S29 usage record, activating S18, implementing Runtime 2.0, creating collectors, dashboards, scanners, policy engines, enforcement, schemas, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** record the current no-go/gated posture from source-backed inputs; keep `Active: none`; define the next admissible trigger for a future Work Slice without introducing implementation authority.
-- **Evidence:** AletheIA PR #352 / `683b841`; [`s44-post-s43-backlog-gate-review.json`](../../examples/backlog-readiness/s44-post-s43-backlog-gate-review.json) records the post-S43 decision gate.
+- **Evidence:** AletheIA PR #352 / `683b841`; [`s44-post-s43-backlog-gate-review.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/backlog-readiness/s44-post-s43-backlog-gate-review.json) records the post-S43 decision gate.
 
 ### S45 — Open Dependabot trust-boundary review
 
@@ -354,7 +354,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #354.
 - **Non-goals:** merging dependency PRs, changing dependencies, creating scanners, policy engines, runtime enforcement, dashboards, schemas, new domain packs, automatic classification, S18 activation, Runtime 2.0 implementation or Adaptive Skills changes.
 - **Acceptance:** treat Dependabot/GitHub PR content as untrusted external data; use local manifests, lockfile diffs and CI status as review evidence; record S35-style usage evidence; keep any merge decision separate from this review.
-- **Evidence:** AletheIA PR #354 / `1bf4109`; [`s45-open-dependabot-trust-boundary-review.json`](../../examples/domain-governance-usage/s45-open-dependabot-trust-boundary-review.json) records the S28/S29 usage evidence for PRs #343, #344 and #345.
+- **Evidence:** AletheIA PR #354 / `1bf4109`; [`s45-open-dependabot-trust-boundary-review.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/domain-governance-usage/s45-open-dependabot-trust-boundary-review.json) records the S28/S29 usage evidence for PRs #343, #344 and #345.
 
 ### S46 — Dependabot cycle closure reconciliation
 
@@ -364,7 +364,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #356.
 - **Non-goals:** changing dependencies beyond the already merged PRs, creating scanners, policy engines, runtime enforcement, dashboards, schemas, new domain packs, automatic classification, S18 activation, Runtime 2.0 implementation or Adaptive Skills changes.
 - **Acceptance:** record the closed dependency cycle; update stale “open/future merge” wording; document that README does not need dependency-version changes; add a small CHANGELOG maintenance note; keep `plans/` local/untracked.
-- **Evidence:** AletheIA PR #356 / `7be5ad9`; [`s46-dependabot-cycle-closure-reconciliation.json`](../../examples/domain-governance-usage/s46-dependabot-cycle-closure-reconciliation.json) records the post-merge reconciliation and documentation review.
+- **Evidence:** AletheIA PR #356 / `7be5ad9`; [`s46-dependabot-cycle-closure-reconciliation.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/domain-governance-usage/s46-dependabot-cycle-closure-reconciliation.json) records the post-merge reconciliation and documentation review.
 
 ### S47 — Backlog development measurement readiness
 
@@ -374,7 +374,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #358.
 - **Non-goals:** S18 activation, success rates, productivity ranking, value/cost scoring, work-unit calibration, dashboards, collectors, scanners, policy engines, runtime enforcement, schemas, Runtime 2.0 implementation, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** separate descriptive operational counters from inadmissible comparative claims; define a minimal future record shape for backlog-development cycles; confirm that this supports continuing backlog development rather than pausing work.
-- **Evidence:** AletheIA PR #358 / `0d2ba32`; [`s47-backlog-development-measurement-readiness.json`](../../examples/backlog-readiness/s47-backlog-development-measurement-readiness.json) records the measurement boundary and next-safe usage.
+- **Evidence:** AletheIA PR #358 / `0d2ba32`; [`s47-backlog-development-measurement-readiness.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/backlog-readiness/s47-backlog-development-measurement-readiness.json) records the measurement boundary and next-safe usage.
 
 ### S48 — Backlog development descriptive snapshot
 
@@ -384,7 +384,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #360.
 - **Non-goals:** S18 activation, success rates, productivity ranking, value/cost scoring, work-unit calibration, dashboards, collectors, scanners, policy engines, runtime enforcement, schemas, Runtime 2.0 implementation, new domain packs, automatic classification or Adaptive Skills changes.
 - **Acceptance:** record only descriptive counts and source refs for the cycle; keep comparison group unavailable; confirm no success-rate, ranking or efficiency claim is derived.
-- **Evidence:** AletheIA PR #360 / `ae6bb7b`; [`s48-backlog-development-descriptive-snapshot.json`](../../examples/backlog-readiness/s48-backlog-development-descriptive-snapshot.json) records the bounded descriptive snapshot.
+- **Evidence:** AletheIA PR #360 / `ae6bb7b`; [`s48-backlog-development-descriptive-snapshot.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/backlog-readiness/s48-backlog-development-descriptive-snapshot.json) records the bounded descriptive snapshot.
 
 ### S49 — Next-source backlog gate
 
@@ -394,7 +394,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` by AletheIA PR #362.
 - **Non-goals:** S18 activation, success rates, productivity ranking, value/cost scoring, work-unit calibration, dashboards, collectors, scanners, policy engines, runtime enforcement, schemas, Runtime 2.0 implementation, new domain packs, automatic classification, Adaptive Skills changes or treating planning/templates as real usage evidence.
 - **Acceptance:** define admissible source kinds, non-triggers and required handling for the next backlog round; keep future development unblocked only when a real source appears.
-- **Evidence:** AletheIA PR #362 / `56b4113`; [`s49-next-source-gate.json`](../../examples/backlog-readiness/s49-next-source-gate.json) records the next-source gate and preserves existing blockers.
+- **Evidence:** AletheIA PR #362 / `56b4113`; [`s49-next-source-gate.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/backlog-readiness/s49-next-source-gate.json) records the next-source gate and preserves existing blockers.
 
 ### S0 — Integrate skill execution context
 
@@ -422,7 +422,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` through AletheIA PR #297
 - **Non-goals:** dependency installation, automatic adoption, runtime authority changes or skill mutation.
 - **Acceptance:** one intake contract, one adoption decision template and one worked example based on this archive.
-- **Evidence:** AletheIA PR #297 / `53b555a`; [`reference-intake-adoption-contract.md`](../contracts/reference-intake-adoption-contract.md), [`reference-intake-decision-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/reference-intake-decision-template.yaml), [`evolution-pack-intake.yaml`](../../examples/reference-intake/evolution-pack-intake.yaml) and guardrail tests make source provenance, layer mapping and adopt/adapt/reference/defer/reject decisions explicit.
+- **Evidence:** AletheIA PR #297 / `53b555a`; [`reference-intake-adoption-contract.md`](../contracts/reference-intake-adoption-contract.md), [`reference-intake-decision-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/reference-intake-decision-template.yaml), [`evolution-pack-intake.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/reference-intake/evolution-pack-intake.yaml) and guardrail tests make source provenance, layer mapping and adopt/adapt/reference/defer/reject decisions explicit.
 
 ### S3 — Pattern context unavailable states
 
@@ -492,7 +492,7 @@ S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next e
 - **Status:** `delivered` through AletheIA PR #299
 - **Non-goals:** new runtime, `/improve` command, autonomous coding, policy engine, dependency installation, schema or auto-merge.
 - **Acceptance:** plan declares base state, in/out scope, verification commands and expected results, drift check, rollback and stop conditions.
-- **Evidence:** AletheIA PR #299 / `9579df5`; [`coding-safety-plan-profile.md`](../contracts/coding-safety-plan-profile.md), [`coding-safety-plan-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/coding-safety-plan-template.yaml), [`coding-safety-non-engineer-checklist.md`](../reference/coding-safety-non-engineer-checklist.md), [`s9-standard-docs-slice.yaml`](../../examples/coding-safety/s9-standard-docs-slice.yaml) and guardrail tests.
+- **Evidence:** AletheIA PR #299 / `9579df5`; [`coding-safety-plan-profile.md`](../contracts/coding-safety-plan-profile.md), [`coding-safety-plan-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/coding-safety-plan-template.yaml), [`coding-safety-non-engineer-checklist.md`](../reference/coding-safety-non-engineer-checklist.md), [`s9-standard-docs-slice.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/coding-safety/s9-standard-docs-slice.yaml) and guardrail tests.
 
 Promote `implementation-planning-advisor` only if the pilot proves a recurring gap not covered by `feature-planning`, `testing`, `debugging`, `architecture-review`, Lean Implementation and independent validation guidance.
 
@@ -524,7 +524,7 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Status:** `delivered` through AletheIA PR #302
 - **Non-goals:** seven autonomous agents, provider lock-in, duplicated role catalog, routing engine, runtime integration or Adaptive Skills mutation.
 - **Acceptance:** existing Software Engineer and QA/Governance Reviewer roles declare authority, allowed capabilities/tools, evidence, stop and handoff behavior for one real Work Slice.
-- **Evidence:** AletheIA PR #302 / `da75d60`; [`agent-role-contract-reconciliation.md`](../contracts/agent-role-contract-reconciliation.md), [`agent-role-plan-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/agent-role-plan-template.yaml), [`s12-software-engineer-qa-governance.yaml`](../../examples/agent-roles/s12-software-engineer-qa-governance.yaml) and guardrail tests provide a role plan, review record, closure brief and provider references.
+- **Evidence:** AletheIA PR #302 / `da75d60`; [`agent-role-contract-reconciliation.md`](../contracts/agent-role-contract-reconciliation.md), [`agent-role-plan-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/agent-role-plan-template.yaml), [`s12-software-engineer-qa-governance.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/agent-roles/s12-software-engineer-qa-governance.yaml) and guardrail tests provide a role plan, review record, closure brief and provider references.
 
 
 ### S13 — Register supplemental packs and north-star map
@@ -585,7 +585,7 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Status:** `deferred` until the evidence threshold is met; PR #313 adds a comparison-readiness review confirming the current five records are not eligible.
 - **Non-goals:** new page by default, work-unit leaderboards, individual productivity scoring, fake ROI or mixed-task comparisons.
 - **Acceptance:** only source-backed metrics with formula, scope, provenance, confidence and limitations are eligible; unavailable inputs suppress dependent metrics; visual projection remains read-only.
-- **Evidence:** [`comparison-readiness-review.json`](../../examples/work-observatory/comparison-readiness-review.json) records the current denominator audit and keeps S18 blocked; future activation still requires a comparison-validity report, privacy review and explicit activation decision.
+- **Evidence:** [`comparison-readiness-review.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/work-observatory/comparison-readiness-review.json) records the current denominator audit and keeps S18 blocked; future activation still requires a comparison-validity report, privacy review and explicit activation decision.
 
 ### S19 — Backlog v0.3 source registry and prioritization
 
@@ -615,7 +615,7 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Status:** `delivered` through AletheIA PR #281.
 - **Non-goals:** making LLM review proof, requiring critic review for every low-risk task, autonomous merge/deploy, benchmark framework or hidden chain-of-thought transfer.
 - **Acceptance:** proportional independent critic context, evidence-to-expectation gate, validation review record and blind-review checklist exist with examples where justified.
-- **Evidence:** AletheIA PR #281 / `fb9f900`; [`docs/contracts/independent-validation-hardening-contract.md`](../contracts/independent-validation-hardening-contract.md), [`docs/reference/independent-validation-blind-review-checklist.md`](../reference/independent-validation-blind-review-checklist.md), [`starter-pack/templates/independent-validation-review-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/independent-validation-review-template.yaml), [`examples/independent-validation/synthetic-review-case.json`](../../examples/independent-validation/synthetic-review-case.json) and contract tests.
+- **Evidence:** AletheIA PR #281 / `fb9f900`; [`docs/contracts/independent-validation-hardening-contract.md`](../contracts/independent-validation-hardening-contract.md), [`docs/reference/independent-validation-blind-review-checklist.md`](../reference/independent-validation-blind-review-checklist.md), [`starter-pack/templates/independent-validation-review-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/independent-validation-review-template.yaml), [`examples/independent-validation/synthetic-review-case.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/independent-validation/synthetic-review-case.json) and contract tests.
 
 ### S22 — Lean Implementation Skill
 
@@ -635,7 +635,7 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Status:** `delivered` through AletheIA PR #283.
 - **Non-goals:** scheduler, loop runtime, self-running agents, automatic permissions or loops without objective gates.
 - **Acceptance:** one Loop Readiness Gate and review-capacity/drift guidance reconcile with existing loop contracts without duplicating them.
-- **Evidence:** AletheIA PR #283 / `0b0531a`; [`docs/contracts/loop-readiness-gate.md`](../contracts/loop-readiness-gate.md), [`docs/reference/loop-readiness-review-checklist.md`](../reference/loop-readiness-review-checklist.md), [`starter-pack/templates/loop-readiness-gate-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/loop-readiness-gate-template.yaml), [`examples/governed-loops/s23-loop-readiness-synthetic.json`](../../examples/governed-loops/s23-loop-readiness-synthetic.json) and guardrail tests.
+- **Evidence:** AletheIA PR #283 / `0b0531a`; [`docs/contracts/loop-readiness-gate.md`](../contracts/loop-readiness-gate.md), [`docs/reference/loop-readiness-review-checklist.md`](../reference/loop-readiness-review-checklist.md), [`starter-pack/templates/loop-readiness-gate-template.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/loop-readiness-gate-template.yaml), [`examples/governed-loops/s23-loop-readiness-synthetic.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/governed-loops/s23-loop-readiness-synthetic.json) and guardrail tests.
 
 ### S24 — Design System Intelligence / Pulso pilot
 
@@ -675,7 +675,7 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Status:** `delivered` by AletheIA PR #365
 - **Non-goals:** implementing learning automation, memory writeback, new runtime behavior, new schemas as canonical contracts, Adaptive Skills changes, collectors, dashboards, policy engines, automatic classification, S18 activation or Runtime 2.0 implementation.
 - **Acceptance:** register the v0.7 package checksum and provenance, mark v0.1-v0.6 variants of the same addendum as superseded, map the source to existing AletheIA/Adaptive Skills boundaries, and record a conservative adoption posture before any implementation proposal.
-- **Evidence:** AletheIA PR #365 / `808420c`; [`s50-learning-distillation-context-hygiene-intake.yaml`](../../examples/reference-intake/s50-learning-distillation-context-hygiene-intake.yaml) records the source hash, extracted requirement families, layer mapping, deferred implementation items and guardrails.
+- **Evidence:** AletheIA PR #365 / `808420c`; [`s50-learning-distillation-context-hygiene-intake.yaml`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/reference-intake/s50-learning-distillation-context-hygiene-intake.yaml) records the source hash, extracted requirement families, layer mapping, deferred implementation items and guardrails.
 
 ### S51 — Restart Package learning and context hygiene compatibility review
 
@@ -797,6 +797,16 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Acceptance:** remove the `packs/operating-overlay` validation category by treating pack material as explicit GitHub source links.
 - **Evidence:** `docs/reports/blume-pack-source-links-s62.md`, `pnpm run docs:validate`; PR #391.
 
+### S63 — Blume non-Visual-Operations example source-link handling
+
+- **Repository / layer:** AletheIA documentation tooling
+- **Covers:** Narrow handling of remaining Blume broken-link validation failures caused by `docs/` links to repository-level non-Visual-Operations `examples/` artifacts.
+- **Dependencies:** S55 Blume docs shell spike, S56 validation/source-coverage triage, S57 publication-source map, S58 internal docs route repair, S59 root/meta/policy source-link handling, S60 Visual Operations example source-link handling, S61 starter-pack source-link handling and S62 pack source-link handling.
+- **Status:** `in review`; publishing remains gated pending asset-check review.
+- **Non-goals:** publishing GitHub Pages, changing Blume config, moving examples into `docs/`, fixing asset strategy, broad documentation rewrite, automatic documentation generation, dashboards, collectors, scoring, ranking, S18 metrics, Runtime 2.0 behavior or Adaptive Skills mutation.
+- **Acceptance:** remove the remaining `examples/` broken-link validation category by treating example artifacts as explicit GitHub source links.
+- **Evidence:** `docs/reports/blume-example-source-links-s63.md`, `pnpm run docs:validate`.
+
 ## Requirement traceability matrix
 
 The identifiers below preserve requirement families. The complete pack remains authoritative for detailed wording, examples and edge cases.
@@ -856,7 +866,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P11-R3 Continuity Capsule and resume check | P11 continuity policy | `delivered` | S15 | Continuity fields extend Restart Package and its post-resume check; no competing artifact or lifecycle was created. |
 | P11-R4 Per-repository SYSTEM_STATE | P11 system-state proposal | `delivered` | S15 | Both repositories maintain compact validated first-load indexes; contracts and evidence remain authoritative. |
 | P11-R5 Explainable language and cognitive boundaries | P11 language policy | `delivered` | S17 | Confirmed depth preserves precision and requires technical review beyond the user's safe boundary. |
-| P11-R6 Documentation-health projection | P11 integration map | `delivered` for pack source-link handling; publishing gated | S55, S56, S57, S58, S59, S60, S61, S62 | S55 proved an isolated static documentation shell can build from existing Markdown; S56 classified validation/source-coverage gaps; S57 mapped publication sources; S58 repaired internal docs routes; S59 handled repository-root, `_meta` and policy references; S60 handled Visual Operations examples; S61 handled starter-pack artifacts; S62 handled operating-overlay pack material as explicit source links before any publishing, automatic mutation or documentation-health projection. |
+| P11-R6 Documentation-health projection | P11 integration map | `in review` for non-Visual-Operations example source-link handling; publishing gated by asset-check review | S55, S56, S57, S58, S59, S60, S61, S62, S63 | S55 proved an isolated static documentation shell can build from existing Markdown; S56 classified validation/source-coverage gaps; S57 mapped publication sources; S58 repaired internal docs routes; S59 handled repository-root, `_meta` and policy references; S60 handled Visual Operations examples; S61 handled starter-pack artifacts; S62 handled operating-overlay pack material; S63 clears remaining example broken links before any publishing, automatic mutation or documentation-health projection. |
 | P13-R1 Domain Expertise Brief | P13 PRD/SDD | `delivered` | S25 | Capture human domain rules and edge cases before execution; do not replace human authority. |
 | P13-R2 Evidence-Based Learning Record | P13 schemas/policies | `delivered` | S25 | Record hypothesis, observed result, surprise and future recommendation as evidence, not self-evolution. |
 | P13-R3 Capability fitness and learning dashboards | P13 metrics | `deferred` | Post-S25 evidence gate | No ranking or automation until comparable reviewed records exist. |

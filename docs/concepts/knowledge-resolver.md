@@ -44,7 +44,7 @@ The resolver returns a **knowledge-aware context pack**:
 - the conflicts detected and how precedence resolved them
 - the audit log entries to be written when the pack is used
 
-See [knowledge-aware-context-pack.json](../../examples/project-extension/knowledge-aware-context-pack.json) for a concrete shape.
+See [knowledge-aware-context-pack.json](https://github.com/nevitonsantana/AletheIA/blob/main/examples/project-extension/knowledge-aware-context-pack.json) for a concrete shape.
 
 ---
 

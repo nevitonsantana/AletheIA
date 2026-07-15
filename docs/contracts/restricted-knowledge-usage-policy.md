@@ -94,4 +94,4 @@ The per-task checklists that enforce this policy live in [`docs/security/`](../s
 - [knowledge-source-contract](knowledge-source-contract.md)
 - [source-precedence-policy](source-precedence-policy.md)
 - [knowledge-audit-log-spec](knowledge-audit-log-spec.md)
-- [restricted-enterprise-context (example)](../../examples/project-extension/restricted-enterprise-context.md)
+- [restricted-enterprise-context (example)](https://github.com/nevitonsantana/AletheIA/blob/main/examples/project-extension/restricted-enterprise-context.md)
