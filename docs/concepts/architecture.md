@@ -53,7 +53,7 @@ The current baseline still starts from **6 core contracts**:
 
 They represent the reviewable chain:
 
-`tarefa -> contexto -> decisão -> execução -> handoff -> learning`
+`task -> context -> decision -> execution -> handoff -> learning`
 
 ---
 

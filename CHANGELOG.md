@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- normalize S75 architecture concept flow label to English
+
 - normalize S74 Launch Kit to English-only canonical public documentation copy
 
 - normalize S73 core concept documentation pages to English following the public docs language policy
