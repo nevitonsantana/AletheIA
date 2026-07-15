@@ -1,112 +1,111 @@
 # AletheIA — Development Governance Pack v1
 
-## Objetivo
+## Objective
 
-Este documento formaliza o primeiro `Governance Pack` do `AletheIA`.
+This document formalizes the first `Governance Pack` for `AletheIA`.
 
-Em linguagem simples:
+In plain language:
 
-se o `Decision Kernel` é o “motor mínimo”,
-o `Governance Pack` é a camada que diz:
+if the `Decision Kernel` is the “minimum engine”, the `Governance Pack` is the layer that defines:
 
-- o que é obrigatório
-- o que é proibido
-- o que precisa de revisão
-- o que precisa de aprovação humana
-
----
-
-## O que este pack é
-
-Este é o **primeiro pack oficial de governança do AletheIA para desenvolvimento assistido por IA**.
-
-Ele existe para transformar boas práticas em regras avaliáveis durante:
-
-- análise
-- planejamento
-- execução
-- validação
+- what is mandatory;
+- what is forbidden;
+- what needs review;
+- what needs human approval.
 
 ---
 
-## O que este pack não é
+## What this pack is
 
-- não é o framework inteiro
-- não é um prompt
-- não é o `Rule Interpreter`
-- não é uma policy universal para qualquer tipo de trabalho
+This is the **first official AletheIA governance pack for AI-assisted software development**.
 
-Ele é um **policy pack específico para software development**, dentro do guarda-chuva maior do `AletheIA`.
+It exists to turn good practices into evaluable rules during:
+
+- analysis;
+- planning;
+- execution;
+- validation.
 
 ---
 
-## Relação com token discipline
+## What this pack is not
 
-O `Governance Pack` diz quando o trabalho pode ou não pode seguir.
+- it is not the whole framework;
+- it is not a prompt;
+- it is not the `Rule Interpreter`;
+- it is not a universal policy for every type of work.
 
-A `Token Policy` complementa isso dizendo:
+It is a **software-development-specific policy pack** inside the broader `AletheIA` umbrella.
 
-- quanto contexto deve entrar
-- em que momento ele deve entrar
-- quando expansão de contexto é justificável
+---
 
-Leitura recomendada em conjunto:
+## Relationship to token discipline
+
+The `Governance Pack` says when work may or may not proceed.
+
+The `Token Policy` complements it by defining:
+
+- how much context should be loaded;
+- when that context should be loaded;
+- when context expansion is justified.
+
+Recommended reading together:
 
 - `docs/token-policy.md`
 - `docs/durable-decisions.md`
 
 ---
 
-## Por que isso importa
+## Why this matters
 
-Sem governança explícita, a IA pode:
+Without explicit governance, AI can:
 
-- expandir escopo sem perceber
-- escrever sem contexto suficiente
-- mudar contratos implicitamente
-- pular validação
-- tocar arquivos fora da fronteira
+- expand scope without noticing;
+- write without enough context;
+- change contracts implicitly;
+- skip validation;
+- touch files outside the boundary.
 
-O `Governance Pack` existe para reduzir isso.
+The `Governance Pack` exists to reduce those risks.
 
 ---
 
 ## Enforcement boundary
 
-O `Governance Pack` descreve regras e expectativas.
+The `Governance Pack` describes rules and expectations.
 
-Mas nem toda regra descrita aqui já é tecnicamente inevitável.
+Not every rule described here is already technically unavoidable.
 
-Para deixar isso explícito, ler em conjunto:
+To make that explicit, read it together with:
 
 - `docs/enforcement-boundaries.md`
 
 ---
 
-## Vocabulário normalizado do AletheIA
+## Normalized AletheIA vocabulary
 
-Para deixar o framework mais agnóstico, este pack usa termos mais gerais:
+To keep the framework more domain-agnostic, this pack uses more general terms:
 
-| Termo anterior | Termo normalizado |
+| Previous term | Normalized term |
 |---|---|
 | `SPEC` | `Source-of-Truth Artifact` |
 | `Issue` | `Work Item` |
 | `Backend as source of truth` | `Authoritative Layer` |
 | `Allowed/forbidden files` | `Execution Scope` |
 
-### O que esses termos significam
+### What these terms mean
 
 #### Source-of-Truth Artifact
 
-É o artefato que define o comportamento esperado.
+The artifact that defines the expected behavior.
 
-Pode ser:
+It can be a:
 
-- SPEC
-- feature spec
-- task brief
-- architecture note
-- contract doc
+- SPEC;
+- feature spec;
+- task brief;
+- architecture note;
+- contract document.
 
 #### Work Item
 
@@ -124,247 +123,96 @@ For canonical vocabulary, see:
 
 #### Authoritative Layer
 
-É a camada responsável pela decisão crítica final.
+The layer responsible for the final critical decision.
 
-Se houver backend, normalmente ele cumpre esse papel.
+If a backend exists, it usually plays this role.
 
-Mas o `AletheIA` não depende do termo “backend” para existir.
+But `AletheIA` does not depend on the word “backend” to exist.
 
-O importante é:
+The important rule is:
 
-> a validação crítica não pode ficar numa camada frágil ou não confiável.
+> critical validation must not live in a fragile or untrusted layer.
 
 #### Execution Scope
 
-É a fronteira explícita da mudança.
+The explicit boundary of a change.
 
-Define:
+It defines:
 
-- o que pode ser alterado
-- o que não pode ser alterado
-- qual tipo de operação é esperado
-
----
-
-## Princípios que este pack reforça
-
-1. clareza sobre velocidade  
-2. controle sobre automação  
-3. consistência sobre conveniência  
-4. análise antes de escrita  
-5. contrato antes de implementação  
-6. validação antes de concluir  
+- what may be changed;
+- what may not be changed;
+- what type of operation is expected.
 
 ---
 
-## Áreas de governança cobertas
+## Principles reinforced by this pack
+
+1. clarity over speed;
+2. control over automation;
+3. consistency over convenience;
+4. analysis before writing;
+5. contract before implementation;
+6. validation before completion.
+
+---
+
+## Governance areas covered
 
 ## 1. Pipeline
 
-Garante que o trabalho passe por:
+Ensures that work passes through:
 
-- análise
-- planejamento
-- execução
-- validação
+- analysis;
+- planning;
+- execution;
+- validation.
 
 ## 2. Scope Control
 
-Garante:
+Ensures:
 
-- uma mudança por work item
-- fronteiras explícitas
-- proibição de expansão implícita
+- one change per Work Item;
+- explicit boundaries;
+- prohibition of implicit expansion.
 
 ## 3. Context Awareness
 
-Garante:
+Ensures:
 
-- leitura antes de escrita
-- análise mínima antes de gerar código
+- reading before writing;
+- minimum analysis before code generation.
 
 ## 4. Contracts
 
-Garante:
+Ensures:
 
-- definição de input/output
-- estabilidade de interfaces
-- bloqueio de mudanças implícitas
+- input/output definition;
+- interface stability;
+- blocking of implicit changes.
 
 ## 5. Security
 
-Garante:
+Ensures:
 
-- não expor segredos
-- validação crítica na camada autoritativa
-- confirmação explícita em operações sensíveis
+- no secret exposure;
+- critical validation in the authoritative layer;
+- explicit confirmation for sensitive operations.
 
 ## 6. Validation
 
-Garante:
+Ensures:
 
-- validação pós-execução
-- alinhamento com o artefato-fonte de verdade
-- proteção contra regressão
+- post-execution validation;
+- alignment with the source-of-truth artifact;
+- regression protection.
 
 ## 7. Source-of-Truth Governance
 
-Garante:
+Ensures:
 
-- atualização obrigatória quando o comportamento muda
-- coerência entre código e artefato de referência
-
----
-
-## Ações possíveis
-
-O pack deve falar a mesma língua do kernel.
-
-Por isso, suas saídas recomendadas são:
-
-- `allow`
-- `review`
-- `ask_human`
-- `block`
-
-### Regra prática
-
-- `allow` -> pode seguir
-- `review` -> precisa revisão antes de seguir
-- `ask_human` -> precisa decisão humana explícita
-- `block` -> não pode prosseguir nesse estado
+- required updates when behavior changes;
+- coherence between code and the reference artifact.
 
 ---
 
-## Modos de enforcement
-
-Este pack já nasce pensando em 3 modos:
-
-- `strict`
-- `balanced`
-- `relaxed`
-
-### Por que isso importa
-
-O mesmo pack pode precisar de rigidez diferente conforme:
-
-- criticidade do projeto
-- maturidade do time
-- estágio da tarefa
-
-### Regra recomendada do alpha
-
-No alpha do `AletheIA`, a leitura padrão deve ser:
-
-- `strict` para regras críticas de segurança, escopo e validação
-- `balanced` para desvios estruturais que ainda cabem em revisão
-
----
-
-## Hooks recomendados
-
-Este pack fica mais útil quando é avaliado em pontos claros do fluxo:
-
-## 1. `before_execute`
-
-Usado para impedir:
-
-- execução sem plano
-- execução sem artefato-fonte de verdade
-- escrita sem análise mínima
-- escopo indefinido
-
-## 2. `after_execute`
-
-Usado para detectar:
-
-- desvio do plano
-- mudança de contrato não declarada
-- alteração fora do escopo
-
-## 3. `before_finalize`
-
-Usado para impedir:
-
-- conclusão sem validação
-- mismatch com o artefato-fonte de verdade
-- mudança comportamental sem atualização documental
-
----
-
-## Facts Model mínimo
-
-O pack ainda não é um engine.
-
-Para ser interpretado, ele depende de um `Facts Model`.
-
-Em termos simples:
-
-o sistema precisa conseguir dizer se fatos como estes são verdadeiros ou falsos:
-
-- `analysis.performed`
-- `plan.exists`
-- `source_of_truth.exists`
-- `scope.allowed_files_defined`
-- `scope.forbidden_files_defined`
-- `contracts.io_defined`
-- `execution.modifies_undeclared_files`
-- `execution.changes_contract`
-- `validation.performed`
-- `validation.spec_alignment_ok`
-
-Sem isso, o JSON continua sendo só uma tabela de regras.
-
----
-
-## Supporting artifacts recomendados
-
-Além dos 6 contratos centrais do alpha, esta camada de governança sugere dois artefatos de apoio:
-
-### Execution Scope
-
-Para registrar:
-
-- arquivos permitidos
-- arquivos proibidos
-- operação esperada
-- fronteira declarada
-
-### Policy Evaluation
-
-Para registrar:
-
-- regras avaliadas
-- regras acionadas
-- fatos usados
-- decisão final
-
----
-
-## Decisão de arquitetura importante
-
-Este pack **não deve substituir o kernel**.
-
-O desenho correto é:
-
-- o `Decision Kernel` continua decidindo sobre risco, severidade, confiança e contexto
-- o `Governance Pack` adiciona disciplina operacional sobre escopo, contrato, source of truth e validação
-
-Ou seja:
-
-> o kernel decide se algo parece seguro  
-> a governança decide se algo está obedecendo o sistema de trabalho
-
----
-
-## Próximo passo recomendado
-
-Depois deste pack:
-
-1. definir o `Facts Model` executável
-2. criar o `Rule Interpreter v1`
-3. gerar `Policy Trace`
-4. ligar isso aos hooks:
-   - `before_execute`
-   - `after_execute`
-   - `before_finalize`
+## Possible actions

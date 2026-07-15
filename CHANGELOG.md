@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- normalize S73 core concept documentation pages to English following the public docs language policy
+
 - add S72 public documentation language policy, setting English as the official published docs language
 
 - add S71 docs language and ADR navigation audit with explicit Blume metadata for ADR ordering
