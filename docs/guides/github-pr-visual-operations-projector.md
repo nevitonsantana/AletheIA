@@ -103,12 +103,12 @@ URLs or infer omitted data from a PR body.
 
 ## Reproducible example
 
-- [Input evidence](../../examples/visual-operations/github-pr-projector-input.json)
-- [Projected JSON](../../examples/visual-operations/github-pr-projector-output.json)
-- [Projected Markdown](../../examples/visual-operations/github-pr-projector-output.md)
-- [PR #195 CLI input](../../examples/visual-operations/github-pr-195-cli-input.json)
-- [PR #195 CLI JSON output](../../examples/visual-operations/github-pr-195-cli-output.json)
-- [PR #195 CLI Markdown output](../../examples/visual-operations/github-pr-195-cli-output.md)
+- [Input evidence](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-projector-input.json)
+- [Projected JSON](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-projector-output.json)
+- [Projected Markdown](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-projector-output.md)
+- [PR #195 CLI input](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-195-cli-input.json)
+- [PR #195 CLI JSON output](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-195-cli-output.json)
+- [PR #195 CLI Markdown output](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-195-cli-output.md)
 - [Field-evidence retrospective](../pilots/visual-operations-pr-193-retrospective.md)
 
 The first example uses the durable evidence documented for PR #193. The second uses PR #195 as a

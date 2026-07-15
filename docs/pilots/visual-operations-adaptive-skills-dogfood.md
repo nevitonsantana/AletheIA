@@ -19,7 +19,7 @@ write-back path.
 The canonical capability source is
 [`feature-planning@0.1.0`](https://github.com/nevitonsantana/adaptive-skills/blob/9064ec8e7bef7f3c9b649232d736f079164dfcb8/skills/feature-planning/SKILL.md).
 The consumer-owned execution record is
-[`adaptive-skills-feature-planning-dogfood-record.json`](../../examples/visual-operations/adaptive-skills-feature-planning-dogfood-record.json).
+[`adaptive-skills-feature-planning-dogfood-record.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/adaptive-skills-feature-planning-dogfood-record.json).
 
 ## Why the activation gate is satisfied
 

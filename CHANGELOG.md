@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add S60 Blume Visual Operations example source-link handling, reducing validation findings for repository-level example sources while publishing remains gated
+
 - close S59 after the Blume root/meta and policy source-link handling merge, returning Active to none while keeping publishing blocked pending remaining source-coverage categories
 
 - add S59 Blume root/meta and policy source-link handling to remove repository-root, `_meta` and policy references from the internal-route validation category while publishing remains gated

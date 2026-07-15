@@ -8,7 +8,7 @@
 | Date | 2026-06-15 |
 | Recorder | Codex |
 | Review or decision context | Post-merge dogfood closeout for the first checked-in Visual Operations usage evidence slice |
-| Snapshot used | [`examples/visual-operations/github-pr-201-dogfood-output.md`](../../examples/visual-operations/github-pr-201-dogfood-output.md) |
+| Snapshot used | [`examples/visual-operations/github-pr-201-dogfood-output.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-201-dogfood-output.md) |
 | Source refs | [PR #201](https://github.com/nevitonsantana/AletheIA/pull/201), [merge commit `e8488d5`](https://github.com/nevitonsantana/AletheIA/commit/e8488d5f1ab47c88b28562c290fbeafdd9bdb442), [CI run](https://github.com/nevitonsantana/AletheIA/actions/runs/27581612377) |
 
 ## Usage boundary
@@ -26,8 +26,8 @@
 
 | Question | Answer | Source refs |
 |---|---|---|
-| Which fields helped the review? | `presentation_lane=closed`, `evidence_status=sufficient`, explicit CI provenance, author-reported local validation, no alerts, no follow-up slices, and unavailable runtime/token/cost fields. | [`github-pr-201-dogfood-output.md`](../../examples/visual-operations/github-pr-201-dogfood-output.md), PR #201 |
-| Which fields were missing, misleading, stale, or too noisy? | `human_review=unavailable` remains the main repeated gap. Planning depth, readiness, skill, runtime, token, and cost signals remain unknown or unavailable as expected. | [`github-pr-201-dogfood-output.md`](../../examples/visual-operations/github-pr-201-dogfood-output.md) |
+| Which fields helped the review? | `presentation_lane=closed`, `evidence_status=sufficient`, explicit CI provenance, author-reported local validation, no alerts, no follow-up slices, and unavailable runtime/token/cost fields. | [`github-pr-201-dogfood-output.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-201-dogfood-output.md), PR #201 |
+| Which fields were missing, misleading, stale, or too noisy? | `human_review=unavailable` remains the main repeated gap. Planning depth, readiness, skill, runtime, token, and cost signals remain unknown or unavailable as expected. | [`github-pr-201-dogfood-output.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-201-dogfood-output.md) |
 | Did the snapshot change a decision, shorten review, or only confirm known state? | It confirmed the slice closed cleanly and supported the decision that two consecutive dogfood records still do not activate new infrastructure. It also made the repeated human-review visibility gap easier to name. | PR #201, merge commit `e8488d5` |
 | Did the reviewer need to open the source PR, CI run, or evidence file anyway? | Yes. The snapshot was sufficient for orientation and decision framing, but source PR/CI records remained authoritative and were checked before recording the evidence. | PR #201, CI run `27581612377` |
 
@@ -37,12 +37,12 @@ Record `unknown` or `unavailable`; do not infer values.
 
 | Signal | Status | Why | Source refs |
 |---|---|---|---|
-| Planning depth | unknown | No governed planning-depth record was supplied. | [`github-pr-201-dogfood-output.md`](../../examples/visual-operations/github-pr-201-dogfood-output.md) |
+| Planning depth | unknown | No governed planning-depth record was supplied. | [`github-pr-201-dogfood-output.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-201-dogfood-output.md) |
 | Human review requirement | unknown | Authorization and merge occurred, but no separate durable review-requirement record was projected. | PR #201 |
-| Runtime session | unavailable | No authoritative runtime-session export was attached. | [`github-pr-201-dogfood-output.md`](../../examples/visual-operations/github-pr-201-dogfood-output.md) |
-| Skill activation | unknown | No durable skill-activation record was supplied. | [`github-pr-201-dogfood-output.md`](../../examples/visual-operations/github-pr-201-dogfood-output.md) |
-| Tokens | unavailable | No provider or harness token telemetry was supplied. | [`github-pr-201-dogfood-output.md`](../../examples/visual-operations/github-pr-201-dogfood-output.md) |
-| Cost | unavailable | No governed cost record was supplied. | [`github-pr-201-dogfood-output.md`](../../examples/visual-operations/github-pr-201-dogfood-output.md) |
+| Runtime session | unavailable | No authoritative runtime-session export was attached. | [`github-pr-201-dogfood-output.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-201-dogfood-output.md) |
+| Skill activation | unknown | No durable skill-activation record was supplied. | [`github-pr-201-dogfood-output.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-201-dogfood-output.md) |
+| Tokens | unavailable | No provider or harness token telemetry was supplied. | [`github-pr-201-dogfood-output.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-201-dogfood-output.md) |
+| Cost | unavailable | No governed cost record was supplied. | [`github-pr-201-dogfood-output.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-201-dogfood-output.md) |
 
 ## Activation signal check
 
@@ -51,13 +51,13 @@ actually supports.
 
 | Possible future surface | Supported by this evidence? | Reason | Source refs |
 |---|---|---|---|
-| Add another checked-in snapshot to CI | no | The PR #201 snapshot is another closed successful PR and does not add a distinct projection scenario for the allowlist. | [`github-pr-201-dogfood-output.md`](../../examples/visual-operations/github-pr-201-dogfood-output.md), [`scripts/check-visual-ops-snapshots.sh`](../../scripts/check-visual-ops-snapshots.sh) |
-| Improve projector field mapping | unclear | Two records now show `human_review=unavailable`; this is a candidate observation, but not enough to change mapping without a durable review source. | [`github-pr-200-dogfood-output.md`](../../examples/visual-operations/github-pr-200-dogfood-output.md), [`github-pr-201-dogfood-output.md`](../../examples/visual-operations/github-pr-201-dogfood-output.md) |
-| Add GitHub collection/import | no | Manual assembly has happened twice but has not yet shown repeated material error or delay. | [`github-pr-201-dogfood-input.json`](../../examples/visual-operations/github-pr-201-dogfood-input.json) |
-| Add dashboard/UI | no | Markdown remained sufficient for the closeout decision. | [`github-pr-201-dogfood-output.md`](../../examples/visual-operations/github-pr-201-dogfood-output.md) |
+| Add another checked-in snapshot to CI | no | The PR #201 snapshot is another closed successful PR and does not add a distinct projection scenario for the allowlist. | [`github-pr-201-dogfood-output.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-201-dogfood-output.md), [`scripts/check-visual-ops-snapshots.sh`](../../scripts/check-visual-ops-snapshots.sh) |
+| Improve projector field mapping | unclear | Two records now show `human_review=unavailable`; this is a candidate observation, but not enough to change mapping without a durable review source. | [`github-pr-200-dogfood-output.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-200-dogfood-output.md), [`github-pr-201-dogfood-output.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-201-dogfood-output.md) |
+| Add GitHub collection/import | no | Manual assembly has happened twice but has not yet shown repeated material error or delay. | [`github-pr-201-dogfood-input.json`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-201-dogfood-input.json) |
+| Add dashboard/UI | no | Markdown remained sufficient for the closeout decision. | [`github-pr-201-dogfood-output.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-201-dogfood-output.md) |
 | Add persistence/backend | no | No cross-slice query need was demonstrated; two checked-in records are sufficient for current review. | This record |
 | Add Adaptive Skills integration | no | No durable non-sensitive skill-activation record was used. | This record |
-| Add runtime/token/cost telemetry | no | The useful behavior remains preserving unavailable telemetry rather than inventing values. | [`github-pr-201-dogfood-output.md`](../../examples/visual-operations/github-pr-201-dogfood-output.md) |
+| Add runtime/token/cost telemetry | no | The useful behavior remains preserving unavailable telemetry rather than inventing values. | [`github-pr-201-dogfood-output.md`](https://github.com/nevitonsantana/AletheIA/blob/main/examples/visual-operations/github-pr-201-dogfood-output.md) |
 
 ## Outcome
 
