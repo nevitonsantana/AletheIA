@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S67 after the Blume GitHub Pages readiness implementation merge, returning Active to none while keeping publishing blocked pending explicit manual deployment and smoke test
+
 - add S67 Blume GitHub Pages readiness implementation with Pages base configuration, manual-only workflow and smoke-test checklist
 
 - close S66 after the Blume publication-readiness decision merge, returning Active to none while keeping publishing blocked pending gated Pages implementation
