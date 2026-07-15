@@ -4,7 +4,7 @@ Individual operation records from bounded execution sessions. Each file is a com
 
 Files are named `YYYY-MM-DD-<slug>.md` or `<system>-<slug>-closeout.md`.
 
-Previously located in `docs/aletheia/closeouts/` and `docs/hermes/`. Moved here 2026-05-20 — see [`_meta/MIGRATION.md`](../../_meta/MIGRATION.md).
+Previously located in `docs/aletheia/closeouts/` and `docs/hermes/`. Moved here 2026-05-20 — see [`_meta/MIGRATION.md`](https://github.com/nevitonsantana/AletheIA/blob/main/docs/_meta/MIGRATION.md).
 
 ## Phase closeouts
 

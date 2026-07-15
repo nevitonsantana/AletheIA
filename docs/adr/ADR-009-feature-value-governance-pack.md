@@ -102,7 +102,7 @@ capability.
   (ADR-008) via the `strategic_framework` slot; adds no change to its contracts.
 - Adds a domain governance pack overview at
   [`docs/domain-governance-packs/product-feature-governance.md`](../domain-governance-packs/product-feature-governance.md)
-  and readiness gates at [`policies/feature-readiness-gates.md`](../../policies/feature-readiness-gates.md).
+  and readiness gates at [`policies/feature-readiness-gates.md`](https://github.com/nevitonsantana/AletheIA/blob/main/policies/feature-readiness-gates.md).
 - Pairs with the Adaptive Skills companion changes (the four flat skills, the
   `product-value-governance` domain pack, templates, and the evolved skills).
 - Only adds schemas/policies/docs/tests; modifies no existing contract.

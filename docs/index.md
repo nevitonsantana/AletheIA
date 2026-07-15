@@ -21,7 +21,7 @@ Reading map organized by intent. Each entry links to the most useful starting po
 2. [Core operating path](guides/core-operating-path.md) — minimum operational loop
 3. [Apply to an existing project](guides/apply-to-existing-project.md) — how to adopt without rebuilding
 4. [Canonical vocabulary](concepts/canonical-vocabulary.md) — shared language: Work Slice, Restart Package, Operational Boundary
-5. [SYSTEM_STATE](../SYSTEM_STATE.md) — compact current-state index; follow its source refs for authoritative detail
+5. [SYSTEM_STATE](https://github.com/nevitonsantana/AletheIA/blob/main/SYSTEM_STATE.md) — compact current-state index; follow its source refs for authoritative detail
 
 ---
 

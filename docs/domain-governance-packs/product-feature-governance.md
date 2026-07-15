@@ -28,14 +28,14 @@ here — see [How the strategic lens plugs in](#how-the-strategic-lens-plugs-in)
 | Layer | Responsibility | Artifacts |
 | --- | --- | --- |
 | **Strategic lens** (knowledge pack) | Provide the value lens: existence, growth, sustainment, organization. | Resolved via the `strategic_framework` knowledge slot. |
-| **AletheIA** | Define the contract, gates, obligations, and depth of evaluation. | [Feature Value Governance Contract](../../schemas/feature-value-governance-contract.schema.json), [readiness gates](../../policies/feature-readiness-gates.md), decision record. |
+| **AletheIA** | Define the contract, gates, obligations, and depth of evaluation. | [Feature Value Governance Contract](../../schemas/feature-value-governance-contract.schema.json), [readiness gates](https://github.com/nevitonsantana/AletheIA/blob/main/policies/feature-readiness-gates.md), decision record. |
 | **Adaptive Skills** | Execute the contextual analyses and rituals. | `feature-value-governance` (orchestrator), `revenue-lever-mapping`, `opportunity-tree-alignment`, `feature-complexity-audit`, `sunset-decision`. |
 
 ## Artifacts in this repo
 
 - **Contract schema** — [`schemas/feature-value-governance-contract.schema.json`](../../schemas/feature-value-governance-contract.schema.json):
   the minimum fields a feature must declare to advance.
-- **Readiness gates** — [`policies/feature-readiness-gates.md`](../../policies/feature-readiness-gates.md):
+- **Readiness gates** — [`policies/feature-readiness-gates.md`](https://github.com/nevitonsantana/AletheIA/blob/main/policies/feature-readiness-gates.md):
   the seven gates and the default Build / Test / Discovery / Park / Kill / Sunset decisions.
 - **Worked examples** — [`examples/feature-governance/`](../../examples/feature-governance/):
   `build`, `test`, `kill`, and `sunset` decision records against the contract.
@@ -83,7 +83,7 @@ layer surfaces in the pack's gates and contract fields, without reproducing the 
 
 ## Related
 
-- [Feature readiness gates](../../policies/feature-readiness-gates.md)
+- [Feature readiness gates](https://github.com/nevitonsantana/AletheIA/blob/main/policies/feature-readiness-gates.md)
 - [Four-layer value lens relation map](./four-layers-value-lens.md)
 - [ADR-009 — Feature Value Governance Pack](../adr/ADR-009-feature-value-governance-pack.md)
 - [Knowledge Governance Layer](../concepts/knowledge-governance-layer.md)
