@@ -1,6 +1,6 @@
 # Installing AletheIA via APM
 
-This guide is for adopters using [APM (Microsoft Agentic Package Manager)](https://microsoft.github.io/apm/) as their package manager. If you do not use APM, skip this guide and follow the manual flow in [`packs/operating-overlay/README.md`](../../packs/operating-overlay/README.md).
+This guide is for adopters using [APM (Microsoft Agentic Package Manager)](https://microsoft.github.io/apm/) as their package manager. If you do not use APM, skip this guide and follow the manual flow in [`packs/operating-overlay/README.md`](https://github.com/nevitonsantana/AletheIA/blob/main/packs/operating-overlay/README.md).
 
 > **Two-step adoption.** APM today has no install-time hook for delivering project scaffolds to the consumer root. AletheIA accommodates this with an explicit second step — see [ADR-007](../adr/ADR-007-apm-packaging-strategy.md) for the rationale.
 
@@ -139,6 +139,6 @@ bash apm_modules/AletheIA/packs/operating-overlay/scripts/scaffold-overlay.sh
 ## Related
 
 - [ADR-007](../adr/ADR-007-apm-packaging-strategy.md) — why two-step adoption.
-- [`packs/operating-overlay/README.md`](../../packs/operating-overlay/README.md) — manual adoption path.
+- [`packs/operating-overlay/README.md`](https://github.com/nevitonsantana/AletheIA/blob/main/packs/operating-overlay/README.md) — manual adoption path.
 - [`docs/contracts/consumer-project-overlay.md`](../contracts/consumer-project-overlay.md) — the contract this scaffold satisfies.
 - [`docs/guides/setting-up-harnesses.md`](setting-up-harnesses.md) — per-harness setup details.
