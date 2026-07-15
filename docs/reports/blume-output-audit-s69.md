@@ -51,7 +51,7 @@ Command evidence:
 
 ```bash
 pnpm run docs:build
-pnpm run docs:audit
+pnpm --filter @aletheia/docs run audit
 ```
 
 `docs:build` still emits the existing local sandbox font/DNS warnings when Google Fonts metadata cannot be fetched, but exits successfully and completes the postprocess/audit.
