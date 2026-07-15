@@ -1,93 +1,92 @@
 # AletheIA — Quality Baseline v1
 
-## Objetivo
+## Objective
 
-Este documento formaliza a entrada do `AletheIA` na Fase 3 de qualidade.
+This document formalizes `AletheIA` entering quality Phase 3.
 
-Em linguagem simples:
+In plain language:
 
-depois de visão, contratos, kernel e governança,
-o framework precisa provar de forma automatizada que:
+after vision, contracts, kernel, and governance, the framework must prove automatically that:
 
-- seus contratos continuam íntegros
-- seus comportamentos principais continuam estáveis
-- seu fluxo mínimo continua funcionando de ponta a ponta
+- its contracts remain intact;
+- its core behaviors remain stable;
+- its minimum flow still works end to end.
 
 ---
 
-## Três provas mínimas do alpha
+## Three minimum alpha proofs
 
 ## 1. Contract tests
 
-Verificam se os artefatos mínimos do framework continuam com a estrutura esperada.
+These verify whether the framework's minimum artifacts still have the expected structure.
 
-No alpha, isso cobre principalmente:
+In the alpha, this mainly covers:
 
-- contratos centrais
-- artefatos de governança
-- campos mínimos obrigatórios
+- core contracts;
+- governance artifacts;
+- required minimum fields.
 
 ## 2. Golden tests
 
-Verificam se os comportamentos de referência continuam iguais.
+These verify whether reference behaviors remain unchanged.
 
-No alpha, isso cobre:
+In the alpha, this covers:
 
-- o caminho `allow` do `hello-world`
-- o caminho `review` por baixa confiança
-- o caminho `ask_human` por risco crítico
-- o caminho `block` por falha de governança
+- the `allow` path for `hello-world`;
+- the `review` path for low confidence;
+- the `ask_human` path for critical risk;
+- the `block` path for governance failure.
 
-## 3. E2E mínimo
+## 3. Minimum E2E
 
-Verifica se o fluxo integrado ainda fecha:
+This verifies whether the integrated flow still closes:
 
 `kernel -> governance hook -> policy evaluation`
 
 ---
 
-## O que esta fase quer provar
+## What this phase aims to prove
 
-- que os contratos não quebraram silenciosamente
-- que os cenários de referência continuam estáveis
-- que o framework continua coerente do começo ao fim
-
----
-
-## Regra importante
-
-O alpha não precisa começar com uma suíte pesada.
-
-Ele só precisa de uma base pequena, mas confiável, para impedir regressão invisível.
+- contracts did not break silently;
+- reference scenarios remain stable;
+- the framework remains coherent from start to finish.
 
 ---
 
-## Implementação desta iteração
+## Important rule
 
-### Scripts principais
+The alpha does not need to start with a heavy test suite.
+
+It only needs a small but reliable baseline that prevents invisible regression.
+
+---
+
+## Implementation in this iteration
+
+### Main scripts
 
 - `scripts/aletheia/test-contracts.ts`
 - `scripts/aletheia/test-goldens.ts`
 - `scripts/aletheia/test-e2e.ts`
 - `scripts/aletheia/test-learnings.ts`
 
-### Fixtures de referência
+### Reference fixtures
 
 - `docs/examples/aletheia/goldens/*.json`
 - `docs/examples/aletheia/learning-from-failed-validation/*`
 
-### Cobertura adicional desta iteração
+### Additional coverage in this iteration
 
-- cenário `learning-from-failed-validation`
-- geração de `Learning Record` a partir de `Policy Evaluation`
-- prova de que falha de validação pode virar aprendizado útil, em vez de apenas bloqueio
+- `learning-from-failed-validation` scenario;
+- generation of a `Learning Record` from a `Policy Evaluation`;
+- proof that validation failure can become useful learning instead of only a block.
 
 ---
 
-## Próximo passo recomendado
+## Recommended next step
 
-Depois deste baseline ampliado:
+After this expanded baseline:
 
-1. consolidar a documentação inicial do repositório público
-2. preparar o blueprint de extração do `AletheIA`
-3. separar o que vai para `framework core`, `starter-pack` e `pilot materials`
+1. consolidate the initial documentation for the public repository;
+2. prepare the extraction blueprint for `AletheIA`;
+3. separate what belongs in `framework core`, `starter-pack`, and `pilot materials`.
