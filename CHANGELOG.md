@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add S59 Blume root/meta and policy source-link handling to remove repository-root, `_meta` and policy references from the internal-route validation category while publishing remains gated
+
 - close S58 after the Blume internal docs route repair merge, returning Active to none while keeping publishing blocked pending source-coverage handling
 
 - add S58 Blume internal docs route repair, reducing validation findings for links that should resolve inside the existing docs source

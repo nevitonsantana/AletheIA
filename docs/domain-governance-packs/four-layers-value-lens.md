@@ -58,6 +58,6 @@ specific criteria of any given framework live in its pack, not here.
 ## See also
 
 - [Product Feature Governance pack overview](./product-feature-governance.md)
-- [Feature readiness gates](../../policies/feature-readiness-gates.md)
+- [Feature readiness gates](https://github.com/nevitonsantana/AletheIA/blob/main/policies/feature-readiness-gates.md)
 - [Knowledge Governance Layer](../concepts/knowledge-governance-layer.md)
 - [ADR-009 — Feature Value Governance Pack](../adr/ADR-009-feature-value-governance-pack.md)

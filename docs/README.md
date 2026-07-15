@@ -22,4 +22,4 @@ Documents are organized by **type** (what the document does) rather than by topi
 
 Architecture decisions that fix boundary disputes live in [`adr/`](adr/README.md). The key decision establishing the three-layer model (product / overlay / harness) is [ADR-004](adr/ADR-004-aletheia-as-operating-overlay.md).
 
-Migration table for links that changed during the 2026-05-20 reorganization: [`_meta/MIGRATION.md`](_meta/MIGRATION.md).
+Migration table for links that changed during the 2026-05-20 reorganization: [`_meta/MIGRATION.md`](https://github.com/nevitonsantana/AletheIA/blob/main/docs/_meta/MIGRATION.md).
