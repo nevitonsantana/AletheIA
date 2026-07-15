@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- normalize S77 KGL prep roadmap language residual
+- close S77 after KGL prep language normalization
 
 - close S76 after ADR-007 language normalization
 
