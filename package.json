@@ -29,7 +29,8 @@
     "test:all": "pnpm run check:governance && pnpm run test",
     "docs:dev": "pnpm --filter @aletheia/docs dev",
     "docs:build": "pnpm --filter @aletheia/docs build",
-    "docs:validate": "pnpm --filter @aletheia/docs validate"
+    "docs:validate": "pnpm --filter @aletheia/docs validate",
+    "docs:audit": "pnpm --filter @aletheia/docs run audit"
   },
   "devDependencies": {
     "@types/node": "^26.1.1",

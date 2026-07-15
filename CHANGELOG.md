@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add S69 Blume docs output postprocess/audit to remove duplicate first headings, internal Markdown links and raw Markdown artifacts from the published build
+
 - add S68 Blume GitHub Pages deploy smoke-test evidence after explicit manual publication approval
 
 - close S67 after the Blume GitHub Pages readiness implementation merge, returning Active to none while keeping publishing blocked pending explicit manual deployment and smoke test
