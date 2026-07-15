@@ -36,7 +36,7 @@ In scope:
 - AletheIA PRs, closeouts, planning decisions, and handoffs where a generated Visual Operations
   snapshot is actually opened;
 - repository-local usage records created with
-  [`visual-ops-usage-evidence-template.md`](../../starter-pack/templates/visual-ops-usage-evidence-template.md);
+  [`visual-ops-usage-evidence-template.md`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/templates/visual-ops-usage-evidence-template.md);
 - metadata-first notes about what helped, what was missing, and what still required opening source
   records;
 - follow-up recommendations that preserve Visual Operations as read-only projection.

@@ -261,5 +261,5 @@ Check `scope.md`. An overly narrow scope can cause the agent to surface a confli
 
 1. Run your first Work Slice: [`docs/guides/core-operating-path.md`](../guides/core-operating-path.md)
 2. Browse what the overlay provides: [`catalog.md`](catalog.md)
-3. Review the daily operations workflow: [`starter-pack/guides/daily-operations.md`](../../starter-pack/guides/daily-operations.md)
+3. Review the daily operations workflow: [`starter-pack/guides/daily-operations.md`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/guides/daily-operations.md)
 4. Read the technical reference for this install flow: [`docs/guides/install-via-apm.md`](../guides/install-via-apm.md)

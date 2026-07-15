@@ -178,6 +178,6 @@ If any box is unchecked, the overlay is not fully active. See [`installation-gui
 | Work Slice pattern in depth | [`docs/concepts/work-slice-pattern.md`](../concepts/work-slice-pattern.md) |
 | Handoff pattern in depth | [`docs/concepts/handoff-capture-pattern.md`](../concepts/handoff-capture-pattern.md) |
 | Governance gates and decision records | [`docs/concepts/governance.md`](../concepts/governance.md) |
-| Daily operations workflow | [`starter-pack/guides/daily-operations.md`](../../starter-pack/guides/daily-operations.md) |
+| Daily operations workflow | [`starter-pack/guides/daily-operations.md`](https://github.com/nevitonsantana/AletheIA/blob/main/starter-pack/guides/daily-operations.md) |
 | Harness-specific setup (Claude Code, Codex, etc.) | [`docs/guides/setting-up-harnesses.md`](../guides/setting-up-harnesses.md) |
 | Manual adoption (no APM) | [`packs/operating-overlay/README.md`](../../packs/operating-overlay/README.md) |
