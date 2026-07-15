@@ -34,4 +34,4 @@ The production build is configured for the intended GitHub Pages project URL:
 
 ## Publication gate
 
-Do not publish this as official documentation automatically. The Pages workflow is manual-only and should be run only after review. After a manual deployment, complete the S67 smoke test before treating the Blume shell as official documentation.
+The Blume documentation shell is published through a manual-only GitHub Pages workflow at `https://nevitonsantana.github.io/AletheIA/`. Do not switch to automatic publishing on merge without a separate reviewed decision; rerun the manual workflow only after reviewed changes and smoke-test the result.

@@ -847,6 +847,16 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Acceptance:** local docs validation/build pass with the Pages base configuration, the workflow is `workflow_dispatch` only, and the smoke-test checklist is documented.
 - **Evidence:** `docs/reports/blume-pages-readiness-s67.md`, `pnpm run docs:validate`, `pnpm run docs:build`; PR #401.
 
+### S68 — Blume GitHub Pages deploy smoke test
+
+- **Repository / layer:** AletheIA documentation tooling
+- **Covers:** Evidence from the first explicit manual GitHub Pages deployment and S67 smoke test.
+- **Dependencies:** S67 Blume GitHub Pages readiness implementation and explicit human approval to run the manual workflow.
+- **Status:** `in review`; automatic publishing on merge remains disabled.
+- **Non-goals:** automatic GitHub Pages publishing on merge, custom domain, generated documentation pipeline, dashboards, collectors, scoring, ranking, S18 metrics, Runtime 2.0 behavior or Adaptive Skills mutation.
+- **Acceptance:** successful manual workflow run and smoke-test evidence for home page, representative route, assets, `llms.txt`, `robots.txt`, sitemap and search index.
+- **Evidence:** `docs/reports/blume-pages-deploy-smoke-test-s68.md`, GitHub Actions run `29390178825`, `https://nevitonsantana.github.io/AletheIA/`.
+
 ## Requirement traceability matrix
 
 The identifiers below preserve requirement families. The complete pack remains authoritative for detailed wording, examples and edge cases.
@@ -906,7 +916,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P11-R3 Continuity Capsule and resume check | P11 continuity policy | `delivered` | S15 | Continuity fields extend Restart Package and its post-resume check; no competing artifact or lifecycle was created. |
 | P11-R4 Per-repository SYSTEM_STATE | P11 system-state proposal | `delivered` | S15 | Both repositories maintain compact validated first-load indexes; contracts and evidence remain authoritative. |
 | P11-R5 Explainable language and cognitive boundaries | P11 language policy | `delivered` | S17 | Confirmed depth preserves precision and requires technical review beyond the user's safe boundary. |
-| P11-R6 Documentation-health projection | P11 integration map | `delivered` for manual-only GitHub Pages readiness; official publishing remains gated by human deployment and smoke test | S55, S56, S57, S58, S59, S60, S61, S62, S63, S64, S65, S66, S67 | S55 proved an isolated static documentation shell can build from existing Markdown; S56 classified validation/source-coverage gaps; S57 mapped publication sources; S58 repaired internal docs routes; S59 handled repository-root, `_meta` and policy references; S60 handled Visual Operations examples; S61 handled starter-pack artifacts; S62 handled operating-overlay pack material; S63 cleared remaining example broken links; S64 documented the asset-check warning; S65 accepted the warning for the spike; S66 selected the future host; S67 added manual-only Pages readiness before any automatic publishing, mutation or documentation-health projection. |
+| P11-R6 Documentation-health projection | P11 integration map | `in review` for first manual GitHub Pages deployment evidence; automatic publishing remains disabled | S55, S56, S57, S58, S59, S60, S61, S62, S63, S64, S65, S66, S67, S68 | S55 proved an isolated static documentation shell can build from existing Markdown; S56 classified validation/source-coverage gaps; S57 mapped publication sources; S58 repaired internal docs routes; S59 handled repository-root, `_meta` and policy references; S60 handled Visual Operations examples; S61 handled starter-pack artifacts; S62 handled operating-overlay pack material; S63 cleared remaining example broken links; S64 documented the asset-check warning; S65 accepted the warning for the spike; S66 selected the future host; S67 added manual-only Pages readiness; S68 records explicit manual deployment and smoke-test evidence before any automatic publishing, mutation or documentation-health projection. |
 | P13-R1 Domain Expertise Brief | P13 PRD/SDD | `delivered` | S25 | Capture human domain rules and edge cases before execution; do not replace human authority. |
 | P13-R2 Evidence-Based Learning Record | P13 schemas/policies | `delivered` | S25 | Record hypothesis, observed result, surprise and future recommendation as evidence, not self-evolution. |
 | P13-R3 Capability fitness and learning dashboards | P13 metrics | `deferred` | Post-S25 evidence gate | No ranking or automation until comparable reviewed records exist. |
