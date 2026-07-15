@@ -8,7 +8,7 @@ Layer (KGL). It does not add runtime behavior. It defines *what* an implementer 
 the boundary is*.
 
 This is Phase 5 of the [KGL initiative](../adr/ADR-008-knowledge-governance-layer.md):
-**Preparação para implementação técnica**. Phases 1–4 produced the concepts, contracts,
+**Technical implementation preparation**. Phases 1–4 produced the concepts, contracts,
 schemas, examples, the three governance skills, and the security hardening surface. This
 phase prepares — but does not perform — the technical build.
 
