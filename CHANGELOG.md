@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- add S78 public language residual classification
+
 - close S77 after KGL prep language normalization
 
 - close S76 after ADR-007 language normalization
