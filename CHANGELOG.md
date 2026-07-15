@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- normalize S76 ADR-007 language residuals
+- close S76 after ADR-007 language normalization
 
 - close S75 after architecture concept flow label normalization
 
