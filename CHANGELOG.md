@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S58 after the Blume internal docs route repair merge, returning Active to none while keeping publishing blocked pending source-coverage handling
+
 - add S58 Blume internal docs route repair, reducing validation findings for links that should resolve inside the existing docs source
 
 - close S57 after the Blume publication-source map merge, returning Active to none while keeping publishing blocked pending route repair and validation
