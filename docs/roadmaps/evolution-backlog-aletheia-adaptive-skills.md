@@ -872,10 +872,20 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA documentation tooling
 - **Covers:** Manual GitHub Pages publication after S69 and public smoke-test evidence for duplicate-heading/raw-Markdown hygiene.
 - **Dependencies:** S69 Blume docs output audit and postprocess guard, S69 closure via PR #405 and explicit human approval to run the manual workflow.
-- **Status:** `in review`; automatic publishing on merge remains disabled.
+- **Status:** `delivered`; automatic publishing on merge remains disabled.
 - **Non-goals:** automatic GitHub Pages publishing on merge, custom domain, generated documentation pipeline, dashboards, collectors, scoring, ranking, S18 metrics, Runtime 2.0 behavior or Adaptive Skills mutation.
 - **Acceptance:** manual workflow completes successfully and sampled public routes show rendered HTML pages without duplicate first headings or internal raw Markdown links.
-- **Evidence:** `docs/reports/blume-pages-post-guard-smoke-s70.md`, GitHub Actions run `29391565432`, `https://nevitonsantana.github.io/AletheIA/`.
+- **Evidence:** `docs/reports/blume-pages-post-guard-smoke-s70.md`, GitHub Actions run `29391565432`, `https://nevitonsantana.github.io/AletheIA/`; PR #406.
+
+### S71 — Docs language and ADR navigation audit
+
+- **Repository / layer:** AletheIA documentation tooling/content governance
+- **Covers:** Small public-docs coherence review for mixed English/Portuguese content and explicit Blume navigation metadata for ADR grouping/order.
+- **Dependencies:** S70 public post-guard smoke test and human review of the published docs surface.
+- **Status:** `in review`; language normalization remains a separate follow-up decision.
+- **Non-goals:** bulk translation, rewriting historical evidence, automatic language classification, automatic publishing on merge, dashboards, collectors, scanners, policy engines, S18 metrics, Runtime 2.0 behavior or Adaptive Skills mutation.
+- **Acceptance:** Blume build/validate accepts `meta.ts` navigation metadata; ADR group is explicitly labeled and ordered; mixed-language candidates are recorded for a future reviewed translation/normalization slice.
+- **Evidence:** `docs/reports/docs-language-and-adr-navigation-audit-s71.md`, `docs/meta.ts`, `docs/adr/meta.ts`.
 
 ## Requirement traceability matrix
 
@@ -936,7 +946,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P11-R3 Continuity Capsule and resume check | P11 continuity policy | `delivered` | S15 | Continuity fields extend Restart Package and its post-resume check; no competing artifact or lifecycle was created. |
 | P11-R4 Per-repository SYSTEM_STATE | P11 system-state proposal | `delivered` | S15 | Both repositories maintain compact validated first-load indexes; contracts and evidence remain authoritative. |
 | P11-R5 Explainable language and cognitive boundaries | P11 language policy | `delivered` | S17 | Confirmed depth preserves precision and requires technical review beyond the user's safe boundary. |
-| P11-R6 Documentation-health projection | P11 integration map | `in review` for post-guard public smoke evidence; automatic publishing remains disabled | S55, S56, S57, S58, S59, S60, S61, S62, S63, S64, S65, S66, S67, S68, S69, S70 | S55 proved an isolated static documentation shell can build from existing Markdown; S56 classified validation/source-coverage gaps; S57 mapped publication sources; S58 repaired internal docs routes; S59 handled repository-root, `_meta` and policy references; S60 handled Visual Operations examples; S61 handled starter-pack artifacts; S62 handled operating-overlay pack material; S63 cleared remaining example broken links; S64 documented the asset-check warning; S65 accepted the warning for the spike; S66 selected the future host; S67 added manual-only Pages readiness; S68 records explicit manual deployment and smoke-test evidence; S69 guards the generated artifact against duplicate headings, internal Markdown links and raw Markdown files; S70 records the post-guard manual publication smoke test before any automatic publishing, mutation or documentation-health projection. |
+| P11-R6 Documentation-health projection | P11 integration map | `in review` for docs language/navigation coherence; automatic publishing remains disabled | S55, S56, S57, S58, S59, S60, S61, S62, S63, S64, S65, S66, S67, S68, S69, S70, S71 | S55 proved an isolated static documentation shell can build from existing Markdown; S56 classified validation/source-coverage gaps; S57 mapped publication sources; S58 repaired internal docs routes; S59 handled repository-root, `_meta` and policy references; S60 handled Visual Operations examples; S61 handled starter-pack artifacts; S62 handled operating-overlay pack material; S63 cleared remaining example broken links; S64 documented the asset-check warning; S65 accepted the warning for the spike; S66 selected the future host; S67 added manual-only Pages readiness; S68 records explicit manual deployment and smoke-test evidence; S69 guards the generated artifact against duplicate headings, internal Markdown links and raw Markdown files; S70 records the post-guard manual publication smoke test; S71 adds explicit ADR navigation metadata and a language-coherence audit before any bulk translation, automatic publishing, mutation or documentation-health projection. |
 | P13-R1 Domain Expertise Brief | P13 PRD/SDD | `delivered` | S25 | Capture human domain rules and edge cases before execution; do not replace human authority. |
 | P13-R2 Evidence-Based Learning Record | P13 schemas/policies | `delivered` | S25 | Record hypothesis, observed result, surprise and future recommendation as evidence, not self-evolution. |
 | P13-R3 Capability fitness and learning dashboards | P13 metrics | `deferred` | Post-S25 evidence gate | No ranking or automation until comparable reviewed records exist. |
