@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S62 after the Blume operating-overlay pack source-link handling merge, returning Active to none while keeping publishing blocked pending remaining source-coverage categories
+
 - add S62 Blume pack source-link handling, reducing validation findings for operating-overlay pack references while publishing remains gated
 
 - close S61 after the Blume starter-pack source-link handling merge, returning Active to none while keeping publishing blocked pending remaining source-coverage categories
