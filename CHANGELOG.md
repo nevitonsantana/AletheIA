@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- add S78 public language residual classification
+- close S78 after public language residual classification
 
 - close S77 after KGL prep language normalization
 
