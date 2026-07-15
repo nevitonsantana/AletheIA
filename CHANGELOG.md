@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- normalize S74 Launch Kit to English-only canonical public documentation copy
+
 - normalize S73 core concept documentation pages to English following the public docs language policy
 
 - add S72 public documentation language policy, setting English as the official published docs language
