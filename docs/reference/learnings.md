@@ -1,263 +1,233 @@
-# AI LESSONS
+# AI lessons
 
-## Objetivo
+## Purpose
 
-Registrar lições recorrentes do sistema de trabalho com IA sem transformar isso em diário solto de sessão.
+Record recurring lessons from AI-assisted work without turning this file into a loose session diary.
 
-Este arquivo existe para preservar:
+This file preserves:
 
-- erros repetíveis
-- ajustes de processo
-- heurísticas novas realmente úteis
-- padrões que evitam reincidência
+- repeatable mistakes;
+- process adjustments;
+- genuinely useful new heuristics;
+- patterns that prevent recurrence.
 
-## Quando registrar
+## When to record
 
-Registrar apenas quando houver pelo menos um destes casos:
+Record a lesson only when at least one of these applies:
 
-- o mesmo erro poderia voltar em outra thread
-- uma regra de ativação precisou ser refinada
-- uma heurística nova melhorou claramente a execução
-- uma falha de coordenação expôs lacuna do processo
+- the same mistake could reappear in another task;
+- an activation rule had to be refined;
+- a new heuristic clearly improved execution;
+- a coordination failure exposed a process gap.
 
-## Quando não registrar
+## When not to record
 
-Não registrar:
+Do not record:
 
-- observação trivial
-- nota redundante com `docs/DECISIONS.md`
-- resumo de tarefa comum
-- comentário que só faz sentido para uma sessão isolada
+- trivial observations;
+- notes redundant with `docs/DECISIONS.md`;
+- routine task summaries;
+- comments that only make sense for one isolated session.
 
-## Formato recomendado
+## Recommended format
 
 ```md
-### LESSON-XXX — título curto
+### LESSON-XXX — short title
 
-Contexto:
-- 
+Context:
+-
 
-Lição:
-- 
+Lesson:
+-
 
-Aplicação futura:
-- 
+Future application:
+-
 
-Referências:
-- 
+References:
+-
 ```
 
-## Entradas
+## Entries
 
-### LESSON-001 — Validar travessia com mudança mínima de contrato antes de abrir UI ou telemetria
+### LESSON-001 — Validate a boundary crossing with the smallest contract change before opening UI or telemetry
 
-Contexto:
-- no segundo teste do sistema operacional, precisávamos validar uma tarefa `Tipo B` em `PR/Comms` cruzando `Feature Development` e `Cris Assistente`
-- a evolução escolhida foi explicitar a origem do resumo executivo híbrido no contrato de exportação
+Context:
+- In the second operating-system test, the work needed to validate a `Type B` task in `PR/Comms` crossing `Feature Development` and `Cris Assistant`.
+- The chosen evolution was to make the origin of the hybrid executive summary explicit in the export contract.
 
-Lição:
-- quando a travessia é real, mas o escopo ainda é médio, o melhor piloto costuma ser uma mudança mínima de contrato verificável
-- expor metadata em header HTTP foi suficiente para validar frente dominante, travessia, tríade leve e QA leve sem invadir UI ou observabilidade
+Lesson:
+- When the boundary crossing is real but the scope is still medium-sized, the best pilot is usually a minimal, verifiable contract change.
+- Exposing metadata in an HTTP header was enough to validate dominant front, crossing, lightweight triad and lightweight QA without invading UI or observability.
 
-Aplicação futura:
-- antes de abrir superfícies visuais ou telemetria adicional, preferir primeiro uma mudança de contrato pequena, reversível e testável
+Future application:
+- Before opening visual surfaces or additional telemetry, prefer a small, reversible and testable contract change first.
 
-Referências:
+References:
 - `docs/FEATURE_pr-comms-backend-phase2.md`
 - `docs/DECISIONS.md` (`PRC-003`)
 
-### LESSON-002 — Separar ownership textual de ownership visual evita conflito falso entre Codex e Claude Code
+### LESSON-002 — Separating text ownership from visual ownership avoids false conflict between Codex and Claude Code
 
-Contexto:
-- o processo evoluiu para uma colaboração estável entre `Codex`, `Claude Code` e apoio pontual do `ChatGPT`
-- parte importante do trabalho recente envolveu landing, `/guia`, `/docs` e handoffs de interface, onde o texto precisava evoluir sem reabrir ownership visual do `Claude Code`
+Context:
+- The process evolved into stable collaboration between `Codex`, `Claude Code` and occasional `ChatGPT` support.
+- Recent work touched landing, `/guia`, `/docs` and interface handoffs, where text needed to evolve without reopening Claude Code's visual ownership.
 
-Lição:
-- em superfícies de UX/UI, a fronteira mais útil nem sempre é “quem toca o arquivo”, mas “qual é a natureza dominante da mudança”
-- mudanças dominadas por `UX Writing` podem atravessar superfícies visuais desde que não virem redesign silencioso
-- isso reduz conflito artificial entre ferramentas e evita bloquear evolução de copy, glossário e documentação
+Lesson:
+- In UX/UI surfaces, the most useful boundary is not always “who touches the file”, but “what is the dominant nature of the change”.
+- UX Writing changes may cross visual surfaces when they do not silently become redesign.
+- This reduces artificial tool conflict and avoids blocking copy, glossary and documentation evolution.
 
-Aplicação futura:
-- antes de barrar uma edição por ownership de arquivo, classificar se a mudança é visual, funcional ou textual
-- quando a mudança for textual em superfície visualmente owned, preservar layout/comportamento e registrar handoff só para polish visual se necessário
-- usar handoffs dedicados quando a interface depender de backend já consolidado em outras threads
+Future application:
+- Before blocking an edit because of file ownership, classify whether the change is visual, functional or textual.
+- When a change is textual on a visually owned surface, preserve layout and behavior; only create a handoff for visual polish when needed.
+- Use dedicated handoffs when the interface depends on backend work already consolidated elsewhere.
 
-Referências:
+References:
 - `AGENTS.md`
 - `docs/THREAD_OPERATING_SYSTEM.md`
 - `docs/THREAD_CHECKLIST.md`
 - `docs/handoffs/claude-code-ui-handoff-2026-03-27.md`
 
-### LESSON-003 — Heurística determinística precisa olhar o escopo positivo da tarefa, não o vazio do escopo excluído
+### LESSON-003 — Deterministic heuristics must inspect the positive task scope, not the empty excluded scope
 
-Contexto:
-- no primeiro smoke do kernel do `AletheIA`, o `hello-world` de documentação de baixo risco estava retornando `continue` em vez de `allow`
-- a causa foi uma heurística de `docsOnlyHint` derivada do campo errado do escopo (`scope.out`), o que impedia reconhecer corretamente uma tarefa pequena e documental
+Context:
+- In the first AletheIA kernel smoke test, a low-risk documentation `hello-world` returned `continue` instead of `allow`.
+- The cause was a `docsOnlyHint` heuristic derived from the wrong scope field (`scope.out`), preventing correct recognition of a small documentation task.
 
-Lição:
-- em kernels determinísticos, heurísticas simples precisam nascer do que a tarefa explicitamente inclui, não da ausência de pistas em áreas excluídas
-- para classificar fluxos leves (`docs-only`, `local-only`, `low-risk`), o melhor sinal costuma estar no escopo positivo e nas entradas declaradas
-- quando a heurística é pequena, vale protegê-la com smoke test imediatamente, porque esse tipo de regressão muda a semântica do framework sem necessariamente quebrar o runtime
+Lesson:
+- In deterministic kernels, simple heuristics should start from what the task explicitly includes, not from the absence of clues in excluded areas.
+- For lightweight flows such as `docs-only`, `local-only` and `low-risk`, the strongest signal is usually in the positive scope and declared inputs.
+- Small heuristics deserve immediate smoke tests because regressions can change framework semantics without breaking the runtime.
 
-Aplicação futura:
-- ao adicionar novos gates heurísticos no `AletheIA`, partir primeiro de sinais afirmativos em `Task Brief` e `Context Pack`
-- manter smoke tests pequenos para cada desvio semântico importante (`allow`, `review`, `ask_human`, `block`)
-- evitar depender de “não apareceu nada” como principal evidência para classificar uma tarefa
+Future application:
+- When adding new heuristic gates in AletheIA, start from affirmative signals in the `Task Brief` and `Context Pack`.
+- Keep small smoke tests for each important semantic path: `allow`, `review`, `ask_human` and `block`.
+- Avoid relying on “nothing appeared” as the main evidence for classification.
 
-Referências:
+References:
 - `lib/aletheia/compiler.ts`
 - `scripts/aletheia/test-kernel.ts`
 - `scripts/aletheia/hello-world.ts`
 
-### LESSON-004 — Ambiguidade operacional também é um gatilho legítimo de review, mesmo sem risco extremo
+### LESSON-004 — Operational ambiguity is a legitimate review trigger even without extreme risk
 
-Contexto:
-- ao expandir o kernel mínimo do `AletheIA`, precisávamos provar não apenas o caminho `allow`, mas também um caminho de freio por baixa confiança
-- para isso, foi adicionado um cenário `low-confidence-review`, onde a tarefa continua pequena e de baixo risco, mas o pedido e o contexto são ambíguos demais para executar direto
+Context:
+- While expanding the minimum AletheIA kernel, the work needed to prove not only the `allow` path but also a brake path for low confidence.
+- A `low-confidence-review` scenario was added: the task stayed small and low-risk, but the request and context were too ambiguous for direct execution.
 
-Lição:
-- em frameworks de trabalho assistido por IA, a decisão de revisão não deve depender só de risco alto ou severidade estrutural
-- ambiguidade suficiente já é um sinal operacional válido para parar, revisar e esclarecer antes da ação
-- isso ajuda a separar melhor “tarefa simples” de “tarefa compreendida com segurança”
+Lesson:
+- In AI-assisted work frameworks, review decisions should not depend only on high risk or structural severity.
+- Enough ambiguity is already a valid operational signal to stop, review and clarify before acting.
 
-Aplicação futura:
-- ao evoluir policies do `AletheIA`, manter um eixo explícito de `confidence/ambiguity`, e não apenas `risk/severity`
-- usar esse eixo em exemplos, testes dourados e futuros playbooks de operação
-- preservar a distinção entre `review` por baixa confiança e `ask_human` por risco crítico
+Future application:
+- Treat unclear goals, unstable scope and insufficient source context as first-class review triggers.
+- Keep review paths lightweight enough to use before ambiguity becomes rework.
 
-Referências:
-- `lib/aletheia/compiler.ts`
-- `lib/aletheia/policy.ts`
-- `docs/examples/aletheia/low-confidence-review/README.md`
+References:
+- `scripts/aletheia/test-kernel.ts`
+- `scripts/aletheia/low-confidence-review.ts`
 
-### LESSON-005 — Um pack de governança forte não substitui o framework; ele precisa ser tratado como camada transversal
+### LESSON-005 — A strong governance pack does not replace the framework; it must be treated as a cross-cutting layer
 
-Contexto:
-- ao avaliar o documento de best practices e o JSON de regras para desenvolvimento com IA, ficou claro que o material era forte demais para ser tratado só como referência
-- ao mesmo tempo, ele ainda era estreito demais para definir sozinho o `AletheIA`, porque o framework também cobre decisão, contexto, learnings, memória e operação além do software delivery
+Context:
+- The repository evaluated a strong governance pack with useful contracts, checklists and operating guidance.
+- The pack overlapped with existing AletheIA concepts but did not own the entire framework.
 
-Lição:
-- quando um conjunto de regras é forte e executável, o melhor lugar dele costuma ser um `Governance Pack`, e não a definição total do framework
-- isso permite absorver rigor operacional sem reduzir a ambição do sistema maior
-- também evita confundir `policy pack` com `engine`
+Lesson:
+- Strong reference material should be mapped into the existing governance architecture instead of becoming a parallel framework.
+- Cross-cutting concerns are safer when attached to explicit layers, gates and evidence records.
 
-Aplicação futura:
-- ao incorporar novos domínios no `AletheIA`, preferir novos packs especializados (ex.: software development, incident response, content operations) em vez de tentar encaixar tudo em uma policy universal única
-- separar sempre:
-  - framework
-  - kernel
-  - governance pack
-  - interpreter
+Future application:
+- Intake future packs through source mapping, posture, non-goals and promotion gates before implementing anything.
+- Preserve useful patterns without letting imported language redefine AletheIA boundaries by accident.
 
-Referências:
-- `docs/architecture/aletheia-development-governance-pack.md`
-- `docs/architecture/aletheia-rule-interpreter.md`
-- `docs/policies/aletheia-development-governance.v1.json`
+References:
+- `docs/contracts/reference-intake-adoption-contract.md`
+- `docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`
 
-### LESSON-006 — Policy Trace é parte do produto de governança, não só detalhe técnico do interpretador
+### LESSON-006 — Policy Trace is part of the governance product, not just an interpreter detail
 
-Contexto:
-- ao implementar o `Rule Interpreter v1`, ficou claro que devolver apenas a ação final (`allow/review/ask_human/block`) seria insuficiente
-- para o AletheIA continuar explicável, o interpretador precisava mostrar também quais regras foram avaliadas, quais dispararam e com base em quais fatos
+Context:
+- A deterministic interpreter needed to explain why a decision was made.
+- The trace became useful for human review, not only for debugging.
 
-Lição:
-- em camadas de governança, explicabilidade não é acessório: ela é parte da própria utilidade do sistema
-- um `Policy Trace` simples já aumenta muito a auditabilidade e ajuda a depurar regras, fatos e precedência de ações
-- isso também aproxima a camada de governança da linguagem humana do framework
+Lesson:
+- Governance systems need explainable policy traces as a user-facing artifact.
+- A decision without a trace is harder to audit, teach, challenge or reuse.
 
-Aplicação futura:
-- toda expansão do `Rule Interpreter` deve preservar uma saída de trace legível
-- novos hooks e novos packs devem manter a mesma disciplina de explicação
-- quando houver integração com runtime real, o trace deve continuar visível e versionável
+Future application:
+- Treat traces as product surfaces: concise enough for readers, precise enough for reviewers.
+- Preserve the link between rules, evidence and outcome whenever decisions become visible.
 
-Referências:
-- `lib/aletheia/governance.ts`
-- `docs/architecture/aletheia-rule-interpreter.md`
-- `scripts/aletheia/test-rule-interpreter.ts`
+References:
+- `docs/contracts/policy-verdicts.md`
+- `docs/contracts/execution-audit-record.md`
 
-### LESSON-007 — Governança fica mais útil quando a fronteira da mudança e a avaliação viram artefatos próprios
+### LESSON-007 — Governance becomes more useful when change boundaries and evaluations become their own artifacts
 
-Contexto:
-- depois de criar `Governance Pack`, `Facts Model` e `Rule Interpreter`, ainda faltava registrar explicitamente duas coisas:
-  - a fronteira declarada da execução
-  - o resultado persistível da avaliação de política
+Context:
+- Several slices needed to separate what changed from how the change was evaluated.
+- When both were explicit, review became easier and safer.
 
-Lição:
-- uma camada de governança amadurece bastante quando transforma entrada e saída em artefatos formais
-- `Execution Scope` ajuda a tornar audível o “o que podia ser feito”
-- `Policy Evaluation` ajuda a tornar durável o “como a governança decidiu”
+Lesson:
+- The boundary of a change and the evaluation of that change should not be implicit in prose.
+- Small artifacts make scope, evidence and review state visible without expanding runtime behavior.
 
-Aplicação futura:
-- ao integrar hooks reais, usar `Execution Scope` como insumo de entrada da governança
-- persistir `Policy Evaluation` sempre que um hook produzir decisão relevante
-- evitar deixar avaliação de política apenas em logs efêmeros ou mensagens de sessão
+Future application:
+- Use dedicated records for boundary, evidence and evaluation when a slice affects governance semantics.
+- Avoid hiding important decisions inside implementation diffs only.
 
-Referências:
-- `docs/architecture/aletheia-governance-artifacts.md`
-- `docs/schemas/aletheia-execution-scope.schema.json`
-- `docs/schemas/aletheia-policy-evaluation.schema.json`
+References:
+- `docs/contracts/execution-audit-record.md`
+- `starter-pack/templates/slice-record-template.md`
 
-### LESSON-008 — Hook real de framework é o ponto em que governança deixa de ser só capacidade e vira fluxo
+### LESSON-008 — A real framework hook is where governance stops being only a capability and becomes a flow
 
-Contexto:
-- depois de criar Governance Pack, Facts Model, Rule Interpreter, Execution Scope e Policy Evaluation, a camada ainda estava “completa no papel”, mas não plenamente conectada ao fluxo
-- a criação de `before_execute`, `after_execute` e `before_finalize` dentro da própria camada AletheIA resolveu isso sem acoplar cedo ao produto real
+Context:
+- AletheIA had many governance concepts, but practical adoption depended on where those concepts attached to real work.
 
-Lição:
-- existe um salto importante entre “ter um interpretador” e “ter hooks reais do framework”
-- esse salto é o que transforma governança em comportamento operacional recorrente
-- fazer isso primeiro dentro da camada AletheIA, e só depois ligar ao produto, reduz acoplamento e mantém a arquitetura mais limpa
+Lesson:
+- Governance becomes operational when it has a clear hook in the working flow.
+- Without a hook, even strong guidance can remain advisory and unused.
 
-Aplicação futura:
-- ao integrar com o `Crisis Monitor`, preservar a camada de hooks do AletheIA como fronteira estável
-- evitar que o produto pule direto para o interpretador sem passar pelos hooks oficiais
-- tratar novos hooks como expansão de fluxo, não só como helper utilitário
+Future application:
+- When adding governance concepts, define where they attach: planning, intake, validation, closure, handoff or publication.
+- Keep the hook small and observable before expanding scope.
 
-Referências:
-- `lib/aletheia/governance-hooks.ts`
-- `docs/architecture/aletheia-governance-hooks.md`
-- `scripts/aletheia/test-governance-hooks.ts`
+References:
+- `docs/concepts/work-slice-pattern.md`
+- `docs/guides/core-operating-path.md`
 
-### LESSON-009 — A fase de finalize precisa tensionar separadamente “não validei” e “validei, mas não alinhei com a fonte de verdade”
+### LESSON-009 — Finalization must distinguish “not validated” from “validated but not aligned with the source of truth”
 
-Contexto:
-- ao ampliar a cobertura dos hooks de governança, adicionamos dois cenários de `before_finalize`:
-  - falta de validação obrigatória
-  - mismatch / falta de atualização do `source-of-truth artifact`
+Context:
+- Finalization work exposed two different failure modes: missing validation and validation against the wrong or stale source.
 
-Lição:
-- esses dois casos parecem parecidos, mas não são o mesmo problema
-- “não validei” é ausência de prova mínima
-- “validei, mas não alinhei com a fonte de verdade” é falha de governança documental/contratual
-- manter esses caminhos separados ajuda o framework a explicar melhor por que está bloqueando
+Lesson:
+- “I did not validate” and “I validated but not against the authoritative source” are different risks.
+- Closure needs to record both validation status and source alignment.
 
-Aplicação futura:
-- continuar modelando o fechamento da tarefa com causas de bloqueio separadas
-- usar essas distinções em futuros golden tests e no piloto real
-- evitar um único “block genérico” no fechamento quando a causa operacional é diferente
+Future application:
+- In closeout records, separate evidence availability from source authority.
+- Avoid treating a green local check as complete proof when the canonical source is elsewhere.
 
-Referências:
-- `docs/examples/aletheia/governance/block-validation-required.json`
-- `docs/examples/aletheia/governance/block-source-of-truth-mismatch.json`
-- `scripts/aletheia/test-governance-hooks.ts`
+References:
+- `docs/contracts/source-precedence-policy.md`
+- `docs/guides/slice-finalization-and-restart.md`
 
-### LESSON-010 — Falha de validação também deve gerar aprendizado útil, não só bloqueio
+### LESSON-010 — Validation failure should produce useful learning, not only a block
 
-Contexto:
-- depois de fechar kernel, governança e quality baseline, ainda faltava provar que uma falha de validação não termina apenas em `block`
-- o cenário `learning-from-failed-validation` mostrou que `Policy Evaluation` também pode alimentar um `Learning Record` reutilizável
+Context:
+- Some validation failures exposed reusable process gaps instead of one-off mistakes.
 
-Lição:
-- quando uma tarefa falha no fechamento por ausência de validação, o framework deve capturar isso como `test_gap`
-- isso evita perder a causa do bloqueio e transforma o erro em melhoria concreta de checklist, teste ou playbook
-- a camada de Learnings fica mais útil quando nasce de evidência operacional, não apenas de reflexão manual
+Lesson:
+- A failed validation is not just a stop signal; it can reveal a reusable learning if the failure could recur.
+- Recording that learning prevents the same failure from becoming repeated coordination cost.
 
-Aplicação futura:
-- ligar falhas de validação a learnings persistíveis em futuros hooks reais do produto
-- preservar a distinção entre bloqueio operacional e aprendizado acionável
-- usar esse padrão no futuro piloto do `Crisis Monitor`
+Future application:
+- When validation fails, ask whether the failure is local noise or a reusable process lesson.
+- Capture reusable lessons in this file only when they change future behavior.
 
-Referências:
-- `lib/aletheia/learnings.ts`
-- `docs/examples/aletheia/learning-from-failed-validation/README.md`
-- `scripts/aletheia/test-learnings.ts`
+References:
+- `docs/reference/learnings.md`
+- `docs/contracts/independent-validation-hardening-contract.md`

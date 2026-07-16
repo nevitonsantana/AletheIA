@@ -79,25 +79,25 @@ Copy this skeleton into `docs/pilots/pilot-crisis-monitor-overlay-adoption.md` w
 **Sessions covered:** N
 **Adopted by:** <names>
 
-## What encaixou direto
+## What fit directly
 
 What worked without adaptation. Be specific — name the folder, file, or rule.
 
 - Example: "`AGENTS.md` template was usable with only variable substitution; no structural edits needed."
 
-## What precisou de adaptação local
+## What needed local adaptation
 
 What needed local change, and why. The "why" matters more than the "what" — it tells us whether the change generalizes.
 
 - Example: "`.claude/rules/tests.md` mentions hitting real Postgres in integration tests; our CI uses testcontainers. Adapted locally. *Generalizable?* No — runner choice is project-specific."
 
-## What ficou ambíguo
+## What remained ambiguous
 
 Where the contract or guide left a real question unanswered. These are the most valuable entries.
 
 - Example: "Constitution `scope.md` — unclear whether to list out-of-scope items we *might* do in the future versus only those we've explicitly rejected. Defaulted to the latter."
 
-## Métricas observadas
+## Observed metrics
 
 | Signal | Pre-overlay baseline | Post-overlay observation |
 |---|---|---|

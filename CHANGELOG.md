@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- resolve S80 public language residuals with explicit editorial decisions
+
 - close S79 after open Dependabot trust-boundary review
 
 - add S79 open Dependabot trust-boundary review evidence
