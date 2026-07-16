@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S81 after post-S80 backlog gate review
+
 - add S81 post-S80 backlog gate review
 
 - close S80 after public language residual resolution

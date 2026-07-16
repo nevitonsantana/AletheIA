@@ -982,10 +982,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA backlog governance
 - **Covers:** Safe next-step posture after S80 resolved known public-language residuals.
 - **Dependencies:** S80 public language residual resolution and PR #429 S80 closure.
-- **Status:** `in review`; no implementation authority is introduced.
+- **Status:** `delivered`; no implementation authority was introduced.
 - **Non-goals:** publishing automation, bulk language work, S18 metrics, Runtime 2.0 implementation, dashboards, collectors, scanners, policy engines, automatic classification or Adaptive Skills mutation.
 - **Acceptance:** repository status records the post-S80 posture, keeps `Active: none` as the default after closure, and identifies only source-backed future triggers.
-- **Evidence:** `docs/reports/post-s80-backlog-gate-s81.md`.
+- **Evidence:** `docs/reports/post-s80-backlog-gate-s81.md`; PR #430.
 
 ## Requirement traceability matrix
 
