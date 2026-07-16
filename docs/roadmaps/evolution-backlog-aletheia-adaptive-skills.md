@@ -972,10 +972,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA public documentation governance
 - **Covers:** Explicit editorial resolution for the remaining language residual categories classified by S78.
 - **Dependencies:** S72 public docs English language policy, S78 public language residual classification and S79 dependency-maintenance closure.
-- **Status:** `in review`; no automatic translation or broad historical rewrite is introduced.
+- **Status:** `delivered`; no automatic translation or broad historical rewrite was introduced.
 - **Non-goals:** bulk translation, changing public docs language policy, rewriting governance decisions, automatic language classification, publishing automation, dashboards, collectors, scanners, policy engines, S18 metrics, Runtime 2.0 behavior or Adaptive Skills mutation.
 - **Acceptance:** `docs/reference/learnings.md`, `docs/guides/pilot-crisis-monitor-overlay-handoff.md` and `docs/roadmaps/evolution-plan.md` have explicit English-first treatment for the S78 residuals, while localized labels are preserved only as labeled historical examples.
-- **Evidence:** `docs/reports/public-language-residual-resolution-s80.md`.
+- **Evidence:** `docs/reports/public-language-residual-resolution-s80.md`; PR #428.
 
 ## Requirement traceability matrix
 
