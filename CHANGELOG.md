@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S80 after public language residual resolution
+
 - resolve S80 public language residuals with explicit editorial decisions
 
 - close S79 after open Dependabot trust-boundary review
