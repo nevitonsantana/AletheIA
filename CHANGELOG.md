@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- fix Blume docs publishing by pinning TypeScript to the compatible 6.x line
+
 - close S81 after post-S80 backlog gate review
 
 - add S81 post-S80 backlog gate review
