@@ -140,18 +140,20 @@ The framework is conceptually strong, but adoption depends on a small operationa
 
 4. Optional image refinement
    - Rename `Restart Package / Learning` to `Restart Package + Learning Record`.
-   - Rename or explain `Closeout` as `Encerramento / Closeout` for PT-BR communication use.
-   - Map `Avançar`, `Revisar`, `Bloquear`, `Encerrar`, and `Bifurcar` to canonical outcomes.
+   - Rename or explain `Closeout` as `Closure / Closeout` for public English communication.
+   - Preserve the former PT-BR visual labels only as historical/localized examples and map each one to canonical English outcomes.
 
 ### Kanban Decision Protocol mapping
 
-| Visual label | Canonical outcome | Meaning |
-|---|---|---|
-| Avançar | `continue` | Conditions are sufficiently met; continue under current posture. |
-| Revisar | `tighten` or `review` | Evidence is weak, ambiguous, or scope/context needs tightening before continuation. |
-| Bloquear | `stop` or `review-required` | Risk, missing precondition, or governance issue prevents safe continuation. |
-| Encerrar | `closeout` / validated closure | Objective was reached and evidence is enough to close the slice. |
-| Bifurcar | `handoff`, `escalate`, or new Work Slice | A new front, boundary, runtime, approval level, or scope should be separated. |
+Public documentation uses English canonical labels. The PT-BR labels below are preserved only as historical/localized visual examples from the original planning artifact.
+
+| Canonical visual label | Historical/localized label | Canonical outcome | Meaning |
+|---|---|---|---|
+| Continue | Avançar | `continue` | Conditions are sufficiently met; continue under current posture. |
+| Review | Revisar | `tighten` or `review` | Evidence is weak, ambiguous, or scope/context needs tightening before continuation. |
+| Block | Bloquear | `stop` or `review-required` | Risk, missing precondition, or governance issue prevents safe continuation. |
+| Close | Encerrar | `closeout` / validated closure | Objective was reached and evidence is enough to close the slice. |
+| Split | Bifurcar | `handoff`, `escalate`, or new Work Slice | A new front, boundary, runtime, approval level, or scope should be separated. |
 
 ### Acceptance criteria
 
