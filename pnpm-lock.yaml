@@ -38,7 +38,7 @@ importers:
         version: 6.0.1(@types/node@26.1.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.0)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.22.3)(yaml@2.9.0)
       '@shikijs/twoslash':
         specifier: ^4.3.1
-        version: 4.3.1(typescript@6.0.3)
+        version: 4.3.1(typescript@7.0.2)
       '@tailwindcss/vite':
         specifier: ^4.3.2
         version: 4.3.2(vite@8.1.4(@types/node@26.1.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(yaml@2.9.0))
@@ -52,8 +52,8 @@ importers:
         specifier: ^0.35.3
         version: 0.35.3(@types/node@26.1.1)
       typescript:
-        specifier: ^6.0.0
-        version: 6.0.3
+        specifier: ^7.0.2
+        version: 7.0.2
 
   apps/mission-control:
     dependencies:
@@ -5792,6 +5792,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@shikijs/twoslash@4.3.1(typescript@7.0.2)':
+    dependencies:
+      '@shikijs/core': 4.3.1
+      '@shikijs/types': 4.3.1
+      twoslash: 0.3.9(typescript@7.0.2)
+      typescript: 7.0.2
+    transitivePeerDependencies:
+      - supports-color
+
   '@shikijs/types@4.3.1':
     dependencies:
       '@shikijs/vscode-textmate': 10.0.2
@@ -6218,6 +6227,13 @@ snapshots:
     dependencies:
       debug: 4.4.3
       typescript: 6.0.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@typescript/vfs@1.6.4(typescript@7.0.2)':
+    dependencies:
+      debug: 4.4.3
+      typescript: 7.0.2
     transitivePeerDependencies:
       - supports-color
 
@@ -9263,6 +9279,14 @@ snapshots:
       '@typescript/vfs': 1.6.4(typescript@6.0.3)
       twoslash-protocol: 0.3.9
       typescript: 6.0.3
+    transitivePeerDependencies:
+      - supports-color
+
+  twoslash@0.3.9(typescript@7.0.2):
+    dependencies:
+      '@typescript/vfs': 1.6.4(typescript@7.0.2)
+      twoslash-protocol: 0.3.9
+      typescript: 7.0.2
     transitivePeerDependencies:
       - supports-color
 
