@@ -992,10 +992,10 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA public documentation publication evidence
 - **Covers:** Manual GitHub Pages publication after S80/S81 and the PR #432 Blume/twoslash TypeScript compatibility fix.
 - **Dependencies:** S80 public language residual resolution, S81 post-S80 backlog gate review and PR #432 docs publishing compatibility fix.
-- **Status:** `in review`; automatic publication remains blocked.
+- **Status:** `delivered`; automatic publication remains blocked.
 - **Non-goals:** automatic publishing, generated documentation authority, dashboards, collectors, scanners, policy engines, S18 metrics, Runtime 2.0 behavior or Adaptive Skills mutation.
 - **Acceptance:** publication run evidence and representative HTTP 200 smoke tests are recorded without changing the manual publishing boundary.
-- **Evidence:** `docs/reports/blume-pages-post-s81-smoke-s82.md`.
+- **Evidence:** `docs/reports/blume-pages-post-s81-smoke-s82.md`; PR #433.
 
 ## Requirement traceability matrix
 

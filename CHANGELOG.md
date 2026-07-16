@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S82 after Blume Pages post-S81 publication smoke test
+
 - add S82 Blume Pages post-S81 publication smoke-test evidence
 
 - fix Blume docs publishing by pinning TypeScript to the compatible 6.x line
