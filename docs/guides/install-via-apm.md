@@ -1,5 +1,7 @@
 # Installing AletheIA via APM
 
+> **Canonical reader guide:** the maintained installation journey now lives at [Install AletheIA](/getting-started/installation-guide/). This page remains the package-level technical reference shipped with the APM payload.
+
 This guide is for adopters using [APM (Microsoft Agentic Package Manager)](https://microsoft.github.io/apm/) as their package manager. If you do not use APM, skip this guide and follow the manual flow in [`packs/operating-overlay/README.md`](https://github.com/nevitonsantana/AletheIA/blob/main/packs/operating-overlay/README.md).
 
 > **Two-step adoption.** APM today has no install-time hook for delivering project scaffolds to the consumer root. AletheIA accommodates this with an explicit second step — see [ADR-007](../adr/ADR-007-apm-packaging-strategy.md) for the rationale.

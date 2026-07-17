@@ -2,7 +2,7 @@
 
 ## Surfaces reviewed
 
-- `docs/guides/getting-started.md`
+- `docs/guides/getting-started.mdx`
 - first-time-user fixture
 - expert-user fixture
 - Explainable Change Brief
@@ -23,4 +23,3 @@
 ## Limitation
 
 This is a documentation readability review, not a usability study or proof that every audience will understand the framework.
-

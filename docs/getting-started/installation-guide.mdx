@@ -1,0 +1,171 @@
+---
+title: Install AletheIA
+description: Add the AletheIA operating overlay to a project, configure its boundaries, and verify the installation.
+---
+
+AletheIA is installed as a **project operating overlay**, not as an autonomous runtime. The overlay gives human and AI collaborators shared instructions, project boundaries, and places for decisions, evidence, handoffs, and learnings.
+
+<Badge variant="accent">15–30 minutes</Badge> <Badge>Existing or new project</Badge> <Badge variant="success">No runtime replacement</Badge>
+
+:::note[Two explicit steps]
+`apm install` downloads and locks the package. `apm run scaffold-overlay` then materializes the overlay in your project. The first command alone does not change the project root.
+:::
+
+## Before you begin
+
+You need:
+
+- Node.js 18 or newer;
+- [Microsoft Agentic Package Manager (APM)](https://microsoft.github.io/apm/installation) available as `apm`;
+- a Git repository or project directory;
+- permission to add project-level guidance files;
+- a clean commit before adopting the overlay in an existing project.
+
+```bash
+node --version
+apm --version
+git status --short
+```
+
+## Choose an adoption path
+
+<CardGroup cols={2}>
+  <Card title="Install with APM" href="#install-with-apm" icon="package-plus">
+    Recommended for a reproducible package download and lockfile, followed by explicit overlay materialization.
+  </Card>
+  <Card title="Adopt manually" href="https://github.com/nevitonsantana/AletheIA/blob/main/packs/operating-overlay/README.md" icon="folder-input">
+    Use the canonical pack instructions when APM is unavailable or your environment requires manual review before copying files.
+  </Card>
+</CardGroup>
+
+## Install with APM
+
+<Steps>
+  <Step title="Download and lock the package">
+    From the project root, install the currently published APM package:
+
+    ```bash
+    apm install nevitonsantana/AletheIA#v0.1.0-alpha
+    ```
+
+    This creates `apm_modules/AletheIA/` and `apm.lock.yaml`. Commit the lockfile so collaborators and continuous integration resolve the same package content.
+  </Step>
+  <Step title="Materialize the operating overlay">
+    Still in the consumer project root, run:
+
+    ```bash
+    apm run scaffold-overlay
+    ```
+
+    The scaffold refuses to overwrite existing `AGENTS.md`, `CLAUDE.md`, `.claude/`, or `ops/ai/` paths. Review conflicts rather than forcing an overwrite by default.
+  </Step>
+  <Step title="Replace project variables">
+    Find the placeholders in the generated guidance:
+
+    ```bash
+    grep -r '{{' AGENTS.md CLAUDE.md .claude/settings.json
+    ```
+
+    Replace them with the project name, purpose, stack, and real install, test, lint, build, and development commands. Repeat the check until no placeholder remains.
+  </Step>
+  <Step title="Write the minimum constitution">
+    Replace the placeholder in `ops/ai/constitution/` with four short, source-backed files:
+
+    | File | Minimum answer |
+    |---|---|
+    | `mission.md` | What does this project do, and for whom? |
+    | `scope.md` | What is in scope, out of scope, or explicitly undecided? |
+    | `stack.md` | Which technologies are used, and which commands validate them? |
+    | `principles.md` | Which rules must humans and AI collaborators preserve? |
+  </Step>
+  <Step title="Verify before real work">
+    Confirm the expected surfaces exist and the generated files contain no placeholders:
+
+    ```bash
+    test -f AGENTS.md
+    test -d ops/ai/constitution
+    ! grep -r '{{' AGENTS.md CLAUDE.md .claude/settings.json
+    git diff --check
+    ```
+
+    Then open a fresh runtime session from the project root and ask it to summarize the mission, scope, validation commands, and stop conditions **without changing files**.
+  </Step>
+</Steps>
+
+## What the overlay adds
+
+```text
+project/
+├── AGENTS.md
+├── CLAUDE.md
+├── .claude/
+│   ├── settings.json
+│   └── rules/
+└── ops/ai/
+    ├── constitution/
+    ├── handoffs/
+    ├── reports/
+    ├── policies/
+    ├── schemas/
+    ├── skills/
+    └── learnings/
+```
+
+These paths establish shared operating context. They do not grant permissions, install a security sandbox, select a model, or authorize autonomous action.
+
+## Runtime-specific setup
+
+<Columns cols={3}>
+  <Column>
+    <Panel title="Codex">
+      Keep `AGENTS.md` at the project root. Start Codex from that root and confirm it can state the project boundaries before asking it to act.
+    </Panel>
+  </Column>
+  <Column>
+    <Panel title="Claude Code">
+      Use `CLAUDE.md` and `.claude/` as the adapter surfaces. Review settings and path-scoped rules before the first write operation.
+    </Panel>
+  </Column>
+  <Column>
+    <Panel title="Qwen">
+      Treat Qwen as another execution runtime. Map the same constitution and stop conditions through its local adapter without changing AletheIA governance.
+    </Panel>
+  </Column>
+</Columns>
+
+Read the [runtime adapter references](/reference/runtime-adapter-codex/) when your environment needs deeper setup detail.
+
+## Troubleshooting
+
+### APM installs the package, but the overlay is missing
+
+Run `apm run scaffold-overlay` from the **consumer project root**. Package download and project materialization are separate by design.
+
+### The scaffold reports existing files
+
+Stop and compare the current project guidance with the overlay. Do not use `--force` until the current state is committed and the overwrite impact is understood.
+
+### The runtime ignores the project boundaries
+
+Confirm that you started it from the project root, the adapter file exists, placeholders were replaced, and the constitution contains concrete project facts rather than template prose.
+
+### A command in the generated guidance is wrong
+
+Correct the project-local variable or adapter. The overlay must point to the repository's real validation commands; it must not invent replacements.
+
+## Installation acceptance check
+
+The installation is ready for a first low-risk slice when:
+
+- the overlay paths exist;
+- no template variable remains;
+- mission, scope, stack, and principles describe the real project;
+- the selected runtime can summarize those boundaries;
+- no write, permission, or security capability is being inferred from installation alone.
+
+## Next steps
+
+- [Run your first Work Slice](/guides/getting-started/)
+- [Apply AletheIA to an existing project](/guides/apply-to-existing-project/)
+- [Review adoption modes](/guides/adoption-mode-guidance/)
+- [Understand harness boundaries](/concepts/agent-harness-contract/)

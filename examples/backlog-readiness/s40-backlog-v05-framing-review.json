@@ -9,7 +9,7 @@
     "s33_v05_readiness": "examples/backlog-readiness/s33-v05-readiness-review.json",
     "s37_next_use_readiness": "examples/domain-governance-usage/s37-domain-governance-next-use-readiness.json",
     "s39_sufficiency_review": "examples/domain-governance-usage/s39-domain-governance-evidence-sufficiency-review.json",
-    "first_use_guide": "docs/guides/getting-started.md",
+    "first_use_guide": "docs/guides/getting-started.mdx",
     "changelog": "CHANGELOG.md"
   },
   "completed_cycle": {

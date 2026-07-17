@@ -3,7 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 const root = process.cwd();
-const guide = fs.readFileSync(path.join(root, "docs/guides/getting-started.md"), "utf8");
+const guide = fs.readFileSync(path.join(root, "docs/guides/getting-started.mdx"), "utf8");
 const brief = fs.readFileSync(
   path.join(root, "starter-pack/templates/explainable-change-brief-template.md"),
   "utf8",
