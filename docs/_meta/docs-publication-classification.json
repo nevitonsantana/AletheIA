@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-07-17",
+  "categories": [
+    "public_core",
+    "public_advanced",
+    "contract_reference",
+    "case_evidence",
+    "maintainer",
+    "internal",
+    "historical",
+    "superseded"
+  ],
+  "rules": [
+    { "pattern": "_meta/legacy/**", "category": "superseded" },
+    { "pattern": "_meta/**", "category": "internal" },
+    { "pattern": "reports/**", "category": "internal" },
+    { "pattern": "adr/**", "category": "maintainer" },
+    { "pattern": "contracts/**", "category": "contract_reference" },
+    { "pattern": "reference/**", "category": "contract_reference" },
+    { "pattern": "pilots/**", "category": "case_evidence" },
+    { "pattern": "roadmaps/**", "category": "public_advanced" },
+    { "pattern": "security/**", "category": "public_advanced" },
+    { "pattern": "domain-governance-packs/**", "category": "public_advanced" },
+    { "pattern": "concepts/**", "category": "public_advanced" },
+    { "pattern": "getting-started/**", "category": "public_core" },
+    { "pattern": "guides/**", "category": "public_core" },
+    { "pattern": "index.md", "category": "public_core" },
+    { "pattern": "README.md", "category": "maintainer" }
+  ],
+  "canonical_pages": {
+    "product_overview": "concepts/overview.md",
+    "architecture": "concepts/architecture.md",
+    "governance": "concepts/governance.md",
+    "work_slice": "concepts/work-slice-pattern.md",
+    "canonical_vocabulary": "concepts/canonical-vocabulary.md",
+    "agent_roles": "reference/agent-role-catalog.md",
+    "runtime_boundary": "contracts/runtime-adapter-contract.md",
+    "adaptive_skills_boundary": "contracts/capability-routing-reconciliation.md",
+    "security_domain_packs": "concepts/domain-governance-packs.md",
+    "observability": "concepts/visual-operations-layer.md",
+    "current_evolution": "roadmaps/evolution-backlog-aletheia-adaptive-skills.md"
+  },
+  "canonical_agent_roles": [
+    "orchestrator",
+    "explorer",
+    "implementer",
+    "reviewer",
+    "validator"
+  ],
+  "canonical_runtimes": [
+    "codex",
+    "claude-code",
+    "qwen"
+  ],
+  "public_language_categories": [
+    "public_core",
+    "public_advanced"
+  ],
+  "presentation_only_claims": [
+    "synthetic performance percentages",
+    "real-time telemetry",
+    "automatic signal correlation",
+    "automatic routing",
+    "autonomous learning",
+    "guaranteed outcomes"
+  ]
+}
