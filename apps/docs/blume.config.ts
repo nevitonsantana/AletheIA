@@ -43,6 +43,7 @@ export default defineConfig({
           label: "Operating model",
           items: [
             "/concepts/overview",
+            "/concepts/ecosystem-layers",
             "/concepts/work-slice-pattern",
             "/concepts/governance",
             "/concepts/canonical-vocabulary",
@@ -55,6 +56,7 @@ export default defineConfig({
         {
           label: "Execution and capabilities",
           items: [
+            "/concepts/agent-runtime-skill-model",
             "/concepts/execution-pattern-governance",
             "/concepts/execution-pattern-library",
             "/concepts/execution-vehicle-selection",
