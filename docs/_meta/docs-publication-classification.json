@@ -20,6 +20,7 @@
     { "pattern": "reference/**", "category": "contract_reference" },
     { "pattern": "pilots/**", "category": "case_evidence" },
     { "pattern": "roadmaps/**", "category": "public_advanced" },
+    { "pattern": "updates/**", "category": "public_advanced" },
     { "pattern": "security/**", "category": "public_advanced" },
     { "pattern": "domain-governance-packs/**", "category": "public_advanced" },
     { "pattern": "concepts/**", "category": "public_advanced" },
