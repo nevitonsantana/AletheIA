@@ -15,6 +15,7 @@ export default defineConfig({
       display: "page",
       items: [
         "/",
+        "/about",
         {
           label: "Start here",
           items: [

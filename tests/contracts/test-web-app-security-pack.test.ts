@@ -44,13 +44,13 @@ describe("S29 Web App Security & Trust Boundaries pack", () => {
   });
 
   it("is indexed and reflected in planning surfaces", () => {
-    const docsIndex = read("docs/index.md");
+    const docsNavigation = read("apps/docs/blume.config.ts");
     const examplesIndex = read("examples/README.md");
     const starterIndex = read("starter-pack/README.md");
     const backlog = read("docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md");
     const systemState = read("SYSTEM_STATE.md");
 
-    expect(docsIndex).toContain("domain-governance-packs/web-app-security-trust-boundaries.md");
+    expect(docsNavigation).toContain("/domain-governance-packs/web-app-security-trust-boundaries");
     expect(examplesIndex).toContain("web-app-security/");
     expect(starterIndex).toContain("web-app-security-review-template.yaml");
     expect(backlog).toContain("### S29 — Web App Security & Trust Boundaries domain-pack minimum");

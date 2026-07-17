@@ -23,7 +23,10 @@ def fail(errors: list[str], message: str) -> None:
 
 def source_for_route(route: str) -> Path | None:
     if route == "/":
-        return DOCS / "index.md"
+        return next(
+            (candidate for candidate in (DOCS / "index.md", DOCS / "index.mdx") if candidate.is_file()),
+            None,
+        )
 
     relative = route.removeprefix("/")
     candidates = [
@@ -112,7 +115,7 @@ def main() -> int:
         if marker:
             fail(errors, f"possible Portuguese marker in public docs/{relative}: {marker.group(0)!r}")
 
-    marketing_surfaces = [ROOT / "README.md", DOCS / "index.md", *sorted((DOCS / "getting-started").glob("*.md"))]
+    marketing_surfaces = [ROOT / "README.md", DOCS / "index.mdx", *sorted((DOCS / "getting-started").glob("*.md"))]
     unsupported_metrics = re.compile(r"(?:\+\d{1,3}%|\b99\.5%\b|\b1,248\b)")
     for path in marketing_surfaces:
         match = unsupported_metrics.search(path.read_text(encoding="utf-8"))

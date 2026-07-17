@@ -25,7 +25,8 @@
     { "pattern": "concepts/**", "category": "public_advanced" },
     { "pattern": "getting-started/**", "category": "public_core" },
     { "pattern": "guides/**", "category": "public_core" },
-    { "pattern": "index.md", "category": "public_core" },
+    { "pattern": "index.mdx", "category": "public_core" },
+    { "pattern": "about.mdx", "category": "public_core" },
     { "pattern": "README.md", "category": "maintainer" }
   ],
   "canonical_pages": {
