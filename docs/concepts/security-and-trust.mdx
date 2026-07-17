@@ -1,0 +1,99 @@
+---
+title: Security and trust boundaries
+description: Apply AletheIA security guidance through explicit trust boundaries, advisory checks, and meaningful human review.
+---
+
+Security in AletheIA begins by asking a practical question: **what can this Work Slice trust, access, change, disclose, or influence?**
+
+The answer determines the context you load, the checks you apply, the proof you require, and when a human must decide. It does not turn guidance into automatic enforcement.
+
+<Badge variant="accent">Advisory guidance</Badge> <Badge>Human-gated</Badge> <Badge variant="success">Source-backed evidence</Badge>
+
+## Definition
+
+A **trust boundary** is the point where content, authority, identity, permission, or responsibility changes. Examples include:
+
+- a user-provided file entering an AI-assisted workflow;
+- data moving from one tenant, client, or organization to another;
+- an agent receiving a tool permission;
+- an external instruction attempting to influence a governed task;
+- a public artifact leaving a private project context.
+
+## Why it matters
+
+AI-assisted work can make unfamiliar input appear useful or authoritative. AletheIA treats external content as data to be evaluated—not as instructions to follow—and preserves uncertainty where evidence is incomplete.
+
+<Columns cols={2}>
+  <Column>
+    <Panel title="What AletheIA helps make visible">
+      Input provenance, sensitivity, trust crossings, required review, evidence gaps, and the decision that permits or blocks continuation.
+    </Panel>
+  </Column>
+  <Column>
+    <Panel title="What AletheIA does not enforce">
+      Authentication, authorization, secret storage, sandboxing, access control, DLP, scanning, rate limiting, or runtime permissions.
+    </Panel>
+  </Column>
+</Columns>
+
+## How it works
+
+<Steps>
+  <Step title="Identify the boundary">
+    Record which inputs, identities, tenants, services, tools, or publication surfaces cross a trust boundary. Do not assume a source is safe because it is readable or well formatted.
+  </Step>
+  <Step title="Classify the context">
+    Use the canonical sensitivity vocabulary—`public`, `internal`, `confidential`, `restricted`, or `regulated`—and keep uncertain classification visible.
+  </Step>
+  <Step title="Apply the relevant guidance">
+    Use the AI Agent Security and Web App Security packs when the Work Slice actually involves agents, prompt injection, untrusted content, web/API behavior, authentication, tenant boundaries, or secrets.
+  </Step>
+  <Step title="Pause for meaningful human review">
+    Escalate when a mandatory review condition applies: high-impact decisions, sensitivity uncertainty, external publication, client delivery, source conflict, regulatory risk, or a trust-boundary crossing.
+  </Step>
+  <Step title="Preserve evidence and close honestly">
+    Record the source references, what was checked, the human decision when needed, and any unavailable proof. Do not claim technical enforcement that the real environment did not provide.
+  </Step>
+</Steps>
+
+## Practical example
+
+A Work Slice receives a customer-provided support export and asks an AI runtime to summarize it for a public product update.
+
+| Question | Safe posture |
+|---|---|
+| Is the export an instruction source? | No. Treat it as untrusted data. |
+| Does it cross a boundary? | Yes. Customer information may enter a public-facing decision. |
+| What guidance applies? | Restricted-context, source evaluation, data leakage, and human-review guidance. |
+| Can the runtime publish? | No. AletheIA does not grant that authority. |
+| What counts as proof? | Classified source references, review decision, and validated final artifact—not an assumed safe prompt. |
+
+## Delivered guidance and current limits
+
+<CardGroup cols={2}>
+  <Card title="AI Agent Security and Prompt Injection" href="/domain-governance-packs/ai-agent-security-prompt-injection/" icon="bot-message-square">
+    Delivered as a manual/advisory pack for real Work Slices involving agent inputs, prompts, tools, or untrusted content.
+  </Card>
+  <Card title="Web App Security and Trust Boundaries" href="/domain-governance-packs/web-app-security-trust-boundaries/" icon="shield-alert">
+    Delivered as a manual/advisory pack for real web, API, authentication, tenant, secret, or trust-boundary work.
+  </Card>
+</CardGroup>
+
+:::warning[Evidence boundary]
+Templates, synthetic examples, and a pack's existence do not prove a security control worked. Usage evidence exists only when a real Work Slice applies the guidance and records source-backed results.
+:::
+
+## Related concepts
+
+- [Human-review criteria](/security/human-review-criteria/)
+- [Prompt injection in sources checklist](/security/prompt-injection-in-sources-checklist/)
+- [Restricted knowledge usage policy](/contracts/restricted-knowledge-usage-policy/)
+- [Domain governance packs](/concepts/domain-governance-packs/)
+- [Runtime and safety in the ecosystem](/concepts/ecosystem-layers/#runtime-and-safety)
+
+## Next steps
+
+- [Review the AI Agent Security pack](/domain-governance-packs/ai-agent-security-prompt-injection/)
+- [Review Web App Security guidance](/domain-governance-packs/web-app-security-trust-boundaries/)
+- [Frame a bounded Work Slice](/concepts/work-slice-pattern/)
+- [Understand what AletheIA does not enforce](/concepts/enforcement-boundaries/)

@@ -1,0 +1,98 @@
+---
+title: Observability and evidence
+description: Understand how AletheIA projects source-backed records into read-only visibility while preserving unavailable and uncertain states.
+---
+
+Observability in AletheIA makes evidence easier to inspect. It does not create evidence, make decisions, score people, or control execution.
+
+<Badge variant="accent">Read-only projection</Badge> <Badge>Provenance required</Badge> <Badge variant="success">Unavailable is valid</Badge>
+
+## Definition
+
+An **observation** is a compact, source-backed summary of a tool, runtime, validation, document, or skill result. An **observability surface** projects those records for human review.
+
+The original record stays authoritative. A projection may normalize and display it, but cannot silently fill in missing values or replace the decision that the source record supports.
+
+## Why it matters
+
+Without provenance, a polished dashboard can make uncertain work look certain. AletheIA keeps the relationship explicit:
+
+```text
+Source record or raw evidence
+  → compact observation with source references
+    → read-only projection for review
+      → human decision or governed next step
+```
+
+This makes it possible to see what happened without treating visual state, inferred metrics, or a generated summary as a new authority.
+
+## How it works
+
+<Steps>
+  <Step title="Start with a source">
+    A Work Slice, validation output, audit record, decision, handoff, or governed document provides the original evidence.
+  </Step>
+  <Step title="Create a compact observation when useful">
+    Preserve the outcome, decision-relevant facts, source references, lossiness, recovery pointer when needed, and any explicit uncertainty.
+  </Step>
+  <Step title="Project it read-only">
+    Resource Observatory or Work Observatory views may render records, alerts, traces, and metadata for review. They do not mutate a Work Slice or pass a gate.
+  </Step>
+  <Step title="Keep unavailable and conflicting states honest">
+    Use `unavailable`, `unknown`, `none`, or `inconclusive` when those are the real states. Do not estimate a replacement value merely to complete a card or chart.
+  </Step>
+  <Step title="Return to the authoritative source">
+    A reviewer follows source references to verify the evidence and make the next governed decision.
+  </Step>
+</Steps>
+
+## Practical example
+
+A documentation build produces a warning but no reliable cost export.
+
+| Surface | What may be shown | What must not be claimed |
+|---|---|---|
+| Observation | Build outcome, warning summary, source artifact, affected files | That the warning is harmless without review |
+| Resource signal | `cost: unavailable` with provenance | An estimated token or cost saving |
+| Mission Control card | Pending review and source reference | That the Work Slice is closed because a card looks complete |
+| Human review | Whether the warning matters to the release | Automatic approval or enforcement |
+
+## Current delivered scope
+
+<CardGroup cols={2}>
+  <Card title="Visual Operations Layer" href="/concepts/visual-operations-layer/" icon="layout-dashboard">
+    Defines read-only projection principles, source references, privacy boundaries, and clear non-goals.
+  </Card>
+  <Card title="Observation Governance Contract" href="/contracts/observation-governance-contract/" icon="file-search">
+    Defines compact observation shape, recovery requirements, provenance, and progressive visibility.
+  </Card>
+  <Card title="Mission Control Cockpit" href="/concepts/mission-control-cockpit/" icon="radar">
+    Describes human-facing views that make a governed Work Slice legible without replacing the source record.
+  </Card>
+  <Card title="Work Observatory evidence" href="/guides/visual-operations-usage-evidence/" icon="scan-search">
+    Shows how usage evidence is captured without asserting comparative performance or autonomous interpretation.
+  </Card>
+</CardGroup>
+
+## Boundaries and non-goals
+
+:::warning[No authority expansion]
+The current observability baseline does not include automatic collectors, dashboard authority, inferred metrics, comparative productivity metrics, people scoring, autonomous decisions, automatic learning classification, or a runtime control plane.
+:::
+
+It also does not treat five heterogeneous records as a stable comparison group. Comparative work remains evidence-gated until reviewed records share one stable group and the relevant backlog gate is explicitly opened.
+
+## Related concepts
+
+- [Visual Operations Layer](/concepts/visual-operations-layer/)
+- [Mission Control Cockpit](/concepts/mission-control-cockpit/)
+- [Observation Governance Contract](/contracts/observation-governance-contract/)
+- [Visual Operations Event Model](/contracts/visual-operations-event-model/)
+- [Ecosystem layers](/concepts/ecosystem-layers/#observability)
+
+## Next steps
+
+- [Explore source-backed Visual Operations evidence](/guides/visual-operations-usage-evidence/)
+- [Read the Work Slice visual state contract](/contracts/work-slice-visual-state-contract/)
+- [Learn how to frame a Work Slice](/concepts/work-slice-pattern/)
+- [Review the current system-state limits](https://github.com/nevitonsantana/AletheIA/blob/main/SYSTEM_STATE.md)
