@@ -107,6 +107,7 @@ export default defineConfig({
         {
           label: "Cases and evidence",
           items: [
+            "/pilots/cases-and-evidence",
             "/pilots/README",
             "/pilots/pilot-crisis-monitor",
             "/pilots/migration-from-crisis-monitor",
@@ -118,6 +119,9 @@ export default defineConfig({
         {
           label: "Updates and evolution",
           items: [
+            "/updates/current-state",
+            "/updates/changelog",
+            "/updates/roadmap",
             "/roadmaps/README",
             "/roadmaps/roadmap-alpha",
             "/roadmaps/enterprise-readiness-roadmap",

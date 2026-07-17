@@ -1,0 +1,62 @@
+---
+title: Current state
+description: See what AletheIA supports today, what remains advisory, and which capabilities are explicitly deferred or evidence-gated.
+---
+
+This page is the reader-friendly view of AletheIA's current posture. The canonical technical index is [`SYSTEM_STATE.md`](https://github.com/nevitonsantana/AletheIA/blob/main/SYSTEM_STATE.md); contracts, ADRs, execution records, and accepted decisions remain authoritative for their own details.
+
+<Badge variant="success">Version 1.0 baseline</Badge> <Badge variant="accent">1.x evolution</Badge> <Badge>Last technical review: 2026-07-16</Badge>
+
+## What is available today
+
+<CardGroup cols={2}>
+  <Card title="Governed Work Slices" href="/concepts/work-slice-pattern/" icon="scan">
+    A bounded operating unit with explicit intent, scope, risk, evidence expectations, and a stop line.
+  </Card>
+  <Card title="Decisions and continuity" href="/concepts/durable-decisions/" icon="git-pull-request-arrow">
+    Reviewable decision, handoff, and restart patterns that preserve context across people and runtimes.
+  </Card>
+  <Card title="Portable roles and runtime adapters" href="/concepts/agent-runtime-skill-model/" icon="bot">
+    A stable role model that remains distinct from Codex, Claude Code, Qwen, and Adaptive Skills.
+  </Card>
+  <Card title="Security guidance" href="/concepts/security-and-trust/" icon="shield-check">
+    Human-gated trust-boundary and source-handling guidance, including the S28/S29 advisory packs.
+  </Card>
+  <Card title="Read-only observability" href="/concepts/observability-and-evidence/" icon="chart-no-axes-combined">
+    Source-backed projections that preserve provenance and unavailable states without becoming execution authority.
+  </Card>
+  <Card title="First-use and adoption guidance" href="/guides/getting-started/" icon="rocket">
+    Installation, a low-risk first Work Slice, adoption modes, and project handoff guidance.
+  </Card>
+</CardGroup>
+
+## Current operating posture
+
+| Area | Current state | What it means |
+|---|---|---|
+| Governance | Delivered 1.x baseline | Work framing, gates, decisions, validation, closure, and continuity are the core operating model. |
+| Adaptive Skills | Complementary and separate | AletheIA governs the Work Slice; Adaptive Skills provides portable methods. Neither project owns the other. |
+| Security packs | Delivered as guidance | The packs are manual/advisory. Real usage evidence requires a real Work Slice, not a template or synthetic example. |
+| Observability | Read-only baseline | Known records can be projected with provenance; a projection does not pass gates or infer missing values. |
+| Documentation | Public Blume site | Publication remains a separate, manual approval and smoke-test action. |
+
+## Explicit limits
+
+:::warning[Not active or not authorized]
+The current baseline does not include Runtime 2.0 implementation, automatic collectors, new dashboards, policy engines, scanners, technical enforcement, automatic routing, autonomous learning, memory writeback, Adaptive Skills mutation, people scoring, or comparative performance metrics.
+:::
+
+The absence of a metric is represented as `unavailable`, not a guessed number. Five heterogeneous Work Observatory records are not a stable comparison group, so no success rate, ranking, or productivity claim is admissible.
+
+## How to use this page
+
+- New reader: start with [What is AletheIA?](/getting-started/overview/).
+- Practitioner: use [Install AletheIA](/getting-started/installation-guide/) and [Run your first Work Slice](/guides/getting-started/).
+- Advanced reader: follow the links from [Ecosystem layers](/concepts/ecosystem-layers/) to the relevant contract or policy.
+- Maintainer: inspect the [technical system state](https://github.com/nevitonsantana/AletheIA/blob/main/SYSTEM_STATE.md), [ADRs](/adr/README/), and [contracts](/contracts/README/).
+
+## Next steps
+
+- [Read the reader-facing changelog](/updates/changelog/)
+- [Review delivered, active, deferred, and evidence-gated work](/updates/roadmap/)
+- [Explore cases and evidence](/pilots/cases-and-evidence/)
