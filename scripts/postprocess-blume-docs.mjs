@@ -91,7 +91,7 @@ function sourcePathForHtmlFile(file) {
   const relativeFile = path.relative(distDir, file);
 
   if (relativeFile === "index.html") {
-    return path.join(repositoryRoot, "docs/index.md");
+    return path.join(repositoryRoot, "docs/index.mdx");
   }
 
   if (!relativeFile.endsWith("/index.html")) {
