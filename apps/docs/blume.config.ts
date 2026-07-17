@@ -80,6 +80,7 @@ export default defineConfig({
         {
           label: "Security and trust",
           items: [
+            "/concepts/security-and-trust",
             "/security/README",
             "/concepts/domain-governance-packs",
             "/domain-governance-packs/ai-agent-security-prompt-injection",
@@ -93,6 +94,7 @@ export default defineConfig({
         {
           label: "Observability",
           items: [
+            "/concepts/observability-and-evidence",
             "/concepts/visual-operations-layer",
             "/concepts/mission-control-cockpit",
             "/contracts/visual-operations-event-model",
