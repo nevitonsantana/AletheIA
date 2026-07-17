@@ -45,13 +45,13 @@ describe("S28 AI Agent Security & Prompt Injection pack", () => {
   });
 
   it("is indexed and reflected in current planning surfaces", () => {
-    const docsIndex = read("docs/index.md");
+    const docsNavigation = read("apps/docs/blume.config.ts");
     const examplesIndex = read("examples/README.md");
     const starterIndex = read("starter-pack/README.md");
     const backlog = read("docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md");
     const systemState = read("SYSTEM_STATE.md");
 
-    expect(docsIndex).toContain("domain-governance-packs/ai-agent-security-prompt-injection.md");
+    expect(docsNavigation).toContain("/domain-governance-packs/ai-agent-security-prompt-injection");
     expect(examplesIndex).toContain("agent-security/");
     expect(starterIndex).toContain("ai-agent-security-review-template.yaml");
     expect(backlog).toContain("### S28 — AI Agent Security & Prompt Injection domain-pack minimum");
