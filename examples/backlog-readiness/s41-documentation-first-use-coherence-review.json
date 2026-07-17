@@ -7,7 +7,7 @@
     "readme": "README.md",
     "changelog": "CHANGELOG.md",
     "system_state": "SYSTEM_STATE.md",
-    "first_use_guide": "docs/guides/getting-started.md",
+    "first_use_guide": "docs/guides/getting-started.mdx",
     "core_operating_path": "docs/guides/core-operating-path.md",
     "s40_framing": "examples/backlog-readiness/s40-backlog-v05-framing-review.json"
   },

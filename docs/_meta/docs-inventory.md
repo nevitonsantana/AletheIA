@@ -69,7 +69,7 @@
 | docs/enforcement-boundaries.md | concept | docs/concepts/enforcement-boundaries.md | canon | mover |
 | docs/enterprise-readiness-roadmap.md | roadmap | docs/roadmaps/enterprise-readiness-roadmap.md | canon | mover |
 | docs/evolution-plan.md | roadmap | docs/roadmaps/evolution-plan.md | canon | mover |
-| docs/getting-started.md | guide | docs/guides/getting-started.md | canon | mover |
+| docs/getting-started.md | guide | docs/guides/getting-started.mdx | canon | mover |
 | docs/github-project-operations.md | guide | docs/guides/github-project-operations.md | canon | mover |
 | docs/governance.md | concept | docs/concepts/governance.md | canon | mover |
 | docs/handoff-capture-pattern.md | concept | docs/concepts/handoff-capture-pattern.md | canon | mover |

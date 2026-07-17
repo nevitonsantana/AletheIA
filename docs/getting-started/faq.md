@@ -71,7 +71,7 @@ AletheIA shapes behavior through instructions, not enforcement. The overlay cann
 ## Environment
 
 **Does AletheIA work on Windows?**  
-Yes. The core overlay (markdown files and directory structure) is platform-agnostic. The variable substitution step uses `sed` on macOS/Linux; use PowerShell on Windows (see [`installation-guide.md`](installation-guide.md#step-3--substitute-variables)). APM itself supports Windows.
+Yes. The core overlay (markdown files and directory structure) is platform-agnostic. Use your platform's text-editing tools to replace the generated variables (see [Install AletheIA](/getting-started/installation-guide/#install-with-apm)). APM itself supports Windows.
 
 **Does it work in CI/CD pipelines?**  
 The overlay files are part of your repository and are available in CI. Running a Claude Code session in CI is a separate question — AletheIA does not add or remove CI constraints. If your pipeline uses a Claude Code step, the overlay will be loaded automatically if the repository includes it.

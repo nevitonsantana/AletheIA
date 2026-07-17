@@ -43,7 +43,7 @@ All paths changed during the Epic 2 reorganization (`refactor/docs-ia`). Navigat
 | docs/enforcement-boundaries.md | docs/concepts/enforcement-boundaries.md | |
 | docs/enterprise-readiness-roadmap.md | docs/roadmaps/enterprise-readiness-roadmap.md | |
 | docs/evolution-plan.md | docs/roadmaps/evolution-plan.md | |
-| docs/getting-started.md | docs/guides/getting-started.md | |
+| docs/getting-started.md | docs/guides/getting-started.mdx | |
 | docs/github-project-operations.md | docs/guides/github-project-operations.md | |
 | docs/governance.md | docs/concepts/governance.md | |
 | docs/handoff-capture-pattern.md | docs/concepts/handoff-capture-pattern.md | |

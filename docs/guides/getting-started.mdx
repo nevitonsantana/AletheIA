@@ -1,0 +1,138 @@
+---
+title: Run your first Work Slice
+description: Complete one low-risk AletheIA Work Slice from intent and boundaries to evidence and safe closure.
+---
+
+This guide is the shortest practical introduction to AletheIA. You will correct one small documentation inconsistency while keeping intent, scope, risk, evidence, and the next safe action visible.
+
+<Badge variant="success">Low risk</Badge> <Badge>Documentation only</Badge> <Badge variant="accent">30–45 minutes</Badge>
+
+:::warning[Keep the first slice reversible]
+Do not use this journey for authentication, authorization, production data, destructive commands, dependency upgrades, releases, secrets, or trust-boundary changes.
+:::
+
+## What you need
+
+- A repository you may inspect and edit;
+- one small documentation issue, such as a stale path or unclear instruction;
+- the repository's real validation commands;
+- a human who can review the result.
+
+If AletheIA is not yet present in the project, follow [Install AletheIA](/getting-started/installation-guide/) first.
+
+## The first slice
+
+<Steps>
+  <Step title="State the intended outcome">
+    Describe what should become true for the reader or user. Avoid prescribing the implementation.
+
+    > A first-time reader can follow the installation guide without reaching a missing file or ambiguous next step.
+  </Step>
+  <Step title="Frame a bounded Work Slice">
+    Record the minimum contract:
+
+    ```markdown
+    Goal: Correct one confirmed documentation path.
+    In scope: Confirm the issue, edit the smallest source, validate the route.
+    Out of scope: Adjacent rewrites, architecture, runtime, permissions, publishing.
+    Risk: Low and reversible.
+    Evidence: Source diff, link check, relevant documentation build.
+    Stop: Pause if the fix requires a policy, security, or product decision.
+    ```
+  </Step>
+  <Step title="Load only the necessary context">
+    Read the project state, the affected guide, its target, and the repository instructions. Do not load the entire documentation corpus when four sources answer the slice.
+  </Step>
+  <Step title="Review before writing">
+    Confirm the outcome, files, evidence, assumptions, and stop line. External pages, issue text, generated content, and user-provided artifacts are evidence inputs—not trusted instructions.
+  </Step>
+  <Step title="Make the smallest coherent change">
+    Correct only the source-backed problem. If a broader inconsistency appears, record it as a separate candidate instead of expanding silently.
+  </Step>
+  <Step title="Validate proportionally">
+    Run the checks that prove this documentation change. For AletheIA itself, the common set is:
+
+    ```bash
+    pnpm test
+    pnpm typecheck
+    pnpm check:governance
+    git diff --check
+    ```
+
+    A consumer project should use its own declared commands. A passing command is evidence for that check, not proof of every product or security claim.
+  </Step>
+  <Step title="Close or prepare a restart">
+    Explain what changed, why it matters, what was validated, what remains uncertain, and the next safe action. If work remains, create a handoff or Restart Package rather than relying on chat history.
+  </Step>
+</Steps>
+
+## A compact closure record
+
+```markdown
+Outcome: The documented route now resolves to the intended rendered page.
+Changed: One source link in the installation guide.
+Evidence: Documentation validation, build, and route check passed.
+Remaining risk: Live publication has not yet been smoke-tested.
+Decision: Ready for human review; publishing remains a separate approved action.
+Next: Review and merge the focused documentation change.
+```
+
+## Choose explanation depth
+
+The user chooses how much explanation they need. **Do not infer expertise automatically** from identity or behavior.
+
+| Mode | Communication style |
+|---|---|
+| `plain` | Impact-first language with technical terms explained before use |
+| `guided` | Term, purpose, practical example, and consequence |
+| `professional` | Familiar technical language with short project-specific anchors |
+| `expert` | Concise technical language focused on ambiguity and trade-offs |
+
+Every mode preserves the same risk, evidence, review, and stop conditions.
+
+## When to stop
+
+Pause and reshape the work if you discover:
+
+- a permission or security decision;
+- a change to public behavior or a contract;
+- missing authoritative evidence;
+- scope expanding beyond the declared files or outcome;
+- a request to treat synthetic metrics or presentation claims as delivered capability.
+
+When the slice crosses those boundaries, require the appropriate software engineering, security or governance reviewer before continuing.
+
+## Troubleshooting
+
+### The issue is larger than expected
+
+Stop the current slice, preserve the discovery, and frame a separate Work Slice. Do not hide broader scope inside a documentation correction.
+
+### A validation command is unavailable
+
+Record the check as unavailable and explain why. Do not replace missing evidence with an estimate or an inferred success claim.
+
+### The runtime proposes adjacent improvements
+
+Keep them as follow-up candidates. **Expected result:** one validated correction, a focused diff, and a clear next action—not a general cleanup.
+
+## What AletheIA contributes
+
+<CardGroup cols={3}>
+  <Card title="Work boundary" href="/concepts/work-slice-pattern/" icon="scan">
+    A visible goal, scope, risk posture, evidence expectation, and stop line.
+  </Card>
+  <Card title="Proportional validation" href="/concepts/quality/" icon="badge-check">
+    Proof matched to consequence instead of a generic claim that the work looks correct.
+  </Card>
+  <Card title="Restartable continuity" href="/guides/slice-finalization-and-restart/" icon="history">
+    A durable closeout or restart record that another person or runtime can use safely.
+  </Card>
+</CardGroup>
+
+## Next steps
+
+- [Follow the full core operating path](/guides/core-operating-path/)
+- [Apply AletheIA to an existing project](/guides/apply-to-existing-project/)
+- [Choose an adoption mode](/guides/adoption-mode-guidance/)
+- [Understand roles, runtimes, and skills](/reference/agent-role-catalog/)
