@@ -7,7 +7,7 @@
     "dev": "ASTRO_TELEMETRY_DISABLED=1 blume dev",
     "build": "ASTRO_TELEMETRY_DISABLED=1 blume build && node ../../scripts/postprocess-blume-docs.mjs && node ../../scripts/audit-blume-docs-output.mjs",
     "check": "ASTRO_TELEMETRY_DISABLED=1 blume check",
-    "validate": "ASTRO_TELEMETRY_DISABLED=1 blume validate",
+    "validate": "python3 ../../scripts/validate_docs_truth.py && ASTRO_TELEMETRY_DISABLED=1 blume validate",
     "audit": "node ../../scripts/audit-blume-docs-output.mjs"
   },
   "devDependencies": {
