@@ -63,45 +63,9 @@ flowchart TB
   </Card>
 </CardGroup>
 
-## Layer illustrations
-
-The following illustrations make each part of the ecosystem easier to recognize. Read the accompanying text for the current, partial, deferred, and evidence-gated status of each layer.
-
-### AletheIA Core
-
-![Illustrated AletheIA Core governance model](../assets/layer-aletheia-core.png)
-
-### Human layer
+## Human layer
 
 ![Illustrated Human Layer](../assets/layer-human.png)
-
-### Adaptive Skills
-
-![Illustrated Adaptive Skills layer](../assets/layer-adaptive-skills.png)
-
-### Agent layer
-
-![Illustrated Agent Layer](../assets/layer-agent.png)
-
-### Knowledge and continuity
-
-![Illustrated Knowledge layer](../assets/layer-knowledge.png)
-
-### Runtime and safety
-
-![Illustrated Runtime and Safety layer](../assets/layer-runtime-safety.png)
-
-### Observability
-
-![Illustrated Observability layer](../assets/layer-observability.png)
-
-### Evolution signals and outcomes
-
-![Illustrated Evolution Signals layer](../assets/layer-evolution-signals.png)
-
-![Illustrated Outcomes layer](../assets/layer-outcomes.png)
-
-## Human layer
 
 **Purpose:** keep intent, judgment, context, and accountability explicit.
 
@@ -113,6 +77,8 @@ People decide the goal, risk tolerance, acceptable scope, and whether work may p
 
 ## AletheIA Core
 
+![Illustrated AletheIA Core governance model](../assets/layer-aletheia-core.png)
+
 **Purpose:** govern how AI-assisted work moves from a signal or intent to a safe closeout, handoff, or restart.
 
 The core frames a [Work Slice](/concepts/work-slice-pattern/), selects the minimum necessary context, makes gates explicit, and asks for proof proportionate to the consequence.
@@ -122,6 +88,8 @@ The core frames a [Work Slice](/concepts/work-slice-pattern/), selects the minim
 **Boundary:** the core is not an autonomous router, specialist-agent bundle, runtime kernel, or permission system.
 
 ## Agent layer
+
+![Illustrated Agent Layer](../assets/layer-agent.png)
 
 **Purpose:** assign a portable responsibility to the current boundary of work.
 
@@ -135,6 +103,8 @@ Read [Roles, runtimes, and Adaptive Skills](/concepts/agent-runtime-skill-model/
 
 ## Adaptive Skills
 
+![Illustrated Adaptive Skills layer](../assets/layer-adaptive-skills.png)
+
 **Purpose:** provide reusable, portable methods inside an active role.
 
 Adaptive Skills is a separate project. It owns skill definitions, capability metadata, compatibility declarations, and its own governed evolution practices. AletheIA owns the Work Slice and its governance.
@@ -144,6 +114,8 @@ Adaptive Skills is a separate project. It owns skill definitions, capability met
 **Boundary:** selecting a skill does not approve scope, authorize a tool, or make a runtime decision.
 
 ## Knowledge and continuity
+
+![Illustrated Knowledge layer](../assets/layer-knowledge.png)
 
 **Purpose:** keep durable context separate from temporary chat or runtime memory.
 
@@ -155,6 +127,8 @@ This layer includes a project constitution, ADRs, source-backed guides, Decision
 
 ## Runtime and safety
 
+![Illustrated Runtime and Safety layer](../assets/layer-runtime-safety.png)
+
 **Purpose:** execute tools under the permissions, limitations, and policies of a real environment.
 
 Codex, Claude Code, and Qwen are runtime adapters. They can host the same portable role with different local mechanics. Local permissions stay local; AletheIA does not grant access, install a sandbox, or enforce security controls merely by documenting a gate.
@@ -165,6 +139,8 @@ Codex, Claude Code, and Qwen are runtime adapters. They can host the same portab
 
 ## Observability
 
+![Illustrated Observability layer](../assets/layer-observability.png)
+
 **Purpose:** make source-backed records easier to inspect without turning visibility into execution authority.
 
 Resource Observatory and Work Observatory surfaces project known records and preserve neutral `unavailable` states when a source does not exist.
@@ -174,6 +150,10 @@ Resource Observatory and Work Observatory surfaces project known records and pre
 **Boundary:** no automatic collectors, inferred metrics, people scoring, autonomous decisions, comparative metrics, or dashboard expansion is implied.
 
 ## Evolution and outcomes
+
+![Illustrated Evolution Signals layer](../assets/layer-evolution-signals.png)
+
+![Illustrated Outcomes layer](../assets/layer-outcomes.png)
 
 **Purpose:** turn reviewed observations into possible improvements while keeping claims proportional to evidence.
 
