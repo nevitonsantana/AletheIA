@@ -1,0 +1,144 @@
+---
+title: Frequently asked questions
+description: Find practical answers about AletheIA adoption, Work Slices, roles, runtimes, security, teams, and troubleshooting.
+---
+
+<Columns cols={3}>
+  <Card title="New to AletheIA" href="#starting-out" icon="circle-help">
+    Understand the operating overlay, its boundaries, and how it relates to Adaptive Skills.
+  </Card>
+  <Card title="Set up and use" href="#setup-and-first-use" icon="rocket">
+    Choose an adoption path, prepare a first Work Slice, and work with a runtime.
+  </Card>
+  <Card title="Operate with confidence" href="#security-and-teams" icon="shield-check">
+    Find answers about security, evidence, handoffs, and team collaboration.
+  </Card>
+</Columns>
+
+## Starting out
+
+### What is AletheIA?
+
+AletheIA is an operating overlay for AI-assisted work. It helps a team frame a bounded piece of work, make its context and decisions explicit, validate the result, and leave a useful handoff for the next person or session.
+
+It is not an agent runtime, a collection of autonomous agents, or a replacement for your delivery method. Start with [What is AletheIA?](/getting-started/overview/) for the complete introduction.
+
+### What problem does it help solve?
+
+AI-assisted work can lose scope, context, validation criteria, and continuity between sessions. AletheIA provides a lightweight structure for making those parts visible before and during delivery. It supports human judgment; it does not make decisions on a team's behalf.
+
+### Does AletheIA replace my existing method?
+
+No. It can complement methods such as Scrum, SDD, or a team-specific delivery process. AletheIA adds an explicit governed loop around the work: framing, context, execution, validation, closure, and continuity. See [the operating model](/concepts/overview/) for the full loop.
+
+### How is AletheIA different from Adaptive Skills?
+
+**AletheIA governs the work; Adaptive Skills provides reusable execution capabilities inside that work.**
+
+AletheIA helps define the Work Slice, context, gates, evidence, and handoff. Adaptive Skills can provide a reusable method for a specific task when it is relevant. Neither project automatically invokes or enforces the other. See [AletheIA and Adaptive Skills](/concepts/ecosystem-map/).
+
+### What are roles, runtimes, and skills?
+
+They are different concepts:
+
+| Concept | Meaning | Examples |
+| --- | --- | --- |
+| Agent role | A responsibility in governed work | Orchestrator, Implementer, Reviewer |
+| Runtime | The environment that runs tools and reads project instructions | Codex, Claude Code, Qwen |
+| Adaptive Skill | A reusable specialist execution method | Planning, QA, UX, security methods |
+
+Read [the role, runtime, and skill model](/concepts/agent-runtime-skill-model/) before assigning responsibilities.
+
+### Is AletheIA limited to Crisis Monitor?
+
+No. Crisis Monitor was an early validation context and remains a documented case. AletheIA is designed as a domain-agnostic operating overlay. A case study is evidence about a particular use; it is not a claim that every domain, integration, or outcome is already supported.
+
+## Setup and first use
+
+### How do I begin?
+
+Use [Run your first Work Slice](/guides/getting-started/) if you want the shortest guided path, or follow the [installation guide](/getting-started/installation-guide/) for adoption modes, runtime-specific guidance, and stop conditions.
+
+The smallest safe start is a low-risk Work Slice with a clear goal, limited scope, observable acceptance criteria, and a human who can review the outcome.
+
+### Do I need a specific runtime?
+
+No. The core overlay is runtime-agnostic. AletheIA documents adapters for Codex, Claude Code, and Qwen, but those are execution environments rather than canonical agent roles. Choose a runtime your team can operate safely and whose permissions you understand.
+
+### Can I install AletheIA without APM?
+
+Yes. APM is one packaging path, not a requirement. The [installation guide](/getting-started/installation-guide/) explains both package-based and manual materialization paths. The operating-overlay pack is also available in the repository for teams that need to inspect the source before adopting it.
+
+### Why does the APM route use more than one command?
+
+APM installs the package first. Materializing the operating-overlay files into a project is a separate step. This separation makes the change visible and reviewable before it becomes project state.
+
+### Can I use AletheIA in CI?
+
+The overlay files can live in a repository and therefore be available to CI. AletheIA does not add CI permissions, deploy steps, or runtime behavior. Any automated action remains subject to the CI system, repository rules, and human review requirements already in place.
+
+### The runtime ignored the constitution or went outside the Work Slice. What should I do?
+
+Stop the work, inspect the current scope and context, and decide whether the task should be reframed, split, or escalated for human review. Check that the project instructions point to the correct constitution and that placeholders were replaced during setup. Do not treat a runtime response as evidence that the work is valid.
+
+### I lost context after a session ended. Can I recover?
+
+Start from the latest handoff, report, decision record, and repository state. If no handoff exists, reconstruct only what the available artifacts support, record the uncertainty, and create a new handoff at closure. See [slice finalization and restart guidance](/guides/slice-finalization-and-restart/).
+
+## Security and teams
+
+### Does AletheIA read or manage my credentials?
+
+No. AletheIA is documentation and operating guidance. It does not grant permissions, read secrets by default, enforce access controls, or replace your runtime's security configuration. Keep credentials and sensitive data outside the operating overlay.
+
+### Can AletheIA give an agent broad access to my system?
+
+No. It cannot grant access that a runtime or environment has not already granted. AletheIA can make intended boundaries and review points explicit, but technical enforcement belongs to the runtime, repository, CI, and infrastructure controls. See [Security and trust](/concepts/security-and-trust/).
+
+### How should I handle untrusted content or prompt injection?
+
+Treat external content as data, not instructions. Keep the task and authority boundaries explicit, review any action that would change state, and use the advisory security guidance when the Work Slice genuinely involves agents, untrusted inputs, web/API boundaries, authentication, tenants, or secrets. See [domain governance guidance](/concepts/domain-governance-packs/).
+
+### Are security packs automatically enforced?
+
+No. The S28 and S29 packs are manual advisory guidance. Their templates and synthetic examples are not field evidence. A real, source-backed Work Slice is required before recording their application evidence.
+
+### How can a team use the same overlay?
+
+Commit the project-level operating artifacts that the team agrees to share, then use small Work Slices and explicit handoffs to connect people and sessions. Coordinate parallel work through normal version-control practices. AletheIA does not prevent merge conflicts or replace team ownership.
+
+### Should handoffs and learnings be committed?
+
+Commit them when they are useful shared operational context and do not include secrets or personal data. Handoffs should describe what changed, what was validated, known limits, and the safest next action. See [the first Work Slice guide](/guides/getting-started/).
+
+## State, evidence, and troubleshooting
+
+### Does AletheIA provide dashboards, automatic collectors, or people scoring?
+
+No. The current observability surfaces are source-backed and read-only. They preserve neutral states such as unavailable or unknown rather than inventing metrics. There are no automatic collectors, inferred metrics, people scoring, autonomous decisions, or dashboard expansion without an explicit gate. See [Observability and evidence](/concepts/observability-and-evidence/).
+
+### How do I know what is delivered, deferred, or only conceptual?
+
+Use [Current state](/updates/current-state/) for the reader-facing summary, then follow its links to canonical technical sources such as `SYSTEM_STATE.md`, ADRs, and contracts. The [roadmap](/updates/roadmap/) separates delivered work from deferred and evidence-gated candidates.
+
+### Where can I see examples without mistaking them for guarantees?
+
+Use [Cases and evidence](/pilots/cases-and-evidence/). Every item is labeled as canonical guidance, field evidence, a synthetic example, or a historical experiment. An example shows a context; it does not guarantee a result in another project.
+
+### Where can I find a technical history of changes?
+
+Read the reader-facing [changelog](/updates/changelog/) first, then consult the canonical [`CHANGELOG.md`](https://github.com/nevitonsantana/AletheIA/blob/main/CHANGELOG.md) for technical detail.
+
+### I still need help. What should I check next?
+
+1. Confirm the Work Slice goal, scope, and acceptance criteria.
+2. Check the runtime's permissions and project instructions.
+3. Review the latest handoff and evidence rather than relying on memory.
+4. Escalate ambiguous, risky, or state-changing work to a human reviewer.
+
+## Next steps
+
+- [Run your first Work Slice](/guides/getting-started/)
+- [Follow the core operating path](/guides/core-operating-path/)
+- [Understand the operating model](/concepts/overview/)
+- [Explore the ecosystem layers](/concepts/ecosystem-layers/)
