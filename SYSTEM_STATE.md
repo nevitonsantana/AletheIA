@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** none.
-- **Next dependency path:** S84 delivered a `refine` verdict with a pilot-only optional Portability Check while preserving Restart Package as the only continuity artifact. S85 remains planned and requires separate explicit activation as a read-only Codex-to-Codex pilot; S86-S89, template/schema/composer/adapter adoption, automatic publishing, S18, Runtime 2.0, dashboards, collectors, automatic learning classification, memory writeback, Adaptive Skills mutation and comparative metrics remain blocked.
+- **Active:** S85 Codex-to-Codex Restart Pilot.
+- **Next dependency path:** S85 compares the current Restart Package with S84's pilot-only optional Portability Check through two read-only fresh Codex sessions. S86-S89, template/schema/composer/adapter adoption, automatic publishing, S18, Runtime 2.0, dashboards, collectors, automatic learning classification, memory writeback, Adaptive Skills mutation and comparative metrics remain blocked.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
