@@ -1038,7 +1038,8 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA project-specific continuity evidence.
 - **Covers:** read-only baseline/candidate post-resume checks from the same real Work Slice snapshot in two fresh Codex sessions.
 - **Dependencies:** S84 verdict confirming one optional portability-metadata gap.
-- **Status:** `planned`; the S84 `refine` verdict permits only a separately activated read-only Codex-to-Codex pilot.
+- **Status:** `in-review`; read-only same-runtime evidence only, with no mutation by receiving sessions.
+- **Evidence:** `docs/pilots/s85-codex-to-codex-restart-pilot.md`.
 - **Non-goals:** file mutation by receiving sessions, transcript replay, schema/template canonization, automation, runtime configuration or comparative claims.
 - **Acceptance:** freeze the source commit and authoritative state; compare the current Restart Package with a candidate portability block; retain complete session outputs and independent review against authoritative sources.
 
@@ -1166,7 +1167,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P24-R3 Minimum sufficient solution guardrail | v0.7 guardrail docs/schema | `delivered` for compatibility | S50/S53 | Complexity guardrail is delivered as a manual readiness gate; no standalone skill, schema or enforcement surface is created. |
 | P25-R1 Compact continuity across session/runtime boundaries | Portable Continuity Pack PRD/SDD | `delivered baseline` | Existing Restart Package; S83 intake | Restart Package already preserves compact cross-boundary continuity without transcript replay. |
 | P25-R2 Runtime, freshness and sensitivity portability metadata | Portable Continuity Pack PRD/SDD | `delivered` for compatibility | S84 | S84 retained the existing contracts and defined only a pilot-only optional profile for the bounded residual metadata gap. |
-| P25-R3 Same-runtime baseline/candidate evidence | Portable Continuity validation strategy | `deferred` | S85/S86 | Pilot and value decision remain blocked until S84 confirms a bounded gap. |
+| P25-R3 Same-runtime baseline/candidate evidence | Portable Continuity validation strategy | `in-review` | S85/S86 | S85 records read-only fresh-session outputs; S86 remains blocked until value is assessed against its explicit criteria. |
 | P25-R4 Cross-runtime and skill compatibility | Portable Continuity roadmap | `deferred` | S87-S89 | Observe compatibility only after same-runtime value; Adaptive Skills remains unchanged. |
 | P25-R5 New Portable Governed Work State, schema, composer and broad loop/graph track | Portable Continuity ADR/roadmap | `rejected` for this track | None | Conflicts with minimum-sufficient evolution and existing Restart Package/runtime/loop/graph boundaries. |
 
