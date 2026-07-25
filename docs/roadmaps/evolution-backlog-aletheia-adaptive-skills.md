@@ -1092,9 +1092,9 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA finalization and starter-pack guidance.
 - **Covers:** a plain-language summary of plan completion, validation, documentation-impact review (README, changelog, Pages, knowledge base, handoff and context), publication, next action, continuity and archive readiness after every finalization outcome.
 - **Dependencies:** delivered finalization/restart guidance and user-observed evidence that a technically complete slice can still leave the requester uncertain.
-- **Status:** `in-review`.
+- **Status:** `delivered` by AletheIA PR #463 as manual-first guidance and template coverage.
 - **Non-goals:** a new lifecycle artifact, schema, composer, runtime hook, automatic thread archive, enforcement mechanism or Adaptive Skills mutation.
-- **Acceptance:** guide and template use one stable closeout with an explicit documentation-impact review; incomplete/review-required outcomes remain explicit; public documentation validation and navigation pass; one future real slice must observe whether the profile reduces clarification before any automation proposal.
+- **Acceptance:** guide and template use one stable closeout with an explicit documentation-impact review; incomplete/review-required outcomes remain explicit; public documentation validation and navigation pass. One future real slice must observe whether the profile reduces clarification before any automation proposal.
 
 ## Requirement traceability matrix
 
