@@ -1038,8 +1038,8 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA project-specific continuity evidence.
 - **Covers:** read-only baseline/candidate post-resume checks from the same real Work Slice snapshot in two fresh Codex sessions.
 - **Dependencies:** S84 verdict confirming one optional portability-metadata gap.
-- **Status:** `in-review`; read-only same-runtime evidence only, with no mutation by receiving sessions.
-- **Evidence:** `docs/pilots/s85-codex-to-codex-restart-pilot.md`.
+- **Status:** `delivered` by AletheIA PR #458; read-only same-runtime evidence only, with no mutation by receiving sessions.
+- **Evidence:** `docs/pilots/s85-codex-to-codex-restart-pilot.md`; PR #458.
 - **Non-goals:** file mutation by receiving sessions, transcript replay, schema/template canonization, automation, runtime configuration or comparative claims.
 - **Acceptance:** freeze the source commit and authoritative state; compare the current Restart Package with a candidate portability block; retain complete session outputs and independent review against authoritative sources.
 
@@ -1048,7 +1048,7 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA continuity evidence decision.
 - **Covers:** whether the S85 candidate adds value over the current Restart Package.
 - **Dependencies:** complete real S85 baseline/candidate evidence.
-- **Status:** `deferred`.
+- **Status:** `planned`; requires separate explicit activation because S85 did not measure all acceptance indicators.
 - **Verdicts:** `accept_optional_profile`, `refine_and_repeat`, `insufficient_evidence` or `reject`.
 - **Acceptance:** zero critical constraint or sensitivity loss, correct next action, improvement in at least two restart indicators, and no more than ten minutes of candidate preparation overhead.
 
@@ -1167,7 +1167,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P24-R3 Minimum sufficient solution guardrail | v0.7 guardrail docs/schema | `delivered` for compatibility | S50/S53 | Complexity guardrail is delivered as a manual readiness gate; no standalone skill, schema or enforcement surface is created. |
 | P25-R1 Compact continuity across session/runtime boundaries | Portable Continuity Pack PRD/SDD | `delivered baseline` | Existing Restart Package; S83 intake | Restart Package already preserves compact cross-boundary continuity without transcript replay. |
 | P25-R2 Runtime, freshness and sensitivity portability metadata | Portable Continuity Pack PRD/SDD | `delivered` for compatibility | S84 | S84 retained the existing contracts and defined only a pilot-only optional profile for the bounded residual metadata gap. |
-| P25-R3 Same-runtime baseline/candidate evidence | Portable Continuity validation strategy | `in-review` | S85/S86 | S85 records read-only fresh-session outputs; S86 remains blocked until value is assessed against its explicit criteria. |
+| P25-R3 Same-runtime baseline/candidate evidence | Portable Continuity validation strategy | `delivered` for pilot evidence | S85 | S85 records read-only fresh-session outputs with no observed critical loss; S86 remains separately gated because value indicators were not measured. |
 | P25-R4 Cross-runtime and skill compatibility | Portable Continuity roadmap | `deferred` | S87-S89 | Observe compatibility only after same-runtime value; Adaptive Skills remains unchanged. |
 | P25-R5 New Portable Governed Work State, schema, composer and broad loop/graph track | Portable Continuity ADR/roadmap | `rejected` for this track | None | Conflicts with minimum-sufficient evolution and existing Restart Package/runtime/loop/graph boundaries. |
 
@@ -1323,7 +1323,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 - **Guardrails:** Restart Package remains the sole continuity artifact; portability is a metadata hypothesis, not a new lifecycle; missing state stays `unavailable`; instruction files are context, not enforcement.
 - **Candidate destination:** one optional Restart Package portability block, only if S84 proves an unabsorbed gap and S85-S86 prove value over the current baseline.
 - **Dependencies:** S2 reference intake, S82 closure, existing handoff/finalization/runtime contracts and ADR-016.
-- **Deferred:** S85 until separate explicit activation after S84; all template changes and cross-runtime work until their preceding gate.
+- **Deferred:** S86 until separate explicit activation after S85; all template changes and cross-runtime work until their preceding gate.
 - **Rejected:** new canonical state/schema/composer, Runtime 2.0, automatic routing, memory writeback, broad loop/graph/topology expansion, dashboards, collectors, comparative metrics and Adaptive Skills mutation.
 
 ### M1 — Ecosystem Territory Map
