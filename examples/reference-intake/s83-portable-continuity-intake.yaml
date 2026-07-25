@@ -1,0 +1,173 @@
+reference_intake:
+  id: REF-2026-S83-001
+  title: AletheIA Portable Governed Work Evolution Pack v0.1 intake
+  source_type: pack
+  source_refs:
+    - sha256:d2e91b2429245472418b2c0a84b0277da34670505e222fe762fb763d91886f21
+    - /Users/nevitonsantana/Downloads/_Uteis/AI/AletheIA-Adaptative-Skills/aletheia-portable-governed-work-pack-v0.1.zip
+  received_at: 2026-07-25
+  reviewer: Neviton Santana
+  sensitivity: internal
+  summary: >-
+    Planning package for continuity across sessions, agents and runtimes, with additional
+    proposals for loops, graph providers, execution topology and Adaptive Skills portability.
+    This intake narrows the useful path to portability metadata around the existing Restart
+    Package. It does not accept a new Portable Governed Work State, schema, composer, adapter,
+    runtime behavior or capability-side change.
+  package_identity:
+    version: v0.1.0
+    baseline_date: 2026-07-25
+    implementation_authority: none
+    inventory:
+      archive_entries: 25
+      declared_entries: 24
+      note: FILE-INVENTORY.json omits itself; declared file sizes otherwise matched the extracted files.
+  extracted_requirements:
+    - id: P25-R1
+      description: >-
+        Preserve compact Work Slice continuity across session and runtime boundaries without
+        transcript replay.
+      source_refs:
+        - aletheia-portable-governed-work-pack-v0.1/docs/PRD.md
+        - aletheia-portable-governed-work-pack-v0.1/docs/SDD.md
+      status: already_covered
+      existing_coverage:
+        - docs/concepts/canonical-vocabulary.md
+        - docs/concepts/agent-handoffs.md
+        - docs/guides/slice-finalization-and-restart.md
+    - id: P25-R2
+      description: >-
+        Review whether source runtime, destination runtime, freshness, invalidation,
+        sensitivity, redaction and unsupported destination semantics justify an optional
+        Restart Package portability block.
+      source_refs:
+        - aletheia-portable-governed-work-pack-v0.1/docs/PRD.md
+        - aletheia-portable-governed-work-pack-v0.1/docs/SDD.md
+        - aletheia-portable-governed-work-pack-v0.1/docs/VALIDATION-STRATEGY.md
+      status: proposed
+      decision_boundary: Compatibility review must test absorption before any template change.
+    - id: P25-R3
+      description: >-
+        Compare the current Restart Package with an optional portability block in a read-only
+        Codex-to-Codex restart pilot.
+      source_refs:
+        - aletheia-portable-governed-work-pack-v0.1/docs/ROADMAP.md
+        - aletheia-portable-governed-work-pack-v0.1/docs/VALIDATION-STRATEGY.md
+      status: deferred
+      decision_boundary: Requires an S84 compatibility verdict that confirms one bounded residual gap.
+    - id: P25-R4
+      description: >-
+        Preserve runtime and skill compatibility observations across Codex and Claude Code
+        without changing Adaptive Skills or claiming instruction enforcement.
+      source_refs:
+        - aletheia-portable-governed-work-pack-v0.1/docs/PRD.md
+        - aletheia-portable-governed-work-pack-v0.1/docs/SDD.md
+      status: deferred
+      decision_boundary: Requires accepted same-runtime value evidence before cross-runtime review.
+    - id: P25-R5
+      description: Introduce Portable Governed Work State as a new canonical continuity artifact.
+      source_refs:
+        - aletheia-portable-governed-work-pack-v0.1/docs/ADR-017-portable-governed-work.md
+        - aletheia-portable-governed-work-pack-v0.1/schemas/portable-governed-work-state.schema.json
+      status: rejected
+      decision_boundary: Restart Package remains the only task-level continuity artifact.
+    - id: P25-R6
+      description: >-
+        Add schemas, composers, runtime adapters, loop operations, graph providers, execution
+        topology or automated capability evolution from this intake.
+      source_refs:
+        - aletheia-portable-governed-work-pack-v0.1/docs/ROADMAP.md
+        - aletheia-portable-governed-work-pack-v0.1/docs/IMPLEMENTATION-GUIDE.md
+      status: rejected
+      decision_boundary: Each expansion requires a separate real source-backed trigger and decision.
+  layer_mapping:
+    aletheia:
+      - Owns the intake, compatibility verdict, Restart Package semantics and any future pilot gate.
+      - May test an optional portability block only after existing continuity contracts are reviewed.
+    adaptive_skills:
+      - Compatibility references may be observed later; no files, contracts, skills or metadata change now.
+    runtime_harness:
+      - A future pilot may use fresh Codex sessions as read-only receiving surfaces.
+      - No runtime configuration, provider adapter, instruction enforcement or execution substrate is authorized.
+    observatory:
+      - No projection, collector, dashboard, score or comparative metric is created.
+    out_of_scope:
+      - Treating package prompts as executable repository instructions.
+      - Importing the proposed schemas, examples or ADR as canonical AletheIA artifacts.
+      - Activating the original S83-S106 chain.
+      - Implementing loops, graphs, topology, Runtime 2.0, memory writeback or automatic routing.
+  adoption_decision:
+    posture: adapt
+    rationale: >-
+      The package identifies a useful continuity problem, but AletheIA already owns that problem
+      through Restart Package, handoff, finalization, Context Pack and runtime evidence contracts.
+      The only admissible next question is whether a small portability metadata block fills a
+      residual gap without creating a competing artifact.
+    covered_by_existing_contracts:
+      - docs/contracts/reference-intake-adoption-contract.md
+      - docs/concepts/canonical-vocabulary.md
+      - docs/concepts/agent-handoffs.md
+      - docs/guides/slice-finalization-and-restart.md
+      - docs/contracts/runtime-adapter-contract.md
+      - docs/contracts/loop-readiness-gate.md
+      - docs/contracts/loop-state-contract.md
+      - docs/contracts/execution-pattern-selection.md
+      - docs/concepts/context-graph-integration.md
+      - docs/adr/ADR-016-runtime-2-boundary-review.md
+    canonical_artifact_decision:
+      new_artifact_count: 0
+      canonical_continuity_artifact: Restart Package
+      proposed_extension: optional portability metadata block, pending S84
+    proposed_slices:
+      - S83 Portable Continuity Reference Intake
+      - S84 Restart Package Portability Compatibility Review, gated by accepted S83 intake
+      - S85 Codex-to-Codex Restart Pilot, gated by an S84 residual-gap verdict
+      - S86 Same-Runtime Value Decision, gated by real S85 evidence
+      - S87-S89 optional template and cross-runtime path, gated by accepted S86 value
+    deferred_items:
+      - Any Restart Package template change until S84 confirms a bounded residual gap.
+      - Same-runtime pilot execution until S84.
+      - Codex and Claude Code cross-runtime pilots until S86 accepts same-runtime value.
+      - Adaptive Skills compatibility changes; observation does not authorize mutation.
+      - A schema, composer or automation until a later repeated-use trigger and explicit decision.
+    rejected_items:
+      - A second canonical continuity artifact.
+      - Direct adoption of the package ADR or original S83-S106 roadmap.
+      - Runtime 2.0, schedulers, unattended loops, memory writeback and automatic routing.
+      - Graph databases, parser or graph-provider implementation from this intake.
+      - Adaptive Skills self-mutation or repository changes.
+  intake_gate:
+    verdict: proceed_to_compatibility_review
+    residual_gap_status: hypothesis_only
+    rationale: >-
+      Portability metadata is not consolidated in one Restart Package section, but current
+      contracts may already carry the required meaning. S84 must decide absorption versus one
+      optional compatibility block before any pilot or template change.
+    authorized_next_slice: S84 only
+    implementation_authority: none
+  evidence:
+    checks_performed:
+      - Archive checksum computed from the received ZIP.
+      - All 25 archive entries and the package manifest were inspected as external data.
+      - Declared file sizes matched; FILE-INVENTORY.json was the only unlisted entry.
+      - PRD, SDD, ADR, roadmap, validation strategy, implementation guide, schemas and examples were reviewed.
+      - Current Restart Package, handoff, finalization, runtime, loop, execution-pattern and context-graph contracts were reviewed.
+      - Proposed JSON Schemas were structurally valid; runtime projection examples validated.
+      - Portable state YAML timestamps parsed as datetime values under PyYAML and did not satisfy the JSON Schema string type.
+      - Referenced Adaptive Skills compatibility documents were present in the locally available origin/main.
+    unavailable:
+      - Real same-runtime restart comparison evidence.
+      - Evidence that a portability block reduces restart burden.
+      - Cross-runtime Codex and Claude Code compatibility evidence.
+      - Evidence supporting a new schema, composer, adapter or canonical artifact.
+  guardrails:
+    no_automatic_adoption: true
+    no_dependency_installation: true
+    no_skill_mutation_without_review: true
+    no_runtime_authority_change: true
+    no_new_canonical_artifact: true
+    no_schema_or_composer: true
+    no_runtime_adapter_implementation: true
+    no_loop_graph_or_topology_expansion: true
+    no_memory_writeback: true
+    no_dashboard_collector_or_comparative_metric: true

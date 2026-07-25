@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+- close S86 with insufficient evidence, retaining Restart Package and blocking the optional profile
+
+- decide S86 same-runtime portability value as insufficient evidence, keeping the optional profile unadopted
+
+- close S85 after the read-only Codex restart pilot, returning Active to none while keeping S86 separately gated
+
+- run the read-only S85 Codex-to-Codex Restart Package baseline/candidate pilot without changing templates, schemas, composers, adapters or Adaptive Skills
+
+- close S84 after Restart Package portability compatibility review, returning Active to none while keeping the pilot separately gated
+
+- review S84 Restart Package portability compatibility without changing templates, schemas, composers, adapters or Adaptive Skills
+
+- close S83 after Portable Continuity Reference Intake merge, returning Active to none while keeping S84 separately gated
+
+- register the AletheIA Portable Governed Work Evolution Pack v0.1 through the narrowed S83 Portable Continuity intake, preserving Restart Package as the sole continuity artifact and keeping schemas, composers, adapters, loops, graphs, Runtime 2.0 and Adaptive Skills changes blocked
+
 - close S82 after Blume Pages post-S81 publication smoke test
 
 - add S82 Blume Pages post-S81 publication smoke-test evidence
