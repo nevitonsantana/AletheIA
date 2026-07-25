@@ -175,6 +175,14 @@ S82
                           -> value gate: stop or conditionally authorize S87-S89
 ```
 
+The user-observed finalization-feedback gap is a separate, documentation-only path:
+
+```text
+S86 closure evidence
+  -> S90 User-Facing Closeout Profile
+      -> document plain-language completion, validation, publication, continuity and archive-readiness feedback
+```
+
 S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe organizational slice because it reconciles new source packs before any implementation. S20 and S21 should precede new skill creation, broader loops, agents or runtime surfaces. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10/P12, P13 and P18 do not reopen live importers, runtime collection, learning automation or new dashboards through this backlog update.
 
 S27 opens backlog v0.4 after S0-S26 closure. Its purpose is to choose the next evidence-respecting track, not to reopen blocked runtime, benchmark, auto-routing, learning automation or dashboard work. Domain governance is the strongest next path because it can improve agent/tool safety and trust-boundary clarity without requiring runtime implementation.
@@ -1078,6 +1086,15 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Outcomes:** retain as an optional Restart Package extension, absorb required fields into existing guidance, refine through another bounded pilot or remove the experiment.
 - **Non-goals:** authorizing a composer, schema, runtime adapter, Runtime 2.0, automatic routing, memory writeback or Adaptive Skills mutation.
 - **Acceptance:** choose one evidence-backed outcome and remove or defer unsupported expansion; repeated use is required before any new automation proposal.
+
+### S90 — User-Facing Closeout Profile
+
+- **Repository / layer:** AletheIA finalization and starter-pack guidance.
+- **Covers:** a plain-language summary of plan completion, validation, documentation-impact review (README, changelog, Pages, knowledge base, handoff and context), publication, next action, continuity and archive readiness after every finalization outcome.
+- **Dependencies:** delivered finalization/restart guidance and user-observed evidence that a technically complete slice can still leave the requester uncertain.
+- **Status:** `in-review`.
+- **Non-goals:** a new lifecycle artifact, schema, composer, runtime hook, automatic thread archive, enforcement mechanism or Adaptive Skills mutation.
+- **Acceptance:** guide and template use one stable closeout with an explicit documentation-impact review; incomplete/review-required outcomes remain explicit; public documentation validation and navigation pass; one future real slice must observe whether the profile reduces clarification before any automation proposal.
 
 ## Requirement traceability matrix
 

@@ -10,6 +10,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 2. [core-operating-path.md](core-operating-path.md) — minimum loop
 3. [apply-to-existing-project.md](apply-to-existing-project.md) — adoption without rebuild
 4. [slice-finalization-and-restart.md](slice-finalization-and-restart.md) — clean close and resume
+5. [user-facing-closeout.md](user-facing-closeout.md) — clear completion, continuity and archive feedback
 
 ## Contents
 
@@ -19,6 +20,7 @@ If you need conceptual background, see [`concepts/`](../concepts/README.md). If 
 | [core-operating-path.md](core-operating-path.md) | Minimum operational loop |
 | [apply-to-existing-project.md](apply-to-existing-project.md) | Adopting AletheIA on an existing project |
 | [slice-finalization-and-restart.md](slice-finalization-and-restart.md) | Closing a slice and resuming cleanly |
+| [user-facing-closeout.md](user-facing-closeout.md) | Explaining completion, next action, continuity and archive readiness in plain language |
 | [agent-role-adoption-guide.md](agent-role-adoption-guide.md) | How to adopt the portable role system |
 | [agent-runtime-decision-guide.md](agent-runtime-decision-guide.md) | Choosing between agents or runtimes |
 | [adoption-mode-guidance.md](adoption-mode-guidance.md) | Lite vs Standard vs Fuller adoption modes |

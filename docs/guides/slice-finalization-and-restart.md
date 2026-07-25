@@ -64,7 +64,8 @@ A healthy slice finalization should follow this order:
 2. continuity check
 3. AI fatigue read
 4. finalization outcome
-5. optional clean-restart recommendation
+5. user-facing closeout
+6. optional clean-restart recommendation
 
 The goal is not to restart by habit.
 The goal is to restart when continuing on the same execution surface now carries more drag than value.
@@ -154,6 +155,41 @@ Use when:
 - validation is incomplete
 - conflict or high-risk review is still open
 - the closure rule is not yet satisfied
+
+## User-facing closeout
+
+The finalization record is detailed because operators need evidence. The person who
+asked for the work also needs a short answer to a simpler question: **"is this
+finished, and what should I do now?"**
+
+After every finalization review, provide a closeout in plain language. Do this for
+all outcomes, including `review-required` and `not-ready`; never make the reader
+infer completion from a long handoff, a merged pull request, or silence.
+
+Use this exact shape:
+
+```markdown
+## Status at a glance
+- **Plan:** `complete | in review | incomplete`
+- **Validation:** what was checked, or what is still missing
+- **Documentation impact review:** `not needed | updated | pending | unavailable` for README, changelog, public docs/Pages, knowledge base, handoff and continuity context; name every affected surface
+- **Documentation and publication:** `current | pending | not applicable`, with the reason
+- **Next action:** `none` or one named action with its owner
+- **Continuity:** `not needed | continue on this surface | use Restart Package`
+- **This thread may be archived:** `yes | no`, with the reason when `no`
+```
+
+This is a communication profile, not a new lifecycle artifact or enforcement
+mechanism. It summarizes the existing finalization outcome, evidence and Restart
+Package decision without replacing them.
+
+The documentation impact review is a decision, not a promise to edit every
+surface. A closeout must explicitly state `not needed` when no update is
+required, rather than silently assuming that a merged change kept README,
+changelog, public publication, knowledge, handoff and context current.
+
+For a complete operator procedure and examples, see
+[`user-facing-closeout.md`](user-facing-closeout.md).
 
 ---
 
