@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S86 with insufficient evidence, retaining Restart Package and blocking the optional profile
+
 - decide S86 same-runtime portability value as insufficient evidence, keeping the optional profile unadopted
 
 - close S85 after the read-only Codex restart pilot, returning Active to none while keeping S86 separately gated

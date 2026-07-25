@@ -1048,8 +1048,8 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA continuity evidence decision.
 - **Covers:** whether the S85 candidate adds value over the current Restart Package.
 - **Dependencies:** complete real S85 baseline/candidate evidence.
-- **Status:** `in-review`; decision-only, with no template/schema/adapter authority.
-- **Evidence:** `docs/reports/s86-same-runtime-portability-value-decision.md`.
+- **Status:** `delivered` by AletheIA PR #460 with `insufficient_evidence`; no template/schema/adapter authority was introduced.
+- **Evidence:** `docs/reports/s86-same-runtime-portability-value-decision.md`; PR #460.
 - **Verdicts:** `accept_optional_profile`, `refine_and_repeat`, `insufficient_evidence` or `reject`.
 - **Acceptance:** zero critical constraint or sensitivity loss, correct next action, improvement in at least two restart indicators, and no more than ten minutes of candidate preparation overhead.
 
@@ -1168,7 +1168,7 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P24-R3 Minimum sufficient solution guardrail | v0.7 guardrail docs/schema | `delivered` for compatibility | S50/S53 | Complexity guardrail is delivered as a manual readiness gate; no standalone skill, schema or enforcement surface is created. |
 | P25-R1 Compact continuity across session/runtime boundaries | Portable Continuity Pack PRD/SDD | `delivered baseline` | Existing Restart Package; S83 intake | Restart Package already preserves compact cross-boundary continuity without transcript replay. |
 | P25-R2 Runtime, freshness and sensitivity portability metadata | Portable Continuity Pack PRD/SDD | `delivered` for compatibility | S84 | S84 retained the existing contracts and defined only a pilot-only optional profile for the bounded residual metadata gap. |
-| P25-R3 Same-runtime baseline/candidate evidence | Portable Continuity validation strategy | `delivered` for pilot evidence | S85 | S85 records read-only fresh-session outputs with no observed critical loss; S86 remains separately gated because value indicators were not measured. |
+| P25-R3 Same-runtime baseline/candidate evidence | Portable Continuity validation strategy | `insufficient_evidence` | S85/S86 | S85 preserved critical boundaries, but S86 found required value indicators and preparation time unmeasured. |
 | P25-R4 Cross-runtime and skill compatibility | Portable Continuity roadmap | `deferred` | S87-S89 | Observe compatibility only after same-runtime value; Adaptive Skills remains unchanged. |
 | P25-R5 New Portable Governed Work State, schema, composer and broad loop/graph track | Portable Continuity ADR/roadmap | `rejected` for this track | None | Conflicts with minimum-sufficient evolution and existing Restart Package/runtime/loop/graph boundaries. |
 
