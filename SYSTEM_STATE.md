@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** S86 Same-Runtime Portability Value Decision.
-- **Next dependency path:** S86 assesses S85 against its required value indicators. S87-S89 and all template/schema/composer/adapter adoption remain blocked unless S86 explicitly accepts the optional profile.
+- **Active:** none.
+- **Next dependency path:** S86 returned `insufficient_evidence`; the optional profile is unadopted and S87-S89, templates, schemas, composers, adapters and Adaptive Skills changes remain blocked until a new measured trigger exists.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 
@@ -65,7 +65,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - **Current level:** medium — multiple delivered contracts remain difficult to understand without guided explanation.
 - SYSTEM_STATE can become stale; every claim must retain a source reference and review date.
 - Work Observatory has five total records, and the S18 comparison-readiness review confirms they are heterogeneous and not one reviewed stable comparison group; no success rate, ranking, work-unit or value claim is admissible until at least five comparable records share one stable comparison group.
-- External references require S2 intake before they influence implementation; P20/S28, P21/S29, P22/S30 and P23/S31 are accepted as docs-first evidence/guidance slices; P24/S50 is accepted as reference intake only for Learning Distillation & Context Hygiene v0.7; P24/S51 is accepted as a manual Restart Package compatibility slice; P24/S52 is accepted as a manual evolution-signal bridge slice; P24/S53 is accepted as a manual readiness guardrail slice; P25/S83-S85 are delivered as intake, compatibility and pilot evidence, leaving only a separately activated S86 value decision.
+- External references require S2 intake before they influence implementation; P20/S28, P21/S29, P22/S30 and P23/S31 are accepted as docs-first evidence/guidance slices; P24/S50 is accepted as reference intake only for Learning Distillation & Context Hygiene v0.7; P24/S51 is accepted as a manual Restart Package compatibility slice; P24/S52 is accepted as a manual evolution-signal bridge slice; P24/S53 is accepted as a manual readiness guardrail slice; P25/S83-S86 are delivered as intake, compatibility, pilot and value-decision evidence, with the optional profile remaining unadopted.
 - S36 and S38 provide two real S28/S29 usage records, S37 is readiness-only, and S39 confirms the records are too few and heterogeneous for reusable controls, success rates or security proof; S40 keeps expansion blocked and redirects backlog progress toward clarity/coherence review.
 - Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters, documentation generators, new dashboards and comparative metrics remain out of scope.
 

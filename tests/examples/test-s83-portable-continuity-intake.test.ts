@@ -37,8 +37,8 @@ describe('S83 Portable Continuity reference intake', () => {
     expect(intake).toContain('no_skill_mutation_without_review: true');
     expect(backlog).toContain('S84 — Restart Package portability compatibility review');
     expect(backlog).toContain('S85 remains blocked until S84');
-    expect(systemState).toContain('**Active:** S86 Same-Runtime Portability Value Decision.');
-    expect(systemState).toContain('S87-S89 and all template/schema/composer/adapter adoption remain blocked');
+    expect(systemState).toContain('**Active:** none.');
+    expect(systemState).toContain('S86 returned `insufficient_evidence`');
     expect(backlog).toContain('S84 delivered a pilot-only optional profile');
     expect(review).toContain('**Verdict:** `refine`');
     expect(review).toContain('**Canonical artifact count:** `0`');
