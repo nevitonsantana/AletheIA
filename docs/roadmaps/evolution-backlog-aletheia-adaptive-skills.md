@@ -102,7 +102,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P22 — Enterprise / Constrained Adoption Evidence | `delivered` | Evidence loop for constrained/local trust-boundary adoption | Delivered by S30 as a bounded evidence-loop record before any enterprise-readiness claim. |
 | P23 — Resource-Aware Next Signals | `delivered` | Watch-list review, not S18 activation | Delivered by S31; evidence quality was reviewed and comparative metrics remain blocked. |
 | P24 — Learning Distillation & Context Hygiene Addendum v0.7 | `delivered` for intake only | Existing Restart Package, SYSTEM_STATE, finalization and Adaptive Skills evolution-signal boundaries | Delivered by S50; v0.7 is registered as the current source, v0.1-v0.6 variants are superseded, and future implementation remains blocked until a separate bounded slice. |
-| P25 — Portable Continuity / Restart Package Portability v0.1 | `delivered` for intake only | Existing Restart Package, handoff and finalization boundaries | S83 registers the source and rejects a second canonical continuity artifact; S84 remains a separately activated compatibility review. |
+| P25 — Portable Continuity / Restart Package Portability v0.1 | `in-review` for S84 compatibility | Existing Restart Package, handoff and finalization boundaries | S83 delivered the intake and rejected a second canonical continuity artifact; S84 tests absorption versus a pilot-only optional profile. |
 
 ## Dependency graph
 
@@ -1027,10 +1027,11 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA continuity compatibility review.
 - **Covers:** whether runtime origin/destination, freshness, invalidation, sensitivity, redaction and unsupported semantics fit existing Restart Package fields or justify one optional block.
 - **Dependencies:** accepted S83 intake and its `proceed_to_compatibility_review` gate.
-- **Status:** `planned`; not active without separate explicit activation after S83 acceptance.
+- **Status:** `in-review`; no template, schema, composer, adapter, pilot or Adaptive Skills change is introduced.
 - **Verdicts:** `absorbed_by_existing_contract`, `refine`, `defer` or `reject`.
 - **Non-goals:** editing templates, creating schemas/composers/adapters, running a pilot or changing Adaptive Skills.
 - **Acceptance:** complete a requirement-to-contract matrix with `canonical_artifact_count: 0`; S85 remains blocked until S84 records a bounded residual gap.
+- **Evidence:** `docs/reports/s84-restart-package-portability-compatibility-review.md`.
 
 ### S85 — Codex-to-Codex Restart Package portability pilot
 

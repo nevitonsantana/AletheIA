@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- review S84 Restart Package portability compatibility without changing templates, schemas, composers, adapters or Adaptive Skills
+
 - close S83 after Portable Continuity Reference Intake merge, returning Active to none while keeping S84 separately gated
 
 - register the AletheIA Portable Governed Work Evolution Pack v0.1 through the narrowed S83 Portable Continuity intake, preserving Restart Package as the sole continuity artifact and keeping schemas, composers, adapters, loops, graphs, Runtime 2.0 and Adaptive Skills changes blocked
