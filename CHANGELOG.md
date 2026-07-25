@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- close S84 after Restart Package portability compatibility review, returning Active to none while keeping the pilot separately gated
+
 - review S84 Restart Package portability compatibility without changing templates, schemas, composers, adapters or Adaptive Skills
 
 - close S83 after Portable Continuity Reference Intake merge, returning Active to none while keeping S84 separately gated
