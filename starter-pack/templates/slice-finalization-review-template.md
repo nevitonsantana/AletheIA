@@ -18,6 +18,20 @@
 - Clean execution-surface signal before next boundary: `not_needed | recommended | required`
 - Operator note if a clean execution surface is required:
 
+## User-facing closeout
+
+Write this after the finalization outcome. It is required even when work is not
+ready to close. Use plain language and do not make the reader infer completion
+from a PR, a validation command, or silence.
+
+- Plan: `complete | in review | incomplete`
+- Validation: what passed, or what is still missing
+- Documentation impact review: `not_needed | updated | pending | unavailable` for README, changelog, public docs/Pages, knowledge base, handoff and continuity context; name every affected surface
+- Documentation and publication: `current | pending | not_applicable`, with reason
+- Next action: `none` or one named action with its owner
+- Continuity: `not_needed | continue_on_current_surface | use_restart_package`
+- This thread may be archived: `yes | no`, with reason when `no`
+
 ## AI Fatigue Read
 
 - Stale context risk: `low | medium | high`

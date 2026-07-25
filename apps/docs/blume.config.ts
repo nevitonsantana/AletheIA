@@ -37,6 +37,7 @@ export default defineConfig({
             "/guides/apply-to-existing-project",
             "/guides/adoption-mode-guidance",
             "/guides/slice-finalization-and-restart",
+            "/guides/user-facing-closeout",
             "/guides/project-handoff-conventions",
             "/guides/agent-runtime-decision-guide",
             "/guides/setting-up-harnesses",
