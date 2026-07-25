@@ -27,6 +27,7 @@ describe('S83 Portable Continuity reference intake', () => {
     const systemState = read('SYSTEM_STATE.md');
     const review = read('docs/reports/s84-restart-package-portability-compatibility-review.md');
     const pilot = read('docs/pilots/s85-codex-to-codex-restart-pilot.md');
+    const decision = read('docs/reports/s86-same-runtime-portability-value-decision.md');
 
     expect(intake).toContain('verdict: proceed_to_compatibility_review');
     expect(intake).toContain('residual_gap_status: hypothesis_only');
@@ -36,14 +37,15 @@ describe('S83 Portable Continuity reference intake', () => {
     expect(intake).toContain('no_skill_mutation_without_review: true');
     expect(backlog).toContain('S84 — Restart Package portability compatibility review');
     expect(backlog).toContain('S85 remains blocked until S84');
-    expect(systemState).toContain('**Active:** none.');
-    expect(systemState).toContain('S86 remains separately activatable');
+    expect(systemState).toContain('**Active:** S86 Same-Runtime Portability Value Decision.');
+    expect(systemState).toContain('S87-S89 and all template/schema/composer/adapter adoption remain blocked');
     expect(backlog).toContain('S84 delivered a pilot-only optional profile');
     expect(review).toContain('**Verdict:** `refine`');
     expect(review).toContain('**Canonical artifact count:** `0`');
     expect(review).toContain('**Unavailable destination semantics:**');
     expect(pilot).toContain('## Complete receiving-session outputs');
     expect(pilot).toContain('The candidate makes the bounded metadata legible');
+    expect(decision).toContain('**Outcome:** `insufficient_evidence`');
   });
 
   it('does not introduce the rejected schema or composer surfaces', () => {
