@@ -23,6 +23,7 @@
 | AletheIA Runtime 2.0 Pack | P18/S26 strategic runtime north-star source | `ce88479a13a3eeaf0b54ff9eaf291ae2f8add605cdf3d8072e770fd93c51a324` |
 | AletheIA + Adaptive Skills territory map | M1 non-normative north-star source | `906b89e3739c5737f9c683abc6ddc65e6040652105184d4640a4c50a5dc898c2` |
 | Learning Distillation & Context Hygiene Addendum v0.7 | P24/S50 current external reference for learning distillation, restart/context hygiene and minimum-sufficient-solution planning guardrails; supersedes v0.1-v0.6 variants of the same addendum | `ba4addc4ae15743223d304a5e9284ef39e987eb2f556` |
+| AletheIA Portable Governed Work Evolution Pack v0.1 | P25/S83 intake-only source narrowed to optional portability metadata around the existing Restart Package; no new canonical artifact or implementation authority | `d2e91b2429245472418b2c0a84b0277da34670505e222fe762fb763d91886f21` |
 
 ### v0.4 repository sources
 
@@ -101,6 +102,7 @@ No requirement may disappear silently. A changed status requires evidence or a d
 | P22 — Enterprise / Constrained Adoption Evidence | `delivered` | Evidence loop for constrained/local trust-boundary adoption | Delivered by S30 as a bounded evidence-loop record before any enterprise-readiness claim. |
 | P23 — Resource-Aware Next Signals | `delivered` | Watch-list review, not S18 activation | Delivered by S31; evidence quality was reviewed and comparative metrics remain blocked. |
 | P24 — Learning Distillation & Context Hygiene Addendum v0.7 | `delivered` for intake only | Existing Restart Package, SYSTEM_STATE, finalization and Adaptive Skills evolution-signal boundaries | Delivered by S50; v0.7 is registered as the current source, v0.1-v0.6 variants are superseded, and future implementation remains blocked until a separate bounded slice. |
+| P25 — Portable Continuity / Restart Package Portability v0.1 | `in-review` for intake only | Existing Restart Package, handoff and finalization boundaries | S83 registers the source and rejects a second canonical continuity artifact; only S84 compatibility review may follow the intake gate. |
 
 ## Dependency graph
 
@@ -158,6 +160,19 @@ S0-S26 closure + S18/S26 blockers
                                                                   -> S52 AletheIA to Adaptive Skills evolution bridge compatibility review
                                                                       -> S53 Minimum sufficient solution guardrail compatibility review
                                                                           -> S54 Observatory interface refinement review
+```
+
+The post-S54 documentation path through S82 is delivered. The new source-triggered continuity path is separate and conditional:
+
+```text
+S82
+  -> S83 Portable Continuity Reference Intake
+      -> intake gate: S84 only
+          -> S84 Restart Package portability compatibility review
+              -> compatibility gate: absorb/stop or authorize S85
+                  -> S85 Codex-to-Codex restart pilot
+                      -> S86 same-runtime value decision
+                          -> value gate: stop or conditionally authorize S87-S89
 ```
 
 S8 is delivered and unlocks S9 and the delivered S16 path. S19 is the next safe organizational slice because it reconciles new source packs before any implementation. S20 and S21 should precede new skill creation, broader loops, agents or runtime surfaces. S18 remains deferred until at least five reviewed records share one stable comparison group. P1 remains the delivered visual baseline; P10/P12, P13 and P18 do not reopen live importers, runtime collection, learning automation or new dashboards through this backlog update.
@@ -997,6 +1012,70 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Acceptance:** publication run evidence and representative HTTP 200 smoke tests are recorded without changing the manual publishing boundary.
 - **Evidence:** `docs/reports/blume-pages-post-s81-smoke-s82.md`; PR #433.
 
+### S83 — Portable Continuity Reference Intake
+
+- **Repository / layer:** AletheIA reference intake and backlog planning.
+- **Covers:** P25 portable continuity, runtime-boundary metadata, Restart Package reuse and the source pack's broader loop/graph/topology proposals as external planning data.
+- **Dependencies:** S2 reference intake protocol, S82 closure, current Restart Package/handoff/finalization contracts and ADR-016.
+- **Status:** `in-review`; no implementation authority is introduced.
+- **Non-goals:** a Portable Governed Work State, canonical schema, composer, runtime adapter, template change, pilot execution, loop/graph/topology expansion, Runtime 2.0, memory writeback, automatic routing, observatory changes or Adaptive Skills mutation.
+- **Acceptance:** register checksum and provenance; map requirements to existing contracts; record adopted, absorbed, deferred and rejected elements; preserve Restart Package as the only continuity artifact; authorize at most S84 compatibility review.
+- **Evidence:** `examples/reference-intake/s83-portable-continuity-intake.yaml`; local S83 validation.
+
+### S84 — Restart Package portability compatibility review
+
+- **Repository / layer:** AletheIA continuity compatibility review.
+- **Covers:** whether runtime origin/destination, freshness, invalidation, sensitivity, redaction and unsupported semantics fit existing Restart Package fields or justify one optional block.
+- **Dependencies:** accepted S83 intake and its `proceed_to_compatibility_review` gate.
+- **Status:** `planned`; not active until S83 is accepted.
+- **Verdicts:** `absorbed_by_existing_contract`, `refine`, `defer` or `reject`.
+- **Non-goals:** editing templates, creating schemas/composers/adapters, running a pilot or changing Adaptive Skills.
+- **Acceptance:** complete a requirement-to-contract matrix with `canonical_artifact_count: 0`; S85 remains blocked until S84 records a bounded residual gap.
+
+### S85 — Codex-to-Codex Restart Package portability pilot
+
+- **Repository / layer:** AletheIA project-specific continuity evidence.
+- **Covers:** read-only baseline/candidate post-resume checks from the same real Work Slice snapshot in two fresh Codex sessions.
+- **Dependencies:** S84 verdict confirming one optional portability-metadata gap.
+- **Status:** `deferred`; no pilot is authorized by S83.
+- **Non-goals:** file mutation by receiving sessions, transcript replay, schema/template canonization, automation, runtime configuration or comparative claims.
+- **Acceptance:** freeze the source commit and authoritative state; compare the current Restart Package with a candidate portability block; retain complete session outputs and independent review against authoritative sources.
+
+### S86 — Same-runtime portability value decision
+
+- **Repository / layer:** AletheIA continuity evidence decision.
+- **Covers:** whether the S85 candidate adds value over the current Restart Package.
+- **Dependencies:** complete real S85 baseline/candidate evidence.
+- **Status:** `deferred`.
+- **Verdicts:** `accept_optional_profile`, `refine_and_repeat`, `insufficient_evidence` or `reject`.
+- **Acceptance:** zero critical constraint or sensitivity loss, correct next action, improvement in at least two restart indicators, and no more than ten minutes of candidate preparation overhead.
+
+### S87 — Optional Restart Package portability block
+
+- **Repository / layer:** AletheIA handoff/finalization templates.
+- **Dependencies:** S86 `accept_optional_profile`.
+- **Status:** `deferred`.
+- **Non-goals:** changing the minimum handoff schema, creating a new artifact, composer or runtime adapter.
+- **Acceptance:** add one optional block only where a real runtime or trust boundary exists; absent values remain `unavailable`.
+
+### S88 — Bidirectional cross-runtime portability pilot
+
+- **Repository / layer:** AletheIA project-specific continuity evidence.
+- **Dependencies:** accepted S87 optional block.
+- **Status:** `deferred`.
+- **Routes:** Codex to Claude Code and Claude Code to Codex, read-only at the post-resume checkpoint.
+- **Non-goals:** Adaptive Skills changes, instruction enforcement claims, automatic runtime configuration or execution automation.
+- **Acceptance:** preserve constraints, validation, sensitivity and unsupported semantics in both routes with complete evidence and independent review.
+
+### S89 — Restart Package portability adoption decision
+
+- **Repository / layer:** AletheIA continuity governance.
+- **Dependencies:** S88 cross-runtime evidence.
+- **Status:** `deferred`.
+- **Outcomes:** retain as an optional Restart Package extension, absorb required fields into existing guidance, refine through another bounded pilot or remove the experiment.
+- **Non-goals:** authorizing a composer, schema, runtime adapter, Runtime 2.0, automatic routing, memory writeback or Adaptive Skills mutation.
+- **Acceptance:** choose one evidence-backed outcome and remove or defer unsupported expansion; repeated use is required before any new automation proposal.
+
 ## Requirement traceability matrix
 
 The identifiers below preserve requirement families. The complete pack remains authoritative for detailed wording, examples and edge cases.
@@ -1084,6 +1163,11 @@ The identifiers below preserve requirement families. The complete pack remains a
 | P24-R1 Learning distillation and context hygiene | Learning Distillation & Context Hygiene Addendum v0.7 README/PRD/SDD | `delivered` for compatibility | S50/S51 | S50 registers v0.7 as current source; S51 delivers the smallest Restart Package compatibility extension without automation or new memory surfaces. |
 | P24-R2 AletheIA to Adaptive Skills evolution bridge | v0.7 bridge policy | `delivered` for compatibility | S50/S52 | Candidate signals remain evidence or proposal candidates; S52 delivers manual routing categories without automatic skill mutation or writeback. |
 | P24-R3 Minimum sufficient solution guardrail | v0.7 guardrail docs/schema | `delivered` for compatibility | S50/S53 | Complexity guardrail is delivered as a manual readiness gate; no standalone skill, schema or enforcement surface is created. |
+| P25-R1 Compact continuity across session/runtime boundaries | Portable Continuity Pack PRD/SDD | `delivered baseline` | Existing Restart Package; S83 intake | Restart Package already preserves compact cross-boundary continuity without transcript replay. |
+| P25-R2 Runtime, freshness and sensitivity portability metadata | Portable Continuity Pack PRD/SDD | `in-review` | S83/S84 | S83 registers a residual-gap hypothesis only; S84 must absorb it into existing fields or justify one optional block. |
+| P25-R3 Same-runtime baseline/candidate evidence | Portable Continuity validation strategy | `deferred` | S85/S86 | Pilot and value decision remain blocked until S84 confirms a bounded gap. |
+| P25-R4 Cross-runtime and skill compatibility | Portable Continuity roadmap | `deferred` | S87-S89 | Observe compatibility only after same-runtime value; Adaptive Skills remains unchanged. |
+| P25-R5 New Portable Governed Work State, schema, composer and broad loop/graph track | Portable Continuity ADR/roadmap | `rejected` for this track | None | Conflicts with minimum-sufficient evolution and existing Restart Package/runtime/loop/graph boundaries. |
 
 ## Per-pack preservation appendix
 
@@ -1230,6 +1314,15 @@ The identifiers below preserve requirement families. The complete pack remains a
 - **Candidate destinations:** existing Restart Package, SYSTEM_STATE index, finalization guidance, AletheIA-to-Adaptive-Skills evolution signals and future source-backed backlog slices. S51 reviewed the Restart Package compatibility destination; S52 reviewed the Adaptive Skills evolution-signal bridge; S53 reviewed the minimum-sufficient-solution planning guardrail.
 - **Dependencies:** S2 reference intake, S49 next-source gate, existing continuity/finalization contracts and Adaptive Skills PR-governed evolution.
 - **Deferred:** learning automation, automatic memory writeback, canonical schema adoption, new skills, Adaptive Skills mutations, dashboards, collectors and runtime enforcement.
+
+### P25 — Portable Continuity / Restart Package Portability v0.1
+
+- **Status:** `in-review` for S83 intake only; the package has no implementation authority.
+- **Guardrails:** Restart Package remains the sole continuity artifact; portability is a metadata hypothesis, not a new lifecycle; missing state stays `unavailable`; instruction files are context, not enforcement.
+- **Candidate destination:** one optional Restart Package portability block, only if S84 proves an unabsorbed gap and S85-S86 prove value over the current baseline.
+- **Dependencies:** S2 reference intake, S82 closure, existing handoff/finalization/runtime contracts and ADR-016.
+- **Deferred:** S84 until S83 acceptance; all pilots, template changes and cross-runtime work until their preceding gate.
+- **Rejected:** new canonical state/schema/composer, Runtime 2.0, automatic routing, memory writeback, broad loop/graph/topology expansion, dashboards, collectors, comparative metrics and Adaptive Skills mutation.
 
 ### M1 — Ecosystem Territory Map
 
