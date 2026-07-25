@@ -42,8 +42,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 
 ## Active and planned evolution
 
-- **Active:** none.
-- **Next dependency path:** S85 delivered read-only same-runtime evidence with no observed critical loss, but did not measure S86's required value indicators. S86 remains separately activatable only to decide `insufficient_evidence`, `refine_and_repeat`, `reject` or `accept_optional_profile`; S87-S89 and all template/schema/composer/adapter adoption remain blocked.
+- **Active:** S86 Same-Runtime Portability Value Decision.
+- **Next dependency path:** S86 assesses S85 against its required value indicators. S87-S89 and all template/schema/composer/adapter adoption remain blocked unless S86 explicitly accepts the optional profile.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
 

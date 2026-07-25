@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- decide S86 same-runtime portability value as insufficient evidence, keeping the optional profile unadopted
+
 - close S85 after the read-only Codex restart pilot, returning Active to none while keeping S86 separately gated
 
 - run the read-only S85 Codex-to-Codex Restart Package baseline/candidate pilot without changing templates, schemas, composers, adapters or Adaptive Skills

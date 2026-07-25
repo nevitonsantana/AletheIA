@@ -1048,7 +1048,8 @@ Promote `implementation-planning-advisor` only if the pilot proves a recurring g
 - **Repository / layer:** AletheIA continuity evidence decision.
 - **Covers:** whether the S85 candidate adds value over the current Restart Package.
 - **Dependencies:** complete real S85 baseline/candidate evidence.
-- **Status:** `planned`; requires separate explicit activation because S85 did not measure all acceptance indicators.
+- **Status:** `in-review`; decision-only, with no template/schema/adapter authority.
+- **Evidence:** `docs/reports/s86-same-runtime-portability-value-decision.md`.
 - **Verdicts:** `accept_optional_profile`, `refine_and_repeat`, `insufficient_evidence` or `reject`.
 - **Acceptance:** zero critical constraint or sensitivity loss, correct next action, improvement in at least two restart indicators, and no more than ten minutes of candidate preparation overhead.
 
