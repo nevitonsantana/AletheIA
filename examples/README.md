@@ -78,6 +78,7 @@ Se os schemas explicam **a estrutura** e os docs explicam **a lógica**, os exem
 - `reference-intake/`
   - exemplo S2 de intake do pack de evolução AletheIA + Adaptive Skills, com mapeamento de camadas, decisão adapt/reference/defer/reject e guardrails contra adoção automática
   - intake S50 do Learning Distillation & Context Hygiene Addendum v0.7, registrando checksum, supersedência v0.1-v0.6 e bloqueios contra automação/memory writeback/skill mutation
+  - intake S83 do AletheIA Portable Governed Work Evolution Pack v0.1, reduzido à continuidade no Restart Package e autorizando apenas revisão de compatibilidade antes de qualquer piloto, schema ou adapter
 - `coding-safety/`
   - exemplo S9 de plano Standard para coding seguro, declarando base state, escopo, verificação, drift, rollback, stop conditions e revisão humana
 - `agent-roles/`
