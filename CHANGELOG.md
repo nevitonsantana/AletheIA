@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- publish the immutable `v1.0.1-apm` package tag with Claude and Codex targets, including the operating-overlay scaffold
+
+- document the APM first-test path and its direct-script fallback when the installed APM version does not expose dependency scripts through `apm run`
+
 - add a plain-language user-facing closeout profile so every finalized Work Slice states completion, validation, publication, next action, continuity and archive readiness without implying runtime automation
 
 - close S86 with insufficient evidence, retaining Restart Package and blocking the optional profile
