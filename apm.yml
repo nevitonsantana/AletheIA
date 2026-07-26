@@ -19,7 +19,9 @@ description: >
   CLAUDE.md, .claude/ shims, ops/ai/ skeleton) via the operating-overlay pack.
 author: Neviton Santana
 license: Apache-2.0
-target: claude
+targets:
+  - claude
+  - codex
 type: hybrid
 
 # scripts: explicit lifecycle the adopter runs after `apm install`.
