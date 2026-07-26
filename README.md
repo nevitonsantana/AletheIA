@@ -245,7 +245,7 @@ Use a disposable or already version-controlled project. This first test is inten
 From the consumer project root:
 
 ```bash
-apm install nevitonsantana/AletheIA#v1.0.0
+apm install nevitonsantana/AletheIA#v1.0.0-apm
 apm run scaffold-overlay
 ```
 
