@@ -33,6 +33,7 @@ scripts:
 # tree, engine/, policies/, schemas/, scripts/, and tests/ are repo-internal
 # and not part of the APM payload.
 includes:
+  - .apm/**
   - apm.yml
   - packs/operating-overlay/**
   - docs/guides/install-via-apm.md
