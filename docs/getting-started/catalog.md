@@ -2,7 +2,7 @@
 
 This catalog describes what the AletheIA operating overlay provides, how to activate each element, and recommended flows for common adoption scenarios.
 
-For installation, see [`installation-guide.md`](installation-guide.md). For the normative contract these elements satisfy, see [`docs/contracts/consumer-project-overlay.md`](../contracts/consumer-project-overlay.md).
+For installation, see [`installation-guide.mdx`](installation-guide.mdx). For the normative contract these elements satisfy, see [`docs/contracts/consumer-project-overlay.md`](../contracts/consumer-project-overlay.md).
 
 ---
 
@@ -108,7 +108,7 @@ Agents read the policies folder on startup if `AGENTS.md` points to it (the defa
 
 ### New project from scratch
 
-1. Install AletheIA (see [`installation-guide.md`](installation-guide.md)).
+1. Install AletheIA (see [`installation-guide.mdx`](installation-guide.mdx)).
 2. Fill the constitution with at least `mission.md` and `scope.md`.
 3. Open the first Claude Code session.
 4. Run a low-risk Work Slice to validate the overlay is working (e.g., scaffold a README or write a spec).
@@ -119,7 +119,7 @@ Agents read the policies folder on startup if `AGENTS.md` points to it (the defa
 
 You do not need to stop work to adopt AletheIA. The minimum viable path:
 
-1. Install the overlay into the project root (step 2 of installation-guide.md).
+1. Install the overlay into the project root (step 2 of installation-guide.mdx).
 2. Write a minimal constitution that captures the current reality — even if the project is already running.
 3. For in-flight work, create a handoff that captures current state as if starting fresh.
 4. Add policies for the constraints you already enforce informally.
@@ -166,7 +166,7 @@ Use this checklist after installation and before the first real session.
 [ ] Agent surfaced a conflict or asked for clarification when given an out-of-scope task
 ```
 
-If any box is unchecked, the overlay is not fully active. See [`installation-guide.md#troubleshooting`](installation-guide.md#troubleshooting) or the technical reference at [`docs/guides/install-via-apm.md`](../guides/install-via-apm.md).
+If any box is unchecked, the overlay is not fully active. See [`installation-guide.mdx#troubleshooting`](installation-guide.mdx#troubleshooting) or the technical reference at [`docs/guides/install-via-apm.md`](../guides/install-via-apm.md).
 
 ---
 

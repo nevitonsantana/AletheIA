@@ -192,7 +192,7 @@ AletheIA decides the flow. Skills shape capability. Runtimes execute. Tools info
 Four documents for adopters with no prior context:
 
 1. [`docs/getting-started/overview.md`](docs/getting-started/overview.md) — what AletheIA is, who it's for, when to use it
-2. [`docs/getting-started/installation-guide.md`](docs/getting-started/installation-guide.md) — step-by-step install via APM
+2. [`docs/getting-started/installation-guide.mdx`](docs/getting-started/installation-guide.mdx) — step-by-step install via APM
 3. [`docs/getting-started/catalog.md`](docs/getting-started/catalog.md) — what the overlay provides and how to activate each element
 4. [`docs/getting-started/faq.md`](docs/getting-started/faq.md) — common questions about setup, security, and teamwork
 
@@ -235,6 +235,35 @@ Four documents for adopters with no prior context:
 3. `examples/work-slices/standard-slice/README.md`
 4. `examples/work-slices/standard-spec-bundle/README.md`
 5. `examples/resource-aware-operations/`
+
+### Try it in two minutes
+
+Use a disposable or already version-controlled project. This first test is intentionally low risk: it checks whether AletheIA makes one small task clearer before you adopt the full operating overlay.
+
+**Prerequisites:** Node.js 20+, pnpm 9+, and [APM](https://microsoft.github.io/apm/) installed as `apm`.
+
+From the consumer project root:
+
+```bash
+apm install nevitonsantana/AletheIA#v1.0.0
+apm run scaffold-overlay
+```
+
+Then choose a reversible task, such as clarifying a README paragraph or writing a small test plan. Before acting, define one Work Slice with the intended result, scope, assumptions, risk, approval gate, and evidence needed to close it.
+
+**Expected result:** the task has a visible boundary, an explicit decision path, and a proportional validation step. The overlay should make it easier to explain what happened and what the next safe action is.
+
+**Important limits:** installation does not install an agent runtime, grant permissions, select a model, create autonomous behavior, or replace human judgment and project-local rules. AletheIA governs the flow; runtimes execute; tools inform.
+
+### Tell us what happened
+
+Feedback is most useful after one real, low-risk test. Open an issue or discussion and report only non-confidential information:
+
+1. What task did you use?
+2. What became clearer?
+3. Where did you encounter friction?
+4. What felt unnecessary?
+5. Would you repeat the process?
 
 ---
 
