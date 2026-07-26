@@ -12,13 +12,13 @@
 # this design works around.
 
 name: aletheia
-version: 0.1.0-alpha
+version: 1.0.0
 description: >
   AletheIA operating overlay — a portable layer that governs how AI-assisted
   work happens on any project. Ships the day-one scaffold (AGENTS.md,
   CLAUDE.md, .claude/ shims, ops/ai/ skeleton) via the operating-overlay pack.
 author: Neviton Santana
-license: MIT
+license: Apache-2.0
 target: claude
 type: hybrid
 

@@ -93,7 +93,7 @@ For the full ecosystem map, see [`docs/concepts/ecosystem-map.md`](../concepts/e
 
 ## Next steps
 
-- Install AletheIA: [`installation-guide.md`](installation-guide.md)
+- Install AletheIA: [`installation-guide.mdx`](installation-guide.mdx)
 - Browse what the overlay provides: [`catalog.md`](catalog.md)
 - Questions? [Frequently asked questions](/getting-started/faq/)
 - Deep dive: [`docs/concepts/overview.md`](../concepts/overview.md), [`docs/concepts/governance.md`](../concepts/governance.md)
