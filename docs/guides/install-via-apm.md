@@ -17,7 +17,7 @@ This guide is for adopters using [APM (Microsoft Agentic Package Manager)](https
 From inside the consumer project root:
 
 ```bash
-apm install nevitonsantana/AletheIA#v1.0.1-apm --target claude,codex,copilot
+apm install nevitonsantana/AletheIA#v1.0.2-apm --target claude,codex,copilot
 ```
 
 What this does:
