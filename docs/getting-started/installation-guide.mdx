@@ -45,7 +45,7 @@ git status --short
     From the project root, install the currently published APM package:
 
     ```bash
-    apm install nevitonsantana/AletheIA#v1.0.1-apm --target claude,codex
+    apm install nevitonsantana/AletheIA#v1.0.1-apm --target claude,codex,copilot
     ```
 
     This creates `apm_modules/AletheIA/` and `apm.lock.yaml`. Commit the lockfile so collaborators and continuous integration resolve the same package content.
@@ -115,7 +115,7 @@ These paths establish shared operating context. They do not grant permissions, i
 
 ## Runtime-specific setup
 
-<Columns cols={3}>
+<Columns cols={4}>
   <Column>
     <Panel title="Codex">
       Keep `AGENTS.md` at the project root. Start Codex from that root and confirm it can state the project boundaries before asking it to act.
@@ -124,6 +124,11 @@ These paths establish shared operating context. They do not grant permissions, i
   <Column>
     <Panel title="Claude Code">
       Use `CLAUDE.md` and `.claude/` as the adapter surfaces. Review settings and path-scoped rules before the first write operation.
+    </Panel>
+  </Column>
+  <Column>
+    <Panel title="GitHub Copilot">
+      Use the generated `.github/` instructions in Copilot Chat or the Copilot CLI. Confirm Copilot can state the project boundaries before asking it to act.
     </Panel>
   </Column>
   <Column>
