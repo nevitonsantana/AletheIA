@@ -22,6 +22,7 @@ license: Apache-2.0
 targets:
   - claude
   - codex
+  - copilot
 type: hybrid
 
 # scripts: explicit lifecycle the adopter runs after `apm install`.
