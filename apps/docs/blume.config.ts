@@ -36,6 +36,7 @@ export default defineConfig({
           items: [
             "/guides/apply-to-existing-project",
             "/guides/adoption-mode-guidance",
+            "/guides/governed-pilot-report",
             "/guides/slice-finalization-and-restart",
             "/guides/user-facing-closeout",
             "/guides/project-handoff-conventions",
