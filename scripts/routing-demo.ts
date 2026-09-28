@@ -5,7 +5,7 @@ import { recommendRoute } from "../engine/experiments/local-deterministic-routin
 
 const root = process.cwd();
 const fixtureDirectory = path.join(root, "examples/local-deterministic-routing");
-const fixtures = ["task-analysis.json", "task-testing.json"];
+const fixtures = ["task-analysis.json", "task-testing.json", "task-unknown-availability.json"];
 const decisions = fixtures.map((fixture) => {
   const input: unknown = JSON.parse(fs.readFileSync(path.join(fixtureDirectory, fixture), "utf8"));
   const started = performance.now();

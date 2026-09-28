@@ -6,10 +6,17 @@ capability, then recommends the first eligible route in the supplied `preference
 `provider_policy.default` is explicitly `deny`, so availability never grants permission by itself.
 Every input must declare its task requirements, even when the required capability list is empty.
 
-The two task fixtures describe one fictional local environment with exactly three fictional routes:
+The three task fixtures describe one fictional local environment with exactly three fictional routes:
 `fictional-sparrow`, `fictional-heron`, and `fictional-otter`. `task-analysis.json` has two eligible
-alternatives; `task-testing.json` changes the required capability and preference order. They are only
+routes; `task-testing.json` changes the required capability and preference order.
+`task-unknown-availability.json` marks the provider availability `unknown`, so no route is eligible.
+They are only
 replay inputs, not references to real providers or models.
+
+Provider and route availability can be `true`, `false`, or `unknown`. `unknown` is not coerced to
+available: it rejects the candidate with an explicit reason. This is an additive experimental
+input form, not a claim that a Codex model list attests live availability. The caller still supplies
+every value; the router performs no discovery.
 
 The input schema is validated with the repository's existing Ajv validator. Duplicate provider/route
 IDs, duplicate capability values, route capability references outside the catalog, and dangling

@@ -62,6 +62,32 @@ describe("local deterministic routing experiment", () => {
     expect(recommendRoute(providerUnavailable).rejected_routes[0].reasons).toContain("provider_unavailable");
   });
 
+  it("fails closed on unknown route availability while retaining eligible alternatives", () => {
+    const input = fixture("task-analysis.json");
+    input.routes[0].available = "unknown";
+    const result = recommendRoute(input);
+    expect(result.selected_route_id).toBe("fictional-otter");
+    expect(result.alternative_route_ids).toEqual([]);
+    expect(result.rejected_routes[0]).toEqual({ route_id: "fictional-sparrow", reasons: ["route_availability_unknown"] });
+    expect(result.input.routes[0].available).toBe("unknown");
+  });
+
+  it("fails closed on unknown provider availability without permissive fallback", () => {
+    const input = fixture("task-analysis.json");
+    input.providers[0].available = "unknown";
+    const result = recommendRoute(input);
+    expect(result.outcome).toBe("no_eligible_route");
+    expect(result.selected_route_id).toBeNull();
+    expect(result.alternative_route_ids).toEqual([]);
+    expect(result.rejected_routes.every((route) => route.reasons.includes("provider_availability_unknown"))).toBe(true);
+  });
+
+  it("rejects other availability values instead of coercing them", () => {
+    const input = fixture("task-analysis.json") as unknown as Record<string, unknown>;
+    (input.providers as Array<Record<string, unknown>>)[0].available = "listed";
+    expect(() => recommendRoute(input)).toThrow(SchemaValidationError);
+  });
+
   it("is repeatable and preserves a defensive, non-mutating replay snapshot", () => {
     const input = fixture("task-analysis.json");
     const before = clone(input);

@@ -2,6 +2,7 @@ import { fileURLToPath } from "node:url";
 import { validateAgainstSchema } from "../validation.js";
 
 export const LOCAL_DETERMINISTIC_ROUTING_EXPERIMENT_VERSION = "local-deterministic-routing/v1";
+export type DeclaredAvailability = boolean | "unknown";
 const schemaPath = fileURLToPath(
   new URL("../../schemas/local-deterministic-routing-input.schema.json", import.meta.url),
 );
@@ -11,8 +12,8 @@ export interface LocalRoutingInput {
   capability_catalog: string[];
   request_policy: { default: "deny"; allowed_capability_ids: string[] };
   provider_policy: { default: "deny"; allowed_provider_ids: string[] };
-  providers: Array<{ id: string; available: boolean }>;
-  routes: Array<{ id: string; provider_id: string; available: boolean; capabilities: string[] }>;
+  providers: Array<{ id: string; available: DeclaredAvailability }>;
+  routes: Array<{ id: string; provider_id: string; available: DeclaredAvailability; capabilities: string[] }>;
   preference: string[];
   request: { required_capabilities: string[] };
 }
@@ -82,8 +83,10 @@ export function recommendRoute(rawInput: unknown): LocalRoutingResult {
     const provider = providers.get(route.provider_id)!;
     const reasons: string[] = [];
     if (!allowedProviders.has(provider.id)) reasons.push("provider_not_allowed");
-    if (!route.available) reasons.push("route_unavailable");
-    if (!provider.available) reasons.push("provider_unavailable");
+    if (route.available === false) reasons.push("route_unavailable");
+    if (route.available === "unknown") reasons.push("route_availability_unknown");
+    if (provider.available === false) reasons.push("provider_unavailable");
+    if (provider.available === "unknown") reasons.push("provider_availability_unknown");
     const unknownRequired = required.filter((capability) => !catalog.has(capability));
     const disallowedRequired = required.filter((capability) => catalog.has(capability) && !allowedRequiredCapabilities.has(capability));
     if (unknownRequired.length > 0) reasons.push("unknown_required_capabilities:" + unknownRequired.join(","));

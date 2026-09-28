@@ -29,7 +29,7 @@
       "items": {
         "type": "object", "additionalProperties": false,
         "required": ["id", "available"],
-        "properties": { "id": { "type": "string", "minLength": 1 }, "available": { "type": "boolean" } }
+        "properties": { "id": { "type": "string", "minLength": 1 }, "available": { "enum": [true, false, "unknown"] } }
       }
     },
     "routes": {
@@ -40,7 +40,7 @@
         "properties": {
           "id": { "type": "string", "minLength": 1 },
           "provider_id": { "type": "string", "minLength": 1 },
-          "available": { "type": "boolean" },
+          "available": { "enum": [true, false, "unknown"] },
           "capabilities": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
         }
       }
