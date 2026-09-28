@@ -245,8 +245,8 @@ Use a disposable or already version-controlled project. This first test is inten
 From the consumer project root:
 
 ```bash
-apm install nevitonsantana/AletheIA#v1.0.3-apm --target claude,codex,copilot
-apm run scaffold-overlay
+apm install nevitonsantana/AletheIA#v1.0.4-apm --target claude,codex,copilot
+bash apm_modules/nevitonsantana/aletheia/packs/operating-overlay/scripts/scaffold-overlay.sh
 ```
 
 Then choose a reversible task, such as clarifying a README paragraph or writing a small test plan. Before acting, define one Work Slice with the intended result, scope, assumptions, risk, approval gate, and evidence needed to close it.

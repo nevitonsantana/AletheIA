@@ -6,13 +6,13 @@
 # adoption is two-step:
 #
 #   1. apm install nevitonsantana/AletheIA       # download + lockfile
-#   2. apm run scaffold-overlay                  # materialize at <consumer-root>/
+#   2. bash apm_modules/nevitonsantana/aletheia/packs/operating-overlay/scripts/scaffold-overlay.sh
 #
 # See docs/adr/ADR-007-apm-packaging-strategy.md for rationale and the gap
 # this design works around.
 
 name: aletheia
-version: 1.0.3
+version: 1.0.4
 description: >
   AletheIA operating overlay — a portable layer that governs how AI-assisted
   work happens on any project. Ships the day-one scaffold (AGENTS.md,
@@ -24,13 +24,6 @@ targets:
   - codex
   - copilot
 type: hybrid
-
-# scripts: explicit lifecycle the adopter runs after `apm install`.
-# `scaffold-overlay` copies packs/operating-overlay/. into the current
-# working directory (the consumer project root).
-scripts:
-  scaffold-overlay: "bash packs/operating-overlay/scripts/scaffold-overlay.sh"
-  start: "echo 'See docs/guides/install-via-apm.md for the two-step adoption flow.'"
 
 # includes: ship only what the consumer executes/scaffolds. The full docs/
 # tree, engine/, policies/, schemas/, scripts/, and tests/ are repo-internal

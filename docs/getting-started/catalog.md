@@ -155,7 +155,7 @@ For the full relationship: [`docs/adr/ADR-005-positioning-in-agentic-ecosystem.m
 Use this checklist after installation and before the first real session.
 
 ```
-[ ] apm_modules/AletheIA/ exists and is non-empty
+[ ] apm_modules/nevitonsantana/aletheia/ exists and is non-empty
 [ ] ops/ai/ exists with all required subfolders
 [ ] AGENTS.md exists at project root (no {{...}} placeholders)
 [ ] CLAUDE.md exists at project root (no {{...}} placeholders)

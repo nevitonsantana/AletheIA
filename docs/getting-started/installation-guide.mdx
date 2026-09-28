@@ -8,7 +8,7 @@ AletheIA is installed as a **project operating overlay**, not as an autonomous r
 <Badge variant="accent">15–30 minutes</Badge> <Badge>Existing or new project</Badge> <Badge variant="success">No runtime replacement</Badge>
 
 :::note[Two explicit steps]
-`apm install` downloads and locks the package. `apm run scaffold-overlay` then materializes the overlay in your project. The first command alone does not change the project root.
+`apm install` downloads and locks the package. A direct call to its scaffold script then materializes the overlay in your project. The first command alone does not change the project root.
 :::
 
 ## Before you begin
@@ -45,16 +45,16 @@ git status --short
     From the project root, install the currently published APM package:
 
     ```bash
-    apm install nevitonsantana/AletheIA#v1.0.3-apm --target claude,codex,copilot
+    apm install nevitonsantana/AletheIA#v1.0.4-apm --target claude,codex,copilot
     ```
 
-    This creates `apm_modules/AletheIA/` and `apm.lock.yaml`. Commit the lockfile so collaborators and continuous integration resolve the same package content.
+    This creates `apm_modules/nevitonsantana/aletheia/` and `apm.lock.yaml`. Commit the lockfile so collaborators and continuous integration resolve the same package content.
   </Step>
   <Step title="Materialize the operating overlay">
     Still in the consumer project root, run:
 
     ```bash
-    apm run scaffold-overlay
+    bash apm_modules/nevitonsantana/aletheia/packs/operating-overlay/scripts/scaffold-overlay.sh
     ```
 
     The scaffold refuses to overwrite existing `AGENTS.md`, `CLAUDE.md`, `.claude/`, or `ops/ai/` paths. Review conflicts rather than forcing an overwrite by default.
@@ -144,7 +144,7 @@ Read the [runtime adapter references](/reference/runtime-adapter-codex/) when yo
 
 ### APM installs the package, but the overlay is missing
 
-Run `apm run scaffold-overlay` from the **consumer project root**. Package download and project materialization are separate by design.
+Run `bash apm_modules/nevitonsantana/aletheia/packs/operating-overlay/scripts/scaffold-overlay.sh` from the **consumer project root**. Package download and project materialization are separate by design.
 
 ### The scaffold reports existing files
 

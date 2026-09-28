@@ -2,12 +2,11 @@
 # scaffold-overlay — materialize the operating-overlay pack into the current
 # working directory (the consumer project root).
 #
-# Invoked by:  apm run scaffold-overlay
-# Standalone:  bash apm_modules/AletheIA/packs/operating-overlay/scripts/scaffold-overlay.sh
+# Invoked by:  bash apm_modules/nevitonsantana/aletheia/packs/operating-overlay/scripts/scaffold-overlay.sh
 #
 # Design notes
-# - Idempotent for the common case: refuses to overwrite an existing AGENTS.md
-#   or ops/ai/ unless --force is passed. Adopters can opt into overwrite.
+# - Existing identical files are safe to keep; differing files that would be
+#   overwritten require --force. Directories alone are not file collisions.
 # - Copies are content-only (the trailing `/.` in cp -R) so dotdirs like
 #   .claude/ come along. Does not copy the pack README, manifest, or this
 #   scripts/ dir — those are source artifacts, not runtime ones.
@@ -39,13 +38,24 @@ if [[ "$target_dir" == "$pack_dir" ]]; then
   exit 3
 fi
 
-# Pre-flight: warn on collisions unless --force.
+# Pre-flight: only treat files this pack would replace as collisions. APM
+# integrates some of the same .claude files during install, so directory-level
+# collision checks would incorrectly block a normal APM consumer.
 collisions=()
-for path in AGENTS.md CLAUDE.md .claude ops/ai; do
-  if [[ -e "$target_dir/$path" ]]; then
-    collisions+=("$path")
+while IFS= read -r -d '' source_file; do
+  relative_path="${source_file#"$pack_dir"/}"
+  target_file="$target_dir/$relative_path"
+  if [[ -e "$target_file" ]]; then
+    if [[ -f "$source_file" && -f "$target_file" ]] && cmp -s "$source_file" "$target_file"; then
+      continue
+    fi
+    collisions+=("$relative_path")
   fi
-done
+done < <(find "$pack_dir" -type f \
+  ! -path "$pack_dir/README.md" \
+  ! -path "$pack_dir/manifest.yaml" \
+  ! -path "$pack_dir/scripts/*" \
+  -print0)
 
 if [[ ${#collisions[@]} -gt 0 && $force -eq 0 ]]; then
   echo "scaffold-overlay: target already contains overlay artifacts:" >&2

@@ -44,7 +44,7 @@ The bundle has **no template suffixes** — files are already in their adopted n
 
 Two flows are supported:
 
-- **APM-driven** (recommended): `apm install nevitonsantana/AletheIA && apm run scaffold-overlay`. See [install-via-apm.md](../../docs/guides/install-via-apm.md).
+- **APM-driven** (recommended): install the pinned package and invoke its scaffold script from the consumer project root. See [install-via-apm.md](../../docs/guides/install-via-apm.md).
 - **Manual** (no APM): the five steps below.
 
 1. **Copy** the pack into the new project root:
