@@ -9,6 +9,7 @@ const schemaPath = fileURLToPath(
 
 export interface LocalRoutingInput {
   version: "local-deterministic-routing-input/v1";
+  inventory_origin?: "synthetic_fixture" | "caller_declaration";
   capability_catalog: string[];
   request_policy: { default: "deny"; allowed_capability_ids: string[] };
   provider_policy: { default: "deny"; allowed_provider_ids: string[] };

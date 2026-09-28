@@ -1,5 +1,6 @@
 {
   "version": "local-deterministic-routing-input/v1",
+  "inventory_origin": "synthetic_fixture",
   "capability_catalog": [
     "analysis",
     "typescript",

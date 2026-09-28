@@ -1,5 +1,6 @@
 {
   "version": "local-deterministic-routing-input/v1",
+  "inventory_origin": "synthetic_fixture",
   "capability_catalog": ["analysis", "typescript", "testing"],
   "request_policy": { "default": "deny", "allowed_capability_ids": ["analysis", "typescript", "testing"] },
   "provider_policy": { "default": "deny", "allowed_provider_ids": ["fictional-local-environment"] },

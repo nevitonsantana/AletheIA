@@ -13,6 +13,12 @@ routes; `task-testing.json` changes the required capability and preference order
 They are only
 replay inputs, not references to real providers or models.
 
+The optional `inventory_origin` field records whether an input is a `synthetic_fixture` or a
+`caller_declaration`; the result preserves it in the replay snapshot. It is descriptive, not
+verified evidence of discovery or eligibility. Older v1 inputs without this field remain accepted
+and their origin remains unspecified rather than inferred. The synthetic fixtures set the label
+explicitly. A Codex catalog cannot be labeled as `caller_declaration` to imply live availability.
+
 Provider and route availability can be `true`, `false`, or `unknown`. `unknown` is not coerced to
 available: it rejects the candidate with an explicit reason. This is an additive experimental
 input form, not a claim that a Codex model list attests live availability. The caller still supplies

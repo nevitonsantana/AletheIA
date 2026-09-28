@@ -7,6 +7,7 @@
   "required": ["version", "capability_catalog", "request_policy", "provider_policy", "providers", "routes", "preference", "request"],
   "properties": {
     "version": { "const": "local-deterministic-routing-input/v1" },
+    "inventory_origin": { "enum": ["synthetic_fixture", "caller_declaration"] },
     "capability_catalog": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
     "provider_policy": {
       "type": "object", "additionalProperties": false,

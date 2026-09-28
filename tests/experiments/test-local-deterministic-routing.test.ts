@@ -23,6 +23,7 @@ describe("local deterministic routing experiment", () => {
     expect(result.rejected_routes).toEqual([{ route_id: "fictional-heron", reasons: ["missing_required_capabilities:analysis"] }]);
     expect(result.input).toEqual(input);
     expect(result.input_version).toBe(input.version);
+    expect(result.input.inventory_origin).toBe("synthetic_fixture");
   });
 
   it("changes selection only when declared preference or requirements change", () => {
@@ -86,6 +87,22 @@ describe("local deterministic routing experiment", () => {
     const input = fixture("task-analysis.json") as unknown as Record<string, unknown>;
     (input.providers as Array<Record<string, unknown>>)[0].available = "listed";
     expect(() => recommendRoute(input)).toThrow(SchemaValidationError);
+  });
+
+  it("preserves declared inventory origin without treating it as eligibility evidence", () => {
+    const input = fixture("task-unknown-availability.json");
+    input.inventory_origin = "caller_declaration";
+    const result = recommendRoute(input);
+    expect(result.input.inventory_origin).toBe("caller_declaration");
+    expect(result.outcome).toBe("no_eligible_route");
+
+    const legacy = fixture("task-analysis.json");
+    delete legacy.inventory_origin;
+    expect(recommendRoute(legacy).input.inventory_origin).toBeUndefined();
+
+    const invalid = fixture("task-analysis.json") as unknown as Record<string, unknown>;
+    invalid.inventory_origin = "codex_discovered";
+    expect(() => recommendRoute(invalid)).toThrow(SchemaValidationError);
   });
 
   it("keeps recommendation and alternatives inside every hard filter across a synthetic matrix", () => {
