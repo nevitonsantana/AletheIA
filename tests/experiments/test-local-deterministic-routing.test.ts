@@ -170,6 +170,22 @@ describe("local deterministic routing experiment", () => {
     expect(result.outcome).toBe("no_eligible_route");
     expect(result.selected_route_id).toBeNull();
     expect(result.rejected_required_capabilities).toEqual(["not-declared"]);
+    expect(result.rejected_routes.every((route) => route.reasons.includes("unknown_required_capabilities:not-declared"))).toBe(true);
+    expect(result.rejected_routes.every((route) => route.reasons.every((reason) => !reason.startsWith("missing_required_capabilities:")))).toBe(true);
+  });
+
+  it("keeps known missing and unknown requirements distinct in one decision", () => {
+    const input = fixture("task-analysis.json");
+    input.request.required_capabilities = ["analysis", "not-declared"];
+    const result = recommendRoute(input);
+    expect(result.outcome).toBe("no_eligible_route");
+    expect(result.rejected_routes.find((route) => route.route_id === "fictional-sparrow")?.reasons).toEqual([
+      "unknown_required_capabilities:not-declared",
+    ]);
+    expect(result.rejected_routes.find((route) => route.route_id === "fictional-heron")?.reasons).toEqual([
+      "unknown_required_capabilities:not-declared",
+      "missing_required_capabilities:analysis",
+    ]);
   });
 
   it("rejects invalid JSON shape, duplicate IDs/capabilities, and dangling references", () => {

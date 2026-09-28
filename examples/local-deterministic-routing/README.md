@@ -29,6 +29,8 @@ IDs, duplicate capability values, route capability references outside the catalo
 allowlist, provider or preference references are rejected. Every declared route must appear once in
 `preference`, making the candidate order explicit. Required capabilities absent from the declared
 catalog are rejected as unknown; the result is `no_eligible_route` rather than a fallback.
+An unknown required capability is reported as unknown, not additionally as missing from each route;
+`missing_required_capabilities` applies only to capabilities present in the declared catalog.
 
 Run the fixtures from the repository root with `pnpm routing:demo`; the dedicated NodeNext compile step writes `dist/routing-demo/` and then runs its JavaScript entry. The runner prints each fixture decision separately and
 reports `calculation_duration_ms` as local process overhead only. It is not execution duration, cost,

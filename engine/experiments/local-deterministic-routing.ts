@@ -76,6 +76,8 @@ export function recommendRoute(rawInput: unknown): LocalRoutingResult {
   const allowedRequiredCapabilities = new Set(input.request_policy.allowed_capability_ids);
   const allowedProviders = new Set(input.provider_policy.allowed_provider_ids);
   const rejectedRequired = required.filter((capability) => !catalog.has(capability) || !allowedRequiredCapabilities.has(capability));
+  const unknownRequired = required.filter((capability) => !catalog.has(capability));
+  const disallowedRequired = required.filter((capability) => catalog.has(capability) && !allowedRequiredCapabilities.has(capability));
   const eligible: string[] = [];
   const rejectedRoutes: RouteRejection[] = [];
 
@@ -88,11 +90,9 @@ export function recommendRoute(rawInput: unknown): LocalRoutingResult {
     if (route.available === "unknown") reasons.push("route_availability_unknown");
     if (provider.available === false) reasons.push("provider_unavailable");
     if (provider.available === "unknown") reasons.push("provider_availability_unknown");
-    const unknownRequired = required.filter((capability) => !catalog.has(capability));
-    const disallowedRequired = required.filter((capability) => catalog.has(capability) && !allowedRequiredCapabilities.has(capability));
     if (unknownRequired.length > 0) reasons.push("unknown_required_capabilities:" + unknownRequired.join(","));
     if (disallowedRequired.length > 0) reasons.push("required_capabilities_not_allowed:" + disallowedRequired.join(","));
-    const missing = required.filter((capability) => !route.capabilities.includes(capability));
+    const missing = required.filter((capability) => catalog.has(capability) && !route.capabilities.includes(capability));
     if (missing.length > 0) reasons.push("missing_required_capabilities:" + missing.join(","));
     if (reasons.length === 0) eligible.push(route.id);
     else rejectedRoutes.push({ route_id: route.id, reasons });
