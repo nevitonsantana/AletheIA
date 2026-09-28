@@ -70,6 +70,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - External references require S2 intake before they influence implementation; P20/S28, P21/S29, P22/S30 and P23/S31 are accepted as docs-first evidence/guidance slices; P24/S50 is accepted as reference intake only for Learning Distillation & Context Hygiene v0.7; P24/S51 is accepted as a manual Restart Package compatibility slice; P24/S52 is accepted as a manual evolution-signal bridge slice; P24/S53 is accepted as a manual readiness guardrail slice; P25/S83-S86 are delivered as intake, compatibility, pilot and value-decision evidence, with the optional profile remaining unadopted.
 - S36 and S38 provide two real S28/S29 usage records, S37 is readiness-only, and S39 confirms the records are too few and heterogeneous for reusable controls, success rates or security proof; S40 keeps expansion blocked and redirects backlog progress toward clarity/coherence review.
 - Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters, documentation generators, new dashboards and comparative metrics remain out of scope.
+- A local deterministic routing experiment is accepted as a replayable synthetic exception: it only filters caller-declared routes by availability/provider/capability and preference; it is not a routing engine, provider/model switcher, tool executor, kernel change or runtime authority (ADR-017).
 
 ## Next safe steps
 

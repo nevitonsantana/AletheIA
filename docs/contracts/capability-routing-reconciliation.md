@@ -15,6 +15,8 @@ This is a docs-first reconciliation. It does not implement a routing engine, sch
 collector, schema, policy engine, automatic provider selector, or Adaptive Skills authority over
 AletheIA gates.
 
+ADR-017 permits only an isolated local replay experiment with caller-declared inputs, explicit default-deny request/provider allowlists and deterministic hard filters. It does not amend this contract or authorize routing, execution, provider/model selection, runtime behavior or governance authority.
+
 ## Canonical mapping
 
 | Term | Question answered | Primary owner | May declare | Must not declare | Evidence surface |

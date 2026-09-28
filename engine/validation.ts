@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import Ajv2020, { type ErrorObject } from "ajv/dist/2020";
+import Ajv2020, { type ErrorObject } from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
 
 export class SchemaValidationError extends Error {
@@ -13,7 +13,10 @@ export class SchemaValidationError extends Error {
   }
 }
 
+// Ajv publishes CommonJS declarations; NodeNext resolves them as a namespace while Node ESM exposes the default.
+// @ts-ignore NodeNext declaration interop for Ajv2020.
 const ajv = new Ajv2020({ allErrors: true, strict: false, $data: true });
+// @ts-ignore NodeNext declaration interop for ajv-formats.
 addFormats(ajv);
 
 const validatorCache = new Map<string, ReturnType<typeof ajv.compile>>();
@@ -34,7 +37,7 @@ export function validateAgainstSchema<T>(data: unknown, schemaPath: string): T {
     const errors = validate.errors ?? [];
     const summary = errors
       .slice(0, 5)
-      .map((e) => `${e.instancePath || "(root)"} ${e.message ?? "invalid"}`)
+      .map((e: ErrorObject) => `${e.instancePath || "(root)"} ${e.message ?? "invalid"}`)
       .join("; ");
     throw new SchemaValidationError(
       `Schema validation failed for ${schemaId}: ${summary}`,

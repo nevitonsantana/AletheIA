@@ -1,0 +1,167 @@
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { execFileSync } from "node:child_process";
+import { pathToFileURL } from "node:url";
+import { describe, expect, it } from "vitest";
+import { SchemaValidationError } from "../../engine/validation";
+import { recommendRoute, type LocalRoutingInput } from "../../engine/experiments/local-deterministic-routing";
+
+const root = process.cwd();
+const fixture = (name: string): LocalRoutingInput => JSON.parse(fs.readFileSync(path.join(root, "examples/local-deterministic-routing", name), "utf8"));
+const clone = <T>(value: T): T => structuredClone(value);
+
+describe("local deterministic routing experiment", () => {
+  it("returns ordered eligible alternatives after applying the same hard filters", () => {
+    const input = fixture("task-analysis.json");
+    const result = recommendRoute(input);
+
+    expect(result.outcome).toBe("recommended");
+    expect(result.selected_route_id).toBe("fictional-sparrow");
+    expect(result.eligible_route_ids).toEqual(["fictional-sparrow", "fictional-otter"]);
+    expect(result.alternative_route_ids).toEqual(["fictional-otter"]);
+    expect(result.rejected_routes).toEqual([{ route_id: "fictional-heron", reasons: ["missing_required_capabilities:analysis"] }]);
+    expect(result.input).toEqual(input);
+    expect(result.input_version).toBe(input.version);
+  });
+
+  it("changes selection only when declared preference or requirements change", () => {
+    const preferred = fixture("task-analysis.json");
+    preferred.preference = ["fictional-otter", "fictional-sparrow", "fictional-heron"];
+    expect(recommendRoute(preferred).selected_route_id).toBe("fictional-otter");
+
+    const taskTesting = fixture("task-testing.json");
+    const result = recommendRoute(taskTesting);
+    expect(result.selected_route_id).toBe("fictional-heron");
+    expect(result.eligible_route_ids).toEqual(["fictional-heron", "fictional-otter"]);
+    expect(result.alternative_route_ids).toEqual(["fictional-otter"]);
+  });
+
+  it("hard-filters explicit provider policy independently from provider availability", () => {
+    const input = fixture("task-analysis.json");
+    input.provider_policy.allowed_provider_ids = [];
+    const result = recommendRoute(input);
+
+    expect(result.outcome).toBe("no_eligible_route");
+    expect(result.alternative_route_ids).toEqual([]);
+    expect(result.rejected_routes).toEqual([
+      { route_id: "fictional-sparrow", reasons: ["provider_not_allowed"] },
+      { route_id: "fictional-otter", reasons: ["provider_not_allowed"] },
+      { route_id: "fictional-heron", reasons: ["provider_not_allowed", "missing_required_capabilities:analysis"] },
+    ]);
+  });
+
+  it("hard-filters route and provider availability", () => {
+    const routeUnavailable = fixture("task-analysis.json");
+    routeUnavailable.routes[0].available = false;
+    expect(recommendRoute(routeUnavailable).selected_route_id).toBe("fictional-otter");
+
+    const providerUnavailable = fixture("task-analysis.json");
+    providerUnavailable.providers[0].available = false;
+    expect(recommendRoute(providerUnavailable).outcome).toBe("no_eligible_route");
+    expect(recommendRoute(providerUnavailable).rejected_routes[0].reasons).toContain("provider_unavailable");
+  });
+
+  it("is repeatable and preserves a defensive, non-mutating replay snapshot", () => {
+    const input = fixture("task-analysis.json");
+    const before = clone(input);
+    const first = recommendRoute(input);
+    const second = recommendRoute(input);
+
+    expect(first).toEqual(second);
+    expect(input).toEqual(before);
+    input.routes[0].available = false;
+    input.request!.required_capabilities = ["testing"];
+    expect(first.input).toEqual(before);
+  });
+
+  it("rejects unknown required capability without selecting a fallback", () => {
+    const input = fixture("task-analysis.json");
+    input.request!.required_capabilities = ["not-declared"];
+    const result = recommendRoute(input);
+
+    expect(result.outcome).toBe("no_eligible_route");
+    expect(result.selected_route_id).toBeNull();
+    expect(result.rejected_required_capabilities).toEqual(["not-declared"]);
+  });
+
+  it("rejects invalid JSON shape, duplicate IDs/capabilities, and dangling references", () => {
+    expect(() => recommendRoute({ version: "local-deterministic-routing-input/v1" })).toThrow(SchemaValidationError);
+
+    const missingRequest = fixture("task-analysis.json") as Partial<LocalRoutingInput>;
+    delete missingRequest.request;
+    expect(() => recommendRoute(missingRequest)).toThrow(SchemaValidationError);
+
+    const duplicateProvider = fixture("task-analysis.json");
+    duplicateProvider.providers.push({ ...duplicateProvider.providers[0] });
+    expect(() => recommendRoute(duplicateProvider)).toThrow("duplicate provider id 'fictional-local-environment'");
+
+    const duplicateRoute = fixture("task-analysis.json");
+    duplicateRoute.routes.push({ ...duplicateRoute.routes[0] });
+    expect(() => recommendRoute(duplicateRoute)).toThrow("duplicate route id 'fictional-sparrow'");
+
+    const duplicateCatalogCapability = fixture("task-analysis.json");
+    duplicateCatalogCapability.capability_catalog.push("analysis");
+    expect(() => recommendRoute(duplicateCatalogCapability)).toThrow(SchemaValidationError);
+
+    const duplicateRouteCapability = fixture("task-analysis.json");
+    duplicateRouteCapability.routes[0].capabilities.push("analysis");
+    expect(() => recommendRoute(duplicateRouteCapability)).toThrow(SchemaValidationError);
+
+    const danglingCapability = fixture("task-analysis.json");
+    danglingCapability.routes[0].capabilities.push("unknown-capability");
+    expect(() => recommendRoute(danglingCapability)).toThrow("references unknown capability 'unknown-capability'");
+
+    const danglingProvider = fixture("task-analysis.json");
+    danglingProvider.routes[0].provider_id = "missing-provider";
+    expect(() => recommendRoute(danglingProvider)).toThrow("references unknown provider 'missing-provider'");
+
+    const danglingAllowlist = fixture("task-analysis.json");
+    danglingAllowlist.provider_policy.allowed_provider_ids = ["missing-provider"];
+    expect(() => recommendRoute(danglingAllowlist)).toThrow("allowlist references unknown provider 'missing-provider'");
+
+    const danglingPreference = fixture("task-analysis.json");
+    danglingPreference.preference[0] = "missing-route";
+    expect(() => recommendRoute(danglingPreference)).toThrow("preference references unknown route 'missing-route'");
+  });
+});
+
+describe("request allowlist boundary", () => {
+  it("rejects a known capability that is absent from the explicit request allowlist", () => {
+    const input = fixture("task-analysis.json");
+    input.request_policy.allowed_capability_ids = ["testing"];
+    const result = recommendRoute(input);
+
+    expect(result.outcome).toBe("no_eligible_route");
+    expect(result.rejected_required_capabilities).toEqual(["analysis"]);
+    expect(result.rejected_routes[0].reasons).toContain("required_capabilities_not_allowed:analysis");
+  });
+
+  it("rejects request allowlist references outside the capability catalog", () => {
+    const input = fixture("task-analysis.json");
+    input.request_policy.allowed_capability_ids = ["missing-capability"];
+    expect(() => recommendRoute(input)).toThrow("request allowlist references unknown capability 'missing-capability'");
+  });
+});
+
+describe("compiled routing experiment", () => {
+  it("loads its schema when imported from a different working directory", () => {
+    execFileSync("pnpm", ["-s", "routing:demo"], { cwd: root, stdio: "pipe" });
+    const moduleUrl = pathToFileURL(
+      path.join(root, "dist/routing-demo/engine/experiments/local-deterministic-routing.js"),
+    ).href;
+    const fixturePath = path.join(root, "examples/local-deterministic-routing/task-analysis.json");
+    const script = `
+      import { readFileSync } from "node:fs";
+      const { recommendRoute } = await import(${JSON.stringify(moduleUrl)});
+      const input = JSON.parse(readFileSync(${JSON.stringify(fixturePath)}, "utf8"));
+      console.log(recommendRoute(input).selected_route_id);
+    `;
+
+    const output = execFileSync(process.execPath, ["--input-type=module", "-e", script], {
+      cwd: os.tmpdir(),
+      encoding: "utf8",
+    });
+    expect(output.trim()).toBe("fictional-sparrow");
+  });
+});
