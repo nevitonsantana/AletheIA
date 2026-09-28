@@ -5,7 +5,7 @@ import { execFileSync } from "node:child_process";
 import { pathToFileURL } from "node:url";
 import { describe, expect, it } from "vitest";
 import { SchemaValidationError } from "../../engine/validation";
-import { recommendRoute, type DeclaredAvailability, type LocalRoutingInput } from "../../engine/experiments/local-deterministic-routing";
+import { demoteStaleInventory, recommendRoute, type DeclaredAvailability, type LocalRoutingInput } from "../../engine/experiments/local-deterministic-routing";
 
 const root = process.cwd();
 const fixture = (name: string): LocalRoutingInput => JSON.parse(fs.readFileSync(path.join(root, "examples/local-deterministic-routing", name), "utf8"));
@@ -244,6 +244,54 @@ describe("request allowlist boundary", () => {
     const input = fixture("task-analysis.json");
     input.request_policy.allowed_capability_ids = ["missing-capability"];
     expect(() => recommendRoute(input)).toThrow("request allowlist references unknown capability 'missing-capability'");
+  });
+});
+
+describe("declared inventory freshness rehearsal", () => {
+  const window = { observed_at_ms: 1_000, evaluated_at_ms: 3_001, max_age_ms: 2_000 };
+
+  it("demotes only true availability when the declared window has expired", () => {
+    const input = fixture("task-analysis.json");
+    input.routes[1].available = false;
+    const before = clone(input);
+    const assessment = demoteStaleInventory(input, window);
+
+    expect(assessment.status).toBe("stale");
+    expect(assessment.age_ms).toBe(2_001);
+    expect(assessment.window).toEqual(window);
+    expect(assessment.source_input).toEqual(before);
+    expect(input).toEqual(before);
+    expect(assessment.routing_input.providers[0].available).toBe("unknown");
+    expect(assessment.routing_input.routes.map((route) => route.available)).toEqual(["unknown", false, "unknown"]);
+    expect(recommendRoute(assessment.routing_input).outcome).toBe("no_eligible_route");
+    expect(demoteStaleInventory(input, window)).toEqual(assessment);
+  });
+
+  it("preserves declarations inside the window, including at its exact limit", () => {
+    const input = fixture("task-analysis.json");
+    const assessment = demoteStaleInventory(input, { ...window, evaluated_at_ms: 3_000 });
+    expect(assessment.status).toBe("within_window");
+    expect(assessment.routing_input).toEqual(input);
+    expect(recommendRoute(assessment.routing_input).selected_route_id).toBe("fictional-sparrow");
+  });
+
+  it("fails closed when the observation time is absent", () => {
+    const assessment = demoteStaleInventory(fixture("task-analysis.json"), { ...window, observed_at_ms: null });
+    expect(assessment.status).toBe("undated");
+    expect(assessment.age_ms).toBeNull();
+    expect(recommendRoute(assessment.routing_input).selected_route_id).toBeNull();
+  });
+
+  it("rejects invalid or future-dated windows and invalid routing inputs", () => {
+    const input = fixture("task-analysis.json");
+    for (const invalidWindow of [
+      { ...window, max_age_ms: -1 },
+      { ...window, evaluated_at_ms: 999 },
+      { ...window, observed_at_ms: 1.5 },
+      { ...window, max_age_ms: Number.MAX_SAFE_INTEGER + 1 },
+      { ...window, extra: true },
+    ]) expect(() => demoteStaleInventory(input, invalidWindow)).toThrow("Invalid inventory window");
+    expect(() => demoteStaleInventory({ version: "invalid" }, window)).toThrow(SchemaValidationError);
   });
 });
 

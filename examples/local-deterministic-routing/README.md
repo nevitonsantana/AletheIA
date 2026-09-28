@@ -54,3 +54,16 @@ The [Codex discovery feasibility check](codex-discovery-feasibility-2026-09-28.m
 installed model catalog and local cache are not treated as live availability evidence.
 The [ten evidence gates](codex-model-list-evidence-gates.md) separate catalog metadata, visibility,
 freshness, permission, and task fitness before considering any Codex inventory adapter.
+
+### Offline freshness rehearsal
+
+`demoteStaleInventory(input, window)` tests one new hypothesis without runtime discovery. The caller
+supplies `observed_at_ms` (or `null`), `evaluated_at_ms`, and `max_age_ms` as nonnegative safe-integer
+epoch milliseconds. No clock is read. At the exact age limit, the declaration stays unchanged;
+beyond it, or without an observation time, only `available: true` is demoted to `unknown` in a
+defensive copy. `false` and `unknown` are never promoted. The assessment preserves the original
+input, the explicit window, its calculated age and the prepared routing input for replay.
+The demo uses deliberately small synthetic timestamps, not actual runtime observations.
+"Within window" means only that a caller-supplied age rule passed; it does **not** prove current
+model availability, authorization, health, quality or acceptable latency. The resulting route
+decision remains an advisory local recommendation, never an executable fallback.

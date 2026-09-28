@@ -32,6 +32,20 @@ export interface LocalRoutingResult {
   rejected_required_capabilities: string[];
 }
 
+export interface DeclaredInventoryWindow {
+  observed_at_ms: number | null;
+  evaluated_at_ms: number;
+  max_age_ms: number;
+}
+
+export interface InventoryFreshnessAssessment {
+  status: "within_window" | "stale" | "undated";
+  age_ms: number | null;
+  window: DeclaredInventoryWindow;
+  source_input: LocalRoutingInput;
+  routing_input: LocalRoutingInput;
+}
+
 function duplicateIds(values: string[], label: string): void {
   const duplicate = values.find((value, index) => values.indexOf(value) !== index);
   if (duplicate) throw new Error("Invalid local routing input: duplicate " + label + " id '" + duplicate + "'.");
@@ -63,11 +77,43 @@ function validateReferences(input: LocalRoutingInput): void {
   }
 }
 
+function snapshotInput(rawInput: unknown): LocalRoutingInput {
+  const input = structuredClone(validateAgainstSchema<LocalRoutingInput>(rawInput, schemaPath));
+  validateReferences(input);
+  return input;
+}
+
+function validTimestamp(value: unknown): value is number {
+  return Number.isSafeInteger(value) && (value as number) >= 0;
+}
+
+/** Offline freshness rehearsal. It can only demote caller-declared availability, never attest it. */
+export function demoteStaleInventory(rawInput: unknown, rawWindow: unknown): InventoryFreshnessAssessment {
+  const sourceInput = snapshotInput(rawInput);
+  if (rawWindow === null || typeof rawWindow !== "object" || Array.isArray(rawWindow)) {
+    throw new Error("Invalid inventory window: expected an object.");
+  }
+  const window = structuredClone(rawWindow) as DeclaredInventoryWindow;
+  if (Object.keys(window).sort().join(",") !== "evaluated_at_ms,max_age_ms,observed_at_ms" ||
+      !validTimestamp(window.evaluated_at_ms) || !validTimestamp(window.max_age_ms) ||
+      (window.observed_at_ms !== null && !validTimestamp(window.observed_at_ms)) ||
+      (window.observed_at_ms !== null && window.observed_at_ms > window.evaluated_at_ms)) {
+    throw new Error("Invalid inventory window: use nonnegative safe-integer milliseconds, an observed timestamp no later than evaluation, or null when undated.");
+  }
+
+  const age = window.observed_at_ms === null ? null : window.evaluated_at_ms - window.observed_at_ms;
+  const status = age === null ? "undated" : age > window.max_age_ms ? "stale" : "within_window";
+  const routingInput = structuredClone(sourceInput);
+  if (status !== "within_window") {
+    for (const provider of routingInput.providers) if (provider.available === true) provider.available = "unknown";
+    for (const route of routingInput.routes) if (route.available === true) route.available = "unknown";
+  }
+  return { status, age_ms: age, window, source_input: sourceInput, routing_input: routingInput };
+}
+
 /** Pure local experiment; it does not invoke providers or change runtime, harness, or kernel behavior. */
 export function recommendRoute(rawInput: unknown): LocalRoutingResult {
-  const validatedInput = validateAgainstSchema<LocalRoutingInput>(rawInput, schemaPath);
-  const input = structuredClone(validatedInput);
-  validateReferences(input);
+  const input = snapshotInput(rawInput);
 
   const providers = new Map(input.providers.map((provider) => [provider.id, provider]));
   const routes = new Map(input.routes.map((route) => [route.id, route]));
