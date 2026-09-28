@@ -156,6 +156,18 @@ describe("local advisory command", () => {
       expect(JSON.stringify(pending)).not.toContain("manual-check-1");
       const accepted = JSON.parse(execFileSync("node", [command, declaration, human], { encoding: "utf8" })) as Record<string, unknown>;
       expect(accepted).toMatchObject({ selected_route_id: "fictional-sparrow", human_disposition: "accept_suggestion" });
+      const full = spawnSync("node", [command, "--full-evidence", declaration, human], { encoding: "utf8" });
+      expect(full.status).toBe(0);
+      expect(full.stderr).toContain("Confidentiality warning");
+      const evidence = JSON.parse(full.stdout) as Record<string, unknown>;
+      expect(evidence).toMatchObject({ status: "human_review_recorded_no_execution" });
+      expect(full.stdout).toContain("manual-check-1");
+      const packageRun = spawnSync("pnpm", ["--silent", "routing:advisory", "--full-evidence", declaration, human], { encoding: "utf8" });
+      expect(packageRun.status).toBe(0);
+      expect(JSON.parse(packageRun.stdout)).toMatchObject({ status: "human_review_recorded_no_execution" });
+      const missingReview = spawnSync("node", [command, "--full-evidence", declaration], { encoding: "utf8" });
+      expect(missingReview.status).toBe(2);
+      expect(missingReview.stdout).toBe("");
       expect(fs.readdirSync(dir).sort()).toEqual(["declaration.json", "review.json"]);
       const malformed = path.join(dir, "invalid.json");
       fs.writeFileSync(malformed, '{"secret":"do-not-print",');

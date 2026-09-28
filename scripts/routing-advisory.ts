@@ -1,9 +1,11 @@
 import fs from "node:fs";
 import { prepareAdvisoryDraft, recordAdvisoryReview } from "../engine/experiments/local-routing-advisory-draft.js";
 
-const [declarationPath, reviewPath, ...extra] = process.argv.slice(2);
-if (!declarationPath || extra.length > 0) {
-  console.error("Usage: pnpm routing:advisory <local-declaration.json> [local-review.json]");
+const args = process.argv.slice(2);
+const fullEvidence = args[0] === "--full-evidence";
+const [declarationPath, reviewPath, ...extra] = fullEvidence ? args.slice(1) : args;
+if (!declarationPath || declarationPath.startsWith("--") || extra.length > 0 || (fullEvidence && !reviewPath)) {
+  console.error("Usage: pnpm routing:advisory [--full-evidence] <local-declaration.json> [local-review.json]");
   process.exitCode = 2;
 } else {
   try {
@@ -11,6 +13,11 @@ if (!declarationPath || extra.length > 0) {
     const reviewed = reviewPath
       ? recordAdvisoryReview(declaration, JSON.parse(fs.readFileSync(reviewPath, "utf8")) as unknown)
       : null;
+    if (fullEvidence && reviewed) {
+      console.error("Confidentiality warning: full reviewed evidence follows on stdout; inspect before sharing.");
+      console.log(JSON.stringify(reviewed, null, 2));
+      process.exit(0);
+    }
     const draft = reviewed?.review_time_draft ?? prepareAdvisoryDraft(declaration);
     console.log(JSON.stringify({
       local_advisory_only: true,

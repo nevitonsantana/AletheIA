@@ -90,9 +90,13 @@ the caller's stated basis for a decision; the experiment does not resolve or aut
 
 For a local manual run, use `pnpm routing:advisory <declaration.json> [review.json]` from the
 repository root. Both paths are explicit local files; the command makes no network request and
-writes no record. Its stdout is a short suggestion/review summary, not the complete replay evidence;
-keep the input files and attach the full reviewed return value to an existing governed record if a
-real case is pursued. Even the summary can contain task and route identifiers, so do not paste it
+writes no record. Its default stdout is a short suggestion/review summary. After human review,
+`pnpm --silent routing:advisory --full-evidence <declaration.json> <review.json>` explicitly emits
+the full reviewed JSON to stdout without pnpm's command preamble, with a confidentiality warning
+on stderr. Keep the input files and
+attach the reviewed evidence through `evidence_refs` in an existing governed record; do not copy the
+suggested model into canonical `selected_vehicle` or `selected_capabilities`. Even the short summary
+can contain task and route identifiers, so do not paste it
 into a public channel without checking confidentiality. A malformed input returns a generic error
 without echoing JSON contents. No real pilot case is bundled here.
 The [synthetic review worksheet](advisory-review-worksheet.md) rehearses how a person can inspect
