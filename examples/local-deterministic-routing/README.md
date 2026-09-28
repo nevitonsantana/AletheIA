@@ -31,6 +31,9 @@ allowlist, provider or preference references are rejected. Every declared route 
 catalog are rejected as unknown; the result is `no_eligible_route` rather than a fallback.
 An unknown required capability is reported as unknown, not additionally as missing from each route;
 `missing_required_capabilities` applies only to capabilities present in the declared catalog.
+Capability IDs in this experimental input use letters/digits plus `.`, `_`, `/` or `-` after the
+first character. Commas, colons and whitespace are rejected so string-encoded rejection reasons
+cannot conflate one ID with multiple IDs. Route and provider IDs are not restricted by this rule.
 
 Run the fixtures from the repository root with `pnpm routing:demo`; the dedicated NodeNext compile step writes `dist/routing-demo/` and then runs its JavaScript entry. The runner prints each fixture decision separately and
 reports `calculation_duration_ms` as local process overhead only. It is not execution duration, cost,

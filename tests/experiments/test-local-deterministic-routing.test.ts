@@ -227,6 +227,20 @@ describe("local deterministic routing experiment", () => {
     danglingPreference.preference[0] = "missing-route";
     expect(() => recommendRoute(danglingPreference)).toThrow("preference references unknown route 'missing-route'");
   });
+
+  it("rejects capability IDs that make encoded rejection reasons ambiguous", () => {
+    for (const invalidId of ["analysis,testing", "analysis:testing", "analysis testing", "analysis\nother", "analysis\n"]) {
+      const input = fixture("task-analysis.json");
+      input.request.required_capabilities = [invalidId];
+      expect(() => recommendRoute(input)).toThrow(SchemaValidationError);
+    }
+    const namespaced = fixture("task-analysis.json");
+    namespaced.capability_catalog.push("review/analysis.v2");
+    namespaced.request_policy.allowed_capability_ids.push("review/analysis.v2");
+    namespaced.routes[0].capabilities.push("review/analysis.v2");
+    namespaced.request.required_capabilities = ["review/analysis.v2"];
+    expect(recommendRoute(namespaced).selected_route_id).toBe("fictional-sparrow");
+  });
 });
 
 describe("request allowlist boundary", () => {
