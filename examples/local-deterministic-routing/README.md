@@ -72,3 +72,5 @@ The [advisory-pilot boundary proposal](advisory-pilot-boundary-proposal.md) is a
 review**, not approval to run this experiment on real inputs or integrate a provider.
 The [synthetic review worksheet](advisory-review-worksheet.md) rehearses how a person can inspect
 and decline a suggestion without creating a second governance record.
+The [ten synthetic review rounds](ten-synthetic-review-rounds.md) provide named, tested cases for
+that inspection; they do not count as real pilot evidence.

@@ -36,3 +36,5 @@ experimental result as evidence; do not put a model suggestion into canonical
 
 The distinction under study is whether a person can inspect and decline a recommendation without
 mistaking it for authority. This example does not validate a real model or approve pilot use.
+The [ten synthetic review rounds](ten-synthetic-review-rounds.md) extend this rehearsal across
+requirements, preference, policy, availability and freshness without introducing real inputs.
