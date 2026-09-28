@@ -165,10 +165,20 @@ describe("local advisory command", () => {
       const packageRun = spawnSync("pnpm", ["--silent", "routing:advisory", "--full-evidence", declaration, human], { encoding: "utf8" });
       expect(packageRun.status).toBe(0);
       expect(JSON.parse(packageRun.stdout)).toMatchObject({ status: "human_review_recorded_no_execution" });
+      const largeDeclaration = path.join(dir, "large-declaration.json");
+      const largeInput = draft();
+      largeInput.task_reference = "synthetic-large-output-" + "x".repeat(250_000);
+      fs.writeFileSync(largeDeclaration, JSON.stringify(largeInput));
+      const piped = spawnSync("node", [command, "--full-evidence", largeDeclaration, human], {
+        encoding: "utf8", maxBuffer: 2 * 1024 * 1024,
+      });
+      expect(piped.status).toBe(0);
+      expect(piped.stdout.length).toBeGreaterThan(500_000);
+      expect(JSON.parse(piped.stdout)).toMatchObject({ status: "human_review_recorded_no_execution" });
       const missingReview = spawnSync("node", [command, "--full-evidence", declaration], { encoding: "utf8" });
       expect(missingReview.status).toBe(2);
       expect(missingReview.stdout).toBe("");
-      expect(fs.readdirSync(dir).sort()).toEqual(["declaration.json", "review.json"]);
+      expect(fs.readdirSync(dir).sort()).toEqual(["declaration.json", "large-declaration.json", "review.json"]);
       const malformed = path.join(dir, "invalid.json");
       fs.writeFileSync(malformed, '{"secret":"do-not-print",');
       const failed = spawnSync("node", [command, malformed], { encoding: "utf8" });
