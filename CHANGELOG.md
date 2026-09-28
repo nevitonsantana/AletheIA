@@ -3,8 +3,6 @@
 ## Unreleased
 
 - fix APM consumer scaffold invocation and avoid treating APM-installed identical `.claude/` files as conflicts; prepare manifest and install guidance for `v1.0.4-apm`
-- publish the immutable `v1.0.3-apm` package tag with aligned manifest version and install guidance
-
 - add a governed pilot report guide and starter-pack template for hypothesis-led field pilots, evidence ledgers, controls, negative tests, validation, reusable-learning separation and closeout
 
 - publish the immutable `v1.0.1-apm` package tag with Claude and Codex targets, including the operating-overlay scaffold
