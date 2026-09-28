@@ -19,7 +19,7 @@ AletheIA, in contrast, is a **project scaffold** that lands content at the consu
 
 Three options were considered:
 
-- **X — Partial packaging + manual scaffold step.** Use APM for what fits natively; expose a `scripts.scaffold-overlay` that adopters run after `apm install` to materialize the scaffold at the project root.
+- **X — Partial packaging + explicit scaffold step.** Use APM for what fits natively; have adopters invoke the packaged scaffold script after `apm install` to materialize the scaffold at the project root.
 - **Y — All-in-pack + `apm run install-overlay`.** Ship the entire overlay under `.apm/` and let `apm install` only download; require `apm run install-overlay` to materialize. Treats APM as a versioned CDN.
 - **Z — Pause Epic 4, escalate.** Acknowledge that current APM does not fit, fall back to `git clone + cp -R` manual adoption, revisit when APM gains lifecycle hooks or scaffold support.
 
@@ -29,10 +29,10 @@ Three options were considered:
 
 ```
 apm install nevitonsantana/AletheIA       # step 1: download + lockfile
-apm run scaffold-overlay                  # step 2: materialize at <cwd>/
+bash apm_modules/nevitonsantana/aletheia/packs/operating-overlay/scripts/scaffold-overlay.sh
 ```
 
-Step 2 is implemented as a shell script (`packs/operating-overlay/scripts/scaffold-overlay.sh`) declared in `apm.yml` under `scripts:`. It copies the pack contents (minus source-only files: `README.md`, `manifest.yaml`, `scripts/`) into the current working directory. The script refuses to overwrite existing overlay artifacts unless `--force` is passed.
+Step 2 invokes the installed shell script directly from the consumer project root. `apm run` only resolves scripts in the consumer project's own `apm.yml`, not in installed dependency manifests. The script copies the pack contents (minus source-only files: `README.md`, `manifest.yaml`, `scripts/`) into the current working directory. It accepts identical files already integrated by APM, but refuses to overwrite differing files unless `--force` is passed.
 
 The `operating-overlay` pack also remains usable for **manual adoption** (plain `cp -R packs/operating-overlay/. <consumer-root>/`) for adopters who do not use APM. The pack is the source of truth for the overlay scaffold; APM is one of two delivery channels.
 
@@ -42,9 +42,9 @@ The mismatch between AletheIA's scaffold-at-root model and APM's runtime-primiti
 
 **Positive:**
 
-- Epic 4 is deliverable inside the plan's anti-criteria: no custom CLI (the `scripts:` field is APM-native), no marketplace publish, no premature shims.
+- Epic 4 is deliverable inside the plan's anti-criteria: no custom CLI binary, no marketplace publish, no premature shims.
 - `apm install` still pays for itself: it resolves the package from GitHub, pins the ref in `apm.lock.yaml`, and gives adopters a versioned, hash-verified payload — even when the materialization step is manual.
-- The two-step flow is reversible. If APM gains `postinstall` hooks or scaffold-at-root support, `apm run scaffold-overlay` becomes an internal call instead of a user-visible step, with no change to the pack contents.
+- The two-step flow is reversible. If APM gains `postinstall` hooks or scaffold-at-root support, direct materialization can become an internal call instead of a user-visible step, with no change to the pack contents.
 - The pack continues to serve manual adopters, so AletheIA does not bind itself to APM availability.
 
 **Negative:**

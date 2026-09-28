@@ -17,13 +17,13 @@ This guide is for adopters using [APM (Microsoft Agentic Package Manager)](https
 From inside the consumer project root:
 
 ```bash
-apm install nevitonsantana/AletheIA#v1.0.3-apm --target claude,codex,copilot
+apm install nevitonsantana/AletheIA#v1.0.4-apm --target claude,codex,copilot
 ```
 
 What this does:
 
 - Resolves the package from GitHub at the pinned tag.
-- Downloads the payload into `apm_modules/AletheIA/`.
+- Downloads the payload into `apm_modules/nevitonsantana/aletheia/`.
 - Writes `apm.lock.yaml` pinning the version and content hash for reproducibility. **Commit `apm.lock.yaml`** so teammates and CI get the same bytes.
 
 What this does **not** do: materialize the overlay at the project root. That is step 2.
@@ -33,12 +33,12 @@ If `apm` reports `policy: warn` for fetch failures and you want a stricter postu
 ## Step 2 — Materialize the overlay
 
 ```bash
-apm run scaffold-overlay
+bash apm_modules/nevitonsantana/aletheia/packs/operating-overlay/scripts/scaffold-overlay.sh
 ```
 
 What this does:
 
-- Copies the contents of `apm_modules/AletheIA/packs/operating-overlay/` into the current working directory.
+- Copies the contents of `apm_modules/nevitonsantana/aletheia/packs/operating-overlay/` into the current working directory.
 - Excludes source-only artifacts (`README.md`, `manifest.yaml`, `scripts/`).
 - Refuses to overwrite if `AGENTS.md`, `CLAUDE.md`, `.claude/`, or `ops/ai/` already exist. Pass `--force` to overwrite.
 
@@ -87,7 +87,7 @@ On Linux, drop the empty string after `-i`. Verify completeness:
 grep -r '{{' . && echo "STILL HAS PLACEHOLDERS" || echo "OK"
 ```
 
-The full variable list with descriptions lives in `apm_modules/AletheIA/packs/operating-overlay/manifest.yaml` under `variables:`.
+The full variable list with descriptions lives in `apm_modules/nevitonsantana/aletheia/packs/operating-overlay/manifest.yaml` under `variables:`.
 
 ## Step 4 — Fill the constitution
 
@@ -117,7 +117,7 @@ When AletheIA publishes a new tag (e.g. `v0.2.0`):
 
 ```bash
 apm update nevitonsantana/AletheIA
-apm run scaffold-overlay --force        # overwrite existing scaffold
+bash apm_modules/nevitonsantana/aletheia/packs/operating-overlay/scripts/scaffold-overlay.sh --force  # overwrite differing files
 ```
 
 Before running `--force`, commit your current overlay state so you can diff and rescue any local customizations. The pack does not track adopter-side edits; that is your project's responsibility.
@@ -126,10 +126,10 @@ Before running `--force`, commit your current overlay state so you can diff and 
 
 **`apm: command not found`** — Install APM first; see [microsoft.github.io/apm/installation](https://microsoft.github.io/apm/).
 
-**`apm install` succeeds but `apm run scaffold-overlay` says "unknown script"** — Confirm `apm_modules/AletheIA/apm.yml` exists. If it does, your APM version may not surface dependency-defined scripts via `apm run`. Workaround: invoke the script directly:
+**`apm run scaffold-overlay` says "unknown script"** — APM resolves `apm run` against the consumer project's own `apm.yml`, not scripts inside installed dependency manifests. Invoke the installed package script from the consumer project root:
 
 ```bash
-bash apm_modules/AletheIA/packs/operating-overlay/scripts/scaffold-overlay.sh
+bash apm_modules/nevitonsantana/aletheia/packs/operating-overlay/scripts/scaffold-overlay.sh
 ```
 
 **`scaffold-overlay: target already contains overlay artifacts`** — Expected behavior on non-empty projects. Either remove the listed paths or pass `--force`. Always commit first.
