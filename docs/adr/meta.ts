@@ -22,5 +22,6 @@ export default defineMeta({
     "ADR-015-execution-pattern-governance-pack",
     "ADR-016-runtime-2-boundary-review",
     "ADR-017-local-deterministic-routing-experiment",
+    "ADR-018-human-reviewed-advisory-routing-pilot",
   ],
 });

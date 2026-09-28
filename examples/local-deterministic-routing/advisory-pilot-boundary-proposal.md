@@ -1,15 +1,15 @@
 # Advisory routing pilot — boundary proposal
 
-**Status:** draft for human review; **not approved for implementation or real-input use**.
+**Status:** pilot boundary approved on 2026-09-28 in [ADR-018](../../docs/adr/ADR-018-human-reviewed-advisory-routing-pilot.md); implementation and real-input use not yet completed.
 **Date:** 2026-09-28. **Owner:** AletheIA study project.
 
 ## Decision requested
 
 Whether to permit a small, opt-in **human-reviewed advisory pilot** using manually declared,
-source-referenced inputs from real, low-risk tasks. This proposal does not itself amend
+source-referenced inputs from real, low-risk tasks. This proposal did not itself amend
 [ADR-016](../../docs/adr/ADR-016-runtime-2-boundary-review.md) or
 [ADR-017](../../docs/adr/ADR-017-local-deterministic-routing-experiment.md). The current
-exception permits synthetic replay only; approval must precede any real-input pilot code or use.
+exception permitted synthetic replay only; the separate approval is recorded in ADR-018.
 
 ## Why a separate gate is needed
 
@@ -64,7 +64,7 @@ not reasons to silently add a runtime layer.
 
 ## Approval and next action
 
-**Pending:** project-owner review of this minimum interface, non-goals, privacy posture and evidence
-plan. Until that decision is recorded, continue using only synthetic fixtures. If approved, implement
-one narrow real-input, draft-only path and validate it against the existing contracts before any UI,
-provider adapter or automated behavior is considered.
+**Approved boundary, implementation pending:** the project owner explicitly replied “piloto aprovado”
+on 2026-09-28. ADR-018 records the limited exception. Continue using only synthetic fixtures until
+source-reference validation, fail-closed freshness and the draft-only review path are implemented and
+tested. No UI, provider adapter or automated behavior is authorized.

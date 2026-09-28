@@ -43,6 +43,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Active and planned evolution
 
 - **Active:** none.
+- **Approved but not delivered:** a local, human-reviewed advisory routing pilot may be implemented under ADR-018; real-input use waits for provenance validation and a draft-only review path. This does not activate Runtime 2.0.
 - **Next dependency path:** S86 returned `insufficient_evidence`; the optional profile is unadopted and S87-S89, templates, schemas, composers, adapters and Adaptive Skills changes remain blocked until a new measured trigger exists.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
@@ -71,6 +72,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - S36 and S38 provide two real S28/S29 usage records, S37 is readiness-only, and S39 confirms the records are too few and heterogeneous for reusable controls, success rates or security proof; S40 keeps expansion blocked and redirects backlog progress toward clarity/coherence review.
 - Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters, documentation generators, new dashboards and comparative metrics remain out of scope.
 - A local deterministic routing experiment is accepted as a replayable synthetic exception: it only filters caller-declared routes by availability/provider/capability and preference; it is not a routing engine, provider/model switcher, tool executor, kernel change or runtime authority (ADR-017).
+- ADR-018 narrowly approves a real-input advisory pilot with manual source-referenced declarations and human disposition; no real-input path is delivered yet and execution remains outside this exception.
 
 ## Next safe steps
 
@@ -78,11 +80,13 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 2. Do not reopen S85/S86 or infer profile adoption without a new real Work Slice that predeclares and measures the required value indicators.
 3. Keep S87-S89 and all template, schema, composer, adapter, loop, graph, topology and Adaptive Skills changes blocked until S86 is superseded by an explicit `accept_optional_profile` decision.
 4. Publish documentation only through the existing manual approval path until a separate publishing-governance decision changes that posture.
-5. Do not activate S18 before its evidence threshold or Runtime 2.0 before a later explicit boundary decision.
+5. Do not activate S18 before its evidence threshold or Runtime 2.0 beyond the limited ADR-018 advisory exception; execution still requires a later explicit boundary decision.
 6. Apply S90 on the next real Work Slice and record whether the user-facing closeout reduces clarification; do not infer runtime automation from the manual profile.
 7. Observe the public APM first-test path for 1-2 weeks before proposing further discovery or packaging changes; treat installations and feedback as adoption evidence, not as product success by default.
 
 ## Last reviewed
+
+- **Routing boundary addendum (2026-09-28):** ADR-018 records project-owner approval of the limited advisory pilot; this is not a full re-review of the 2026-07-26 baseline.
 
 - **Date:** 2026-07-26
 - **Evidence baseline:** AletheIA `d1a51fd` after the discoverability, APM packaging, Codex-target, changelog and Pages publication slices; immutable package tag `v1.0.1-apm`

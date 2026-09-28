@@ -79,3 +79,4 @@ Do *not* write one for:
 | [ADR-015](ADR-015-execution-pattern-governance-pack.md) | Execution Pattern Governance Pack | Accepted |
 | [ADR-016](ADR-016-runtime-2-boundary-review.md) | Runtime 2.0 Boundary Review | Accepted |
 | [ADR-017](ADR-017-local-deterministic-routing-experiment.md) | Local Deterministic Routing Experiment Exception | Accepted |
+| [ADR-018](ADR-018-human-reviewed-advisory-routing-pilot.md) | Human-Reviewed Advisory Routing Pilot Boundary | Accepted — pilot scope only |
