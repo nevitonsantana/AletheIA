@@ -84,6 +84,9 @@ nor accepts or executes the route on behalf of the runtime. The caller must atta
 evidence to an existing governed record after human inspection. Source references should be local
 identifiers; no real task data or pilot outcome is included in this repository. Real-input use still
 requires case-by-case care and does not imply provider truth or runtime authorization.
+The advisory draft envelope is `v2`: it also requires local references for task requirements,
+request/provider permissions, preference order and inventory observation. These references preserve
+the caller's stated basis for a decision; the experiment does not resolve or authenticate them.
 The [synthetic review worksheet](advisory-review-worksheet.md) rehearses how a person can inspect
 and decline a suggestion without creating a second governance record.
 The [ten synthetic review rounds](ten-synthetic-review-rounds.md) provide named, tested cases for

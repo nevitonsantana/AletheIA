@@ -16,8 +16,15 @@ export interface AdvisoryClaim {
 }
 
 export interface AdvisoryDraftInput {
-  version: "local-routing-advisory-draft/v1";
+  version: "local-routing-advisory-draft/v2";
   task_reference: string;
+  decision_references: {
+    task_requirements: string;
+    request_permission: string;
+    provider_permission: string;
+    preference_order: string;
+    inventory_observation: string;
+  };
   input: LocalRoutingInput;
   window: DeclaredInventoryWindow;
   claims: AdvisoryClaim[];

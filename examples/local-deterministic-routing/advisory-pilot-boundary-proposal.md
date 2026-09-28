@@ -22,7 +22,8 @@ scope of ADR-017 and therefore needs the explicit boundary review required by AD
 
 ## Minimum proposed interface, if approved
 
-1. A person supplies a task reference, required capabilities, provider allowlist and preference order.
+1. A person supplies a task reference, required capabilities, provider allowlist and preference order,
+   with local references for the requirements, permissions, preference and inventory observation.
 2. A person supplies the inventory and capability claims with source references. Unverified
    availability stays `unknown`, explicit unavailability stays `false`, and catalog visibility
    alone never becomes `true`.
@@ -66,6 +67,7 @@ not reasons to silently add a runtime layer.
 
 **Approved boundary; local draft path implemented, real cases pending:** the project owner explicitly
 replied “piloto aprovado” on 2026-09-28. ADR-018 records the limited exception. Source-reference
-validation, fail-closed freshness and pure human-disposition recording now have synthetic tests.
+validation for model claims and decision inputs, fail-closed freshness and pure human-disposition
+recording now have synthetic tests.
 No real pilot case has been reviewed or stored in an existing governed record. That case-by-case
 evidence step is next; no UI, provider adapter or automated behavior is authorized.

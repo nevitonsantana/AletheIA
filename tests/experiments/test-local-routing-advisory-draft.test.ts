@@ -8,7 +8,12 @@ function draft(): AdvisoryDraftInput {
   const input = JSON.parse(fs.readFileSync("examples/local-deterministic-routing/task-analysis.json", "utf8")) as LocalRoutingInput;
   input.inventory_origin = "caller_declaration";
   return {
-    version: "local-routing-advisory-draft/v1", task_reference: "local-work-slice-1", input,
+    version: "local-routing-advisory-draft/v2", task_reference: "local-work-slice-1", input,
+    decision_references: {
+      task_requirements: "task-note-1", request_permission: "policy-note-1",
+      provider_permission: "provider-policy-note-1", preference_order: "preference-note-1",
+      inventory_observation: "manual-check-1",
+    },
     window: { observed_at_ms: 100, evaluated_at_ms: 105, max_age_ms: 10 },
     claims: [
       ...input.providers.map((p) => ({ kind: "provider_availability" as const, subject_id: p.id, source_reference: "manual-check-1" })),
@@ -53,6 +58,20 @@ describe("local advisory draft", () => {
     expect(() => prepareAdvisoryDraft(blank)).toThrow(SchemaValidationError);
     const extra = draft(); extra.claims[0].capability_id = "analysis";
     expect(() => prepareAdvisoryDraft(extra)).toThrow(/required only/);
+  });
+
+  it("requires source references for the task, permissions, preference and inventory observation", () => {
+    const fields = ["task_requirements", "request_permission", "provider_permission", "preference_order", "inventory_observation"] as const;
+    for (const field of fields) {
+      const missing = draft();
+      delete (missing.decision_references as Partial<typeof missing.decision_references>)[field];
+      expect(() => prepareAdvisoryDraft(missing)).toThrow(SchemaValidationError);
+      const blank = draft(); blank.decision_references[field] = " \t ";
+      expect(() => prepareAdvisoryDraft(blank)).toThrow(SchemaValidationError);
+    }
+    const oldVersion = draft() as unknown as { version: string };
+    oldVersion.version = "local-routing-advisory-draft/v1";
+    expect(() => prepareAdvisoryDraft(oldVersion)).toThrow(SchemaValidationError);
   });
 
   it("rejects synthetic origin and invalid base routing input", () => {
