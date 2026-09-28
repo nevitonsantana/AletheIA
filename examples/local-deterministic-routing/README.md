@@ -40,3 +40,5 @@ runtime contract.
 
 The [Codex discovery feasibility check](codex-discovery-feasibility-2026-09-28.md) records why the
 installed model catalog and local cache are not treated as live availability evidence.
+The [ten evidence gates](codex-model-list-evidence-gates.md) separate catalog metadata, visibility,
+freshness, permission, and task fitness before considering any Codex inventory adapter.
