@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| Status | Accepted — pilot scope only; implementation pending |
+| Status | Accepted — pilot scope only |
 | Date | 2026-09-28 |
 | Author | AletheIA study project |
 | Decider | Neviton Santana (explicit “piloto aprovado” in the 2026-09-28 conversation) |
