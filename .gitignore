@@ -5,3 +5,4 @@ dist/
 coverage/
 .env*
 *.tsbuildinfo
+/local-pilot-evidence/

@@ -43,7 +43,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Active and planned evolution
 
 - **Active:** none.
-- **Approved, local preparation delivered, real cases pending:** ADR-018 permits a human-reviewed advisory pilot. Provenance validation, freshness and pure disposition recording are implemented and synthetically tested; no real pilot case or runtime integration is delivered. This does not activate Runtime 2.0.
+- **Approved, local pilot in study:** ADR-018 permits a human-reviewed advisory pilot. Provenance validation, freshness and pure disposition recording are implemented and tested. One real AletheIA documentation-task case was reviewed privately: `no_eligible_route`, human disposition `defer`, and no model execution. Its evidence is kept only in ignored `local-pilot-evidence/aletheia-routing-pilot-001/` on the owner's checkout, without backup or public/project-wide availability. This does not activate Runtime 2.0.
 - **Next dependency path:** S86 returned `insufficient_evidence`; the optional profile is unadopted and S87-S89, templates, schemas, composers, adapters and Adaptive Skills changes remain blocked until a new measured trigger exists.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
@@ -72,7 +72,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - S36 and S38 provide two real S28/S29 usage records, S37 is readiness-only, and S39 confirms the records are too few and heterogeneous for reusable controls, success rates or security proof; S40 keeps expansion blocked and redirects backlog progress toward clarity/coherence review.
 - Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters, documentation generators, new dashboards and comparative metrics remain out of scope.
 - A local deterministic routing experiment is accepted as a replayable synthetic exception: it only filters caller-declared routes by availability/provider/capability and preference; it is not a routing engine, provider/model switcher, tool executor, kernel change or runtime authority (ADR-017).
-- ADR-018 narrowly approves a real-input advisory pilot with manual source-referenced declarations and human disposition; a local draft/review path exists, but no real case has been reviewed, and execution remains outside this exception.
+- ADR-018 narrowly approves a real-input advisory pilot with manual source-referenced declarations and human disposition. One private case was reviewed and deferred after `no_eligible_route`; it does not establish model availability, routing benefit, or execution authority. Source: ignored local observation `local-pilot-evidence/aletheia-routing-pilot-001/observation-record.json` (not included in Git clones).
 
 ## Next safe steps
 
@@ -87,6 +87,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Last reviewed
 
 - **Routing boundary addendum (2026-09-28):** ADR-018 records project-owner approval of the limited advisory pilot; this is not a full re-review of the 2026-07-26 baseline.
+- **Private pilot evidence addendum (2026-09-28):** the first reviewed case is recorded only in the owner's ignored local evidence directory; its reviewed outcome is `no_eligible_route` / `defer`, with no route execution or generalizable result. This addendum does not certify durable retention or re-review other system claims.
 
 - **Date:** 2026-07-26
 - **Evidence baseline:** AletheIA `d1a51fd` after the discoverability, APM packaging, Codex-target, changelog and Pages publication slices; immutable package tag `v1.0.1-apm`

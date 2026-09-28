@@ -1,6 +1,6 @@
 # Advisory routing pilot — boundary proposal
 
-**Status:** pilot boundary approved on 2026-09-28 in [ADR-018](../../docs/adr/ADR-018-human-reviewed-advisory-routing-pilot.md); implementation and real-input use not yet completed.
+**Status:** pilot boundary approved on 2026-09-28 in [ADR-018](../../docs/adr/ADR-018-human-reviewed-advisory-routing-pilot.md); one private real-input case was reviewed and deferred without an eligible route.
 **Date:** 2026-09-28. **Owner:** AletheIA study project.
 
 ## Decision requested
@@ -65,9 +65,12 @@ not reasons to silently add a runtime layer.
 
 ## Approval and next action
 
-**Approved boundary; local draft path implemented, real cases pending:** the project owner explicitly
+**Approved boundary; one private case reviewed:** the project owner explicitly
 replied “piloto aprovado” on 2026-09-28. ADR-018 records the limited exception. Source-reference
 validation for model claims and decision inputs, fail-closed freshness and pure human-disposition
 recording now have synthetic tests.
-No real pilot case has been reviewed or stored in an existing governed record. That case-by-case
-evidence step is next; no UI, provider adapter or automated behavior is authorized.
+The first real AletheIA documentation-task case returned `no_eligible_route`; the human reviewer
+chose `defer`. Its full evidence and observation are private, ignored files under
+`local-pilot-evidence/aletheia-routing-pilot-001/` on the owner's checkout, not part of this
+repository's portable source or a success/quality claim. No UI, provider adapter or automated
+behavior is authorized.
