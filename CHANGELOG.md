@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- prepare the immutable `v1.0.3-apm` package tag with aligned manifest version and install guidance for a disposable consumer smoke test after publication
+
 - add a governed pilot report guide and starter-pack template for hypothesis-led field pilots, evidence ledgers, controls, negative tests, validation, reusable-learning separation and closeout
 
 - publish the immutable `v1.0.1-apm` package tag with Claude and Codex targets, including the operating-overlay scaffold

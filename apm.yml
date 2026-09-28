@@ -12,7 +12,7 @@
 # this design works around.
 
 name: aletheia
-version: 1.0.0
+version: 1.0.3
 description: >
   AletheIA operating overlay — a portable layer that governs how AI-assisted
   work happens on any project. Ships the day-one scaffold (AGENTS.md,
