@@ -30,3 +30,6 @@ contains only those after the selected route. Alternatives are suggestions, not 
 This does not contact a provider, select a real model, invoke tools, switch runtimes or modify kernel
 behavior. It is governed by the narrowly scoped ADR-017 exception and changes no public routing or
 runtime contract.
+
+The [Codex discovery feasibility check](codex-discovery-feasibility-2026-09-28.md) records why the
+installed model catalog and local cache are not treated as live availability evidence.
