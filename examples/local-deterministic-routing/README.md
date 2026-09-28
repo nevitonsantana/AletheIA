@@ -87,6 +87,14 @@ requires case-by-case care and does not imply provider truth or runtime authoriz
 The advisory draft envelope is `v2`: it also requires local references for task requirements,
 request/provider permissions, preference order and inventory observation. These references preserve
 the caller's stated basis for a decision; the experiment does not resolve or authenticate them.
+
+For a local manual run, use `pnpm routing:advisory <declaration.json> [review.json]` from the
+repository root. Both paths are explicit local files; the command makes no network request and
+writes no record. Its stdout is a short suggestion/review summary, not the complete replay evidence;
+keep the input files and attach the full reviewed return value to an existing governed record if a
+real case is pursued. Even the summary can contain task and route identifiers, so do not paste it
+into a public channel without checking confidentiality. A malformed input returns a generic error
+without echoing JSON contents. No real pilot case is bundled here.
 The [synthetic review worksheet](advisory-review-worksheet.md) rehearses how a person can inspect
 and decline a suggestion without creating a second governance record.
 The [ten synthetic review rounds](ten-synthetic-review-rounds.md) provide named, tested cases for

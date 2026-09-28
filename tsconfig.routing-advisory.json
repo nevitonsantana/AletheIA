@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noEmit": false,
+    "outDir": "dist/routing-advisory",
+    "rootDir": "."
+  },
+  "include": [
+    "engine/validation.ts",
+    "engine/experiments/local-deterministic-routing.ts",
+    "engine/experiments/local-routing-advisory-draft.ts",
+    "scripts/routing-advisory.ts"
+  ]
+}

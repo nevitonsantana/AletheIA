@@ -1,4 +1,7 @@
 import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { execFileSync, spawnSync } from "node:child_process";
 import { describe, expect, it } from "vitest";
 import { prepareAdvisoryDraft, recordAdvisoryReview, type AdvisoryDraftInput, type AdvisoryHumanReview } from "../../engine/experiments/local-routing-advisory-draft";
 import type { LocalRoutingInput } from "../../engine/experiments/local-deterministic-routing";
@@ -130,5 +133,37 @@ describe("local advisory human review", () => {
     expect(() => recordAdvisoryReview(draft(), early)).toThrow(/cannot precede/);
     const unsafe = review(); unsafe.reviewed_at_ms = Number.MAX_SAFE_INTEGER + 1;
     expect(() => recordAdvisoryReview(draft(), unsafe)).toThrow(/safe integer/);
+  });
+});
+
+describe("local advisory command", () => {
+  it("reads explicit files, emits a minimal summary and does not write a pilot record", () => {
+    execFileSync("pnpm", ["exec", "tsc", "-p", "tsconfig.routing-advisory.json"]);
+    const compiled = "dist/routing-advisory";
+    fs.mkdirSync(path.join(compiled, "schemas"), { recursive: true });
+    for (const name of ["local-deterministic-routing-input", "local-routing-advisory-draft", "local-routing-advisory-review"]) {
+      fs.copyFileSync(path.join("schemas", `${name}.schema.json`), path.join(compiled, "schemas", `${name}.schema.json`));
+    }
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "aletheia-advisory-"));
+    try {
+      const declaration = path.join(dir, "declaration.json");
+      const human = path.join(dir, "review.json");
+      fs.writeFileSync(declaration, JSON.stringify(draft()));
+      fs.writeFileSync(human, JSON.stringify(review()));
+      const command = path.join(compiled, "scripts/routing-advisory.js");
+      const pending = JSON.parse(execFileSync("node", [command, declaration], { encoding: "utf8" })) as Record<string, unknown>;
+      expect(pending).toMatchObject({ local_advisory_only: true, no_execution: true, outcome: "recommended", human_disposition: "pending" });
+      expect(JSON.stringify(pending)).not.toContain("manual-check-1");
+      const accepted = JSON.parse(execFileSync("node", [command, declaration, human], { encoding: "utf8" })) as Record<string, unknown>;
+      expect(accepted).toMatchObject({ selected_route_id: "fictional-sparrow", human_disposition: "accept_suggestion" });
+      expect(fs.readdirSync(dir).sort()).toEqual(["declaration.json", "review.json"]);
+      const malformed = path.join(dir, "invalid.json");
+      fs.writeFileSync(malformed, '{"secret":"do-not-print",');
+      const failed = spawnSync("node", [command, malformed], { encoding: "utf8" });
+      expect(failed.status).toBe(1);
+      expect(failed.stderr).not.toContain("do-not-print");
+    } finally {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
   });
 });
