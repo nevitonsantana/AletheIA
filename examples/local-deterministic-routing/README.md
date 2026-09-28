@@ -67,3 +67,6 @@ The demo uses deliberately small synthetic timestamps, not actual runtime observ
 "Within window" means only that a caller-supplied age rule passed; it does **not** prove current
 model availability, authorization, health, quality or acceptable latency. The resulting route
 decision remains an advisory local recommendation, never an executable fallback.
+
+The [advisory-pilot boundary proposal](advisory-pilot-boundary-proposal.md) is a **draft for human
+review**, not approval to run this experiment on real inputs or integrate a provider.
