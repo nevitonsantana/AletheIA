@@ -52,4 +52,19 @@ describe("APM operating-overlay scaffold", () => {
     expect(result.stderr).toContain("AGENTS.md");
     expect(fs.readFileSync(agents, "utf8")).toBe("consumer-owned instructions\n");
   });
+
+  it("rejects a non-directory parent before copying any scaffold files", () => {
+    const { consumer, script } = createConsumer();
+    const claudePath = path.join(consumer, ".claude");
+    fs.writeFileSync(claudePath, "consumer-owned file\n");
+
+    const result = spawnSync("bash", [script], { cwd: consumer, encoding: "utf8" });
+
+    expect(result.status).toBe(4);
+    expect(result.stderr).toContain(".claude");
+    expect(fs.existsSync(path.join(consumer, "AGENTS.md"))).toBe(false);
+    expect(fs.existsSync(path.join(consumer, "CLAUDE.md"))).toBe(false);
+    expect(fs.existsSync(path.join(consumer, "ops/ai"))).toBe(false);
+    expect(fs.readFileSync(claudePath, "utf8")).toBe("consumer-owned file\n");
+  });
 });

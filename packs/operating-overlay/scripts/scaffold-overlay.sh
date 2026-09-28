@@ -44,6 +44,21 @@ fi
 collisions=()
 while IFS= read -r -d '' source_file; do
   relative_path="${source_file#"$pack_dir"/}"
+  parent_path="$relative_path"
+  blocked_by_parent=0
+  while [[ "$parent_path" == */* ]]; do
+    parent_path="${parent_path%/*}"
+    parent_target="$target_dir/$parent_path"
+    if [[ -e "$parent_target" && ! -d "$parent_target" ]]; then
+      collisions+=("$parent_path")
+      blocked_by_parent=1
+      break
+    fi
+  done
+  if [[ $blocked_by_parent -eq 1 ]]; then
+    continue
+  fi
+
   target_file="$target_dir/$relative_path"
   if [[ -e "$target_file" ]]; then
     if [[ -f "$source_file" && -f "$target_file" ]] && cmp -s "$source_file" "$target_file"; then
