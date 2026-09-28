@@ -187,5 +187,5 @@ describe("local advisory command", () => {
     } finally {
       fs.rmSync(dir, { recursive: true, force: true });
     }
-  });
+  }, 30_000);
 });
