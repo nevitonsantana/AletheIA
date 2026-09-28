@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.dev/schemas/local-deterministic-routing-input.v1.json",
+  "title": "Local deterministic routing experiment input",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "capability_id": { "type": "string", "description": "Absolute end assertion rejects trailing line breaks, which JavaScript $ can otherwise allow.", "pattern": "^[A-Za-z0-9][A-Za-z0-9._/-]*(?![\\s\\S])" }
+  },
+  "required": ["version", "capability_catalog", "request_policy", "provider_policy", "providers", "routes", "preference", "request"],
+  "properties": {
+    "version": { "const": "local-deterministic-routing-input/v1" },
+    "inventory_origin": { "enum": ["synthetic_fixture", "caller_declaration"] },
+    "capability_catalog": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/capability_id" } },
+    "provider_policy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["default", "allowed_provider_ids"],
+      "properties": {
+        "default": { "const": "deny" },
+        "allowed_provider_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "request_policy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["default", "allowed_capability_ids"],
+      "properties": {
+        "default": { "const": "deny" },
+        "allowed_capability_ids": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/capability_id" } }
+      }
+    },
+    "providers": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "available"],
+        "properties": { "id": { "type": "string", "minLength": 1 }, "available": { "enum": [true, false, "unknown"] } }
+      }
+    },
+    "routes": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "provider_id", "available", "capabilities"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "provider_id": { "type": "string", "minLength": 1 },
+          "available": { "enum": [true, false, "unknown"] },
+          "capabilities": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/capability_id" } }
+        }
+      }
+    },
+    "preference": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "request": {
+      "type": "object", "additionalProperties": false,
+      "required": ["required_capabilities"],
+      "properties": { "required_capabilities": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/capability_id" } } }
+    }
+  }
+}

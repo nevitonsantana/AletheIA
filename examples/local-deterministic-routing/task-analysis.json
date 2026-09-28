@@ -1,0 +1,15 @@
+{
+  "version": "local-deterministic-routing-input/v1",
+  "inventory_origin": "synthetic_fixture",
+  "capability_catalog": ["analysis", "typescript", "testing"],
+  "request_policy": { "default": "deny", "allowed_capability_ids": ["analysis", "typescript", "testing"] },
+  "provider_policy": { "default": "deny", "allowed_provider_ids": ["fictional-local-environment"] },
+  "providers": [{ "id": "fictional-local-environment", "available": true }],
+  "routes": [
+    { "id": "fictional-sparrow", "provider_id": "fictional-local-environment", "available": true, "capabilities": ["analysis", "typescript"] },
+    { "id": "fictional-heron", "provider_id": "fictional-local-environment", "available": true, "capabilities": ["testing"] },
+    { "id": "fictional-otter", "provider_id": "fictional-local-environment", "available": true, "capabilities": ["analysis", "typescript", "testing"] }
+  ],
+  "preference": ["fictional-sparrow", "fictional-otter", "fictional-heron"],
+  "request": { "required_capabilities": ["analysis"] }
+}

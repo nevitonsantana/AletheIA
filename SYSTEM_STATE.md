@@ -43,6 +43,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Active and planned evolution
 
 - **Active:** none.
+- **Approved, local pilot in study:** ADR-018 permits a human-reviewed advisory pilot. Provenance validation, freshness and pure disposition recording are implemented and tested. One real AletheIA documentation-task case was reviewed privately: `no_eligible_route`, human disposition `defer`, and no model execution. Its evidence is kept only in ignored `local-pilot-evidence/aletheia-routing-pilot-001/` on the owner's checkout, without backup or public/project-wide availability. This does not activate Runtime 2.0.
 - **Next dependency path:** S86 returned `insufficient_evidence`; the optional profile is unadopted and S87-S89, templates, schemas, composers, adapters and Adaptive Skills changes remain blocked until a new measured trigger exists.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
@@ -70,6 +71,8 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - External references require S2 intake before they influence implementation; P20/S28, P21/S29, P22/S30 and P23/S31 are accepted as docs-first evidence/guidance slices; P24/S50 is accepted as reference intake only for Learning Distillation & Context Hygiene v0.7; P24/S51 is accepted as a manual Restart Package compatibility slice; P24/S52 is accepted as a manual evolution-signal bridge slice; P24/S53 is accepted as a manual readiness guardrail slice; P25/S83-S86 are delivered as intake, compatibility, pilot and value-decision evidence, with the optional profile remaining unadopted.
 - S36 and S38 provide two real S28/S29 usage records, S37 is readiness-only, and S39 confirms the records are too few and heterogeneous for reusable controls, success rates or security proof; S40 keeps expansion blocked and redirects backlog progress toward clarity/coherence review.
 - Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters, documentation generators, new dashboards and comparative metrics remain out of scope.
+- A local deterministic routing experiment is accepted as a replayable synthetic exception: it only filters caller-declared routes by availability/provider/capability and preference; it is not a routing engine, provider/model switcher, tool executor, kernel change or runtime authority (ADR-017).
+- ADR-018 narrowly approves a real-input advisory pilot with manual source-referenced declarations and human disposition. One private case was reviewed and deferred after `no_eligible_route`; it does not establish model availability, routing benefit, or execution authority. Source: ignored local observation `local-pilot-evidence/aletheia-routing-pilot-001/observation-record.json` (not included in Git clones).
 
 ## Next safe steps
 
@@ -77,11 +80,14 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 2. Do not reopen S85/S86 or infer profile adoption without a new real Work Slice that predeclares and measures the required value indicators.
 3. Keep S87-S89 and all template, schema, composer, adapter, loop, graph, topology and Adaptive Skills changes blocked until S86 is superseded by an explicit `accept_optional_profile` decision.
 4. Publish documentation only through the existing manual approval path until a separate publishing-governance decision changes that posture.
-5. Do not activate S18 before its evidence threshold or Runtime 2.0 before a later explicit boundary decision.
+5. Do not activate S18 before its evidence threshold or Runtime 2.0 beyond the limited ADR-018 advisory exception; execution still requires a later explicit boundary decision.
 6. Apply S90 on the next real Work Slice and record whether the user-facing closeout reduces clarification; do not infer runtime automation from the manual profile.
 7. Observe the public APM first-test path for 1-2 weeks before proposing further discovery or packaging changes; treat installations and feedback as adoption evidence, not as product success by default.
 
 ## Last reviewed
+
+- **Routing boundary addendum (2026-09-28):** ADR-018 records project-owner approval of the limited advisory pilot; this is not a full re-review of the 2026-07-26 baseline.
+- **Private pilot evidence addendum (2026-09-28):** the first reviewed case is recorded only in the owner's ignored local evidence directory; its reviewed outcome is `no_eligible_route` / `defer`, with no route execution or generalizable result. This addendum does not certify durable retention or re-review other system claims.
 
 - **Date:** 2026-07-26
 - **Evidence baseline:** AletheIA `d1a51fd` after the discoverability, APM packaging, Codex-target, changelog and Pages publication slices; immutable package tag `v1.0.1-apm`

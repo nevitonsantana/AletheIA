@@ -15,6 +15,14 @@ This is a docs-first reconciliation. It does not implement a routing engine, sch
 collector, schema, policy engine, automatic provider selector, or Adaptive Skills authority over
 AletheIA gates.
 
+ADR-017 permits an isolated synthetic replay experiment with caller-declared inputs, explicit
+default-deny request/provider allowlists and deterministic hard filters. ADR-018 separately permits
+a narrow, opt-in, human-reviewed advisory pilot with source-referenced real inputs. Its model
+suggestion and human disposition are evidence to attach through `evidence_refs` in an existing Work
+Slice or execution/observation record; they are not canonical `selected_vehicle` or
+`selected_capabilities`. Neither exception authorizes provider/model execution, runtime switching or
+new governance authority.
+
 ## Canonical mapping
 
 | Term | Question answered | Primary owner | May declare | Must not declare | Evidence surface |

@@ -29,7 +29,9 @@
     "test:all": "pnpm run check:governance && pnpm run test",
     "docs:dev": "pnpm --filter @aletheia/docs dev",
     "docs:build": "pnpm --filter @aletheia/docs build",
-    "docs:validate": "pnpm --filter @aletheia/docs validate"
+    "docs:validate": "pnpm --filter @aletheia/docs validate",
+    "routing:demo": "pnpm exec tsc -p tsconfig.routing-demo.json && mkdir -p dist/routing-demo/schemas && cp schemas/local-deterministic-routing-input.schema.json dist/routing-demo/schemas/ && node dist/routing-demo/scripts/routing-demo.js",
+    "routing:advisory": "pnpm exec tsc -p tsconfig.routing-advisory.json && mkdir -p dist/routing-advisory/schemas && cp schemas/local-deterministic-routing-input.schema.json schemas/local-routing-advisory-draft.schema.json schemas/local-routing-advisory-review.schema.json dist/routing-advisory/schemas/ && node dist/routing-advisory/scripts/routing-advisory.js"
   },
   "devDependencies": {
     "@types/node": "^26.1.1",

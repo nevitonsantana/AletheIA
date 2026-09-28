@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.dev/schemas/local-routing-advisory-review.v1.json",
+  "title": "Local advisory routing human disposition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "reviewer_reference", "reviewed_at_ms", "disposition", "rationale"],
+  "properties": {
+    "version": { "const": "local-routing-advisory-review/v1" },
+    "reviewer_reference": { "$ref": "#/$defs/nonblank" },
+    "reviewed_at_ms": { "type": "integer", "minimum": 0 },
+    "disposition": { "enum": ["accept_suggestion", "reject_suggestion", "defer"] },
+    "rationale": { "$ref": "#/$defs/nonblank" }
+  },
+  "$defs": { "nonblank": { "type": "string", "minLength": 1, "pattern": "\\S" } }
+}

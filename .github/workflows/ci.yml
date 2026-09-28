@@ -85,10 +85,18 @@ jobs:
         run: |
           pkg_changed=$(git diff --name-only "$BASE" "$HEAD" | grep -c '^package.json$' || true)
           lock_changed=$(git diff --name-only "$BASE" "$HEAD" | grep -c '^pnpm-lock.yaml$' || true)
+          dependency_changed=$(node -e '
+            const { execFileSync } = require("node:child_process");
+            const read = (ref) => JSON.parse(execFileSync("git", ["show", `${ref}:package.json`]));
+            const [base, head] = process.argv.slice(1).map(read);
+            const fields = ["dependencies", "devDependencies", "optionalDependencies", "peerDependencies", "packageManager"];
+            process.stdout.write(String(fields.some((field) => JSON.stringify(base[field]) !== JSON.stringify(head[field]))));
+          ' "$BASE" "$HEAD")
           echo "package.json changed: $pkg_changed"
           echo "pnpm-lock.yaml changed: $lock_changed"
-          if [ "$pkg_changed" -gt 0 ] && [ "$lock_changed" -eq 0 ]; then
-            echo "::error::package.json changed but pnpm-lock.yaml did not. Run 'pnpm install' and commit the lockfile."
+          echo "dependency declarations changed: $dependency_changed"
+          if [ "$dependency_changed" = true ] && [ "$lock_changed" -eq 0 ]; then
+            echo "::error::Dependency declarations changed but pnpm-lock.yaml did not. Run 'pnpm install' and commit the lockfile."
             exit 1
           fi
           if [ "$lock_changed" -gt 0 ] && [ "$pkg_changed" -eq 0 ]; then

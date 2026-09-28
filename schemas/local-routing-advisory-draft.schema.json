@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aletheia.dev/schemas/local-routing-advisory-draft.v2.json",
+  "title": "Local routing advisory draft envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "task_reference", "decision_references", "input", "window", "claims"],
+  "properties": {
+    "version": { "const": "local-routing-advisory-draft/v2" },
+    "task_reference": { "$ref": "#/$defs/reference" },
+    "decision_references": {
+      "type": "object", "additionalProperties": false,
+      "required": ["task_requirements", "request_permission", "provider_permission", "preference_order", "inventory_observation"],
+      "properties": {
+        "task_requirements": { "$ref": "#/$defs/reference" },
+        "request_permission": { "$ref": "#/$defs/reference" },
+        "provider_permission": { "$ref": "#/$defs/reference" },
+        "preference_order": { "$ref": "#/$defs/reference" },
+        "inventory_observation": { "$ref": "#/$defs/reference" }
+      }
+    },
+    "input": { "type": "object" },
+    "window": {
+      "type": "object", "additionalProperties": false,
+      "required": ["observed_at_ms", "evaluated_at_ms", "max_age_ms"],
+      "properties": {
+        "observed_at_ms": { "type": ["integer", "null"], "minimum": 0 },
+        "evaluated_at_ms": { "type": "integer", "minimum": 0 },
+        "max_age_ms": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "claims": {
+      "type": "array", "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["kind", "subject_id", "source_reference"],
+        "properties": {
+          "kind": { "enum": ["provider_availability", "route_availability", "route_capability"] },
+          "subject_id": { "type": "string", "minLength": 1 },
+          "capability_id": { "type": "string", "minLength": 1 },
+          "source_reference": { "$ref": "#/$defs/reference" }
+        }
+      }
+    }
+  },
+  "$defs": { "reference": { "type": "string", "minLength": 1, "pattern": "\\S" } }
+}
