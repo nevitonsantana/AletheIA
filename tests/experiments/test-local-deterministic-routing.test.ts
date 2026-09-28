@@ -5,7 +5,7 @@ import { execFileSync } from "node:child_process";
 import { pathToFileURL } from "node:url";
 import { describe, expect, it } from "vitest";
 import { SchemaValidationError } from "../../engine/validation";
-import { recommendRoute, type LocalRoutingInput } from "../../engine/experiments/local-deterministic-routing";
+import { recommendRoute, type DeclaredAvailability, type LocalRoutingInput } from "../../engine/experiments/local-deterministic-routing";
 
 const root = process.cwd();
 const fixture = (name: string): LocalRoutingInput => JSON.parse(fs.readFileSync(path.join(root, "examples/local-deterministic-routing", name), "utf8"));
@@ -86,6 +86,50 @@ describe("local deterministic routing experiment", () => {
     const input = fixture("task-analysis.json") as unknown as Record<string, unknown>;
     (input.providers as Array<Record<string, unknown>>)[0].available = "listed";
     expect(() => recommendRoute(input)).toThrow(SchemaValidationError);
+  });
+
+  it("keeps recommendation and alternatives inside every hard filter across a synthetic matrix", () => {
+    const availability: DeclaredAvailability[] = [true, false, "unknown"];
+    const providerId = "fictional-local-environment";
+    const eligibleRouteIds = ["fictional-sparrow", "fictional-otter"];
+    let cases = 0;
+
+    for (const providerAvailability of availability) {
+      for (const sparrowAvailability of availability) {
+        for (const otterAvailability of availability) {
+          for (const providerAllowed of [true, false]) {
+            for (const capabilityAllowed of [true, false]) {
+              for (const reversedPreference of [true, false]) {
+                const input = fixture("task-analysis.json");
+                input.providers[0].available = providerAvailability;
+                input.routes.find((route) => route.id === "fictional-sparrow")!.available = sparrowAvailability;
+                input.routes.find((route) => route.id === "fictional-otter")!.available = otterAvailability;
+                input.provider_policy.allowed_provider_ids = providerAllowed ? [providerId] : [];
+                input.request_policy.allowed_capability_ids = capabilityAllowed ? ["analysis"] : [];
+                if (reversedPreference) input.preference.reverse();
+
+                const result = recommendRoute(input);
+                const expected = input.preference.filter((routeId) => {
+                  if (!eligibleRouteIds.includes(routeId)) return false;
+                  const route = input.routes.find((candidate) => candidate.id === routeId)!;
+                  return providerAvailability === true && route.available === true && providerAllowed && capabilityAllowed;
+                });
+
+                expect(result.eligible_route_ids).toEqual(expected);
+                expect(result.selected_route_id).toBe(expected[0] ?? null);
+                expect(result.alternative_route_ids).toEqual(expected.slice(1));
+                expect(result.outcome).toBe(expected.length ? "recommended" : "no_eligible_route");
+                expect(result.rejected_routes.map((route) => route.route_id)).toEqual(
+                  input.preference.filter((routeId) => !expected.includes(routeId)),
+                );
+                cases++;
+              }
+            }
+          }
+        }
+      }
+    }
+    expect(cases).toBe(216);
   });
 
   it("is repeatable and preserves a defensive, non-mutating replay snapshot", () => {

@@ -33,6 +33,10 @@ module-relative, so importing compiled `recommendRoute()` from another working d
 change validation behavior.
 `eligible_route_ids` contains every eligible route in preference order; `alternative_route_ids`
 contains only those after the selected route. Alternatives are suggestions, not executable fallbacks.
+The test suite also checks 216 synthetic combinations of provider and route availability,
+provider and capability allowlists, and preference order. It asserts that the selected route and
+every alternative remain inside the same hard filters; this is a combinatorial safety check, not
+evidence of model quality or real runtime availability.
 
 This does not contact a provider, select a real model, invoke tools, switch runtimes or modify kernel
 behavior. It is governed by the narrowly scoped ADR-017 exception and changes no public routing or
