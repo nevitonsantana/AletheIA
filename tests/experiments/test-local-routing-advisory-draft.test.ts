@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import { describe, expect, it } from "vitest";
-import { prepareAdvisoryDraft, type AdvisoryDraftInput } from "../../engine/experiments/local-routing-advisory-draft";
+import { prepareAdvisoryDraft, recordAdvisoryReview, type AdvisoryDraftInput, type AdvisoryHumanReview } from "../../engine/experiments/local-routing-advisory-draft";
 import type { LocalRoutingInput } from "../../engine/experiments/local-deterministic-routing";
 import { SchemaValidationError } from "../../engine/validation";
 
@@ -60,5 +60,56 @@ describe("local advisory draft", () => {
     expect(() => prepareAdvisoryDraft(synthetic)).toThrow(/caller_declaration/);
     const invalid = draft(); invalid.input.preference = ["absent"];
     expect(() => prepareAdvisoryDraft(invalid)).toThrow(/unknown route/);
+  });
+});
+
+const review = (): AdvisoryHumanReview => ({
+  version: "local-routing-advisory-review/v1",
+  reviewer_reference: "reviewer-local-1",
+  reviewed_at_ms: 106,
+  disposition: "accept_suggestion",
+  rationale: "Only the advisory suggestion is accepted for discussion.",
+});
+
+describe("local advisory human review", () => {
+  it("records accept, reject and defer without changing inputs or executing a route", () => {
+    const declaration = draft();
+    const human = review();
+    const declarationBefore = structuredClone(declaration);
+    const reviewBefore = structuredClone(human);
+    for (const disposition of ["accept_suggestion", "reject_suggestion", "defer"] as const) {
+      const response = { ...human, disposition };
+      const result = recordAdvisoryReview(declaration, response);
+      expect(result.status).toBe("human_review_recorded_no_execution");
+      expect(result.review.disposition).toBe(disposition);
+      expect(result.review_time_draft.recommendation.selected_route_id).toBe("fictional-sparrow");
+      expect(recordAdvisoryReview(declaration, response)).toEqual(result);
+    }
+    expect(declaration).toEqual(declarationBefore);
+    expect(human).toEqual(reviewBefore);
+  });
+
+  it("recalculates freshness at review time and blocks acceptance of a stale suggestion", () => {
+    const declaration = draft();
+    const human = review();
+    human.reviewed_at_ms = 111;
+    expect(() => recordAdvisoryReview(declaration, human)).toThrow(/no eligible suggestion/);
+    human.disposition = "defer";
+    const result = recordAdvisoryReview(declaration, human);
+    expect(result.original_draft.recommendation.outcome).toBe("recommended");
+    expect(result.review_time_draft.freshness.status).toBe("stale");
+    expect(result.review_time_draft.recommendation.outcome).toBe("no_eligible_route");
+  });
+
+  it("rejects acceptance with no eligible route and malformed or retroactive review", () => {
+    const declaration = draft();
+    declaration.input.provider_policy.allowed_provider_ids = [];
+    expect(() => recordAdvisoryReview(declaration, review())).toThrow(/no eligible suggestion/);
+    const blank = review(); blank.rationale = "  ";
+    expect(() => recordAdvisoryReview(draft(), blank)).toThrow(SchemaValidationError);
+    const early = review(); early.reviewed_at_ms = 104;
+    expect(() => recordAdvisoryReview(draft(), early)).toThrow(/cannot precede/);
+    const unsafe = review(); unsafe.reviewed_at_ms = Number.MAX_SAFE_INTEGER + 1;
+    expect(() => recordAdvisoryReview(draft(), unsafe)).toThrow(/safe integer/);
   });
 });

@@ -76,9 +76,14 @@ decision remains an advisory local recommendation, never an executable fallback.
 The [advisory-pilot boundary proposal](advisory-pilot-boundary-proposal.md) was approved only within
 the limits of ADR-018. `prepareAdvisoryDraft()` now validates a caller-declared, source-referenced
 envelope and explicit freshness window, then returns a `draft_requires_human_review` suggestion.
-It does not verify source truth, record human disposition, invoke a provider or authorize execution.
-The source references should be local identifiers; no real task data or pilot outcome is included
-in this repository. Real-input use remains gated on a human review path and case-by-case care.
+That preparation step does not verify source truth, record human disposition, invoke a provider or authorize execution.
+`recordAdvisoryReview()` now records an explicit reviewer reference, review time, accept/reject/defer
+disposition and rationale in a pure return value. It recalculates freshness at review time; accepting
+the *suggestion* is disallowed if no route remains eligible. It neither writes a canonical record
+nor accepts or executes the route on behalf of the runtime. The caller must attach the returned
+evidence to an existing governed record after human inspection. Source references should be local
+identifiers; no real task data or pilot outcome is included in this repository. Real-input use still
+requires case-by-case care and does not imply provider truth or runtime authorization.
 The [synthetic review worksheet](advisory-review-worksheet.md) rehearses how a person can inspect
 and decline a suggestion without creating a second governance record.
 The [ten synthetic review rounds](ten-synthetic-review-rounds.md) provide named, tested cases for

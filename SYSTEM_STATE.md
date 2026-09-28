@@ -43,7 +43,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 ## Active and planned evolution
 
 - **Active:** none.
-- **Approved but not delivered:** a local, human-reviewed advisory routing pilot may be implemented under ADR-018; real-input use waits for provenance validation and a draft-only review path. This does not activate Runtime 2.0.
+- **Approved, local preparation delivered, real cases pending:** ADR-018 permits a human-reviewed advisory pilot. Provenance validation, freshness and pure disposition recording are implemented and synthetically tested; no real pilot case or runtime integration is delivered. This does not activate Runtime 2.0.
 - **Next dependency path:** S86 returned `insufficient_evidence`; the optional profile is unadopted and S87-S89, templates, schemas, composers, adapters and Adaptive Skills changes remain blocked until a new measured trigger exists.
 - **Delivered dependency chain:** S20 delivered → S22 Lean Implementation Skill; S21 delivered → S23 Governed Loop Engineering Addendum.
 - **Deferred:** S18 comparative work metrics until five reviewed records share one stable comparison group; PR #313 confirms the current five records do not meet that threshold. Runtime 2.0 implementation until a later explicit boundary decision.
@@ -72,7 +72,7 @@ Evidence: [`docs/roadmaps/evolution-backlog-aletheia-adaptive-skills.md`](docs/r
 - S36 and S38 provide two real S28/S29 usage records, S37 is readiness-only, and S39 confirms the records are too few and heterogeneous for reusable controls, success rates or security proof; S40 keeps expansion blocked and redirects backlog progress toward clarity/coherence review.
 - Automatic collectors, routing engines, runtime kernels, SDKs, provider adapters, documentation generators, new dashboards and comparative metrics remain out of scope.
 - A local deterministic routing experiment is accepted as a replayable synthetic exception: it only filters caller-declared routes by availability/provider/capability and preference; it is not a routing engine, provider/model switcher, tool executor, kernel change or runtime authority (ADR-017).
-- ADR-018 narrowly approves a real-input advisory pilot with manual source-referenced declarations and human disposition; no real-input path is delivered yet and execution remains outside this exception.
+- ADR-018 narrowly approves a real-input advisory pilot with manual source-referenced declarations and human disposition; a local draft/review path exists, but no real case has been reviewed, and execution remains outside this exception.
 
 ## Next safe steps
 

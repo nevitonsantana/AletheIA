@@ -6,6 +6,7 @@ import {
 } from "./local-deterministic-routing.js";
 
 const schemaPath = fileURLToPath(new URL("../../schemas/local-routing-advisory-draft.schema.json", import.meta.url));
+const reviewSchemaPath = fileURLToPath(new URL("../../schemas/local-routing-advisory-review.schema.json", import.meta.url));
 
 export interface AdvisoryClaim {
   kind: "provider_availability" | "route_availability" | "route_capability";
@@ -20,6 +21,14 @@ export interface AdvisoryDraftInput {
   input: LocalRoutingInput;
   window: DeclaredInventoryWindow;
   claims: AdvisoryClaim[];
+}
+
+export interface AdvisoryHumanReview {
+  version: "local-routing-advisory-review/v1";
+  reviewer_reference: string;
+  reviewed_at_ms: number;
+  disposition: "accept_suggestion" | "reject_suggestion" | "defer";
+  rationale: string;
 }
 
 function claimKey(claim: Pick<AdvisoryClaim, "kind" | "subject_id" | "capability_id">): string {
@@ -60,5 +69,30 @@ export function prepareAdvisoryDraft(raw: unknown) {
     declaration: draft,
     freshness,
     recommendation: recommendRoute(freshness.routing_input),
+  };
+}
+
+/** Records a human response to a freshly recalculated suggestion; never accepts or executes a route. */
+export function recordAdvisoryReview(rawDraft: unknown, rawReview: unknown) {
+  const review = structuredClone(validateAgainstSchema<AdvisoryHumanReview>(rawReview, reviewSchemaPath));
+  if (!Number.isSafeInteger(review.reviewed_at_ms)) {
+    throw new Error("Invalid advisory review: reviewed_at_ms must be a safe integer.");
+  }
+  const original = prepareAdvisoryDraft(rawDraft);
+  if (review.reviewed_at_ms < original.declaration.window.evaluated_at_ms) {
+    throw new Error("Invalid advisory review: review cannot precede draft evaluation.");
+  }
+  const atReview = prepareAdvisoryDraft({
+    ...original.declaration,
+    window: { ...original.declaration.window, evaluated_at_ms: review.reviewed_at_ms },
+  });
+  if (review.disposition === "accept_suggestion" && atReview.recommendation.outcome !== "recommended") {
+    throw new Error("Invalid advisory review: no eligible suggestion at review time; reject or defer instead.");
+  }
+  return {
+    status: "human_review_recorded_no_execution" as const,
+    original_draft: original,
+    review_time_draft: atReview,
+    review,
   };
 }

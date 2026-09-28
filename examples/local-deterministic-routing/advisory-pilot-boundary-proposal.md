@@ -64,7 +64,8 @@ not reasons to silently add a runtime layer.
 
 ## Approval and next action
 
-**Approved boundary, implementation pending:** the project owner explicitly replied “piloto aprovado”
-on 2026-09-28. ADR-018 records the limited exception. Continue using only synthetic fixtures until
-source-reference validation, fail-closed freshness and the draft-only review path are implemented and
-tested. No UI, provider adapter or automated behavior is authorized.
+**Approved boundary; local draft path implemented, real cases pending:** the project owner explicitly
+replied “piloto aprovado” on 2026-09-28. ADR-018 records the limited exception. Source-reference
+validation, fail-closed freshness and pure human-disposition recording now have synthetic tests.
+No real pilot case has been reviewed or stored in an existing governed record. That case-by-case
+evidence step is next; no UI, provider adapter or automated behavior is authorized.

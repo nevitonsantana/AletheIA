@@ -1,7 +1,7 @@
 # Advisory routing review worksheet — synthetic rehearsal
 
-**Status:** non-normative study aid. Use synthetic fixtures only until the
-[pilot boundary proposal](advisory-pilot-boundary-proposal.md) is explicitly approved.
+**Status:** non-normative study aid. The bounded pilot was approved in ADR-018; this worksheet
+remains synthetic rehearsal, not evidence of a real pilot case.
 This worksheet is not a new Work Slice, routing schema, approval record or execution instruction.
 
 ## Questions for a reviewer
