@@ -15,7 +15,7 @@
     "@astrojs/react": "^6.0.1",
     "@shikijs/twoslash": "^4.3.1",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.0.9",
+    "astro": "^7.1.6",
     "blume": "^1.1.4",
     "sharp": "^0.35.3",
     "typescript": "^6.0.3"
